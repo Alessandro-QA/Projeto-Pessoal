@@ -1,0 +1,44 @@
+{
+  "fornecedor": "Empresa Fornecedor - CNPJ",
+  "cnpjFornecedor": "37.062.568/0001-47",
+
+  "numeroNota": "102",
+  "serieNota": "1",
+  "dataEmissao": "27/09/2021",
+  "dataRecebimento": "27/09/2021",
+  "horaRecebimento": "10:00",
+  "fazenda": "Fazenda Reserva",
+  "empresa": "Empresa Produtor - CPF",
+  "inscricaoEstadual": "545612",
+  "safra": "2020/2020",
+
+  "nomeMaterial": "M-Soy 8866",
+  "unidadeArmazenamento": "U.A. Insumos",
+  "quantidadeMaterial": "500",
+  "precoMaterial": "75",
+  "totalMaterial": "R$ 37.500,00",
+  "precoPedido": "R$ 60,00",
+
+  "formaPagamento": "Boleto",
+  "valorParcela": "R$ 37.500,00",
+
+  "categoria": "Sementes",
+  "porcentagemCategoria": "100,00%",
+  "valorCategoria": "R$ 37.500,00",
+
+  "rateioEntreCiclos": true,
+  "ciclos": [
+    {
+      "nomeCiclo": "Arroz - 2020/2020",
+      "porcentagemCiclo": "61,54%",
+      "valorCiclo": "R$ 23.077,50"
+    },
+    {
+      "nomeCiclo": "Algodão - 2020/2020",
+      "porcentagemCiclo": "38,46%",
+      "valorCiclo": "R$ 14.422,50"
+    }
+  ],
+
+  "totalRecebimento": "R$ 37.500,00"
+}

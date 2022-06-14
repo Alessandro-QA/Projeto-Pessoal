@@ -1,0 +1,88 @@
+{
+  "nfe": {
+    "emitente": {
+      "empresa": "EMERSON RIVA",
+      "inscricaoEstadual": "134899156",
+      "cpfCnpj": "502.401.021-34",
+      "fazenda": "Fazenda NFe",
+      "safra": "2021/2021"
+    },
+    "destinatario": {
+      "empresa": "Destinatario GO",
+      "inscricaoEstadual": "103151087",
+      "cpfCnpj": "03.306.578/0007-54",
+      "tipoDestinatario": "CNPJ"
+    },
+    "informacoesNota": {
+      "gerarNfeRascunho": false,
+      "finalidade": "NF-e Normal",
+      "operacao": "Venda de produção do estabelecimento",
+      "frete": "Sem Frete",
+      "saidaFutura": false,
+      "tipo": "Saída",
+      "modelo": "55",
+      "serie": "920"
+    },
+    "materiais": {
+      "produto": {
+        "material": "Milho em Grãos",
+        "quantidade": "1",
+        "valorUnitario": "1",
+        "desconto": "0,99",
+        "total": "R$ 0,01",
+        "cfop": "6101 - Venda de produção do estabelecimento",
+        "ncm": "1201.90.00",
+        "unidadeMedida": "sc60"
+      },
+      "imposto": {
+        "icms": {
+          "origemCst": "0 - Nacional",
+          "cst": "00",
+          "baseCalculo": "0,01",
+          "aliquota": "0,00",
+          "valor": "R$ 0,00"
+        },
+        "pis": {
+          "cst": "08",
+          "baseCalculo": "0,00",
+          "aliquota": "0,00",
+          "valor": "R$ 0,00"
+        },
+        "cofins": {
+          "cst": "08",
+          "baseCalculo": "0,00",
+          "aliquota": "0,00",
+          "valor": "R$ 0,00"
+        },
+        "fcp": {
+          "baseCalculo": "0,00",
+          "aliquota": "0,00",
+          "valor": "0,00"
+        }
+      },
+      "retencao": {
+        "contemRetencao": false
+      },
+      "contemInformcacoesComp": true,
+      "informacoesComplementares": "Informacoes Complementares"
+    },
+    "outrosValores": {
+      "contemOutrosValores": false
+    },
+
+    "totalImpostos": {
+      "icms": "0,00",
+      "pis": "0,00",
+      "cofins": "0,00",
+      "retencao": "0,00",
+      "fcp": "0,00"
+    }
+  },
+
+  "detalhesNfe": {
+    "destinatario": "Destinatario GO",
+    "finalidade": "Normal",
+    "valorTotal": "R$ 0,01",
+    "status": "Autorizada"
+  }
+}

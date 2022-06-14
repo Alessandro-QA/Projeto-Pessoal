@@ -1,0 +1,11 @@
+{
+  "nome": "Conta Teste QA",
+  "email": "conta_teste_qa@hubconexa.com",
+  "telefone": "62999996666",
+  "relacaoAgro": "Produtor",
+  "principalAtividade": "Grãos",
+  "quantidadeHectares": "Até 100 ha",
+  "SoftwareGestaoAgro": "Não",
+  "senha": "teste@123",
+  "senhaConfirmacao": "teste@123"
+}

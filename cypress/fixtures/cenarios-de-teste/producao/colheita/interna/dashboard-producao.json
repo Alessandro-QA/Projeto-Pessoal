@@ -1,0 +1,54 @@
+{
+  "safra": "2021/2021",
+  "fazenda": "Fazenda Teste Producao",
+  "quantidade": "1,5 Saca 60 /ha",
+  "quantidadeCultura": "150,3 Saca 60 de Milho",
+  "hectareCultura": "100,00 hectares",
+  "sacaFazendaProdutiva": "1.50 Saca 60/ha",
+  "variedadeProducao": "C000106",
+  "sacaProducao": "150.30 Saca 60",
+  "talhaoProducao": "Talhão Milho",
+  "sacaTalhaoProducao": "150.30 Saca 60",
+  "varidadeProdutividade": "C000106",
+  "sacaProdutividade": "1.50 Saca 60/ha",
+  "talhaoProdutividade": "Talhão Milho",
+  "sacatalhaoProdutividade": "1.50 Saca 60/ha",
+  "totalArmazenagemInterna": "150,3",
+  "sacaArmazenagemInterna": "Saca 60",
+  "totalArmazenagemExterna": "0",
+  "sacaArmazenagemExterna": "Saca 60",
+  "totalRecebido": "0,00",
+  "totalAReceber": "0,00",
+
+  "entregaFixacoes": [
+    {
+      "cliente": "U.A. Silo",
+      "entregue": "150,3",
+      "arrendamentos": "0",
+      "contratosFixados": "0",
+      "fixacoes": "0",
+      "transferencias": "0",
+      "saldo": "150,3"
+    }
+  ],
+  "contratosEntregasFixacoes": [
+    {
+      "expandir": true,
+      "cliente": "0 - Sem Contrato",
+      "entregue": "150,3",
+      "arrendamentos": "0",
+      "contratosFixados": "0",
+      "fixacoes": "0",
+      "transferencias": "0",
+      "saldo": "150,3"
+    }
+  ],
+  "saldoTotalFixar": "150,3 Saca 60",
+  "precoMedioPorCliente": false,
+  "precoMedioPorSafra": false,
+  "clientePrecoMedio": "",
+  "precoMediaCliente": "",
+  "quantidadeMediaCliente": "",
+  "precoMediaSafra": "",
+  "quantidadeMediaNegociada": ""
+}

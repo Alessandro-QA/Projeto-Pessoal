@@ -1,0 +1,14 @@
+{
+  "nome": "Fazenda 1",
+  "email": "fazenda_1@mail.com",
+  "telefone": "6230306060",
+  "cep": "74000000",
+  "pais": "Brasil",
+  "estado": "Goiás",
+  "municipio": "Goiânia",
+  "bairro": "Centro",
+  "numero": "123",
+  "complemento": "Qd 1 Lt 2",
+  "endereco": "Rua 321",
+  "matricula": "000001"
+}

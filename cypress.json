@@ -1,0 +1,13 @@
+{
+  "projectId": "9obppc",
+  "chromeWebSecurity": false,
+  "defaultCommandTimeout": 20000,
+  "scrollBehavior": "center",
+  "viewportWidth": 1366,
+  "viewportHeight": 768,
+  "screenshotOnRunFailure": true,
+  "screenshotsFolder": "cypress/results/screenshots",
+  "video": false,
+  "videosFolder": "cypress/results/videos",
+  "trashAssetsBeforeRuns": true
+}

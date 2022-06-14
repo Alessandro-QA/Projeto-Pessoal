@@ -1,0 +1,17 @@
+{
+  "editar": true,
+  "filtroFazenda":"Fazenda Teste Producao",
+  "filtroSafra": "2021/2021",
+  "destinoEditar": "Cliente Teste Produção",
+
+  "retornoCliente": true,
+  "numeroRomaneio": 123456,
+  "pesoBrutoRetorno": 32000,
+  "taraVeiculoRetorno": 1000,
+  "subtotalRetorno": "31.000 kg",
+  "descontoClassificacaoRetorno": 1000,
+
+  "totalDesconto": "1.000,00 kg",
+  "totalLiquido": "30.000,00 kg",
+  "totalEmSacas": "501,00 Saca 60"
+}

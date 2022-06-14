@@ -1,0 +1,86 @@
+{
+  "documento": {
+    "operacao": "Assistência Médica",
+    "tipoDocumento": "Fatura",
+    "dedutivel": "Não",
+    "numeroDocumento": "3557",
+    "pessoa": "Empresa 1",
+    "fazenda": "Fazenda Onboarding",
+    "safra": "2021/2021",
+    "empresa": "Empresa 1",
+    "valorTotal": "150,00",
+    "jaPago": true,
+    "condicaoPagamento": "À vista",
+    "formaPagamento": "Cartão de Crédito",
+    "contaBancaria": "Conta Bancaria Teste",
+    "contaDestino": "Conta Bancaria Teste",
+    "rateioEntreCiclosPlanejamento": true,
+    "ciclos": [
+      {
+        "nome": "Soja - 2021/2021",
+        "valor": "R$ 85,71"
+      },
+      {
+        "nome": "Milho - 2021/2021",
+        "valor": "R$ 64,29"
+      }
+    ],
+    
+    "rateioCategoriaSelecionar": true,
+    "categorias": [
+      {
+        "nome": "Assistência Médica",
+        "valor": "R$ 75,00"
+      },
+      {
+        "nome": "Programa de Alimentação do Trabalhador",
+        "valor": "R$ 75,00"
+      }
+    ]
+  },
+  "detalhes": {
+    "operacao": "Assistência Médica",
+    "tipoDocumento": "Fatura",
+    "dedutivel": "Não",
+    "numeroDocumento": "3557",
+    "pessoa": "Empresa 1",
+    "fazenda": "Fazenda Onboarding",
+    "safra": "2021/2021",
+    "empresa": "Empresa 1",
+    "valorTotal": "R$ 150,00",
+    "formaPagamento": "Cartão de Crédito",
+    "condicaoPagamento": "À vista",
+    "qtdParcelas": "Parcela única",
+    "contaBancaria": "Conta Bancaria Teste",
+    "parcelas": [
+      {
+        "parcela": "1ª Parcela",
+        "valorParcela": "R$ 150,00",
+        "statusParcela": "Pago",
+        "saldoParcela": "R$ 0,00"
+      }
+    ],
+    "ciclos": [
+      {
+        "nome": "Soja - 2021/2021",
+        "valor": "R$ 85,71"
+      },
+      {
+        "nome": "Milho - 2021/2021",
+        "valor": "R$ 64,29"
+      }
+    ],
+    "categorias": [
+      {
+        "nome": "Programa de Alimentação do Trabalhador",
+        "porcentagem": "50%",
+        "valor": "R$ 75,00"
+      },
+      {
+        "nome": "Assistência Médica",
+        "porcentagem": "50%",
+        "valor": "R$ 75,00"
+      }
+    ]
+  }
+}

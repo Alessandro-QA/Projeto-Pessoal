@@ -1,0 +1,47 @@
+{
+  "UaOrigemColheita": {
+    "material": "Soja em Grãos",
+    "unidadeArmazenamento": "U.A. Silo",
+    "quantidadeAtual": "167.00 sc60",
+    "origemFiltro": "Armazenagem",
+    "tipoFiltro": "Entrada",
+    "origem": "Armazenagem",
+    "tipo": "Entrada",
+    "quantidade": "167,00",
+    "quantidadeEstoque": "167,00",
+    "valorUnitario": "0,00",
+    "total": "0,00",
+    "valorEstoque": "0,00",
+    "precoMedio": "0,00"
+  },
+  "UaOrigemExpedicao": {
+    "material": "Soja em Grãos",
+    "unidadeArmazenamento": "U.A. Silo",
+    "quantidadeAtual": "83.50 sc60",
+    "origemFiltro": "Armazenagem",
+    "tipoFiltro": "Saida",
+    "origem": "Armazenagem",
+    "tipo": "Saída",
+    "quantidade": "83,50",
+    "quantidadeEstoque": "83,50",
+    "valorUnitario": "0,00",
+    "total": "0,00",
+    "valorEstoque": "0,00",
+    "precoMedio": "0,00"
+  },
+  "UaDestinoExpedicao": {
+    "material": "Soja em Grãos",
+    "unidadeArmazenamento": "U.A. Teste Estoque",
+    "quantidadeAtual": "83.50 sc60",
+    "origemFiltro": "Armazenagem",
+    "tipoFiltro": "Entrada",
+    "origem": "Armazenagem",
+    "tipo": "Entrada",
+    "quantidade": "83,50",
+    "quantidadeEstoque": "83,50",
+    "valorUnitario": "0,00",
+    "total": "0,00",
+    "valorEstoque": "0,00",
+    "precoMedio": "0,00"
+  }
+}

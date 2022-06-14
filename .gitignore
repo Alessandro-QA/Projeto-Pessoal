@@ -1,0 +1,7 @@
+node_modules
+.nyc_output
+coverage
+cypress/results/*
+cypress/config-files/*
+cypress/allure-report/*
+cypress/allure-results/*

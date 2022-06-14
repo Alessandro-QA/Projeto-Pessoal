@@ -1,0 +1,16 @@
+{
+  "tipo": "Produtor",
+  "cnpj": "65.448.001/0001-49",
+  "razaoSocial": "Pessoa 1",
+  "inscricaoEstadual": "119200171",
+  "email": "pessoa1@mail.com",
+  "nomeFantasia": "Pessoa 1",
+  "telefone": "(62) 99999-6666",
+  "cep": "74000000",
+  "estado": "Goiás",
+  "municipio": "Goiânia",
+  "bairro": "Centro",
+  "complemento": "Qd 1 Lt 2",
+  "logradouro": "Rua 123",
+  "numero": "123"
+}

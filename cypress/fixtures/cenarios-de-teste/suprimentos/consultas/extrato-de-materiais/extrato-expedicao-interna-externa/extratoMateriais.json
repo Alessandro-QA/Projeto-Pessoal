@@ -1,0 +1,32 @@
+{
+  "UaOrigemColheita": {
+    "material": "Milho em Grãos",
+    "unidadeArmazenamento": "U.A. Teste Estoque",
+    "quantidadeAtual": "220.44 sc60",
+    "origemFiltro": "Armazenagem",
+    "tipoFiltro": "Entrada",
+    "origem": "Armazenagem",
+    "tipo": "Entrada",
+    "quantidade": "220,44",
+    "quantidadeEstoque": "220,44",
+    "valorUnitario": "0,00",
+    "total": "0,00",
+    "valorEstoque": "0,00",
+    "precoMedio": "0,00"
+  },
+  "UaOrigemExpedicao": {
+    "material": "Milho em Grãos",
+    "unidadeArmazenamento": "U.A. Teste Estoque",
+    "quantidadeAtual": "87.51 sc60",
+    "origemFiltro": "Transferencia",
+    "tipoFiltro": "Saida",
+    "origem": "Transferência",
+    "tipo": "Saída",
+    "quantidade": "132,93",
+    "quantidadeEstoque": "87,51",
+    "valorUnitario": "0,00",
+    "total": "0,00",
+    "valorEstoque": "0,00",
+    "precoMedio": "0,00"
+  }
+}

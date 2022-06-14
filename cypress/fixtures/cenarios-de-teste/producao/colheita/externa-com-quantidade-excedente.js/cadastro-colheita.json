@@ -1,0 +1,36 @@
+{
+  "transportadora": "Transportadora Teste Producao",
+  "placaVeiculo": "ABC1234",
+  "guardarMotorista": false,
+  "motorista": "Motorista Teste Producao",
+  "fazenda": "Fazenda Teste Producao",
+  "safra": "2021/2021",
+  "talhao": "Talhão Soja - Soja - 2021/2021",
+  "variedade": "Syn1060ap",
+  "porcentagemCarga": "100,00",
+  "destino": "Externo",
+  "clienteDestino": "Cliente Teste Produção",
+  "contratos": "Selecionar Todos",
+  "pesoBruto": "16000",
+  "taraVeiculo": "1000",
+  "descontoClassificacao": "",
+  "retornoCliente": true,
+  "numeroRomaneio": "1234",
+  "pesoBrutoRetorno": "16000",
+  "taraVeiculoRetorno": "1000",
+  "subtotalRetorno": "15.000 kg",
+  "descontoClassificacaoRetorno": "1000",
+  "partilha" : [
+    {
+      "partilhaValor" : "7.000,00"
+    },
+    {
+      "partilhaValor" : "7.000,00"
+    }
+  ],
+  "subtotal": "15.000,00 kg",
+  "totalDesconto": "1.000,00 kg",
+  "totalLiquido": "14.000,00 kg",
+  "totalEmSacas": "233,80 Saca 60",
+  "modal": true
+}

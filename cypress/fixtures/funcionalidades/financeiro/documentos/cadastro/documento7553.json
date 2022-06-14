@@ -1,0 +1,62 @@
+{
+  "documento": {
+    "operacao": "Combustíveis",
+    "tipoDocumento": "Outros",
+    "numeroDocumento": "7553",
+    "dedutivel": "Não",
+    "pessoa": "Empresa 1",
+    "fazenda": "Fazenda Onboarding",
+    "safra": "2021/2021",
+    "empresa": "Empresa 1",
+    "tag": "documentoE2E 2",
+    "valorTotal": "300,00",
+    "condicaoPagamento": "À vista",
+    "formaPagamento": "Cartão de Débito",
+    "rateioCategoriaSelecionar": true,
+    "categorias": [
+      {
+        "nome": "Combustíveis",
+        "valor": "150,00"
+      },
+      {
+        "nome": "Óleo Diesel",
+        "valor": "150,00"
+      }
+    ]
+  },
+  "detalhes": {
+    "operacao": "Combustíveis",
+    "tipoDocumento": "Outros",
+    "dedutivel": "Não",
+    "numeroDocumento": "7553",
+    "pessoa": "Empresa 1",
+    "fazenda": "Fazenda Onboarding",
+    "safra": "2021/2021",
+    "empresa": "Empresa 1",
+    "tag": "documentoE2E 2",
+    "valorTotal": "R$ 300,00",
+    "formaPagamento": "Cartão de Débito",
+    "condicaoPagamento": "À vista",
+    "qtdParcelas": "Parcela única",
+    "parcelas": [
+      {
+        "parcela": "1ª Parcela",
+        "valorParcela": "R$ 300,00",
+        "statusParcela": "A pagar",
+        "saldoParcela": "R$ 300,00"
+      }
+    ],
+    "categorias": [
+      {
+        "nome": "Combustíveis",
+        "porcentagem": "50%",
+        "valor": "R$ 150,00"
+      },
+      {
+        "nome": "Óleo Diesel",
+        "porcentagem": "50%",
+        "valor": "R$ 150,00"
+      }
+    ]
+  }
+}

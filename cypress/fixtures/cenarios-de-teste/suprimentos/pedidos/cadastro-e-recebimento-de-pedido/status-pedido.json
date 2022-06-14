@@ -1,0 +1,22 @@
+{
+  "entregaParcial": {
+    "safra": "2020/2020",
+    "fazenda": "Fazenda Reserva",
+    "empresa": "Empresa Produtor - CPF",
+    "nomeFornecedor": "Empresa Fornecedor - CNPJ",
+    "cnpjFornecedor": "37.062.568/0001-47",
+    "numeroPedidoFornecedor": "100",
+    "dataPedido": "20/09/2021",
+    "statusPedido": "Entrega Parcial"
+  },
+  "aguardandoEntrega": {
+    "safra": "2020/2020",
+    "fazenda": "Fazenda Reserva",
+    "empresa": "Empresa Produtor - CPF",
+    "nomeFornecedor": "Empresa Fornecedor - CNPJ",
+    "cnpjFornecedor": "37.062.568/0001-47",
+    "numeroPedidoFornecedor": "100",
+    "dataPedido": "20/09/2021",
+    "statusPedido": "Aguardando Entrega"
+  }
+}

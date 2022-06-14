@@ -1,0 +1,41 @@
+{
+  "name": "testes_e2e_myfarm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Testes E2E do projeto MyFarm",
+  "scripts": {
+    "test:allure": "npm run delete:reports && npm run test:allure:report",
+    "test:azure": "npm run delete:reports && npm run test:junit:report",
+    "delete:reports": "npm run delete:allure:report && npm run delete:allure:results && npm run delete:junit:results",
+    "delete:allure:report": "rm -rf cypress/allure-report/* || true",
+    "delete:allure:results": "rm -rf cypress/allure-results/* || true",
+    "delete:junit:results": "rm -rf cypress/results/* || true",
+    "test:allure:report": "cypress run --env allure=true,allureResultsPath=cypress/allure-results,allureAttachRequests=true,ambiente=dev",
+    "test:junit:report": "cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json --env ambiente=dev",
+    "allure:open": "npm run allure:generate && allure open cypress/allure-report",
+    "allure:generate": "allure generate cypress/allure-results --clean -o cypress/allure-report",
+    "cypress:open": "cypress open",
+    "cypress:open:ambiente": "cypress open --env ambiente=NOME_DO_AMBIENTE 'cypress/integration/*.spec.js'",
+    "cypress:run:ambiente": "cypress run --env ambiente=NOME_DO_AMBIENTE 'cypress/integration/*.spec.js'",
+    "cypress:record:all": "cypress run --env ambiente=dev --config video=true 'cypress/integration/*.spec.js'",
+    "cypress:run:spec": "cypress run --spec 'cypress/integration/CAMINHO_DA_SPEC'",
+    "cypress:run:spec:allure": "cypress run --env allure=true,allureResultsPath=cypress/allure-results,allureAttachRequests=true,ambiente=dev --spec 'cypress/integration/funcionalidades/login/login.spec.js'",
+    "cypress:run:tag": "cypress run --env grepTags=@NOME_DA_TAG,ambiente=dev 'cypress/integration/*.spec.js'",
+    "cypress:dashboard": "cypress run --record --key be93c1be-6ff1-440a-8fc4-656daac9b59c",
+    "eslint": "eslint ./cypress/**"
+  },
+  "devDependencies": {
+    "@cypress/code-coverage": "^3.9.11",
+    "@shelex/cypress-allure-plugin": "^2.26.5",
+    "@testing-library/cypress": "^7.0.6",
+    "cypress": "^9.6.0",
+    "cypress-eslint-preprocessor": "^1.2.2",
+    "cypress-grep": "^2.14.0",
+    "cypress-multi-reporters": "^1.5.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-json": "^3.1.0",
+    "mocha-junit-reporter": "^2.0.2",
+    "mssql": "^7.1.0",
+    "webpack-merge": "^5.8.0"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "documento": {
+    "categorias": [
+      {
+        "valor": 150000,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "3.02.01.01",
+          "nome": "Venda de Gado",
+          "descricao": "Venda de Gado"
+        }
+      }
+    ],
+    "dataRecebimento": "dataSubstituicaoT11:28:14-03:00",
+    "operacao": {
+      "id": "b53df285-d34e-41f8-9376-3db9c2ae79bc",
+      "descricao": "Venda de Gado"
+    },
+    "safra": {
+      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+      "descricao": "2021/2021"
+    },
+    "data": "dataSubstituicaoT11:28:14-03:00",
+    "fazenda": {
+      "id": "b0f2a6e1-81a2-4123-bf46-4fc5e6a54738",
+      "descricao": "Fazenda E2E"
+    },
+    "tags": ["documentoE2E"],
+    "pessoa": {
+      "pessoaTipo": "Cliente",
+      "numeroDocumento": "66791418001",
+      "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+      "descricao": "Empresa Produtor - CPF"
+    },
+    "numero": "1",
+    "empresa": {
+      "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+      "descricao": "Empresa Fornecedor - CPF",
+      "empresaDeSaoPaulo": false,
+      "documentoPrincipal": "91535740019",
+      "inscricaoEstadual": {
+        "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+        "descricao": "IE Estadual",
+        "valor": "32165465622"
+      }
+    },
+    "ieDaEmpresa": {
+      "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+      "descricao": "IE Estadual",
+      "valor": "32165465622",
+      "label": "32165465622"
+    },
+    "tipoDocumento": 1,
+    "observacao": "Observações do Documento",
+    "conferido": false,
+    "financeiro": {
+      "total": 150000,
+      "pago": true,
+      "rateioEntreCiclos": false,
+      "formaPagamento": {
+        "id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
+        "descricao": "Dinheiro"
+      },
+      "contaBancaria": {
+        "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300",
+        "empresaTitular": {
+          "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+          "descricao": "Pessoa E2E"
+        },
+        "tipoConta": 1,
+        "nome": "Conta Corrente E2E",
+        "contaPrincipal": true,
+        "numerarioEmTransito": false,
+        "banco": {
+          "id": "c3cff0c7-226f-20c7-8d07-b7210fe569be",
+          "codigoBacen": "1",
+          "descricao": "Banco do Brasil S.A."
+        },
+        "agencia": "65432",
+        "agenciaDigitoVerificador": "8",
+        "conta": "3456",
+        "contaDigitoVerificador": "7",
+        "saldoInicial": 1000000,
+        "saldoAtual": -47174,
+        "dataInicialSaldo": "2021-01-01T03:00:00+00:00",
+        "incluirSaldoDisponivel": false,
+        "codigo": 1,
+        "openBanking": false,
+        "ativo": true,
+        "contaBancariaEmpresas": [
+          {
+            "id": "4cebb022-1791-4784-8543-8fd2252fde9a",
+            "empresa": {
+              "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+              "descricao": "Empresa E2E"
+            }
+          },
+          {
+            "id": "e1825a89-77da-4058-af1c-9fb6f3cd8d6e",
+            "empresa": {
+              "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+              "descricao": "Empresa 1"
+            }
+          },
+          {
+            "id": "bef74031-a762-4999-a011-be9b8f3b8b12",
+            "empresa": {
+              "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+              "descricao": "Pessoa E2E"
+            }
+          }
+        ]
+      },
+      "contaFornecedor": {
+        "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300"
+      },
+      "condicaoPagamento": "Avista",
+      "quantidadeParcelas": 1,
+      "valorFixo": false,
+      "parcelas": [
+        {
+          "vencimento": "dataSubstituicaoT11:28:14-03:00",
+          "valor": 150000
+        }
+      ],
+      "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
+      "contaId": "57efe1f2-b0b4-415d-b642-49cbf45ee300"
+    },
+    "dedutivel": true,
+    "manual": true
+  },
+
+  "lancamentoLivroCaixa": {
+    "nomeEmpresa": "Empresa Fornecedor - CPF",
+    "cpfEmpresa": "915.357.400-19",
+    "totalEntrada": "R$ 150.000,00",
+    "totalSaida": "R$ 0,00",
+    "saldoAtualizado": "R$ 150.000,00",
+    "estimativaIRRF": "R$ 30.817,67",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "Venda de Gado",
+        "historico": "Valor Doc. 1 de Empresa Produtor - CPF",
+        "valor": "R$ 150.000,00",
+        "tipo": "Entrada",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "R$ 150.000,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 30.817,67"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "material": "Milho em Grãos",
+  "unidadeArmazenamento": "U.A. Teste Estoque",
+  "quantidadeAtual": "150.30 sc60",
+  "origemFiltro": "Armazenagem",
+  "tipoFiltro": "Entrada",
+  "origem": "Armazenagem",
+  "tipo": "Entrada",
+  "quantidade": "150,30",
+  "quantidadeEstoque": "150,30",
+  "valorUnitario": "0,00",
+  "total": "0,00",
+  "valorEstoque": "0,00",
+  "precoMedio": "0,00"
+}

@@ -1,0 +1,30 @@
+const locators = {
+  inputNumeroContrato: '[data-cy=input-numero-contrato] > input',
+  inputContrato: '[data-cy=input-contrato]',
+  inputDataContrato: '[data-cy=datepicker-data-contrato] input',
+  inputValidadeContrato: '[data-cy=datepicker-validade] input',
+  selectFazenda: '[data-cy=select-fazenda]',
+  selectSafra: '[data-cy=select-safra]',
+  selectCiclo: '[data-cy=select-ciclo]',
+  spanCultura: '[data-cy=span-cultura]',
+  selectEmpresa: '[data-cy=select-empresa]',
+  selectInscricaoEstadual: '[data-cy=select-inscricao-estadual]',
+  selectCliente: '[data-cy=select-cliente]',
+  toggleTipoNegociacao: '[data-cy=toggle-tipo-negociacao]',
+  inputEmbarque: '[data-cy=datepicker-embarque] input',
+  inputRetirarMaterial: '[data-cy=input-retirada]',
+  toggleFormacaoValor: '[data-cy=toggle-formacao-valor]',
+  spanFormacaoValor: '[data-cy=span-a-fixar]',
+  inputFixarAte: '[data-cy=datepicker-fixar-ate] input',
+  inputVencimento: '[data-cy=datepicker-vencimento] input',
+  toggleFretePorConta: '[data-cy=toggle-frete-por-conta]',
+  inputQuantidadeValorizacao: '[data-cy=input-quantidade-valorizacao] input',
+  inputValorUnitarioValorizacao: '[data-cy=input-valor-unitario-valorizacao] input',
+  spanValorTotalValorizacao: '[data-cy=input-valor-total-valorizacao] span',
+  inputQuantidade: '[data-cy=input-quantidade] input',
+  spanValorUnitario: '[data-cy=input-valor-unitario] span',
+  buttonCancelar: '[data-cy=button-cancelar]',
+  buttonAdicionar: '[data-cy=button-add-contrato]'
+}
+
+export default locators

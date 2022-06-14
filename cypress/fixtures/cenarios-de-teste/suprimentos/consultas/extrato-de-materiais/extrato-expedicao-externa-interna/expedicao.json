@@ -1,0 +1,100 @@
+{
+  "data": "dataSubstituicaoT15:26:41-03:00",
+  "fazenda": {
+    "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+    "descricao": "Fazenda Teste Producao"
+  },
+  "ciclo": {
+    "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+    "descricao": "Soja - 2021/2021",
+    "cultura": {
+      "unidadeMedida": {
+        "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+        "sigla": "Saca 60"
+      },
+      "variedades": [
+        {
+          "area": 200,
+          "id": "5f3e5c4f-fd7f-4718-9433-007cdd21ec8c",
+          "descricao": "Syn1060ap "
+        }
+      ],
+      "areaTotal": 200,
+      "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+      "descricao": "Soja"
+    }
+  },
+  "safra": {
+    "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+    "descricao": "2021/2021"
+  },
+  "motorista": {
+    "id": "33a06a7c-9f8a-4aea-9ab4-fa944ccfa5e3",
+    "documentoPrincipal": "86201988076",
+    "descricao": "Motorista Teste Producao"
+  },
+  "transportadora": {
+    "id": "0e21161c-4656-4e26-85fe-7e4c5326a540",
+    "documentoPrincipal": "04158743000145",
+    "descricao": "Transportadora Teste Producao"
+  },
+  "veiculo": {
+    "id": "73aea114-e7e5-4cdf-bd71-730c4c6d4bf1",
+    "placa": "ABC1234"
+  },
+  "unidadeArmazenamentoOrigemTerceiro": {
+    "id": "ef402791-c035-46cf-96c6-a2494042b237",
+    "documentoPrincipal": "67824142000144",
+    "descricao": "Cliente Teste Produção",
+    "pais": {
+      "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+      "descricao": "Brasil"
+    },
+    "municipio": {
+      "id": "f182eeff-7b30-412a-8389-e043cdb5920a",
+      "descricao": "Goiânia",
+      "codigo": 5208707
+    },
+    "estado": {
+      "id": "c9fb9b54-9760-42e8-b0d7-2934535a505a",
+      "descricao": "Goiás",
+      "sigla": "GO"
+    }
+  },
+  "unidadeArmazenamentoDestinoProprio": {
+    "id": "a196162f-4fdf-4f94-9712-59d209a04347",
+    "descricao": "U.A. Teste Estoque"
+  },
+  "ticket": 0,
+  "pesagemInterna": {
+    "pesoBruto": 17000,
+    "taraVeiculo": 1000,
+    "desconto": 0
+  },
+  "pesagemExterna": {
+    "numeroRomaneio": 1234,
+    "pesoBruto": 17000,
+    "taraVeiculo": 1000,
+    "desconto": 1000
+  },
+  "totalCultura": 250.5,
+  "totais": {
+    "pesoBruto": 16000,
+    "taraVeiculo": 1000,
+    "subTotal": 15000,
+    "desconto": 1000
+  },
+  "cultura": {
+    "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+    "unidadeMedidaSigla": "Saca 60",
+    "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+    "descricao": "Soja"
+  },
+  "material": {
+    "tipoMaterial": "Silo",
+    "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+    "unidadeMedidaSigla": "sc60",
+    "id": "e1a2ab6b-fea2-40bb-b786-37e87b53c04c",
+    "descricao": "Soja em Grãos"
+  }
+}

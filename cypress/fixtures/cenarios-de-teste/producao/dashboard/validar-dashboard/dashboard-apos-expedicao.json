@@ -1,0 +1,111 @@
+{
+  "safra": "2021/2021",
+  "fazenda": "Fazenda Teste Producao",
+  "quantidade": "7,52 Saca 60 /ha",
+  "quantidadeCultura": "1.503 Saca 60 de Soja",
+  "hectareCultura": "200,00 hectares",
+  "sacaFazendaProdutiva": "7.52 Saca 60/ha",
+  "totalArmazenagemInterna": "0",
+  "sacaArmazenagemInterna": "Saca 60",
+  "totalArmazenagemExterna": "503",
+  "sacaArmazenagemExterna": "Saca 60",
+  "totalRecebido": "0,00",
+  "totalAReceber": "0,00",
+
+  "entregaFixacoes": [
+    {
+      "cliente": "U.A. Silo",
+      "entregue": "1.002",
+      "arrendamentos": "0",
+      "contratosFixados": "0",
+      "fixacoes": "0",
+      "transferencias": "0",
+      "saldo": "1.002"
+    },
+    {
+      "cliente": "U.A. Teste Estoque",
+      "entregue": "0",
+      "arrendamentos": "0",
+      "contratosFixados": "0",
+      "fixacoes": "0",
+      "transferencias": "1.002",
+      "saldo": "- 1.002"
+    },
+    {
+      "cliente": "Cliente Teste Produção",
+      "entregue": "2.505",
+      "arrendamentos": "0",
+      "contratosFixados": "1.000",
+      "fixacoes": "0",
+      "transferencias": "1.002",
+      "saldo": "503"
+    }
+  ],
+  "contratosEntregasFixacoes": [
+    {
+      "encolherLista": true,
+      "expandir": true,
+      "cliente": "0 - Sem Contrato",
+      "entregue": "1.002",
+      "arrendamentos": "0",
+      "contratosFixados": "0",
+      "fixacoes": "0",
+      "transferencias": "0",
+      "saldo": "1.002"
+    },
+    {
+      "encolherLista": true,
+      "expandir": true,
+      "cliente": "0 - Sem Contrato",
+      "entregue": "0",
+      "arrendamentos": "0",
+      "contratosFixados": "0",
+      "fixacoes": "0",
+      "transferencias": "1.002",
+      "saldo": "- 1.002"
+    },
+    {
+      "contador": true,
+      "encolherLista": true,
+      "expandir": true,
+      "cliente": "2 - 2",
+      "entregue": "0",
+      "arrendamentos": "0",
+      "contratosFixados": "500",
+      "fixacoes": "0",
+      "transferencias": "0",
+      "saldo": "- 500"
+    },
+    {
+      "encolherLista": false,
+      "cliente": "0 - Sem Contrato",
+      "entregue": "2.004",
+      "arrendamentos": "0",
+      "contratosFixados": "0",
+      "fixacoes": "0",
+      "transferencias": "1.002",
+      "saldo": "1.002"
+    },
+    {
+      "encolherLista": false,
+      "cliente": "1 - 1",
+      "entregue": "0",
+      "arrendamentos": "0",
+      "contratosFixados": "500",
+      "fixacoes": "0",
+      "transferencias": "0",
+      "saldo": "- 500"
+    },
+    {
+      "encolherLista": false,
+      "cliente": "3 - 3",
+      "entregue": "501",
+      "arrendamentos": "0",
+      "contratosFixados": "0",
+      "fixacoes": "0",
+      "transferencias": "0",
+      "saldo": "501"
+    }
+  ],
+  "saldoTotalFixar": "503 Saca 60"
+}

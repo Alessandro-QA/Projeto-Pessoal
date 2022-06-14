@@ -1,0 +1,88 @@
+{
+  "titulo100": {
+    "fazendaDocumento": "Fazenda Reserva",
+    "empresaDocumento": "Empresa Fornecedor - CNPJ",
+    "status": "Pagos",
+    "numeroDocumento": "100",
+
+    "cardStatusDocumento": "Pago",
+    "cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
+    "cardValorDocumento": "R$ 60.000,00",
+    "cardSaldoAPagar": "Saldo a pagar: R$ 0,00",
+    "cardNumeroDocumento": "Número: 100"
+  },
+
+  "titulo101": {
+    "fazendaDocumento": "Fazenda Reserva",
+    "empresaDocumento": "Empresa Fornecedor - CNPJ",
+    "status": "Pagos",
+    "numeroDocumento": "101",
+
+    "cardStatusDocumento": "Pago",
+    "cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
+    "cardValorDocumento": "R$ 30.000,00",
+    "cardSaldoAPagar": "Saldo a pagar: R$ 0,00",
+    "cardNumeroDocumento": "Número: 101"
+  },
+
+  "titulo102": {
+    "fazendaDocumento": "Fazenda Reserva",
+    "empresaDocumento": "Empresa Fornecedor - CNPJ",
+    "status": "Pagos",
+    "numeroDocumento": "102",
+
+    "cardStatusDocumento": "Pago",
+    "cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
+    "cardValorDocumento": "R$ 37.500,00",
+    "cardSaldoAPagar": "Saldo a pagar: R$ 0,00",
+    "cardNumeroDocumento": "Número: 102"
+  },
+
+  "livroCaixa": {
+    "naoDedutivel": false,
+    "nomeEmpresa": "Empresa Produtor - CPF",
+    "cpfEmpresa": "667.914.180-01",
+    "totalEntrada": "R$ 0,00",
+    "totalSaida": "R$ 67.500,00",
+    "saldoAtualizado": "-R$ 67.500,00",
+    "estimativaIRRF": "R$ 0,00",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "Sementes",
+        "historico": "Valor Doc. 101 de Empresa Fornecedor - CNPJ",
+        "valor": "R$ 30.000,00",
+        "tipo": "Saída",
+        "deducao": "Dedutível"
+      },
+      {
+        "contaContabil": "Sementes",
+        "historico": "Valor Doc. 102 de Empresa Fornecedor - CNPJ",
+        "valor": "R$ 37.500,00",
+        "tipo": "Saída",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "-R$ 67.500,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+
+  "movimentacaoBancaria30": {
+    "empresa": "Empresa Produtor - CPF",
+    "tipo": "Pagamento",
+    "categorias": "Sementes",
+    "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+    "conferido": "Não",
+    "valor": "- R$  30.000,00"
+  },
+
+  "movimentacaoBancaria45": {
+    "empresa": "Empresa Produtor - CPF",
+    "tipo": "Pagamento",
+    "categorias": "Sementes",
+    "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+    "conferido": "Não",
+    "valor": "- R$  37.500,00"
+  }
+}
