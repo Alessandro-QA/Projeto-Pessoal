@@ -1,6 +1,6 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
-import '@cypress/code-coverage/support'
+// import '@cypress/code-coverage/support'
 import './commands/commands'
 import deletarRegistroTabelas from './utils/queries/deletar-por-tabela'
 import '@shelex/cypress-allure-plugin'
