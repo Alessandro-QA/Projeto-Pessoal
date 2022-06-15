@@ -32,7 +32,7 @@ module.exports = (on, config) => {
   allureWriter(on, config)
 
   // plugin de cobertura de codigo de teste (https://github.com/cypress-io/code-coverage)
-  require('@cypress/code-coverage/task')(on, config)
+  // require('@cypress/code-coverage/task')(on, config)
 
   // plugin de filtragem de testes usando uma substring (tags) (https://github.com/cypress-io/cypress-grep)
   require('cypress-grep/src/plugin')(config)
