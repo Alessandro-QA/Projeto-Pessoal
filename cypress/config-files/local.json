@@ -1,0 +1,24 @@
+{
+  "baseUrl": "https://myfarm.dev.conexa.com.br",
+  "env": {
+    "login_cenarios": {
+      "email": "EMAIL",
+      "senha": "SENHA"
+    },
+    "login_cadastro": {
+      "email": "EMAIL",
+      "senha": "SENHA"
+    },
+    "db": {
+      "server": "DATABASE_SERVER",
+      "database": "DATABASE",
+      "port": 1433,
+      "user": "USER",
+      "password": "PASSWORD",
+      "options": {
+        "encrypt": true,
+        "trustServerCertificate": false
+      }
+    }
+  }
+}
