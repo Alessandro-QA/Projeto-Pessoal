@@ -1,0 +1,56 @@
+{
+  "lancamentoLivroCaixa": {
+    "nomeEmpresa": "Empresa Fornecedor - CPF",
+    "cpfEmpresa": "915.357.400-19",
+    "totalEntrada": "R$ 0,00",
+    "totalSaida": "R$ 6.003,00",
+    "saldoAtualizado": "-R$ 6.003,00",
+    "estimativaIRRF": "R$ 0,00",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "Sementes",
+        "historico": "Valor Doc. 2002 de Empresa Produtor - CPF",
+        "valor": "R$ 2.002,00",
+        "tipo": "Saída",
+        "deducao": "Dedutível"
+      },
+      {
+        "contaContabil": "Fretes e Carretos",
+        "historico": "Valor Doc. 2001 de Empresa Produtor - CPF",
+        "valor": "R$ 2.001,00",
+        "tipo": "Saída",
+        "deducao": "Dedutível"
+      },
+      {
+        "contaContabil": "Comissões",
+        "historico": "Valor Doc. 2000 de Empresa Produtor - CPF",
+        "valor": "R$ 1.000,00",
+        "tipo": "Saída",
+        "deducao": "Dedutível"
+      },
+      {
+        "contaContabil": "Outros Custos",
+        "historico": "Valor Doc. 2000 de Empresa Produtor - CPF",
+        "valor": "R$ 1.000,00",
+        "tipo": "Saída",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "-R$ 6.003,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+
+  "exclusaoLivroCaixa": {
+    "nomeEmpresa": "Empresa Fornecedor - CPF",
+    "cpfEmpresa": "915.357.400-19",
+    "totalEntrada": "R$ 0,00",
+    "totalSaida": "R$ 0,00",
+    "saldoAtualizado": "R$ 0,00",
+    "estimativaIRRF": "R$ 0,00",
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "R$ 0,00",
+    "saldoDeducao": "R$ 0,00"
+  }
+}

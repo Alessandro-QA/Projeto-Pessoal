@@ -1,0 +1,18 @@
+{
+  "dashboard": {
+    "fazenda": "Fazenda Teste Producao",
+    "safra": "2021/2021",
+    "destino": "Cliente Teste Produção",
+    "placa": "ABC1234",
+    "contratoDestino": "-",
+    "cultura": "Soja",
+    "quantidade": "30000 sc60",
+    "quantidadeCultura": "501 Saca 60"
+  },
+  "dashboarAposExclusao":{
+    "semCards": true,
+    "fazenda": "Fazenda Teste Producao",
+    "safra": "2021/2021",
+    "mensagem": "Você ainda não possui nenhuma Colheita cadastrada."
+  }
+}

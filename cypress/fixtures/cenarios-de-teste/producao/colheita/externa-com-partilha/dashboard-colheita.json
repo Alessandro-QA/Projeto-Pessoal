@@ -1,0 +1,12 @@
+{
+  "fazenda": "Fazenda Teste Producao",
+  "safra": "2021/2021",
+  "destino": "Cliente Teste Produção",
+  "placa": "ABC1234",
+  "contrato": true,
+    "contratoDestino1": "1",
+    "contratoDestino2": "2",
+  "cultura": "Soja",
+  "quantidade": "12000 sc60",
+  "quantidadeCultura": "200.4 Saca 60"
+}

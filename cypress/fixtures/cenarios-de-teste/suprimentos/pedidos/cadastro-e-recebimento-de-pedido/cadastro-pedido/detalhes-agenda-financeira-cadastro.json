@@ -1,0 +1,11 @@
+{
+  "fazendaDocumento": "Fazenda Reserva",
+  "empresaDocumento": "Empresa Fornecedor - CNPJ",
+  "numeroDocumento": "100",
+
+  "cardStatusDocumento": "A pagar",
+  "cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
+  "cardValorDocumento": "R$ 60.000,00",
+  "cardSaldoAPagar": "Saldo a pagar: R$ 60.000,00",
+  "cardNumeroDocumento": "Número: 100"
+}

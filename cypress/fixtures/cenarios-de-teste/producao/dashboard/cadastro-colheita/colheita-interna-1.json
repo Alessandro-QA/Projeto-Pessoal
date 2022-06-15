@@ -1,0 +1,75 @@
+{
+  "talhaoVariedades": [
+    {
+      "talhao": {
+        "id": "aef850f0-7d79-415e-b0e9-6845bea9e4e0",
+        "descricao": "Talhão Soja"
+      },
+      "ciclo": {
+        "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+        "descricao": "Soja - 2021/2021"
+      },
+      "cultura": {
+        "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+        "unidadeMedidaSigla": "Saca 60",
+        "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+        "descricao": "Soja"
+      },
+      "variedade": {
+        "id": "5f3e5c4f-fd7f-4718-9433-007cdd21ec8c",
+        "descricao": "Syn1060ap "
+      },
+      "percentualCarga": 100,
+      "totalHectaresVariedade": 200,
+      "totalHectaresCultura": 200,
+      "custoEstimadoCultura": 0,
+      "material": {
+        "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+        "unidadeMedidaSigla": "sc60",
+        "id": "e1a2ab6b-fea2-40bb-b786-37e87b53c04c",
+        "descricao": "Soja em Grãos",
+        "tipoMaterial": "Silo"
+      }
+    }
+  ],
+  "transportadora": {
+    "id": "0e21161c-4656-4e26-85fe-7e4c5326a540",
+    "documentoPrincipal": "04158743000145",
+    "descricao": "Transportadora Teste Producao"
+  },
+  "ticket": 0,
+  "data": "dataSubstituicaoT11:55:12-03:00",
+  "fazenda": {
+    "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+    "descricao": "Fazenda Teste Producao"
+  },
+  "safra": {
+    "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+    "descricao": "2021/2021"
+  },
+  "motorista": {
+    "id": "33a06a7c-9f8a-4aea-9ab4-fa944ccfa5e3",
+    "documentoPrincipal": "86201988076",
+    "descricao": "Motorista Teste Producao"
+  },
+  "veiculo": {
+    "id": "73aea114-e7e5-4cdf-bd71-730c4c6d4bf1",
+    "placa": "ABC1234"
+  },
+  "unidadeArmazenamentoDestinoProprio": {
+    "id": "a196162f-4fdf-4f94-9712-59d209a04347",
+    "descricao": "U.A. Teste Estoque"
+  },
+  "pesagemInterna": {
+    "pesoBruto": 32000,
+    "taraVeiculo": 1000,
+    "desconto": 1000
+  },
+  "totalCultura": 501,
+  "totais": {
+    "pesoBruto": 31000,
+    "taraVeiculo": 1000,
+    "subTotal": 30000,
+    "desconto": 1000
+  }
+}

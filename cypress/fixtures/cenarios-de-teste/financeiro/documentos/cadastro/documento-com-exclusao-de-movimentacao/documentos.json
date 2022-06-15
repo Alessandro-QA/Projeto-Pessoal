@@ -1,0 +1,290 @@
+{
+  "documento2000": {
+    "ciclos": [
+      {
+        "ciclo": {
+          "id": "f6544393-33a7-43f5-a8ca-88e8793c820f",
+          "descricao": "Arroz - 2020/2020"
+        },
+        "valor": 1230.8,
+        "percentual": 61.54
+      },
+      {
+        "ciclo": {
+          "id": "77abb18e-c24b-462d-8b10-a20e0de8b88b",
+          "descricao": "Algodão - 2020/2020"
+        },
+        "valor": 769.2,
+        "percentual": 38.46
+      }
+    ],
+    "categorias": [
+      {
+        "valor": 1000,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "4.02.01.11",
+          "nome": "Comissões",
+          "descricao": "Comissões"
+        }
+      },
+      {
+        "valor": 1000,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "4.01.01.14",
+          "nome": "Outros Custos",
+          "descricao": "Outros Custos"
+        }
+      }
+    ],
+    "dataRecebimento": "dataSubstituicaoT19:23:38-03:00",
+    "operacao": {
+      "id": "719b3956-1597-2df9-683c-900bc55b525b",
+      "descricao": "Comissões"
+    },
+    "safra": {
+      "id": "3d42f976-2c3c-4d0b-aff8-cbbe16dbd32a",
+      "descricao": "2020/2020"
+    },
+    "data": "dataSubstituicaoT19:23:38-03:00",
+    "fazenda": {
+      "id": "668bf778-ab9b-4f91-ab09-62ecdd4e5938",
+      "descricao": "Fazenda Reserva"
+    },
+    "tags": ["documentoE2E"],
+    "pessoa": {
+      "pessoaTipo": "Fornecedor",
+      "numeroDocumento": "66791418001",
+      "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+      "descricao": "Empresa Produtor - CPF"
+    },
+    "numero": "2000",
+    "empresa": {
+      "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+      "descricao": "Empresa Fornecedor - CPF",
+      "empresaDeSaoPaulo": false,
+      "documentoPrincipal": "91535740019",
+      "inscricaoEstadual": {
+        "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+        "descricao": "IE Estadual",
+        "valor": "32165465622"
+      }
+    },
+    "ieDaEmpresa": {
+      "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+      "descricao": "IE Estadual",
+      "valor": "32165465622",
+      "label": "32165465622"
+    },
+    "tipoDocumento": 5,
+    "observacao": "Observações do Documento",
+    "conferido": false,
+    "financeiro": {
+      "total": 2000,
+      "pago": false,
+      "rateioEntreCiclos": true,
+      "formaPagamento": {
+        "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+        "descricao": "Boleto"
+      },
+      "condicaoPagamento": "Avista",
+      "quantidadeParcelas": 1,
+      "valorFixo": false,
+      "parcelas": [
+        {
+          "vencimento": "2023-05-17T19:23:38-03:00",
+          "valor": 2000
+        }
+      ]
+    },
+    "dedutivel": true,
+    "manual": true
+  },
+  "documento2001": {
+    "ciclos": [
+      {
+        "ciclo": {
+          "id": "f6544393-33a7-43f5-a8ca-88e8793c820f",
+          "descricao": "Arroz - 2020/2020"
+        },
+        "valor": 1231.42,
+        "percentual": 61.54
+      },
+      {
+        "ciclo": {
+          "id": "77abb18e-c24b-462d-8b10-a20e0de8b88b",
+          "descricao": "Algodão - 2020/2020"
+        },
+        "valor": 769.58,
+        "percentual": 38.46
+      }
+    ],
+    "categorias": [
+      {
+        "valor": 2001,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "4.02.02.03",
+          "nome": "Fretes e Carretos",
+          "descricao": "Fretes e Carretos"
+        }
+      }
+    ],
+    "dataRecebimento": "dataSubstituicaoT19:24:12-03:00",
+    "operacao": {
+      "id": "e6f4600b-10a1-4b85-9344-e35b454315be",
+      "descricao": "Compra de Defensivos"
+    },
+    "safra": {
+      "id": "3d42f976-2c3c-4d0b-aff8-cbbe16dbd32a",
+      "descricao": "2020/2020"
+    },
+    "data": "dataSubstituicaoT19:24:12-03:00",
+    "fazenda": {
+      "id": "668bf778-ab9b-4f91-ab09-62ecdd4e5938",
+      "descricao": "Fazenda Reserva"
+    },
+    "tags": ["documentoE2E"],
+    "pessoa": {
+      "pessoaTipo": "Fornecedor",
+      "numeroDocumento": "66791418001",
+      "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+      "descricao": "Empresa Produtor - CPF"
+    },
+    "numero": "2001",
+    "empresa": {
+      "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+      "descricao": "Empresa Fornecedor - CPF",
+      "empresaDeSaoPaulo": false,
+      "documentoPrincipal": "91535740019",
+      "inscricaoEstadual": {
+        "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+        "descricao": "IE Estadual",
+        "valor": "32165465622"
+      }
+    },
+    "ieDaEmpresa": {
+      "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+      "descricao": "IE Estadual",
+      "valor": "32165465622",
+      "label": "32165465622"
+    },
+    "tipoDocumento": 1,
+    "observacao": "Observações do Documento",
+    "conferido": false,
+    "financeiro": {
+      "total": 2001,
+      "pago": false,
+      "rateioEntreCiclos": true,
+      "formaPagamento": {
+        "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+        "descricao": "Boleto"
+      },
+      "condicaoPagamento": "Avista",
+      "quantidadeParcelas": 1,
+      "valorFixo": false,
+      "parcelas": [
+        {
+          "vencimento": "2023-05-17T19:24:12-03:00",
+          "valor": 2001
+        }
+      ]
+    },
+    "dedutivel": true,
+    "manual": true
+  },
+  "documento2002": {
+    "ciclos": [
+      {
+        "ciclo": {
+          "id": "f6544393-33a7-43f5-a8ca-88e8793c820f",
+          "descricao": "Arroz - 2020/2020"
+        },
+        "valor": 1232.03,
+        "percentual": 61.54
+      },
+      {
+        "ciclo": {
+          "id": "77abb18e-c24b-462d-8b10-a20e0de8b88b",
+          "descricao": "Algodão - 2020/2020"
+        },
+        "valor": 769.97,
+        "percentual": 38.46
+      }
+    ],
+    "categorias": [
+      {
+        "valor": 2002,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "4.01.01.01",
+          "nome": "Sementes",
+          "descricao": "Sementes"
+        }
+      }
+    ],
+    "dataRecebimento": "dataSubstituicaoT19:24:53-03:00",
+    "operacao": {
+      "id": "ebd055fb-df7f-4876-978e-4bd9257e2a37",
+      "descricao": "Compra de Sementes"
+    },
+    "safra": {
+      "id": "3d42f976-2c3c-4d0b-aff8-cbbe16dbd32a",
+      "descricao": "2020/2020"
+    },
+    "data": "dataSubstituicaoT19:24:53-03:00",
+    "fazenda": {
+      "id": "668bf778-ab9b-4f91-ab09-62ecdd4e5938",
+      "descricao": "Fazenda Reserva"
+    },
+    "tags": ["documentoE2E"],
+    "pessoa": {
+      "pessoaTipo": "Fornecedor",
+      "numeroDocumento": "66791418001",
+      "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+      "descricao": "Empresa Produtor - CPF"
+    },
+    "numero": "2002",
+    "empresa": {
+      "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+      "descricao": "Empresa Fornecedor - CPF",
+      "empresaDeSaoPaulo": false,
+      "documentoPrincipal": "91535740019",
+      "inscricaoEstadual": {
+        "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+        "descricao": "IE Estadual",
+        "valor": "32165465622"
+      }
+    },
+    "ieDaEmpresa": {
+      "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+      "descricao": "IE Estadual",
+      "valor": "32165465622",
+      "label": "32165465622"
+    },
+    "tipoDocumento": 1,
+    "observacao": "Observações do Documento",
+    "conferido": false,
+    "financeiro": {
+      "total": 2002,
+      "pago": false,
+      "rateioEntreCiclos": true,
+      "formaPagamento": {
+        "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+        "descricao": "Boleto"
+      },
+      "condicaoPagamento": "Avista",
+      "quantidadeParcelas": 1,
+      "valorFixo": false,
+      "parcelas": [
+        {
+          "vencimento": "2023-05-17T19:24:53-03:00",
+          "valor": 2002
+        }
+      ]
+    },
+    "dedutivel": true,
+    "manual": true
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/*
+**/*.sql
+./.nyc_output/*
+./coverage/*
+./cypress/allure-report/*
+./cypress/allure-results/*

@@ -1,0 +1,45 @@
+{
+  "pedido": {
+    "fazendaDocumento": "Fazenda Reserva",
+    "empresaDocumento": "Empresa Fornecedor - CNPJ",
+    "numeroDocumento": "100",
+
+    "cardStatusDocumento": "Pago Parcialmente",
+    "cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
+    "cardValorDocumento": "R$ 60.000,00",
+    "cardSaldoAPagar": "Saldo a pagar: R$ 30.000,00",
+    "cardNumeroDocumento": "Número: 100"
+  },
+
+  "nota": {
+    "fazendaDocumento": "Fazenda Reserva",
+    "empresaDocumento": "Empresa Fornecedor - CNPJ",
+    "numeroDocumento": "101",
+
+    "cardStatusDocumento": "A pagar",
+    "cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
+    "cardValorDocumento": "R$ 30.000,00",
+    "cardSaldoAPagar": "Saldo a pagar: R$ 30.000,00",
+    "cardNumeroDocumento": "Número: 101"
+  },
+
+  "detalhesTitulo": {
+    "fazendaDocumento": "Fazenda Reserva",
+    "empresaDocumento": "Empresa Fornecedor - CNPJ",
+    "numeroDocumento": "100",
+
+    "cardNumeroDocumento": "Número: 100",
+    "statusTitulo": "Pago Parcialmente",
+    "valorTitulo": "R$ 60.000,00",
+    "formaPagamento": "Boleto",
+    "condicaoPagamento": "A vista",
+    "fornecedor": "Empresa Fornecedor - CNPJ",
+    "cnpj": "37.062.568/0001-47",
+
+    "validarTabelaHistorico": true,
+    "valor": "R$ 30.000,00",
+    "valorPagamento": "R$ 30.000,00",
+    "contaBancaria": "Conta Corrente E2E",
+    "tipo": "Baixa automática"
+  }
+}

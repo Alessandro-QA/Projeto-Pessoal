@@ -1,0 +1,85 @@
+{
+  "documento": {
+    "operacao": "Aluguéis",
+    "tipoDocumento": "Outros",
+    "dedutivel": "Sim",
+    "numeroDocumento": "3315",
+    "pessoa": "Empresa 1",
+    "fazenda": "Fazenda Onboarding",
+    "safra": "2021/2021",
+    "empresa": "Empresa 1",
+    "valorTotal": "500,00",
+    "jaPago": true,
+    "condicaoPagamento": "À vista",
+    "contaBancaria": "Conta Bancaria Teste",
+    "contaDestino": "Conta Bancaria Teste",
+    "formaPagamento": "Dinheiro",
+    "rateioEntreCiclosPlanejamento": true,
+    "ciclos": [
+      {
+        "nome": "Soja - 2021/2021",
+        "valor": "R$ 285,70"
+      },
+      {
+        "nome": "Milho - 2021/2021",
+        "valor": "R$ 214,30"
+      }
+    ],
+    "rateioCategoriaSelecionar": true,
+    "categorias": [
+      {
+        "nome": "Aluguéis",
+        "valor": "R$ 250,00"
+      },
+      {
+        "nome": "Máquinas e Equipamentos",
+        "valor": "R$ 250,00"
+      }
+    ]
+  },
+  "detalhes": {
+    "operacao": "Aluguéis",
+    "tipoDocumento": "Outros",
+    "dedutivel": "Sim",
+    "numeroDocumento": "3315",
+    "pessoa": "Empresa 1",
+    "fazenda": "Fazenda Onboarding",
+    "safra": "2021/2021",
+    "empresa": "Empresa 1",
+    "valorTotal": "R$ 500,00",
+    "formaPagamento": "Dinheiro",
+    "condicaoPagamento": "À vista",
+    "qtdParcelas": "Parcela única",
+    "contaBancaria": "Conta Bancaria Teste",
+    "parcelas": [
+      {
+        "parcela": "1ª Parcela",
+        "valorParcela": "R$ 500,00",
+        "statusParcela": "Pago",
+        "saldoParcela": "R$ 0,00"
+      }
+    ],
+    "ciclos": [
+      {
+        "nome": "Soja - 2021/2021",
+        "valor": "R$ 285,70"
+      },
+      {
+        "nome": "Milho - 2021/2021",
+        "valor": "R$ 214,30"
+      }
+    ],
+    "categorias": [
+      {
+        "nome": "Aluguéis",
+        "porcentagem": "50%",
+        "valor": "R$ 250,00"
+      },
+      {
+        "nome": "Máquinas e Equipamentos",
+        "porcentagem": "50%",
+        "valor": "R$ 250,00"
+      }
+    ]
+  }
+}

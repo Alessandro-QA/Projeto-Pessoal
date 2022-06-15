@@ -1,20 +1,41 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Testes E2E - MyFarm
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Projeto de testes automatizados E2E do MyFarm com Cypress
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Configurar projeto
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+```bash
+# instalar dependencias
+npm install
+```
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Executar testes - CLI
+
+```bash
+# Allure reporter (local)
+npm run test:allure
+
+# Junit reporter (azure)
+npm run test:azure
+```
+
+## Abrir interface do Cypress
+
+```bash
+# cypress runner
+npm run cypress:open
+```
+
+## Abrir interface do Allure
+
+```bash
+# após executar npm run test:allure
+npm run allure:open
+```
+
+## Apagar reports
+
+```bash
+# apagar arquivos de reports nos diretorios
+delete:reports
+```

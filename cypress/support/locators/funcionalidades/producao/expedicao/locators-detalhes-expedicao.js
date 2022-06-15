@@ -1,0 +1,32 @@
+const locators = {
+  titulo: '[data-cy=header-detalhes-expedicao] h1',
+  buttonImprimir: '[data-cy=header-detalhes-expedicao] .siagri-icon-printer',
+  buttonEditar: '[data-cy=header-detalhes-expedicao] .siagri-icon-edit-xsmall',
+  buttonExcluir: '[data-cy=header-detalhes-expedicao] .siagri-icon-trash-alt-xsmall',
+  spanFazenda: '[data-cy=span-fazenda]',
+  spanOrigem: '[data-cy=span-origem]',
+  spanDestino: '[data-cy=span-destino]',
+  spanDataColheita: '[data-cy=span-data-colheita]',
+  spanTicketColheita: '[data-cy=span-ticket-colheita]',
+  spanContratoDestino: '[data-cy=span-contrato-destino]',
+  spanCultura: '[data-cy=span-cultura]',
+  spanMotorista: '[data-cy=span-motorista]',
+  spanPlacaVeiculo: '[data-cy=span-placa-veiculo]',
+  spanPesoBrutoPesagem: '[data-cy=span-peso-bruto]',
+  spanTaraVeiculoPesagem: '[data-cy=span-tara-veiculo]',
+  spanSubtotalPesagem: '[data-cy=span-subtotal]',
+  spanDescontoPesagem: '[data-cy=span-desconto-classificacao]',
+  spanNumeroRomaneio: '[data-cy=span-numero-romaneio]',
+  spanPesoBrutoRetorno: '[data-cy=span-peso-bruto-retorno]',
+  spanTaraVeiculoRetorno: '[data-cy=span-tara-veiculo-retorno]',
+  spanSubtotalRetorno: '[data-cy=span-subtotal-retorno]',
+  spanDescontoRetorno: '[data-cy=span-desconto-retorno]',
+  spanContratoPartilha: '[data-cy=span-contrato-descricao]',
+  spanQuantidadePartilha: '[data-cy=span-quantidade]',
+  spanTotalBruto: '[data-cy=span-total-bruto]',
+  spanTotalDesconto: '[data-cy=span-total-desconto]',
+  spanTotalLiquido: '[data-cy=span-total-liquido]',
+  spanTotalSacas: '[data-cy=span-total-sacas]'
+}
+
+export default locators

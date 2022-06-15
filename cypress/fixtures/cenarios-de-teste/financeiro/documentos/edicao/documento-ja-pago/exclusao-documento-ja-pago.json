@@ -1,0 +1,44 @@
+{
+  "exclusaoDocumento": {
+    "fazenda": "Fazenda Reserva",
+    "empresa": "Empresa Fornecedor - CPF",
+    "numeroDocumento": "1004",
+    "pessoa": "Empresa Produtor - CPF",
+    "safra": "2021/2021"
+  },
+
+  "movimentacaoBancaria": {
+    "tipo": "Pagamento"
+  },
+
+  "exclusaoLivroCaixa": {
+    "naoDedutivel": true,
+    "nomeEmpresa": "Empresa Fornecedor - CPF",
+    "cpfEmpresa": "915.357.400-19",
+    "totalEntrada": "R$ 0,00",
+    "totalSaida": "R$ 0,00",
+    "saldoAtualizado": "R$ 0,00",
+    "estimativaIRRF": "R$ 0,00",
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "R$ 0,00",
+    "saldoDeducao": "R$ 0,00"
+  },
+
+  "resultadoDaSafraDashboard": {
+    "fazenda": "Fazenda Reserva",
+    "safra": "2020/2020",
+    "exibirInformacoesAgricola": false,
+    "mostrarContasPagarReceber": true,
+    "adicionarSaldoColheitas": false,
+    "mensagemEmpty": "Não há informações para a Fazenda e Safra selecionados!"
+  },
+
+  "resultadoDaSafraAnalitica": {
+    "fazenda": "Fazenda Reserva",
+    "safra": "2020/2020",
+    "exibirInformacoesAgricola": false,
+    "mostrarContasPagarReceber": true,
+    "adicionarSaldoColheitas": false,
+    "mensagemEmpty": "Não há informações para a Fazenda e Safra selecionados!"
+  }
+}

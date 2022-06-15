@@ -1,0 +1,16 @@
+{
+  "tipo": "juridica",
+  "cpfCnpj": "23.596.763/0001-42",
+  "nomeRazaoSocial": "Empresa Teste E2E",
+  "inscricaoEstadual": "150630387",
+  "email": "empresa1@mail.com",
+  "nomeFantasia": "Nome Fantasia Teste E2E",
+  "telefone": "(62) 99699-6696",
+  "cep": "74000000",
+  "estado": "Goiás",
+  "municipio": "Goiânia",
+  "bairro": "Centro",
+  "complemento": "Qd 1 Lt 2",
+  "logradouro": "Rua 123",
+  "numero": "123"
+}

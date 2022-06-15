@@ -1,0 +1,17 @@
+{
+  "operacao": "Aquisição de Gado",
+  "tipoDocumento": "Nota Fiscal",
+  "numeroDocumento": "123",
+  "pessoa": "Empresa 1",
+  "fazenda": "Fazenda Onboarding",
+  "safra": "2021/2021",
+  "empresa": "Empresa 1",
+  "tag": "documentoE2E",
+  "observacao": "Observações do Documento",
+  "valorTotal": "1.000,00",
+  "jaPago": true,
+  "contaBancaria": "Conta Bancaria Teste",
+  "contaDestino": "Conta Bancaria Teste",
+  "rateioEntreCiclos": false,
+  "formaPagamento": "Boleto"
+}

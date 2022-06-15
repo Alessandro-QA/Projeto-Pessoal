@@ -1,0 +1,64 @@
+{
+  "statusPedido": "Entrega Total",
+  "dataPedido": "20/09/2021",
+  "nomeFornecedor": "Empresa Fornecedor - CNPJ",
+  "cnpjFornecedor": "37.062.568/0001-47",
+  "numeroPedidoFornecedor": "100",
+  "safra": "2020/2020",
+  "fazenda": "Fazenda Reserva",
+  "empresa": "Empresa Produtor - CPF",
+  "inscricaoEstadual": "545612",
+  "dataEntrega": "27/09/2021",
+
+  "listaMateriais": [
+    {
+      "material": "M-Soy 8866",
+      "unidade": "kg",
+      "quantidade": "1.000,00",
+      "precoUnitario": "R$ 60,00",
+      "valorTotal": "R$ 60.000,00"
+    }
+  ],
+
+  "notas": [
+    {
+      "numeroNota": "102",
+      "quantidadeNota": "500",
+      "precoUnitarioNota": "75,00",
+      "descontoNota": "0,00",
+      "valorTotalNota": "37.500,00"
+    },
+    {
+      "numeroNota": "101",
+      "quantidadeNota": "500",
+      "precoUnitarioNota": "60,00",
+      "descontoNota": "0,00",
+      "valorTotalNota": "30.000,00"
+    }
+  ],
+
+  "valorTotalMateriais": "R$ 60.000,00",
+  "valorTotalNotasRecebidas": "67.500,00",
+
+  "formaPagamento": "Boleto",
+  "quantidadeParcelas": "1",
+  "valorParcela": "R$ 60.000,00",
+
+  "categoria": "Sementes",
+  "porcentagemCategoria": "100 %",
+  "valorCategoria": "60.000,00",
+
+  "rateioEntreCiclos": true,
+  "ciclos": [
+    {
+      "nomeCiclo": "Algodão - 2020/2020",
+      "porcentagemCiclo": "38.46 %",
+      "valorCiclo": "23.076,00"
+    },
+    {
+      "nomeCiclo": "Arroz - 2020/2020",
+      "porcentagemCiclo": "61.54 %",
+      "valorCiclo": "36.924,00"
+    }
+  ]
+}

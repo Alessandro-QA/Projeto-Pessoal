@@ -1,0 +1,13 @@
+{
+    "tipoConta": "Conta corrente",
+    "nomeConta": "Conta BB",
+    "empresaTitular": "Empresa 1",
+    "empresasHabilitadas": "Empresa 1",
+    "dataSaldoInicial": "18/05/2021{enter}",
+    "saldoInicial": "1000000",
+    "banco": "Banco do Brasil",
+    "agencia": "123",
+    "agenciaDigito": "4",
+    "numeroConta": "5678",
+    "contaDigito": "9"
+}

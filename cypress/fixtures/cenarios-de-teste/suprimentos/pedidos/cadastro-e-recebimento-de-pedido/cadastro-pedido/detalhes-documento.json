@@ -1,0 +1,43 @@
+{
+    "operacao": "Pedido de Compra",
+    "tipoDocumento": "Outros",
+    "dedutivel": "Sim",
+    "numeroDocumento": "100",
+    "dataDocumento": "20/09/2021",
+    "pessoa": "Empresa Fornecedor - CNPJ",
+    "cpfCnpjPessoa": "37.062.568/0001-47",
+    "fazenda": "Fazenda Reserva",
+    "safra": "2020/2020",
+    "empresa": "Empresa Produtor - CPF",
+    "ieEmpresa": "545612",
+    "conferido": "Não",
+    "valorTotal": "R$ 60.000,00",
+    "formaPagamento": "Boleto",
+    "condicaoPagamento": "À vista",
+    "qtdParcelas": "Parcela única",
+    "parcelas": [
+      {
+        "parcela": "1ª Parcela",
+        "valorParcela": "R$ 60.000,00",
+        "statusParcela": "A pagar",
+        "saldoParcela": "R$ 60.000,00"
+      }
+    ],
+    "ciclos": [
+      {
+        "nome": "Algodão - 2020/2020",
+        "valor": "R$ 23.076,00"
+      },
+      {
+        "nome": "Arroz - 2020/2020",
+        "valor": "R$ 36.924,00"
+      }
+    ],
+    "categorias": [
+      {
+        "nome": "Sementes",
+        "porcentagem": "100%",
+        "valor": "R$ 60.000,00"
+      }
+    ]
+  }

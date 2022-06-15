@@ -1,0 +1,29 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends":[
+    "eslint:recommended",
+    "plugin:cypress/recommended"
+  ],
+  "plugins": [
+    "json"
+  ],
+  "rules": {
+    "cypress/no-unnecessary-waiting": "warn",
+    "new-cap": ["error", { "newIsCap": true }],
+    "space-before-blocks": "error",
+    "space-before-function-paren": [ "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+        }
+      ]
+  }
+}

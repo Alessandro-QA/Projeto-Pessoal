@@ -1,0 +1,328 @@
+{
+  "cadastroDocumento": {
+    "ciclos": [
+      {
+        "ciclo": {
+          "id": "b2147793-d5d7-4414-9aaa-c762672e15bb",
+          "descricao": "Milho - 2021/2021"
+        },
+        "valor": 1500
+      },
+      {
+        "ciclo": {
+          "id": "ca15055a-b9ec-4489-9d1b-2b2382103033",
+          "descricao": "Acerola - 2021/2021"
+        },
+        "valor": 1500
+      }
+    ],
+    "categorias": [
+      {
+        "valor": 3000,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "4.02.02.03",
+          "nome": "Fretes e Carretos",
+          "descricao": "Fretes e Carretos"
+        }
+      }
+    ],
+    "dataRecebimento": "dataSubstituicaoT16:34:27-03:00",
+    "operacao": {
+      "id": "e6f4600b-10a1-4b85-9344-e35b454315be",
+      "descricao": "Compra de Defensivos"
+    },
+    "safra": {
+      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+      "descricao": "2021/2021"
+    },
+    "data": "dataSubstituicaoT16:34:27-03:00",
+    "fazenda": {
+      "id": "b0f2a6e1-81a2-4123-bf46-4fc5e6a54738",
+      "descricao": "Fazenda E2E"
+    },
+    "tags": ["documentoE2E"],
+    "pessoa": {
+      "pessoaTipo": "Fornecedor",
+      "numeroDocumento": "66791418001",
+      "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+      "descricao": "Empresa Produtor - CPF"
+    },
+    "numero": "1004",
+    "empresa": {
+      "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+      "descricao": "Empresa Fornecedor - CPF",
+      "empresaDeSaoPaulo": false,
+      "documentoPrincipal": "91535740019",
+      "inscricaoEstadual": {
+        "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+        "descricao": "IE Estadual",
+        "valor": "32165465622"
+      }
+    },
+    "ieDaEmpresa": {
+      "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+      "descricao": "IE Estadual",
+      "valor": "32165465622",
+      "label": "32165465622"
+    },
+    "tipoDocumento": 1,
+    "observacao": "Observações do Documento",
+    "conferido": false,
+    "financeiro": {
+      "total": 3000,
+      "pago": true,
+      "rateioEntreCiclos": true,
+      "formaPagamento": {
+        "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+        "descricao": "Boleto"
+      },
+      "contaBancaria": {
+        "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300",
+        "empresaTitular": {
+          "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+          "descricao": "Pessoa E2E"
+        },
+        "tipoConta": 1,
+        "nome": "Conta Corrente E2E",
+        "contaPrincipal": true,
+        "numerarioEmTransito": false,
+        "banco": {
+          "id": "c3cff0c7-226f-20c7-8d07-b7210fe569be",
+          "codigoBacen": "1",
+          "descricao": "Banco do Brasil S.A."
+        },
+        "agencia": "65432",
+        "agenciaDigitoVerificador": "8",
+        "conta": "3456",
+        "contaDigitoVerificador": "7",
+        "saldoInicial": 1000000,
+        "saldoAtual": 91826,
+        "dataInicialSaldo": "2021-01-01T03:00:00+00:00",
+        "incluirSaldoDisponivel": false,
+        "codigo": 1,
+        "openBanking": false,
+        "ativo": true,
+        "contaBancariaEmpresas": [
+          {
+            "id": "4cebb022-1791-4784-8543-8fd2252fde9a",
+            "empresa": {
+              "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+              "descricao": "Empresa E2E"
+            }
+          },
+          {
+            "id": "e1825a89-77da-4058-af1c-9fb6f3cd8d6e",
+            "empresa": {
+              "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+              "descricao": "Empresa 1"
+            }
+          },
+          {
+            "id": "bef74031-a762-4999-a011-be9b8f3b8b12",
+            "empresa": {
+              "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+              "descricao": "Pessoa E2E"
+            }
+          }
+        ]
+      },
+      "contaFornecedor": {
+        "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300"
+      },
+      "condicaoPagamento": "Avista",
+      "quantidadeParcelas": 1,
+      "valorFixo": false,
+      "parcelas": [
+        {
+          "vencimento": "dataSubstituicaoT16:34:27-03:00",
+          "valor": 3000
+        }
+      ],
+      "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
+      "contaId": "57efe1f2-b0b4-415d-b642-49cbf45ee300"
+    },
+    "dedutivel": true,
+    "manual": true
+  },
+
+  "detalhesDocumento": {
+    "operacao": "Compra de Defensivos",
+    "tipoDocumento": "Nota Fiscal",
+    "dedutivel": "Sim",
+    "numeroDocumento": "1004",
+    "pessoa": "Empresa Produtor - CPF",
+    "cpfCnpjPessoa": "667.914.180-01",
+    "fazenda": "Fazenda E2E",
+    "safra": "2021/2021",
+    "empresa": "Empresa Fornecedor - CPF",
+    "ieEmpresa": "32165465622",
+    "tag": "documentoE2E",
+    "observacao": "Observações do Documento",
+    "conferido": "Não",
+    "valorTotal": "R$ 3.000,00",
+    "formaPagamento": "Boleto",
+    "condicaoPagamento": "À vista",
+    "qtdParcelas": "Parcela única",
+    "contaBancaria": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+    "parcelas": [
+      {
+        "parcela": "1ª Parcela",
+        "valorParcela": "R$ 3.000,00",
+        "statusParcela": "Pago",
+        "saldoParcela": "R$ 0,00"
+      }
+    ],
+    "ciclos": [
+      {
+        "nome": "Acerola - 2021/2021",
+        "valor": "R$ 1.500,00"
+      },
+      {
+        "nome": "Milho - 2021/2021",
+        "valor": "R$ 1.500,00"
+      }
+    ],
+    "categorias": [
+      {
+        "nome": "Fretes e Carretos",
+        "porcentagem": "100%",
+        "valor": "R$ 3.000,00"
+      }
+    ]
+  },
+
+  "movimentacaoBancaria": {
+    "empresa": "Empresa Fornecedor - CPF",
+    "tipo": "Pagamento",
+    "categorias": "Fretes e Carretos",
+    "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+    "conferido": "Não",
+    "valor": "- R$  3.000,00"
+  },
+
+  "livroCaixa": {
+    "naoDedutivel": false,
+    "nomeEmpresa": "Empresa Fornecedor - CPF",
+    "cpfEmpresa": "915.357.400-19",
+    "totalEntrada": "R$ 0,00",
+    "totalSaida": "R$ 3.000,00",
+    "saldoAtualizado": "-R$ 3.000,00",
+    "estimativaIRRF": "R$ 0,00",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "Fretes e Carretos",
+        "historico": "Valor Doc. 1004 de Empresa Produtor - CPF",
+        "valor": "R$ 3.000,00",
+        "tipo": "Saída",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "-R$ 3.000,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+
+  "lancamentoLivroCaixa": {
+    "naoDedutivel": false,
+    "tipoLancamento": "Saída",
+    "deducao": "Dedutível",
+    "contaContabil": "Fretes e Carretos",
+    "fazenda": "Fazenda E2E",
+    "tipoDocumento": "Nota Fiscal",
+    "empresa": "Empresa Fornecedor - CPF",
+    "inscricaoEstadual": "32165465622",
+    "contaBancaria": "Conta Corrente E2E",
+    "pessoa": "66791418001 - Empresa Produtor - CPF",
+    "status": "Ativo"
+  },
+
+  "resultadoDaSafraDashboard": {
+    "fazenda": "Fazenda E2E",
+    "safra": "2021/2021",
+    "exibirInformacoesAgricola": false,
+    "mostrarContasPagarReceber": true,
+    "adicionarSaldoColheitas": false,
+    "cardCiclo": [
+      {
+        "nomeSafra": "Acerola - 2021/2021",
+        "receita": "0 Caixa",
+        "despesa": "0 Caixa",
+        "margem": "0 Caixa"
+      },
+      {
+        "nomeSafra": "Milho - 2021/2021",
+        "receita": "0 Saca 60",
+        "despesa": "0 Saca 60",
+        "margem": "0 Saca 60"
+      }
+    ],
+    "cardHectares": [
+      {
+        "nomeSafra": "Acerola - 2021/2021",
+        "receita": "R$ 0,00",
+        "despesa": "R$ 0,00",
+        "margem": "R$ 0,00"
+      },
+      {
+        "nomeSafra": "Milho - 2021/2021",
+        "receita": "R$ 0,00",
+        "despesa": "R$ 0,00",
+        "margem": "R$ 0,00"
+      }
+    ],
+    "cardValores": [
+      {
+        "nomeSafra": "Acerola - 2021/2021",
+        "receita": "R$ 0,00",
+        "despesa": "R$ 1.500,00",
+        "margem": "-R$ 1.500,00"
+      },
+      {
+        "nomeSafra": "Milho - 2021/2021",
+        "receita": "R$ 0,00",
+        "despesa": "R$ 1.500,00",
+        "margem": "-R$ 1.500,00"
+      }
+    ],
+
+    "cardVisaoGeral": {
+      "despesas": "R$ 3.000,00",
+      "receitas": "R$ 0,00",
+      "resultado": "-R$ 3.000,00",
+      "margemLucro": "0%"
+    },
+
+    "cardMargemLucro": {
+      "margemLucro": "0%"
+    }
+  },
+
+  "resultadoDaSafraAnalitica": {
+    "fazenda": "Fazenda E2E",
+    "safra": "2021/2021",
+    "exibirInformacoesAgricola": false,
+    "mostrarContasPagarReceber": true,
+    "adicionarSaldoColheitas": false,
+    "margemLucro": "0,00 %",
+    "valores": "-R$ 3.000,00",
+    "totalSafra": "0",
+    "totalDespesas": "R$ 3.000,00",
+    "cardDespesas": [
+      {
+        "nomeCategoria": "Fretes e Carretos",
+        "acumuladoSafra": "R$ 3.000,00",
+        "percentualCustoTotal": "100 %"
+      }
+    ],
+    "tabelaDespesas": [
+      {
+        "valor": "R$ 1.500,00",
+        "pessoa": "Empresa Produtor - CPF",
+        "documento": "1004",
+        "origem": "Documento"
+      }
+    ]
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "contrato1": {
+    "descricao": "1",
+    "dataContrato": "dataSubstituicaoT00:00:00-03:00",
+    "dataValidade": "2023-05-31T23:59:59-03:00",
+    "numero": 1,
+    "fazenda": {
+      "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+      "descricao": "Fazenda Teste Producao"
+    },
+    "safra": {
+      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "nomeNormalizado": "2021/2021"
+      },
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "nomeNormalizado": "Fazenda Teste Producao"
+      },
+      "ciclos": [
+        {
+          "id": "83e1564b-66bd-47b7-b1ab-93735231d9ff",
+          "cultura": {
+            "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+            "nomeNormalizado": "Soja"
+          },
+          "ciclo": {
+            "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+            "nomeNormalizado": "Soja - 2021/2021"
+          },
+          "unidadeMedida": {
+            "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+            "nomeNormalizado": "Saca 60"
+          },
+          "valorExpectativa": 10000
+        },
+        {
+          "id": "f6bdab42-1e1f-4fdc-9ec0-d74aab770d74",
+          "cultura": {
+            "id": "842c660c-a54c-4864-a6a3-bd3c6a6725f1",
+            "nomeNormalizado": "Milho"
+          },
+          "ciclo": {
+            "id": "b2147793-d5d7-4414-9aaa-c762672e15bb",
+            "nomeNormalizado": "Milho - 2021/2021"
+          },
+          "unidadeMedida": {
+            "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+            "nomeNormalizado": "Saca 60"
+          },
+          "valorExpectativa": 100000
+        }
+      ],
+      "statusPlanejamentoSafra": 1,
+      "descricao": "2021/2021"
+    },
+    "cicloProducao": {
+      "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+      "descricao": "Soja - 2021/2021"
+    },
+    "cultura": {
+      "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+      "descricao": "Soja",
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "Saca 60"
+    },
+    "empresa": {
+      "documentoPrincipal": "66791418001",
+      "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+      "descricao": "Empresa Produtor - CPF",
+      "inscricaoEstadual": {
+        "id": "ad2f682d-3b1c-4f45-bf0d-54f43a6bd790",
+        "valor": "545612",
+        "descricao": "IE Empresa E2E"
+      }
+    },
+    "cliente": {
+      "documentoPrincipal": "67824142000144",
+      "id": "ef402791-c035-46cf-96c6-a2494042b237",
+      "descricao": "Cliente Teste Produção",
+      "municipio": {
+        "id": "f182eeff-7b30-412a-8389-e043cdb5920a",
+        "descricao": "Goiânia",
+        "codigo": 5208707
+      },
+      "estado": {
+        "id": "c9fb9b54-9760-42e8-b0d7-2934535a505a",
+        "descricao": "Goiás",
+        "sigla": "GO"
+      },
+      "pais": {
+        "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+        "descricao": "Brasil"
+      }
+    },
+    "material": {
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "sc60",
+      "id": "e1a2ab6b-fea2-40bb-b786-37e87b53c04c",
+      "descricao": "Soja em Grãos",
+      "tipoMaterial": "Silo"
+    },
+    "valorizacao": {
+      "culturaQuantidade": 1000,
+      "culturaValorUnitario": 87,
+      "quantidade": 60000,
+      "valorUnitario": 1.45,
+      "valorTotal": 87000
+    },
+    "negociacao": {
+      "tipoNegociacao": "Venda",
+      "tipoFormacaoValor": "Fixar",
+      "fretePorConta": "Emitente",
+      "dataLimiteEmbarque": "dataSubstituicaoT23:59:59-03:00",
+      "dataLimiteRetirada": null,
+      "dataFixarAte": "dataSubstituicaoT23:59:59-03:00",
+      "dataVencimento": null
+    },
+    "anexos": []
+  },
+
+  "contrato2": {
+    "descricao": "2",
+    "dataContrato": "dataSubstituicaoT00:00:00-03:00",
+    "dataValidade": "2023-05-31T23:59:59-03:00",
+    "numero": 2,
+    "fazenda": {
+      "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+      "descricao": "Fazenda Teste Producao"
+    },
+    "safra": {
+      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "nomeNormalizado": "2021/2021"
+      },
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "nomeNormalizado": "Fazenda Teste Producao"
+      },
+      "ciclos": [
+        {
+          "id": "83e1564b-66bd-47b7-b1ab-93735231d9ff",
+          "cultura": {
+            "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+            "nomeNormalizado": "Soja"
+          },
+          "ciclo": {
+            "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+            "nomeNormalizado": "Soja - 2021/2021"
+          },
+          "unidadeMedida": {
+            "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+            "nomeNormalizado": "Saca 60"
+          },
+          "valorExpectativa": 10000
+        },
+        {
+          "id": "f6bdab42-1e1f-4fdc-9ec0-d74aab770d74",
+          "cultura": {
+            "id": "842c660c-a54c-4864-a6a3-bd3c6a6725f1",
+            "nomeNormalizado": "Milho"
+          },
+          "ciclo": {
+            "id": "b2147793-d5d7-4414-9aaa-c762672e15bb",
+            "nomeNormalizado": "Milho - 2021/2021"
+          },
+          "unidadeMedida": {
+            "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+            "nomeNormalizado": "Saca 60"
+          },
+          "valorExpectativa": 100000
+        }
+      ],
+      "statusPlanejamentoSafra": 1,
+      "descricao": "2021/2021"
+    },
+    "cicloProducao": {
+      "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+      "descricao": "Soja - 2021/2021"
+    },
+    "cultura": {
+      "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+      "descricao": "Soja",
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "Saca 60"
+    },
+    "empresa": {
+      "documentoPrincipal": "66791418001",
+      "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+      "descricao": "Empresa Produtor - CPF",
+      "inscricaoEstadual": {
+        "id": "ad2f682d-3b1c-4f45-bf0d-54f43a6bd790",
+        "valor": "545612",
+        "descricao": "IE Empresa E2E"
+      }
+    },
+    "cliente": {
+      "documentoPrincipal": "67824142000144",
+      "id": "ef402791-c035-46cf-96c6-a2494042b237",
+      "descricao": "Cliente Teste Produção",
+      "municipio": {
+        "id": "f182eeff-7b30-412a-8389-e043cdb5920a",
+        "descricao": "Goiânia",
+        "codigo": 5208707
+      },
+      "estado": {
+        "id": "c9fb9b54-9760-42e8-b0d7-2934535a505a",
+        "descricao": "Goiás",
+        "sigla": "GO"
+      },
+      "pais": {
+        "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+        "descricao": "Brasil"
+      }
+    },
+    "material": {
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "sc60",
+      "id": "e1a2ab6b-fea2-40bb-b786-37e87b53c04c",
+      "descricao": "Soja em Grãos",
+      "tipoMaterial": "Silo"
+    },
+    "valorizacao": {
+      "culturaQuantidade": 1000,
+      "culturaValorUnitario": 108,
+      "quantidade": 60000,
+      "valorUnitario": 1.8,
+      "valorTotal": 108000
+    },
+    "negociacao": {
+      "tipoNegociacao": "Venda",
+      "tipoFormacaoValor": "Fixar",
+      "fretePorConta": "Emitente",
+      "dataLimiteEmbarque": "dataSubstituicaoT23:59:59-03:00",
+      "dataLimiteRetirada": null,
+      "dataFixarAte": "dataSubstituicaoT23:59:59-03:00",
+      "dataVencimento": null
+    },
+    "anexos": []
+  }
+}

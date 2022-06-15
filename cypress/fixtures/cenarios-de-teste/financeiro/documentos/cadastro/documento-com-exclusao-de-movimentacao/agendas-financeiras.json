@@ -1,0 +1,77 @@
+{
+  "aPagar": {
+    "agendaFinanceira2000": {
+      "status": "A pagar",
+      "empresaDocumento": "Empresa Fornecedor - CPF",
+      "fazendaDocumento": "Fazenda E2E",
+      "numeroDocumento": "2000",
+      "cardStatusDocumento": "A pagar",
+      "cardPessoaDocumento": "Empresa Produtor - CPF (1/1)",
+      "cardValorDocumento": "R$ 2.000,00",
+      "cardSaldoAPagar": "Saldo a pagar: R$ 2.000,00",
+      "cardNumeroDocumento": "Número: 2000"
+    },
+
+    "agendaFinanceira2001": {
+      "status": "A pagar",
+      "empresaDocumento": "Empresa Fornecedor - CPF",
+      "fazendaDocumento": "Fazenda E2E",
+      "numeroDocumento": "2001",
+      "cardStatusDocumento": "A pagar",
+      "cardPessoaDocumento": "Empresa Produtor - CPF (1/1)",
+      "cardValorDocumento": "R$ 2.001,00",
+      "cardSaldoAPagar": "Saldo a pagar: R$ 2.001,00",
+      "cardNumeroDocumento": "Número: 2001"
+    },
+
+    "agendaFinanceira2002": {
+      "status": "A pagar",
+      "empresaDocumento": "Empresa Fornecedor - CPF",
+      "fazendaDocumento": "Fazenda E2E",
+      "numeroDocumento": "2002",
+      "cardStatusDocumento": "A pagar",
+      "cardPessoaDocumento": "Empresa Produtor - CPF (1/1)",
+      "cardValorDocumento": "R$ 2.002,00",
+      "cardSaldoAPagar": "Saldo a pagar: R$ 2.002,00",
+      "cardNumeroDocumento": "Número: 2002"
+    }
+  },
+
+  "pago": {
+    "agendaFinanceira2000": {
+      "status": "Pagos",
+      "empresaDocumento": "Empresa Fornecedor - CPF",
+      "fazendaDocumento": "Fazenda E2E",
+      "numeroDocumento": "2000",
+      "cardStatusDocumento": "Pago",
+      "cardPessoaDocumento": "Empresa Produtor - CPF (1/1)",
+      "cardValorDocumento": "R$ 2.000,00",
+      "cardSaldoAPagar": "Saldo a pagar: R$ 0,00",
+      "cardNumeroDocumento": "Número: 2000"
+    },
+
+    "agendaFinanceira2001": {
+      "status": "Pagos",
+      "empresaDocumento": "Empresa Fornecedor - CPF",
+      "fazendaDocumento": "Fazenda E2E",
+      "numeroDocumento": "2001",
+      "cardStatusDocumento": "Pago",
+      "cardPessoaDocumento": "Empresa Produtor - CPF (1/1)",
+      "cardValorDocumento": "R$ 2.001,00",
+      "cardSaldoAPagar": "Saldo a pagar: R$ 0,00",
+      "cardNumeroDocumento": "Número: 2001"
+    },
+
+    "agendaFinanceira2002": {
+      "status": "Pagos",
+      "empresaDocumento": "Empresa Fornecedor - CPF",
+      "fazendaDocumento": "Fazenda E2E",
+      "numeroDocumento": "2002",
+      "cardStatusDocumento": "Pago",
+      "cardPessoaDocumento": "Empresa Produtor - CPF (1/1)",
+      "cardValorDocumento": "R$ 2.002,00",
+      "cardSaldoAPagar": "Saldo a pagar: R$ 0,00",
+      "cardNumeroDocumento": "Número: 2002"
+    }
+  }
+}

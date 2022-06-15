@@ -1,0 +1,32 @@
+const locators = {
+  titulo: '[data-cy=header-colheita] h1',
+  mensagemSemDados: '[data-cy="msg-sem-dados"]',
+  selectFazenda: '[data-cy=select-fazenda]',
+  selecionarFazenda: '[data-cy=select-fazenda] .list__items',
+  fazendaSelecionada: '[data-cy=select-fazenda] > .selected',
+  selectSafra: '[data-cy=select-safra]',
+  selecionarSafra: '[data-cy=select-safra] .list__items',
+  safraSelecionada: '[data-cy=select-safra] > .selected',
+  buttonNovaColheita: '[data-cy=header-colheita] > .el-button',
+  buttonExportarCsv: '[data-cy=button-exportar-csv]',
+  buttonFiltros: '[data-cy=filtros] .siagri-icon-filter-xsmall',
+  inputPesquisar: '[data-cy=filtros] .search input',
+  filtroSelectCiclo: '[data-cy=select-ciclo]',
+  filtroSelectCliente: '[data-cy=select-cliente]',
+  filtroSelectUndArmazenamento: '[data-cy=select-unidade-armazenamento]',
+  filtroSelectVeiculo: '[data-cy=select-veiculos]',
+  inputDataInicio: '[data-cy=filter-datepicker] [placeholder="Início"]',
+  inputDataFim: '[data-cy=filter-datepicker] [placeholder="Fim"]',
+  cardColheita: '[data-cy=card-colheita]',
+  spanTicket: '[data-cy=span-ticket]',
+  spanData: '[data-cy=span-data]',
+  spanDestino: '[data-cy=span-destino]',
+  spanPlaca: '[data-cy=span-placa]',
+  spanContratoDestino: '[data-cy=span-contrato]',
+  spanCultura: '[data-cy=span-cultura]',
+  spanQuantidade: '[data-cy=span-quantidade]',
+  spanQuantidadeCultura: '[data-cy=span-quantidade-cultura]',
+  buttonAbrirDetalhes: '[data-cy=icon-detalhes-colheita]'
+}
+
+export default locators

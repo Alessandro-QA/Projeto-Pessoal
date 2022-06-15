@@ -1,0 +1,118 @@
+{
+  "nfe": {
+    "emitente": {
+      "empresa": "EMERSON RIVA",
+      "inscricaoEstadual": "134899156",
+      "cpfCnpj": "502.401.021-34",
+      "fazenda": "Fazenda NFe",
+      "safra": "2021/2021"
+    },
+    "destinatario": {
+      "empresa": "GIOVANI DADALT CRESPANI",
+      "inscricaoEstadual": "AGROPECUARIA MARIAH JULIA",
+      "cpfCnpj": "611.549.970-49"
+    },
+    "informacoesNota": {
+      "gerarNfeRascunho": false,
+      "finalidade": "NF-e Normal",
+      "operacao": "Venda de produção do estabelecimento - financeiro",
+      "frete": "Terceiros",
+      "saidaFutura": false,
+      "tipo": "Saída",
+      "modelo": "55",
+      "serie": "920"
+    },
+    "transportador": {
+      "transportadora": "Transportador E2E",
+      "veiculo": "ABC1234",
+      "quantidade": "1",
+      "especie": "graos",
+      "marca": "Intacta e Transgenico",
+      "numeracao": "00112233",
+      "pesoBruto": "1",
+      "pesoLiquido": "1"
+    },
+    "materiais": {
+      "produto": {
+        "material": "Soja em Grãos",
+        "quantidade": "1",
+        "valorUnitario": "1",
+        "desconto": "0,99",
+        "total": "R$ 0,01",
+        "cfop": "5101 - Venda de produção do estabelecimento",
+        "ncm": "1201.90.00",
+        "unidadeMedida": "kg"
+      },
+      "imposto": {
+        "icms": {
+          "origemCst": "0 - Nacional",
+          "cst": "00",
+          "baseCalculo": "0,01",
+          "aliquota": "0,00",
+          "valor": "R$ 0,00"
+        },
+        "pis": {
+          "cst": "01",
+          "baseCalculo": "0,00",
+          "aliquota": "0,00",
+          "valor": "R$ 0,00"
+        },
+        "cofins": {
+          "cst": "02",
+          "baseCalculo": "0,00",
+          "aliquota": "0,00",
+          "valor": "R$ 0,00"
+        },
+        "fcp": {
+          "baseCalculo": "0,00",
+          "aliquota": "0,00",
+          "valor": "0,00"
+        }
+      },
+      "retencao": {
+        "contemRetencao": false
+      },
+      "contemInformcacoesComp": false,
+      "informacoesComplementares": "Informacoes Complementares"
+    },
+    "outrosValores": {
+      "contemOutrosValores": false,
+      "valorFrete": "0,00",
+      "valorSeguro": "0,00",
+      "outrasDespesas": "0,00"
+    },
+
+    "totalImpostos": {
+      "icms": "0,00",
+      "pis": "0,00",
+      "cofins": "0,00",
+      "retencao": "0,00",
+      "fcp": "0,00"
+    },
+    "financeiro": {
+      "valorTotal": "R$ 0,01",
+      "jaFoiPago": true,
+      "contaBancaria": "Conta NFe E2E",
+      "dedutivel": true,
+      "formaPagamento": "Dinheiro",
+      "quantidadeParcelas": "1",
+      "parcelas": [
+        {
+          "valorParcela": "R$ 0,01"
+        }
+      ]
+    },
+    "rateio": {
+      "categoria": "Soja",
+      "porcentagem": "100,00%",
+      "valor": "R$ 0,01"
+    }
+  },
+
+  "detalhesNfe": {
+    "destinatario": "GIOVANI DADALT CRESPANI",
+    "finalidade": "Normal",
+    "valorTotal": "R$ 0,01",
+    "status": "Autorizada"
+  }
+}

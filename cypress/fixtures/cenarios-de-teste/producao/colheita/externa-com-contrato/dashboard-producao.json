@@ -1,0 +1,54 @@
+{
+  "safra": "2021/2021",
+  "fazenda": "Fazenda Teste Producao",
+  "quantidade": "0,5 Saca 60 /ha",
+  "quantidadeCultura": "100,2 Saca 60 de Soja",
+  "hectareCultura": "200,00 hectares",
+  "sacaFazendaProdutiva": "0.50 Saca 60/ha",
+  "variedadeProducao": "Syn1060ap",
+  "sacaProducao": "100.20 Saca 60",
+  "talhaoProducao": "Talhão Soja",
+  "sacaTalhaoProducao": "100.20 Saca 60",
+  "varidadeProdutividade": "Syn1060ap",
+  "sacaProdutividade": "0.50 Saca 60/ha",
+  "talhaoProdutividade": "Talhão Soja",
+  "sacatalhaoProdutividade": "0.50 Saca 60/ha",
+  "totalArmazenagemInterna": "0",
+  "sacaArmazenagemInterna": "Saca 60",
+  "totalArmazenagemExterna": "100,2",
+  "sacaArmazenagemExterna": "Saca 60",
+  "totalRecebido": "0,00",
+  "totalAReceber": "0,00",
+  
+  "entregaFixacoes": [
+    {
+      "cliente": "Cliente Teste Produção",
+      "entregue": "100,2",
+      "arrendamentos": "0",
+      "contratosFixados": "0",
+      "fixacoes": "0",
+      "transferencias": "0",
+      "saldo": "100,2"
+    }
+  ],
+  "contratosEntregasFixacoes": [
+    {
+      "expandir": true,
+      "cliente": "1 - 1",
+      "entregue": "100,2",
+      "arrendamentos": "0",
+      "contratosFixados": "0",
+      "fixacoes": "0",
+      "transferencias": "0",
+      "saldo": "100,2"
+    }
+  ],
+  "saldoTotalFixar": "100,2 Saca 60",
+  "precoMedioPorCliente": false,
+  "precoMedioPorSafra": false,
+  "clientePrecoMedio": "",
+  "precoMediaCliente": "",
+  "quantidadeMediaCliente": "",
+  "precoMediaSafra": "",
+  "quantidadeMediaNegociada": ""
+}

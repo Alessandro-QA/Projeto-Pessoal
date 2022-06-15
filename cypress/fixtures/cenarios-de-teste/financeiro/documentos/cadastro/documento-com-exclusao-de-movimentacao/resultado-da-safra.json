@@ -1,0 +1,121 @@
+{
+  "resultadoDaSafraDashboard": {
+    "fazenda": "Fazenda Reserva",
+    "safra": "2020/2020",
+    "exibirInformacoesAgricola": false,
+    "mostrarContasPagarReceber": true,
+    "adicionarSaldoColheitas": false,
+    "cardCiclo": [
+      {
+        "nomeSafra": "Algodão - 2020/2020",
+        "receita": "0 Arroba",
+        "despesa": "0 Arroba",
+        "margem": "0 Arroba"
+      },
+      {
+        "nomeSafra": "Arroz - 2020/2020",
+        "receita": "0 Saco",
+        "despesa": "0 Saco",
+        "margem": "0 Saco"
+      }
+    ],
+    "cardHectares": [
+      {
+        "nomeSafra": "Algodão - 2020/2020",
+        "receita": "R$ 0,00",
+        "despesa": "R$ 23,09",
+        "margem": "-R$ 23,09"
+      },
+      {
+        "nomeSafra": "Arroz - 2020/2020",
+        "receita": "R$ 0,00",
+        "despesa": "R$ 23,09",
+        "margem": "-R$ 23,09"
+      }
+    ],
+    "cardValores": [
+      {
+        "nomeSafra": "Algodão - 2020/2020",
+        "receita": "R$ 0,00",
+        "despesa": "R$ 2.308,75",
+        "margem": "-R$ 2.308,75"
+      },
+      {
+        "nomeSafra": "Arroz - 2020/2020",
+        "receita": "R$ 0,00",
+        "despesa": "R$ 3.694,25",
+        "margem": "-R$ 3.694,25"
+      }
+    ],
+
+    "cardVisaoGeral": {
+      "despesas": "R$ 6.003,00",
+      "receitas": "R$ 0,00",
+      "resultado": "-R$ 6.003,00",
+      "margemLucro": "0%"
+    },
+
+    "cardMargemLucro": {
+      "margemLucro": "0%"
+    }
+  },
+
+  "resultadoDaSafraAnalitica": {
+    "fazenda": "Fazenda Reserva",
+    "safra": "2020/2020",
+    "exibirInformacoesAgricola": false,
+    "mostrarContasPagarReceber": true,
+    "adicionarSaldoColheitas": false,
+    "margemLucro": "0,00 %",
+    "valores": "-R$ 6.003,00",
+    "totalSafra": "260",
+    "culturas": [
+      {
+        "nomeCultura": "Arroz - 2020/2020"
+      },
+      {
+        "nomeCultura": "Algodão - 2020/2020"
+      }
+    ],
+    "totalDespesas": "R$ 6.003,00",
+    "cardDespesas": [
+      {
+        "nomeCategoria": "Sementes",
+        "acumuladoSafra": "R$ 2.002,00",
+        "percentualCustoTotal": "33.35 %"
+      },
+      {
+        "nomeCategoria": "Fretes e Carretos",
+        "acumuladoSafra": "R$ 2.001,00",
+        "percentualCustoTotal": "33.33 %"
+      },
+      {
+        "nomeCategoria": "Outros Custos",
+        "acumuladoSafra": "R$ 1.000,00",
+        "percentualCustoTotal": "16.66 %"
+      },
+      {
+        "nomeCategoria": "Comissões",
+        "acumuladoSafra": "R$ 1.000,00",
+        "percentualCustoTotal": "16.66 %"
+      }
+    ]
+  },
+  "exclusaoResultadoDaSafraDashboard": {
+    "fazenda": "Fazenda Reserva",
+    "safra": "2020/2020",
+    "exibirInformacoesAgricola": false,
+    "mostrarContasPagarReceber": true,
+    "adicionarSaldoColheitas": false,
+    "mensagemEmpty": "Não há informações para a Fazenda e Safra selecionados!"
+  },
+
+  "exclusãoResultadoDaSafraAnalitica": {
+    "fazenda": "Fazenda Reserva",
+    "safra": "2020/2020",
+    "exibirInformacoesAgricola": false,
+    "mostrarContasPagarReceber": true,
+    "adicionarSaldoColheitas": false,
+    "mensagemEmpty": "Não há informações para a Fazenda e Safra selecionados!"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "documento": {
+    "operacao": "13º Salário",
+    "tipoDocumento": "Folha de Pagamento",
+    "numeroDocumento": "1533",
+    "dedutivel": "Sim",
+    "pessoa": "Empresa 1",
+    "fazenda": "Fazenda Onboarding",
+    "safra": "2021/2021",
+    "empresa": "Empresa 1",
+    "observacao": "Observações do Documento",
+    "valorTotal": "200,00",
+    "formaPagamento": "Boleto",
+    "condicaoPagamento": "Parcelado",
+    "quantidadeParcela": "2",
+    "valorFixo": true,
+    "numeroBoleto": [
+      {
+        "numero": "11111111111111111111111111111111111111111111111"
+      },
+      {
+        "numero": "22222222222222222222222222222222222222222222222"
+      }
+    ],
+    "rateioEntreCiclosPlanejamento": true,
+    "ciclos": [
+      {
+        "nome": "Soja - 2021/2021",
+        "valor": "R$ 114,28"
+      },
+      {
+        "nome": "Milho - 2021/2021",
+        "valor": "R$ 85,72"
+      }
+    ],
+    "rateioEntreCategoriasPorOperacao": true,
+    "categorias": [
+      {
+        "nome": "13º Salário",
+        "valor": "R$ 200,00"
+      }
+    ]
+  },
+  "detalhes": {
+    "operacao": "13º Salário",
+    "tipoDocumento": "Folha de Pagamento",
+    "dedutivel": "Sim",
+    "numeroDocumento": "1533",
+    "pessoa": "Empresa 1",
+    "fazenda": "Fazenda Onboarding",
+    "safra": "2021/2021",
+    "empresa": "Empresa 1",
+    "observacao": "Observações do Documento",
+    "valorTotal": "R$ 200,00",
+    "formaPagamento": "Boleto",
+    "condicaoPagamento": "Parcelado",
+    "qtdParcelas": "2 parcelas",
+    "parcelas": [
+      {
+        "parcela": "1ª Parcela",
+        "valorParcela": "R$ 100,00",
+        "statusParcela": "A pagar",
+        "saldoParcela": "R$ 100,00"
+      },
+      {
+        "parcela": "2ª Parcela",
+        "valorParcela": "R$ 100,00",
+        "statusParcela": "A pagar",
+        "saldoParcela": "R$ 100,00"
+      }
+    ],
+    "ciclos": [
+      {
+        "nome": "Soja - 2021/2021",
+        "valor": "R$ 114,28"
+      },
+      {
+        "nome": "Milho - 2021/2021",
+        "valor": "R$ 85,72"
+      }
+    ],
+    "categorias": [
+      {
+        "nome": "13º Salário",
+        "porcentagem": "100%",
+        "valor": "R$ 200,00"
+      }
+    ]
+  }
+}

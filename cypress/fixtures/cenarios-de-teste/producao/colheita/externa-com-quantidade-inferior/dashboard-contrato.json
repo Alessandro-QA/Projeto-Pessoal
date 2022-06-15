@@ -1,0 +1,25 @@
+{
+  "fazenda": "Fazenda Teste Producao",
+  "safra": "2021/2021",
+  "cardsContratos": [
+    {
+    "cardContrato": "Soja",
+    "statusEntrega": "Entrega Pendente",
+    "numeroContrato": "1",
+    "informacaoFixar": "A fixar",
+    "valorRecebido": "R$ 0,00",
+    "quantidadeEntregue": "668,00 de 1000 Saca 60",
+    "tipoNegociacao": "Venda"
+    }
+  ,
+  {
+    "cardContrato": "Soja",
+    "statusEntrega": "Entrega Pendente",
+    "numeroContrato": "2",
+    "informacaoFixar": "A fixar",
+    "valorRecebido": "R$ 0,00",
+    "quantidadeEntregue": "334,00 de 1000 Saca 60",
+    "tipoNegociacao": "Venda"
+    }
+  ]
+}
