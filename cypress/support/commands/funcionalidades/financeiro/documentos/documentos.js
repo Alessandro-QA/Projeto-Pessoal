@@ -16,8 +16,12 @@ class Documentos {
       .as('cicloProducao')
     cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**')
       .as('cicloRateio')
+    cy.intercept('POST', 'https://myfarm.dev.conexa.com.br/api/financeiro/v1/Documento/Listagem')
+      .as('listaDocumentos')
     // Navegar para Documentos
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina).then(() => {
+      cy.wait('@listaDocumentos', { timeout: 15000 } )
+    })
 
     // botao adicionar documento
     cy.getVisible(locDocumentos.dashboard.novoDocumento).click()
@@ -170,10 +174,10 @@ class Documentos {
       cy.wait(2000)
 
       // wait para aguardar busca dos ciclos do planejamento
-      cy.wait('@cicloRateio', { timeout: 15000 })
+      cy.wait('@cicloRateio', { timeout: 15000 } )
 
       // timeout necessario para carregar os ciclos nos selects
-      cy.wait('@cicloProducao', { timeout: 15000 })
+      cy.wait('@cicloProducao', { timeout: 15000 } )
 
       cy.wait(2000)
 
@@ -244,7 +248,7 @@ class Documentos {
           .should(($el) => {
             expect($el).to.contain.text(categoria.nome)
           })
-          
+
           cy.wait(2000)
 
         // valor categoria
@@ -256,8 +260,16 @@ class Documentos {
       })
     }
 
+    if(seedTestDocumento.anexo) {
+      cy.get(locDocumentos.documento.anexarArquivo).selectFile('cypress/fixtures/funcionalidades/financeiro/documentos/cadastro/arquivos/Exemplo-DANFE.png', { force : true } )
+      cy.getVisible(locDocumentos.documento.anexo).should(($el) => {
+        expect($el).to.contain.text(seedTestDocumento.anexos)
+      })
+    }
+
     // salvar documento
-    cy.getVisible(locDocumentos.documento.adicionar).click()
+    cy.getVisible(locDocumentos.documento.adicionar).click( { force: true } )
+    cy.wait(2000)
     cy.get(locDocumentos.documento.adicionar).should('not.exist')
     
     cy.getVisible(locatorTituloPagina).should(($el) => {
@@ -276,6 +288,9 @@ class Documentos {
 
     // Navegar para Documentos
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    cy.wait('@financeiro', { timeout: 15000 } )
+    
     cy.clearLocalStorage('financeiro-documentos-filtros')
 
     // selecionar fazenda
@@ -502,6 +517,13 @@ class Documentos {
         cy.get(locDocumentos.detalhesDocumento.tabelaRateioCategorias).should(($el) => {
           expect($el).to.contain.text(categoria.valor)
         })
+      })
+    }
+
+    // Validar anexos
+    if(seedTestDocumento.anexos) {
+      cy.getVisible(locDocumentos.detalhesDocumento.anexos).should(($el) => {
+        expect($el).to.contain.text(seedTestDocumento.anexos)
       })
     }
   }

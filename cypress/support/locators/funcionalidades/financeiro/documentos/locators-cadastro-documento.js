@@ -78,6 +78,8 @@ const locators = {
     listaCategorias: '[data-cy=select-categoria-rateio] .list__items',
     categoriaValor: '[data-cy=input-valor-categoria-rateio] > input',
     adicionarCategoria: '[data-cy=button-delete-add-categoria] .siagri-icon-plus-xsmall',
+    anexarArquivo: '[data-cy=upload-anexo] [name="file"]',
+    anexo: '.anexos-list .anexos-list__item',
     cancelar: '[data-cy=button-cancelar-adicionar-documento] .el-button--secondary',
     adicionar: '[data-cy=button-cancelar-adicionar-documento] .el-button--primary'
   },
@@ -107,7 +109,8 @@ const locators = {
     contaBancaria: '[data-cy=span-conta-bancaria]',
     tabelaParcelas: '[data-cy=table-parcelas] .el-table__row .cell',
     tabelaRateioCiclos: '[data-cy=table-rateio-entre-ciclos] .el-table__row .cell',
-    tabelaRateioCategorias: '[data-cy=table-rateio-categorias] .el-table__row .cell'
+    tabelaRateioCategorias: '[data-cy=table-rateio-categorias] .el-table__row .cell',
+    anexos: '[data-cy="list-anexos"]'
   }
 }
 
