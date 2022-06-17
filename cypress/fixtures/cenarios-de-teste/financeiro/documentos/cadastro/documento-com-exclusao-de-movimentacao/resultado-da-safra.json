@@ -110,7 +110,7 @@
     "mensagemEmpty": "Não há informações para a Fazenda e Safra selecionados!"
   },
 
-  "exclusãoResultadoDaSafraAnalitica": {
+  "exclusaoResultadoDaSafraAnalitica": {
     "fazenda": "Fazenda Reserva",
     "safra": "2020/2020",
     "exibirInformacoesAgricola": false,

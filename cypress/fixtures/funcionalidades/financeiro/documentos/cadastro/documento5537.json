@@ -1,0 +1,74 @@
+{
+    "documento": {
+      "operacao": "Comissões",
+      "tipoDocumento": "Outros",
+      "dedutivel": "Não",
+      "numeroDocumento": "5537",
+      "pessoa": "Empresa 1",
+      "fazenda": "Fazenda Onboarding",
+      "safra": "2021/2021",
+      "empresa": "Empresa 1",
+      "valorTotal": "200,00",
+      "formaPagamento": "Transferência Bancária",
+      "condicaoPagamento": "Parcelado",
+      "quantidadeParcela": "4",
+      "rateioCategoriaSelecionar": true,
+      "categorias": [
+        {
+          "nome": "Comissões",
+          "valor": "200,00"
+        }
+      ],
+      "anexo": true,
+      "anexos": "Exemplo-DANFE.png"
+    },
+    "detalhes": {
+      "operacao": "Comissões",
+      "tipoDocumento": "Outros",
+      "dedutivel": "Não",
+      "numeroDocumento": "5537",
+      "pessoa": "Empresa 1",
+      "fazenda": "Fazenda Onboarding",
+      "safra": "2021/2021",
+      "empresa": "Empresa 1",
+      "valorTotal": "R$ 200,00",
+      "formaPagamento": "Transferência Bancária",
+      "condicaoPagamento": "Parcelado",
+      "qtdParcelas": "4 parcelas",
+      "parcelas": [
+        {
+          "parcela": "1ª Parcela",
+          "valorParcela": "R$ 50,00",
+          "statusParcela": "A pagar",
+          "saldoParcela": "R$ 50,00"
+        },
+        {
+          "parcela": "2ª Parcela",
+          "valorParcela": "R$ 50,00",
+          "statusParcela": "A pagar",
+          "saldoParcela": "R$ 50,00"
+        },
+        {
+          "parcela": "3ª Parcela",
+          "valorParcela": "R$ 50,00",
+          "statusParcela": "A pagar",
+          "saldoParcela": "R$ 50,00"
+        },
+        {
+          "parcela": "4ª Parcela",
+          "valorParcela": "R$ 50,00",
+          "statusParcela": "A pagar",
+          "saldoParcela": "R$ 50,00"
+        }
+      ],
+      "categorias": [
+        {
+          "nome": "Comissões",
+          "porcentagem": "100%",
+          "valor": "R$ 200,00"
+        }
+      ],
+      "anexos": "Exemplo-DANFE.png"
+    }
+  }
+  
