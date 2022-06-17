@@ -164,6 +164,6 @@ describe('CENÁRIO > Documentos | Cadastro de documento com exclusão de movimen
   it('Validar se exclusão refletiu no resultado da safra - Analítica', function () {
     cy.allure().severity('normal').startStep('test content')
 
-    Safra.resultadoAnalitico(seedTestResultadoSafra.exclusãoResultadoDaSafraAnalitica)
+    Safra.resultadoAnalitico(seedTestResultadoSafra.exclusaoResultadoDaSafraAnalitica)
   })
 })
