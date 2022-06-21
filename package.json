@@ -7,7 +7,7 @@
     "test": "npm run delete:reports && npm run test:allure:junit",
     "test:allure": "npm run delete:reports && npm run test:allure:report",
     "test:azure": "npm run delete:reports && npm run test:junit:report",
-    "delete:reports": "npm run delete:allure:report && npm run delete:allure:results && npm run delete:junit:results",
+    "delete:reports": "npm run delete:allure:results && npm run delete:junit:results",
     "delete:allure:report": "rm -rf cypress/allure-report/* || true",
     "delete:allure:results": "rm -rf cypress/allure-results/* || true",
     "delete:junit:results": "rm -rf cypress/results/* || true",

@@ -5,3 +5,4 @@ cypress/results/*
 cypress/config-files/*
 cypress/allure-report/*
 cypress/allure-results/*
+.vscode/*
