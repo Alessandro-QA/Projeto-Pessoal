@@ -1,17 +1,5 @@
 /// <reference types="cypress" />
 
-/*
-* Funcionalidade:
-*     Excluir colheita
-* Cenário:
-*     Dado que eu queira excluir uma colheita
-*     Quando eu entrar na dashboard de colheita
-*     E clicar no card de uma das colheitas listadas
-*     E clicar no ícone de exclusão
-*     E clicar em Excluir
-*     Então deverá ser salvo e validado na dashboard de colheita
-*/
-
 import colheitaJson from '../../../../../fixtures/cenarios-de-teste/producao/colheita/editar-colheita/cadastro-colheita.json'
 import seedTestDashboard from '../../../../../fixtures/cenarios-de-teste/producao/colheita/excluir-colheita/dashboard-colheita.json'
 import Colheita from '../../../../../support/commands/funcionalidades/producao/colheita.js'
@@ -42,6 +30,7 @@ describe('FUNCIONALIDADE > Colheitas | Exclusão de colheita - ', { tags: '@colh
 
   it('Excluir colheita', function () {
     cy.allure().severity('critical').startStep('test content')
+      .description(markdown)
 
     Colheita.excluir(seedTestDashboard.dashboard)
   })
@@ -51,4 +40,22 @@ describe('FUNCIONALIDADE > Colheitas | Exclusão de colheita - ', { tags: '@colh
 
     Colheita.validarDashboard(seedTestDashboard.dashboarAposExclusao)
   })
+
+  const markdown = `
+  ---
+  ### Funcionalidade: Excluir colheita
+  >**COMO** gestor da fazenda
+   **QUERO** poder excluir uma colheita
+   **PARA** gerenciar quanto colhi durante o ciclo e armazenei em destino interno ou externo
+
+  ### Cenário: Excluir
+  >**DADO** que eu queira excluir uma colheita
+   **QUANDO** eu entrar na dashboard de colheita
+   **E** clicar no card de uma das colheitas listadas
+   **E** clicar no ícone de exclusão
+   **E** clicar em Excluir
+   **ENTÃO** deverá ser salvo e validado na dashboard de colheita
+  
+  ---
+  `
 })

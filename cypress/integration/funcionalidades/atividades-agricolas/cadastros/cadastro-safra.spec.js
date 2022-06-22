@@ -16,6 +16,7 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Safra - ', { tags:
   // Teste de cadastro de uma nova safra
   it('Deve cadastrar uma safra', function () {
     cy.allure().severity('normal').startStep('test content')
+    .description(markdown)
 
     Safra.cadastro(seedTestSafra)
   })
@@ -26,4 +27,11 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Safra - ', { tags:
 
     Safra.validarDashboard(seedTestSafra)
   })
+
+  const markdown = `
+  ---
+  ### EM CRIAÇÃO!
+
+   ---
+   `
 })

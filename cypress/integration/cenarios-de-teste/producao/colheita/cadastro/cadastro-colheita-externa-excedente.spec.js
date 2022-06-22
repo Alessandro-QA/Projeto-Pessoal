@@ -1,18 +1,5 @@
 /// <reference types="cypress" />
 
-/*
-* Funcionalidade:
-*   Cadastro de colheita externa com partilha (Quantidade Excedente)
-* Cenario:
-*   Dado a inclusão de um Registro de Colheita
-*   Quando eu preencher todos os campos obrigatórios, com o total entregue sendo maior que a quantidade especificada nos contratos
-*   e selecionar destino "Externo"
-*   e selecionar dois ou mais contratos
-*   e clicar no botão salvar
-*   e clicar em sim no modal
-*   Então o registro de colheita será gravado, exibido e validado na dashboard de colheitas, de produção e de contratos
-*/
-
 import Utils from '../../../../../support/utils/utils.js'
 // import Contrato from '../../../../../support/commands/funcionalidades/producao/contratos.js'
 import Colheita from '../../../../../support/commands/funcionalidades/producao/colheita.js'
@@ -51,6 +38,7 @@ describe('FUNCIONALIDADE > Colheitas | Cadastro de colheita externa com partilha
 
   it('Cadastrar colheita externa', function () {
     cy.allure().severity('critical').startStep('test content')
+    .description(markdown)
 
     Colheita.cadastrarEditar(seedTestCadastro)
   })
@@ -73,4 +61,23 @@ describe('FUNCIONALIDADE > Colheitas | Cadastro de colheita externa com partilha
 
   //   Contrato.validarDashboard(seedTestDashboardContrato)
   // })
+
+  const markdown = `
+  ---
+  ### Funcionalidade: Cadastro de colheita
+  >**COMO** gestor da Fazenda
+   **QUERO** cadastrar os Registros de Colheita
+   **PARA** gerenciar quanto colhi durante o ciclo e armazenei em destino interno ou externo
+
+  ### Cenário: Cadastrar colheita externa, com partilha (Quantidade Excedente)
+  >**DADO** que eu queira incluir um registro de colheita
+   **QUANDO** eu preencher os campos obrigatórios, com quantidade de carga sendo maior que a quantidade especificada nos contratos
+   **E** selecionar destino Externo
+   **E** selecionar dois ou mais contratos
+   **E** clicar no botão salvar
+   **E** clicar em sim no modal
+   **ENTÃO** o registro de colheita será gravado, exibido e validado na dashboard de colheitas, de produção e de contratos
+  
+  ---
+  `
 })

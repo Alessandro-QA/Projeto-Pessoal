@@ -1,17 +1,5 @@
 /// <reference types="cypress" />
 
-/*
-* Funcionalidade:
-*     Editar colheita
-* Cenário:
-*     Dado que eu queira editar uma colheita
-*     Quando eu entrar na dashboard de colheita
-*     E clicar no card de uma das colheitas listadas
-*     E preencher todos os campos obrigatórios
-*     E clicar em atualizar
-*     Então deverá ser salvo e validado na dashboard de colheita
-*/
-
 import colheitaJson from '../../../../../fixtures/cenarios-de-teste/producao/colheita/editar-colheita/cadastro-colheita.json'
 import seedTestEditar from '../../../../../fixtures/cenarios-de-teste/producao/colheita/editar-colheita/editar.json'
 import seedTestDashboard from '../../../../../fixtures/cenarios-de-teste/producao/colheita/editar-colheita/dashboar-colheita.json'
@@ -43,6 +31,7 @@ describe('FUNCIONALIDADE > Colheitas | Edição de colheita - ', { tags: '@colhe
 
   it('Editar colheita', function () {
     cy.allure().severity('critical').startStep('test content')
+      .description(markdown)
 
     Colheita.cadastrarEditar(seedTestEditar)
   })
@@ -52,4 +41,23 @@ describe('FUNCIONALIDADE > Colheitas | Edição de colheita - ', { tags: '@colhe
 
     Colheita.validarDashboard(seedTestDashboard)
   })
+
+  const markdown = `
+  ---
+  ### Funcionalidade: Editar colheita
+  >**COMO** gestor da fazenda
+   **QUERO** poder editar uma colheita
+   **PARA** gerenciar quanto colhi durante o ciclo e armazenei em destino interno ou externo
+
+  ### Cenário: Editar
+  >**DADO** que eu queira editar uma colheita
+   **QUANDO** eu entrar na dashboard de colheita
+   **E** clicar no card de uma das colheitas listadas
+   **E** clicar no ícone de edição
+   **E** preencher todos os campos obrigatórios
+   **E** clicar em atualizar
+   **ENTÃO** deverá ser salvo e validado na dashboard de colheita
+  
+  ---
+  `
 })
