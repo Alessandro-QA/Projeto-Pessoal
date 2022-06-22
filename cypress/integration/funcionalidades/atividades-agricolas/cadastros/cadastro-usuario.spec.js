@@ -16,6 +16,7 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Usuário - ', { ta
   // Teste para cadastro de um novo usuario
   it('Deve cadastrar um usuario', function () {
     cy.allure().severity('critical').startStep('test content')
+    .description(markdown)
 
     Usuario.cadastro(seedTestUsuario)
   })
@@ -26,4 +27,11 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Usuário - ', { ta
 
     Usuario.validarDashboard(seedTestUsuario)
   })
+
+  const markdown = `
+  ---
+  ### EM CRIAÇÃO!
+
+   ---
+   `
 })

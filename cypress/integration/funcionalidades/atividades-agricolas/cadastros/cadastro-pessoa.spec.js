@@ -16,6 +16,7 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Pessoa - ', { tags
   // Teste para cadastro de uma nova pessoa
   it('Deve cadastrar uma pessoa', function () {
     cy.allure().severity('critical').startStep('test content')
+    .description(markdown)
 
     Pessoa.cadastro(seedTestPessoa)
   })
@@ -26,4 +27,24 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Pessoa - ', { tags
 
     Pessoa.validarDashboard(seedTestPessoa)
   })
+
+  const markdown = `
+  ---
+  ### Funcionalidade: Cadastrar pessoa
+  >**COMO** gerente responsável da fazenda
+   **QUERO** poder cadastrar uma nova pessoa
+   **PARA** melhor gestão da minha fazenda
+
+  ### Cenário: Jurídica
+  >**DADO** que eu queira cadastrar uma nova pessoa
+   **QUANDO** eu entrar na Dashboard de Cadastro de pessoas
+   **E** clicar em Adicionar pessoa
+   **E** selecionar o tipo de pessoa
+   **E** selecionar Pessoa Jurídica
+   **E** preencher todos os campos obrigatórios
+   **E** clicar em adicionar
+   **ENTÃO** será salvo e validado na dashboard de Cadastro de pessoas
+
+   ---
+   `
 })

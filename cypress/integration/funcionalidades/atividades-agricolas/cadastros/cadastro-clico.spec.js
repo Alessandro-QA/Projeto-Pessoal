@@ -16,6 +16,7 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Ciclo - ', { tags:
   // Teste de cadastro de um novo ciclo de milho
   it('Deve cadastrar um ciclo de milho', function () {
     cy.allure().severity('normal').startStep('test content')
+    .description(markdown)
 
     Ciclo.cadastrar(seedTestCiclo)
   })
@@ -26,4 +27,20 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Ciclo - ', { tags:
 
     Ciclo.validarDashboard(seedTestCiclo)
   })
+
+  const markdown = `
+  ---
+  ### Funcionalidade: Cadastro de ciclo
+  >**COMO** gestor da Fazenda
+   **QUERO** cadastrar um ciclo de produção
+   **PARA** gerenciar as culturas que irei trabalhar em uma safra específica
+
+  ### Cenário: Cadastrar ciclo inexistente
+  >**DADO** que o usuário esteja com o modal cadastro de ciclo aberto
+   **QUANDO** os campos obrigatórios forem preenchidos
+   **E** clicar no botão "Adicionar"
+   **ENTÃO** o ciclo é cadastrado e o modal de cadastro será fechado
+
+   ---
+   `
 })

@@ -16,6 +16,7 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Fazenda - ', { tag
   // Teste de cadastro de uma nova fazenda
   it('Deve cadastrar uma fazenda', function () {
     cy.allure().severity('normal').startStep('test content')
+    .description(markdown)
 
     Fazenda.cadastro(seedTestFazenda)
   })
@@ -26,4 +27,11 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Fazenda - ', { tag
 
     Fazenda.validarDashboard(seedTestFazenda)
   })
+
+  const markdown = `
+  ---
+  ### EM CRIAÇÃO!
+
+   ---
+   `
 })
