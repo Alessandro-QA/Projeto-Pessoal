@@ -30,7 +30,7 @@ describe('FUNCIONALIDADE > Colheitas | Exclusão de colheita - ', { tags: '@colh
 
   it('Excluir colheita', function () {
     cy.allure().severity('critical').startStep('test content')
-      .description(markdown)
+      .descriptionHtml(html)
 
     Colheita.excluir(seedTestDashboard.dashboard)
   })
@@ -41,21 +41,29 @@ describe('FUNCIONALIDADE > Colheitas | Exclusão de colheita - ', { tags: '@colh
     Colheita.validarDashboard(seedTestDashboard.dashboarAposExclusao)
   })
 
-  const markdown = `
-  ---
-  ### Funcionalidade: Excluir colheita
-  >**COMO** gestor da fazenda
-   **QUERO** poder excluir uma colheita
-   **PARA** gerenciar quanto colhi durante o ciclo e armazenei em destino interno ou externo
-
-  ### Cenário: Excluir
-  >**DADO** que eu queira excluir uma colheita
-   **QUANDO** eu entrar na dashboard de colheita
-   **E** clicar no card de uma das colheitas listadas
-   **E** clicar no ícone de exclusão
-   **E** clicar em Excluir
-   **ENTÃO** deverá ser salvo e validado na dashboard de colheita
-  
-  ---
+  const html = `
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Excluir colheita </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gestor da Fazenda <br/>
+    <strong>QUERO</strong> poder excluir uma colheita <br/>
+    <strong>PARA</strong> gerenciar quanto colhi durante o ciclo e armazenei em destino interno ou externo <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario : </span>
+    <span style="color: #b22222;"> Excluir </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira excluir uma colheita <br/>
+    <strong>QUANDO</strong> eu entrar na dashboard de colheita <br/>
+    <strong>E</strong> clicar no card de uma das colheitas listadas <br/>
+    <strong>E</strong> clicar no ícone de exclusão <br/>
+    <strong>E</strong> clicar em Excluir <br/>
+    <strong>ENTAO</strong> deverá ser salvo e validado na dashboard de colheita <br/>
+</div>
+</div>
   `
 })

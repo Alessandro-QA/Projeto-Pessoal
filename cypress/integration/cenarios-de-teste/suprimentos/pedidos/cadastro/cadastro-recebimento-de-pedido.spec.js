@@ -7,7 +7,7 @@ import AgendaFinanceira from '../../../../../support/commands/funcionalidades/fi
 import Pedidos from '../../../../../support/commands/funcionalidades/suprimentos/pedidos.js'
 import Recebimento from '../../../../../support/commands/funcionalidades/suprimentos/recebimento.js'
 import Documentos from '../../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
-import testDescription from './description.js'
+import testDescription from './cadastro-recebimento-pedido-description.js'
 
 // Cadastro, Edição e Exclusão de Pedido com Recebimento
 describe('CENÁRIO > Cadastro, Edição e Exclusão de Pedido com Recebimento Parcial - ', { tags: '@pedidos' }, () => {
@@ -22,7 +22,7 @@ describe('CENÁRIO > Cadastro, Edição e Exclusão de Pedido com Recebimento Pa
 
   it('Cadastrar um pedido', function () {
     cy.allure().severity('critical').startStep('test content')
-    .description(testDescription.pedido)
+    .descriptionHtml(testDescription.pedido)
 
     Pedidos.cadastrar(seeds.seedCadastroPedido)
   })
@@ -35,7 +35,7 @@ describe('CENÁRIO > Cadastro, Edição e Exclusão de Pedido com Recebimento Pa
 
   it('Validar detalhes do pedido cadastrado', function () {
     cy.allure().severity('normal').startStep('test content')
-    .description(testDescription.detalhesPedido)
+    .descriptionHtml(testDescription.detalhesPedido)
 
     Pedidos.validarDetalhes(seeds.seedDetalhesPedidoCadastro)
   })
@@ -54,7 +54,7 @@ describe('CENÁRIO > Cadastro, Edição e Exclusão de Pedido com Recebimento Pa
 
   it('Realizar o recebimento parcial (50%) do pedido', function () {
     cy.allure().severity('critical').startStep('test content')
-    .description(testDescription.recebimento)
+    .descriptionHtml(testDescription.recebimento)
 
     Recebimento.cadastrar(seeds.seedCadastroRecebimentoParcial)
   })
@@ -205,7 +205,7 @@ describe('CENÁRIO > Cadastro, Edição e Exclusão de Pedido com Recebimento Pa
 
   it('Excluir o pedido', function () {
     cy.allure().severity('critical').startStep('test content')
-    .description(testDescription.excluirPedido)
+    .descriptionHtml(testDescription.excluirPedido)
 
     Pedidos.excluir(seeds.seedDetalhesPedidoCadastro)
   })

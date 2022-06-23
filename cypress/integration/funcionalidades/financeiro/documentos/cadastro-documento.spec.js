@@ -21,7 +21,7 @@ describe('FUNCIONALIDADE > Documentos | Cadastro de Documento - ', { tags: '@doc
 
   it('Dedutivel, com tag, observação, já pago, boleto', function () {
     cy.allure().severity('critical').startStep('test content')
-    .description(testDescription.testes1)
+    .descriptionHtml(testDescription.testes1)
 
     Documentos.cadastrar(seedTestDocumento1)
 
@@ -30,7 +30,7 @@ describe('FUNCIONALIDADE > Documentos | Cadastro de Documento - ', { tags: '@doc
 
   it('Dedutivel, já pago, dinheiro, com rateio de ciclos e categoria', function () {
     cy.allure().severity('critical').startStep('test content')
-    .description(testDescription.testes2)
+    .descriptionHtml(testDescription.testes2)
 
     Documentos.cadastrar(seedTestDocumento2.documento)
 
@@ -39,7 +39,7 @@ describe('FUNCIONALIDADE > Documentos | Cadastro de Documento - ', { tags: '@doc
 
   it('Dedutivel, observação, parcelado, duas parcelas, boleto, com rateio de ciclos', function () {
     cy.allure().severity('critical').startStep('test content')
-    .description(testDescription.testes3)
+    .descriptionHtml(testDescription.testes3)
 
     Documentos.cadastrar(seedTestDocumento3.documento)
 
@@ -48,7 +48,7 @@ describe('FUNCIONALIDADE > Documentos | Cadastro de Documento - ', { tags: '@doc
 
   it('Não dedutivel, com tag, cartão de débito, com rateio de categoria', function () {
     cy.allure().severity('critical').startStep('test content')
-    .description(testDescription.testes4)
+    .descriptionHtml(testDescription.testes4)
 
     Documentos.cadastrar(seedTestDocumento4.documento)
 
@@ -57,7 +57,7 @@ describe('FUNCIONALIDADE > Documentos | Cadastro de Documento - ', { tags: '@doc
 
   it('Não dedutivel, pago, cartão de crédito, com rateio de ciclos e com rateio de categoria', function () {
     cy.allure().severity('critical').startStep('test content')
-    .description(testDescription.testes5)
+    .descriptionHtml(testDescription.testes5)
 
     Documentos.cadastrar(seedTestDocumento5.documento)
 
@@ -66,7 +66,7 @@ describe('FUNCIONALIDADE > Documentos | Cadastro de Documento - ', { tags: '@doc
 
   it('Não dedutivel, transferência bancaria, parcelado, com anexo', function () {
     cy.allure().severity('critical').startStep('test content')
-    .description(testDescription.testes6)
+    .descriptionHtml(testDescription.testes6)
 
     Documentos.cadastrar(seedTestDocumento6.documento)
 

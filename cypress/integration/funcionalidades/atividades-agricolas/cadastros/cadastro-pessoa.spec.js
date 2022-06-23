@@ -16,7 +16,7 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Pessoa - ', { tags
   // Teste para cadastro de uma nova pessoa
   it('Deve cadastrar uma pessoa', function () {
     cy.allure().severity('critical').startStep('test content')
-    .description(markdown)
+      .descriptionHtml(html)
 
     Pessoa.cadastro(seedTestPessoa)
   })
@@ -28,23 +28,30 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Pessoa - ', { tags
     Pessoa.validarDashboard(seedTestPessoa)
   })
 
-  const markdown = `
-  ---
-  ### Funcionalidade: Cadastrar pessoa
-  >**COMO** gerente responsável da fazenda
-   **QUERO** poder cadastrar uma nova pessoa
-   **PARA** melhor gestão da minha fazenda
-
-  ### Cenário: Jurídica
-  >**DADO** que eu queira cadastrar uma nova pessoa
-   **QUANDO** eu entrar na Dashboard de Cadastro de pessoas
-   **E** clicar em Adicionar pessoa
-   **E** selecionar o tipo de pessoa
-   **E** selecionar Pessoa Jurídica
-   **E** preencher todos os campos obrigatórios
-   **E** clicar em adicionar
-   **ENTÃO** será salvo e validado na dashboard de Cadastro de pessoas
-
-   ---
+  const html = `
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Cadastrar pessoa </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente responsável da fazenda <br/>
+    <strong>QUERO</strong> poder cadastrar uma nova pessoa <br/>
+    <strong>PARA</strong> melhor gestão da minha fazenda <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Jurídica </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira cadastrar uma nova pessoa <br/>
+    <strong>QUANDO</strong> eu entrar na Dashboard de Cadastro de pessoas <br/>
+    <strong>E</strong> clicar em Adicionar pessoa <br/>
+    <strong>E</strong> selecionar o tipo de pessoa <br/>
+    <strong>E</strong> selecionar Pessoa Jurídica <br/>
+    <strong>E</strong> preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> clicar em adicionar <br/>
+    <strong>ENTAO</strong> será salvo e validado na dashboard de Cadastro de pessoas <br/>
+</div>
    `
 })
