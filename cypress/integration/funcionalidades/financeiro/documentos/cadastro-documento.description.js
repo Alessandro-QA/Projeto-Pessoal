@@ -1,141 +1,202 @@
 const testDescription = {
   testes1: `
-  ---
-  ### Funcionalidade: Cadastro de Documento 
-  >**COMO** gestor da Fazenda
-   **QUERO** registrar cupons fiscais, notas de despesas outros documentos.
-   **PARA** melhor gerenciar os gastos e controle de documentos da empresa.
-  
-  ### Cenário 1: Cadastrar Documento dedutível 
-  >**DADO** que eu queira incluir um novo documento
-   **QUANDO** eu preencher todos os campos obrigatórios
-   **E** selecionar que o documento é dedutível
-   **E** clicar em Adicionar Documento
-   **ENTÃO** o registro será gravado, exibido e validado na dashboard de Documentos
-
-  ### Cenário 2: Cadastrar Documento com tag
-  >**DADO**  que eu queira incluir um novo documento
-   **QUANDO** eu preencher todos os campos obrigatórios
-   **E** selecionar uma tag
-   **E** clicar em Adicionar Documento
-   **ENTÃO** o registro será gravado, exibido e validado na dashboard de Documentos
-  
-  ### Cenário 3: Cadastrar Documento com observação
-  >**DADO** que eu queira incluir um novo documento
-  **QUANDO** eu preencher todos os campos obrigatórios
-   **E** preencher o campo de Observação
-   **E** clicar em Adicionar Documento
-   **ENTÃO** o registro será gravado, exibido e validado na dashboard de Documentos
-   
-  ### Cenário 4: Cadastrar Documento já pago
-  >**DADO** que eu queira incluir um novo documento
-   **QUANDO** eu preencher todos os campos obrigatórios
-   **E** selecionar que o documento já foi pago
-   **E** clicar em Adicionar Documento
-   **ENTÃO** o registro será gravado, exibido e validado na dashboard de Documentos
-
-   ---
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Cadastro de Documento  </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gestor da Fazenda <br/>
+    <strong>QUERO</strong> registrar cupons fiscais, notas de despesas outros documentos <br/>
+    <strong>PARA</strong> melhor gerenciar os gastos e controle de documentos da empresa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario 1 : </span>
+    <span style="color: #b22222;"> Cadastrar Documento dedutível </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira incluir um novo documento <br/>
+    <strong>QUANDO</strong> eu preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> selecionar que o documento é dedutível <br/>
+    <strong>E</strong> clicar em Adicionar Documento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na dashboard de Documentos <br/>
+</div>
+    <span style="color: #800080; font-weight: bold;"> Cenario 2 : </span>
+    <span style="color: #b22222;"> Cadastrar Documento com tag </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira incluir um novo documento <br/>
+    <strong>QUANDO</strong> eu preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> selecionar uma tag <br/>
+    <strong>E</strong> clicar em Adicionar Documento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na dashboard de Documentos <br/>
+</div>
+    <span style="color: #800080; font-weight: bold;"> Cenario 3 : </span>
+    <span style="color: #b22222;"> Cadastrar Documento com observação </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira incluir um novo documento <br/>
+    <strong>QUANDO</strong> eu preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> preencher o campo de Observação <br/>
+    <strong>E</strong> clicar em Adicionar Documento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na dashboard de Documentos <br/>
+</div>
+    <span style="color: #800080; font-weight: bold;"> Cenario 4 : </span>
+    <span style="color: #b22222;"> Cadastrar Documento já pago </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira incluir um novo documento <br/>
+    <strong>QUANDO</strong> eu preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> selecionar que o documento já foi pago <br/>
+    <strong>E</strong> clicar em Adicionar Documento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na dashboard de Documentos <br/>
+</div>
   `,
   testes2: `
-  ---
-  ### Funcionalidade: Cadastro de Documento
-  >**COMO** gestor da Fazenda
-   **QUERO** registrar cupons fiscais, notas de despesas outros documentos.
-   **PARA** melhor gerenciar os gastos e controle de documentos da empresa.
-
-  ### Cenário 1: Cadastrar Documento já pago e com rateio entre ciclos
-  >**DADO** que eu queira incluir um novo documento
-   **QUANDO** eu preencher todos os campos obrigatórios
-   **E** selecionar que o documento já foi pago
-   **E** selecionar o Rateio entre os ciclos
-   **E** clicar em Adicionar Documento
-   **ENTÃO** o registro será gravado, exibido e validado na dashboard de Documentos
-  
-  ### Cenário 2: Cadastrar Documento com rateio entre ciclos, com duas ou mais categoria
-  >**DADO** que eu queira incluir um novo documento
-   **QUANDO** eu preencher todos os campos obrigatórios
-   **E** selecionar o rateio entre duas ou mais categorias
-   **E** clicar em Adicionar Documento
-   **ENTÃO** o registro será gravado, exibido e validado na dashboard de Documentos 
-  
-  ### Cenário 3: Cadastrar Documento não dedutível
-  >**DADO** que eu queira incluir um novo documento
-   **QUANDO** que eu queira incluir um novo documento
-   **E** selecionar que o documento não é dedutível
-   **E** clicar em Adicionar Documento
-   **ENTÃO** o registro será gravado, exibido e validado na dashboard de Documentos 
-
-   ---
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Cadastro de Documento  </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gestor da Fazenda <br/>
+    <strong>QUERO</strong> registrar cupons fiscais, notas de despesas outros documentos <br/>
+    <strong>PARA</strong> melhor gerenciar os gastos e controle de documentos da empresa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario 1 : </span>
+    <span style="color: #b22222;"> Cadastrar Documento já pago e com rateio entre ciclos </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira incluir um novo documento <br/>
+    <strong>QUANDO</strong> eu preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> selecionar que o documento já foi pago <br/>
+    <strong>E</strong> selecionar o Rateio entre os ciclos <br/>
+    <strong>E</strong> clicar em Adicionar Documento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na dashboard de Documentos <br/>
+</div>
+    <span style="color: #800080; font-weight: bold;"> Cenario 2 : </span>
+    <span style="color: #b22222;"> Cadastrar Documento com rateio entre ciclos, com duas ou mais categoria </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira incluir um novo documento <br/>
+    <strong>QUANDO</strong> eu preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> selecionar o rateio entre duas ou mais categorias <br/>
+    <strong>E</strong> clicar em Adicionar Documento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na dashboard de Documentos <br/>
+</div>
+    <span style="color: #800080; font-weight: bold;"> Cenario 3 : </span>
+    <span style="color: #b22222;"> Cadastrar Documento não dedutível </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira incluir um novo documento <br/>
+    <strong>QUANDO</strong> eu preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> selecionar que o documento não é dedutível <br/>
+    <strong>E</strong> clicar em Adicionar Documento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na dashboard de Documentos <br/>
+</div>
   `,
 
   testes3: `
-  ---
-  ### Funcionalidade: Cadastro de Documento
-  >**COMO** gestor da Fazenda
-   **QUERO** registrar cupons fiscais, notas de despesas outros documentos.
-   **PARA** melhor gerenciar os gastos e controle de documentos da empresa.
-
-  ### Cenário 1: Cadastrar Documento parcelado, com rateio entre ciclos
-  >**DADO** que eu queira incluir um novo documento
-   **QUANDO** eu preencher todos os campos obrigatórios
-   **E** selecionar Parcelado
-   **E** selecionar Rateio entre os ciclos
-   **E** clicar em Adicionar Documento
-   **ENTÃO** o registro será gravado, exibido e validado na dashboard de Documentos 
-
-   ---
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Cadastro de Documento  </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gestor da Fazenda <br/>
+    <strong>QUERO</strong> registrar cupons fiscais, notas de despesas outros documentos <br/>
+    <strong>PARA</strong> melhor gerenciar os gastos e controle de documentos da empresa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario : </span>
+    <span style="color: #b22222;"> Cadastrar Documento parcelado, com rateio entre ciclos </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira incluir um novo documento <br/>
+    <strong>QUANDO</strong> eu preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> selecionar Parcelado <br/>
+    <strong>E</strong> selecionar Rateio entre os ciclos <br/>
+    <strong>E</strong> clicar em Adicionar Documento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na dashboard de Documentos <br/>
+</div>
+</div>
   `,
 
   testes4: `
-  ---
-  ### Funcionalidade: Cadastro de Documento
-  >**COMO** gestor da Fazenda
-   **QUERO** registrar cupons fiscais, notas de despesas outros documentos.
-   **PARA** melhor gerenciar os gastos e controle de documentos da empresa.
-
-  ### Cenário 1: Cadastrar Documento com rateio de categoria
-  >**DADO** que eu queira incluir um novo documento
-   **QUANDO** eu preencher todos os campos obrigatórios
-   **E** selecionar uma ou mais categorias
-   **E** clicar em Adicionar Documento
-   **ENTÃO** o registro será gravado, exibido e validado na dashboard de Documentos 
-
-   ---
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Cadastro de Documento  </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gestor da Fazenda <br/>
+    <strong>QUERO</strong> registrar cupons fiscais, notas de despesas outros documentos <br/>
+    <strong>PARA</strong> melhor gerenciar os gastos e controle de documentos da empresa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario : </span>
+    <span style="color: #b22222;"> Cadastrar Documento com rateio de categoria </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira incluir um novo documento <br/>
+    <strong>QUANDO</strong> eu preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> selecionar uma ou mais categorias <br/>
+    <strong>E</strong> clicar em Adicionar Documento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na dashboard de Documentos <br/>
+</div>
+</div>
   `,
 
   testes5: `
-  ---
-  ### Funcionalidade: Cadastro de Documento
-  >**COMO** gestor da Fazenda
-   **QUERO** registrar cupons fiscais, notas de despesas outros documentos.
-   **PARA** melhor gerenciar os gastos e controle de documentos da empresa.
-
-  ### Cenário 1: Cadastrar Documento com rateio entre ciclos, com duas ou mais categorias
-  >**DADO** que eu queira incluir um novo documento
-   **QUANDO** eu preencher todos os campos obrigatórios
-   **E** selecionar rateio entre os ciclos
-   **E** selecionar o rateio entre duas ou mais categorias
-   **E** clicar em Adicionar Documento
-   **ENTÃO** o registro será gravado, exibido e validado na dashboard de Documentos 
-
-   ---
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Cadastro de Documento  </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gestor da Fazenda <br/>
+    <strong>QUERO</strong> registrar cupons fiscais, notas de despesas outros documentos <br/>
+    <strong>PARA</strong> melhor gerenciar os gastos e controle de documentos da empresa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario : </span>
+    <span style="color: #b22222;"> Cadastrar Documento com rateio entre ciclos, com duas ou mais categorias </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira incluir um novo documento <br/>
+    <strong>QUANDO</strong> eu preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> selecionar rateio entre os ciclos <br/>
+    <strong>E</strong> selecionar o rateio entre duas ou mais categorias <br/>
+    <strong>E</strong> clicar em Adicionar Documento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na dashboard de Documentos <br/>
+</div>
+</div>
   `,
 
   testes6: `
-  ---
-  ### Funcionalidade: Cadastro de Documento
-  >**COMO** gestor da Fazenda
-   **QUERO** registrar cupons fiscais, notas de despesas outros documentos.
-   **PARA** melhor gerenciar os gastos e controle de documentos da empresa.
-
-  ### Cenário 1: Cadastrar Documento com um anexo
-  >**DADO** que eu queira incluir um novo documento
-   **QUANDO** eu preencher todos os campos obrigatórios
-   **E** anexar um arquivo no documento
-   **E** clicar em Adicionar Documento
-   **ENTÃO** o registro será gravado, exibido e validado na dashboard de Documentos 
-
-   ---
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Cadastro de Documento  </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gestor da Fazenda <br/>
+    <strong>QUERO</strong> registrar cupons fiscais, notas de despesas outros documentos <br/>
+    <strong>PARA</strong> melhor gerenciar os gastos e controle de documentos da empresa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario : </span>
+    <span style="color: #b22222;"> Cadastrar Documento com um anexo </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira incluir um novo documento <br/>
+    <strong>QUANDO</strong> eu preencher todos os campos obrigatórios <br/>
+    <strong>E</strong> anexar um arquivo no documento <br/>
+    <strong>E</strong> clicar em Adicionar Documento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na dashboard de Documentos <br/>
+</div>
+</div>
   `
 }
 
