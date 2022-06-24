@@ -38,6 +38,8 @@ class Utils {
    * @param {string} credencial Nome da credencial de acesso: 'login_cenarios', 'login_cadastro' ou 'login_nfe'. Cada credencial possui login, senha e tenant
    */
   requestApi(method, url, body, credencial) {
+    const tenant = Cypress.env(credencial).tenant
+
     cy.request({
       method: method,
       url: url,
@@ -45,7 +47,7 @@ class Utils {
         'authorization': `Bearer ${Cypress.env('access_token')}`,
         'content-type': 'application/json',
         'oferta': '38F68463-F895-47CA-BE8B-D296ED2EC0FB',
-        'x-tenant': Cypress.env(credencial).tenant
+        'x-tenant': tenant
       },
       body: body
     }).then((resp) => {
@@ -55,13 +57,40 @@ class Utils {
     })
   }
 
+  // /**
+  //  * Seta o access_token do localStorage nas variáveis de ambiente do Cypress
+  //  */
+  // setAccessTokenFromLocalStorage() {
+  //   if (Cypress.env('authUrl')) {
+  //     const oidc = JSON.parse(window.localStorage.getItem(`oidc.user:${Cypress.env('authUrl')}:my-farm-clientapp`))
+  //     Cypress.env('access_token', oidc.access_token)
+  //   } else {
+  //     cy.log('Não foi possível obter o access_token do LocalStorage, verifique a authUrl da pasta config-files')
+  //   }
+  // }
+
   /**
-   * Seta o access_token do localStorage nas variáveis de ambiente do Cypress
-   */
-  setAccessTokenFromLocalStorage() {
+   * Seta o access_token obtido por API nas variáveis de ambiente do Cypress
+  */
+  setAccessTokenToEnv(credenciais) {
     if (Cypress.env('authUrl')) {
-      const oidc = JSON.parse(window.localStorage.getItem(`oidc.user:${Cypress.env('authUrl')}:my-farm-clientapp`))
-      Cypress.env('access_token', oidc.access_token)
+      cy.request({
+        method: 'POST',
+        url: `${Cypress.env('authUrl')}/connect/token`,
+        headers: {
+          'authorization': 'Basic Y2NkZXZjbGllbnQ6MTdjNGZkYTUtYzUxOC00OTg1LTgzMmQtYmY4NWQxZmYxNGQ1',
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: {
+          scope: 'tenant i18n fazenda bemocorrencia atividade atividadeagricola bem cicloproducao controleclimatico cultura estoque formapagamento material notafiscal operacao pedidocompra pessoa planejamentosafra planocontas safra unidadearmazenamento unidademedida eexport subscription parametrotributario permission product webhookvindi contabancaria financeiro instituicaofinanceira localidade producaoagricola notification assinei webhook marketingcampaign nfedistribuicao aliare agriq onboarding profile openid indexadormoeda agriq openbanking',
+          grant_type: 'password',
+          username: credenciais.email,
+          password: credenciais.senha,
+        }
+      }).then((resp) => {
+        Cypress.env('access_token', resp.body.access_token)
+        cy.log('Access Token definido nas variaveis de ambiente do Cypress com sucesso!')
+      })
     } else {
       cy.log('Não foi possível obter o access_token do LocalStorage, verifique a authUrl da pasta config-files')
     }

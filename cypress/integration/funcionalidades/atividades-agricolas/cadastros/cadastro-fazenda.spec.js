@@ -2,15 +2,16 @@
 
 import seedTestFazenda from '../../../../fixtures/funcionalidades/atividades-agricolas/cadastros/fixture-fazenda.json'
 import Fazenda from '../../../../support/commands/funcionalidades/atividades-agricolas/cadastros/fazenda/fazenda.js'
+import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Fazenda - ', { tags: '@cadastro' }, () => {
   before(function () {
     const credenciais = Cypress.env('login_cadastro')
-    cy.login(credenciais)
+    Authenticate.login(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   // Teste de cadastro de uma nova fazenda

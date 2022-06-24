@@ -14,6 +14,7 @@ import Utils from '../../../../../support/utils/utils.js'
 import colheita from '../../../../../fixtures/cenarios-de-teste/suprimentos/consultas/extrato-de-materiais/extrato-colheita-interna/colheita.json'
 import ExtratoMateriais from '../../../../../support/commands/funcionalidades/suprimentos/consultas/extratoMateriais.js'
 import seedTest from '../../../../../fixtures/cenarios-de-teste/suprimentos/consultas/extrato-de-materiais/extrato-colheita-interna/extratoMaterial.json'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('CENÁRIO > Extrato de Materiais | Consulta de extrato de material após cadastro de Colheita Interna - ', { tags: '@extratoMateriais' }, () => {
   var dataAtual = Utils.getDate()
@@ -21,15 +22,12 @@ describe('CENÁRIO > Extrato de Materiais | Consulta de extrato de material apó
 
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    Utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar colheita por API', function () {

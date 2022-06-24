@@ -9,5 +9,6 @@
   "screenshotsFolder": "cypress/results/screenshots",
   "video": false,
   "videosFolder": "cypress/results/videos",
-  "trashAssetsBeforeRuns": true
+  "trashAssetsBeforeRuns": true,
+  "ignoreTestFiles": "*.description.js"
 }

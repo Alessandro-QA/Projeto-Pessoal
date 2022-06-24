@@ -14,6 +14,7 @@ import seedTestDashboard from '../../../../fixtures/cenarios-de-teste/producao/d
 import seedTestDashboardAposExpedicao from '../../../../fixtures/cenarios-de-teste/producao/dashboard/validar-dashboard/dashboard-apos-expedicao.json'
 import Utils from '../../../../support/utils/utils.js'
 import Producao from '../../../../support/commands/funcionalidades/producao/dashboardProducao.js'
+import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > Producao | Dashboard - ', { tags: '@colheita' }, () => {
   var dataAtual = Utils.getDate()
@@ -32,15 +33,12 @@ describe('FUNCIONALIDADE > Producao | Dashboard - ', { tags: '@colheita' }, () =
   // Login via interface
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    Utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar contratos por API', function () {

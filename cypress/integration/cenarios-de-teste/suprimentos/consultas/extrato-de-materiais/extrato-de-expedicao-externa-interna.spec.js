@@ -14,6 +14,7 @@ import seedTest from '../../../../../fixtures/cenarios-de-teste/suprimentos/cons
 import colheita from '../../../../../fixtures/cenarios-de-teste/suprimentos/consultas/extrato-de-materiais/extrato-expedicao-externa-interna/colheita.json'
 import expedicao from '../../../../../fixtures/cenarios-de-teste/suprimentos/consultas/extrato-de-materiais/extrato-expedicao-externa-interna/expedicao.json'
 import ExtratoMateriais from '../../../../../support/commands/funcionalidades/suprimentos/consultas/extratoMateriais.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('CENÁRIO > Extrato de Materiais | Consulta de extrato de materiais após expedição Externa X Interna - ', { tags: '@extratoMateriais' }, () => {
   var dataAtual = Utils.getDate()
@@ -22,15 +23,12 @@ describe('CENÁRIO > Extrato de Materiais | Consulta de extrato de materiais ap�
 
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    Utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Validar extrato de materiais da UA de ORIGEM após cadastro de colheita', function () {

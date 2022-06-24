@@ -5,6 +5,7 @@ import LivroCaixa from '../../../../../support/commands/funcionalidades/financei
 import Movimentacao from '../../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria'
 import AgendaFinanceira from '../../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira'
 import Utils from '../../../../../support/utils/utils.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('CENÁRIO > Documentos | Documento pago pela Agenda Financeira - ', { tags: '@documentos' }, () => {
   var dataAtual = Utils.getDate()
@@ -12,15 +13,12 @@ describe('CENÁRIO > Documentos | Documento pago pela Agenda Financeira - ', { t
 
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    Utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar documento por API', function () {

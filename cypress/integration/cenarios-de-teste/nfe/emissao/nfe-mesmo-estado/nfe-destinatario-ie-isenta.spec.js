@@ -4,6 +4,7 @@ import seedTestNfe from '../../../../../fixtures/cenarios-de-teste/nfe/emissao/n
 import destinatarioJson from '../../../../../fixtures/cenarios-de-teste/nfe/emissao/nfe-mesmo-estado/destinatario-ie-isenta/destinatario.json'
 import Nfe from '../../../../../support/commands/funcionalidades/nfe/nfe.js'
 import Utils from '../../../../../support/utils/utils.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > NFe | Emissão de NFe: destinatário com IE isenta - ', { tags: '@nfe' }, () => {
   var payloadDestinatarioIsento = Utils.replacer('dataSubstituicao', Utils.getDate(), destinatarioJson.isenta)
@@ -11,15 +12,12 @@ describe('FUNCIONALIDADE > NFe | Emissão de NFe: destinatário com IE isenta - 
 
   before(function () {
     const credenciais = Cypress.env('login_nfe')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    Utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Definir destinatário como IE isenta - API', function () {

@@ -7,30 +7,28 @@ import Documentos from '../../../../../support/commands/funcionalidades/financei
 import LivroCaixa from '../../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa'
 import Movimentacao from '../../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria'
 import Safra from '../../../../../support/commands/funcionalidades/resultados-safra/resultado-safra'
-import utils from '../../../../../support/utils/utils.js'
+import Utils from '../../../../../support/utils/utils.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 // Cadastro, Edição e Exclusão de Documento Já Pago
 describe('CENÁRIO > Documentos | Cadastro, Edição e Exclusão de Documento Já Pago - ', { tags: '@documentos' }, () => {
-  var dataAtual = utils.getDate()
-  var bodyDocumento = utils.replacer('dataSubstituicao', dataAtual, seedCadastro.cadastroDocumento)
+  var dataAtual = Utils.getDate()
+  var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, seedCadastro.cadastroDocumento)
 
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar documento dedutível já pago por API', function () {
     cy.allure().severity('normal').startStep('test content')
 
-    utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento, 'login_cenarios')
+    Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento, 'login_cenarios')
   })
 
   it('Validar se o cadastro refletiu na Movimentação Bancária', function () {

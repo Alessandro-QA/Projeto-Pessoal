@@ -5,15 +5,16 @@ import seedTestCadastro from '../../../../../fixtures/cenarios-de-teste/producao
 import seedTestDashboardProducao from '../../../../../fixtures/cenarios-de-teste/producao/colheita/externa/dashboard-producao.json'
 import Colheita from '../../../../../support/commands/funcionalidades/producao/colheita.js'
 import DashboardProducao from '../../../../../support/commands/funcionalidades/producao/dashboardProducao.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > Colheitas | Cadastro de colheita externa sem contrato - ', { tags: '@colheita' }, () => {
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
+    Authenticate.login(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar colheita externa', function () {

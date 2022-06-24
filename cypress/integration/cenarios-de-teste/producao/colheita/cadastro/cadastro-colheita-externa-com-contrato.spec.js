@@ -7,6 +7,7 @@ import seedTestDashboardProducao from '../../../../../fixtures/cenarios-de-teste
 import contratoJson from '../../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-contrato/contrato.json'
 import Colheita from '../../../../../support/commands/funcionalidades/producao/colheita.js'
 import DashboardProducao from '../../../../../support/commands/funcionalidades/producao/dashboardProducao.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > Colheitas | Cadastro de colheita externa, com contrato, sem partilha - ', { tags: '@colheita' }, () => {
   var dataAtual = Utils.getDate()
@@ -14,15 +15,12 @@ describe('FUNCIONALIDADE > Colheitas | Cadastro de colheita externa, com contrat
 
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    Utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar contrato por API', function () {
