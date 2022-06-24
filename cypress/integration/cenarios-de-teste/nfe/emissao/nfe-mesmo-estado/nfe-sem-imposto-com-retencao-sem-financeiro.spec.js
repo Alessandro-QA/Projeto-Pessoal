@@ -2,15 +2,16 @@
 
 import seedTestNfe from '../../../../../fixtures/cenarios-de-teste/nfe/emissao/nfe-mesmo-estado/nfe-sem-imposto-com-retencao-sem-financeiro.json'
 import Nfe from '../../../../../support/commands/funcionalidades/nfe/nfe.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > NFe | Emissão de NFe: sem imposto, com retenção, sem financeiro - ', { tags: '@nfe' }, () => {
   before(function () {
     const credenciais = Cypress.env('login_nfe')
-    cy.login(credenciais)
+    Authenticate.login(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar uma nfe', function () {

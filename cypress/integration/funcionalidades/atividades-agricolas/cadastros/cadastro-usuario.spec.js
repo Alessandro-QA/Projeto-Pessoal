@@ -2,15 +2,16 @@
 
 import seedTestUsuario from '../../../../fixtures/funcionalidades/atividades-agricolas/cadastros/fixture-usuario.json'
 import Usuario from '../../../../support/commands/funcionalidades/atividades-agricolas/cadastros/usuario/usuario.js'
+import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Usuário - ', { tags: '@cadastro' }, () => {
   before(function () {
     const credenciais = Cypress.env('login_cadastro')
-    cy.login(credenciais)
+    Authenticate.login(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   // Teste para cadastro de um novo usuario

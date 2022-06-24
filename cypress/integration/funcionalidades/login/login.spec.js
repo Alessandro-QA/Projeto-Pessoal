@@ -1,7 +1,9 @@
 import locLogin from '../../../support/locators/funcionalidades/login/locators-login'
 import locDashboard from '../../../support/locators/funcionalidades/main-dashboard/locators-dashboard'
+import Authenticate from '../../../support/commands/funcionalidades/login/login-logout.js'
+import testDescription from './bdd-descritpion/login.description.js'
 
-describe('FUNCIONALIDADE | Login - ', { tags: '@login' }, () => {
+describe('FUNCIONALIDADE > Login | Login e Logout na aplicação ', { tags: '@login' }, () => {
   const credenciais = Cypress.env('login_cadastro')
 
   before(() => {
@@ -16,9 +18,11 @@ describe('FUNCIONALIDADE | Login - ', { tags: '@login' }, () => {
 
   it('Deve realizar login', function () {
     cy.allure().severity('blocker').startStep('test content')
+      .descriptionHtml(testDescription.realizarLogin)
 
-    cy.login(credenciais)
+    Authenticate.login(credenciais)
 
+    cy.visit('/')
     cy.get(locDashboard.dashboard.titulo)
       .scrollIntoView().should('exist')
       .and('be.visible').and('have.text', 'Dashboard geral')
@@ -26,8 +30,9 @@ describe('FUNCIONALIDADE | Login - ', { tags: '@login' }, () => {
 
   it('Deve realizar logout', function () {
     cy.allure().severity('normal').startStep('test content')
+      .descriptionHtml(testDescription.realizarLogout)
 
-    cy.logout()
+    Authenticate.logout()
 
     cy.get(locLogin.login.btnSair)
       .should('not.exist')

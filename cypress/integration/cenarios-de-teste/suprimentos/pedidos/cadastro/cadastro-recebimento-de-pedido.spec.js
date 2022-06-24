@@ -7,17 +7,18 @@ import AgendaFinanceira from '../../../../../support/commands/funcionalidades/fi
 import Pedidos from '../../../../../support/commands/funcionalidades/suprimentos/pedidos.js'
 import Recebimento from '../../../../../support/commands/funcionalidades/suprimentos/recebimento.js'
 import Documentos from '../../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
-import testDescription from './cadastro-recebimento-pedido-description.js'
+import testDescription from './cadastro-recebimento-pedido.description.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 // Cadastro, Edição e Exclusão de Pedido com Recebimento
 describe('CENÁRIO > Cadastro, Edição e Exclusão de Pedido com Recebimento Parcial - ', { tags: '@pedidos' }, () => {
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
+    Authenticate.login(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar um pedido', function () {

@@ -12,6 +12,7 @@ import Safra from '../../../../../support/commands/funcionalidades/resultados-sa
 import documento from '../../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/documentos.json'
 import seedExcluirDocumento from '../../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/excluirDocumentos.json'
 import Utils from '../../../../../support/utils/utils.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('CENÁRIO > Documentos | Cadastro de documento com exclusão de movimentação - ', { tags: '@documentos' }, () => {
   var dataAtual = Utils.getDate()
@@ -21,15 +22,12 @@ describe('CENÁRIO > Documentos | Cadastro de documento com exclusão de movimen
 
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    Utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar documentos por API', function () {

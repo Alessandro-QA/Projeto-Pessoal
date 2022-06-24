@@ -2,15 +2,16 @@
 
 import seedTestCiclo from '../../../../fixtures/funcionalidades/atividades-agricolas/cadastros/fixture-ciclo.json'
 import Ciclo from '../../../../support/commands/funcionalidades/atividades-agricolas/cadastros/ciclo/ciclo.js'
+import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Ciclo - ', { tags: '@cadastro' }, () => {
   before(function () {
     const credenciais = Cypress.env('login_cadastro')
-    cy.login(credenciais)
+    Authenticate.login(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   // Teste de cadastro de um novo ciclo de milho

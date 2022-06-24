@@ -2,15 +2,16 @@
 
 import seedTestEmpresa from '../../../../fixtures/funcionalidades/atividades-agricolas/cadastros/fixture-empresa.json'
 import Empresa from '../../../../support/commands/funcionalidades/atividades-agricolas/cadastros/empresa/empresa.js'
+import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Empresa - ', { tags: '@cadastro' }, () => {
   before(function () {
     const credenciais = Cypress.env('login_cadastro')
-    cy.login(credenciais)
+    Authenticate.login(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   // Teste de cadastro de uma nova empresa

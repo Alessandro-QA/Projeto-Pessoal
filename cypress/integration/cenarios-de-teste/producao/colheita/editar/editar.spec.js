@@ -5,6 +5,7 @@ import seedTestEditar from '../../../../../fixtures/cenarios-de-teste/producao/c
 import seedTestDashboard from '../../../../../fixtures/cenarios-de-teste/producao/colheita/editar-colheita/dashboar-colheita.json'
 import Colheita from '../../../../../support/commands/funcionalidades/producao/colheita.js'
 import Utils from '../../../../../support/utils/utils.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > Colheitas | Edição de colheita - ', { tags: '@colheita' }, () => {
   var dataAtual = Utils.getDate()
@@ -12,15 +13,12 @@ describe('FUNCIONALIDADE > Colheitas | Edição de colheita - ', { tags: '@colhe
 
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    Utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar colheita por API', function () {

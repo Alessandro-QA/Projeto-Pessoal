@@ -3,6 +3,7 @@
 import seedTest from '../../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-entrada-com-estimativa-IRRF.json'
 import LivroCaixa from '../../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa.js'
 import Utils from '../../../../../support/utils/utils.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('CENÁRIO > Documentos | Cadastro de documento de entrada com estimativa de IRRF - ', { tags: '@documentos' }, () => {
   var dataAtual = Utils.getDate()
@@ -10,15 +11,12 @@ describe('CENÁRIO > Documentos | Cadastro de documento de entrada com estimativ
 
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    Utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar documento de entrada já pago por API', function () {

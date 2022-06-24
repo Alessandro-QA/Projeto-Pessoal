@@ -8,15 +8,16 @@ import seedTestDocumento5 from '../../../../fixtures/funcionalidades/financeiro/
 import seedTestDocumento6 from '../../../../fixtures/funcionalidades/financeiro/documentos/cadastro/documento5537.json'
 import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import testDescription from './cadastro-documento.description.js'
+import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > Documentos | Cadastro de Documento - ', { tags: '@documentos' }, () => {
   before(function () {
     const credenciais = Cypress.env('login_cadastro')
-    cy.login(credenciais)
+    Authenticate.login(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Dedutivel, com tag, observação, já pago, boleto', function () {

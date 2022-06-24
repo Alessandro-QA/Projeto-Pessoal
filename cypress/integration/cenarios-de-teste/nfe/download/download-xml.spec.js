@@ -3,13 +3,14 @@
 import Nfe from '../../../../support/commands/funcionalidades/nfe/nfe.js'
 import seedTestNfe from '../../../../fixtures/cenarios-de-teste/nfe/download/download-xml.json'
 import Utils from '../../../../support/utils/utils.js'
+import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 // https://dev.azure.com/conexalabs/ProjetoX/_wiki/wikis/ProjetoX.wiki/3033/NF-e#**funcionalidade%3A**-download-de-xml
 
 describe('FUNCIONALIDADE > NFe | Download de XML - ', { tags: '@nfe' }, () => {
   before(function () {
     const credenciais = Cypress.env('login_nfe')
-    cy.login(credenciais)
+    Authenticate.login(credenciais)
 
     cy.visit('/fiscal/nfe')
   })
@@ -19,7 +20,7 @@ describe('FUNCIONALIDADE > NFe | Download de XML - ', { tags: '@nfe' }, () => {
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('NFe Autorizada', function () {

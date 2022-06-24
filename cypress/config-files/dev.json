@@ -2,6 +2,7 @@
   "baseUrl": "__Env.MyFarm.BaseAddress__",
   "env": {
     "authUrl": "__Env.MyFarm.AuthUrl__",
+    "returnURL": "__Env.MyFarm.ReturnURL__",
     "login_cenarios": {
       "email": "__EndToEndTest.LoginCenarios.Email__",
       "senha": "__EndToEndTest.LoginCenarios.Password__",

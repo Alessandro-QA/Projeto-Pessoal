@@ -1,7 +1,8 @@
-import locCadastroConta from '../../../../support/locators/funcionalidades/login/onboarding/locators-cadastro-conta'
-import locLogin from '../../../../support/locators/funcionalidades/login/locators-login'
-import locOnboarding from '../../../../support/locators/funcionalidades/login/onboarding/locators-onboarding'
-import locDashboard from '../../../../support/locators/funcionalidades/main-dashboard/locators-dashboard'
+import locCadastroConta from '../../../support/locators/funcionalidades/login/onboarding/locators-cadastro-conta'
+import locLogin from '../../../support/locators/funcionalidades/login/locators-login'
+import locOnboarding from '../../../support/locators/funcionalidades/login/onboarding/locators-onboarding'
+import locDashboard from '../../../support/locators/funcionalidades/main-dashboard/locators-dashboard'
+import Authenticate from '../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe.skip('Cadastro de Conta e realização de Onboarding', { tags: '@onboarding' }, () => {
   let email
@@ -33,7 +34,7 @@ describe.skip('Cadastro de Conta e realização de Onboarding', { tags: '@onboar
   })
 
   it('Deve logar na conta cadastrada', function () {
-    cy.login({
+    Authenticate.login({
       'email': email,
       'senha': 'teste@123'
     })

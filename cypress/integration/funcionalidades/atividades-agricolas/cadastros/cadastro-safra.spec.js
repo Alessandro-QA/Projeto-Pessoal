@@ -2,15 +2,16 @@
 
 import seedTestSafra from '../../../../fixtures/funcionalidades/atividades-agricolas/cadastros/fixture-safra.json'
 import Safra from '../../../../support/commands/funcionalidades/atividades-agricolas/cadastros/safra/safra.js'
+import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Safra - ', { tags: '@cadastro' }, () => {
   before(function () {
     const credenciais = Cypress.env('login_cadastro')
-    cy.login(credenciais)
+    Authenticate.login(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   // Teste de cadastro de uma nova safra

@@ -10,6 +10,7 @@ import seedTestDashboardProducao from '../../../../../fixtures/cenarios-de-teste
 // import seedTestDashboardContrato from '../../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-excedente.js/dashboard-contrato.json'
 import contrato1 from '../../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-excedente.js/contrato-1.json'
 import contrato2 from '../../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-excedente.js/contrato-2.json'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('FUNCIONALIDADE > Colheitas | Cadastro de colheita externa com partilha e quantidade excedente - ', { tags: '@colheita' }, () => {
   var dataAtual = Utils.getDate()
@@ -18,15 +19,12 @@ describe('FUNCIONALIDADE > Colheitas | Cadastro de colheita externa com partilha
 
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    Utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Cadastrar contratos por API', function () {

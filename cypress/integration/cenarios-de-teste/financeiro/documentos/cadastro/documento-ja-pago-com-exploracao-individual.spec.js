@@ -5,6 +5,7 @@ import LivroCaixa from '../../../../../support/commands/funcionalidades/financei
 import Movimentacao from '../../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 import Fazenda from '../../../../../support/commands/funcionalidades/atividades-agricolas/cadastros/fazenda/fazenda.js'
 import Utils from '../../../../../support/utils/utils.js'
+import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 
 describe('CENÁRIO > Documentos | Cadastro de Documento Já Pago - Empresa com Exploração Individual - ', { tags: '@documentos' }, () => {
   var dataAtual = Utils.getDate()
@@ -12,15 +13,12 @@ describe('CENÁRIO > Documentos | Cadastro de Documento Já Pago - Empresa com E
 
   before(function () {
     const credenciais = Cypress.env('login_cenarios')
-    cy.login(credenciais)
-  })
-
-  before(function () {
-    Utils.setAccessTokenFromLocalStorage()
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
   })
 
   after(() => {
-    cy.logout()
+    Authenticate.logout()
   })
 
   it('Definir a matricula como Exploração Individual', function () {
