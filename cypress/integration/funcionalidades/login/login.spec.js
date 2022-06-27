@@ -20,7 +20,7 @@ describe('FUNCIONALIDADE > Login | Login e Logout na aplicação ', { tags: '@lo
     cy.allure().severity('blocker').startStep('test content')
       .descriptionHtml(testDescription.realizarLogin)
 
-    Authenticate.login(credenciais)
+    Authenticate.loginInterface(credenciais)
 
     cy.visit('/')
     cy.get(locDashboard.dashboard.titulo)
