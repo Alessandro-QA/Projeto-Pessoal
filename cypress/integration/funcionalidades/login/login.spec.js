@@ -1,7 +1,7 @@
 import locLogin from '../../../support/locators/funcionalidades/login/locators-login'
 import locDashboard from '../../../support/locators/funcionalidades/main-dashboard/locators-dashboard'
 import Authenticate from '../../../support/commands/funcionalidades/login/login-logout.js'
-import testDescription from './bdd-descritpion/login.description.js'
+import testDescription from './bdd-description/login.description.js'
 
 describe('FUNCIONALIDADE > Login | Login e Logout na aplicação ', { tags: '@login' }, () => {
   const credenciais = Cypress.env('login_cadastro')
