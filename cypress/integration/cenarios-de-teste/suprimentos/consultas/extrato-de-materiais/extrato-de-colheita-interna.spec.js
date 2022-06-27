@@ -15,6 +15,7 @@ import colheita from '../../../../../fixtures/cenarios-de-teste/suprimentos/cons
 import ExtratoMateriais from '../../../../../support/commands/funcionalidades/suprimentos/consultas/extratoMateriais.js'
 import seedTest from '../../../../../fixtures/cenarios-de-teste/suprimentos/consultas/extrato-de-materiais/extrato-colheita-interna/extratoMaterial.json'
 import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
+import testDescription from './bdd-description/extrato-de-colheita-interna.description.js'
 
 describe('CENÁRIO > Extrato de Materiais | Consulta de extrato de material após cadastro de Colheita Interna - ', { tags: '@extratoMateriais' }, () => {
   var dataAtual = Utils.getDate()
@@ -38,6 +39,7 @@ describe('CENÁRIO > Extrato de Materiais | Consulta de extrato de material apó
 
   it('Validar colheita no Extrato de Materiais', function () {
     cy.allure().severity('normal').startStep('test content')
+      .descriptionHtml(testDescription.description)
 
     ExtratoMateriais.validarExtratoMateriais(seedTest)
   })

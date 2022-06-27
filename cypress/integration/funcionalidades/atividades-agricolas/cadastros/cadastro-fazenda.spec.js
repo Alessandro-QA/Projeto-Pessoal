@@ -3,6 +3,7 @@
 import seedTestFazenda from '../../../../fixtures/funcionalidades/atividades-agricolas/cadastros/fixture-fazenda.json'
 import Fazenda from '../../../../support/commands/funcionalidades/atividades-agricolas/cadastros/fazenda/fazenda.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import testDescription from './bdd-description/fazenda.description.js'
 
 describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Fazenda - ', { tags: '@cadastro' }, () => {
   before(function () {
@@ -17,7 +18,7 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Fazenda - ', { tag
   // Teste de cadastro de uma nova fazenda
   it('Deve cadastrar uma fazenda', function () {
     cy.allure().severity('normal').startStep('test content')
-    .description(markdown)
+      .descriptionHtml(testDescription.fazenda)
 
     Fazenda.cadastro(seedTestFazenda)
   })
@@ -28,11 +29,4 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Fazenda - ', { tag
 
     Fazenda.validarDashboard(seedTestFazenda)
   })
-
-  const markdown = `
-  ---
-  ### EM CRIAÇÃO!
-
-   ---
-   `
 })

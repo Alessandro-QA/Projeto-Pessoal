@@ -3,6 +3,7 @@
 import seedTestUsuario from '../../../../fixtures/funcionalidades/atividades-agricolas/cadastros/fixture-usuario.json'
 import Usuario from '../../../../support/commands/funcionalidades/atividades-agricolas/cadastros/usuario/usuario.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import testDescription from './bdd-description/usuario.description.js'
 
 describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Usuário - ', { tags: '@cadastro' }, () => {
   before(function () {
@@ -17,7 +18,7 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Usuário - ', { ta
   // Teste para cadastro de um novo usuario
   it('Deve cadastrar um usuario', function () {
     cy.allure().severity('critical').startStep('test content')
-    .description(markdown)
+      .descriptionHtml(testDescription.usuario)
 
     Usuario.cadastro(seedTestUsuario)
   })
@@ -28,11 +29,4 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Usuário - ', { ta
 
     Usuario.validarDashboard(seedTestUsuario)
   })
-
-  const markdown = `
-  ---
-  ### EM CRIAÇÃO!
-
-   ---
-   `
 })
