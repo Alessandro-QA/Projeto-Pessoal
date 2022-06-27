@@ -15,6 +15,7 @@ import colheita from '../../../../../fixtures/cenarios-de-teste/suprimentos/cons
 import expedicao from '../../../../../fixtures/cenarios-de-teste/suprimentos/consultas/extrato-de-materiais/extrato-expedicao-externa-interna/expedicao.json'
 import ExtratoMateriais from '../../../../../support/commands/funcionalidades/suprimentos/consultas/extratoMateriais.js'
 import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
+import testDescription from './bdd-description/extrato-de-expedicao-externa-interna.description.js'
 
 describe('CENÁRIO > Extrato de Materiais | Consulta de extrato de materiais após expedição Externa X Interna - ', { tags: '@extratoMateriais' }, () => {
   var dataAtual = Utils.getDate()
@@ -33,6 +34,7 @@ describe('CENÁRIO > Extrato de Materiais | Consulta de extrato de materiais ap�
 
   it('Validar extrato de materiais da UA de ORIGEM após cadastro de colheita', function () {
     cy.allure().severity('normal').startStep('test content')
+      .descriptionHtml(testDescription.description)
 
     Utils.requestApi('POST', '/api/producao-agricola/v1/colheitas', bodyColheita, 'login_cenarios')
     ExtratoMateriais.validarExtratoMateriais(seedTest.UaOrigemColheita)
