@@ -3,6 +3,7 @@
 import seedTestSafra from '../../../../fixtures/funcionalidades/atividades-agricolas/cadastros/fixture-safra.json'
 import Safra from '../../../../support/commands/funcionalidades/atividades-agricolas/cadastros/safra/safra.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import testDescription from './bdd-description/safra.description.js'
 
 describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Safra - ', { tags: '@cadastro' }, () => {
   before(function () {
@@ -17,7 +18,7 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Safra - ', { tags:
   // Teste de cadastro de uma nova safra
   it('Deve cadastrar uma safra', function () {
     cy.allure().severity('normal').startStep('test content')
-    .description(markdown)
+      .descriptionHtml(testDescription.safra)
 
     Safra.cadastro(seedTestSafra)
   })
@@ -28,11 +29,4 @@ describe('FUNCIONALIDADE > Atividades Agricolas | Cadastro de Safra - ', { tags:
 
     Safra.validarDashboard(seedTestSafra)
   })
-
-  const markdown = `
-  ---
-  ### EM CRIAÇÃO!
-
-   ---
-   `
 })
