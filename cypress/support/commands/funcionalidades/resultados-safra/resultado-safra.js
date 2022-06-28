@@ -35,22 +35,25 @@ class ResultadoSafra {
     // Marcar "Exibir informacoes de atividade agricola"
     if (seedTestResultadosSafraDashboard.exibirInformacoesAgricola) {
       cy.getVisible(locResultadosSafra.dashboard.checkboxInformacoesAtividade).click()
+        .wait(['@listaResultadoSafra', '@ciclosDocumentos', '@precoMediaCiclos'], { timeout: 10000 })
     }
 
     // Marcar "Mostrar contas a pagar e receber"
     if (seedTestResultadosSafraDashboard.mostrarContasPagarReceber) {
       cy.getVisible(locResultadosSafra.dashboard.checkboxContasPagarReceber).click()
+        .wait(['@listaResultadoSafra', '@ciclosDocumentos', '@precoMediaCiclos'], { timeout: 10000 })
     }
 
     // Marcar "Adicionar saldo a fixar de colheitas"
     if (seedTestResultadosSafraDashboard.adicionarSaldoColheitas) {
       cy.getVisible(locResultadosSafra.dashboard.checkboxSaldoColheita).click()
+        .wait(['@listaResultadoSafra', '@ciclosDocumentos', '@precoMediaCiclos'], { timeout: 10000 })
     }
 
-    // Aguardar 5 segundos ate carregar os dados na tela
-    cy.wait('@listaResultadoSafra', { timeout: 10000 })
-    cy.wait('@ciclosDocumentos', { timeout: 10000 })
-    cy.wait('@precoMediaCiclos', { timeout: 10000 })
+    // // Aguardar 5 segundos ate carregar os dados na tela
+    // cy.wait('@listaResultadoSafra', { timeout: 10000 })
+    // cy.wait('@ciclosDocumentos', { timeout: 10000 })
+    // cy.wait('@precoMediaCiclos', { timeout: 10000 })
 
     // Validar card de safra por ciclo
     if (seedTestResultadosSafraDashboard.cardCiclo) {
