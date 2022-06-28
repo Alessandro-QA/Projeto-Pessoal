@@ -11,14 +11,16 @@ class Colheita {
    * */
   cadastrarEditar(seedTest) {
     cy.intercept('POST', 'https://daas.dev.conexa.com.br/api/unidade-medida/v1/ConversorUnidadeMedida/ConverterUnidade').as('conversor')
+    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/**').as('detalhes')
+    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/cultura/v1/cultura/icone?**').as('iconeCultura')
+    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/ciclo-producao/v1/Ciclo/list?**').as('listCiclos')
+    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/List?**').as('listColheitas')
+    cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**').as('listUnidadeArmazenamento')
 
     if (seedTest.editar) {
       const url = '/producao/colheita'
       const locatorTituloPagina = locDashboardColheita.titulo
       const tituloPagina = 'Colheitas'
-
-      cy.intercept('GET', '/api/producao-agricola/v1/colheitas/**').as('detalhes')
-      cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/cultura/v1/cultura/icone?**').as('listColheitas')
 
       // Navegar para dashboard de colheita
       cy.navegarPara(url, locatorTituloPagina, tituloPagina)
@@ -27,15 +29,15 @@ class Colheita {
       cy.getVisible(locDashboardColheita.selectFazenda).click()
       cy.getVisible(locDashboardColheita.selecionarFazenda)
         .contains(seedTest.filtroFazenda).click()
+        .wait(['@listUnidadeArmazenamento', '@listColheitas'], { timeout: 5000 })
 
-      cy.wait(2000)
 
       // Selecionar safra
       cy.getVisible(locDashboardColheita.selectSafra).click()
       cy.getVisible(locDashboardColheita.selecionarSafra)
         .contains(seedTest.filtroSafra).click()
+        .wait(['@listCiclos', '@listColheitas', '@iconeCultura'], { timeout: 5000 })
 
-      cy.wait('@listColheitas')
 
       cy.getVisible(locDashboardColheita.cardColheita).click().should(($el) => {
         expect($el).to.contain.text(seedTest.destinoEditar)
@@ -246,19 +248,21 @@ class Colheita {
 
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/cultura/v1/cultura/icone?**').as('listColheitas')
+    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/cultura/v1/cultura/icone?**').as('iconeCultura')
+    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/ciclo-producao/v1/Ciclo/list?**').as('listCiclos')
+    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/List?**').as('listColheitas')
+    cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**').as('listUnidadeArmazenamento')
 
     // Selecionar fazenda
     cy.getVisible(locDashboardColheita.selectFazenda).click()
       .contains(seedTest.fazenda).click()
-
-    cy.wait(2000)
+      .wait(['@listUnidadeArmazenamento', '@listColheitas'], { timeout: 5000 })
 
     // Selecionar safra
     cy.getVisible(locDashboardColheita.selectSafra).click()
       .contains(seedTest.safra).click()
+      .wait(['@listCiclos', '@listColheitas', '@iconeCultura'], { timeout: 5000 })
 
-    cy.wait('@listColheitas')
 
     // Abrir colheita
     cy.get(locDashboardColheita.buttonAbrirDetalhes).click({ force: true })
@@ -287,25 +291,26 @@ class Colheita {
     // Navegar para dashboard de Colheita
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/cultura/v1/cultura/icone?**').as('listColheitas')
+    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/cultura/v1/cultura/icone?**').as('iconeCultura')
+    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/ciclo-producao/v1/Ciclo/list?**').as('listCiclos')
+    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/List?**').as('listColheitas')
+    cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**').as('listUnidadeArmazenamento')
 
     // Selecionar fazenda
     cy.getVisible(locDashboardColheita.selectFazenda).click()
       .contains(seedTest.fazenda).click({ force: true })
-
-    cy.wait(2000)
+      .wait(['@listUnidadeArmazenamento', '@listColheitas'], { timeout: 5000 })
 
     // Selecionar safra
     cy.getVisible(locDashboardColheita.selectSafra).click()
       .contains(seedTest.safra).click({ force: true })
+      .wait(['@listCiclos', '@listColheitas'], { timeout: 5000 })
 
     if (seedTest.semCards) {
       cy.getVisible(locDashboardColheita.mensagemSemDados).should(($el) => {
         expect($el).to.contain.text(seedTest.mensagem)
       })
     } else {
-      cy.wait('@listColheitas')
-
       // Validar card colheita - destino
       cy.getVisible(locDashboardColheita.spanDestino).should(($el) => {
         expect($el).to.contain.text(seedTest.destino)
