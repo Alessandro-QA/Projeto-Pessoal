@@ -7,6 +7,15 @@ const locatorTituloPagina = locDocumentos.dashboard.titulo
 const tituloPagina = 'Documentos'
 
 class Documentos {
+
+  /**
+   * Validar a Listagem de documentos
+   * @param {*} seedTestDocumento 
+   */
+  listagem(seedTestDocumento) {
+    Documentos.pesquisar(seedTestDocumento)
+  }
+
   /**
    * Metodo para cadastro de um documento
    * @param {*} seedTestDocumento
@@ -20,7 +29,7 @@ class Documentos {
       .as('listaDocumentos')
     // Navegar para Documentos
     cy.navegarPara(url, locatorTituloPagina, tituloPagina).then(() => {
-      cy.wait('@listaDocumentos', { timeout: 15000 } )
+      cy.wait('@listaDocumentos', { timeout: 15000 })
     })
 
     // botao adicionar documento
@@ -82,7 +91,7 @@ class Documentos {
         .clear()
         .type(seedTestDocumento.tag)
       cy.getVisible(locDocumentos.documento.salvarTag).click()
-      cy.getVisible(locDocumentos.documento.bodyModal).click( { force: true } )
+      cy.getVisible(locDocumentos.documento.bodyModal).click({ force: true })
     }
 
     if (seedTestDocumento.observacao) {
@@ -121,27 +130,27 @@ class Documentos {
       .click()
 
     // Condicao de pagamento
-    if(seedTestDocumento.condicaoPagamento) {
+    if (seedTestDocumento.condicaoPagamento) {
       cy.getVisible(locDocumentos.documento.condicaoPagamento)
-      .contains(seedTestDocumento.condicaoPagamento).click()
+        .contains(seedTestDocumento.condicaoPagamento).click()
 
       // Informar quantidade de parcelas
-      if(seedTestDocumento.quantidadeParcela) {
+      if (seedTestDocumento.quantidadeParcela) {
         cy.getVisible(locDocumentos.documento.quantidadeParcela)
-        .clear().type(seedTestDocumento.quantidadeParcela)
+          .clear().type(seedTestDocumento.quantidadeParcela)
       }
 
       // selecionar valor fixo
-      if(seedTestDocumento.valorFixo) {
+      if (seedTestDocumento.valorFixo) {
         cy.getVisible(locDocumentos.documento.valorFixo).click()
       }
     }
 
-    if(seedTestDocumento.numeroBoleto) {
+    if (seedTestDocumento.numeroBoleto) {
       const numeros = seedTestDocumento.numeroBoleto
       numeros.forEach((numero, index) => {
         cy.get(locDocumentos.documento.numeroBoleto).eq(index)
-        .type(numero.numero)
+          .type(numero.numero)
       })
     }
 
@@ -174,10 +183,10 @@ class Documentos {
       cy.wait(2000)
 
       // wait para aguardar busca dos ciclos do planejamento
-      cy.wait('@cicloRateio', { timeout: 15000 } )
+      cy.wait('@cicloRateio', { timeout: 15000 })
 
       // timeout necessario para carregar os ciclos nos selects
-      cy.wait('@cicloProducao', { timeout: 15000 } )
+      cy.wait('@cicloProducao', { timeout: 15000 })
 
       cy.wait(2000)
 
@@ -249,7 +258,7 @@ class Documentos {
             expect($el).to.contain.text(categoria.nome)
           })
 
-          cy.wait(2000)
+        cy.wait(2000)
 
         // valor categoria
         cy.get(locDocumentos.documento.categoriaValor)
@@ -260,18 +269,18 @@ class Documentos {
       })
     }
 
-    if(seedTestDocumento.anexo) {
-      cy.get(locDocumentos.documento.anexarArquivo).selectFile('cypress/fixtures/funcionalidades/financeiro/documentos/cadastro/arquivos/Exemplo-DANFE.png', { force : true } )
+    if (seedTestDocumento.anexo) {
+      cy.get(locDocumentos.documento.anexarArquivo).selectFile('cypress/fixtures/funcionalidades/financeiro/documentos/cadastro/arquivos/Exemplo-DANFE.png', { force: true })
       cy.getVisible(locDocumentos.documento.anexo).should(($el) => {
         expect($el).to.contain.text(seedTestDocumento.anexos)
       })
     }
 
     // salvar documento
-    cy.getVisible(locDocumentos.documento.adicionar).click( { force: true } )
+    cy.getVisible(locDocumentos.documento.adicionar).click({ force: true })
     cy.wait(2000)
     cy.get(locDocumentos.documento.adicionar).should('not.exist')
-    
+
     cy.getVisible(locatorTituloPagina).should(($el) => {
       expect($el).to.contain.text(tituloPagina)
     })
@@ -282,47 +291,111 @@ class Documentos {
    * @param {*} seedTestDocumento
    */
   static pesquisar(seedTestDocumento) {
-    const numeroDocumento = seedTestDocumento.numeroDocumento
-
     cy.intercept('POST', 'https://myfarm.dev.conexa.com.br/api/financeiro/v1/Documento/Listagem').as('financeiro')
 
     // Navegar para Documentos
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.wait('@financeiro', { timeout: 15000 } )
-    
+    cy.wait('@financeiro', { timeout: 15000 })
+
     cy.clearLocalStorage('financeiro-documentos-filtros')
 
-    // selecionar fazenda
-    cy.getVisible(locDocumentos.dashboard.filtroFazenda).click()
-      .get(locDocumentos.dashboard.listaFazendas)
-      .contains(seedTestDocumento.fazenda).click()
+    if (seedTestDocumento.fazenda) {
+      // selecionar fazenda
+      cy.getVisible(locDocumentos.dashboard.filtroFazenda).click()
+        .get(locDocumentos.dashboard.listaFazendas)
+        .contains(seedTestDocumento.fazenda).click()
 
-    // selecionar empresa
-    cy.getVisible(locDocumentos.dashboard.filtroEmpresa).click()
-      .get(locDocumentos.dashboard.listaEmpresas)
-      .contains(seedTestDocumento.empresa).click()
+      if(seedTestDocumento.empresa) {
+      // selecionar empresa
+      cy.getVisible(locDocumentos.dashboard.filtroEmpresa).click()
+        .get(locDocumentos.dashboard.listaEmpresas)
+        .contains(seedTestDocumento.empresa).click()
+      }
+    }
 
-    // input pesquisar
-    cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
-      .type(`${numeroDocumento}{enter}`)
-
-    cy.wait('@financeiro', { timeout: 10000 })
+    if (seedTestDocumento.numeroDocumento) {
+      // input pesquisar
+      cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
+        .type(`${seedTestDocumento.numeroDocumento}{enter}`)
+      
+        cy.wait('@financeiro', { timeout: 10000 })
+    }
 
     // abrir filtros
     cy.getVisible(locDocumentos.dashboard.filtros).click()
 
-    // filtrar por pessoa
-    cy.getVisible(locDocumentos.dashboard.filtroPessoa).click()
-      .contains(seedTestDocumento.pessoa).click()
+    if(seedTestDocumento.dataInicio) {
+    // filtrar por data
+    cy.getVisible(locDocumentos.dashboard.filtroDataInicio).clear()
+      .type(`${seedTestDocumento.dataInicio}{enter}`)
+    
+    cy.getVisible(locDocumentos.dashboard.filtroDataFinal).clear()
+      .type(`${seedTestDocumento.dataFinal}{enter}`)
+    }
 
-    // filtrar por safra
-    cy.getVisible(locDocumentos.dashboard.filtroSafra).click()
-      .contains(seedTestDocumento.safra).click()
+    if (seedTestDocumento.filtroPessoa) {
+      // filtrar por pessoa
+      cy.getVisible(locDocumentos.dashboard.filtroPessoa).click({force: true})
+        .contains(seedTestDocumento.filtroPessoa).click({force: true})
+    }
 
-    // card documento
-    cy.get(locDocumentos.dashboard.cardDocumento)
-      .contains(seedTestDocumento.numeroDocumento)
+    if (seedTestDocumento.safra) {
+      // filtrar por safra
+      cy.getVisible(locDocumentos.dashboard.filtroSafra).click()
+        .contains(seedTestDocumento.safra).click()
+
+      if (seedTestDocumento.ciclo) {
+        // filtrar por ciclo
+        cy.getVisible(locDocumentos.dashboard.filtroCiclo).click()
+          .contains(seedTestDocumento.ciclo).click()
+      }
+    }
+
+    if (seedTestDocumento.filtroConferido) {
+      // filtrar por conferido
+      cy.getVisible(locDocumentos.dashboard.filtroConferido).click()
+        .contains(seedTestDocumento.filtroConferido).click()
+    }
+
+    if (seedTestDocumento.tag) {
+      // Filtrar por tag
+      cy.getVisible(locDocumentos.dashboard.filtroTags).click()
+        .contains(seedTestDocumento.tag).click()
+    }
+
+    if (seedTestDocumento.cardDocumento) {
+      // Validar cards de documento
+      const cardDocumento = seedTestDocumento.cardDocumento
+      cardDocumento.forEach((documento) => {
+        cy.get(locDocumentos.dashboard.cardDocumento).should('have.length', cardDocumento.length)
+
+        // numero documento
+        cy.get(locDocumentos.dashboard.cardDocumento).should(($el) => {
+          expect($el).to.contain.text(documento.numeroDocumento)
+        })
+
+        // pessoa
+        cy.get(locDocumentos.dashboard.pessoaDocumento).should(($el) => {
+          expect($el).to.contain.text(documento.pessoa)
+        })
+
+        // validar se o documento foi conferido
+        cy.get(locDocumentos.dashboard.conferido).should(($el) => {
+          expect($el).to.contain.text(documento.conferido)
+        })
+
+        // valor do documento
+        cy.get(locDocumentos.dashboard.valorDocumento).should(($el) => {
+          expect($el).to.contain.text(documento.valor)
+        })
+      })
+    }
+
+    if(seedTestDocumento.semDocumento) {
+      cy.getVisible(locDocumentos.dashboard.mensagemNenhumDocumento)
+      .contains('Você ainda não possui nenhum documento cadastrado.')
+    }
   }
 
   /**
@@ -521,7 +594,7 @@ class Documentos {
     }
 
     // Validar anexos
-    if(seedTestDocumento.anexos) {
+    if (seedTestDocumento.anexos) {
       cy.getVisible(locDocumentos.detalhesDocumento.anexos).should(($el) => {
         expect($el).to.contain.text(seedTestDocumento.anexos)
       })
@@ -734,6 +807,24 @@ class Documentos {
       .contains('Sim').click({ force: true })
 
     cy.get(locDocumentos.detalhesDocumento.mensagemSucesso).contains('Documento excluído com sucesso')
+  }
+
+  /**
+   * Método para conferir um documento
+   * @param {*} seedTestDocumento 
+   */
+  conferir(seedTestDocumento) {
+    // Pesquisar documento
+    Documentos.pesquisar(seedTestDocumento)
+
+    // Abrir documento
+    cy.get(locDocumentos.dashboard.selecionarDocumento)
+      .contains(seedTestDocumento.numeroDocumento)
+      .parents(locDocumentos.dashboard.selecionarDocumento)
+      .click({ force: true })
+
+    // Conferir Documento
+    cy.getVisible(locDocumentos.detalhesDocumento.botaoConferir, { timeout: 15000 }).click()
   }
 
   /**
