@@ -31,6 +31,7 @@ context('Cenário de Teste', () => {
 
     it('Validar na listagem os dados do pedido cadastrado', function () {
       cy.allure().severity('normal').startStep('test content')
+        .descriptionHtml(testDescription.dashboardPedidos)
 
       Pedidos.validarListagem(seeds.seedDetalhesPedidoCadastro)
     })
@@ -50,6 +51,7 @@ context('Cenário de Teste', () => {
 
     it('Validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
       cy.allure().severity('normal').startStep('test content')
+        .descriptionHtml(testDescription.pesquisarAgendaFinanceira)
 
       AgendaFinanceira.validarDashboard(seeds.seedAgendaFinanceiraCadastro)
     })

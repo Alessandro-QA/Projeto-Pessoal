@@ -5,6 +5,7 @@ import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/
 import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
 import Utils from '../../../../support/utils/utils.js'
+import testDescription from './bdd-description/documento-duas-categorias-pago-por-agenda.description'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 context('Cenário de Teste', () => {
@@ -54,6 +55,7 @@ context('Cenário de Teste', () => {
 
     it('Exportar o CSV do Livro Caixa', function () {
       cy.allure().severity('normal').startStep('test content')
+      .descriptionHtml(testDescription.livroCaixa)
 
       LivroCaixa.exportar(seedTest.lancamentoLivroCaixa)
     })

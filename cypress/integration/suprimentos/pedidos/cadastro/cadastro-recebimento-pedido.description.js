@@ -55,6 +55,99 @@ const testDescriptionHtml = {
   </div>
   </div>
   `,
+    dashboardPedidos: `
+<div>
+    <span style="color: #800080; font-weight: bold;">Funcionalidade: </span>
+    <span style="color: #b22222;"> Dashboard </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente/responsável pelas compras da fazenda <br />
+    <strong>QUERO</strong> visualizar todos os pedidos de compra da minha fazenda <br />
+    <strong>PARA</strong> melhor controle de suprimentos da fazenda <br />
+</div>
+</br>
+<div>
+    <div>
+        <span style="color: #800080; font-weight: bold;">Cenario 1 :</span>
+        <span style="color: #b22222;"> Listagem para módulos </span>
+    </div>
+    <div style="margin-left: 40px;">
+        <strong>DADO</strong> que eu queira visualizar os Pedidos da minha fazenda em módulos <br />
+        <strong>QUANDO </strong> eu entrar na Dashboard de Pedidos <br />
+        <strong>E</strong> clicar no ícone de <br> "alterar listagem" </br> <br />
+        <strong>ENTAO</strong> será exibido e validado todos os Pedidos <br />
+    </div>
+</div>
+<div>
+    <div>
+        <span style="color: #800080; font-weight: bold;">Cenario 2 :</span>
+        <span style="color: #b22222;">Pesquisar </span>
+    </div>
+    <div style="margin-left: 40px;">
+        <strong>DADO</strong> que eu queira pesquisar por um Pedidos <br />
+        <strong>QUANDO</strong> eu entrar na dashboard de Pedidos <br />
+        <strong>E</strong> pesquisar por um pedido <br />
+        <strong>ENTAO</strong> será exibido e validado o pedido pesquisado <br />
+    </div>
+</div>
+<div>
+    <span style="color: #800080; font-weight: bold;">Cenario 3 :</span>
+    <span style="color: #b22222;">Filtrar por safra </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira filtrar os Pedidos <br/>
+    <strong>QUANDO</strong> eu entrar na Dashboard de Pedidos <br/>
+    <strong>E</strong> selecionar o filtro por safra <br/>
+    <strong>ENTAO</strong> será exibido e validado todos os pedidos do filtro selecionado <br/>
+</div>
+</div>
+<div>
+    <div>
+        <span style="color: #800080; font-weight: bold;">Cenario 2 :</span>
+        <span style="color: #b22222;">Filtrar por fazenda </span>
+    </div>
+    <div style="margin-left: 40px;">
+        <strong>DADO</strong> que eu queira filtrar os Pedidos <br />
+        <strong>QUANDO</strong> eu entrar na Dashboard de Pedidos <br />
+        <strong>E</strong> pesquisar por um pedido <br />
+        <strong>ENTAO</strong> será exibido e validado o pedido pesquisado <br />
+    </div>
+</div>
+<div>
+    <span style="color: #800080; font-weight: bold;">Cenario 3 :</span>
+    <span style="color: #b22222;">Filtrar por safra </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira filtrar os Pedidos <br/>
+    <strong>QUANDO</strong> eu entrar na Dashboard de Pedidos <br/>
+    <strong>E</strong> selecionar o filtro pro fazenda <br/>
+    <strong>ENTAO</strong> será exibido e validado todos os pedidos do filtro selecionado <br/>
+</div>
+</div>
+<div>
+    <div>
+        <span style="color: #800080; font-weight: bold;">Cenario 2 :</span>
+        <span style="color: #b22222;">Filtrar por fazenda </span>
+    </div>
+    <div style="margin-left: 40px;">
+        <strong>DADO</strong> que eu queira filtrar os Pedidos <br />
+        <strong>QUANDO</strong> eu entrar na Dashboard de Pedidos <br />
+        <strong>E</strong> pesquisar por um pedido <br />
+        <strong>ENTAO</strong> será exibido e validado o pedido pesquisado <br />
+    </div>
+</div>
+<div>
+    <span style="color: #800080; font-weight: bold;">Cenario 3 :</span>
+    <span style="color: #b22222;">Filtrar por empresa/pessoa </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira filtrar os Pedidos <br/>
+    <strong>QUANDO</strong> eu entrar na Dashboard de Pedidos <br/>
+    <strong>E</strong> selecionar o filtro por empresa/pessoa <br/>
+    <strong>ENTAO</strong> será exibido e validado todos os pedidos do filtro selecionado <br/>
+</div>
+</div>
+    `,
     detalhesPedido: `
   <div>
       <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
@@ -78,8 +171,32 @@ const testDescriptionHtml = {
   </div>
   </div>
   `,
+    pesquisarAgendaFinanceira: `
+<div>
+    <span style="color: #800080; font-weight: bold;">Funcionalidade: </span>
+    <span style="color: #b22222;"> Dashboard Agenda Financeira </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente da fazenda <br />
+    <strong>QUERO</strong> visualizar agenda financeira <br />
+    <strong>PARA</strong> melhor gestão financeira <br />
+</div>
+</br>
+<div>
+    <div>
+        <span style="color: #800080; font-weight: bold;">Cenario 1 :</span>
+        <span style="color: #b22222;"> Pesquisar título </span>
+    </div>
+    <div style="margin-left: 40px;">
+        <strong>DADO</strong> que eu queira pesquisar um titulo <br />
+        <strong>QUANDO </strong> eu entrar na dashboard de Agenda Financeira <br />
+        <strong>E</strong> pesquisar por um título <br />
+        <strong>ENTAO</strong> deverá ser apresentado e validado o título pesquisar <br />
+    </div>
+</div>
+    `,
     excluirPedido: `
-  <div>
+<div>
       <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
       <span style="color: #b22222;"> Excluir pedido </span>
   </div>
