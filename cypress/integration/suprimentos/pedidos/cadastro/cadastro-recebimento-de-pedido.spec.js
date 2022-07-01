@@ -7,7 +7,7 @@ import AgendaFinanceira from '../../../../support/commands/funcionalidades/finan
 import Pedidos from '../../../../support/commands/funcionalidades/suprimentos/pedidos.js'
 import Recebimento from '../../../../support/commands/funcionalidades/suprimentos/recebimento.js'
 import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
-import testDescription from './cadastro-recebimento-pedido.description.js'
+import testDescription from './bdd-description/cadastro-recebimento-pedido.description.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 // Cadastro, Edição e Exclusão de Pedido com Recebimento

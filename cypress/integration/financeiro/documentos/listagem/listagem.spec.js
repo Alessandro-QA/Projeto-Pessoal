@@ -4,7 +4,7 @@ import documento from '../../../../fixtures/funcionalidades/financeiro/documento
 import seedTestDocumento from '../../../../fixtures/funcionalidades/financeiro/documentos/listagem/listagem.json'
 import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import Utils from '../../../../support/utils/utils.js'
-import testDescription from './listagem.description'
+import testDescription from './bdd-description/listagem.description'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 context('Funcionalidade', () => {
@@ -35,7 +35,7 @@ context('Funcionalidade', () => {
 
     it('Sem preenchimento de filtro', function () {
       cy.allure().severity('normal').startStep('test content')
-      .descriptionHtml(testDescription)
+      .descriptionHtml(testDescription.semFiltro)
 
       Documentos.listagem(seedTestDocumento.semFiltro)
     })
