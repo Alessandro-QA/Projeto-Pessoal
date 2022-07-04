@@ -312,48 +312,46 @@ class Colheita {
     cy.wait('@listCiclos', { timeout: 5000 })
     cy.wait('@listColheitas', { timeout: 5000 })
 
-    cy.get('[data-cy=card-colheita]').within(() => {
-      if (seedTest.semCards) {
-        cy.getVisible(locListagemColheita.mensagemSemDados).should(($el) => {
-          expect($el).to.contain.text(seedTest.mensagem)
-        })
+    if (seedTest.semCards) {
+      cy.getVisible(locListagemColheita.mensagemSemDados).should(($el) => {
+        expect($el).to.contain.text(seedTest.mensagem)
+      })
+    } else {
+      // Validar card colheita - destino
+      cy.getVisible(locListagemColheita.spanDestino).should(($el) => {
+        expect($el).to.contain.text(seedTest.destino)
+      })
+
+      // Validar card colheita - placa
+      cy.getVisible(locListagemColheita.spanPlaca).should(($el) => {
+        expect($el).to.contain.text(seedTest.placa)
+      })
+
+      //  Validar card colheita - um ou mais contratos destino
+      if (seedTest.contrato) {
+        cy.get(locListagemColheita.spanContratoDestino).should('contain', seedTest.contratoDestino1)
+          .and('contain', seedTest.contratoDestino2)
       } else {
-        // Validar card colheita - destino
-        cy.getVisible(locListagemColheita.spanDestino).should(($el) => {
-          expect($el).to.contain.text(seedTest.destino)
-        })
-
-        // Validar card colheita - placa
-        cy.getVisible(locListagemColheita.spanPlaca).should(($el) => {
-          expect($el).to.contain.text(seedTest.placa)
-        })
-
-        //  Validar card colheita - um ou mais contratos destino
-        if (seedTest.contrato) {
-          cy.get(locListagemColheita.spanContratoDestino).should('contain', seedTest.contratoDestino1)
-            .and('contain', seedTest.contratoDestino2)
-        } else {
-          cy.getVisible(locListagemColheita.spanContratoDestino).should(($el) => {
-            expect($el).to.contain.text(seedTest.contratoDestino)
-          })
-        }
-
-        // Validar card colheita - cultura
-        cy.getVisible(locListagemColheita.spanCultura).should(($el) => {
-          expect($el).to.contain.text(seedTest.cultura)
-        })
-
-        // Validar card colheita - quantidade
-        cy.getVisible(locListagemColheita.spanQuantidade).should(($el) => {
-          expect($el).to.contain.text(seedTest.quantidade)
-        })
-
-        // Validar card colheita - quantidade cultura
-        cy.getVisible(locListagemColheita.spanQuantidadeCultura).should(($el) => {
-          expect($el).to.contain.text(seedTest.quantidadeCultura)
+        cy.getVisible(locListagemColheita.spanContratoDestino).should(($el) => {
+          expect($el).to.contain.text(seedTest.contratoDestino)
         })
       }
-    })
+
+      // Validar card colheita - cultura
+      cy.getVisible(locListagemColheita.spanCultura).should(($el) => {
+        expect($el).to.contain.text(seedTest.cultura)
+      })
+
+      // Validar card colheita - quantidade
+      cy.getVisible(locListagemColheita.spanQuantidade).should(($el) => {
+        expect($el).to.contain.text(seedTest.quantidade)
+      })
+
+      // Validar card colheita - quantidade cultura
+      cy.getVisible(locListagemColheita.spanQuantidadeCultura).should(($el) => {
+        expect($el).to.contain.text(seedTest.quantidadeCultura)
+      })
+    }
   }
 }
 
