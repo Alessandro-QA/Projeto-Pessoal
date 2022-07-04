@@ -34,10 +34,10 @@ context('Funcionalidade', () => {
       Colheita.excluir(seedTestDashboard.dashboard)
     })
 
-    it('Validar exclusão na listagem de Colheita', function () {
+    it('Validar exclusão na listagem de Colheita', { retries: { runMode: 1, openMode: 1, }, }, function () {
       cy.allure().severity('normal').startStep('test content')
 
-      Colheita.validarDashboard(seedTestDashboard.dashboarAposExclusao)
+      Colheita.validarListagem(seedTestDashboard.dashboarAposExclusao)
     })
 
     const html = `

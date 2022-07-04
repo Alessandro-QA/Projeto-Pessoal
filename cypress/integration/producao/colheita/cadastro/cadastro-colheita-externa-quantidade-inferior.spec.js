@@ -41,13 +41,13 @@ context('Funcionalidade', () => {
       Colheita.cadastrarEditar(seedTestCadastro)
     })
 
-    it('Validar dashboard colheita', function () {
+    it('Validar listagem de colheita', { retries: { runMode: 1, openMode: 1, }, }, function () {
       cy.allure().severity('normal').startStep('test content')
 
-      Colheita.validarDashboard(seedTestDashboardColheita)
+      Colheita.validarListagem(seedTestDashboardColheita)
     })
 
-    it('Validar dashboar Produção', function () {
+    it('Validar dashboard de Produção', function () {
       cy.allure().severity('normal').startStep('test content')
 
       DashboardProducao.validarDashboard(seedTestDashboardProducao)

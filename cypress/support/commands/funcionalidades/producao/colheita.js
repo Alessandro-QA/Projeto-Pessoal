@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import locCadastroColheita from '../../../locators/funcionalidades/producao/colheita/locators-cadastro-edicao-colheita'
-import locDashboardColheita from '../../../locators/funcionalidades/producao/colheita/locators-dashboard.js'
+import locListagemColheita from '../../../locators/funcionalidades/producao/colheita/locators-dashboard.js'
 import locDetalhesColheita from '../../../locators/funcionalidades/producao/colheita/locators-detalhes-colheita.js'
 
 class Colheita {
@@ -19,27 +19,27 @@ class Colheita {
 
     if (seedTest.editar) {
       const url = '/producao/colheita'
-      const locatorTituloPagina = locDashboardColheita.titulo
+      const locatorTituloPagina = locListagemColheita.titulo
       const tituloPagina = 'Colheitas'
 
       // Navegar para dashboard de colheita
       cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
       // Selecionar fazenda
-      cy.getVisible(locDashboardColheita.selectFazenda).click()
-      cy.getVisible(locDashboardColheita.selecionarFazenda)
+      cy.getVisible(locListagemColheita.selectFazenda).click()
+      cy.getVisible(locListagemColheita.selecionarFazenda)
         .contains(seedTest.filtroFazenda).click()
         .wait(['@listUnidadeArmazenamento', '@listColheitas'], { timeout: 5000 })
 
 
       // Selecionar safra
-      cy.getVisible(locDashboardColheita.selectSafra).click()
-      cy.getVisible(locDashboardColheita.selecionarSafra)
+      cy.getVisible(locListagemColheita.selectSafra).click()
+      cy.getVisible(locListagemColheita.selecionarSafra)
         .contains(seedTest.filtroSafra).click()
         .wait(['@listCiclos', '@listColheitas', '@iconeCultura'], { timeout: 5000 })
 
 
-      cy.getVisible(locDashboardColheita.cardColheita).click().should(($el) => {
+      cy.getVisible(locListagemColheita.cardColheita).click().should(($el) => {
         expect($el).to.contain.text(seedTest.destinoEditar)
       })
 
@@ -243,7 +243,7 @@ class Colheita {
   */
   excluir(seedTest) {
     const url = '/producao/colheita'
-    const locatorTituloPagina = locDashboardColheita.titulo
+    const locatorTituloPagina = locListagemColheita.titulo
     const tituloPagina = 'Colheitas'
 
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
@@ -254,18 +254,18 @@ class Colheita {
     cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**').as('listUnidadeArmazenamento')
 
     // Selecionar fazenda
-    cy.getVisible(locDashboardColheita.selectFazenda).click()
+    cy.getVisible(locListagemColheita.selectFazenda).click()
       .contains(seedTest.fazenda).click()
       .wait(['@listUnidadeArmazenamento', '@listColheitas'], { timeout: 5000 })
 
     // Selecionar safra
-    cy.getVisible(locDashboardColheita.selectSafra).click()
+    cy.getVisible(locListagemColheita.selectSafra).click()
       .contains(seedTest.safra).click()
       .wait(['@listCiclos', '@listColheitas', '@iconeCultura'], { timeout: 5000 })
 
 
     // Abrir colheita
-    cy.get(locDashboardColheita.buttonAbrirDetalhes).click({ force: true })
+    cy.get(locListagemColheita.buttonAbrirDetalhes).click({ force: true })
 
     // Excluir colheita
     cy.get(locDetalhesColheita.buttonExcluir).click()
@@ -280,12 +280,12 @@ class Colheita {
   }
 
   /**
-  * Método para validar a Dashboard de colheita
+  * Método para validar a listagem de colheita
   * @param {} seedTest
   */
-  validarDashboard(seedTest) {
+  validarListagem(seedTest) {
     const url = '/producao/colheita'
-    const locatorTituloPagina = locDashboardColheita.titulo
+    const locatorTituloPagina = locListagemColheita.titulo
     const tituloPagina = 'Colheitas'
 
     // Navegar para dashboard de Colheita
@@ -297,55 +297,63 @@ class Colheita {
     cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**').as('listUnidadeArmazenamento')
 
     // Selecionar fazenda
-    cy.getVisible(locDashboardColheita.selectFazenda).click()
-      .contains(seedTest.fazenda).click({ force: true })
-      .wait(['@listUnidadeArmazenamento', '@listColheitas'], { timeout: 5000 })
+    cy.getVisible(locListagemColheita.selectFazenda).click()
+    cy.get(locListagemColheita.selecionarFazenda)
+      .contains(seedTest.fazenda).click()
+
+    cy.wait('@listUnidadeArmazenamento', { timeout: 5000 })
+    cy.wait('@listColheitas', { timeout: 5000 })
 
     // Selecionar safra
-    cy.getVisible(locDashboardColheita.selectSafra).click()
-      .contains(seedTest.safra).click({ force: true })
-      .wait(['@listCiclos', '@listColheitas'], { timeout: 5000 })
+    cy.getVisible(locListagemColheita.selectSafra).click()
+    cy.get(locListagemColheita.selecionarSafra)
+      .contains(seedTest.safra).click()
 
-    if (seedTest.semCards) {
-      cy.getVisible(locDashboardColheita.mensagemSemDados).should(($el) => {
-        expect($el).to.contain.text(seedTest.mensagem)
-      })
-    } else {
-      // Validar card colheita - destino
-      cy.getVisible(locDashboardColheita.spanDestino).should(($el) => {
-        expect($el).to.contain.text(seedTest.destino)
-      })
+    cy.wait('@listCiclos', { timeout: 5000 })
+    cy.wait('@listColheitas', { timeout: 5000 })
 
-      // Validar card colheita - placa
-      cy.getVisible(locDashboardColheita.spanPlaca).should(($el) => {
-        expect($el).to.contain.text(seedTest.placa)
-      })
-
-      //  Validar card colheita - um ou mais contratos destino
-      if (seedTest.contrato) {
-        cy.get(locDashboardColheita.spanContratoDestino).should('contain', seedTest.contratoDestino1)
-          .and('contain', seedTest.contratoDestino2)
+    cy.get('[data-cy=card-colheita]').within(() => {
+      if (seedTest.semCards) {
+        cy.getVisible(locListagemColheita.mensagemSemDados).should(($el) => {
+          expect($el).to.contain.text(seedTest.mensagem)
+        })
       } else {
-        cy.getVisible(locDashboardColheita.spanContratoDestino).should(($el) => {
-          expect($el).to.contain.text(seedTest.contratoDestino)
+        // Validar card colheita - destino
+        cy.getVisible(locListagemColheita.spanDestino).should(($el) => {
+          expect($el).to.contain.text(seedTest.destino)
+        })
+
+        // Validar card colheita - placa
+        cy.getVisible(locListagemColheita.spanPlaca).should(($el) => {
+          expect($el).to.contain.text(seedTest.placa)
+        })
+
+        //  Validar card colheita - um ou mais contratos destino
+        if (seedTest.contrato) {
+          cy.get(locListagemColheita.spanContratoDestino).should('contain', seedTest.contratoDestino1)
+            .and('contain', seedTest.contratoDestino2)
+        } else {
+          cy.getVisible(locListagemColheita.spanContratoDestino).should(($el) => {
+            expect($el).to.contain.text(seedTest.contratoDestino)
+          })
+        }
+
+        // Validar card colheita - cultura
+        cy.getVisible(locListagemColheita.spanCultura).should(($el) => {
+          expect($el).to.contain.text(seedTest.cultura)
+        })
+
+        // Validar card colheita - quantidade
+        cy.getVisible(locListagemColheita.spanQuantidade).should(($el) => {
+          expect($el).to.contain.text(seedTest.quantidade)
+        })
+
+        // Validar card colheita - quantidade cultura
+        cy.getVisible(locListagemColheita.spanQuantidadeCultura).should(($el) => {
+          expect($el).to.contain.text(seedTest.quantidadeCultura)
         })
       }
-
-      // Validar card colheita - cultura
-      cy.getVisible(locDashboardColheita.spanCultura).should(($el) => {
-        expect($el).to.contain.text(seedTest.cultura)
-      })
-
-      // Validar card colheita - quantidade
-      cy.getVisible(locDashboardColheita.spanQuantidade).should(($el) => {
-        expect($el).to.contain.text(seedTest.quantidade)
-      })
-
-      // Validar card colheita - quantidade cultura
-      cy.getVisible(locDashboardColheita.spanQuantidadeCultura).should(($el) => {
-        expect($el).to.contain.text(seedTest.quantidadeCultura)
-      })
-    }
+    })
   }
 }
 
