@@ -1,0 +1,152 @@
+{
+    "semFiltro": {
+        "cardDocumento": [
+            {
+                "numeroDocumento": "789456",
+                "conferido": "Não",
+                "pessoa": "Cliente Teste Produção",
+                "valor": "R$ 134,00"
+            },
+            {
+                "numeroDocumento": "987456",
+                "conferido": "Não",
+                "pessoa": "Empresa Produtor - CPF",
+                "valor": "R$ 200"
+            },
+            {
+                "numeroDocumento": "357357",
+                "conferido": "Não",
+                "pessoa": "Matheus Oliveira",
+                "valor": "R$ 500,00"
+            },
+            {
+                "numeroDocumento": "753753",
+                "conferido": "Não",
+                "pessoa": "Empresa Fornecedor - CPF",
+                "valor": "R$ 400,00"
+            }
+        ]
+    },
+    "filtroPessoa": {
+        "fazenda": "Fazenda Teste Producao",
+        "empresa": "Empresa Fornecedor - CNPJ",
+        "filtroPessoa": "Cliente Teste Produção",
+        "cardDocumento": [
+            {
+                "numeroDocumento": "789456",
+                "conferido": "Não",
+                "pessoa": "Cliente Teste Produção",
+                "valor": "R$ 134,00"
+            }
+        ]
+    },
+    "filtroTag": {
+        "fazenda": "Fazenda Teste Producao",
+        "empresa": "Empresa Fornecedor - CNPJ",
+        "tag": "documentoE2E",
+        "cardDocumento": [
+            {
+                "numeroDocumento": "789456",
+                "conferido": "Não",
+                "pessoa": "Cliente Teste Produção",
+                "valor": "R$ 134,00"
+            }
+        ]
+    },
+    "filtroConferido": {
+        "conferir": {
+            "fazenda": "Fazenda Teste Producao",
+            "empresa": "Empresa Fornecedor - CNPJ",
+            "numeroDocumento": "987456"
+        },
+        "fazenda": "Fazenda Teste Producao",
+        "empresa": "Empresa Fornecedor - CNPJ",
+        "filtroConferido": "Conferido: Sim",
+        "cardDocumento": [
+            {
+                "numeroDocumento": "987456",
+                "conferido": "Sim",
+                "pessoa": "Empresa Produtor - CPF",
+                "valor": "R$ 200"
+            }
+        ]
+    },
+    "filtroNaoConferido": {
+        "filtroConferido": "Conferido: Não",
+        "cardDocumento": [
+            {
+                "numeroDocumento": "789456",
+                "conferido": "Não",
+                "pessoa": "Cliente Teste Produção",
+                "valor": "R$ 134,00"
+            },
+            {
+                "numeroDocumento": "357357",
+                "conferido": "Não",
+                "pessoa": "Matheus Oliveira",
+                "valor": "R$ 500,00"
+            },
+            {
+                "numeroDocumento": "753753",
+                "conferido": "Não",
+                "pessoa": "Empresa Fornecedor - CPF",
+                "valor": "R$ 400,00"
+            }
+        ]
+    },
+    "filtroSafra": {
+        "fazenda": "Fazenda Teste Producao",
+        "empresa": "Empresa Fornecedor - CNPJ",
+        "safra": "2021/2021",
+        "cardDocumento": [
+            {
+                "numeroDocumento": "357357",
+                "conferido": "Não",
+                "pessoa": "Matheus Oliveira",
+                "valor": "R$ 500,00"
+            },
+            {
+                "numeroDocumento": "987456",
+                "conferido": "Sim",
+                "pessoa": "Empresa Produtor - CPF",
+                "valor": "R$ 200"
+            },
+            {
+                "numeroDocumento": "789456",
+                "conferido": "Não",
+                "pessoa": "Cliente Teste Produção",
+                "valor": "R$ 134,00"
+            }
+        ]
+    },
+    "filtroSafraCiclo": {
+        "fazenda": "Fazenda Teste Producao",
+        "empresa": "Empresa Fornecedor - CNPJ",
+        "safra": "2021/2021",
+        "ciclo": "Soja - 2021/2021",
+        "cardDocumento": [
+            {
+                "numeroDocumento": "357357",
+                "conferido": "Não",
+                "pessoa": "Matheus Oliveira",
+                "valor": "R$ 500,00"
+            }
+        ]
+    },
+    "filtroFazenda": {
+        "fazenda": "Fazenda Reserva",
+        "semDocumento": true
+    },
+    "filtroData": {
+        "dataInicio": "01/01/2022",
+        "dataFinal": "01/02/2022",
+        "cardDocumento": [
+            {
+                "numeroDocumento": "753753",
+                "conferido": "Não",
+                "pessoa": "Empresa Fornecedor - CPF",
+                "valor": "R$ 400,00"
+            }
+        ]
+    }
+}

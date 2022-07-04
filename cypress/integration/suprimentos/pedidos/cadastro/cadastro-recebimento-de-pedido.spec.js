@@ -7,7 +7,7 @@ import AgendaFinanceira from '../../../../support/commands/funcionalidades/finan
 import Pedidos from '../../../../support/commands/funcionalidades/suprimentos/pedidos.js'
 import Recebimento from '../../../../support/commands/funcionalidades/suprimentos/recebimento.js'
 import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
-import testDescription from './cadastro-recebimento-pedido.description.js'
+import testDescription from './bdd-description/cadastro-recebimento-pedido.description.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 // Cadastro, Edição e Exclusão de Pedido com Recebimento
@@ -31,6 +31,7 @@ context('Cenário de Teste', () => {
 
     it('Validar na listagem os dados do pedido cadastrado', function () {
       cy.allure().severity('normal').startStep('test content')
+        .descriptionHtml(testDescription.dashboardPedidos)
 
       Pedidos.validarListagem(seeds.seedDetalhesPedidoCadastro)
     })
@@ -50,6 +51,7 @@ context('Cenário de Teste', () => {
 
     it('Validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
       cy.allure().severity('normal').startStep('test content')
+        .descriptionHtml(testDescription.pesquisarAgendaFinanceira)
 
       AgendaFinanceira.validarDashboard(seeds.seedAgendaFinanceiraCadastro)
     })
