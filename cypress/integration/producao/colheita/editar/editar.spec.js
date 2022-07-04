@@ -35,10 +35,10 @@ context('Funcionalidade', () => {
       Colheita.cadastrarEditar(seedTestEditar)
     })
 
-    it('Validar listagem de colheita após edição', function () {
+    it('Validar listagem de colheita após edição', { retries: { runMode: 1, openMode: 1, }, }, function () {
       cy.allure().severity('normal').startStep('test content')
 
-      Colheita.validarDashboard(seedTestDashboard)
+      Colheita.validarListagem(seedTestDashboard)
     })
 
     const html = `
