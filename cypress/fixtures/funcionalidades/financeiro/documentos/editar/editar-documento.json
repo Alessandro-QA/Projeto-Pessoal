@@ -1,0 +1,96 @@
+{
+	"documento789456": {
+		"filtro": {
+			"editar": true,
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "789456"
+		},
+		"editar": {
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "789456",
+			"operacao": "Aluguéis",
+			"tipoDocumento": "Outros",
+			"dedutivel": "Não",
+			"pessoa": "Fornecedor",
+			"validarValorRateioCiclos": true,
+			"ciclos": [
+				{
+					"nome": "Soja - 2021/2021",
+					"valor": "R$ 100,50"
+				},
+				{
+					"nome:": "Milho - 2021/2021",
+					"valor": "R$ 33,50"
+				}
+			]
+		},
+		"detalhes": {
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "789456",
+			"cardDocumento": [
+				{
+					"numeroDocumento": "789456",
+					"pessoa": "Fornecedor",
+					"conferido": "Não",
+					"valor": "R$ 134,00"
+				}
+			]
+		},
+		"pagarDocumento": {
+			"fazendaDocumento": "Fazenda Teste Producao",
+			"empresaDocumento": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "789456",
+	
+			"cardStatusDocumento": "A pagar",
+			"cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
+			"cardValorDocumento": "R$ 134,00",
+			"cardSaldoAPagar": "Saldo a pagar: R$ 134,00",
+			"cardNumeroDocumento": "Número: 789456"
+		}
+	},
+	"documento357357": {
+		"filtro": {
+			"editar": true,
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "357357"
+		},
+		"editar": {
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "357357",
+			"operacao": "Assistência Médica",
+			"tipoDocumento": "Fatura",
+			"dedutivel": "Sim",
+			"pessoa": "Fornecedor",
+			"validarValorRateioCiclos": true
+		},
+		"detalhes": {
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "357357",
+			"cardDocumento": [
+				{
+					"numeroDocumento": "357357",
+					"pessoa": "Fornecedor",
+					"conferido": "Não",
+					"valor": "R$ 500,00"
+				}
+			]
+		}
+	},
+	"documentoPago": {
+		"filtro": {
+			"editar": true,
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "789456"
+		},
+		"editar":{
+			"camposIndisponiveis": true
+		}
+	}
+}
