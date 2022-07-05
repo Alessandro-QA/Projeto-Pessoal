@@ -652,13 +652,13 @@ class Documentos {
 
     if (seedTestEdicaoDocumento.camposIndisponiveis) {
 
-      cy.getVisible(locDocumentos.documento.operacao)
-        .invoke('prop', 'className')
-        .should('eq', 'select select--medium disabled ')
+      cy.getVisible(locDocumentos.documento.operacao).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
 
-      cy.getVisible(locDocumentos.documento.tipoDocumento)
-        .invoke('prop', 'className')
-        .should('eq', 'select select--medium disabled ')
+      cy.getVisible(locDocumentos.documento.tipoDocumento).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
 
       cy.getVisible(locDocumentos.documento.dataRecebimentoInativa)
         .invoke('prop', 'disabled')
@@ -668,17 +668,17 @@ class Documentos {
         .invoke('prop', 'disabled')
         .should('be.true')
 
-      cy.getVisible(locDocumentos.documento.pessoa)
-        .invoke('prop', 'className')
-        .should('eq', 'select select--medium disabled ')
+      cy.getVisible(locDocumentos.documento.pessoa).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
 
-      cy.getVisible(locDocumentos.documento.empresa)
-        .invoke('prop', 'className')
-        .should('eq', 'select select--medium disabled ')
+      cy.getVisible(locDocumentos.documento.empresa).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
 
-      cy.getVisible(locDocumentos.documento.ieEmpresa)
-        .invoke('prop', 'className')
-        .should('eq', 'select select--medium disabled ')
+      cy.getVisible(locDocumentos.documento.ieEmpresa).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
 
       cy.getVisible(locDocumentos.documento.valorTotalInativo)
         .invoke('prop', 'disabled')
@@ -688,9 +688,9 @@ class Documentos {
         .invoke('prop', 'className')
         .should('eq', 'el-checkbox is-disabled')
 
-      cy.getVisible(locDocumentos.documento.formaDePagamento)
-        .invoke('prop', 'className')
-        .should('eq', 'select select--medium disabled ')
+      cy.getVisible(locDocumentos.documento.formaDePagamento).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
 
       cy.getVisible(locDocumentos.documento.valorParcela)
         .invoke('prop', 'disabled')
@@ -700,9 +700,9 @@ class Documentos {
         .invoke('prop', 'disabled')
         .should('be.true')
 
-      cy.getVisible(locDocumentos.documento.selecionarCategoria)
-        .invoke('prop', 'className')
-        .should('eq', 'select select--medium disabled  siagri-select-input')
+      cy.getVisible(locDocumentos.documento.selecionarCategoria).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
 
       cy.getVisible(locDocumentos.documento.categoriaValor)
         .invoke('prop', 'disabled')
