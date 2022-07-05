@@ -28,7 +28,7 @@ context('Funcionalidade', () => {
       Utils.requestApi('POST', '/api/producao-agricola/v1/colheitas', bodyColheita, 'login_cenarios')
     })
 
-    it('Editar colheita', function () {
+    it('Editar colheita', { retries: { runMode: 1, openMode: 1, }, }, function () {
       cy.allure().severity('critical').startStep('test content')
         .descriptionHtml(html)
 

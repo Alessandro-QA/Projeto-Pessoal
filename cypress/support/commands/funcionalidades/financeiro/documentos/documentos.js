@@ -306,11 +306,11 @@ class Documentos {
         .get(locDocumentos.dashboard.listaFazendas)
         .contains(seedTestDocumento.fazenda).click()
 
-      if(seedTestDocumento.empresa) {
-      // selecionar empresa
-      cy.getVisible(locDocumentos.dashboard.filtroEmpresa).click()
-        .get(locDocumentos.dashboard.listaEmpresas)
-        .contains(seedTestDocumento.empresa).click()
+      if (seedTestDocumento.empresa) {
+        // selecionar empresa
+        cy.getVisible(locDocumentos.dashboard.filtroEmpresa).click()
+          .get(locDocumentos.dashboard.listaEmpresas)
+          .contains(seedTestDocumento.empresa).click()
       }
     }
 
@@ -318,26 +318,26 @@ class Documentos {
       // input pesquisar
       cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
         .type(`${seedTestDocumento.numeroDocumento}{enter}`)
-      
-        cy.wait('@financeiro', { timeout: 10000 })
+
+      cy.wait('@financeiro', { timeout: 10000 })
     }
 
     // abrir filtros
     cy.getVisible(locDocumentos.dashboard.filtros).click()
 
-    if(seedTestDocumento.dataInicio) {
-    // filtrar por data
-    cy.getVisible(locDocumentos.dashboard.filtroDataInicio).clear()
-      .type(`${seedTestDocumento.dataInicio}{enter}`)
-    
-    cy.getVisible(locDocumentos.dashboard.filtroDataFinal).clear()
-      .type(`${seedTestDocumento.dataFinal}{enter}`)
+    if (seedTestDocumento.dataInicio) {
+      // filtrar por data
+      cy.getVisible(locDocumentos.dashboard.filtroDataInicio).clear()
+        .type(`${seedTestDocumento.dataInicio}{enter}`)
+
+      cy.getVisible(locDocumentos.dashboard.filtroDataFinal).clear()
+        .type(`${seedTestDocumento.dataFinal}{enter}`)
     }
 
     if (seedTestDocumento.filtroPessoa) {
       // filtrar por pessoa
-      cy.getVisible(locDocumentos.dashboard.filtroPessoa).click({force: true})
-        .contains(seedTestDocumento.filtroPessoa).click({force: true})
+      cy.getVisible(locDocumentos.dashboard.filtroPessoa).click({ force: true })
+        .contains(seedTestDocumento.filtroPessoa).click({ force: true })
     }
 
     if (seedTestDocumento.safra) {
@@ -392,9 +392,9 @@ class Documentos {
       })
     }
 
-    if(seedTestDocumento.semDocumento) {
+    if (seedTestDocumento.semDocumento) {
       cy.getVisible(locDocumentos.dashboard.mensagemNenhumDocumento)
-      .contains('Você ainda não possui nenhum documento cadastrado.')
+        .contains('Você ainda não possui nenhum documento cadastrado.')
     }
   }
 
@@ -607,19 +607,27 @@ class Documentos {
    * @param {*} seedTestEdicaoDocumento
    */
   editar(seedTestFiltro, seedTestEdicaoDocumento) {
-    /*
-    const url = '/financeiro/documentos/listagem'
-    const locatorTituloPagina = locDocumentos.dashboard.titulo
-    const tituloPagina = 'Documentos'
-    */
-    // navegar para Documentos
-    // cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/ciclo-producao/v1/Ciclo/List?**')
+      .as('cicloProducao')
+    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**')
+      .as('cicloRateio')
+    cy.intercept('POST', 'https://myfarm.dev.conexa.com.br/api/financeiro/v1/Documento/Listagem')
+      .as('financeiro')
 
-    // TODO: Solução temporaria até resolução da atividade #29377
-    cy.getVisible('.siagri-navbar--logo').click()
-    cy.getVisible('.siagri-icon-financeiro').click()
-    cy.getVisible('[title="Documentos"]').click()
+    if (seedTestFiltro.editar) {
+      const url = '/financeiro/documentos/listagem'
+      const locatorTituloPagina = locDocumentos.dashboard.titulo
+      const tituloPagina = 'Documentos'
 
+      // navegar para Documentos'
+      cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    }
+    else {
+      // TODO: Solução temporaria até resolução da atividade #29377
+      cy.getVisible('.siagri-navbar--logo').click()
+      cy.getVisible('.siagri-icon-financeiro').click()
+      cy.getVisible('[title="Documentos"]').click()
+    }
     // selecionar Fazenda
     cy.getVisible(locDocumentos.dashboard.filtroFazenda).click()
       .contains(seedTestFiltro.fazenda).click()
@@ -628,11 +636,78 @@ class Documentos {
     cy.getVisible(locDocumentos.dashboard.filtroEmpresa).click()
       .contains(seedTestFiltro.empresa).click()
 
+    if (seedTestFiltro.numeroDocumento) {
+      // input pesquisar
+      cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
+        .type(`${seedTestFiltro.numeroDocumento}{enter}`)
+
+      cy.wait('@financeiro', { timeout: 10000 })
+    }
+
     // abrir documento
     cy.getVisible(locDocumentos.dashboard.selecionarDocumento).click()
 
     // abrir edicao de documento
     cy.getVisible(locDocumentos.detalhesDocumento.botaoEditarDocumento).click()
+
+    if (seedTestEdicaoDocumento.camposIndisponiveis) {
+
+      cy.getVisible(locDocumentos.documento.operacao).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
+
+      cy.getVisible(locDocumentos.documento.tipoDocumento).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
+
+      cy.getVisible(locDocumentos.documento.dataRecebimentoInativa)
+        .invoke('prop', 'disabled')
+        .should('be.true')
+
+      cy.getVisible(locDocumentos.documento.dataDocumentoInativa)
+        .invoke('prop', 'disabled')
+        .should('be.true')
+
+      cy.getVisible(locDocumentos.documento.pessoa).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
+
+      cy.getVisible(locDocumentos.documento.empresa).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
+
+      cy.getVisible(locDocumentos.documento.ieEmpresa).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
+
+      cy.getVisible(locDocumentos.documento.valorTotalInativo)
+        .invoke('prop', 'disabled')
+        .should('be.true')
+
+      cy.getVisible(locDocumentos.documento.foiPago)
+        .invoke('prop', 'className')
+        .should('eq', 'el-checkbox is-disabled')
+
+      cy.getVisible(locDocumentos.documento.formaDePagamento).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
+
+      cy.getVisible(locDocumentos.documento.valorParcela)
+        .invoke('prop', 'disabled')
+        .should('be.true')
+
+      cy.getVisible(locDocumentos.documento.dataVencimentoInativo)
+        .invoke('prop', 'disabled')
+        .should('be.true')
+
+      cy.getVisible(locDocumentos.documento.selecionarCategoria).should(($el) => {
+        expect($el).to.have.class('disabled')
+      })
+
+      cy.getVisible(locDocumentos.documento.categoriaValor)
+        .invoke('prop', 'disabled')
+        .should('be.true')
+    }
 
     // editar operacao
     if (seedTestEdicaoDocumento.operacao) {
@@ -733,26 +808,45 @@ class Documentos {
 
     // forma de pagamento
     if (seedTestEdicaoDocumento.formaPagamento) {
-      cy.getVisible(locDocumentos.documento.formaPagamento).click()
+      cy.getVisible(locDocumentos.documento.formaDePagamento).click()
         .contains(seedTestEdicaoDocumento.formaPagamento).click()
     }
 
     // rateio entre ciclos
     if (seedTestEdicaoDocumento.alterarValorRateioCiclos) {
-      const ciclos = seedTestEdicaoDocumento.ciclos
+      // selecionar rateio ciclo
+      cy.getVisible(locDocumentos.documento.rateioEntreCiclos).click()
 
-      ciclos.forEach((ciclo, index) => {
-        // nome do ciclo
-        cy.get(locDocumentos.documento.ciclo).eq(index).click()
-          .contains(ciclo.nome).click()
+      cy.wait(2000)
 
-        // valor do ciclo
-        cy.get(locDocumentos.documento.rateioCicloValor).eq(index)
-          .should('exist').and('be.visible')
-          .clear().type(ciclo.valor)
-      })
+      // wait para aguardar busca dos ciclos do planejamento
+      cy.wait('@cicloRateio', { timeout: 15000 })
+
+      // timeout necessario para carregar os ciclos nos selects
+      cy.wait('@cicloProducao', { timeout: 15000 })
+
+      cy.wait(2000)
+
+      if (seedTestEdicaoDocumento.ciclos) {
+        const ciclos = seedTestEdicaoDocumento.ciclos
+
+        ciclos.forEach((ciclo, index) => {
+          // nome do ciclo
+          cy.get(locDocumentos.documento.cicloSelecionado)
+            .eq(index)
+            .should(($el) => {
+              expect($el).to.contains.text(ciclo.nome)
+            })
+
+          // valor do ciclo
+          cy.get(locDocumentos.documento.rateioCicloValor)
+            .eq(index)
+            .should(($el) => {
+              expect($el).to.have.value(ciclo.valor)
+            })
+        })
+      }
     }
-
     // rateio entre categorias
     if (seedTestEdicaoDocumento.rateioEntreCategorias) {
       const categorias = seedTestEdicaoDocumento.categorias
@@ -777,6 +871,8 @@ class Documentos {
     }
     // salvar alterações
     cy.getVisible(locDocumentos.documento.adicionar).click()
+
+    cy.wait(2000)
 
     cy.get(locDocumentos.documento.adicionar).should('not.exist')
 
