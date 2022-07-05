@@ -622,8 +622,7 @@ class Documentos {
       // navegar para Documentos'
       cy.navegarPara(url, locatorTituloPagina, tituloPagina)
     }
-
-    if (seedTestFiltro.editarCenario) {
+    else {
       // TODO: Solução temporaria até resolução da atividade #29377
       cy.getVisible('.siagri-navbar--logo').click()
       cy.getVisible('.siagri-icon-financeiro').click()
