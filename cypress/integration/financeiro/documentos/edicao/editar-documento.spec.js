@@ -3,7 +3,7 @@
 import documento from '../../../../fixtures/funcionalidades/financeiro/documentos/editar/documento.json'
 import seedTestDocumento from '../../../../fixtures/funcionalidades/financeiro/documentos/editar/editar-documento.json'
 import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
-import agendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
+import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
 import testDescritpion from './bdd-description/editar-documento.js'
 import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
@@ -52,7 +52,7 @@ context('Funcionalidade', () => {
 				.descriptionHtml(testDescritpion.jaPago)
 
 			// Pagar documento via agenda financeira
-			agendaFinanceira.pagarPelaAgenda(seedTestDocumento.documento789456.pagarDocumento)
+			AgendaFinanceira.pagarPelaAgenda(seedTestDocumento.documento789456.pagarDocumento)
 
 			Documentos.editar(seedTestDocumento.documentoPago.filtro, seedTestDocumento.documentoPago.editar)
 		})
