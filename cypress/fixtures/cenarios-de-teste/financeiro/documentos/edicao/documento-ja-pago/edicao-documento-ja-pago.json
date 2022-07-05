@@ -1,5 +1,6 @@
 {
   "filtro": {
+    "editarCenario": true,
     "fazenda": "Fazenda E2E",
     "empresa": "Empresa Fornecedor - CPF"
   },
