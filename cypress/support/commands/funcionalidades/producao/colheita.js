@@ -27,16 +27,19 @@ class Colheita {
 
       // Selecionar fazenda
       cy.getVisible(locListagemColheita.selectFazenda).click()
-      cy.getVisible(locListagemColheita.selecionarFazenda)
-        .contains(seedTest.filtroFazenda).click()
-        .wait(['@listUnidadeArmazenamento', '@listColheitas'], { timeout: 5000 })
+      cy.get(locListagemColheita.selecionarFazenda)
+        .contains(seedTest.fazenda).click()
 
+      cy.wait('@listUnidadeArmazenamento', { timeout: 5000 })
+      cy.wait('@listColheitas', { timeout: 5000 })
 
       // Selecionar safra
       cy.getVisible(locListagemColheita.selectSafra).click()
-      cy.getVisible(locListagemColheita.selecionarSafra)
-        .contains(seedTest.filtroSafra).click()
-        .wait(['@listCiclos', '@listColheitas', '@iconeCultura'], { timeout: 5000 })
+      cy.get(locListagemColheita.selecionarSafra)
+        .contains(seedTest.safra).click()
+
+      cy.wait('@listCiclos', { timeout: 5000 })
+      cy.wait('@listColheitas', { timeout: 5000 })
 
 
       cy.getVisible(locListagemColheita.cardColheita).click().should(($el) => {
