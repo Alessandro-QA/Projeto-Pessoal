@@ -28,7 +28,7 @@ class Colheita {
       // Selecionar fazenda
       cy.getVisible(locListagemColheita.selectFazenda).click()
       cy.get(locListagemColheita.selecionarFazenda)
-        .contains(seedTest.fazenda).click()
+        .contains(seedTest.filtroFazenda).click()
 
       cy.wait('@listUnidadeArmazenamento', { timeout: 5000 })
       cy.wait('@listColheitas', { timeout: 5000 })
@@ -36,7 +36,7 @@ class Colheita {
       // Selecionar safra
       cy.getVisible(locListagemColheita.selectSafra).click()
       cy.get(locListagemColheita.selecionarSafra)
-        .contains(seedTest.safra).click()
+        .contains(seedTest.filtroSafra).click()
 
       cy.wait('@listCiclos', { timeout: 5000 })
       cy.wait('@listColheitas', { timeout: 5000 })
