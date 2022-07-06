@@ -893,16 +893,22 @@ class Documentos {
       .parents(locDocumentos.dashboard.selecionarDocumento)
       .click({ force: true })
 
-    // Excluir documento
-    cy.getVisible(locDocumentos.detalhesDocumento.botaoRemoverDocumento, { timeout: 15000 })
-      .click()
+    if (seedTestDocumento.excluirInvalidado) {
+      cy.getVisible(locDocumentos.detalhesDocumento.botaoRemoverDocumento)
+        .find('button').should('have.disabled', 'true')
+    }
+    else {
+      // Excluir documento
+      cy.getVisible(locDocumentos.detalhesDocumento.botaoRemoverDocumento, { timeout: 15000 })
+        .click()
 
-    // Confirmar exclusão
-    cy.get(locDocumentos.detalhesDocumento.botaoSim, { timeout: 15000 })
-      .should('exist').and('be.visible')
-      .contains('Sim').click({ force: true })
+      // Confirmar exclusão
+      cy.get(locDocumentos.detalhesDocumento.botaoSim, { timeout: 15000 })
+        .should('exist').and('be.visible')
+        .contains('Sim').click({ force: true })
 
-    cy.get(locDocumentos.detalhesDocumento.mensagemSucesso).contains('Documento excluído com sucesso')
+      cy.get(locDocumentos.detalhesDocumento.mensagemSucesso).contains('Documento excluído com sucesso')
+    }
   }
 
   /**

@@ -1,0 +1,13 @@
+{
+  "documento789456": {
+    "fazenda": "Fazenda Teste Producao",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "numeroDocumento": "789456"
+  },
+  "documento987456": {
+    "fazenda": "Fazenda Teste Producao",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "numeroDocumento": "987456",
+    "excluirInvalidado": true
+  }
+}
