@@ -28,7 +28,7 @@ context('Funcionalidade', () => {
       })
 
       it('Validar movimentação do tipo pagamento', function () {
-        cy.allure().severity('critical').startStep('test content')
+        cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescritpion.recebimento)
 
         MovimentacaoBancaria.validarDashboard(seedTestPagamento.pagamento)
@@ -44,21 +44,22 @@ context('Funcionalidade', () => {
       })
 
       it('Validar movimentação do tipo recebimento', function () {
-        cy.allure().severity('critical').startStep('test content')
+        cy.allure().severity('normal').startStep('test content')
 
         MovimentacaoBancaria.validarDashboard(seedTestPagamento.recebimento)
       })
     })
 
-    describe.only('Realizar movimentação do tipo transfêrencia e validar o lançamento na listagem de movimentação', () => {
+    describe('Realizar movimentação do tipo transfêrencia e validar o lançamento na listagem de movimentação', () => {
       it('Adicionar Transferência', function () {
         cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescritpion.transferencia)
 
         MovimentacaoBancaria.adicionarPagamentoRecebimento(seedTestPagamento.transferencia)
       })
 
       it('Validar movimentação do tipo transferência', function () {
-        cy.allure().severity('critical').startStep('test content')
+        cy.allure().severity('normal').startStep('test content')
 
         MovimentacaoBancaria.validarDashboard(seedTestPagamento.transferencia)
       })
