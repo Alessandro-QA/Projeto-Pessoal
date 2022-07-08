@@ -1,31 +1,46 @@
 {
   "movimentacaoBancaria2000": {
     "empresa": "Empresa Fornecedor - CPF",
-    "tipo": "Pagamento",
     "categorias": "Outros Custos",
-    "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
-    "conferido": "Não",
-    "valor": "- R$  2.000,00",
+    "cardMovimentacao": [
+      {
+        "tipo": "Pagamento",
+        "categorias": "Outros Custos",
+        "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+        "conferido": "Não",
+        "valor": "- R$  2.000,00"
+      }
+    ],
     "saldoDoDia": "-R$ 6.003,00"
   },
 
   "movimentacaoBancaria2001": {
     "empresa": "Empresa Fornecedor - CPF",
-    "tipo": "Pagamento",
     "categorias": "Fretes e Carretos",
-    "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
-    "conferido": "Não",
-    "valor": "- R$  2.001,00",
+    "cardMovimentacao": [
+      {
+        "tipo": "Pagamento",
+        "categorias": "Fretes e Carretos",
+        "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+        "conferido": "Não",
+        "valor": "- R$  2.001,00"
+      }
+    ],
     "saldoDoDia": "-R$ 6.003,00"
   },
 
   "movimentacaoBancaria2002": {
     "empresa": "Empresa Fornecedor - CPF",
-    "tipo": "Pagamento",
     "categorias": "Sementes",
-    "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
-    "conferido": "Não",
-    "valor": "- R$  2.002,00",
+    "cardMovimentacao": [
+      {
+        "tipo": "Pagamento",
+        "categorias": "Sementes",
+        "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+        "conferido": "Não",
+        "valor": "- R$  2.002,00"
+      }
+    ],
     "saldoDoDia": "-R$ 6.003,00"
   }
 }

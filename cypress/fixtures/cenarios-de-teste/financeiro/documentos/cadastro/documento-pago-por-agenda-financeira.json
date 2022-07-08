@@ -77,11 +77,15 @@
 
   "movimentacaoBancaria": {
     "empresa": "Empresa Fornecedor - CPF",
-    "tipo": "Pagamento",
-    "categorias": "Férias",
-    "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
-    "conferido": "Não",
-    "valor": "- R$  2.000,00"
+    "cardMovimentacao": [
+      {
+        "tipo": "Pagamento",
+        "categorias": "Férias",
+        "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+        "conferido": "Não",
+        "valor": "- R$  2.000,00"
+      }
+    ]
   },
 
   "lancamentoLivroCaixa": {

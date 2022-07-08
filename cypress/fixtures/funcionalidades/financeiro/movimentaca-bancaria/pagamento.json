@@ -1,0 +1,73 @@
+{
+  "pagamento": {
+    "pagamento": true,
+    "tipo": "Pagamento",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "data": "10/06/2022",
+    "categorias": "Sementes",
+    "filtroDataInicio": "01/06/2022",
+    "filtroDataFim": "01/07/2022",
+    "valorMovimentacao": "R$ 20,00",
+    "contaBancaria": "Conta Corrente E2E",
+    "cardMovimentacao": [
+      {
+        "tipo": "Pagamento",
+        "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+        "categorias": "Sementes",
+        "conferido": "Não",
+        "valor": "- R$  20,00"
+      }
+    ],
+    "saldoDoDia": "-R$ 20,00"
+  },
+  "recebimento": {
+    "recebimento": true,
+    "tipo": "Recebimento",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "data": "10/11/2021",
+    "categorias": "Arroz",
+    "filtroDataInicio": "01/11/2021",
+    "filtroDataFim": "01/12/2021",
+    "valorMovimentacao": "R$ 30,00",
+    "contaBancaria": "Conta Corrente E2E",
+    "cardMovimentacao": [
+      {
+        "tipo": "Recebimento",
+        "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+        "categorias": "Arroz",
+        "conferido": "Não",
+        "valor": "R$ 30,00"
+      }
+    ],
+    "saldoDoDia": "R$ 30,00"
+  },
+  "transferencia": {
+    "transferencia": true,
+    "tipo": "transferencia",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "data": "20/05/2022",
+    "hora": "10:00",
+    "filtroDataInicio": "01/05/2022",
+    "filtroDataFim": "01/06/2022",
+    "valorMovimentacao": "R$ 50,00",
+    "contaOrigem": "Conta Corrente E2E",
+    "contaDestino": "Conta E2E",
+    "empresaDestino": "Empresa Fornecedor - CNPJ",
+    "observacao": "Observação",
+    "cardMovimentacao": [
+      {
+        "tipo": "Transferência",
+        "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+        "conferido": "Não",
+        "valor": "- R$  50,00"
+      },
+      {
+        "tipo": "Transferência",
+        "conta": "Banco: Banco Itaucard S.A. Ag.: 341 Conta: 6630341524-3",
+        "conferido": "Não",
+        "valor": "R$ 50,00"
+      }
+    ],
+    "saldoDoDia": "R$ 0,00"
+  }
+}
