@@ -7,7 +7,7 @@ import seedTestDocumento4 from '../../../../fixtures/funcionalidades/financeiro/
 import seedTestDocumento5 from '../../../../fixtures/funcionalidades/financeiro/documentos/cadastro/documento3557.json'
 import seedTestDocumento6 from '../../../../fixtures/funcionalidades/financeiro/documentos/cadastro/documento5537.json'
 import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
-import testDescription from './cadastro-documento.description.js'
+import testDescription from './bdd-description/cadastro-documento.description.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 context('Funcionalidade', () => {

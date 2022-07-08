@@ -887,11 +887,15 @@ class Documentos {
     // Pesquisar documento
     Documentos.pesquisar(seedTestDocumento)
 
+    cy.intercept('GET', '/api/financeiro/v1/Documento/**').as('apiDocumento')
+
     // Abrir documento
     cy.get(locDocumentos.dashboard.selecionarDocumento)
       .contains(seedTestDocumento.numeroDocumento)
       .parents(locDocumentos.dashboard.selecionarDocumento)
       .click({ force: true })
+
+    cy.wait('@apiDocumento', { timeout: 5000 })
 
     if (seedTestDocumento.excluirInvalidado) {
       cy.getVisible(locDocumentos.detalhesDocumento.botaoRemoverDocumento)
@@ -899,7 +903,7 @@ class Documentos {
     }
     else {
       // Excluir documento
-      cy.getVisible(locDocumentos.detalhesDocumento.botaoRemoverDocumento, { timeout: 15000 })
+      cy.get(locDocumentos.detalhesDocumento.botaoRemoverDocumento, { timeout: 15000 })
         .click()
 
       // Confirmar exclusão
