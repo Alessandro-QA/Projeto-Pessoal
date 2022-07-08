@@ -15,7 +15,7 @@ class ResultadoSafra {
     var dadosHectares = seedTestResultadosSafraDashboard.cardHectares
     var dadosValores = seedTestResultadosSafraDashboard.cardValores
 
-    cy.intercept('POST', 'api/financeiro/v1/Dashboard/ResultadoSafra').as('listaResultadoSafra')
+    cy.intercept('POST', '/api/financeiro/v1/Dashboard/ResultadoSafra').as('listaResultadoSafra')
     cy.intercept('GET', '/api/financeiro/v1/Documento/CiclosDocumentos?fazendaIds**').as('ciclosDocumentos')
     cy.intercept('GET', '/api/producao-agricola/v1/Dashboard/PrecoMediaCiclos**').as('precoMediaCiclos')
 

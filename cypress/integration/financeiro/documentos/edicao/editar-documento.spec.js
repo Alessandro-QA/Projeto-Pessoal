@@ -4,7 +4,7 @@ import documento from '../../../../fixtures/funcionalidades/financeiro/documento
 import seedTestDocumento from '../../../../fixtures/funcionalidades/financeiro/documentos/editar/editar-documento.json'
 import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
-import testDescritpion from './bdd-description/editar-documento.js'
+import testDescritpion from './bdd-description/editar-documento.description.js'
 import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
