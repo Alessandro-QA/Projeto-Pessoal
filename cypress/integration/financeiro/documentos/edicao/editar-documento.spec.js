@@ -9,7 +9,7 @@ import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 context('Funcionalidade', () => {
-	describe('Documentos | Editar Documento - ', { tags: '@documentos' }, () => {
+	describe('Documentos | Edição Documento - ', { tags: '@documentos' }, () => {
 		var dataAtual = Utils.getDate()
 		var bodyDocumento789456 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento789456)
 		var bodyDocumento357357 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento357357)
@@ -25,13 +25,15 @@ context('Funcionalidade', () => {
 			Authenticate.logout()
 		})
 
-		it('Cadastrar documentos via API', function () {
-			Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento789456, 'login_cenarios')
-			Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento357357, 'login_cenarios')
-			Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento369852, 'login_cenarios')
+		context('Cadastro dos documentos utilizados nos cenários', () => {
+			it('Utilização da api para cadastro dos documentos', function () {
+				Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento789456, 'login_cenarios')
+				Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento357357, 'login_cenarios')
+				Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento369852, 'login_cenarios')
+			})
 		})
 
-		describe('Com Rateio entre ciclos e dedutível', () => {
+		context('Com Rateio entre ciclos e dedutível', () => {
 			it('Editar Documento', function () {
 				cy.allure().severity('critical').startStep('test content')
 					.descriptionHtml(testDescritpion.editarComRateio)
@@ -47,7 +49,7 @@ context('Funcionalidade', () => {
 			})
 		})
 
-		describe('Sem Rateio entre ciclos e Não dedutível', () => {
+		context('Sem Rateio entre ciclos e Não dedutível', () => {
 			it('Editar Documento', function () {
 				cy.allure().severity('critical').startStep('test content')
 					.descriptionHtml(testDescritpion.editarSemRateio)
@@ -62,7 +64,7 @@ context('Funcionalidade', () => {
 			})
 		})
 
-		describe('Documento já pago', () => {
+		context('Documento já pago', () => {
 			it('Pagar documento', function () {
 				AgendaFinanceira.pagarPelaAgenda(seedTestDocumento.documento789456.pagarDocumento)
 			})
@@ -75,7 +77,7 @@ context('Funcionalidade', () => {
 			})
 		})
 
-		describe('Documento parcialmente pago', () => {
+		context('Documento parcialmente pago', () => {
 			it('Pagar parcialmente documento', function () {
 				AgendaFinanceira.pagarReceberTitulo(seedTestDocumento.documento357357.pagarDocumento)
 			})
@@ -95,7 +97,7 @@ context('Funcionalidade', () => {
 			})
 		})
 
-		describe('Documento parcialmente recebido', () => {
+		context('Documento parcialmente recebido', () => {
 			it('Receber parcialmente documento', function () {
 				AgendaFinanceira.pagarReceberTitulo(seedTestDocumento.documento369852.receberDocumento)
 			})
@@ -115,7 +117,7 @@ context('Funcionalidade', () => {
 			})
 		})
 
-		describe('Documento recebido', () => {
+		context('Documento recebido', () => {
 			it('Receber documento', function () {
 				AgendaFinanceira.pagarReceberTitulo(seedTestDocumento.documento369852.receberDocumento)
 			})

@@ -80,7 +80,7 @@ class AgendaFinanceira {
     cy.wait('@listagemAgenda')
 
     // Espera necessária para a atualização dos títulos mostrados na tela
-    cy.wait(2000)
+    cy.wait(3000)
 
     // Selecionar card na agenda financeira
     cy.getVisible(locAgendaFinanceira.dashboard.cardAgenda)
@@ -93,36 +93,28 @@ class AgendaFinanceira {
     if (seedTestAgendaFinanceira.formaPagamento) {
       cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.formaPagamento).click()
         .contains(seedTestAgendaFinanceira.formaPagamento).click()
-    }
 
-    // Informar a data do pagamento/recebimento
-    if (seedTestAgendaFinanceira.dataPagamento) {
-      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.dataPagamento)
-        .clear().type(`${seedTestAgendaFinanceira.dataPagamento}{enter}`)
-    }
+      // Informar a data do pagamento/recebimento
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.dataPagamento)
+          .clear().type(`${seedTestAgendaFinanceira.dataPagamento}{enter}`)
 
-    // Selecionar a conta bancaria
-    if (seedTestAgendaFinanceira.contaBancaria) {
-      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.contaBancaria).click()
-        .contains(seedTestAgendaFinanceira.contaBancaria).click()
+      // Selecionar a conta bancaria
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.contaBancaria).click()
+          .contains(seedTestAgendaFinanceira.contaBancaria).click()
+
+      // Selecionar tag
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.tags).click()
+          .contains(seedTestAgendaFinanceira.tags).click()
+
+      // Infomar uma Observação no pagamento / recebimento
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.observacao)
+          .clear().type(`${seedTestAgendaFinanceira.observacao}{enter}`)
     }
 
     // Informar o valor de pagamento
     if (seedTestAgendaFinanceira.valor) {
       cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.valor)
         .clear().type(`${seedTestAgendaFinanceira.valor}{enter}`)
-    }
-
-    // Selecionar tag
-    if (seedTestAgendaFinanceira.tags) {
-      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.tags).click()
-        .contains(seedTestAgendaFinanceira.tags).click()
-    }
-
-    // Infomar uma Observação no pagamento / recebimento
-    if (seedTestAgendaFinanceira.observacao) {
-      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.observacao)
-        .clear().type(`${seedTestAgendaFinanceira.observacao}{enter}`)
     }
 
     // Botao de recebimento / pagamento

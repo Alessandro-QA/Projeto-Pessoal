@@ -317,7 +317,7 @@ class Documentos {
     if (seedTestDocumento.numeroDocumento) {
       // input pesquisar
       cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
-        .type(`${seedTestDocumento.numeroDocumento}{enter}`)
+        .type(`${seedTestDocumento.numeroDocumento}{enter}`, {timeout: 2000})
 
       cy.wait('@financeiro', { timeout: 10000 })
     }
@@ -639,7 +639,7 @@ class Documentos {
     if (seedTestFiltro.numeroDocumento) {
       // input pesquisar
       cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
-        .type(`${seedTestFiltro.numeroDocumento}{enter}`)
+        .type(`${seedTestFiltro.numeroDocumento}{enter}`, {timeout: 2000})
 
       cy.wait('@financeiro', { timeout: 10000 })
     }
