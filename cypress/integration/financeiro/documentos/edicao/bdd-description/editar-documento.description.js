@@ -86,6 +86,75 @@ const html = {
     <strong>E</strong> clicar em atualizar lançamento <br/>
     <strong>ENTAO</strong> o registro será gravado, exibido e validado na Listagem de Documentos <br/>
 </div>
+    `,
+    parcialmentePago: `
+<div>
+      <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+      <span style="color: #b22222;"> Edição de Documento </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gestor da Fazenda <br/>
+    <strong>QUERO</strong> editar algumas informações de um documento já criado <br/>
+    <strong>PARA</strong> melhor gerenciar os gastos e controle de documentos da empresa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Editar documento pago parcialmente </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queria editar um documento pago parcialmente <br/>
+    <strong>QUANDO</strong> eu preencher as informações editáveis disponíveis <br/>
+    <strong>E</strong> validar os campos não editáveis <br/>
+    <strong>E</strong> clicar em atualizar lançamento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na Listagem de Documentos <br/>
+</div>
+    `,
+    recebido: `
+<div>
+      <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+      <span style="color: #b22222;"> Edição de Documento </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gestor da Fazenda <br/>
+    <strong>QUERO</strong> editar algumas informações de um documento já criado <br/>
+    <strong>PARA</strong> melhor gerenciar os gastos e controle de documentos da empresa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Editar documento recebido </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queria editar um documento recebido <br/>
+    <strong>QUANDO</strong> eu preencher as informações editáveis disponíveis <br/>
+    <strong>E</strong> validar os campos não editáveis <br/>
+    <strong>E</strong> clicar em atualizar lançamento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na Listagem de Documentos <br/>
+</div>
+    `,
+    parcialmenteRecebido: `
+<div>
+      <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+      <span style="color: #b22222;"> Edição de Documento </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gestor da Fazenda <br/>
+    <strong>QUERO</strong> editar algumas informações de um documento já criado <br/>
+    <strong>PARA</strong> melhor gerenciar os gastos e controle de documentos da empresa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Editar documento recebido parcialmente </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queria editar um documento recebido parcialmente <br/>
+    <strong>QUANDO</strong> eu preencher as informações editáveis disponíveis <br/>
+    <strong>E</strong> validar os campos não editáveis <br/>
+    <strong>E</strong> clicar em atualizar lançamento <br/>
+    <strong>ENTAO</strong> o registro será gravado, exibido e validado na Listagem de Documentos <br/>
+</div>
     `
 }
 

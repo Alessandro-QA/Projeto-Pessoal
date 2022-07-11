@@ -43,7 +43,6 @@
 			"fazendaDocumento": "Fazenda Teste Producao",
 			"empresaDocumento": "Empresa Fornecedor - CNPJ",
 			"numeroDocumento": "789456",
-	
 			"cardStatusDocumento": "A pagar",
 			"cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
 			"cardValorDocumento": "R$ 134,00",
@@ -80,6 +79,29 @@
 					"valor": "R$ 500,00"
 				}
 			]
+		},
+		"pagarDocumento": {
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "357357",
+			"valor": "R$ 200,00",
+			"pagar": true
+		},
+		"editarPosPagamento": {
+			"camposIndisponiveis": true
+		},
+		"detalhesPosPagamento": {
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "357357",
+			"parcelas": [
+				{
+					"parcela": "1ª Parcela",
+					"valorParcela": "R$ 500,00",
+					"statusParcela": "Pago parcialmente",
+					"saldoParcela": "R$ 300,00"
+				}
+			]
 		}
 	},
 	"documentoPago": {
@@ -89,8 +111,52 @@
 			"empresa": "Empresa Fornecedor - CNPJ",
 			"numeroDocumento": "789456"
 		},
-		"editar":{
+		"editar": {
 			"camposIndisponiveis": true
+		}
+	},
+	"documento369852": {
+		"receberDocumento": {
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Produtor - CPF",
+			"numeroDocumento": "369852",
+			"valor": "R$ 320,00",
+			"receber": true
+		},
+		"editarPosRecebimento": {
+			"camposIndisponiveis": true
+		},
+		"filtro": {
+			"editar": true,
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "369852"
+		},
+		"detalhesPosRecebimentoParcial": {
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "369852",
+			"parcelas": [
+				{
+					"parcela": "1ª Parcela",
+					"valorParcela": "R$ 640,00",
+					"statusParcela": "Recebido parcialmente",
+					"saldoParcela": "R$ 320,00"
+				}
+			]
+		},
+		"detalhesPosRecebimento": {
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Fornecedor - CNPJ",
+			"numeroDocumento": "369852",
+			"parcelas": [
+				{
+					"parcela": "1ª Parcela",
+					"valorParcela": "R$ 640,00",
+					"statusParcela": "Recebido",
+					"saldoParcela": "R$ 0,00"
+				}
+			]
 		}
 	}
 }
