@@ -1,5 +1,5 @@
 {
-  "documento": {
+  "documentoDev": {
     "categorias": [
       {
         "valor": 1000,
@@ -76,6 +76,90 @@
       "parcelas": [
         {
           "vencimento": "dataSubstituicaoT11:15:56-03:00",
+          "valor": 2000
+        }
+      ]
+    },
+    "dedutivel": true,
+    "manual": true
+  },
+
+  "documentoQA": {
+    "categorias": [
+      {
+        "valor": 1000,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "4.02.01.03",
+          "nome": "13º Salário",
+          "descricao": "13º Salário"
+        }
+      },
+      {
+        "valor": 1000,
+        "contaContabil": {
+          "codigo": "4.01.01.14",
+          "descricao": "Outros Custos",
+          "dedutivel": true
+        }
+      }
+    ],
+    "dataRecebimento": "dataSubstituicaoT18:49:36-03:00",
+    "operacao": {
+      "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
+      "descricao": "13º Salário"
+    },
+    "safra": {
+      "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+      "descricao": "2021/2021"
+    },
+    "data": "dataSubstituicaoT18:49:36-03:00",
+    "fazenda": {
+      "id": "cc6b4476-eb9a-4368-b7ab-ddecc7633255",
+      "descricao": "Fazenda E2E"
+    },
+    "tags": ["documentoE2E"],
+    "pessoa": {
+      "pessoaTipo": "Fornecedor",
+      "numeroDocumento": "66791418001",
+      "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+      "descricao": "Empresa Produtor - CPF"
+    },
+    "numero": "1001",
+    "empresa": {
+      "id": "f03b1276-c276-4980-bccd-87dc29317818",
+      "descricao": "Empresa Fornecedor - CPF",
+      "empresaDeSaoPaulo": false,
+      "documentoPrincipal": "91535740019",
+      "inscricaoEstadual": {
+        "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+        "descricao": "IE Estadual",
+        "valor": "32165465622"
+      }
+    },
+    "ieDaEmpresa": {
+      "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+      "descricao": "IE Estadual",
+      "valor": "32165465622",
+      "label": "32165465622"
+    },
+    "tipoDocumento": 5,
+    "observacao": "Observações do Documento",
+    "conferido": false,
+    "financeiro": {
+      "total": 2000,
+      "pago": false,
+      "rateioEntreCiclos": false,
+      "formaPagamento": {
+        "id": "a40a8ed9-44f4-45ba-bebe-19386f6bee82",
+        "descricao": "Boleto"
+      },
+      "condicaoPagamento": "Avista",
+      "quantidadeParcelas": 1,
+      "valorFixo": false,
+      "parcelas": [
+        {
+          "vencimento": "dataSubstituicaoT00:00:00-03:00",
           "valor": 2000
         }
       ]

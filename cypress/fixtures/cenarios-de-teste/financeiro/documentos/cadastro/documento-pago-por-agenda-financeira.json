@@ -1,5 +1,5 @@
 {
-  "documento": {
+  "documentoDev": {
     "categorias": [
       {
         "valor": 2000,
@@ -67,6 +67,82 @@
       "parcelas": [
         {
           "vencimento": "dataSubstituicaoT15:56:09-03:00",
+          "valor": 2000
+        }
+      ]
+    },
+    "dedutivel": true,
+    "manual": true
+  },
+
+  "documentoQA": {
+    "categorias": [
+      {
+        "valor": 2000,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "4.02.01.02",
+          "nome": "Férias",
+          "descricao": "Férias"
+        }
+      }
+    ],
+    "dataRecebimento": "dataSubstituicaoT11:38:00-03:00",
+    "operacao": {
+      "id": "7ca3ef19-8449-a35d-7789-98a0ac6e5eaf",
+      "descricao": "Férias"
+    },
+    "safra": {
+      "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+      "descricao": "2021/2021"
+    },
+    "data": "dataSubstituicaoT11:38:00-03:00",
+    "fazenda": {
+      "id": "cc6b4476-eb9a-4368-b7ab-ddecc7633255",
+      "descricao": "Fazenda E2E"
+    },
+    "tags": ["documentoE2E"],
+    "pessoa": {
+      "pessoaTipo": "Fornecedor",
+      "numeroDocumento": "66791418001",
+      "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+      "descricao": "Empresa Produtor - CPF"
+    },
+    "numero": "1001",
+    "empresa": {
+      "id": "f03b1276-c276-4980-bccd-87dc29317818",
+      "descricao": "Empresa Fornecedor - CPF",
+      "empresaDeSaoPaulo": false,
+      "documentoPrincipal": "91535740019",
+      "inscricaoEstadual": {
+        "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+        "descricao": "IE Estadual",
+        "valor": "32165465622"
+      }
+    },
+    "ieDaEmpresa": {
+      "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+      "descricao": "IE Estadual",
+      "valor": "32165465622",
+      "label": "32165465622"
+    },
+    "tipoDocumento": 5,
+    "observacao": "Observações do Documento",
+    "conferido": false,
+    "financeiro": {
+      "total": 2000,
+      "pago": false,
+      "rateioEntreCiclos": false,
+      "formaPagamento": {
+        "id": "a40a8ed9-44f4-45ba-bebe-19386f6bee82",
+        "descricao": "Boleto"
+      },
+      "condicaoPagamento": "Avista",
+      "quantidadeParcelas": 1,
+      "valorFixo": false,
+      "parcelas": [
+        {
+          "vencimento": "dataSubstituicaoT11:38:00-03:00",
           "valor": 2000
         }
       ]
