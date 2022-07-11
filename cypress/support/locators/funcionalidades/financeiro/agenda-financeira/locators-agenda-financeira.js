@@ -23,9 +23,27 @@ const locators = {
     valorTitulo: '[data-cy=span-valor-titulo]',
     formaPagamento: '[data-cy=span-forma-pagamento]',
     condicaoPagamento: '[data-cy=span-condicao-pagamento]',
+    editarDataPagamento: '[data-cy=icon-editar-data-vencimento]',
     fornecedor: '[data-cy=span-fornecedor]',
     cnpj: '[data-cy=span-cnpj]',
-    tabelaHistoricoPagamento: '.el-table__row .cell'
+    tabelaHistoricoPagamento: '.el-table__row .cell',
+    efetuarPagamento: '[data-cy=button-efetuar-pagamento-recebimento]',
+  },
+
+  pagamentoRecebimento: {
+    formaPagamento: '[data-cy=select-forma-pagamento]',
+    dataPagamento: '[data-cy=data-picker-data]',
+    contaBancaria: '[data-cy=select-conta-bancaria]',
+    valor: '[data-cy=input-valor]',
+    juros: '[data-cy=input-juros]',
+    multa: '[data-cy=input-multa]',
+    descontos: '[data-cy=input-desconto]',
+    total: '[data-cy=input-total-pagar]',
+    tags: '[data-cy=select-tag]',
+    observacao: '[data-cy=input-informacoe-adicionais]',
+    anexo: '[data-cy=button-upload-xml]',
+    botaoCancelar: '[data-cy=button-cancelar]',
+    botaoPagarReceber: '[data-cy=button-pagamento-recebimento]'
   }
 }
 

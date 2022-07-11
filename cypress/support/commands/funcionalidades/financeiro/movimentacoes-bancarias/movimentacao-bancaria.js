@@ -143,7 +143,7 @@ class MovimentacaoBancaria {
     // Navegar para Movimentação Bancaria
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    // Espera necessária para carrecar os componentes da tela
+    // Espera necessária para carregar os componentes da tela
     cy.wait('@contaBancaria', { timeout: 10000 })
 
     // Selecionar Empresa
@@ -157,7 +157,7 @@ class MovimentacaoBancaria {
         .clear().type(`${seedTestMovimentacaoBancaria.categorias}{enter}`)
     }
 
-    // inserir a data de inicio e fim do filtro de período
+    // inserir a data de inicio e fim no filtro de período
     if (seedTestMovimentacaoBancaria.filtroDataInicio) {
       // abrir filtros
       cy.getVisible(locMovimentacaoBancaria.dashboard.abrirFiltro).click()

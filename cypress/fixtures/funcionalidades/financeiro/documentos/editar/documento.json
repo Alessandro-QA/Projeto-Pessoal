@@ -168,5 +168,93 @@
 		},
 		"dedutivel": true,
 		"manual": true
+	},
+	"documento369852": {
+		"materiais": [
+			{
+				"material": {
+					"id": "68377b58-db49-4a7b-ba1d-7df065123280",
+					"descricao": "BELURE TOP"
+				},
+				"unidadeMedida": {
+					"id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
+					"descricao": "L"
+				},
+				"quantidade": 2,
+				"valor": 320,
+				"total": 640
+			}
+		],
+		"categorias": [
+			{
+				"valor": 640,
+				"contaContabil": {
+					"dedutivel": true,
+					"codigo": "3.02.01.03",
+					"nome": "Outras Vendas Agropecuárias",
+					"descricao": "Outras Vendas Agropecuárias"
+				}
+			}
+		],
+		"dataRecebimento": "dataSubstituicaoT14:01:32-03:00",
+		"operacao": {
+			"id": "af2790f9-869b-4292-a981-eb98140badfa",
+			"descricao": "Outras Vendas Agropecuárias"
+		},
+		"safra": {
+			"id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+			"descricao": "2021/2021"
+		},
+		"data": "dataSubstituicaoT14:01:32-03:00",
+		"fazenda": {
+			"id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+			"descricao": "Fazenda Teste Producao"
+		},
+		"pessoa": {
+			"pessoaTipo": "Cliente",
+			"numeroDocumento": "66791418001",
+			"id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+			"descricao": "Empresa Produtor - CPF"
+		},
+		"numero": "369852",
+		"empresa": {
+			"id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+			"descricao": "Empresa Fornecedor - CNPJ",
+			"empresaDeSaoPaulo": false,
+			"documentoPrincipal": "37062568000147",
+			"inscricaoEstadual": {
+				"id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+				"descricao": "110137116",
+				"valor": "110137116"
+			}
+		},
+		"ieDaEmpresa": {
+			"id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+			"descricao": "110137116",
+			"valor": "110137116",
+			"label": "110137116"
+		},
+		"tipoDocumento": 1,
+		"conferido": false,
+		"financeiro": {
+			"total": 640,
+			"pago": false,
+			"rateioEntreCiclos": false,
+			"formaPagamento": {
+				"id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
+				"descricao": "Dinheiro"
+			},
+			"condicaoPagamento": "Avista",
+			"quantidadeParcelas": 1,
+			"valorFixo": false,
+			"parcelas": [
+				{
+					"vencimento": "dataSubstituicaoT14:01:32-03:00",
+					"valor": 640
+				}
+			]
+		},
+		"dedutivel": true,
+		"manual": true
 	}
 }
