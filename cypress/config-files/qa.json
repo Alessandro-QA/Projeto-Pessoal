@@ -1,20 +1,37 @@
 {
-  "baseUrl": "https://URLMYFARM.COM",
+  "baseUrl": "__Env.MyFarm.BaseAddressQA__",
   "env": {
+    "authUrl": "__Env.MyFarm.AuthUrlQA__",
+    "returnURL": "__Env.MyFarm.ReturnURLQA__",
+    "daasUrl": "__Env.MyFarm.DassURLQA__",
+    "scope": "__Env.MyFarm.ScopeQA__",
+    "authorization": "__Env.MyFarm.AuthorizationQA__",
     "login_cenarios": {
-      "email": "EMAIL",
-      "senha": "SENHA"
+      "email": "__EndToEndTest.LoginCenarios.EmailQA__",
+      "senha": "__EndToEndTest.LoginCenarios.PasswordQA__",
+      "tenant": "__EndToEndTest.LoginCenarios.tenantQA__",
+      "usernameDevClient": "__EndToEndTest.usernameQAClient__",
+      "passwordDevClient": "__EndToEndTest.passwordQAClient__"
     },
     "login_cadastro": {
-      "email": "EMAIL",
-      "senha": "SENHA"
+      "email": "__EndToEndTest.LoginCadastro.EmailQA__",
+      "senha": "__EndToEndTest.LoginCadastro.PasswordQA__",
+      "tenant": "__EndToEndTest.LoginCadastro.tenantQA__",
+      "usernameDevClient": "__EndToEndTest.usernameQAClient__",
+      "passwordDevClient": "__EndToEndTest.passwordQAClient__"
+    },
+    "login_nfe": {
+      "email": "__EndToEndTest.LoginNFe.EmailQA__",
+      "senha": "__EndToEndTest.LoginNFe.PasswordQA__",
+      "tenant": "__EndToEndTest.LoginNFe.tenantQA__",
+      "usernameDevClient": "__EndToEndTest.usernameQAClient__",
+      "passwordDevClient": "__EndToEndTest.passwordQAClient__"
     },
     "db": {
-      "server": "DATABASE_SERVER",
-      "database": "DATABASE",
-      "port": 1433,
-      "user": "USER",
-      "password": "PASSWORD",
+      "server": "__EndToEndTest.Db.ServerQA__",
+      "database": "__EndToEndTest.Db.DatabaseQA__",
+      "user": "__EndToEndTest.Db.UserNameQA__",
+      "password": "__EndToEndTest.Db.UserPasswordQA__",
       "options": {
         "encrypt": true,
         "trustServerCertificate": false
