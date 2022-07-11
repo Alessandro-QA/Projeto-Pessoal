@@ -9,14 +9,26 @@ import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/
 import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
 import ResultadoSafra from '../../../../support/commands/funcionalidades/resultados-safra/resultado-safra.js'
-import documento from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/documentos.json'
+import documentos from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/documentos.json'
 import seedExcluirDocumento from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/excluirDocumentos.json'
 import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 context('Cenário de Teste', () => {
   describe('Documentos | Cadastro de documento com exclusão de movimentação', { tags: '@documentos' }, () => {
+
     var dataAtual = Utils.getDate()
+    var documento = []
+
+    switch (Cypress.env('ambiente')) {
+      case 'dev': documento = documentos.documentosDev
+        break
+      case 'qa': documento = documentos.documentosQA
+        break
+      default:
+        throw new Error('Não foi possivel atribuir os documentos')
+    }
+
     var bodyDocumento2000 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento2000)
     var bodyDocumento2001 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento2001)
     var bodyDocumento2002 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento2002)
@@ -77,13 +89,13 @@ context('Cenário de Teste', () => {
       LivroCaixa.validarDashboard(seedTestLivroCaixa.lancamentoLivroCaixa)
     })
 
-    it('Validar resultado da safra - Dashboard', function () {
+    it('Validar resultado da safra - Dashboard', { retries: { runMode: 1, openMode: 1, }, }, function () {
       cy.allure().severity('normal').startStep('test content')
 
-      ResultadoSafra.validarDashboard(seedTestResultadoSafra.resultadoDaSafraDashboard)
+      ResultadoSafra.resultadoSintetico(seedTestResultadoSafra.resultadoDaSafraDashboard)
     })
 
-    it('Validar resultado da safra - Analítica', function () {
+    it('Validar resultado da safra - Analítica', { retries: { runMode: 1, openMode: 1, }, }, function () {
       cy.allure().severity('normal').startStep('test content')
 
       ResultadoSafra.resultadoAnalitico(seedTestResultadoSafra.resultadoDaSafraAnalitica)
@@ -126,13 +138,13 @@ context('Cenário de Teste', () => {
       AgendaFinanceira.validarDashboard(seedTestAgenda.aPagar.agendaFinanceira2002)
     })
 
-    it('Validar se exclusão refletiu no resultado da safra - Dashboard', function () {
+    it('Validar se exclusão refletiu no resultado da safra - Dashboard', { retries: { runMode: 1, openMode: 1, }, }, function () {
       cy.allure().severity('normal').startStep('test content')
 
-      ResultadoSafra.validarDashboard(seedTestResultadoSafra.resultadoDaSafraDashboard)
+      ResultadoSafra.resultadoSintetico(seedTestResultadoSafra.resultadoDaSafraDashboard)
     })
 
-    it('Validar se exclusão refletiu no resultado da safra - Analítica', function () {
+    it('Validar se exclusão refletiu no resultado da safra - Analítica', { retries: { runMode: 1, openMode: 1, }, }, function () {
       cy.allure().severity('normal').startStep('test content')
 
       ResultadoSafra.resultadoAnalitico(seedTestResultadoSafra.resultadoDaSafraAnalitica)
@@ -154,13 +166,13 @@ context('Cenário de Teste', () => {
       Documentos.excluir(seedExcluirDocumento.documento2002)
     })
 
-    it('Validar se exclusão refletiu no resultado da safra - Dashboard', function () {
+    it('Validar se exclusão refletiu no resultado da safra - Dashboard', { retries: { runMode: 1, openMode: 1, }, }, function () {
       cy.allure().severity('normal').startStep('test content')
 
-      ResultadoSafra.validarDashboard(seedTestResultadoSafra.exclusaoResultadoDaSafraDashboard)
+      ResultadoSafra.resultadoSintetico(seedTestResultadoSafra.exclusaoResultadoDaSafraDashboard)
     })
 
-    it('Validar se exclusão refletiu no resultado da safra - Analítica', function () {
+    it('Validar se exclusão refletiu no resultado da safra - Analítica', { retries: { runMode: 1, openMode: 1, }, }, function () {
       cy.allure().severity('normal').startStep('test content')
 
       ResultadoSafra.resultadoAnalitico(seedTestResultadoSafra.exclusaoResultadoDaSafraAnalitica)

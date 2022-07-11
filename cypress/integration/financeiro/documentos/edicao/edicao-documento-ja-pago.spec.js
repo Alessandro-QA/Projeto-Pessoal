@@ -14,7 +14,18 @@ import Authenticate from '../../../../support/commands/funcionalidades/login/log
 context('Cenário de Teste', () => {
   describe('Documentos | Cadastro, Edição e Exclusão de Documento Já Pago', { tags: '@documentos' }, () => {
     var dataAtual = Utils.getDate()
-    var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, seedCadastro.cadastroDocumento)
+    var documento = []
+
+    switch (Cypress.env('ambiente')) {
+      case 'dev': documento = seedCadastro.documentoDev
+        break
+      case 'qa': documento = seedCadastro.documentoQA
+        break
+      default:
+        throw new Error('Não foi possivel atribuir os documentos')
+    }
+
+    var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, documento)
 
     before(function () {
       const credenciais = Cypress.env('login_cenarios')
@@ -22,9 +33,9 @@ context('Cenário de Teste', () => {
       Utils.setAccessTokenToEnv(credenciais)
     })
 
-    after(() => {
-      Authenticate.logout()
-    })
+    // after(() => {
+    //   Authenticate.logout()
+    // })
 
     it('Cadastrar documento dedutível já pago por API', function () {
       cy.allure().severity('normal').startStep('test content')
@@ -53,7 +64,7 @@ context('Cenário de Teste', () => {
     it('Validar se o cadastro refletiu no resultado da safra - Dashboard', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      ResultadoSafra.validarDashboard(seedCadastro.resultadoDaSafraDashboard)
+      ResultadoSafra.resultadoSintetico(seedCadastro.resultadoDaSafraDashboard)
     })
 
     it('Validar se o cadastro refletiu no resultado da safra - Analítica', function () {
@@ -95,7 +106,7 @@ context('Cenário de Teste', () => {
     it('Validar se edição refletiu no resultado da safra - Dashboard', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      ResultadoSafra.validarDashboard(seedEdicao.resultadoDaSafraDashboard)
+      ResultadoSafra.resultadoSintetico(seedEdicao.resultadoDaSafraDashboard)
     })
 
     it('Validar se edição refletiu no resultado da safra - Analítica', function () {
@@ -131,7 +142,7 @@ context('Cenário de Teste', () => {
     it('Validar se exclusão refletiu no resultado da safra - Dashboard', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      ResultadoSafra.validarDashboard(seedExclusao.resultadoDaSafraDashboard)
+      ResultadoSafra.resultadoSintetico(seedExclusao.resultadoDaSafraDashboard)
     })
 
     it('Validar se exclusão refletiu no resultado da safra - Analítica', function () {
