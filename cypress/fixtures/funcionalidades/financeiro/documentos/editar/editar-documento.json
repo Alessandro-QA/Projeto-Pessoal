@@ -84,8 +84,7 @@
 			"fazenda": "Fazenda Teste Producao",
 			"empresa": "Empresa Fornecedor - CNPJ",
 			"numeroDocumento": "357357",
-			"valor": "R$ 200,00",
-			"pagar": true
+			"valor": "R$ 200,00"
 		},
 		"editarPosPagamento": {
 			"camposIndisponiveis": true
@@ -120,8 +119,7 @@
 			"fazenda": "Fazenda Teste Producao",
 			"empresa": "Empresa Produtor - CPF",
 			"numeroDocumento": "369852",
-			"valor": "R$ 320,00",
-			"receber": true
+			"valor": "R$ 320,00"
 		},
 		"editarPosRecebimento": {
 			"camposIndisponiveis": true
