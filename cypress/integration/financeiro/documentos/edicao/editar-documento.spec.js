@@ -9,7 +9,7 @@ import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 context('Funcionalidade', () => {
-	describe('FUNCIONALIDADES > Documentos | Editar Documento - ', { tags: '@documentos' }, () => {
+	describe('Documentos | Editar Documento - ', { tags: '@documentos' }, () => {
 		var dataAtual = Utils.getDate()
 		var bodyDocumento789456 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento789456)
 		var bodyDocumento357357 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento357357)
@@ -31,7 +31,7 @@ context('Funcionalidade', () => {
 			Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento369852, 'login_cenarios')
 		})
 
-		describe('Editar documento Com Rateio entre ciclos e dedutível', () => {
+		describe('Com Rateio entre ciclos e dedutível', () => {
 			it('Editar Documento', function () {
 				cy.allure().severity('critical').startStep('test content')
 					.descriptionHtml(testDescritpion.editarComRateio)
@@ -47,7 +47,7 @@ context('Funcionalidade', () => {
 			})
 		})
 
-		describe('Editar documento sem Rateio entre ciclos e Não dedutível', () => {
+		describe('Sem Rateio entre ciclos e Não dedutível', () => {
 			it('Editar Documento', function () {
 				cy.allure().severity('critical').startStep('test content')
 					.descriptionHtml(testDescritpion.editarSemRateio)
@@ -62,7 +62,7 @@ context('Funcionalidade', () => {
 			})
 		})
 
-		describe('Editar documento já pago', () => {
+		describe('Documento já pago', () => {
 			it('Pagar documento', function () {
 				AgendaFinanceira.pagarPelaAgenda(seedTestDocumento.documento789456.pagarDocumento)
 			})
@@ -75,7 +75,7 @@ context('Funcionalidade', () => {
 			})
 		})
 
-		describe('Editar documento parcialmente pago', () => {
+		describe('Documento parcialmente pago', () => {
 			it('Pagar parcialmente documento', function () {
 				AgendaFinanceira.pagarReceberTitulo(seedTestDocumento.documento357357.pagarDocumento)
 			})
@@ -95,7 +95,7 @@ context('Funcionalidade', () => {
 			})
 		})
 
-		describe('Editar documento parcialmente recebido', () => {
+		describe('Documento parcialmente recebido', () => {
 			it('Receber parcialmente documento', function () {
 				AgendaFinanceira.pagarReceberTitulo(seedTestDocumento.documento369852.receberDocumento)
 			})
@@ -115,7 +115,7 @@ context('Funcionalidade', () => {
 			})
 		})
 
-		describe('Editar documento recebido', () => {
+		describe('Documento recebido', () => {
 			it('Receber documento', function () {
 				AgendaFinanceira.pagarReceberTitulo(seedTestDocumento.documento369852.receberDocumento)
 			})
