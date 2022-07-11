@@ -78,11 +78,11 @@ class Utils {
         method: 'POST',
         url: `${Cypress.env('authUrl')}/connect/token`,
         headers: {
-          'authorization': 'Basic Y2NkZXZjbGllbnQ6MTdjNGZkYTUtYzUxOC00OTg1LTgzMmQtYmY4NWQxZmYxNGQ1',
+          'authorization': Cypress.env('authorization'),
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: {
-          scope: 'tenant i18n fazenda bemocorrencia atividade atividadeagricola bem cicloproducao controleclimatico cultura estoque formapagamento material notafiscal operacao pedidocompra pessoa planejamentosafra planocontas safra unidadearmazenamento unidademedida eexport subscription parametrotributario permission product webhookvindi contabancaria financeiro instituicaofinanceira localidade producaoagricola notification assinei webhook marketingcampaign nfedistribuicao aliare agriq onboarding profile openid indexadormoeda agriq openbanking',
+          scope: Cypress.env('scope'),
           grant_type: 'password',
           username: credenciais.email,
           password: credenciais.senha,

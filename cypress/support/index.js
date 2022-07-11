@@ -2,7 +2,8 @@
 
 // import '@cypress/code-coverage/support'
 import './commands/commands'
-import deletarRegistroTabelas from './utils/queries/deletar-por-tabela'
+import deletarRegistroTabelasDev from './utils/queries/deletar-por-tabela-dev.js'
+import deletarRegistroTabelasQa from './utils/queries/deletar-por-tabela-qa.js'
 import '@shelex/cypress-allure-plugin'
 import registerCypressGrep from 'cypress-grep'
 registerCypressGrep()
@@ -14,8 +15,14 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 
 before(function () {
-  cy.executarQuery(deletarRegistroTabelas)
-    .then(function (recordset) { cy.log(recordset) })
+  switch (Cypress.env('ambiente')) {
+    case 'dev': cy.executarQuery(deletarRegistroTabelasDev).then(function (recordset) { cy.log(recordset) })
+      break
+    case 'qa': cy.executarQuery(deletarRegistroTabelasQa).then(function (recordset) { cy.log(recordset) })
+      break
+    default:
+      throw new Error('Não foi possivel carregar as variáveis de ambiente')
+  }
 })
 
 beforeEach(() => {
