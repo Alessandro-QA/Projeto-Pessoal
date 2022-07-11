@@ -4,7 +4,7 @@ import locAgendaFinanceira from '../../../../locators/funcionalidades/financeiro
 
 class AgendaFinanceira {
   /**
-   * Pagar titulo pela agenda financeira
+   * Pagar titulo pela tela de listagem na agenda financeira
    * @param {*} seedTestAgendaFinanceira
    */
   pagarPelaAgenda(seedTestAgendaFinanceira) {
@@ -48,6 +48,89 @@ class AgendaFinanceira {
       .should('exist').and('have.text', 'Pagamento realizado com sucesso')
 
     cy.wait('@listagemAgenda')
+  }
+
+  /**
+   * Metodo para pagar documento via tela de detalhes
+   * @param {*} seedTestAgendaFinanceira 
+   */
+  pagarReceberTitulo(seedTestAgendaFinanceira) {
+    const url = '/financeiro/agenda-financeira'
+    const locatorTituloPagina = locAgendaFinanceira.dashboard.titulo
+    const tituloPagina = 'Agenda financeira'
+
+    cy.intercept('POST', '/api/financeiro/v1/Agenda/Recebimento').as('apiRecebimento')
+    cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem').as('listagemAgenda')
+
+    // Navegar para Agenda Financeira
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    // Selecionar Empresa
+    cy.getVisible(locAgendaFinanceira.dashboard.filtroEmpresa)
+      .contains(seedTestAgendaFinanceira.empresa).click()
+
+    // Selecionar Fazenda
+    cy.getVisible(locAgendaFinanceira.dashboard.filtroFazenda)
+      .contains(seedTestAgendaFinanceira.fazenda).click()
+
+    // Pesquisar por numero do documento
+    cy.getVisible(locAgendaFinanceira.dashboard.pesquisarDocumento)
+      .clear().type(`${seedTestAgendaFinanceira.numeroDocumento}{enter}`)
+
+    cy.wait('@listagemAgenda')
+
+    // Espera necessária para a atualização dos títulos mostrados na tela
+    cy.wait(2000)
+
+    // Selecionar card na agenda financeira
+    cy.getVisible(locAgendaFinanceira.dashboard.cardAgenda)
+      .contains(seedTestAgendaFinanceira.numeroDocumento).click()
+
+    // clicar no botão para ir a tela de recebimento/pagamento 
+    cy.getVisible(locAgendaFinanceira.detalhesTitulo.efetuarPagamento).click()
+
+    // Selecionar forma de pagamento
+    if (seedTestAgendaFinanceira.formaPagamento) {
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.formaPagamento).click()
+        .contains(seedTestAgendaFinanceira.formaPagamento).click()
+    }
+
+    // Informar a data do pagamento/recebimento
+    if(seedTestAgendaFinanceira.dataPagamento) {
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.dataPagamento)
+        .clear().type(`${seedTestAgendaFinanceira.dataPagamento}{enter}`)
+    }
+
+    // Selecionar a conta bancaria
+    if(seedTestAgendaFinanceira.contaBancaria) {
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.contaBancaria).click()
+        .contains(seedTestAgendaFinanceira.contaBancaria).click()
+    }
+
+    // Informar o valor de pagamento
+    if(seedTestAgendaFinanceira.valor) {
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.valor)
+        .clear().type(`${seedTestAgendaFinanceira.valor}{enter}`)
+    }
+
+    // Selecionar tag
+    if(seedTestAgendaFinanceira.tags) {
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.tags).click()
+        .contains(seedTestAgendaFinanceira.tags).click()
+    }
+
+    // Infomar uma Observação no pagamento / recebimento
+    if(seedTestAgendaFinanceira.observacao) {
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.observacao)
+        .clear().type(`${seedTestAgendaFinanceira.observacao}{enter}`)
+    }
+
+    // Botao de recebimento / pagamento
+    if(seedTestAgendaFinanceira.pagar || seedTestAgendaFinanceira.receber) {
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.botaoPagarReceber).click()
+    }
+
+    cy.wait('@apiRecebimento')
   }
 
   /**
