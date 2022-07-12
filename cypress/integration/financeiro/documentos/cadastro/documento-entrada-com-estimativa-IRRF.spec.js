@@ -8,7 +8,18 @@ import Authenticate from '../../../../support/commands/funcionalidades/login/log
 context('Cenário de Teste', () => {
   describe('Documentos | Cadastro de documento de entrada com estimativa de IRRF', { tags: '@documentos' }, () => {
     var dataAtual = Utils.getDate()
-    var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, seedTest.documento)
+    var documento = []
+
+    switch (Cypress.env('ambiente')) {
+      case 'dev': documento = seedTest.documentoDev
+        break
+      case 'qa': documento = seedTest.documentoQA
+        break
+      default:
+        throw new Error('Não foi possivel atribuir os documentos')
+    }
+
+    var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, documento)
 
     before(function () {
       const credenciais = Cypress.env('login_cenarios')

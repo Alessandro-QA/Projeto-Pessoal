@@ -11,7 +11,18 @@ import Authenticate from '../../../../support/commands/funcionalidades/login/log
 context('Cenário de Teste', () => {
   describe('Documentos | Cadastro de documento com 2 categorias pago pela Agenda Financeira', { tags: '@documentos' }, () => {
     var dataAtual = Utils.getDate()
-    var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, seedTest.documento)
+    var documento = []
+
+    switch (Cypress.env('ambiente')) {
+      case 'dev': documento = seedTest.documentoDev
+        break
+      case 'qa': documento = seedTest.documentoQA
+        break
+      default:
+        throw new Error('Não foi possivel atribuir os documentos')
+    }
+
+    var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, documento)
 
     before(function () {
       const credenciais = Cypress.env('login_cenarios')
@@ -55,7 +66,7 @@ context('Cenário de Teste', () => {
 
     it('Exportar o CSV do Livro Caixa', function () {
       cy.allure().severity('normal').startStep('test content')
-      .descriptionHtml(testDescription.livroCaixa)
+        .descriptionHtml(testDescription.livroCaixa)
 
       LivroCaixa.exportar(seedTest.lancamentoLivroCaixa)
     })

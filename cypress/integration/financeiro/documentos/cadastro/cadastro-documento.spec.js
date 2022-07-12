@@ -21,58 +21,93 @@ context('Funcionalidade', () => {
       Authenticate.logout()
     })
 
-    it('Dedutivel, com tag, observação, já pago, boleto', function () {
-      cy.allure().severity('critical').startStep('test content')
-        .descriptionHtml(testDescription.testes1)
+    context('Dedutivel, com tag, observação, já pago, boleto', () => {
+      it('Cadastrar documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes1)
 
-      Documentos.cadastrar(seedTestDocumento1)
-
-      Documentos.validarDetalhes(seedTestDocumento1)
+        Documentos.cadastrar(seedTestDocumento1)
+      })
+      it('Validar detalhes do documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes1)
+        Documentos.validarDetalhes(seedTestDocumento1)
+      })
     })
 
-    it('Dedutivel, já pago, dinheiro, com rateio de ciclos e categoria', function () {
-      cy.allure().severity('critical').startStep('test content')
-        .descriptionHtml(testDescription.testes2)
-
-      Documentos.cadastrar(seedTestDocumento2.documento)
-
-      Documentos.validarDetalhes(seedTestDocumento2.detalhes)
+    context('Dedutivel, já pago, dinheiro, com rateio de ciclos e categoria', function () {
+      it('Cadastrar documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes2)
+        Documentos.cadastrar(seedTestDocumento2.documento)
+      })
+      it('Validar detalhes do documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes1)
+        Documentos.validarDetalhes(seedTestDocumento2.detalhes)
+      })
     })
 
-    it('Dedutivel, observação, parcelado, duas parcelas, boleto, com rateio de ciclos', function () {
-      cy.allure().severity('critical').startStep('test content')
-        .descriptionHtml(testDescription.testes3)
+    context('Dedutivel, observação, parcelado, duas parcelas, boleto, com rateio de ciclos', function () {
+      it('Cadastrar documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes3)
 
-      Documentos.cadastrar(seedTestDocumento3.documento)
-
-      Documentos.validarDetalhes(seedTestDocumento3.detalhes)
+        Documentos.cadastrar(seedTestDocumento3.documento)
+      })
+      it('Validar detalhes do documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes3)
+        Documentos.validarDetalhes(seedTestDocumento3.detalhes)
+      })
     })
 
-    it('Não dedutivel, com tag, cartão de débito, com rateio de categoria', function () {
-      cy.allure().severity('critical').startStep('test content')
-        .descriptionHtml(testDescription.testes4)
+    context('Não dedutivel, com tag, cartão de débito, com rateio de categoria', function () {
 
-      Documentos.cadastrar(seedTestDocumento4.documento)
+      it('Cadastrar documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes4)
 
-      Documentos.validarDetalhes(seedTestDocumento4.detalhes)
+        Documentos.cadastrar(seedTestDocumento4.documento)
+      })
+
+      it('Cadastrar documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes3)
+
+        Documentos.validarDetalhes(seedTestDocumento4.detalhes)
+      })
     })
 
-    it('Não dedutivel, pago, cartão de crédito, com rateio de ciclos e com rateio de categoria', function () {
-      cy.allure().severity('critical').startStep('test content')
-        .descriptionHtml(testDescription.testes5)
+    context('Não dedutivel, pago, cartão de crédito, com rateio de ciclos e com rateio de categoria', function () {
+      it('Cadastrar documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes5)
 
-      Documentos.cadastrar(seedTestDocumento5.documento)
+        Documentos.cadastrar(seedTestDocumento5.documento)
+      })
 
-      Documentos.validarDetalhes(seedTestDocumento5.detalhes)
+      it('Validar detalhes do documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes3)
+
+        Documentos.validarDetalhes(seedTestDocumento5.detalhes)
+      })
     })
 
-    it('Não dedutivel, transferência bancaria, parcelado, com anexo', function () {
-      cy.allure().severity('critical').startStep('test content')
-        .descriptionHtml(testDescription.testes6)
+    context('Não dedutivel, transferência bancaria, parcelado, com anexo', function () {
+      it('Cadastrar documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes6)
 
-      Documentos.cadastrar(seedTestDocumento6.documento)
+        Documentos.cadastrar(seedTestDocumento6.documento)
+      })
 
-      Documentos.validarDetalhes(seedTestDocumento6.detalhes)
+      it('Validar detalhes do documento', function () {
+        cy.allure().severity('critical').startStep('test content')
+          .descriptionHtml(testDescription.testes3)
+        Documentos.validarDetalhes(seedTestDocumento6.detalhes)
+      })
     })
   })
 })
