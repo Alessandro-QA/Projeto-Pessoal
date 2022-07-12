@@ -1,5 +1,5 @@
 {
-  "documento": {
+  "documentoDev": {
     "categorias": [
       {
         "valor": 150000,
@@ -125,6 +125,137 @@
       ],
       "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
       "contaId": "57efe1f2-b0b4-415d-b642-49cbf45ee300"
+    },
+    "dedutivel": true,
+    "manual": true
+  },
+
+  "documentoQA": {
+    "categorias": [
+      {
+        "valor": 150000,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "3.02.01.01",
+          "nome": "Venda de Gado",
+          "descricao": "Venda de Gado"
+        }
+      }
+    ],
+    "dataRecebimento": "dataSubstituicaoT10:37:17-03:00",
+    "operacao": {
+      "id": "b53df285-d34e-41f8-9376-3db9c2ae79bc",
+      "descricao": "Venda de Gado"
+    },
+    "safra": {
+      "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+      "descricao": "2021/2021"
+    },
+    "data": "dataSubstituicaoT10:37:17-03:00",
+    "fazenda": {
+      "id": "cc6b4476-eb9a-4368-b7ab-ddecc7633255",
+      "descricao": "Fazenda E2E"
+    },
+    "tags": ["documentoE2E"],
+    "pessoa": {
+      "pessoaTipo": "Cliente",
+      "numeroDocumento": "66791418001",
+      "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+      "descricao": "Empresa Produtor - CPF"
+    },
+    "numero": "1",
+    "empresa": {
+      "id": "f03b1276-c276-4980-bccd-87dc29317818",
+      "descricao": "Empresa Fornecedor - CPF",
+      "empresaDeSaoPaulo": false,
+      "documentoPrincipal": "91535740019",
+      "inscricaoEstadual": {
+        "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+        "descricao": "IE Estadual",
+        "valor": "32165465622"
+      }
+    },
+    "ieDaEmpresa": {
+      "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+      "descricao": "IE Estadual",
+      "valor": "32165465622",
+      "label": "32165465622"
+    },
+    "tipoDocumento": 1,
+    "observacao": "Observações do Documento",
+    "conferido": false,
+    "financeiro": {
+      "total": 150000,
+      "pago": true,
+      "rateioEntreCiclos": false,
+      "formaPagamento": {
+        "id": "3716190d-a329-42c1-a311-b32977cd1965",
+        "descricao": "Dinheiro"
+      },
+      "contaBancaria": {
+        "id": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980",
+        "empresaTitular": {
+          "id": "f03b1276-c276-4980-bccd-87dc29317818",
+          "descricao": "Empresa Fornecedor - CPF"
+        },
+        "tipoConta": 1,
+        "nome": "Conta Corrente E2E",
+        "contaPrincipal": true,
+        "numerarioEmTransito": false,
+        "banco": {
+          "id": "c3cff0c7-226f-20c7-8d07-b7210fe569be",
+          "codigoBacen": "1",
+          "descricao": "Banco do Brasil S.A."
+        },
+        "agencia": "65432",
+        "agenciaDigitoVerificador": "8",
+        "conta": "3456",
+        "contaDigitoVerificador": "7",
+        "saldoInicial": 1000000,
+        "saldoAtual": 975989,
+        "dataInicialSaldo": "2021-01-01T03:00:00+00:00",
+        "incluirSaldoDisponivel": false,
+        "codigo": 1,
+        "openBanking": false,
+        "ativo": true,
+        "contaBancariaEmpresas": [
+          {
+            "id": "52b352a0-3a09-4aaf-9087-218723c7e7de",
+            "empresa": {
+              "id": "f03b1276-c276-4980-bccd-87dc29317818",
+              "descricao": "Empresa Fornecedor - CPF"
+            }
+          },
+          {
+            "id": "5c00c4d7-538e-4f30-b70d-430e7f67e044",
+            "empresa": {
+              "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+              "descricao": "Empresa Produtor - CPF"
+            }
+          },
+          {
+            "id": "5d52f45d-adc0-4cac-8da7-e74a9656274c",
+            "empresa": {
+              "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+              "descricao": "Empresa Fornecedor - CNPJ"
+            }
+          }
+        ]
+      },
+      "contaFornecedor": {
+        "id": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980"
+      },
+      "condicaoPagamento": "Avista",
+      "quantidadeParcelas": 1,
+      "valorFixo": false,
+      "parcelas": [
+        {
+          "vencimento": "dataSubstituicaoT10:37:17-03:00",
+          "valor": 150000
+        }
+      ],
+      "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
+      "contaId": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980"
     },
     "dedutivel": true,
     "manual": true
