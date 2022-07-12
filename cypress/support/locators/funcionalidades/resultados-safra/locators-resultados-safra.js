@@ -40,6 +40,7 @@ const locators = {
     acumuladoSafra: '[data-cy=span-acumulado-safra]',
     percentualCustoTotal: '[data-cy=span-percentual-custo-total]',
     buttonDropdownCard: '[data-cy=dropdown-card]',
+    iconDropdownCard: '[data-cy=dropdown-card] i',
     tabelaDetalhesDepesas: '[data-cy=table-detalhes] .el-table__row',
     iconAbrirTitulo: '[data-cy=icon-abrir-titulo]',
     mensagemEmpty: '[data-cy=msg-empty-state]'
