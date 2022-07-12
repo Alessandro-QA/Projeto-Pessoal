@@ -3,13 +3,15 @@
   "env": {
     "authUrl": "__Env.MyFarm.AuthUrl__",
     "returnURL": "__Env.MyFarm.ReturnURL__",
+    "daasUrl": "__Env.MyFarm.DassURL__",
+    "scope": "__Env.MyFarm.Scope__",
+    "authorization": "__Env.MyFarm.Authorization__",
     "login_cenarios": {
       "email": "__EndToEndTest.LoginCenarios.Email__",
       "senha": "__EndToEndTest.LoginCenarios.Password__",
       "tenant": "__EndToEndTest.LoginCenarios.tenant__",
       "usernameDevClient": "__EndToEndTest.usernameDevClient__",
       "passwordDevClient": "__EndToEndTest.passwordDevClient__"
-
     },
     "login_cadastro": {
       "email": "__EndToEndTest.LoginCadastro.Email__",
