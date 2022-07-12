@@ -20,6 +20,8 @@ class LivroCaixa {
     // Navegar para Livro Caixa
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
+    cy.intercept('/api/financeiro/v1/LivroCaixa/**').as('ApiLivroCaixa')
+
     // Validar dados card produtores
     cy.get(locLivroCaixa.dashboard.cardProdutores).contains(seedTestLivroCaixa.nomeEmpresa)
       .parents(locLivroCaixa.dashboard.cardProdutores).within(() => {
@@ -46,6 +48,8 @@ class LivroCaixa {
     // Abrir livro caixa produtor
     cy.get(locLivroCaixa.dashboard.cardProdutores)
       .contains(seedTestLivroCaixa.nomeEmpresa).click()
+
+    cy.wait('@ApiLivroCaixa', { timeout: 10000 })
 
     // Validar titulo Lançamentos
     cy.getVisible(locLivroCaixa.lancamentos.titulo)
@@ -135,9 +139,14 @@ class LivroCaixa {
     // Navegar para Livro Caixa
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
+    cy.intercept('GET', '/api/pessoa/v1/Pessoa/**/IE').as('ApiPessoaIE')
+    cy.intercept('GET', '/api/pessoa/v1/Pessoa/**').as('ApiPessoa')
+    cy.intercept('GET', '/api/financeiro/v1/LivroCaixa/ProdutorLivroCaixa?**').as('ApiProdutorLivroCaixa')
+
     // Abrir livro caixa produtor
     cy.get(locLivroCaixa.dashboard.cardProdutores)
       .contains(seedTestLancamentoLivroCaixa.empresa).click()
+    cy.wait('@ApiProdutorLivroCaixa', { timeout: 10000 })
 
     // Validar titulo Lançamentos
     cy.getVisible(locLivroCaixa.lancamentos.titulo)
@@ -152,7 +161,8 @@ class LivroCaixa {
     cy.getVisible(locLivroCaixa.lancamentos.cardLancamentosConta).click()
 
     // Aguarda carregamento dos dados no modal
-    cy.wait(2000)
+    cy.wait('@ApiPessoa', { timeout: 10000 })
+    cy.wait('@ApiPessoaIE', { timeout: 10000 })
 
     // Validar tipo de lancamento
     cy.getVisible(locLivroCaixa.editarLancamento.tipoLancamentoAtivo).should(($el) => {
@@ -218,7 +228,8 @@ class LivroCaixa {
 
     // Validar dados card produtores
     cy.get(locLivroCaixa.dashboard.cardProdutores)
-      .first().within(() => {
+      .contains(seedTestExclusaoLivroCaixa.nomeEmpresa)
+      .parentsUntil(locLivroCaixa.dashboard.cardProdutores).within(() => {
         cy.get(locLivroCaixa.dashboard.cardProdutoresProdutor).should(($el) => {
           expect($el).to.contain.text(seedTestExclusaoLivroCaixa.nomeEmpresa)
         })

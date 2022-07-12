@@ -21,12 +21,13 @@ class Documentos {
    * @param {*} seedTestDocumento
    */
   cadastrar(seedTestDocumento) {
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/ciclo-producao/v1/Ciclo/List?**')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?**`)
       .as('cicloProducao')
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**`)
       .as('cicloRateio')
-    cy.intercept('POST', 'https://myfarm.dev.conexa.com.br/api/financeiro/v1/Documento/Listagem')
+    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem')
       .as('listaDocumentos')
+
     // Navegar para Documentos
     cy.navegarPara(url, locatorTituloPagina, tituloPagina).then(() => {
       cy.wait('@listaDocumentos', { timeout: 15000 })
@@ -291,7 +292,7 @@ class Documentos {
    * @param {*} seedTestDocumento
    */
   static pesquisar(seedTestDocumento) {
-    cy.intercept('POST', 'https://myfarm.dev.conexa.com.br/api/financeiro/v1/Documento/Listagem').as('financeiro')
+    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem').as('financeiro')
 
     // Navegar para Documentos
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
@@ -317,7 +318,7 @@ class Documentos {
     if (seedTestDocumento.numeroDocumento) {
       // input pesquisar
       cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
-        .type(`${seedTestDocumento.numeroDocumento}{enter}`, {timeout: 2000})
+        .type(`${seedTestDocumento.numeroDocumento}{enter}`, { timeout: 2000 })
 
       cy.wait('@financeiro', { timeout: 10000 })
     }
@@ -607,11 +608,11 @@ class Documentos {
    * @param {*} seedTestEdicaoDocumento
    */
   editar(seedTestFiltro, seedTestEdicaoDocumento) {
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/ciclo-producao/v1/Ciclo/List?**')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?**`)
       .as('cicloProducao')
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**`)
       .as('cicloRateio')
-    cy.intercept('POST', 'https://myfarm.dev.conexa.com.br/api/financeiro/v1/Documento/Listagem')
+    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem')
       .as('financeiro')
 
     if (seedTestFiltro.editar) {
@@ -639,7 +640,7 @@ class Documentos {
     if (seedTestFiltro.numeroDocumento) {
       // input pesquisar
       cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
-        .type(`${seedTestFiltro.numeroDocumento}{enter}`, {timeout: 2000})
+        .type(`${seedTestFiltro.numeroDocumento}{enter}`, { timeout: 2000 })
 
       cy.wait('@financeiro', { timeout: 10000 })
     }

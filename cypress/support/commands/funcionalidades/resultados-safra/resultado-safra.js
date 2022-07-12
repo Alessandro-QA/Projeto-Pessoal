@@ -4,20 +4,18 @@ import locResultadosSafra from '../../../locators/funcionalidades/resultados-saf
 
 class ResultadoSafra {
   /**
-   * Metodo para validar a dashboard da Safra
-   * @param {*} seedTestResultadosSafraDashboard
+   * Valida o Resultado da safra de forma sintetica
+   * @param {*} seedTestResultadosSafra
    */
-  validarDashboard(seedTestResultadosSafraDashboard) {
+  resultadoSintetico(seedTestResultadosSafra) {
     const url = '/resultados/resultados-de-safra'
     const locatorTituloPagina = locResultadosSafra.dashboard.titulo
     const tituloPagina = 'Resultados da safra'
-    var dadosCiclo = seedTestResultadosSafraDashboard.cardCiclo
-    var dadosHectares = seedTestResultadosSafraDashboard.cardHectares
-    var dadosValores = seedTestResultadosSafraDashboard.cardValores
+    var dadosCiclo = seedTestResultadosSafra.cardCiclo
+    var dadosHectares = seedTestResultadosSafra.cardHectares
+    var dadosValores = seedTestResultadosSafra.cardValores
 
     cy.intercept('POST', '/api/financeiro/v1/Dashboard/ResultadoSafra').as('listaResultadoSafra')
-    cy.intercept('GET', '/api/financeiro/v1/Documento/CiclosDocumentos?fazendaIds**').as('ciclosDocumentos')
-    cy.intercept('GET', '/api/producao-agricola/v1/Dashboard/PrecoMediaCiclos**').as('precoMediaCiclos')
 
     // Navegar para Resultados da Safra - Dashboard
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
@@ -26,37 +24,25 @@ class ResultadoSafra {
     cy.get(locResultadosSafra.dashboard.limparFiltroFazenda).click({ force: true })
     // Selecionar Fazenda
     cy.getVisible(locResultadosSafra.dashboard.filtroFazenda).click()
-      .contains(seedTestResultadosSafraDashboard.fazenda).click()
+      .contains(seedTestResultadosSafra.fazenda).click()
 
     // Selecionar Safra
     cy.getVisible(locResultadosSafra.dashboard.filtroSafra).click()
-      .contains(seedTestResultadosSafraDashboard.safra).click()
+      .contains(seedTestResultadosSafra.safra).click()
 
-    // Marcar "Exibir informacoes de atividade agricola"
-    if (seedTestResultadosSafraDashboard.exibirInformacoesAgricola) {
+    // Marcar checkbox 
+    if (seedTestResultadosSafra.exibirInformacoesAgricola) {
       cy.getVisible(locResultadosSafra.dashboard.checkboxInformacoesAtividade).click()
-        .wait(['@listaResultadoSafra', '@ciclosDocumentos', '@precoMediaCiclos'], { timeout: 10000 })
-    }
-
-    // Marcar "Mostrar contas a pagar e receber"
-    if (seedTestResultadosSafraDashboard.mostrarContasPagarReceber) {
+    } else if (seedTestResultadosSafra.mostrarContasPagarReceber) {
       cy.getVisible(locResultadosSafra.dashboard.checkboxContasPagarReceber).click()
-        .wait(['@listaResultadoSafra', '@ciclosDocumentos', '@precoMediaCiclos'], { timeout: 10000 })
-    }
-
-    // Marcar "Adicionar saldo a fixar de colheitas"
-    if (seedTestResultadosSafraDashboard.adicionarSaldoColheitas) {
+    } else {
       cy.getVisible(locResultadosSafra.dashboard.checkboxSaldoColheita).click()
-        .wait(['@listaResultadoSafra', '@ciclosDocumentos', '@precoMediaCiclos'], { timeout: 10000 })
     }
 
-    // // Aguardar 5 segundos ate carregar os dados na tela
-    // cy.wait('@listaResultadoSafra', { timeout: 10000 })
-    // cy.wait('@ciclosDocumentos', { timeout: 10000 })
-    // cy.wait('@precoMediaCiclos', { timeout: 10000 })
+    cy.wait('@listaResultadoSafra', { timeout: 10000 })
 
     // Validar card de safra por ciclo
-    if (seedTestResultadosSafraDashboard.cardCiclo) {
+    if (seedTestResultadosSafra.cardCiclo) {
       dadosCiclo.forEach((dadoCiclo) => {
         // nome da safra
         cy.get(locResultadosSafra.dashboard.cardCiclo).should(($el) => {
@@ -87,7 +73,7 @@ class ResultadoSafra {
     }
 
     // Validar card de safra por hectares
-    if (seedTestResultadosSafraDashboard.cardHectares) {
+    if (seedTestResultadosSafra.cardHectares) {
       dadosHectares.forEach((dadoHectare, index) => {
         // nome da safra
         cy.get(locResultadosSafra.dashboard.cardHectares).should(($el) => {
@@ -118,7 +104,7 @@ class ResultadoSafra {
     }
 
     // Validar card de safra por valores
-    if (seedTestResultadosSafraDashboard.cardValores) {
+    if (seedTestResultadosSafra.cardValores) {
       dadosValores.forEach((dadoValor, index) => {
         // nome da safra
         cy.get(locResultadosSafra.dashboard.cardValores).should(($el) => {
@@ -149,38 +135,39 @@ class ResultadoSafra {
     }
 
     // Validar card visao geral
-    if (seedTestResultadosSafraDashboard.cardVisaoGeral) {
+    if (seedTestResultadosSafra.cardVisaoGeral) {
       cy.get('[data-cy=dashboard-card-visao-geral] .value').should(($card) => {
-        expect($card[0]).to.have.text(seedTestResultadosSafraDashboard.cardVisaoGeral.despesas)
-        expect($card[1]).to.have.text(seedTestResultadosSafraDashboard.cardVisaoGeral.receitas)
-        expect($card[2]).to.have.text(seedTestResultadosSafraDashboard.cardVisaoGeral.resultado)
+        expect($card[0]).to.have.text(seedTestResultadosSafra.cardVisaoGeral.despesas)
+        expect($card[1]).to.have.text(seedTestResultadosSafra.cardVisaoGeral.receitas)
+        expect($card[2]).to.have.text(seedTestResultadosSafra.cardVisaoGeral.resultado)
       })
     }
 
     // Validar card margem lucro
-    if (seedTestResultadosSafraDashboard.cardMargemLucro) {
+    if (seedTestResultadosSafra.cardMargemLucro) {
       cy.get(locResultadosSafra.dashboard.cardMargemLucro).should(($card) => {
-        expect($card).to.contain.text(seedTestResultadosSafraDashboard.cardMargemLucro.margemLucro)
+        expect($card).to.contain.text(seedTestResultadosSafra.cardMargemLucro.margemLucro)
       })
     }
 
     // Validar se nao for encontrado nenhum resultado
-    if (seedTestResultadosSafraDashboard.mensagemEmpty) {
+    if (seedTestResultadosSafra.mensagemEmpty) {
       cy.getVisible(locResultadosSafra.dashboard.mensagemEmpty)
-        .should('contain', seedTestResultadosSafraDashboard.mensagemEmpty)
+        .should('contain', seedTestResultadosSafra.mensagemEmpty)
     }
   }
 
   /**
-   * Metodo para validar o Resultado da safra de forma analitica
-   * @param {*} seedTestResultadosSafraAnalitica
+   * Valida o Resultado da safra de forma analitica
+   * @param {*} seedTestResultadosSafra
    */
-  resultadoAnalitico(seedTestResultadosSafraAnalitica) {
+  resultadoAnalitico(seedTestResultadosSafra) {
     const url = '/resultados/resultados-de-safra/visao-analitica'
     const locatorTituloPagina = locResultadosSafra.analitica.titulo
     const tituloPagina = 'Resultados analíticos da safra'
 
-    cy.intercept('POST', 'api/financeiro/v1/Dashboard/ResultadoSafraAnaliticoContas').as('resultadoAnalitico')
+    cy.intercept('POST', '/api/financeiro/v1/Dashboard/ResultadoSafraAnaliticoContas').as('resultadoAnalitico')
+    cy.intercept('POST', '/api/financeiro/v1/Dashboard/DetalhesResultadoAnaliticoSafra').as('detalhesResultadoAnaliticoSafra')
 
     // Navegar para Resultados da Safra - Analitica
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
@@ -189,60 +176,53 @@ class ResultadoSafra {
     cy.get(locResultadosSafra.analitica.limparFiltroFazenda).click({ force: true })
     // Selecionar Fazenda
     cy.getVisible(locResultadosSafra.analitica.filtroFazenda).click()
-      .contains(seedTestResultadosSafraAnalitica.fazenda).click()
+      .contains(seedTestResultadosSafra.fazenda).click()
 
     // Selecionar Safra
     cy.getVisible(locResultadosSafra.analitica.filtroSafra).click()
-      .contains(seedTestResultadosSafraAnalitica.safra).click()
+      .contains(seedTestResultadosSafra.safra).click()
 
-    // Marcar "Exibir informacoes de atividade agricola"
-    if (seedTestResultadosSafraAnalitica.exibirInformacoesAgricola) {
+    // Marcar checkBox
+    if (seedTestResultadosSafra.exibirInformacoesAgricola) {
       cy.getVisible(locResultadosSafra.analitica.checkboxInformacoesAtividade).click()
-    }
-
-    // Marcar "Mostrar contas a pagar e receber"
-    if (seedTestResultadosSafraAnalitica.mostrarContasPagarReceber) {
+    } else if (seedTestResultadosSafra.mostrarContasPagarReceber) {
       cy.getVisible(locResultadosSafra.analitica.checkboxContasPagarReceber).click()
-    }
-
-    // Marcar "Adicionar saldo a fixar de colheitas"
-    if (seedTestResultadosSafraAnalitica.adicionarSaldoColheitas) {
+    } else {
       cy.getVisible(locResultadosSafra.analitica.checkboxSaldoColheita).click()
     }
 
-    // Aguardar 5 segundos ate carregar os dados na tela
     cy.wait('@resultadoAnalitico', { timeout: 10000 })
 
     // Validar card Margem de Lucro
-    if (seedTestResultadosSafraAnalitica.margemLucro) {
+    if (seedTestResultadosSafra.margemLucro) {
       cy.getVisible(locResultadosSafra.analitica.cardMargemLucro).should(($el) => {
-        expect($el).to.contain.text(seedTestResultadosSafraAnalitica.margemLucro)
+        expect($el).to.contain.text(seedTestResultadosSafra.margemLucro)
       })
     }
 
     // Validar card Valores
-    if (seedTestResultadosSafraAnalitica.valores) {
+    if (seedTestResultadosSafra.valores) {
       cy.getVisible(locResultadosSafra.analitica.cardValores).should(($el) => {
-        expect($el).to.contain.text(seedTestResultadosSafraAnalitica.valores)
+        expect($el).to.contain.text(seedTestResultadosSafra.valores)
       })
     }
 
     // Validar card Total Ha da safra
-    if (seedTestResultadosSafraAnalitica.totalSafra) {
+    if (seedTestResultadosSafra.totalSafra) {
       cy.getVisible(locResultadosSafra.analitica.cardTotalHaSafra).should(($el) => {
-        expect($el).to.contain.text(seedTestResultadosSafraAnalitica.totalSafra)
+        expect($el).to.contain.text(seedTestResultadosSafra.totalSafra)
       })
     }
 
     // Validar Total em Despesas
-    if (seedTestResultadosSafraAnalitica.totalDespesas) {
+    if (seedTestResultadosSafra.totalDespesas) {
       cy.getVisible(locResultadosSafra.analitica.valorTotalDespesas)
-        .should('contain', seedTestResultadosSafraAnalitica.totalDespesas)
+        .should('contain', seedTestResultadosSafra.totalDespesas)
     }
 
     // Validar card de Despesas
-    if (seedTestResultadosSafraAnalitica.cardDespesas) {
-      var dadosCardDespesas = seedTestResultadosSafraAnalitica.cardDespesas
+    if (seedTestResultadosSafra.cardDespesas) {
+      var dadosCardDespesas = seedTestResultadosSafra.cardDespesas
 
       dadosCardDespesas.forEach((dadoDespesa) => {
         // categoria
@@ -262,42 +242,46 @@ class ResultadoSafra {
       })
     }
 
-    /*
-    * Esse trecho foi comentado por ser instavel, as vezes o colapse abre com o clique, outras nao
-    * Isso ocorre apenas na execução do teste com Cypress, que recarrega a tela quando é feito uma requisicao na API
-    * Utilizando o MyFarm via interface o problema nao ocorre
-
     // Validar tabela de detalhes das despesas
-     if (seedTestResultadosSafraAnalitica.tabelaDespesas) {
-      var dadosTabelaDespesas = seedTestResultadosSafraAnalitica.tabelaDespesas
+    if (seedTestResultadosSafra.tabelaDespesas) {
+      var dadosTabelaDespesas = seedTestResultadosSafra.tabelaDespesas
 
-      // Expandir tabela
-      cy.get(locResultadosSafra.analitica.buttonDropdownCard, { timeout: 15000 }).click()
+      // Expandir collaps/tabela
+      cy.get(locResultadosSafra.analitica.buttonDropdownCard, { timeout: 15000 }).click().then(($button) => {
+        cy.get(locResultadosSafra.analitica.iconDropdownCard).invoke('attr', 'class').then(($iconClass) => {
+          $iconClass === 'siagri-icon-arrow-up' ? cy.log('Collapse aberto!') : cy.get($button).click()
+        })
+      })
 
-      for (var i = 0; i < dadosTabelaDespesas.length; i++) {
+      cy.wait('@detalhesResultadoAnaliticoSafra', { timeout: 10000 })
+
+      dadosTabelaDespesas.forEach((linhaTabela) => {
         // valor
-        cy.get(locResultadosSafra.analitica.tabelaDetalhesDepesas)
-          .contains(dadosTabelaDespesas[i].valor)
+        cy.get(locResultadosSafra.analitica.tabelaDetalhesDepesas).should(($el) => {
+          expect($el).to.contain.text(linhaTabela.valor)
+        })
 
         // pessoa
-        cy.get(locResultadosSafra.analitica.tabelaDetalhesDepesas)
-          .contains(dadosTabelaDespesas[i].pessoa)
+        cy.get(locResultadosSafra.analitica.tabelaDetalhesDepesas).should(($el) => {
+          expect($el).to.contain.text(linhaTabela.pessoa)
+        })
 
         // documento
-        cy.get(locResultadosSafra.analitica.tabelaDetalhesDepesas)
-          .contains(dadosTabelaDespesas[i].documento)
+        cy.get(locResultadosSafra.analitica.tabelaDetalhesDepesas).should(($el) => {
+          expect($el).to.contain.text(linhaTabela.documento)
+        })
 
         // origem
-        cy.get(locResultadosSafra.analitica.tabelaDetalhesDepesas)
-          .contains(dadosTabelaDespesas[i].origem)
-      }
+        cy.get(locResultadosSafra.analitica.tabelaDetalhesDepesas).should(($el) => {
+          expect($el).to.contain.text(linhaTabela.origem)
+        })
+      })
     }
-    */
 
     // Validar se nao for encontrado nenhum resultado
-    if (seedTestResultadosSafraAnalitica.mensagemEmpty) {
+    if (seedTestResultadosSafra.mensagemEmpty) {
       cy.getVisible(locResultadosSafra.analitica.mensagemEmpty)
-        .should('contain', seedTestResultadosSafraAnalitica.mensagemEmpty)
+        .should('contain', seedTestResultadosSafra.mensagemEmpty)
     }
   }
 }
