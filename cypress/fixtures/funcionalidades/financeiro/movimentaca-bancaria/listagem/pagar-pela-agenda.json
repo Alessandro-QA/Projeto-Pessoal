@@ -1,0 +1,24 @@
+{
+  "documento357753": {
+    "pagamento": true,
+    "empresaDocumento": "Empresa Fornecedor - CNPJ",
+    "fazendaDocumento": "Fazenda Teste Producao",
+    "numeroDocumento": "357753"
+  },
+  "documento987456": {
+    "empresaDocumento": "Empresa Fornecedor - CNPJ",
+    "fazendaDocumento": "Fazenda Teste Producao",
+    "numeroDocumento": "987456"
+  },
+  "documento159753": {
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "fazenda": "Fazenda Teste Producao",
+    "numeroDocumento": "159753",
+    "formaPagamento": "Dinheiro",
+    "dataPagamento": "01/07/2022",
+    "contaBancaria": "Conta E2E",
+    "tags": "documentoEditado",
+    "observacao": "Observação",
+    "pagamento": true
+  }
+}

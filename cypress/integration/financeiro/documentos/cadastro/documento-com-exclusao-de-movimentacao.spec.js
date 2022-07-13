@@ -78,9 +78,9 @@ context('Cenário de Teste', () => {
     it('Validar movimentação bancária', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      Movimentacao.validarDashboard(seedTestMovimentacao.movimentacaoBancaria2000)
-      Movimentacao.validarDashboard(seedTestMovimentacao.movimentacaoBancaria2001)
-      Movimentacao.validarDashboard(seedTestMovimentacao.movimentacaoBancaria2002)
+      Movimentacao.validarListagem(seedTestMovimentacao.movimentacaoBancaria2000)
+      Movimentacao.validarListagem(seedTestMovimentacao.movimentacaoBancaria2001)
+      Movimentacao.validarListagem(seedTestMovimentacao.movimentacaoBancaria2002)
     })
 
     it('Validar lançamentos no Livro Caixa', function () {

@@ -54,7 +54,7 @@ context('Cenário de Teste', () => {
     it('Confirmar se gerou Movimentação Bancária', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Movimentacao.validarDashboard(seedTest.movimentacaoBancaria)
+      Movimentacao.validarListagem(seedTest.movimentacaoBancaria)
     })
 
     it('Confirmar se gerou Livro Caixa', function () {

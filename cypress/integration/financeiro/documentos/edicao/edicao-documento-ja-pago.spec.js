@@ -46,7 +46,7 @@ context('Cenário de Teste', () => {
     it('Validar se o cadastro refletiu na Movimentação Bancária', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      Movimentacao.validarDashboard(seedCadastro.movimentacaoBancaria)
+      Movimentacao.validarListagem(seedCadastro.movimentacaoBancaria)
     })
 
     it('Validar se o cadastro refletiu no Livro Caixa', function () {
@@ -88,7 +88,7 @@ context('Cenário de Teste', () => {
     it('Validar se edição refletiu na Movimentação Bancária', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      Movimentacao.validarDashboard(seedEdicao.movimentacaoBancaria)
+      Movimentacao.validarListagem(seedEdicao.movimentacaoBancaria)
     })
 
     it('Validar se edição refletiu no Livro Caixa', function () {

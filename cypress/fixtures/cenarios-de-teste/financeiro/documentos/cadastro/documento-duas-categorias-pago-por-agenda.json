@@ -214,6 +214,7 @@
     "empresaDocumento": "Empresa Fornecedor - CPF",
     "fazendaDocumento": "Fazenda E2E",
     "numeroDocumento": "1001",
+    "pagamento": true,
     "cardStatusDocumento": "A pagar",
     "cardPessoaDocumento": "Empresa Produtor - CPF (1/1)",
     "cardValorDocumento": "R$ 2.000,00",

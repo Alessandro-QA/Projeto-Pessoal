@@ -174,13 +174,13 @@ context('Cenário de Teste', () => {
     it('Validar movimentação do titulo 101 no valor de R$ 30.000,00', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      Movimentacao.validarDashboard(seeds.seedDetalhesFinanceiro.movimentacaoBancaria30)
+      Movimentacao.validarListagem(seeds.seedDetalhesFinanceiro.movimentacaoBancaria30)
     })
 
     it('Validar movimentação do titulo 102 no valor de R$ 37.500,00', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      Movimentacao.validarDashboard(seeds.seedDetalhesFinanceiro.movimentacaoBancaria45)
+      Movimentacao.validarListagem(seeds.seedDetalhesFinanceiro.movimentacaoBancaria45)
     })
 
     it('Excluir o documento 102', function () {

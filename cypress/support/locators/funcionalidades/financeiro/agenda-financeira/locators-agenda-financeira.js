@@ -43,7 +43,8 @@ const locators = {
     observacao: '[data-cy=input-informacoe-adicionais]',
     anexo: '[data-cy=button-upload-xml]',
     botaoCancelar: '[data-cy=button-cancelar]',
-    botaoPagarReceber: '[data-cy=button-pagamento-recebimento]'
+    botaoPagarReceber: '[data-cy=button-pagamento-recebimento]',
+    mensagemSucessoPagamento: '.el-message__content'
   }
 }
 
