@@ -5,7 +5,7 @@
         {
           "valor": 134,
           "contaContabil": {
-            "dedutivel": true,
+            "dedutivel": false,
             "codigo": "4.02.01.03",
             "nome": "13º Salário",
             "descricao": "13º Salário"
@@ -68,79 +68,6 @@
           {
             "vencimento": "dataSubstituicaoT17:30:30-03:00",
             "valor": 134
-          }
-        ]
-      },
-      "dedutivel": true,
-      "manual": true
-    },
-    "documento987456": {
-      "categorias": [
-        {
-          "valor": 200,
-          "contaContabil": {
-            "dedutivel": true,
-            "codigo": "4.02.02.01",
-            "nome": "Combustíveis",
-            "descricao": "Combustíveis"
-          }
-        }
-      ],
-      "dataRecebimento": "dataSubstituicaoT17:52:41-03:00",
-      "operacao": {
-        "id": "3484bacd-25eb-980e-48a3-44e473135ed7",
-        "descricao": "Combustíveis"
-      },
-      "safra": {
-        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
-        "descricao": "2021/2021"
-      },
-      "data": "dataSubstituicaoT17:52:41-03:00",
-      "fazenda": {
-        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-        "descricao": "Fazenda Teste Producao"
-      },
-      "pessoa": {
-        "pessoaTipo": "Fornecedor",
-        "numeroDocumento": "66791418001",
-        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
-        "descricao": "Empresa Produtor - CPF"
-      },
-      "numero": "987456",
-      "empresa": {
-        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
-        "descricao": "Empresa Fornecedor - CNPJ",
-        "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "37062568000147",
-        "inscricaoEstadual": {
-          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-          "descricao": "110137116",
-          "valor": "110137116"
-        }
-      },
-      "ieDaEmpresa": {
-        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-        "descricao": "110137116",
-        "valor": "110137116",
-        "label": "110137116"
-      },
-      "tipoDocumento": 6,
-      "conferido": false,
-      "financeiro": {
-        "total": 200,
-        "pago": false,
-        "rateioEntreCiclos": false,
-        "formaPagamento": {
-          "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
-          "descricao": "Boleto"
-        },
-        "condicaoPagamento": "Avista",
-        "quantidadeParcelas": 1,
-        "valorFixo": false,
-        "parcelas": [
-          {
-            "vencimento": "dataSubstituicaoT17:52:41-03:00",
-            "valor": 200
           }
         ]
       },
@@ -239,60 +166,75 @@
       "dedutivel": true,
       "manual": true
     },
-    "documento753753": {
+    "documento369852": {
+      "materiais": [
+        {
+          "material": {
+            "id": "68377b58-db49-4a7b-ba1d-7df065123280",
+            "descricao": "BELURE TOP"
+          },
+          "unidadeMedida": {
+            "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
+            "descricao": "L"
+          },
+          "quantidade": 2,
+          "valor": 320,
+          "total": 640
+        }
+      ],
       "categorias": [
         {
-          "valor": 400,
+          "valor": 640,
           "contaContabil": {
             "dedutivel": true,
-            "codigo": "4.02.07.01",
-            "nome": "Baixas de Investimentos",
-            "descricao": "Baixas de Investimentos"
+            "codigo": "3.02.01.03",
+            "nome": "Outras Vendas Agropecuárias",
+            "descricao": "Outras Vendas Agropecuárias"
           }
         }
       ],
-      "dataRecebimento": "2022-01-15T23:59:59-03:00",
+      "dataRecebimento": "dataSubstituicaoT14:01:32-03:00",
       "operacao": {
-        "id": "eb94dbc5-70a8-35df-90a4-988bee244121",
-        "descricao": "Baixas de Investimentos"
+        "id": "af2790f9-869b-4292-a981-eb98140badfa",
+        "descricao": "Outras Vendas Agropecuárias"
       },
       "safra": {
         "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
         "descricao": "2021/2021"
       },
-      "data": "2022-01-01T23:59:59-03:00",
+      "data": "dataSubstituicaoT14:01:32-03:00",
       "fazenda": {
         "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
         "descricao": "Fazenda Teste Producao"
       },
       "pessoa": {
-        "pessoaTipo": "Fornecedor",
-        "numeroDocumento": "91535740019",
-        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
-        "descricao": "Empresa Fornecedor - CPF"
+        "pessoaTipo": "Cliente",
+        "numeroDocumento": "66791418001",
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF"
       },
-      "numero": "753753",
+      "numero": "369852",
       "empresa": {
-        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
-        "descricao": "Empresa Fornecedor - CPF",
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ",
         "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "91535740019",
+        "documentoPrincipal": "37062568000147",
         "inscricaoEstadual": {
-          "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
-          "descricao": "IE Estadual",
-          "valor": "32165465622"
+          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+          "descricao": "110137116",
+          "valor": "110137116"
         }
       },
       "ieDaEmpresa": {
-        "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
-        "descricao": "IE Estadual",
-        "valor": "32165465622",
-        "label": "32165465622"
+        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
       },
-      "tipoDocumento": 6,
+      "tipoDocumento": 1,
       "conferido": false,
       "financeiro": {
-        "total": 400,
+        "total": 640,
         "pago": false,
         "rateioEntreCiclos": false,
         "formaPagamento": {
@@ -304,8 +246,8 @@
         "valorFixo": false,
         "parcelas": [
           {
-            "vencimento": "2022-02-01T00:00:00-03:00",
-            "valor": 400
+            "vencimento": "dataSubstituicaoT14:01:32-03:00",
+            "valor": 640
           }
         ]
       },
@@ -326,7 +268,7 @@
           }
         }
       ],
-      "dataRecebimento": "dataSubstituicaoT14:40:36-03:00",
+      "dataRecebimento": "dataSubstituicaoT10:50:13-03:00",
       "operacao": {
         "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
         "descricao": "13º Salário"
@@ -335,7 +277,7 @@
         "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
         "descricao": "2021/2021"
       },
-      "data": "dataSubstituicaoT14:40:36-03:00",
+      "data": "dataSubstituicaoT10:50:13-03:00",
       "fazenda": {
         "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
         "descricao": "Fazenda Teste Producao"
@@ -380,81 +322,8 @@
         "valorFixo": false,
         "parcelas": [
           {
-            "vencimento": "dataSubstituicaoT14:40:36-03:00",
+            "vencimento": "dataSubstituicaoT10:50:13-03:00",
             "valor": 134
-          }
-        ]
-      },
-      "dedutivel": true,
-      "manual": true
-    },
-    "documento987456": {
-      "categorias": [
-        {
-          "valor": 200,
-          "contaContabil": {
-            "dedutivel": true,
-            "codigo": "4.02.02.01",
-            "nome": "Combustíveis",
-            "descricao": "Combustíveis"
-          }
-        }
-      ],
-      "dataRecebimento": "dataSubstituicaoT14:39:32-03:00",
-      "operacao": {
-        "id": "3484bacd-25eb-980e-48a3-44e473135ed7",
-        "descricao": "Combustíveis"
-      },
-      "safra": {
-        "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
-        "descricao": "2021/2021"
-      },
-      "data": "dataSubstituicaoT14:39:32-03:00",
-      "fazenda": {
-        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
-        "descricao": "Fazenda Teste Producao"
-      },
-      "pessoa": {
-        "pessoaTipo": "Fornecedor",
-        "numeroDocumento": "66791418001",
-        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
-        "descricao": "Empresa Produtor - CPF"
-      },
-      "numero": "987456",
-      "empresa": {
-        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
-        "descricao": "Empresa Fornecedor - CNPJ",
-        "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "37062568000147",
-        "inscricaoEstadual": {
-          "id": "59d4caad-eff4-4d7d-9045-b67825606840",
-          "descricao": "110137116",
-          "valor": "110137116"
-        }
-      },
-      "ieDaEmpresa": {
-        "id": "59d4caad-eff4-4d7d-9045-b67825606840",
-        "descricao": "110137116",
-        "valor": "110137116",
-        "label": "110137116"
-      },
-      "tipoDocumento": 6,
-      "conferido": false,
-      "financeiro": {
-        "total": 200,
-        "pago": false,
-        "rateioEntreCiclos": false,
-        "formaPagamento": {
-          "id": "a40a8ed9-44f4-45ba-bebe-19386f6bee82",
-          "descricao": "Boleto"
-        },
-        "condicaoPagamento": "Avista",
-        "quantidadeParcelas": 1,
-        "valorFixo": false,
-        "parcelas": [
-          {
-            "vencimento": "dataSubstituicaoT14:39:32-03:00",
-            "valor": 200
           }
         ]
       },
@@ -491,7 +360,7 @@
           }
         }
       ],
-      "dataRecebimento": "dataSubstituicaoT14:41:39-03:00",
+      "dataRecebimento": "dataSubstituicaoT10:54:35-03:00",
       "operacao": {
         "id": "0f83ddf1-83bb-a2e2-788d-36a6084e42f0",
         "descricao": "Assistência Médica"
@@ -500,7 +369,7 @@
         "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
         "descricao": "2021/2021"
       },
-      "data": "dataSubstituicaoT14:41:39-03:00",
+      "data": "dataSubstituicaoT10:54:35-03:00",
       "fazenda": {
         "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
         "descricao": "Fazenda Teste Producao"
@@ -545,7 +414,7 @@
         "valorFixo": false,
         "parcelas": [
           {
-            "vencimento": "dataSubstituicaoT14:41:39-03:00",
+            "vencimento": "dataSubstituicaoT10:54:35-03:00",
             "valor": 500
           }
         ]
@@ -553,60 +422,75 @@
       "dedutivel": true,
       "manual": true
     },
-    "documento753753": {
+    "documento369852": {
+      "materiais": [
+        {
+          "material": {
+            "id": "9eec3187-62bc-4275-8d90-05a5dd187800",
+            "descricao": "BELURE TOP"
+          },
+          "unidadeMedida": {
+            "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
+            "descricao": "L"
+          },
+          "quantidade": 2,
+          "valor": 320,
+          "total": 640
+        }
+      ],
       "categorias": [
         {
-          "valor": 400,
+          "valor": 640,
           "contaContabil": {
             "dedutivel": true,
-            "codigo": "4.02.07.01",
-            "nome": "Baixas de Investimentos",
-            "descricao": "Baixas de Investimentos"
+            "codigo": "3.02.01.03",
+            "nome": "Outras Vendas Agropecuárias",
+            "descricao": "Outras Vendas Agropecuárias"
           }
         }
       ],
-      "dataRecebimento": "2022-01-01T14:42:47-03:00",
+      "dataRecebimento": "dataSubstituicaoT10:52:22-03:00",
       "operacao": {
-        "id": "eb94dbc5-70a8-35df-90a4-988bee244121",
-        "descricao": "Baixas de Investimentos"
+        "id": "af2790f9-869b-4292-a981-eb98140badfa",
+        "descricao": "Outras Vendas Agropecuárias"
       },
       "safra": {
         "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
         "descricao": "2021/2021"
       },
-      "data": "2022-01-01T14:42:47-03:00",
+      "data": "dataSubstituicaoT10:52:22-03:00",
       "fazenda": {
         "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
         "descricao": "Fazenda Teste Producao"
       },
       "pessoa": {
-        "pessoaTipo": "Fornecedor",
-        "numeroDocumento": "91535740019",
-        "id": "f03b1276-c276-4980-bccd-87dc29317818",
-        "descricao": "Empresa Fornecedor - CPF"
+        "pessoaTipo": "Cliente",
+        "numeroDocumento": "66791418001",
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF"
       },
-      "numero": "753753",
+      "numero": "369852",
       "empresa": {
-        "id": "f03b1276-c276-4980-bccd-87dc29317818",
-        "descricao": "Empresa Fornecedor - CPF",
+        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+        "descricao": "Empresa Fornecedor - CNPJ",
         "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "91535740019",
+        "documentoPrincipal": "37062568000147",
         "inscricaoEstadual": {
-          "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
-          "descricao": "IE Estadual",
-          "valor": "32165465622"
+          "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+          "descricao": "110137116",
+          "valor": "110137116"
         }
       },
       "ieDaEmpresa": {
-        "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
-        "descricao": "IE Estadual",
-        "valor": "32165465622",
-        "label": "32165465622"
+        "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
       },
-      "tipoDocumento": 6,
+      "tipoDocumento": 1,
       "conferido": false,
       "financeiro": {
-        "total": 400,
+        "total": 640,
         "pago": false,
         "rateioEntreCiclos": false,
         "formaPagamento": {
@@ -618,8 +502,8 @@
         "valorFixo": false,
         "parcelas": [
           {
-            "vencimento": "2022-02-01T14:42:47-03:00",
-            "valor": 400
+            "vencimento": "dataSubstituicaoT10:52:22-03:00",
+            "valor": 640
           }
         ]
       },

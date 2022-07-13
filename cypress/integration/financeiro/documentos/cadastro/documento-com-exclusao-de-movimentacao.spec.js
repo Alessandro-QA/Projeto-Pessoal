@@ -4,7 +4,7 @@ import seedTestAgenda from '../../../../fixtures/cenarios-de-teste/financeiro/do
 import seedTestLivroCaixa from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/lancamentos-livro-caixa.json'
 import seedTestMovimentacao from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/movimentacoes-bancarias.json'
 import seedTestResultadoSafra from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/resultado-da-safra.json'
-import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
+import { getDocumentoPorAmbiente, excluir } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa.js'
 import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
@@ -18,16 +18,7 @@ context('Cenário de Teste', () => {
   describe('Documentos | Cadastro de documento com exclusão de movimentação', { tags: '@documentos' }, () => {
 
     var dataAtual = Utils.getDate()
-    var documento = []
-
-    switch (Cypress.env('ambiente')) {
-      case 'dev': documento = documentos.documentosDev
-        break
-      case 'qa': documento = documentos.documentosQA
-        break
-      default:
-        throw new Error('Não foi possivel atribuir os documentos')
-    }
+    var documento = getDocumentoPorAmbiente(documentos)
 
     var bodyDocumento2000 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento2000)
     var bodyDocumento2001 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento2001)
@@ -153,17 +144,17 @@ context('Cenário de Teste', () => {
     it('Excluir documento 2000', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Documentos.excluir(seedExcluirDocumento.documento2000)
+      excluir(seedExcluirDocumento.documento2000)
     })
     it('Excluir documento 2001', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Documentos.excluir(seedExcluirDocumento.documento2001)
+      excluir(seedExcluirDocumento.documento2001)
     })
     it('Excluir documento 2002', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Documentos.excluir(seedExcluirDocumento.documento2002)
+      excluir(seedExcluirDocumento.documento2002)
     })
 
     it('Validar se exclusão refletiu no resultado da safra - Dashboard', { retries: { runMode: 1, openMode: 1, }, }, function () {

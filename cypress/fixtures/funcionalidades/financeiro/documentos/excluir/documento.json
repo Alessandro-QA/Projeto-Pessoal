@@ -1,151 +1,300 @@
 {
-  "documento789456": {
-    "categorias": [
-      {
-        "valor": 134,
-        "contaContabil": {
-          "dedutivel": true,
-          "codigo": "4.02.01.03",
-          "nome": "13º Salário",
-          "descricao": "13º Salário"
+  "documentoDev": {
+    "documento789456": {
+      "categorias": [
+        {
+          "valor": 134,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.01.03",
+            "nome": "13º Salário",
+            "descricao": "13º Salário"
+          }
         }
-      }
-    ],
-    "dataRecebimento": "dataSubstituicaoT17:30:30-03:00",
-    "operacao": {
-      "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
-      "descricao": "13º Salário"
-    },
-    "safra": {
-      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
-      "descricao": "2021/2021"
-    },
-    "data": "dataSubstituicaoT17:30:30-03:00",
-    "fazenda": {
-      "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-      "descricao": "Fazenda Teste Producao"
-    },
-    "tags": [
-      "documentoE2E"
-    ],
-    "pessoa": {
-      "pessoaTipo": "Fornecedor",
-      "numeroDocumento": "67824142000144",
-      "id": "ef402791-c035-46cf-96c6-a2494042b237",
-      "descricao": "Cliente Teste Produção"
-    },
-    "numero": "789456",
-    "empresa": {
-      "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
-      "descricao": "Empresa Fornecedor - CNPJ",
-      "empresaDeSaoPaulo": false,
-      "documentoPrincipal": "37062568000147",
-      "inscricaoEstadual": {
+      ],
+      "dataRecebimento": "dataSubstituicaoT17:30:30-03:00",
+      "operacao": {
+        "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
+        "descricao": "13º Salário"
+      },
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT17:30:30-03:00",
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "tags": ["documentoE2E"],
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "67824142000144",
+        "id": "ef402791-c035-46cf-96c6-a2494042b237",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "789456",
+      "empresa": {
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
         "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
         "descricao": "110137116",
-        "valor": "110137116"
-      }
-    },
-    "ieDaEmpresa": {
-      "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-      "descricao": "110137116",
-      "valor": "110137116",
-      "label": "110137116"
-    },
-    "tipoDocumento": 5,
-    "conferido": false,
-    "financeiro": {
-      "total": 134,
-      "pago": false,
-      "rateioEntreCiclos": false,
-      "formaPagamento": {
-        "id": "b48af165-0c66-4203-9163-2b241662b4fd",
-        "descricao": "Transferência Bancária"
+        "valor": "110137116",
+        "label": "110137116"
       },
-      "condicaoPagamento": "Avista",
-      "quantidadeParcelas": 1,
-      "valorFixo": false,
-      "parcelas": [
-        {
-          "vencimento": "dataSubstituicaoT17:30:30-03:00",
-          "valor": 134
-        }
-      ]
+      "tipoDocumento": 5,
+      "conferido": false,
+      "financeiro": {
+        "total": 134,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "b48af165-0c66-4203-9163-2b241662b4fd",
+          "descricao": "Transferência Bancária"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT17:30:30-03:00",
+            "valor": 134
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
     },
-    "dedutivel": true,
-    "manual": true
+    "documento987456": {
+      "categorias": [
+        {
+          "valor": 200,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.02.01",
+            "nome": "Combustíveis",
+            "descricao": "Combustíveis"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT17:52:41-03:00",
+      "operacao": {
+        "id": "3484bacd-25eb-980e-48a3-44e473135ed7",
+        "descricao": "Combustíveis"
+      },
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT17:52:41-03:00",
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "66791418001",
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "numero": "987456",
+      "empresa": {
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 6,
+      "conferido": false,
+      "financeiro": {
+        "total": 200,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+          "descricao": "Boleto"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT17:52:41-03:00",
+            "valor": 200
+          }
+        ]
+      },
+      "dedutivel": false,
+      "manual": true
+    }
   },
-  "documento987456": {
-    "categorias": [
-      {
-        "valor": 200,
-        "contaContabil": {
-          "dedutivel": true,
-          "codigo": "4.02.02.01",
-          "nome": "Combustíveis",
-          "descricao": "Combustíveis"
-        }
-      }
-    ],
-    "dataRecebimento": "dataSubstituicaoT17:52:41-03:00",
-    "operacao": {
-      "id": "3484bacd-25eb-980e-48a3-44e473135ed7",
-      "descricao": "Combustíveis"
-    },
-    "safra": {
-      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
-      "descricao": "2021/2021"
-    },
-    "data": "dataSubstituicaoT17:52:41-03:00",
-    "fazenda": {
-      "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-      "descricao": "Fazenda Teste Producao"
-    },
-    "pessoa": {
-      "pessoaTipo": "Fornecedor",
-      "numeroDocumento": "66791418001",
-      "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
-      "descricao": "Empresa Produtor - CPF"
-    },
-    "numero": "987456",
-    "empresa": {
-      "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
-      "descricao": "Empresa Fornecedor - CNPJ",
-      "empresaDeSaoPaulo": false,
-      "documentoPrincipal": "37062568000147",
-      "inscricaoEstadual": {
-        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-        "descricao": "110137116",
-        "valor": "110137116"
-      }
-    },
-    "ieDaEmpresa": {
-      "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-      "descricao": "110137116",
-      "valor": "110137116",
-      "label": "110137116"
-    },
-    "tipoDocumento": 6,
-    "conferido": false,
-    "financeiro": {
-      "total": 200,
-      "pago": false,
-      "rateioEntreCiclos": false,
-      "formaPagamento": {
-        "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
-        "descricao": "Boleto"
-      },
-      "condicaoPagamento": "Avista",
-      "quantidadeParcelas": 1,
-      "valorFixo": false,
-      "parcelas": [
+  "documentoQA": {
+    "documento789456": {
+      "categorias": [
         {
-          "vencimento": "dataSubstituicaoT17:52:41-03:00",
-          "valor": 200
+          "valor": 134,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.01.03",
+            "nome": "13º Salário",
+            "descricao": "13º Salário"
+          }
         }
-      ]
+      ],
+      "dataRecebimento": "dataSubstituicaoT14:22:00-03:00",
+      "operacao": {
+        "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
+        "descricao": "13º Salário"
+      },
+      "safra": {
+        "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT14:22:00-03:00",
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "tags": ["documentoE2E"],
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "67824142000144",
+        "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "789456",
+      "empresa": {
+        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 5,
+      "conferido": false,
+      "financeiro": {
+        "total": 134,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "a2bdd5d3-2096-4c52-9ec0-1563e799b358",
+          "descricao": "Transferência Bancária"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT14:22:00-03:00",
+            "valor": 134
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
     },
-    "dedutivel": false,
-    "manual": true
+    "documento987456": {
+      "categorias": [
+        {
+          "valor": 200,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.02.01",
+            "nome": "Combustíveis",
+            "descricao": "Combustíveis"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT14:20:28-03:00",
+      "operacao": {
+        "id": "3484bacd-25eb-980e-48a3-44e473135ed7",
+        "descricao": "Combustíveis"
+      },
+      "safra": {
+        "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT14:20:28-03:00",
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "66791418001",
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "numero": "987456",
+      "empresa": {
+        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 6,
+      "conferido": false,
+      "financeiro": {
+        "total": 200,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "a40a8ed9-44f4-45ba-bebe-19386f6bee82",
+          "descricao": "Boleto"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT14:20:28-03:00",
+            "valor": 200
+          }
+        ]
+      },
+      "dedutivel": false,
+      "manual": true
+    }
   }
 }
