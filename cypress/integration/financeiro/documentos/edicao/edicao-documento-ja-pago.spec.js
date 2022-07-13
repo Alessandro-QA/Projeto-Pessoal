@@ -3,7 +3,7 @@
 import seedCadastro from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/edicao/documento-ja-pago/cadastro-documento-ja-pago.json'
 import seedEdicao from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/edicao/documento-ja-pago/edicao-documento-ja-pago.json'
 import seedExclusao from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/edicao/documento-ja-pago/exclusao-documento-ja-pago.json'
-import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
+import { getDocumentoPorAmbiente, editar, validarDetalhes, excluir, validarExclusao } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa'
 import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria'
 import ResultadoSafra from '../../../../support/commands/funcionalidades/resultados-safra/resultado-safra'
@@ -14,16 +14,7 @@ import Authenticate from '../../../../support/commands/funcionalidades/login/log
 context('Cenário de Teste', () => {
   describe('Documentos | Cadastro, Edição e Exclusão de Documento Já Pago', { tags: '@documentos' }, () => {
     var dataAtual = Utils.getDate()
-    var documento = []
-
-    switch (Cypress.env('ambiente')) {
-      case 'dev': documento = seedCadastro.documentoDev
-        break
-      case 'qa': documento = seedCadastro.documentoQA
-        break
-      default:
-        throw new Error('Não foi possivel atribuir os documentos')
-    }
+    var documento = getDocumentoPorAmbiente(seedCadastro)
 
     var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, documento)
 
@@ -76,13 +67,13 @@ context('Cenário de Teste', () => {
     it('Editar o documento cadastrado', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Documentos.editar(seedEdicao.filtro, seedEdicao.edicaoDocumento)
+      editar(seedEdicao.filtro, seedEdicao.edicaoDocumento)
     })
 
     it('Validar os detalhes do documento editado', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      Documentos.validarDetalhes(seedEdicao.detalhesDocumento)
+      validarDetalhes(seedEdicao.detalhesDocumento)
     })
 
     it('Validar se edição refletiu na Movimentação Bancária', function () {
@@ -118,13 +109,13 @@ context('Cenário de Teste', () => {
     it('Excluir o documento cadastrado', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Documentos.excluir(seedExclusao.exclusaoDocumento)
+      excluir(seedExclusao.exclusaoDocumento)
     })
 
     it('Validar exclusão do documento', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      Documentos.validarExclusao()
+      validarExclusao()
     })
 
     it('Validar se exclusão refletiu na Movimentação Bancária', function () {

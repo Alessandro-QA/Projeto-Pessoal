@@ -7,20 +7,12 @@ import AgendaFinanceira from '../../../../support/commands/funcionalidades/finan
 import Utils from '../../../../support/utils/utils.js'
 import testDescription from './bdd-description/documento-duas-categorias-pago-por-agenda.description'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import { getDocumentoPorAmbiente } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 
 context('Cenário de Teste', () => {
   describe('Documentos | Cadastro de documento com 2 categorias pago pela Agenda Financeira', { tags: '@documentos' }, () => {
     var dataAtual = Utils.getDate()
-    var documento = []
-
-    switch (Cypress.env('ambiente')) {
-      case 'dev': documento = seedTest.documentoDev
-        break
-      case 'qa': documento = seedTest.documentoQA
-        break
-      default:
-        throw new Error('Não foi possivel atribuir os documentos')
-    }
+    var documento = getDocumentoPorAmbiente(seedTest)
 
     var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, documento)
 

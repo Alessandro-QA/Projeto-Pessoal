@@ -6,20 +6,12 @@ import Movimentacao from '../../../../support/commands/funcionalidades/financeir
 import Fazenda from '../../../../support/commands/funcionalidades/atividades-agricolas/cadastros/fazenda/fazenda.js'
 import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import { getDocumentoPorAmbiente } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 
 context('Cenário de Teste', () => {
   describe('Documentos | Cadastro de Documento Já Pago - Empresa com Exploração Individual', { tags: '@documentos' }, () => {
     var dataAtual = Utils.getDate()
-    var documento = []
-
-    switch (Cypress.env('ambiente')) {
-      case 'dev': documento = seedTest.documentoDev
-        break
-      case 'qa': documento = seedTest.documentoQA
-        break
-      default:
-        throw new Error('Não foi possivel atribuir os documentos')
-    }
+    var documento = getDocumentoPorAmbiente(seedTest)
 
     var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, documento)
 

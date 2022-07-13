@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 
-import seedTestCadastro from '../../../../fixtures/funcionalidades/financeiro/documentos/excluir/documento.json'
+import seedDocumentos from '../../../../fixtures/funcionalidades/financeiro/documentos/excluir/documento.json'
 import seedTestExcluir from '../../../../fixtures/funcionalidades/financeiro/documentos/excluir/excluir.json'
 import testDescription from './bdd-description/excluir.description.js'
-import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
+import { excluir, conferir, getDocumentoPorAmbiente } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
@@ -11,8 +11,10 @@ import Authenticate from '../../../../support/commands/funcionalidades/login/log
 context('Funcionalidade', () => {
   describe('Documentos | Exclusão de documento', { tags: '@documentos' }, () => {
     var dataAtual = Utils.getDate()
-    var bodyDocumento789456 = Utils.replacer('dataSubstituicao', dataAtual, seedTestCadastro.documento789456)
-    var bodyDocumento987456 = Utils.replacer('dataSubstituicao', dataAtual, seedTestCadastro.documento987456)
+    var documento = getDocumentoPorAmbiente(seedDocumentos)
+
+    var bodyDocumento789456 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento789456)
+    var bodyDocumento987456 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento987456)
 
     before(function () {
       const credenciais = Cypress.env('login_cenarios')
@@ -35,16 +37,16 @@ context('Funcionalidade', () => {
       cy.allure().severity('critical').startStep('test content')
         .descriptionHtml(testDescription.naoConferido)
 
-      Documentos.excluir(seedTestExcluir.documento789456)
+      excluir(seedTestExcluir.documento789456)
     })
 
     it('Conferido', function () {
       cy.allure().severity('critical').startStep('test content')
         .descriptionHtml(testDescription.conferido)
-      
-      Documentos.conferir(seedTestExcluir.documento987456)
 
-      Documentos.excluir(seedTestExcluir.documento987456)
+      conferir(seedTestExcluir.documento987456)
+
+      excluir(seedTestExcluir.documento987456)
     })
   })
 })
