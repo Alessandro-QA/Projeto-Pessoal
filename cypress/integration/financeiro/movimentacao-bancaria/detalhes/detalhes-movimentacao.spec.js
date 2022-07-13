@@ -11,7 +11,6 @@ context('Funcionalidade', () => {
   describe('Movimentação Bancaria | Detalhes da movimentação bancaria', { tags: '@movimentacaoBancaria' }, () => {
     var dataAtual = Utils.getDate()
     var bodyDocumentoPagamento = Utils.replacer('dataSubstituicao', dataAtual, seedTestDocumento.documentoPagamento)
-    var bodyDocumentoRecebimento = Utils.replacer('dataSubstituicao', dataAtual, seedTestDocumento.documentoRecebimento)
 
     before(function () {
       const credenciais = Cypress.env('login_cenarios')
@@ -26,7 +25,7 @@ context('Funcionalidade', () => {
     context('Cadastro do documento ja pago', () =>{
       it('Via API', function () {
         Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumentoPagamento, 'login_cenarios')
-        Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumentoRecebimento, 'login_cenarios')
+        Utils.requestApi('POST', '/api/financeiro/v1/Documento', seedTestDocumento.documentoRecebimento, 'login_cenarios')
       })
     })
 
