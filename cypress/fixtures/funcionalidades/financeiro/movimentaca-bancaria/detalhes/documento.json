@@ -1,0 +1,315 @@
+{
+  "documentoPagamento": {
+    "categorias": [
+      {
+        "valor": 185,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "4.02.02.01",
+          "nome": "Combustíveis",
+          "descricao": "Combustíveis"
+        }
+      }
+    ],
+    "dataRecebimento": "dataSubstituicaoT13:48:13-03:00",
+    "operacao": {
+      "id": "3484bacd-25eb-980e-48a3-44e473135ed7",
+      "descricao": "Combustíveis"
+    },
+    "safra": {
+      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+      "descricao": "2021/2021"
+    },
+    "data": "dataSubstituicaoT13:48:13-03:00",
+    "fazenda": {
+      "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+      "descricao": "Fazenda Teste Producao"
+    },
+    "pessoa": {
+      "pessoaTipo": "Fornecedor",
+      "numeroDocumento": "67824142000144",
+      "id": "ef402791-c035-46cf-96c6-a2494042b237",
+      "descricao": "Cliente Teste Produção"
+    },
+    "numero": "789654",
+    "empresa": {
+      "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+      "descricao": "Empresa Fornecedor - CNPJ",
+      "empresaDeSaoPaulo": false,
+      "documentoPrincipal": "37062568000147",
+      "inscricaoEstadual": {
+        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+        "descricao": "110137116",
+        "valor": "110137116"
+      }
+    },
+    "ieDaEmpresa": {
+      "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+      "descricao": "110137116",
+      "valor": "110137116",
+      "label": "110137116"
+    },
+    "tipoDocumento": 6,
+    "conferido": false,
+    "financeiro": {
+      "total": 185,
+      "pago": true,
+      "rateioEntreCiclos": false,
+      "formaPagamento": {
+        "id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
+        "descricao": "Dinheiro"
+      },
+      "contaBancaria": {
+        "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300",
+        "empresaTitular": {
+          "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+          "descricao": "Pessoa E2E"
+        },
+        "tipoConta": 1,
+        "nome": "Conta Corrente E2E",
+        "contaPrincipal": true,
+        "numerarioEmTransito": false,
+        "banco": {
+          "id": "c3cff0c7-226f-20c7-8d07-b7210fe569be",
+          "codigoBacen": "1",
+          "descricao": "Banco do Brasil S.A."
+        },
+        "agencia": "65432",
+        "agenciaDigitoVerificador": "8",
+        "conta": "3456",
+        "contaDigitoVerificador": "7",
+        "saldoInicial": 1000000,
+        "saldoAtual": 14413667.9,
+        "dataInicialSaldo": "2021-01-01T03:00:00+00:00",
+        "incluirSaldoDisponivel": false,
+        "codigo": 1,
+        "openBanking": false,
+        "ativo": true,
+        "contaBancariaEmpresas": [
+          {
+            "id": "e1825a89-77da-4058-af1c-9fb6f3cd8d6e",
+            "empresa": {
+              "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+              "descricao": "Empresa 1"
+            }
+          },
+          {
+            "id": "bef74031-a762-4999-a011-be9b8f3b8b12",
+            "empresa": {
+              "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+              "descricao": "Pessoa E2E"
+            }
+          },
+          {
+            "id": "4cebb022-1791-4784-8543-8fd2252fde9a",
+            "empresa": {
+              "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+              "descricao": "Empresa E2E"
+            }
+          }
+        ]
+      },
+      "contaFornecedor": {
+        "id": "9cd7e883-e179-4e41-b3f3-1bb4955cfeca"
+      },
+      "condicaoPagamento": "Avista",
+      "quantidadeParcelas": 1,
+      "valorFixo": false,
+      "parcelas": [
+        {
+          "vencimento": "dataSubstituicaoT13:48:13-03:00",
+          "valor": 185
+        }
+      ],
+      "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
+      "contaId": "57efe1f2-b0b4-415d-b642-49cbf45ee300"
+    },
+    "dedutivel": true,
+    "manual": true
+  },
+  "documentoRecebimento": {
+    "materiais": [
+      {
+        "material": {
+          "id": "c1ea8f85-db74-49a4-8cbf-88516fb0cf76",
+          "descricao": "63164RSF IPRO - GARRA"
+        },
+        "unidadeMedida": {
+          "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+          "descricao": "kg"
+        },
+        "quantidade": 2,
+        "valor": 50,
+        "total": 100
+      },
+      {
+        "material": {
+          "id": "f161f128-aa68-4763-95d5-1e6b48ca2724",
+          "descricao": "2,4-D (240) + PICLORAM (64) SL"
+        },
+        "unidadeMedida": {
+          "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
+          "descricao": "L"
+        },
+        "quantidade": 1,
+        "valor": 100,
+        "total": 100
+      }
+    ],
+    "ciclos": [
+      {
+        "ciclo": {
+          "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+          "descricao": "Soja - 2021/2021"
+        },
+        "valor": 150,
+        "percentual": 75
+      },
+      {
+        "ciclo": {
+          "id": "b2147793-d5d7-4414-9aaa-c762672e15bb",
+          "descricao": "Milho - 2021/2021"
+        },
+        "valor": 50,
+        "percentual": 25
+      }
+    ],
+    "categorias": [
+      {
+        "valor": 160,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "3.02.01.03",
+          "nome": "Outras Vendas Agropecuárias",
+          "descricao": "Outras Vendas Agropecuárias"
+        }
+      },
+      {
+        "valor": 40,
+        "contaContabil": {
+          "codigo": "3.01.01.10",
+          "descricao": "Outras Receitas",
+          "dedutivel": true
+        }
+      }
+    ],
+    "dataRecebimento": "2022-04-14T23:59:59-03:00",
+    "operacao": {
+      "id": "af2790f9-869b-4292-a981-eb98140badfa",
+      "descricao": "Outras Vendas Agropecuárias"
+    },
+    "safra": {
+      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+      "descricao": "2021/2021"
+    },
+    "data": "2022-04-01T23:59:59-03:00",
+    "fazenda": {
+      "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+      "descricao": "Fazenda Teste Producao"
+    },
+    "tags": [
+      "documentoE2E"
+    ],
+    "pessoa": {
+      "pessoaTipo": "Cliente",
+      "numeroDocumento": "67824142000144",
+      "id": "ef402791-c035-46cf-96c6-a2494042b237",
+      "descricao": "Cliente Teste Produção"
+    },
+    "numero": "9842563",
+    "empresa": {
+      "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+      "descricao": "Empresa Fornecedor - CNPJ",
+      "empresaDeSaoPaulo": false,
+      "documentoPrincipal": "37062568000147",
+      "inscricaoEstadual": {
+        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+        "descricao": "110137116",
+        "valor": "110137116"
+      }
+    },
+    "ieDaEmpresa": {
+      "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+      "descricao": "110137116",
+      "valor": "110137116",
+      "label": "110137116"
+    },
+    "tipoDocumento": 1,
+    "conferido": false,
+    "financeiro": {
+      "total": 200,
+      "pago": true,
+      "rateioEntreCiclos": true,
+      "formaPagamento": {
+        "id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
+        "descricao": "Dinheiro"
+      },
+      "contaBancaria": {
+        "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300",
+        "empresaTitular": {
+          "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+          "descricao": "Pessoa E2E"
+        },
+        "tipoConta": 1,
+        "nome": "Conta Corrente E2E",
+        "contaPrincipal": true,
+        "numerarioEmTransito": false,
+        "banco": {
+          "id": "c3cff0c7-226f-20c7-8d07-b7210fe569be",
+          "codigoBacen": "1",
+          "descricao": "Banco do Brasil S.A."
+        },
+        "agencia": "65432",
+        "agenciaDigitoVerificador": "8",
+        "conta": "3456",
+        "contaDigitoVerificador": "7",
+        "saldoInicial": 1000000,
+        "saldoAtual": 14411817.9,
+        "dataInicialSaldo": "2021-01-01T03:00:00+00:00",
+        "incluirSaldoDisponivel": false,
+        "codigo": 1,
+        "openBanking": false,
+        "ativo": true,
+        "contaBancariaEmpresas": [
+          {
+            "id": "e1825a89-77da-4058-af1c-9fb6f3cd8d6e",
+            "empresa": {
+              "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+              "descricao": "Empresa 1"
+            }
+          },
+          {
+            "id": "bef74031-a762-4999-a011-be9b8f3b8b12",
+            "empresa": {
+              "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+              "descricao": "Pessoa E2E"
+            }
+          },
+          {
+            "id": "4cebb022-1791-4784-8543-8fd2252fde9a",
+            "empresa": {
+              "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+              "descricao": "Empresa E2E"
+            }
+          }
+        ]
+      },
+      "contaFornecedor": {
+        "id": "9cd7e883-e179-4e41-b3f3-1bb4955cfeca"
+      },
+      "condicaoPagamento": "Avista",
+      "quantidadeParcelas": 1,
+      "valorFixo": false,
+      "parcelas": [
+        {
+          "vencimento": "2022-05-01T00:00:00-03:00",
+          "valor": 200
+        }
+      ],
+      "dataPagamento": "2022-04-14T00:00:00-03:00",
+      "contaId": "57efe1f2-b0b4-415d-b642-49cbf45ee300"
+    },
+    "dedutivel": true,
+    "manual": true
+  }
+}
