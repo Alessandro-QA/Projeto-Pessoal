@@ -82,6 +82,7 @@
 			]
 		},
 		"pagarDocumento": {
+			"pagamento": true,
 			"fazenda": "Fazenda Teste Producao",
 			"empresa": "Empresa Fornecedor - CNPJ",
 			"numeroDocumento": "357357",
