@@ -18,9 +18,21 @@ const locators = {
     mensagemEmptyState: '.container-empty-state'
   },
   detalhes: {
+    titulo: '.cnx-page-header__container--title',
     botaoExcluirMovimentacao: '[data-cy=button-excluir-movimentacao]',
     mensagemConfirmacaoExclusao: '.el-message-box__message',
     botaoConfirmarExclusao: '.el-message-box__btns .el-button--primary',
+    dataMovimentacao: '[data-cy=span-data-movimentacao]',
+    tipoMovimentacao: '[data-cy=span-tipo-movimentacao]',
+    contaBancaria: '[data-cy=span-conta-bancaria-movimentacao]',
+    valor: '[data-cy=span-valor-movimentacao]',
+    observacao: '[data-cy=span-observacao]',
+    conferido: '[data-cy=span-conferidos]',
+    categorias: '[data-cy=table-lista-categorias]',
+    tipoCategoria: '[data-cy=table-lista-categorias] tbody .el-table__row',
+    titulos: '[data-cy=table-lista-titulos]',
+    listTitulos: '[data-cy=table-lista-titulos] tbody .el-table__row',
+    anexoXml: 'button-upload-xml',
     mensagemSucesso: '.el-message__content'
   },
   movimentacaoMenu: {

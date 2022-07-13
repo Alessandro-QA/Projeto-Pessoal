@@ -216,7 +216,126 @@ class MovimentacaoBancaria {
   }
 
   /**
-   * Metodo para excluir a movimentação financeira
+   * Validar os detalhes da movimentacao bancaria
+   * @param {*} seedTestMovimentacaoBancaria 
+   */
+  detalhes(seedTestMovimentacaoBancaria) {
+    const url = '/financeiro/movimentacoes-bancarias/listagem'
+    const locatorTituloPagina = locMovimentacaoBancaria.dashboard.titulo
+    const tituloPagina = 'Movimentações bancárias'
+
+    cy.intercept('POST', '/api/financeiro/v1/Movimentacao/Listagem**').as('listagemMovimentacao')
+    // Navegar para Movimentação Bancaria
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    // Selecionar Empresa
+    cy.getVisible(locMovimentacaoBancaria.dashboard.filtroEmpresa).click()
+      .get(locMovimentacaoBancaria.dashboard.listaEmpresas)
+      .contains(seedTestMovimentacaoBancaria.empresa).click()
+
+    cy.wait('@listagemMovimentacao', { timeout: 10000 })
+
+    // abrir filtros
+    cy.getVisible(locMovimentacaoBancaria.dashboard.abrirFiltro).click()
+
+    // inserir a data de inicio e fim no filtro de período
+    if (seedTestMovimentacaoBancaria.filtroDataInicio) {
+      // inserir data de inicio
+      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroDataInicio).click()
+        .clear().type(`${seedTestMovimentacaoBancaria.filtroDataInicio}{enter}`)
+
+      // inserir data fim
+      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroDataFim).click()
+        .clear().type(`${seedTestMovimentacaoBancaria.filtroDataFim}{enter}`)
+    }
+
+    // Pesquisar movimentacao
+    cy.getVisible(locMovimentacaoBancaria.dashboard.pesquisarMovimentacao)
+      .type(`${seedTestMovimentacaoBancaria.tipo}{enter}`)
+
+    cy.wait('@listagemMovimentacao', { timeout: 10000 })
+
+    // Abrir detalhes da movimentação
+    cy.getVisible(locMovimentacaoBancaria.dashboard.cardMovimentacaoCategoria)
+      .click()
+
+    cy.getVisible(locMovimentacaoBancaria.detalhes.dataMovimentacao).should(($el) => {
+      expect($el).to.contain.text(seedTestMovimentacaoBancaria.dataMovimentacao)
+    })
+
+    cy.getVisible(locMovimentacaoBancaria.detalhes.tipoMovimentacao).should(($el) => {
+      expect($el).to.contain.text(seedTestMovimentacaoBancaria.tipo)
+    })
+
+    cy.getVisible(locMovimentacaoBancaria.detalhes.contaBancaria).should(($el) => {
+      expect($el).to.contain.text(seedTestMovimentacaoBancaria.contaBancaria)
+    })
+
+    cy.getVisible(locMovimentacaoBancaria.detalhes.valor).should(($el) => {
+      expect($el).to.contain.text(seedTestMovimentacaoBancaria.valor)
+    })
+
+    cy.getVisible(locMovimentacaoBancaria.detalhes.observacao).should(($el) => {
+      expect($el).to.contain.text(seedTestMovimentacaoBancaria.observacao)
+    })
+
+    cy.getVisible(locMovimentacaoBancaria.detalhes.conferido).should(($el) => {
+      expect($el).to.contain.text(seedTestMovimentacaoBancaria.conferido)
+    })
+
+    const categorias = seedTestMovimentacaoBancaria.categorias
+    cy.get(locMovimentacaoBancaria.detalhes.tipoCategoria)
+      .should('have.length', categorias.length)
+    categorias.forEach((categorias) => {
+      cy.get(locMovimentacaoBancaria.detalhes.tipoCategoria).should(($el) => {
+        expect($el).to.contain.text(categorias.tipoCategoria)
+      })
+
+      cy.get(locMovimentacaoBancaria.detalhes.tipoCategoria).should(($el) => {
+        expect($el).to.contain.text(categorias.valorCategoria)
+      })
+    })
+
+    const titulos = seedTestMovimentacaoBancaria.titulos
+    cy.get(locMovimentacaoBancaria.detalhes.listTitulos)
+      .should('have.length', titulos.length)
+    titulos.forEach((titulos, index) => {
+      cy.get(locMovimentacaoBancaria.detalhes.listTitulos).eq(index).should(($el) => {
+        expect($el).to.contain.text(titulos.documento)
+      })
+
+      cy.get(locMovimentacaoBancaria.detalhes.listTitulos).eq(index).should(($el) => {
+        expect($el).to.contain.text(titulos.pessoa)
+      })
+
+      cy.get(locMovimentacaoBancaria.detalhes.listTitulos).eq(index).should(($el) => {
+        expect($el).to.contain.text(titulos.empresa)
+      })
+
+      cy.get(locMovimentacaoBancaria.detalhes.listTitulos).eq(index).should(($el) => {
+        expect($el).to.contain.text(titulos.valor)
+      })
+
+      cy.get(locMovimentacaoBancaria.detalhes.listTitulos).eq(index).should(($el) => {
+        expect($el).to.contain.text(titulos.juros)
+      })
+
+      cy.get(locMovimentacaoBancaria.detalhes.listTitulos).eq(index).should(($el) => {
+        expect($el).to.contain.text(titulos.multas)
+      })
+
+      cy.get(locMovimentacaoBancaria.detalhes.listTitulos).eq(index).should(($el) => {
+        expect($el).to.contain.text(titulos.descontos)
+      })
+
+      cy.get(locMovimentacaoBancaria.detalhes.listTitulos).eq(index).should(($el) => {
+        expect($el).to.contain.text(titulos.valorTotal)
+      })
+    })
+  }
+
+  /**
+   * Metodo para excluir a movimentação bancaria
    * @param {*} seedTestMovimentacaoBancaria
    */
   excluir(seedTestMovimentacaoBancaria) {
@@ -265,7 +384,7 @@ class MovimentacaoBancaria {
   }
 
   /**
-   * Metodo para validar a exclusão da movimentação financeira
+   * Metodo para validar a exclusão da movimentação bancaria
    * @param {*} seedTestMovimentacaoBancaria
    */
   validarExclusao(seedTestMovimentacaoBancaria) {
