@@ -5,6 +5,7 @@ const locators = {
     listaEmpresas: '[data-cy=select-filter-empresa] .list__items',
     abrirFiltro: '.el-button.el-button--text',
     pesquisarMovimentacao: '[data-cy=header-movimentacao-bancaria] [name=search]',
+    filtroContaBancaria: '[data-cy=filter-select-conta]',
     filtroDataInicio: '[data-cy=header-movimentacao-bancaria] [placeholder=Início]',
     filtroDataFim: '[data-cy=header-movimentacao-bancaria] [placeholder=Fim]',
     cardMovimentacao: '.el-card__body',

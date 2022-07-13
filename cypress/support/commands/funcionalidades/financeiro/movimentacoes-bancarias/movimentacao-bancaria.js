@@ -95,7 +95,7 @@ class MovimentacaoBancaria {
     // Inserir o valor da movimentação
     cy.getVisible(locMovimentacaoBancaria.movimentacoes.inputValor)
       .type(`{movetoend}${seedTestMovimentacaoBancaria.valorMovimentacao}{enter}`)
-    
+
     // Inserir observação
     if (seedTestMovimentacaoBancaria.observacao) {
       cy.getVisible(locMovimentacaoBancaria.movimentacoes.inputObservacao)
@@ -129,10 +129,10 @@ class MovimentacaoBancaria {
   }
 
   /**
-   * Metodo para validar a Dashboard de Movimentação
+   * Validar Listagem de movimentações bancarias
    * @param {*} seedTestMovimentacaoBancaria
    */
-  validarDashboard(seedTestMovimentacaoBancaria) {
+  validarListagem(seedTestMovimentacaoBancaria) {
     const url = '/financeiro/movimentacoes-bancarias/listagem'
     const locatorTituloPagina = locMovimentacaoBancaria.dashboard.titulo
     const tituloPagina = 'Movimentações bancárias'
@@ -146,10 +146,15 @@ class MovimentacaoBancaria {
     // Espera necessária para carregar os componentes da tela
     cy.wait('@contaBancaria', { timeout: 10000 })
 
-    // Selecionar Empresa
-    cy.getVisible(locMovimentacaoBancaria.dashboard.filtroEmpresa).click()
-      .contains(seedTestMovimentacaoBancaria.empresa)
-      .should('exist').scrollIntoView().click()
+    if (seedTestMovimentacaoBancaria.empresa === 'Selecionar Todas') {
+      // Selecionar Empresa
+      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroEmpresa).click()
+        .find('button').click()
+    } else {
+      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroEmpresa).click()
+        .contains(seedTestMovimentacaoBancaria.empresa)
+        .should('exist').scrollIntoView().click()
+    }
 
     if (seedTestMovimentacaoBancaria.categorias) {
       // Pesquisar Movimentação
@@ -157,11 +162,11 @@ class MovimentacaoBancaria {
         .clear().type(`${seedTestMovimentacaoBancaria.categorias}{enter}`)
     }
 
+    // abrir filtros
+    cy.getVisible(locMovimentacaoBancaria.dashboard.abrirFiltro).click()
+
     // inserir a data de inicio e fim no filtro de período
     if (seedTestMovimentacaoBancaria.filtroDataInicio) {
-      // abrir filtros
-      cy.getVisible(locMovimentacaoBancaria.dashboard.abrirFiltro).click()
-
       // inserir data de inicio
       cy.getVisible(locMovimentacaoBancaria.dashboard.filtroDataInicio).click()
         .clear().type(`${seedTestMovimentacaoBancaria.filtroDataInicio}{enter}`)
@@ -169,6 +174,11 @@ class MovimentacaoBancaria {
       // inserir data fim
       cy.getVisible(locMovimentacaoBancaria.dashboard.filtroDataFim).click()
         .clear().type(`${seedTestMovimentacaoBancaria.filtroDataFim}{enter}`)
+    }
+
+    if (seedTestMovimentacaoBancaria.contaBancaria) {
+      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroContaBancaria).click()
+        .contains(seedTestMovimentacaoBancaria.contaBancaria).click()
     }
 
     // Espera necessária para carregar as movimentações pesquisadas

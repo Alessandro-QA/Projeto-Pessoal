@@ -44,9 +44,13 @@ class AgendaFinanceira {
 
     cy.wait('@apiRecebimento')
 
-    cy.get(locAgendaFinanceira.dashboard.mensagemSucessoPagamento)
-      .should('exist').and('have.text', 'Pagamento realizado com sucesso')
-
+    cy.get(locAgendaFinanceira.dashboard.mensagemSucessoPagamento).then(($message) => {
+      if (seedTestAgendaFinanceira.pagamento) {
+        expect($message).exist.and.to.contain.text('Pagamento realizado com sucesso')
+      } else {
+        expect($message).exist.and.to.contain.text('Recebimento realizado com sucesso')
+      }
+    })
     cy.wait('@listagemAgenda')
   }
 
@@ -80,11 +84,13 @@ class AgendaFinanceira {
     cy.wait('@listagemAgenda')
 
     // Espera necessária para a atualização dos títulos mostrados na tela
-    cy.wait(3000)
+    cy.wait(4000)
 
     // Selecionar card na agenda financeira
-    cy.getVisible(locAgendaFinanceira.dashboard.cardAgenda)
-      .contains(seedTestAgendaFinanceira.numeroDocumento).click()
+    cy.getVisible(locAgendaFinanceira.dashboard.cardAgenda, { timeout: 10000 })
+      .contains(seedTestAgendaFinanceira.numeroDocumento)
+      .parent(locAgendaFinanceira.dashboard.cardAgenda)
+      .click({ force: true })
 
     // clicar no botão para ir a tela de recebimento/pagamento 
     cy.getVisible(locAgendaFinanceira.detalhesTitulo.efetuarPagamento).click()
@@ -95,20 +101,20 @@ class AgendaFinanceira {
         .contains(seedTestAgendaFinanceira.formaPagamento).click()
 
       // Informar a data do pagamento/recebimento
-        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.dataPagamento)
-          .clear().type(`${seedTestAgendaFinanceira.dataPagamento}{enter}`)
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.dataPagamento)
+        .clear().type(`${seedTestAgendaFinanceira.dataPagamento}{enter}`)
 
       // Selecionar a conta bancaria
-        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.contaBancaria).click()
-          .contains(seedTestAgendaFinanceira.contaBancaria).click()
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.contaBancaria).click()
+        .contains(seedTestAgendaFinanceira.contaBancaria).click()
 
       // Selecionar tag
-        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.tags).click()
-          .contains(seedTestAgendaFinanceira.tags).click()
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.tags).click()
+        .contains(seedTestAgendaFinanceira.tags).click()
 
       // Infomar uma Observação no pagamento / recebimento
-        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.observacao)
-          .clear().type(`${seedTestAgendaFinanceira.observacao}{enter}`)
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.observacao)
+        .clear().type(`${seedTestAgendaFinanceira.observacao}{enter}`)
     }
 
     // Informar o valor de pagamento
@@ -119,6 +125,14 @@ class AgendaFinanceira {
 
     // Botao de recebimento / pagamento
     cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.botaoPagarReceber).click()
+
+    cy.get(locAgendaFinanceira.pagamentoRecebimento.mensagemSucessoPagamento).then(($message) => {
+      if (seedTestAgendaFinanceira.pagamento) {
+        expect($message).exist.and.to.contain.text('pagamento realizado com sucesso')
+      } else {
+        expect($message).exist.and.to.contain.text('recebimento realizado com sucesso')
+      }
+    })
 
     cy.wait('@apiRecebimento')
   }
