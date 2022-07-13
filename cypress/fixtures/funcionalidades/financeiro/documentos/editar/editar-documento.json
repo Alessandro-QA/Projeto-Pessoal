@@ -43,6 +43,7 @@
 			"fazendaDocumento": "Fazenda Teste Producao",
 			"empresaDocumento": "Empresa Fornecedor - CNPJ",
 			"numeroDocumento": "789456",
+			"pagamento": true,
 			"cardStatusDocumento": "A pagar",
 			"cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
 			"cardValorDocumento": "R$ 134,00",
