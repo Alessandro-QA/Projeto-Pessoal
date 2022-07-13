@@ -1,0 +1,55 @@
+{
+  "movimentacaoEmpresa": {
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "cardMovimentacao": [
+      {
+        "tipo": "Pagamento",
+        "categorias": "13º Salário",
+        "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+        "conferido": "Não",
+        "valor": "- R$  300,00"
+      },
+      {
+        "tipo": "Recebimento",
+        "categorias": "Outras Vendas Agropecuárias",
+        "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+        "conferido": "Não",
+        "valor": "+ R$ 320,00"
+      },
+      {
+        "tipo": "Pagamento",
+        "categorias": "Assistência Médica",
+        "conta": "Banco: Banco Itaucard S.A. Ag.: 341 Conta: 6630341524-3",
+        "conferido": "Não",
+        "valor": "- R$  250,00"
+      }
+    ]
+  },
+  "movimentacaoContaBancaria": {
+    "empresa": "Selecionar Todas",
+    "contaBancaria": "Conta E2E",
+    "cardMovimentacao": [
+      {
+        "tipo": "Pagamento",
+        "categorias": "Assistência Médica",
+        "conta": "Banco: Banco Itaucard S.A. Ag.: 341 Conta: 6630341524-3",
+        "conferido": "Não",
+        "valor": "- R$  250,00"
+      }
+    ]
+  },
+  "movimentacaoData": {
+    "empresa": "Selecionar Todas",
+    "filtroDataInicio": "25/06/2022",
+    "filtroDataFim": "02/07/2022",
+    "cardMovimentacao": [
+      {
+        "tipo": "Pagamento",
+        "categorias": "Assistência Médica",
+        "conta": "Banco: Banco Itaucard S.A. Ag.: 341 Conta: 6630341524-3",
+        "conferido": "Não",
+        "valor": "- R$  250,00"
+      }
+    ]
+  }
+}
