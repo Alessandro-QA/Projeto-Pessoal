@@ -59,7 +59,7 @@ context('Funcionalidade', () => {
 				editar(seedTestDocumento.documento357357.filtro, seedTestDocumento.documento357357.editar)
 			})
 
-			it('Validar documento editado na tela de listagme de Documetnos0', function () {
+			it('Validar documento editado na tela de listagme de Documentos', function () {
 				cy.allure().severity('normal').startStep('test content')
 					.descriptionHtml(testDescritpion.editarSemRateio)
 				listagem(seedTestDocumento.documento357357.detalhes)

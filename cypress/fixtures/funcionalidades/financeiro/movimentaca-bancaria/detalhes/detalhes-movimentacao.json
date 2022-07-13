@@ -1,0 +1,62 @@
+{
+  "detalhesPagamento": {
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "tipo": "Pagamento",
+    "dataMovimentacao": "13/07/2022",
+    "contaBancaria": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+    "valor": "R$ 185,00",
+    "observacao": "Titulo 1:\r\n Valor Doc. 789654 de Cliente Teste Produção",
+    "conferido": "Não",
+    "categorias": [
+      {
+        "tipoCategoria": "Combustíveis",
+        "valorCategoria": "R$ 185,00"
+      }
+    ],
+    "titulos": [
+      {
+        "documento": "789654",
+        "pessoa": "Cliente Teste Produção",
+        "empresa": "Empresa Fornecedor - CNPJ",
+        "valor": "R$ 185,00",
+        "juros": "--",
+        "multas": "--",
+        "descontos": "--",
+        "valorTotal": "R$ 185,00"
+      }
+    ]
+  },
+  "detalhesRecebimento": {
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "tipo": "Recebimento",
+    "filtroDataInicio": "01/04/2022",
+    "filtroDataFim": "01/05/2022",
+    "dataMovimentacao": "14/04/2022",
+    "contaBancaria": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
+    "valor": "R$ 200,00",
+    "observacao": "Titulo 1:",
+    "conferido": "Não",
+    "categorias": [
+      {
+        "tipoCategoria": "Outras Receitas",
+        "valorCategoria": "R$ 40,00"
+      },
+      {
+        "tipoCategoria": "Outras Vendas Agropecuárias",
+        "valorCategoria": "R$ 160,00"
+      }
+    ],
+    "titulos": [
+      {
+        "documento": "9842563",
+        "pessoa": "Cliente Teste Produção",
+        "empresa": "Empresa Fornecedor - CNPJ",
+        "valor": "R$ 200,00",
+        "juros": "--",
+        "multas": "--",
+        "descontos": "--",
+        "valorTotal": "R$ 200,00"
+      }
+    ]
+  }
+}
