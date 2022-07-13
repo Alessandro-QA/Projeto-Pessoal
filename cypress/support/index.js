@@ -7,6 +7,7 @@ import deletarRegistroTabelasQa from './utils/queries/deletar-por-tabela-qa.js'
 import '@shelex/cypress-allure-plugin'
 import registerCypressGrep from 'cypress-grep'
 registerCypressGrep()
+require('@cypress/skip-test/support')
 
 // Retornando false pois o cypress falha com o redirecionamento do login
 Cypress.on('uncaught:exception', (err, runnable) => {
