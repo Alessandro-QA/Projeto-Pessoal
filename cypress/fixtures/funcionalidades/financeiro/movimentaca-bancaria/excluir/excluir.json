@@ -1,0 +1,14 @@
+{
+  "excluirPagamento": {
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "filtroDataInicio": "01/07/2022",
+    "filtroDataFim": "01/08/2022",
+    "categorias": "Combustíveis"
+  },
+  "excluirRecebimento": {
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "filtroDataInicio": "01/04/2022",
+    "filtroDataFim": "01/05/2022",
+    "categorias": "Outras Vendas Agropecuárias"
+  }
+}
