@@ -373,6 +373,8 @@ class MovimentacaoBancaria {
       .get(locMovimentacaoBancaria.dashboard.listaEmpresas)
       .contains(seedTestMovimentacaoBancaria.empresa).click()
 
+    cy.wait('@listagemMovimentacao', { timeout: 20000 })
+
     // abrir filtros
     cy.getVisible(locMovimentacaoBancaria.dashboard.abrirFiltro).click()
 
