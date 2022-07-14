@@ -67,7 +67,7 @@ context('Funcionalidade', () => {
 
     it('Filtrar por documento não conferido', function () {
       cy.allure().severity('normal').startStep('test content')
-        .descriptionHtml(testDescription)
+        .descriptionHtml(testDescription.filtrarConferido)
 
       listagem(seedTestDocumento.filtroNaoConferido)
     })
