@@ -24,9 +24,9 @@ context('Cenário de Teste', () => {
       Utils.setAccessTokenToEnv(credenciais)
     })
 
-    // after(() => {
-    //   Authenticate.logout()
-    // })
+    after(() => {
+      Authenticate.logout()
+    })
 
     it('Cadastrar documento dedutível já pago por API', function () {
       cy.allure().severity('normal').startStep('test content')
