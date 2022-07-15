@@ -3,18 +3,20 @@
 import seedTestDocumento from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/listagem/documentos.json'
 import seedTestListagemMovimentacao from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/listagem/validar-listagem.json'
 import seedTestAgenda from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/listagem/pagar-pela-agenda.json'
-import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
+import { pagarPelaAgenda, pagarReceberTitulo } from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
+import { validarListagem } from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
+import  { getDocumentoPorAmbiente } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import testDescritpion from './bdd-description/listagem.description.js'
-import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 context('Funcionalidade', () => {
   describe('Movimentação Bancaria | Listagem da movimentação bancaria', { tags: '@movimentacaoBancaria' }, () => {
+    var documento = getDocumentoPorAmbiente(seedTestDocumento)
     var dataAtual = Utils.getDate()
-    var bodyDocumento357753 = Utils.replacer('dataSubstituicao', dataAtual, seedTestDocumento.documento357753)
-    var bodyDocumento987456 = Utils.replacer('dataSubstituicao', dataAtual, seedTestDocumento.documento987456)
-    var bodyDocumento159753 = Utils.replacer('dataSubstituicao', dataAtual, seedTestDocumento.documento159753)
+    var bodyDocumento357753 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento357753)
+    var bodyDocumento987456 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento987456)
+    var bodyDocumento159753 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento159753)
 
     before(function () {
       const credenciais = Cypress.env('login_cenarios')
@@ -34,9 +36,9 @@ context('Funcionalidade', () => {
       })
 
       it('Pagar via agenda', function () {
-        AgendaFinanceira.pagarPelaAgenda(seedTestAgenda.documento357753)
-        AgendaFinanceira.pagarPelaAgenda(seedTestAgenda.documento987456)
-        AgendaFinanceira.pagarReceberTitulo(seedTestAgenda.documento159753)
+        pagarPelaAgenda(seedTestAgenda.documento357753)
+        pagarPelaAgenda(seedTestAgenda.documento987456)
+        pagarReceberTitulo(seedTestAgenda.documento159753)
       })
     })
 
@@ -45,21 +47,21 @@ context('Funcionalidade', () => {
         cy.allure().severity('normal').startStep('test content')
         .descriptionHtml(testDescritpion.filtroEmpresa)
 
-        Movimentacao.validarListagem(seedTestListagemMovimentacao.movimentacaoEmpresa)
+        validarListagem(seedTestListagemMovimentacao.movimentacaoEmpresa)
       })
 
       it('Filtrar por Conta', function () {
         cy.allure().severity('normal').startStep('test content')
         .descriptionHtml(testDescritpion.filtroConta)
 
-        Movimentacao.validarListagem(seedTestListagemMovimentacao.movimentacaoContaBancaria)
+        validarListagem(seedTestListagemMovimentacao.movimentacaoContaBancaria)
       })
 
       it('Filtrar por Data', function () {
         cy.allure().severity('normal').startStep('test content')
         .descriptionHtml(testDescritpion.filtroData)
 
-        Movimentacao.validarListagem(seedTestListagemMovimentacao.movimentacaoData)
+        validarListagem(seedTestListagemMovimentacao.movimentacaoData)
       })
     })
   })
