@@ -16,10 +16,14 @@ class ContratoUtils {
     // Navegar para dashboard contrato
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.intercept('GET', '/api/producao-agricola/v1/contratos/List?**').as('listContratos')
-    cy.intercept('POST', '/api/financeiro/v1/Documento/ValorRecebido/Contratos').as('contratos')
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/cultura/v1/cultura/icone?**').as('iconesCultura')
-    cy.intercept('GET', 'https://api.aliare.digital/user/v1.0-dev/user/applications').as('userApplications')
+    cy.intercept('GET', '/api/producao-agricola/v1/contratos/List?**')
+      .as('listContratos')
+    cy.intercept('POST', '/api/financeiro/v1/Documento/ValorRecebido/Contratos')
+      .as('contratos')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/cultura/v1/cultura/icone?**`)
+      .as('iconesCultura')
+    cy.intercept('GET', 'https://api.aliare.digital/user/v1.0-dev/user/applications')
+      .as('userApplications')
 
     // Selecionar fazenda
     cy.getVisible(locDashboardContrato.selectFazenda).click()
@@ -72,6 +76,25 @@ class ContratoUtils {
         expect($el).to.contain.text(dadosCard.tipoNegociacao)
       })
     })
+  }
+
+  /**
+ * Busca contratos de acordo com o ambiente em que o teste é executado (Dev ou QA)
+ * @param {*} contratos 
+ */
+  getContratoPorAmbiente(contratos) {
+    var contrato = []
+
+    switch (Cypress.env('ambiente')) {
+      case 'dev': contrato = contratos.contratoDev
+        break
+      case 'qa': contrato = contratos.contratoQA
+        break
+      default:
+        throw new Error('Não foi possivel atribuir os contratos')
+    }
+
+    return contrato
   }
 }
 
