@@ -292,12 +292,12 @@ class Documentos {
    * @param {*} seedTestDocumento
    */
   static pesquisar(seedTestDocumento) {
-    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem').as('financeiro')
+    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem').as('listagem')
 
     // Navegar para Documentos
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.wait('@financeiro', { timeout: 15000 })
+    cy.wait('@listagem', { timeout: 15000 })
 
     cy.clearLocalStorage('financeiro-documentos-filtros')
 
@@ -320,7 +320,7 @@ class Documentos {
       cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
         .type(`${seedTestDocumento.numeroDocumento}{enter}`, { timeout: 2000 })
 
-      cy.wait('@financeiro', { timeout: 10000 })
+      cy.wait('@listagem', { timeout: 15000 })
     }
 
     // abrir filtros
