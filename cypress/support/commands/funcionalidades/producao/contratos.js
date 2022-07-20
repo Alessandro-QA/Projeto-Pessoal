@@ -16,10 +16,14 @@ class ContratoUtils {
     // Navegar para dashboard contrato
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.intercept('GET', '/api/producao-agricola/v1/contratos/List?**').as('listContratos')
-    cy.intercept('POST', '/api/financeiro/v1/Documento/ValorRecebido/Contratos').as('contratos')
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/cultura/v1/cultura/icone?**').as('iconesCultura')
-    cy.intercept('GET', 'https://api.aliare.digital/user/v1.0-dev/user/applications').as('userApplications')
+    cy.intercept('GET', '/api/producao-agricola/v1/contratos/List?**')
+      .as('listContratos')
+    cy.intercept('POST', '/api/financeiro/v1/Documento/ValorRecebido/Contratos')
+      .as('contratos')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/cultura/v1/cultura/icone?**`)
+      .as('iconesCultura')
+    cy.intercept('GET', 'https://api.aliare.digital/user/v1.0-dev/user/applications')
+      .as('userApplications')
 
     // Selecionar fazenda
     cy.getVisible(locDashboardContrato.selectFazenda).click()

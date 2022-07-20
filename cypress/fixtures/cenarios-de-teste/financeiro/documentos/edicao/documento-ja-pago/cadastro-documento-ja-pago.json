@@ -1,296 +1,298 @@
 {
-  "documentoDev": {
-    "ciclos": [
-      {
-        "ciclo": {
-          "id": "b2147793-d5d7-4414-9aaa-c762672e15bb",
-          "descricao": "Milho - 2021/2021"
+  "documento": {
+    "dev": {
+      "ciclos": [
+        {
+          "ciclo": {
+            "id": "b2147793-d5d7-4414-9aaa-c762672e15bb",
+            "descricao": "Milho - 2021/2021"
+          },
+          "valor": 1500
         },
-        "valor": 1500
-      },
-      {
-        "ciclo": {
-          "id": "ca15055a-b9ec-4489-9d1b-2b2382103033",
-          "descricao": "Acerola - 2021/2021"
-        },
-        "valor": 1500
-      }
-    ],
-    "categorias": [
-      {
-        "valor": 3000,
-        "contaContabil": {
-          "dedutivel": true,
-          "codigo": "4.02.02.03",
-          "nome": "Fretes e Carretos",
-          "descricao": "Fretes e Carretos"
+        {
+          "ciclo": {
+            "id": "ca15055a-b9ec-4489-9d1b-2b2382103033",
+            "descricao": "Acerola - 2021/2021"
+          },
+          "valor": 1500
         }
-      }
-    ],
-    "dataRecebimento": "dataSubstituicaoT16:34:27-03:00",
-    "operacao": {
-      "id": "e6f4600b-10a1-4b85-9344-e35b454315be",
-      "descricao": "Compra de Defensivos"
-    },
-    "safra": {
-      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
-      "descricao": "2021/2021"
-    },
-    "data": "dataSubstituicaoT16:34:27-03:00",
-    "fazenda": {
-      "id": "b0f2a6e1-81a2-4123-bf46-4fc5e6a54738",
-      "descricao": "Fazenda E2E"
-    },
-    "tags": ["documentoE2E"],
-    "pessoa": {
-      "pessoaTipo": "Fornecedor",
-      "numeroDocumento": "66791418001",
-      "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
-      "descricao": "Empresa Produtor - CPF"
-    },
-    "numero": "1004",
-    "empresa": {
-      "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
-      "descricao": "Empresa Fornecedor - CPF",
-      "empresaDeSaoPaulo": false,
-      "documentoPrincipal": "91535740019",
-      "inscricaoEstadual": {
+      ],
+      "categorias": [
+        {
+          "valor": 3000,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.02.03",
+            "nome": "Fretes e Carretos",
+            "descricao": "Fretes e Carretos"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT16:34:27-03:00",
+      "operacao": {
+        "id": "e6f4600b-10a1-4b85-9344-e35b454315be",
+        "descricao": "Compra de Defensivos"
+      },
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT16:34:27-03:00",
+      "fazenda": {
+        "id": "b0f2a6e1-81a2-4123-bf46-4fc5e6a54738",
+        "descricao": "Fazenda E2E"
+      },
+      "tags": ["documentoE2E"],
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "66791418001",
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "numero": "1004",
+      "empresa": {
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "91535740019",
+        "inscricaoEstadual": {
+          "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+          "descricao": "IE Estadual",
+          "valor": "32165465622"
+        }
+      },
+      "ieDaEmpresa": {
         "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
         "descricao": "IE Estadual",
-        "valor": "32165465622"
-      }
-    },
-    "ieDaEmpresa": {
-      "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
-      "descricao": "IE Estadual",
-      "valor": "32165465622",
-      "label": "32165465622"
-    },
-    "tipoDocumento": 1,
-    "observacao": "Observações do Documento",
-    "conferido": false,
-    "financeiro": {
-      "total": 3000,
-      "pago": true,
-      "rateioEntreCiclos": true,
-      "formaPagamento": {
-        "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
-        "descricao": "Boleto"
+        "valor": "32165465622",
+        "label": "32165465622"
       },
-      "contaBancaria": {
-        "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300",
-        "empresaTitular": {
-          "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
-          "descricao": "Pessoa E2E"
+      "tipoDocumento": 1,
+      "observacao": "Observações do Documento",
+      "conferido": false,
+      "financeiro": {
+        "total": 3000,
+        "pago": true,
+        "rateioEntreCiclos": true,
+        "formaPagamento": {
+          "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+          "descricao": "Boleto"
         },
-        "tipoConta": 1,
-        "nome": "Conta Corrente E2E",
-        "contaPrincipal": true,
-        "numerarioEmTransito": false,
-        "banco": {
-          "id": "c3cff0c7-226f-20c7-8d07-b7210fe569be",
-          "codigoBacen": "1",
-          "descricao": "Banco do Brasil S.A."
+        "contaBancaria": {
+          "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300",
+          "empresaTitular": {
+            "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+            "descricao": "Pessoa E2E"
+          },
+          "tipoConta": 1,
+          "nome": "Conta Corrente E2E",
+          "contaPrincipal": true,
+          "numerarioEmTransito": false,
+          "banco": {
+            "id": "c3cff0c7-226f-20c7-8d07-b7210fe569be",
+            "codigoBacen": "1",
+            "descricao": "Banco do Brasil S.A."
+          },
+          "agencia": "65432",
+          "agenciaDigitoVerificador": "8",
+          "conta": "3456",
+          "contaDigitoVerificador": "7",
+          "saldoInicial": 1000000,
+          "saldoAtual": 91826,
+          "dataInicialSaldo": "2021-01-01T03:00:00+00:00",
+          "incluirSaldoDisponivel": false,
+          "codigo": 1,
+          "openBanking": false,
+          "ativo": true,
+          "contaBancariaEmpresas": [
+            {
+              "id": "4cebb022-1791-4784-8543-8fd2252fde9a",
+              "empresa": {
+                "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+                "descricao": "Empresa E2E"
+              }
+            },
+            {
+              "id": "e1825a89-77da-4058-af1c-9fb6f3cd8d6e",
+              "empresa": {
+                "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+                "descricao": "Empresa 1"
+              }
+            },
+            {
+              "id": "bef74031-a762-4999-a011-be9b8f3b8b12",
+              "empresa": {
+                "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+                "descricao": "Pessoa E2E"
+              }
+            }
+          ]
         },
-        "agencia": "65432",
-        "agenciaDigitoVerificador": "8",
-        "conta": "3456",
-        "contaDigitoVerificador": "7",
-        "saldoInicial": 1000000,
-        "saldoAtual": 91826,
-        "dataInicialSaldo": "2021-01-01T03:00:00+00:00",
-        "incluirSaldoDisponivel": false,
-        "codigo": 1,
-        "openBanking": false,
-        "ativo": true,
-        "contaBancariaEmpresas": [
+        "contaFornecedor": {
+          "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
           {
-            "id": "4cebb022-1791-4784-8543-8fd2252fde9a",
-            "empresa": {
-              "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
-              "descricao": "Empresa E2E"
-            }
-          },
-          {
-            "id": "e1825a89-77da-4058-af1c-9fb6f3cd8d6e",
-            "empresa": {
-              "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
-              "descricao": "Empresa 1"
-            }
-          },
-          {
-            "id": "bef74031-a762-4999-a011-be9b8f3b8b12",
-            "empresa": {
-              "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
-              "descricao": "Pessoa E2E"
-            }
+            "vencimento": "dataSubstituicaoT16:34:27-03:00",
+            "valor": 3000
           }
-        ]
+        ],
+        "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
+        "contaId": "57efe1f2-b0b4-415d-b642-49cbf45ee300"
       },
-      "contaFornecedor": {
-        "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300"
-      },
-      "condicaoPagamento": "Avista",
-      "quantidadeParcelas": 1,
-      "valorFixo": false,
-      "parcelas": [
+      "dedutivel": true,
+      "manual": true
+    },
+
+    "qa": {
+      "ciclos": [
         {
-          "vencimento": "dataSubstituicaoT16:34:27-03:00",
-          "valor": 3000
+          "ciclo": {
+            "id": "16b2fcdd-8b81-4251-b87e-4cb494970cce",
+            "descricao": "Milho - 2021/2021"
+          },
+          "valor": 1500
+        },
+        {
+          "ciclo": {
+            "id": "520eb29e-cb30-47a4-9179-1570261f996e",
+            "descricao": "Acerola - 2021/2021"
+          },
+          "valor": 1500
         }
       ],
-      "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
-      "contaId": "57efe1f2-b0b4-415d-b642-49cbf45ee300"
-    },
-    "dedutivel": true,
-    "manual": true
-  },
-
-  "documentoQA": {
-    "ciclos": [
-      {
-        "ciclo": {
-          "id": "16b2fcdd-8b81-4251-b87e-4cb494970cce",
-          "descricao": "Milho - 2021/2021"
-        },
-        "valor": 1500
-      },
-      {
-        "ciclo": {
-          "id": "520eb29e-cb30-47a4-9179-1570261f996e",
-          "descricao": "Acerola - 2021/2021"
-        },
-        "valor": 1500
-      }
-    ],
-    "categorias": [
-      {
-        "valor": 3000,
-        "contaContabil": {
-          "dedutivel": true,
-          "codigo": "4.02.02.03",
-          "nome": "Fretes e Carretos",
-          "descricao": "Fretes e Carretos"
+      "categorias": [
+        {
+          "valor": 3000,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.02.03",
+            "nome": "Fretes e Carretos",
+            "descricao": "Fretes e Carretos"
+          }
         }
-      }
-    ],
-    "dataRecebimento": "dataSubstituicaoT17:58:47-03:00",
-    "operacao": {
-      "id": "e6f4600b-10a1-4b85-9344-e35b454315be",
-      "descricao": "Compra de Defensivos"
-    },
-    "safra": {
-      "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
-      "descricao": "2021/2021"
-    },
-    "data": "dataSubstituicaoT17:58:47-03:00",
-    "fazenda": {
-      "id": "cc6b4476-eb9a-4368-b7ab-ddecc7633255",
-      "descricao": "Fazenda E2E"
-    },
-    "tags": ["documentoE2E"],
-    "pessoa": {
-      "pessoaTipo": "Fornecedor",
-      "numeroDocumento": "66791418001",
-      "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
-      "descricao": "Empresa Produtor - CPF"
-    },
-    "numero": "1004",
-    "empresa": {
-      "id": "f03b1276-c276-4980-bccd-87dc29317818",
-      "descricao": "Empresa Fornecedor - CPF",
-      "empresaDeSaoPaulo": false,
-      "documentoPrincipal": "91535740019",
-      "inscricaoEstadual": {
+      ],
+      "dataRecebimento": "dataSubstituicaoT17:58:47-03:00",
+      "operacao": {
+        "id": "e6f4600b-10a1-4b85-9344-e35b454315be",
+        "descricao": "Compra de Defensivos"
+      },
+      "safra": {
+        "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT17:58:47-03:00",
+      "fazenda": {
+        "id": "cc6b4476-eb9a-4368-b7ab-ddecc7633255",
+        "descricao": "Fazenda E2E"
+      },
+      "tags": ["documentoE2E"],
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "66791418001",
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "numero": "1004",
+      "empresa": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "91535740019",
+        "inscricaoEstadual": {
+          "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+          "descricao": "IE Estadual",
+          "valor": "32165465622"
+        }
+      },
+      "ieDaEmpresa": {
         "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
         "descricao": "IE Estadual",
-        "valor": "32165465622"
-      }
-    },
-    "ieDaEmpresa": {
-      "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
-      "descricao": "IE Estadual",
-      "valor": "32165465622",
-      "label": "32165465622"
-    },
-    "tipoDocumento": 1,
-    "observacao": "Observações do Documento",
-    "conferido": false,
-    "financeiro": {
-      "total": 3000,
-      "pago": true,
-      "rateioEntreCiclos": true,
-      "formaPagamento": {
-        "id": "a40a8ed9-44f4-45ba-bebe-19386f6bee82",
-        "descricao": "Boleto"
+        "valor": "32165465622",
+        "label": "32165465622"
       },
-      "contaBancaria": {
-        "id": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980",
-        "empresaTitular": {
-          "id": "f03b1276-c276-4980-bccd-87dc29317818",
-          "descricao": "Empresa Fornecedor - CPF"
+      "tipoDocumento": 1,
+      "observacao": "Observações do Documento",
+      "conferido": false,
+      "financeiro": {
+        "total": 3000,
+        "pago": true,
+        "rateioEntreCiclos": true,
+        "formaPagamento": {
+          "id": "a40a8ed9-44f4-45ba-bebe-19386f6bee82",
+          "descricao": "Boleto"
         },
-        "tipoConta": 1,
-        "nome": "Conta Corrente E2E",
-        "contaPrincipal": true,
-        "numerarioEmTransito": false,
-        "banco": {
-          "id": "c3cff0c7-226f-20c7-8d07-b7210fe569be",
-          "codigoBacen": "1",
-          "descricao": "Banco do Brasil S.A."
+        "contaBancaria": {
+          "id": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980",
+          "empresaTitular": {
+            "id": "f03b1276-c276-4980-bccd-87dc29317818",
+            "descricao": "Empresa Fornecedor - CPF"
+          },
+          "tipoConta": 1,
+          "nome": "Conta Corrente E2E",
+          "contaPrincipal": true,
+          "numerarioEmTransito": false,
+          "banco": {
+            "id": "c3cff0c7-226f-20c7-8d07-b7210fe569be",
+            "codigoBacen": "1",
+            "descricao": "Banco do Brasil S.A."
+          },
+          "agencia": "65432",
+          "agenciaDigitoVerificador": "8",
+          "conta": "3456",
+          "contaDigitoVerificador": "7",
+          "saldoInicial": 1000000,
+          "saldoAtual": 1182989,
+          "dataInicialSaldo": "2021-01-01T03:00:00+00:00",
+          "incluirSaldoDisponivel": false,
+          "codigo": 1,
+          "openBanking": false,
+          "ativo": true,
+          "contaBancariaEmpresas": [
+            {
+              "id": "52b352a0-3a09-4aaf-9087-218723c7e7de",
+              "empresa": {
+                "id": "f03b1276-c276-4980-bccd-87dc29317818",
+                "descricao": "Empresa Fornecedor - CPF"
+              }
+            },
+            {
+              "id": "5c00c4d7-538e-4f30-b70d-430e7f67e044",
+              "empresa": {
+                "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+                "descricao": "Empresa Produtor - CPF"
+              }
+            },
+            {
+              "id": "5d52f45d-adc0-4cac-8da7-e74a9656274c",
+              "empresa": {
+                "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+                "descricao": "Empresa Fornecedor - CNPJ"
+              }
+            }
+          ]
         },
-        "agencia": "65432",
-        "agenciaDigitoVerificador": "8",
-        "conta": "3456",
-        "contaDigitoVerificador": "7",
-        "saldoInicial": 1000000,
-        "saldoAtual": 1182989,
-        "dataInicialSaldo": "2021-01-01T03:00:00+00:00",
-        "incluirSaldoDisponivel": false,
-        "codigo": 1,
-        "openBanking": false,
-        "ativo": true,
-        "contaBancariaEmpresas": [
+        "contaFornecedor": {
+          "id": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
           {
-            "id": "52b352a0-3a09-4aaf-9087-218723c7e7de",
-            "empresa": {
-              "id": "f03b1276-c276-4980-bccd-87dc29317818",
-              "descricao": "Empresa Fornecedor - CPF"
-            }
-          },
-          {
-            "id": "5c00c4d7-538e-4f30-b70d-430e7f67e044",
-            "empresa": {
-              "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
-              "descricao": "Empresa Produtor - CPF"
-            }
-          },
-          {
-            "id": "5d52f45d-adc0-4cac-8da7-e74a9656274c",
-            "empresa": {
-              "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
-              "descricao": "Empresa Fornecedor - CNPJ"
-            }
+            "vencimento": "dataSubstituicaoT17:58:47-03:00",
+            "valor": 3000
           }
-        ]
+        ],
+        "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
+        "contaId": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980"
       },
-      "contaFornecedor": {
-        "id": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980"
-      },
-      "condicaoPagamento": "Avista",
-      "quantidadeParcelas": 1,
-      "valorFixo": false,
-      "parcelas": [
-        {
-          "vencimento": "dataSubstituicaoT17:58:47-03:00",
-          "valor": 3000
-        }
-      ],
-      "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
-      "contaId": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980"
-    },
-    "dedutivel": true,
-    "manual": true
+      "dedutivel": true,
+      "manual": true
+    }
   },
 
   "detalhesDocumento": {

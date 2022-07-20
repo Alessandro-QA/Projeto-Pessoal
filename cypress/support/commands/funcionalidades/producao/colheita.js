@@ -10,12 +10,18 @@ class Colheita {
    * @param {} seedTest
    * */
   cadastrarEditar(seedTest) {
-    cy.intercept('POST', 'https://daas.dev.conexa.com.br/api/unidade-medida/v1/ConversorUnidadeMedida/ConverterUnidade').as('conversor')
-    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/**').as('detalhes')
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/cultura/v1/cultura/icone?**').as('iconeCultura')
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/ciclo-producao/v1/Ciclo/list?**').as('listCiclos')
-    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/List?**').as('listColheitas')
-    cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**').as('listUnidadeArmazenamento')
+    cy.intercept('POST', `${Cypress.env('daasUrl')}/api/unidade-medida/v1/ConversorUnidadeMedida/ConverterUnidade`)
+      .as('conversor')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/cultura/v1/cultura/icone?**`)
+      .as('iconeCultura')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/list?**`)
+      .as('listCiclos')
+    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/**')
+      .as('detalhes')
+    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/List?**')
+      .as('listColheitas')
+    cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**')
+      .as('listUnidadeArmazenamento')
 
     if (seedTest.editar) {
       const url = '/producao/colheita'
@@ -251,10 +257,14 @@ class Colheita {
 
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/cultura/v1/cultura/icone?**').as('iconeCultura')
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/ciclo-producao/v1/Ciclo/list?**').as('listCiclos')
-    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/List?**').as('listColheitas')
-    cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**').as('listUnidadeArmazenamento')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/cultura/v1/cultura/icone?**`)
+      .as('iconeCultura')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/list?**`)
+      .as('listCiclos')
+    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/List?**')
+      .as('listColheitas')
+    cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**')
+      .as('listUnidadeArmazenamento')
 
     // Selecionar fazenda
     cy.getVisible(locListagemColheita.selectFazenda).click()
@@ -294,10 +304,14 @@ class Colheita {
     // Navegar para dashboard de Colheita
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/cultura/v1/cultura/icone?**').as('iconeCultura')
-    cy.intercept('GET', 'https://daas.dev.conexa.com.br/api/ciclo-producao/v1/Ciclo/list?**').as('listCiclos')
-    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/List?**').as('listColheitas')
-    cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**').as('listUnidadeArmazenamento')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/cultura/v1/cultura/icone?**`)
+      .as('iconeCultura')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/list?**`)
+      .as('listCiclos')
+    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/List?**')
+      .as('listColheitas')
+    cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**')
+      .as('listUnidadeArmazenamento')
 
     // Selecionar fazenda
     cy.getVisible(locListagemColheita.selectFazenda).click()

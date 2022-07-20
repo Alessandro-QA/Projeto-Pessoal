@@ -1,8 +1,7 @@
 /// <reference types="cypress" />
 
-import seedTestDocumento from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/detalhes/documento.json'
+import payloadDocumentos from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/detalhes/documento.json'
 import seedTestExcluir from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/excluir/excluir.json'
-import { getDocumentoPorAmbiente } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import { excluir, validarExclusao } from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 import testDescription from './bdd-description/excluir.description.js'
 import Utils from '../../../../support/utils/utils.js'
@@ -10,7 +9,7 @@ import Authenticate from '../../../../support/commands/funcionalidades/login/log
 
 context('Funcionalidade', () => {
   describe('Movimentação Bancaria | Excluir movimentação bancaria', { tags: '@movimentacaoBancaria' }, () => {
-    var documento = getDocumentoPorAmbiente(seedTestDocumento)
+    var documento = Utils.getPayloadPorAmbiente(payloadDocumentos)
 
     before(function () {
       const credenciais = Cypress.env('login_cenarios')

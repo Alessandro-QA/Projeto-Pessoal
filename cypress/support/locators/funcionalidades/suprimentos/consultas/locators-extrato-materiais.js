@@ -4,6 +4,7 @@ const locators = {
   pesquisarMaterial: '[data-cy=select-material] input',
   listaMateriais: '[data-cy=select-material] .list-items',
   selectUnidadadeArmazenamento: '[data-cy=select-unidade-armazenamento]',
+  selectUnidadadeArmazenamentoList: '[data-cy=select-unidade-armazenamento] .list',
   cardMaterial: '[data-cy="card-extrato-material"]',
   spanStatus: '[data-cy="empty-state-status"]',
   spanQuantidadeAtual: '[data-cy=span-quantidade-atual]',

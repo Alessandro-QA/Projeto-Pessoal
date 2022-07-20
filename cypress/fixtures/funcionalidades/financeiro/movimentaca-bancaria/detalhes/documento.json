@@ -1,5 +1,5 @@
 {
-  "documentoDev": {
+  "dev": {
     "documentoPagamento": {
       "categorias": [
         {
@@ -314,7 +314,7 @@
       "manual": true
     }
   },
-  "documentoQA": {
+  "qa": {
     "documentoPagamento": {
       "categorias": [
         {
