@@ -4,7 +4,7 @@ import locConsultaExtrato from '../../../../locators/funcionalidades/suprimentos
 
 class ExtratoMateriais {
   /**
-   * Valida o dashboard de extrato de materiais
+   * Valida a listagem de extrato de materiais
    * @param {} seedTest
    * */
   validarExtratoMateriais(seedTest) {
@@ -12,7 +12,7 @@ class ExtratoMateriais {
     const locatorTituloPagina = locConsultaExtrato.titulo
     const tituloPagina = 'Extrato de Materiais'
 
-    cy.intercept('POST', 'https://daas.dev.conexa.com.br/api/material/v1/material/ListView').as('listMateriais')
+    cy.intercept('POST', `${Cypress.env('daasUrl')}/api/material/v1/material/ListView`).as('listMateriais')
 
     // Navegar para cadastro de colheita
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
@@ -26,6 +26,7 @@ class ExtratoMateriais {
 
     // // Selecionar unidade armazenamento
     cy.getVisible(locConsultaExtrato.selectUnidadadeArmazenamento).click()
+      .get(locConsultaExtrato.selectUnidadadeArmazenamentoList)
       .contains(seedTest.unidadeArmazenamento).click({ force: true })
 
     // Filtrar por origem e tipo
