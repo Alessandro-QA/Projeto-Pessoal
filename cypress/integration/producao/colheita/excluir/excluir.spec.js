@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 
-import seedTestColheita from '../../../../fixtures/cenarios-de-teste/producao/colheita/editar-colheita/cadastro-colheita.json'
+import payloadColheita from '../../../../fixtures/cenarios-de-teste/producao/colheita/editar-colheita/cadastro-colheita.json'
 import seedTestDashboard from '../../../../fixtures/cenarios-de-teste/producao/colheita/excluir-colheita/dashboard-colheita.json'
 import testDescription from './bdd-description/excluir.description.js'
-import { excluir, validarListagem, getColheitaPorAmbiente } from '../../../../support/commands/funcionalidades/producao/colheita.js'
-import { getDate, replacer, setAccessTokenToEnv, requestApi } from '../../../../support/utils/utils.js'
+import { excluir, validarListagem } from '../../../../support/commands/funcionalidades/producao/colheita.js'
+import { getDate, replacer, setAccessTokenToEnv, requestApi, getPayloadPorAmbiente } from '../../../../support/utils/utils.js'
 import { login, logout } from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 // TODO: Bug 41593: Conversão de unidade está divergente entre as bases de Dev, QA e Produção
@@ -13,7 +13,7 @@ import { login, logout } from '../../../../support/commands/funcionalidades/logi
 if ((Cypress.env('ambiente') === 'dev')) {
   context('Funcionalidade', () => {
     describe('Colheitas | Exclusão de colheita', { tags: '@colheita' }, () => {
-      var colheita = getColheitaPorAmbiente(seedTestColheita)
+      var colheita = getPayloadPorAmbiente(payloadColheita)
 
       var dataAtual = getDate()
       var bodyColheita = replacer('dataSubstituicao', dataAtual, colheita)

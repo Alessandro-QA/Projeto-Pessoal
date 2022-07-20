@@ -4,12 +4,12 @@ import seedTestAgenda from '../../../../fixtures/cenarios-de-teste/financeiro/do
 import seedTestLivroCaixa from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/lancamentos-livro-caixa.json'
 import seedTestMovimentacao from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/movimentacoes-bancarias.json'
 import seedTestResultadoSafra from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/resultado-da-safra.json'
-import { getDocumentoPorAmbiente, excluir } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
+import { excluir } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa.js'
 import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
 import ResultadoSafra from '../../../../support/commands/funcionalidades/resultados-safra/resultado-safra.js'
-import documentos from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/documentos.json'
+import payloadDocumentos from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/documentos.json'
 import seedExcluirDocumento from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/excluirDocumentos.json'
 import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
@@ -18,7 +18,7 @@ context('Cenário de Teste', () => {
   describe('Documentos | Cadastro de documento com exclusão de movimentação', { tags: '@documentos' }, () => {
 
     var dataAtual = Utils.getDate()
-    var documento = getDocumentoPorAmbiente(documentos)
+    var documento = Utils.getPayloadPorAmbiente(payloadDocumentos)
 
     var bodyDocumento2000 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento2000)
     var bodyDocumento2001 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento2001)

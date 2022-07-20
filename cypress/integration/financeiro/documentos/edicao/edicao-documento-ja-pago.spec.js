@@ -3,7 +3,7 @@
 import seedCadastro from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/edicao/documento-ja-pago/cadastro-documento-ja-pago.json'
 import seedEdicao from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/edicao/documento-ja-pago/edicao-documento-ja-pago.json'
 import seedExclusao from '../../../../fixtures/cenarios-de-teste/financeiro/documentos/edicao/documento-ja-pago/exclusao-documento-ja-pago.json'
-import { getDocumentoPorAmbiente, editar, validarDetalhes, excluir, validarExclusao } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
+import { editar, validarDetalhes, excluir, validarExclusao } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa'
 import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria'
 import ResultadoSafra from '../../../../support/commands/funcionalidades/resultados-safra/resultado-safra'
@@ -14,7 +14,7 @@ import Authenticate from '../../../../support/commands/funcionalidades/login/log
 context('Cenário de Teste', () => {
   describe('Documentos | Cadastro, Edição e Exclusão de Documento Já Pago', { tags: '@documentos' }, () => {
     var dataAtual = Utils.getDate()
-    var documento = getDocumentoPorAmbiente(seedCadastro)
+    var documento = Utils.getPayloadPorAmbiente(seedCadastro.documento)
 
     var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, documento)
 

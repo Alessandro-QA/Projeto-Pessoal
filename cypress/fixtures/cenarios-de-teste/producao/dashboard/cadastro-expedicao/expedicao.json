@@ -1,5 +1,5 @@
 {
-  "expedicaoDev": {
+  "dev": {
     "externaExterna": {
       "data": "dataSubstituicaoT09:28:51-03:00",
       "fazenda": {
@@ -464,7 +464,7 @@
       }
     }
   },
-  "expedicaoQA": {
+  "qa": {
     "externaExterna": {},
     "externaInterna": {},
     "internaExterna": {},

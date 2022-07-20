@@ -1,100 +1,202 @@
 {
-  "data": "dataSubstituicaoT17:01:41-03:00",
-  "fazenda": {
-    "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-    "descricao": "Fazenda Teste Producao"
-  },
-  "ciclo": {
-    "id": "b2147793-d5d7-4414-9aaa-c762672e15bb",
-    "descricao": "Milho - 2021/2021",
-    "cultura": {
-      "unidadeMedida": {
-        "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-        "sigla": "Saca 60"
+  "dev": {
+    "data": "dataSubstituicaoT17:01:41-03:00",
+    "fazenda": {
+      "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+      "descricao": "Fazenda Teste Producao"
+    },
+    "ciclo": {
+      "id": "b2147793-d5d7-4414-9aaa-c762672e15bb",
+      "descricao": "Milho - 2021/2021",
+      "cultura": {
+        "unidadeMedida": {
+          "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "sigla": "Saca 60"
+        },
+        "variedades": [
+          {
+            "area": 100,
+            "id": "eaaeaf9b-811e-4a88-9432-001222066f66",
+            "descricao": "C000106"
+          }
+        ],
+        "areaTotal": 100,
+        "id": "842c660c-a54c-4864-a6a3-bd3c6a6725f1",
+        "descricao": "Milho"
+      }
+    },
+    "safra": {
+      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+      "descricao": "2021/2021"
+    },
+    "motorista": {
+      "id": "00000000-0000-0000-0000-000000000000",
+      "documentoPrincipal": "0000000000000",
+      "descricao": "João do caminhão"
+    },
+    "transportadora": {
+      "id": "0e21161c-4656-4e26-85fe-7e4c5326a540",
+      "documentoPrincipal": "04158743000145",
+      "descricao": "Transportadora Teste Producao"
+    },
+    "veiculo": {
+      "id": "73aea114-e7e5-4cdf-bd71-730c4c6d4bf1",
+      "placa": "ABC1234"
+    },
+    "unidadeArmazenamentoDestinoTerceiro": {
+      "id": "ef402791-c035-46cf-96c6-a2494042b237",
+      "documentoPrincipal": "67824142000144",
+      "descricao": "Cliente Teste Produção",
+      "pais": {
+        "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+        "descricao": "Brasil"
       },
-      "variedades": [
-        {
-          "area": 100,
-          "id": "eaaeaf9b-811e-4a88-9432-001222066f66",
-          "descricao": "C000106"
-        }
-      ],
-      "areaTotal": 100,
+      "municipio": {
+        "id": "f182eeff-7b30-412a-8389-e043cdb5920a",
+        "descricao": "Goiânia",
+        "codigo": 5208707
+      },
+      "estado": {
+        "id": "c9fb9b54-9760-42e8-b0d7-2934535a505a",
+        "descricao": "Goiás",
+        "sigla": "GO"
+      }
+    },
+    "unidadeArmazenamentoOrigemProprio": {
+      "id": "a196162f-4fdf-4f94-9712-59d209a04347",
+      "descricao": "U.A. Teste Estoque"
+    },
+    "ticket": 0,
+    "pesagemInterna": {
+      "pesoBruto": 10560,
+      "taraVeiculo": 1500,
+      "desconto": 1000
+    },
+    "pesagemExterna": {
+      "numeroRomaneio": 1234,
+      "pesoBruto": 10460,
+      "taraVeiculo": 1500,
+      "desconto": 1000
+    },
+    "totalCultura": 132.93,
+    "totais": {
+      "pesoBruto": 8960,
+      "taraVeiculo": 1000,
+      "subTotal": 7960,
+      "desconto": 1000
+    },
+    "cultura": {
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "Saca 60",
       "id": "842c660c-a54c-4864-a6a3-bd3c6a6725f1",
       "descricao": "Milho"
+    },
+    "material": {
+      "tipoMaterial": "Silo",
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "sc60",
+      "id": "785b1cf3-e278-4434-91cc-95a1c0af194d",
+      "descricao": "Milho em Grãos"
     }
   },
-  "safra": {
-    "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
-    "descricao": "2021/2021"
-  },
-  "motorista": {
-    "id": "00000000-0000-0000-0000-000000000000",
-    "documentoPrincipal": "0000000000000",
-    "descricao": "João do caminhão"
-  },
-  "transportadora": {
-    "id": "0e21161c-4656-4e26-85fe-7e4c5326a540",
-    "documentoPrincipal": "04158743000145",
-    "descricao": "Transportadora Teste Producao"
-  },
-  "veiculo": {
-    "id": "73aea114-e7e5-4cdf-bd71-730c4c6d4bf1",
-    "placa": "ABC1234"
-  },
-  "unidadeArmazenamentoDestinoTerceiro": {
-    "id": "ef402791-c035-46cf-96c6-a2494042b237",
-    "documentoPrincipal": "67824142000144",
-    "descricao": "Cliente Teste Produção",
-    "pais": {
-      "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
-      "descricao": "Brasil"
+  "qa": {
+    "data": "dataSubstituicaoT14:45:43-03:00",
+    "fazenda": {
+      "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+      "descricao": "Fazenda Teste Producao"
     },
-    "municipio": {
-      "id": "f182eeff-7b30-412a-8389-e043cdb5920a",
-      "descricao": "Goiânia",
-      "codigo": 5208707
+    "ciclo": {
+      "id": "16b2fcdd-8b81-4251-b87e-4cb494970cce",
+      "descricao": "Milho - 2021/2021",
+      "cultura": {
+        "unidadeMedida": {
+          "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "sigla": "Saca 60"
+        },
+        "variedades": [
+          {
+            "area": 100,
+            "id": "313398bb-6d61-4985-a970-fbbb59a194d8",
+            "descricao": "C000106"
+          }
+        ],
+        "areaTotal": 100,
+        "id": "4f0acfc1-84bb-4a5e-8b12-ce52a0858b81",
+        "descricao": "Milho"
+      }
     },
-    "estado": {
-      "id": "c9fb9b54-9760-42e8-b0d7-2934535a505a",
-      "descricao": "Goiás",
-      "sigla": "GO"
+    "safra": {
+      "id": "45344d1b-2a08-4b20-a46b-b8d6ca904953",
+      "descricao": "2020/2020"
+    },
+    "motorista": {
+      "id": "00000000-0000-0000-0000-000000000000",
+      "documentoPrincipal": "0000000000000",
+      "descricao": "João do caminhão"
+    },
+    "transportadora": {
+      "id": "f62a58db-0e73-479d-aa15-1a6ca68fa292",
+      "documentoPrincipal": "04158743000145",
+      "descricao": "Transportadora Teste Producao"
+    },
+    "veiculo": {
+      "id": "6ff20f68-068e-4b16-820b-f29794b5bea0",
+      "placa": "ABC1234"
+    },
+    "unidadeArmazenamentoDestinoTerceiro": {
+      "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+      "documentoPrincipal": "67824142000144",
+      "descricao": "Cliente Teste Produção",
+      "pais": {
+        "id": "0698a30c-cba4-4161-95b9-2ce4ca9efbda",
+        "descricao": "Brasil"
+      },
+      "municipio": {
+        "id": "b0a2fabe-d8d4-463b-8f0f-e1cb62c23ed8",
+        "descricao": "Goiânia",
+        "codigo": 5208707
+      },
+      "estado": {
+        "id": "5b6cc773-f040-433f-87de-2b4a1b17099e",
+        "descricao": "Goiás",
+        "sigla": "GO"
+      }
+    },
+    "unidadeArmazenamentoOrigemProprio": {
+      "id": "78f14cdb-29f3-4916-a804-b3ca5df13416",
+      "descricao": "U.A. Teste Estoque"
+    },
+    "ticket": 0,
+    "pesagemInterna": {
+      "pesoBruto": 10560,
+      "taraVeiculo": 1500,
+      "desconto": 1000
+    },
+    "pesagemExterna": {
+      "numeroRomaneio": 1234,
+      "pesoBruto": 10460,
+      "taraVeiculo": 1500,
+      "desconto": 1000
+    },
+    "totalCultura": 132.67,
+    "totais": {
+      "pesoBruto": 8960,
+      "taraVeiculo": 1000,
+      "subTotal": 7960,
+      "desconto": 1000
+    },
+    "cultura": {
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "Saca 60",
+      "id": "4f0acfc1-84bb-4a5e-8b12-ce52a0858b81",
+      "descricao": "Milho"
+    },
+    "material": {
+      "tipoMaterial": "Silo",
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "sc60",
+      "id": "8256e15b-c622-4464-94b1-9e223b473de0",
+      "descricao": "Milho em Grãos"
     }
-  },
-  "unidadeArmazenamentoOrigemProprio": {
-    "id": "a196162f-4fdf-4f94-9712-59d209a04347",
-    "descricao": "U.A. Teste Estoque"
-  },
-  "ticket": 0,
-  "pesagemInterna": {
-    "pesoBruto": 10560,
-    "taraVeiculo": 1500,
-    "desconto": 1000
-  },
-  "pesagemExterna": {
-    "numeroRomaneio": 1234,
-    "pesoBruto": 10460,
-    "taraVeiculo": 1500,
-    "desconto": 1000
-  },
-  "totalCultura": 132.93,
-  "totais": {
-    "pesoBruto": 8960,
-    "taraVeiculo": 1000,
-    "subTotal": 7960,
-    "desconto": 1000
-  },
-  "cultura": {
-    "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-    "unidadeMedidaSigla": "Saca 60",
-    "id": "842c660c-a54c-4864-a6a3-bd3c6a6725f1",
-    "descricao": "Milho"
-  },
-  "material": {
-    "tipoMaterial": "Silo",
-    "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-    "unidadeMedidaSigla": "sc60",
-    "id": "785b1cf3-e278-4434-91cc-95a1c0af194d",
-    "descricao": "Milho em Grãos"
   }
 }

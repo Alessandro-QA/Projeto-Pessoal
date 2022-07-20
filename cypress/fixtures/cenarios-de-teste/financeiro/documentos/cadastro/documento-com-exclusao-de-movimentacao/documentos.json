@@ -1,5 +1,5 @@
 {
-  "documentoDev": {
+  "dev": {
     "documento2000": {
       "ciclos": [
         {
@@ -289,7 +289,7 @@
       "manual": true
     }
   },
-  "documentoQA": {
+  "qa": {
     "documento2000": {
       "ciclos": [
         {

@@ -1,5 +1,5 @@
 {
-  "colheitaDev": {
+  "dev": {
     "talhaoVariedades": [
       {
         "talhao": {
@@ -96,7 +96,7 @@
       "desconto": 1000
     }
   },
-  "colheitaQA": {
+  "qa": {
     
   }
 }

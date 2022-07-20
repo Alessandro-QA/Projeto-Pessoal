@@ -77,25 +77,6 @@ class ContratoUtils {
       })
     })
   }
-
-  /**
- * Busca contratos de acordo com o ambiente em que o teste é executado (Dev ou QA)
- * @param {*} contratos 
- */
-  getContratoPorAmbiente(contratos) {
-    var contrato = []
-
-    switch (Cypress.env('ambiente')) {
-      case 'dev': contrato = contratos.contratoDev
-        break
-      case 'qa': contrato = contratos.contratoQA
-        break
-      default:
-        throw new Error('Não foi possivel atribuir os contratos')
-    }
-
-    return contrato
-  }
 }
 
 export default new ContratoUtils()

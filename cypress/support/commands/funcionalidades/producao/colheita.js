@@ -370,25 +370,6 @@ class Colheita {
       })
     }
   }
-
-  /**
-   * Busca colheitas de acordo com o ambiente em que o teste é executado (Dev ou QA)
-   * @param {*} colheitas 
-   */
-  getColheitaPorAmbiente(colheitas) {
-    var colheita = []
-
-    switch (Cypress.env('ambiente')) {
-      case 'dev': colheita = colheitas.colheitaDev
-        break
-      case 'qa': colheita = colheitas.colheitaQA
-        break
-      default:
-        throw new Error('Não foi possivel atribuir as colheitas')
-    }
-
-    return colheita
-  }
 }
 
 export default new Colheita()

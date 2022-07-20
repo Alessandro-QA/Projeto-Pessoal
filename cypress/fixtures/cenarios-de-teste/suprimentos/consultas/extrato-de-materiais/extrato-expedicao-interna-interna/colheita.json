@@ -1,75 +1,148 @@
 {
-  "talhaoVariedades": [
-    {
-      "talhao": {
-        "id": "aef850f0-7d79-415e-b0e9-6845bea9e4e0",
-        "descricao": "Talhão Soja"
-      },
-      "ciclo": {
-        "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
-        "descricao": "Soja - 2021/2021"
-      },
-      "cultura": {
-        "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-        "unidadeMedidaSigla": "Saca 60",
-        "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
-        "descricao": "Soja"
-      },
-      "variedade": {
-        "id": "5f3e5c4f-fd7f-4718-9433-007cdd21ec8c",
-        "descricao": "Syn1060ap "
-      },
-      "percentualCarga": 100,
-      "totalHectaresVariedade": 200,
-      "totalHectaresCultura": 200,
-      "custoEstimadoCultura": 0,
-      "material": {
-        "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-        "unidadeMedidaSigla": "sc60",
-        "id": "e1a2ab6b-fea2-40bb-b786-37e87b53c04c",
-        "descricao": "Soja em Grãos",
-        "tipoMaterial": "Silo"
+  "dev": {
+    "talhaoVariedades": [
+      {
+        "talhao": {
+          "id": "aef850f0-7d79-415e-b0e9-6845bea9e4e0",
+          "descricao": "Talhão Soja"
+        },
+        "ciclo": {
+          "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+          "descricao": "Soja - 2021/2021"
+        },
+        "cultura": {
+          "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "unidadeMedidaSigla": "Saca 60",
+          "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+          "descricao": "Soja"
+        },
+        "variedade": {
+          "id": "5f3e5c4f-fd7f-4718-9433-007cdd21ec8c",
+          "descricao": "Syn1060ap "
+        },
+        "percentualCarga": 100,
+        "totalHectaresVariedade": 200,
+        "totalHectaresCultura": 200,
+        "custoEstimadoCultura": 0,
+        "material": {
+          "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "unidadeMedidaSigla": "sc60",
+          "id": "e1a2ab6b-fea2-40bb-b786-37e87b53c04c",
+          "descricao": "Soja em Grãos",
+          "tipoMaterial": "Silo"
+        }
       }
+    ],
+    "transportadora": {
+      "id": "0e21161c-4656-4e26-85fe-7e4c5326a540",
+      "documentoPrincipal": "04158743000145",
+      "descricao": "Transportadora Teste Producao"
+    },
+    "ticket": 0,
+    "data": "dataSubstituicaoT17:16:12-03:00",
+    "fazenda": {
+      "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+      "descricao": "Fazenda Teste Producao"
+    },
+    "safra": {
+      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+      "descricao": "2021/2021"
+    },
+    "motorista": {
+      "id": "33a06a7c-9f8a-4aea-9ab4-fa944ccfa5e3",
+      "documentoPrincipal": "86201988076",
+      "descricao": "Motorista Teste Producao"
+    },
+    "veiculo": {
+      "id": "73aea114-e7e5-4cdf-bd71-730c4c6d4bf1",
+      "placa": "ABC1234"
+    },
+    "unidadeArmazenamentoDestinoProprio": {
+      "id": "b6bbba96-0138-42c9-8ee6-03284a3577ba",
+      "descricao": "U.A. Silo"
+    },
+    "pesagemInterna": {
+      "pesoBruto": 10000,
+      "taraVeiculo": 0,
+      "desconto": 0
+    },
+    "totalCultura": 167,
+    "totais": {
+      "pesoBruto": 10000,
+      "taraVeiculo": 0,
+      "subTotal": 10000,
+      "desconto": 0
     }
-  ],
-  "transportadora": {
-    "id": "0e21161c-4656-4e26-85fe-7e4c5326a540",
-    "documentoPrincipal": "04158743000145",
-    "descricao": "Transportadora Teste Producao"
   },
-  "ticket": 0,
-  "data": "dataSubstituicaoT17:16:12-03:00",
-  "fazenda": {
-    "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-    "descricao": "Fazenda Teste Producao"
-  },
-  "safra": {
-    "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
-    "descricao": "2021/2021"
-  },
-  "motorista": {
-    "id": "33a06a7c-9f8a-4aea-9ab4-fa944ccfa5e3",
-    "documentoPrincipal": "86201988076",
-    "descricao": "Motorista Teste Producao"
-  },
-  "veiculo": {
-    "id": "73aea114-e7e5-4cdf-bd71-730c4c6d4bf1",
-    "placa": "ABC1234"
-  },
-  "unidadeArmazenamentoDestinoProprio": {
-    "id": "b6bbba96-0138-42c9-8ee6-03284a3577ba",
-    "descricao": "U.A. Silo"
-  },
-  "pesagemInterna": {
-    "pesoBruto": 10000,
-    "taraVeiculo": 0,
-    "desconto": 0
-  },
-  "totalCultura": 167,
-  "totais": {
-    "pesoBruto": 10000,
-    "taraVeiculo": 0,
-    "subTotal": 10000,
-    "desconto": 0
+  "qa": {
+    "talhaoVariedades": [
+      {
+        "talhao": {
+          "id": "b2c42afa-e6c3-4399-86d9-05f087232679",
+          "descricao": "Talhão Soja"
+        },
+        "ciclo": {
+          "id": "4781c56a-86e5-4d53-b1ce-364f03751c1b",
+          "descricao": "Soja - 2021/2021"
+        },
+        "cultura": {
+          "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "unidadeMedidaSigla": "Saca 60",
+          "id": "a838c1f8-ed23-4f42-8b59-6dc7770954c0",
+          "descricao": "Soja"
+        },
+        "variedade": {
+          "id": "d8e10120-c32a-473e-aff7-416d774b2be6",
+          "descricao": "Syn1060ap "
+        },
+        "percentualCarga": 100,
+        "totalHectaresVariedade": 200,
+        "totalHectaresCultura": 200,
+        "custoEstimadoCultura": 0,
+        "material": {
+          "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "unidadeMedidaSigla": "sc60",
+          "id": "1b064da5-9c64-4577-8525-a72e39369c61",
+          "descricao": "Soja em Grãos",
+          "tipoMaterial": "Silo"
+        }
+      }
+    ],
+    "transportadora": {
+      "id": "f62a58db-0e73-479d-aa15-1a6ca68fa292",
+      "documentoPrincipal": "04158743000145",
+      "descricao": "Transportadora Teste Producao"
+    },
+    "ticket": 0,
+    "data": "dataSubstituicaoT17:11:47-03:00",
+    "fazenda": {
+      "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+      "descricao": "Fazenda Teste Producao"
+    },
+    "safra": {
+      "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+      "descricao": "2021/2021"
+    },
+    "motorista": {
+      "id": "eed1013d-c149-4b39-b613-30270e9af91c",
+      "documentoPrincipal": "86201988076",
+      "descricao": "Motorista Teste Producao"
+    },
+    "veiculo": {
+      "id": "6ff20f68-068e-4b16-820b-f29794b5bea0",
+      "placa": "ABC1234"
+    },
+    "unidadeArmazenamentoDestinoProprio": {
+      "id": "f41b8f67-c06b-4e53-a519-5124f59f1ecc",
+      "descricao": "U.A. Silo"
+    },
+    "pesagemInterna": { "pesoBruto": 10000, "taraVeiculo": 0, "desconto": 0 },
+    "totalCultura": 166.67,
+    "totais": {
+      "pesoBruto": 10000,
+      "taraVeiculo": 0,
+      "subTotal": 10000,
+      "desconto": 0
+    }
   }
 }
