@@ -4,6 +4,8 @@ import seedTestDashboardColheita from '../../../../fixtures/cenarios-de-teste/pr
 import seedTestCadastro from '../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-excedente.js/cadastro-colheita.json'
 import seedTestDashboardProducao from '../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-excedente.js/dashboard-producao.json'
 import payloadContrato from '../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-excedente.js/contrato.json'
+// TODO: aguardando resolução do bug https://dev.azure.com/conexalabs/ProjetoX/_workitems/edit/36869
+// import seedTestDashboardContrato from '../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-excedente.js/dashboard-contrato.json'
 import testDescription from './bdd-description/cadastro-colheita.description.js'
 import { cadastrarEditar, validarListagem } from '../../../../support/commands/funcionalidades/producao/colheita.js'
 import { validarDashboard } from '../../../../support/commands/funcionalidades/producao/dashboardProducao.js'

@@ -3,6 +3,8 @@
 import seedTestDashboardColheita from '../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-inferior/dashboard-colheita.json'
 import seedTestCadastro from '../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-inferior/cadastro-colheita.json'
 import seedTestDashboardProducao from '../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-inferior/dashboard-producao.json'
+// TODO: aguardando resolução do bug https://dev.azure.com/conexalabs/ProjetoX/_workitems/edit/36869
+// import seedTestDashboardContrato from '../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-excedente.js/dashboard-contrato.json'
 import payloadContrato from '../../../../fixtures/cenarios-de-teste/producao/colheita/externa-com-quantidade-inferior/contratos.json'
 import testDescription from './bdd-description/cadastro-colheita.description.js'
 import { cadastrarEditar, validarListagem } from '../../../../support/commands/funcionalidades/producao/colheita.js'
@@ -62,7 +64,7 @@ if ((Cypress.env('ambiente') === 'dev')) {
       // it('Validar dashboard Contrato', function () {
       //   cy.allure().severity('normal').startStep('test content')
 
-      //   validarDashboard(seedTestDashboarContrato)
+      //   validarDashboard(seedTestDashboardContrato)
       // })
     })
   })
