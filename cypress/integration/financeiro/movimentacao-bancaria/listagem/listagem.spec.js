@@ -1,19 +1,18 @@
 /// <reference types="cypress" />
 
-import seedTestDocumento from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/listagem/documentos.json'
+import payloadDocumentos from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/listagem/documentos.json'
 import seedTestListagemMovimentacao from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/listagem/validar-listagem.json'
 import seedTestAgenda from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/listagem/pagar-pela-agenda.json'
 import { pagarPelaAgenda, pagarReceberTitulo } from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
 import { validarListagem } from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
-import  { getDocumentoPorAmbiente } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import testDescritpion from './bdd-description/listagem.description.js'
 import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 context('Funcionalidade', () => {
   describe('Movimentação Bancaria | Listagem da movimentação bancaria', { tags: '@movimentacaoBancaria' }, () => {
-    var documento = getDocumentoPorAmbiente(seedTestDocumento)
     var dataAtual = Utils.getDate()
+    var documento = Utils.getPayloadPorAmbiente(payloadDocumentos)
     var bodyDocumento357753 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento357753)
     var bodyDocumento987456 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento987456)
     var bodyDocumento159753 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento159753)
@@ -45,21 +44,21 @@ context('Funcionalidade', () => {
     context('Validar filtros da listagens de movimentações', () => {
       it('Filtrar por Empresa/Pessoa', function () {
         cy.allure().severity('normal').startStep('test content')
-        .descriptionHtml(testDescritpion.filtroEmpresa)
+          .descriptionHtml(testDescritpion.filtroEmpresa)
 
         validarListagem(seedTestListagemMovimentacao.movimentacaoEmpresa)
       })
 
       it('Filtrar por Conta', function () {
         cy.allure().severity('normal').startStep('test content')
-        .descriptionHtml(testDescritpion.filtroConta)
+          .descriptionHtml(testDescritpion.filtroConta)
 
         validarListagem(seedTestListagemMovimentacao.movimentacaoContaBancaria)
       })
 
       it('Filtrar por Data', function () {
         cy.allure().severity('normal').startStep('test content')
-        .descriptionHtml(testDescritpion.filtroData)
+          .descriptionHtml(testDescritpion.filtroData)
 
         validarListagem(seedTestListagemMovimentacao.movimentacaoData)
       })

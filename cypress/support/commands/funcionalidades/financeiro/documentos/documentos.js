@@ -958,25 +958,6 @@ class Documentos {
     cy.getVisible(locDocumentos.dashboard.mensagemNenhumDocumento)
       .contains('Você ainda não possui nenhum documento cadastrado.')
   }
-
-  /**
-   * Busca documentos de acordo com o ambiente em que o teste é executado (Dev ou QA)
-   * @param {*} documentos 
-   */
-  getDocumentoPorAmbiente(documentos) {
-    var documento = []
-
-    switch (Cypress.env('ambiente')) {
-      case 'dev': documento = documentos.documentoDev
-        break
-      case 'qa': documento = documentos.documentoQA
-        break
-      default:
-        throw new Error('Não foi possivel atribuir os documentos')
-    }
-
-    return documento
-  }
 }
 
 export default new Documentos()

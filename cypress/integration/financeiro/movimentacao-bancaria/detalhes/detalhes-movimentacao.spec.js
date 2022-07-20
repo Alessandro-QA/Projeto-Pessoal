@@ -1,16 +1,15 @@
 /// <reference types="cypress" />
 
-import seedTestDocumento from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/detalhes/documento.json'
+import payloadDocumentos from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/detalhes/documento.json'
 import seedTestDetalhes from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/detalhes/detalhes-movimentacao.json'
 import testDescription from './bdd-description/detalhes-movimentacao.description.js'
-import { getDocumentoPorAmbiente } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import { detalhes } from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 context('Funcionalidade', () => {
   describe('Movimentação Bancaria | Detalhes da movimentação bancaria', { tags: '@movimentacaoBancaria' }, () => {
-    var documento = getDocumentoPorAmbiente(seedTestDocumento)
+    var documento = Utils.getPayloadPorAmbiente(payloadDocumentos)
 
     before(function () {
       const credenciais = Cypress.env('login_cenarios')
@@ -22,7 +21,7 @@ context('Funcionalidade', () => {
       Authenticate.logout()
     })
 
-    context('Cadastro do documento ja pago', () =>{
+    context('Cadastro do documento ja pago', () => {
       it('Via API', function () {
         Utils.requestApi('POST', '/api/financeiro/v1/Documento', documento.documentoPagamento, 'login_cenarios')
         Utils.requestApi('POST', '/api/financeiro/v1/Documento', documento.documentoRecebimento, 'login_cenarios')
@@ -40,7 +39,7 @@ context('Funcionalidade', () => {
       it('Selecionar movimentacao do tipo recebimento e validar detalhes', function () {
         cy.allure().severity('normal').startStep('test contet')
           .descriptionHtml(testDescription.detalhes)
-       
+
         detalhes(seedTestDetalhes.detalhesRecebimento)
       })
     })

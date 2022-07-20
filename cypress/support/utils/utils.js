@@ -100,6 +100,25 @@ class Utils {
     const downloadsFolder = Cypress.config('downloadsFolder')
     cy.task('deleteDownloadsFolder', downloadsFolder)
   }
+
+  /**
+ * Busca o payload/body de acordo com o ambiente em que o teste é executado (Dev ou QA)
+ * @param {*} payload 
+ */
+  getPayloadPorAmbiente(payload) {
+    var payloadReturn = []
+
+    switch (Cypress.env('ambiente')) {
+      case 'dev': payloadReturn = payload.dev
+        break
+      case 'qa': payloadReturn = payload.qa
+        break
+      default:
+        throw new Error('Não foi possivel encontrar o payload, verifique o arquivo de seed')
+    }
+
+    return payloadReturn
+  }
 }
 
 export default new Utils()

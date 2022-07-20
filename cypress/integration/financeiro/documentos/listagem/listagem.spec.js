@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-import seedDocumentos from '../../../../fixtures/funcionalidades/financeiro/documentos/listagem/documentos.json'
+import payloadDocumentos from '../../../../fixtures/funcionalidades/financeiro/documentos/listagem/documentos.json'
 import seedTestDocumento from '../../../../fixtures/funcionalidades/financeiro/documentos/listagem/listagem.json'
-import { listagem, conferir, getDocumentoPorAmbiente } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
+import { listagem, conferir } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
 import Utils from '../../../../support/utils/utils.js'
 import testDescription from './bdd-description/listagem.description'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
@@ -10,7 +10,7 @@ import Authenticate from '../../../../support/commands/funcionalidades/login/log
 context('Funcionalidade', () => {
   describe('FUNCIONALIDADE > Documentos | Listagem Documento - ', { tags: '@documentos' }, () => {
     var dataAtual = Utils.getDate()
-    var documento = getDocumentoPorAmbiente(seedDocumentos)
+    var documento = Utils.getPayloadPorAmbiente(payloadDocumentos)
 
     var bodyDocumento789456 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento789456)
     var bodyDocumento987456 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento987456)

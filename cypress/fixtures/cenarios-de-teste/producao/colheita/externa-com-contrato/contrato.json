@@ -1,5 +1,5 @@
 {
-  "contratoDev": {
+  "dev": {
     "descricao": "1",
     "dataContrato": "dataSubstituicaoT00:00:00-03:00",
     "dataValidade": "2026-03-23T23:59:59-03:00",
@@ -119,7 +119,7 @@
     },
     "anexos": []
   },
-  "contratoQA": {
+  "qa": {
     "descricao": "1",
     "dataContrato": "dataSubstituicaoT00:00:00-03:00",
     "dataValidade": "2026-07-18T23:59:59-03:00",

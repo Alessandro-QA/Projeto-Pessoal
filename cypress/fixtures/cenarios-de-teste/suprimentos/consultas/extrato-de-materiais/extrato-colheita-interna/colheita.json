@@ -1,75 +1,152 @@
 {
-  "talhaoVariedades": [
+  "dev": {
+    "talhaoVariedades": [
       {
-          "talhao": {
-              "id": "38297f8d-4398-4225-aa7f-36b8180b78dc",
-              "descricao": "Talhão Milho"
-          },
-          "ciclo": {
-              "id": "b2147793-d5d7-4414-9aaa-c762672e15bb",
-              "descricao": "Milho - 2021/2021"
-          },
-          "cultura": {
-              "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-              "unidadeMedidaSigla": "Saca 60",
-              "id": "842c660c-a54c-4864-a6a3-bd3c6a6725f1",
-              "descricao": "Milho"
-          },
-          "variedade": {
-              "id": "eaaeaf9b-811e-4a88-9432-001222066f66",
-              "descricao": "C000106"
-          },
-          "percentualCarga": 100,
-          "totalHectaresVariedade": 100,
-          "totalHectaresCultura": 100,
-          "custoEstimadoCultura": 0,
-          "material": {
-              "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-              "unidadeMedidaSigla": "sc60",
-              "id": "785b1cf3-e278-4434-91cc-95a1c0af194d",
-              "descricao": "Milho em Grãos",
-              "tipoMaterial": "Silo"
-          }
+        "talhao": {
+          "id": "38297f8d-4398-4225-aa7f-36b8180b78dc",
+          "descricao": "Talhão Milho"
+        },
+        "ciclo": {
+          "id": "b2147793-d5d7-4414-9aaa-c762672e15bb",
+          "descricao": "Milho - 2021/2021"
+        },
+        "cultura": {
+          "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "unidadeMedidaSigla": "Saca 60",
+          "id": "842c660c-a54c-4864-a6a3-bd3c6a6725f1",
+          "descricao": "Milho"
+        },
+        "variedade": {
+          "id": "eaaeaf9b-811e-4a88-9432-001222066f66",
+          "descricao": "C000106"
+        },
+        "percentualCarga": 100,
+        "totalHectaresVariedade": 100,
+        "totalHectaresCultura": 100,
+        "custoEstimadoCultura": 0,
+        "material": {
+          "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "unidadeMedidaSigla": "sc60",
+          "id": "785b1cf3-e278-4434-91cc-95a1c0af194d",
+          "descricao": "Milho em Grãos",
+          "tipoMaterial": "Silo"
+        }
       }
-  ],
-  "transportadora": {
+    ],
+    "transportadora": {
       "id": "0e21161c-4656-4e26-85fe-7e4c5326a540",
       "documentoPrincipal": "04158743000145",
       "descricao": "Transportadora Teste Producao"
-  },
-  "ticket": 0,
-  "data": "dataSubstituicaoT17:18:50-03:00",
-  "fazenda": {
+    },
+    "ticket": 0,
+    "data": "dataSubstituicaoT17:18:50-03:00",
+    "fazenda": {
       "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
       "descricao": "Fazenda Teste Producao"
-  },
-  "safra": {
+    },
+    "safra": {
       "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
       "descricao": "2021/2021"
-  },
-  "motorista": {
+    },
+    "motorista": {
       "id": "33a06a7c-9f8a-4aea-9ab4-fa944ccfa5e3",
       "documentoPrincipal": "86201988076",
       "descricao": "Motorista Teste Producao"
-  },
-  "veiculo": {
+    },
+    "veiculo": {
       "id": "73aea114-e7e5-4cdf-bd71-730c4c6d4bf1",
       "placa": "ABC1234"
-  },
-  "unidadeArmazenamentoDestinoProprio": {
+    },
+    "unidadeArmazenamentoDestinoProprio": {
       "id": "a196162f-4fdf-4f94-9712-59d209a04347",
       "descricao": "U.A. Teste Estoque"
-  },
-  "pesagemInterna": {
+    },
+    "pesagemInterna": {
       "pesoBruto": 10000,
       "taraVeiculo": 1000,
       "desconto": 0
-  },
-  "totalCultura": 150.3,
-  "totais": {
+    },
+    "totalCultura": 150.3,
+    "totais": {
       "pesoBruto": 9000,
       "taraVeiculo": 0,
       "subTotal": 9000,
       "desconto": 0
+    }
+  },
+  "qa": {
+    "talhaoVariedades": [
+      {
+        "talhao": {
+          "id": "c3d8d726-242f-46dc-8aa4-dce5a11d9494",
+          "descricao": "Talhão Milho"
+        },
+        "ciclo": {
+          "id": "16b2fcdd-8b81-4251-b87e-4cb494970cce",
+          "descricao": "Milho - 2021/2021"
+        },
+        "cultura": {
+          "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "unidadeMedidaSigla": "Saca 60",
+          "id": "4f0acfc1-84bb-4a5e-8b12-ce52a0858b81",
+          "descricao": "Milho"
+        },
+        "variedade": {
+          "id": "313398bb-6d61-4985-a970-fbbb59a194d8",
+          "descricao": "C000106"
+        },
+        "percentualCarga": 100,
+        "totalHectaresVariedade": 100,
+        "totalHectaresCultura": 100,
+        "custoEstimadoCultura": 0,
+        "material": {
+          "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "unidadeMedidaSigla": "sc60",
+          "id": "8256e15b-c622-4464-94b1-9e223b473de0",
+          "descricao": "Milho em Grãos",
+          "tipoMaterial": "Silo"
+        }
+      }
+    ],
+    "transportadora": {
+      "id": "f62a58db-0e73-479d-aa15-1a6ca68fa292",
+      "documentoPrincipal": "04158743000145",
+      "descricao": "Transportadora Teste Producao"
+    },
+    "ticket": 0,
+    "data": "dataSubstituicaoT10:57:34-03:00",
+    "fazenda": {
+      "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+      "descricao": "Fazenda Teste Producao"
+    },
+    "safra": {
+      "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+      "descricao": "2021/2021"
+    },
+    "motorista": {
+      "id": "eed1013d-c149-4b39-b613-30270e9af91c",
+      "documentoPrincipal": "86201988076",
+      "descricao": "Motorista Teste Producao"
+    },
+    "veiculo": {
+      "id": "6ff20f68-068e-4b16-820b-f29794b5bea0",
+      "placa": "ABC1234"
+    },
+    "unidadeArmazenamentoDestinoProprio": {
+      "id": "78f14cdb-29f3-4916-a804-b3ca5df13416",
+      "descricao": "U.A. Teste Estoque"
+    },
+    "pesagemInterna": {
+      "pesoBruto": 10000,
+      "taraVeiculo": 1000,
+      "desconto": 0
+    },
+    "totalCultura": 150,
+    "totais": {
+      "pesoBruto": 9000,
+      "taraVeiculo": 0,
+      "subTotal": 9000,
+      "desconto": 0
+    }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "documentoDev": {
+  "dev": {
     "documento789456": {
       "categorias": [
         {
@@ -313,7 +313,7 @@
       "manual": true
     }
   },
-  "documentoQA": {
+  "qa": {
     "documento789456": {
       "categorias": [
         {

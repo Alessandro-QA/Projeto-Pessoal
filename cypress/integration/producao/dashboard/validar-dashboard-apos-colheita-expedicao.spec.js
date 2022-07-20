@@ -2,16 +2,13 @@
 
 // https://dev.azure.com/conexalabs/ProjetoX/_wiki/wikis/ProjetoX.wiki/3086/Dashboard
 
-import seedTestContrato from '../../../fixtures/cenarios-de-teste/producao/dashboard/cadastro-contrato/contrato.json'
-import seedTestColheita from '../../../fixtures/cenarios-de-teste/producao/dashboard/cadastro-colheita/colheita.json'
-import seedTestExpedicao from '../../../fixtures/cenarios-de-teste/producao/dashboard/cadastro-expedicao/expedicao.json'
+import payloadContrato from '../../../fixtures/cenarios-de-teste/producao/dashboard/cadastro-contrato/contrato.json'
+import payloadColheita from '../../../fixtures/cenarios-de-teste/producao/dashboard/cadastro-colheita/colheita.json'
+import payloadExpedicao from '../../../fixtures/cenarios-de-teste/producao/dashboard/cadastro-expedicao/expedicao.json'
 import seedTestDashboard from '../../../fixtures/cenarios-de-teste/producao/dashboard/validar-dashboard/dashboard-producao.json'
 import seedTestDashboardAposExpedicao from '../../../fixtures/cenarios-de-teste/producao/dashboard/validar-dashboard/dashboard-apos-expedicao.json'
 import Producao from '../../../support/commands/funcionalidades/producao/dashboardProducao.js'
-import { getExpedicaoPorAmbiente } from '../../../support/commands/funcionalidades/producao/expedicao.js'
-import { getContratoPorAmbiente } from '../../../support/commands/funcionalidades/producao/contratos.js'
-import { getColheitaPorAmbiente } from '../../../support/commands/funcionalidades/producao/colheita.js'
-import { getDate, replacer, setAccessTokenToEnv, requestApi } from '../../../support/utils/utils.js'
+import { getDate, replacer, setAccessTokenToEnv, requestApi, getPayloadPorAmbiente } from '../../../support/utils/utils.js'
 import { login, logout } from '../../../support/commands/funcionalidades/login/login-logout.js'
 
 // TODO: Bug 41593: Conversão de unidade está divergente entre as bases de Dev, QA e Produção
@@ -20,18 +17,16 @@ import { login, logout } from '../../../support/commands/funcionalidades/login/l
 if ((Cypress.env('ambiente') === 'dev')) {
   context('Funcionalidade', () => {
     describe('Producao | Dashboard', { tags: '@colheita' }, () => {
-      var contrato = getContratoPorAmbiente(seedTestContrato)
-      var colheita = getColheitaPorAmbiente(seedTestColheita)
-      var expedicao = getExpedicaoPorAmbiente(seedTestExpedicao)
-      
+      var contrato = getPayloadPorAmbiente(payloadContrato)
+      var colheita = getPayloadPorAmbiente(payloadColheita)
+      var expedicao = getPayloadPorAmbiente(payloadExpedicao)
+
       var dataAtual = getDate()
 
       var bodyContrato1 = replacer('dataSubstituicao', dataAtual, contrato.contrato1)
       var bodyContrato2 = replacer('dataSubstituicao', dataAtual, contrato.contrato2)
       var bodyContrato3 = replacer('dataSubstituicao', dataAtual, contrato.contrato3)
-
       var bodyColheita = replacer('dataSubstituicao', dataAtual, colheita)
-
       var bodyExpedicaoInternaInterna = replacer('dataSubstituicao', dataAtual, expedicao.internaInterna)
       var bodyExpedicaoInternaExterna = replacer('dataSubstituicao', dataAtual, expedicao.internaExterna)
       var bodyExpedicaoExternaInterna = replacer('dataSubstituicao', dataAtual, expedicao.externaInterna)
