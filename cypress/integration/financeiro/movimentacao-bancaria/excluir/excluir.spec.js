@@ -47,10 +47,10 @@ context('Funcionalidade', () => {
           .descriptionHtml(testDescription.excluir)
 
         excluir(seedTestExcluir.excluirRecebimento)
+      })
 
-        it('Validar exclusão de movimentação', function () {
-          validarExclusao(seedTestExcluir.excluirRecebimento)
-        })
+      it('Validar exclusão de movimentação', function () {
+        validarExclusao(seedTestExcluir.excluirRecebimento)
       })
     })
   })
