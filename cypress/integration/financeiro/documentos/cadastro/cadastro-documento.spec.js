@@ -31,6 +31,7 @@ context('Funcionalidade', () => {
       it('Validar detalhes do documento', function () {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.testes1)
+
         Documentos.validarDetalhes(seedTestDocumento1)
       })
     })
@@ -39,11 +40,13 @@ context('Funcionalidade', () => {
       it('Cadastrar documento', function () {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.testes2)
+
         Documentos.cadastrar(seedTestDocumento2.documento)
       })
       it('Validar detalhes do documento', function () {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.testes1)
+
         Documentos.validarDetalhes(seedTestDocumento2.detalhes)
       })
     })
@@ -58,6 +61,7 @@ context('Funcionalidade', () => {
       it('Validar detalhes do documento', function () {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.testes3)
+
         Documentos.validarDetalhes(seedTestDocumento3.detalhes)
       })
     })
@@ -106,6 +110,7 @@ context('Funcionalidade', () => {
       it('Validar detalhes do documento', function () {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.testes3)
+          
         Documentos.validarDetalhes(seedTestDocumento6.detalhes)
       })
     })
