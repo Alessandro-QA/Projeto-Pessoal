@@ -9,6 +9,8 @@ import Authenticate from '../../../../support/commands/funcionalidades/login/log
 
 context('Funcionalidade', () => {
   describe('NFe | Download de XML', { tags: '@nfe' }, () => {
+    var nfe = Utils.getPayloadPorAmbiente(seedTestNfe)
+
     before(function () {
       const credenciais = Cypress.env('login_nfe')
       Authenticate.login(credenciais)
@@ -27,63 +29,80 @@ context('Funcionalidade', () => {
     it('NFe Autorizada', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Nfe.downloadXml(seedTestNfe.autorizada)
+      Nfe.downloadXml(nfe.autorizada)
+    })
+
+    it('NFe com Uso Denegado', function () {
+      cy.allure().severity('critical').startStep('test content')
+
+      Nfe.downloadXml(nfe.usoDenegado)
     })
 
     it('NFe Cancelada', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Nfe.downloadXml(seedTestNfe.cancelada)
+      Nfe.downloadXml(nfe.cancelada)
+    })
+
+    it('NFe Em Contingência', function () {
+      cy.allure().severity('critical').startStep('test content')
+
+      Nfe.downloadXml(nfe.contingencia)
     })
 
     it('NFe Pendente', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Nfe.downloadXml(seedTestNfe.pendente)
+      Nfe.downloadXml(nfe.pendente)
     })
 
     it('NFe Rejeitada', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Nfe.downloadXml(seedTestNfe.rejeitada)
+      Nfe.downloadXml(nfe.rejeitada)
+    })
+
+    it('NFe Com Lote Processando', function () {
+      cy.allure().severity('critical').startStep('test content')
+
+      Nfe.downloadXml(nfe.processando)
     })
 
     it('NFe com Lote Recebido', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Nfe.downloadXml(seedTestNfe.loteRecebido)
+      Nfe.downloadXml(nfe.loteRecebido)
     })
 
     it('NFe com Lote Processado', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Nfe.downloadXml(seedTestNfe.loteProcessado)
+      Nfe.downloadXml(nfe.loteProcessado)
     })
 
     it('NFe com Lote em Processamento', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Nfe.downloadXml(seedTestNfe.loteEmProcessamento)
+      Nfe.downloadXml(nfe.loteEmProcessamento)
     })
 
     it('NFe Rascunho', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      Nfe.downloadXml(seedTestNfe.rascunho)
+      Nfe.downloadXml(nfe.rascunho)
     })
-
-    /** Lista de Status da NFe
-     "Autorizada" = 1
-     "Uso denegado" = 2
-     "Cancelada" = 3
-     "Contingência" = 4
-     "Pendente" = 5
-     "Rejeitada" = 6
-     "Processando" = 7
-     "Lote Recebido" = 8
-     "Lote Processado" = 9
-     "Lote Em Processamento" = 10
-     "Rascunho" = 11
-   */
   })
 })
+/** Lista de Status da NFe
+ "Autorizada" = 1
+ "Uso denegado" = 2
+ "Cancelada" = 3
+ "Contingência" = 4
+ "Pendente" = 5
+ "Rejeitada" = 6
+ "Processando" = 7
+ "Lote Recebido" = 8
+ "Lote Processado" = 9
+ "Lote Em Processamento" = 10
+ "Rascunho" = 11
+*/

@@ -1,127 +1,264 @@
 {
-  "isenta": {
-    "data": "dataSubstituicaoT12:44:03.882Z",
-    "crc": {},
-    "tipo": "PessoaFisica",
-    "tiposClassificacao": ["Fornecedor", "Cliente"],
-    "enderecos": [
-      {
-        "id": "c91e6a02-2622-4722-ba8a-80fcc115e63c",
-        "descricao": "AGROPECUARIA MARIAH JULIA",
-        "codigoPostal": "78850-000",
-        "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
-        "bairro": "ZONA RURAL",
-        "numero": "00",
-        "pais": {
-          "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
-          "descricao": "Brasil"
-        },
-        "estado": {
-          "id": "ab0ca768-c9e4-414d-abed-21f478071024",
-          "descricao": "Mato Grosso",
-          "sigla": "MT"
-        },
-        "municipio": {
-          "id": "49eb532a-a72e-4656-9cc8-1ee930bf0e5e",
-          "descricao": "Primavera do Leste",
-          "codigo": 5107040
-        },
-        "inscricaoEstadual": {
-          "valor": "ISENTO",
-          "id": "ae431bbf-921a-4313-9267-e6cd5c41d365"
-        },
-        "isento": true,
-        "deleted": false,
-        "key": "c91e6a02-2622-4722-ba8a-80fcc115e63c"
-      }
-    ],
-    "id": "1d2e36a1-f345-42fd-9a01-cf3feb4ddff3",
-    "ativo": true,
-    "nome": "GIOVANI DADALT CRESPANI",
-    "documentoPrincipal": "611.549.970-49",
-    "dataNascimento": "1990-01-03T23:59:59-02:00",
-    "telefone": "(66) 99999-6666",
-    "certidoesNegativasDebito": [],
-    "codigoPostal": "78850-000",
-    "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
-    "bairro": "Zona Rural",
-    "pais": {
-      "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
-      "descricao": "Brasil"
+  "dev": {
+    "isenta": {
+      "data": "dataSubstituicaoT12:44:03.882Z",
+      "crc": {},
+      "tipo": "PessoaFisica",
+      "tiposClassificacao": ["Fornecedor", "Cliente"],
+      "enderecos": [
+        {
+          "id": "c91e6a02-2622-4722-ba8a-80fcc115e63c",
+          "descricao": "AGROPECUARIA MARIAH JULIA",
+          "codigoPostal": "78850-000",
+          "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
+          "bairro": "ZONA RURAL",
+          "numero": "00",
+          "pais": {
+            "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+            "descricao": "Brasil"
+          },
+          "estado": {
+            "id": "ab0ca768-c9e4-414d-abed-21f478071024",
+            "descricao": "Mato Grosso",
+            "sigla": "MT"
+          },
+          "municipio": {
+            "id": "49eb532a-a72e-4656-9cc8-1ee930bf0e5e",
+            "descricao": "Primavera do Leste",
+            "codigo": 5107040
+          },
+          "inscricaoEstadual": {
+            "valor": "ISENTO",
+            "id": "ae431bbf-921a-4313-9267-e6cd5c41d365"
+          },
+          "isento": true,
+          "deleted": false,
+          "key": "c91e6a02-2622-4722-ba8a-80fcc115e63c"
+        }
+      ],
+      "id": "1d2e36a1-f345-42fd-9a01-cf3feb4ddff3",
+      "ativo": true,
+      "nome": "GIOVANI DADALT CRESPANI",
+      "documentoPrincipal": "611.549.970-49",
+      "dataNascimento": "1990-01-03T23:59:59-02:00",
+      "telefone": "(66) 99999-6666",
+      "certidoesNegativasDebito": [],
+      "codigoPostal": "78850-000",
+      "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
+      "bairro": "Zona Rural",
+      "pais": {
+        "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+        "descricao": "Brasil"
+      },
+      "estado": {
+        "id": "ab0ca768-c9e4-414d-abed-21f478071024",
+        "descricao": "Mato Grosso",
+        "sigla": "MT"
+      },
+      "municipio": {
+        "id": "49eb532a-a72e-4656-9cc8-1ee930bf0e5e",
+        "descricao": "Primavera do Leste",
+        "codigo": 5107040
+      },
+      "isento": true
     },
-    "estado": {
-      "id": "ab0ca768-c9e4-414d-abed-21f478071024",
-      "descricao": "Mato Grosso",
-      "sigla": "MT"
-    },
-    "municipio": {
-      "id": "49eb532a-a72e-4656-9cc8-1ee930bf0e5e",
-      "descricao": "Primavera do Leste",
-      "codigo": 5107040
-    },
-    "isento": true
-  },
 
-  "naoIsenta": {
-    "data": "dataSubstituicaoT12:45:49.276Z",
-    "crc": {},
-    "tipo": "PessoaFisica",
-    "tiposClassificacao": ["Fornecedor", "Cliente"],
-    "enderecos": [
-      {
-        "id": "c91e6a02-2622-4722-ba8a-80fcc115e63c",
-        "descricao": "AGROPECUARIA MARIAH JULIA",
-        "codigoPostal": "78850-000",
-        "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
-        "bairro": "ZONA RURAL",
-        "numero": "00",
-        "pais": {
-          "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
-          "descricao": "Brasil"
-        },
-        "estado": {
-          "id": "ab0ca768-c9e4-414d-abed-21f478071024",
-          "descricao": "Mato Grosso",
-          "sigla": "MT"
-        },
-        "municipio": {
-          "id": "49eb532a-a72e-4656-9cc8-1ee930bf0e5e",
-          "descricao": "Primavera do Leste",
-          "codigo": 5107040
-        },
-        "inscricaoEstadual": {
-          "id": "ae431bbf-921a-4313-9267-e6cd5c41d365",
-          "valor": "138226032"
-        },
-        "isento": false,
-        "deleted": false,
-        "key": "c91e6a02-2622-4722-ba8a-80fcc115e63c"
-      }
-    ],
-    "id": "1d2e36a1-f345-42fd-9a01-cf3feb4ddff3",
-    "ativo": true,
-    "nome": "GIOVANI DADALT CRESPANI",
-    "documentoPrincipal": "611.549.970-49",
-    "dataNascimento": "1990-01-03T23:59:59-02:00",
-    "telefone": "(66) 99999-6666",
-    "certidoesNegativasDebito": [],
-    "codigoPostal": "78850-000",
-    "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
-    "bairro": "Zona Rural",
-    "pais": {
-      "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
-      "descricao": "Brasil"
+    "naoIsenta": {
+      "data": "dataSubstituicaoT12:45:49.276Z",
+      "crc": {},
+      "tipo": "PessoaFisica",
+      "tiposClassificacao": ["Fornecedor", "Cliente"],
+      "enderecos": [
+        {
+          "id": "c91e6a02-2622-4722-ba8a-80fcc115e63c",
+          "descricao": "AGROPECUARIA MARIAH JULIA",
+          "codigoPostal": "78850-000",
+          "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
+          "bairro": "ZONA RURAL",
+          "numero": "00",
+          "pais": {
+            "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+            "descricao": "Brasil"
+          },
+          "estado": {
+            "id": "ab0ca768-c9e4-414d-abed-21f478071024",
+            "descricao": "Mato Grosso",
+            "sigla": "MT"
+          },
+          "municipio": {
+            "id": "49eb532a-a72e-4656-9cc8-1ee930bf0e5e",
+            "descricao": "Primavera do Leste",
+            "codigo": 5107040
+          },
+          "inscricaoEstadual": {
+            "id": "ae431bbf-921a-4313-9267-e6cd5c41d365",
+            "valor": "138226032"
+          },
+          "isento": false,
+          "deleted": false,
+          "key": "c91e6a02-2622-4722-ba8a-80fcc115e63c"
+        }
+      ],
+      "id": "1d2e36a1-f345-42fd-9a01-cf3feb4ddff3",
+      "ativo": true,
+      "nome": "GIOVANI DADALT CRESPANI",
+      "documentoPrincipal": "611.549.970-49",
+      "dataNascimento": "1990-01-03T23:59:59-02:00",
+      "telefone": "(66) 99999-6666",
+      "certidoesNegativasDebito": [],
+      "codigoPostal": "78850-000",
+      "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
+      "bairro": "Zona Rural",
+      "pais": {
+        "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+        "descricao": "Brasil"
+      },
+      "estado": {
+        "id": "ab0ca768-c9e4-414d-abed-21f478071024",
+        "descricao": "Mato Grosso",
+        "sigla": "MT"
+      },
+      "municipio": {
+        "id": "49eb532a-a72e-4656-9cc8-1ee930bf0e5e",
+        "descricao": "Primavera do Leste",
+        "codigo": 5107040
+      },
+      "isento": true
+    }
+  },
+  "qa": {
+    "isenta": {
+      "data": "dataSubstituicaoT14:20:54.103Z",
+      "crc": {},
+      "tipo": "PessoaFisica",
+      "tiposClassificacao": ["Cliente", "Fornecedor"],
+      "enderecos": [
+        {
+          "id": "5d1ecc43-9b8a-45fb-9e40-50bb5e659967",
+          "descricao": "AGROPECUARIA MARIAH JULIA",
+          "codigoPostal": "78850-000",
+          "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
+          "bairro": "ZONA RURAL",
+          "numero": "00",
+          "pais": {
+            "id": "0698a30c-cba4-4161-95b9-2ce4ca9efbda",
+            "descricao": "Brasil"
+          },
+          "estado": {
+            "id": "2b880c8e-d004-44af-bb91-d6f441aa1f06",
+            "descricao": "Mato Grosso",
+            "sigla": "MT"
+          },
+          "municipio": {
+            "id": "8bce3c36-8428-4472-a581-b995128d016d",
+            "descricao": "Primavera do Leste",
+            "codigo": 5107040
+          },
+          "inscricaoEstadual": {
+            "valor": "ISENTO",
+            "id": "a8756de6-e4f1-4a03-bf3a-307efef9bed1"
+          },
+          "isento": true,
+          "deleted": false,
+          "key": "5d1ecc43-9b8a-45fb-9e40-50bb5e659967"
+        }
+      ],
+      "id": "0abd4359-83aa-4397-b328-ec71aa96a241",
+      "ativo": true,
+      "nome": "GIOVANI DADALT CRESPANI",
+      "documentoPrincipal": "611.549.970-49",
+      "dataNascimento": "1990-01-03T23:59:59-02:00",
+      "telefone": "(66) 99999-6666",
+      "certidoesNegativasDebito": [],
+      "codigoPostal": "78850-000",
+      "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
+      "bairro": "Zona Rural",
+      "pais": {
+        "id": "0698a30c-cba4-4161-95b9-2ce4ca9efbda",
+        "descricao": "Brasil"
+      },
+      "estado": {
+        "id": "2b880c8e-d004-44af-bb91-d6f441aa1f06",
+        "descricao": "Mato Grosso",
+        "sigla": "MT"
+      },
+      "municipio": {
+        "id": "8bce3c36-8428-4472-a581-b995128d016d",
+        "descricao": "Primavera do Leste",
+        "codigo": 5107040
+      },
+      "isento": true,
+      "createdAt": "2022-07-20T20:19:07.7309236+00:00",
+      "createdByUserId": "a4a7fe08-88bc-4f56-9363-907d3d95ae90",
+      "createdByUserName": "NFe E2E"
     },
-    "estado": {
-      "id": "ab0ca768-c9e4-414d-abed-21f478071024",
-      "descricao": "Mato Grosso",
-      "sigla": "MT"
-    },
-    "municipio": {
-      "id": "49eb532a-a72e-4656-9cc8-1ee930bf0e5e",
-      "descricao": "Primavera do Leste",
-      "codigo": 5107040
-    },
-    "isento": true
+    "naoIsenta": {
+      "data": "dataSubstituicaoT14:24:09.061Z",
+      "crc": {},
+      "tipo": "PessoaFisica",
+      "tiposClassificacao": ["Cliente", "Fornecedor"],
+      "enderecos": [
+        {
+          "id": "5d1ecc43-9b8a-45fb-9e40-50bb5e659967",
+          "descricao": "AGROPECUARIA MARIAH JULIA",
+          "codigoPostal": "78850-000",
+          "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
+          "bairro": "ZONA RURAL",
+          "numero": "00",
+          "pais": {
+            "id": "0698a30c-cba4-4161-95b9-2ce4ca9efbda",
+            "descricao": "Brasil"
+          },
+          "estado": {
+            "id": "2b880c8e-d004-44af-bb91-d6f441aa1f06",
+            "descricao": "Mato Grosso",
+            "sigla": "MT"
+          },
+          "municipio": {
+            "id": "8bce3c36-8428-4472-a581-b995128d016d",
+            "descricao": "Primavera do Leste",
+            "codigo": 5107040
+          },
+          "inscricaoEstadual": {
+            "id": "a8756de6-e4f1-4a03-bf3a-307efef9bed1",
+            "valor": "138226032"
+          },
+          "isento": false,
+          "deleted": false,
+          "key": "5d1ecc43-9b8a-45fb-9e40-50bb5e659967"
+        }
+      ],
+      "id": "0abd4359-83aa-4397-b328-ec71aa96a241",
+      "ativo": true,
+      "nome": "GIOVANI DADALT CRESPANI",
+      "documentoPrincipal": "611.549.970-49",
+      "dataNascimento": "1990-01-03T23:59:59-02:00",
+      "telefone": "(66) 99999-6666",
+      "certidoesNegativasDebito": [],
+      "codigoPostal": "78850-000",
+      "logradouro": "RODOVIA MT 130 KM 80 + 40 KM A ESQUERDA",
+      "bairro": "Zona Rural",
+      "pais": {
+        "id": "0698a30c-cba4-4161-95b9-2ce4ca9efbda",
+        "descricao": "Brasil"
+      },
+      "estado": {
+        "id": "2b880c8e-d004-44af-bb91-d6f441aa1f06",
+        "descricao": "Mato Grosso",
+        "sigla": "MT"
+      },
+      "municipio": {
+        "id": "8bce3c36-8428-4472-a581-b995128d016d",
+        "descricao": "Primavera do Leste",
+        "codigo": 5107040
+      },
+      "isento": true,
+      "createdAt": "2022-07-20T20:19:07.7309236+00:00",
+      "createdByUserId": "a4a7fe08-88bc-4f56-9363-907d3d95ae90",
+      "createdByUserName": "NFe E2E",
+      "lastUpdatedAt": "2022-07-21T14:21:51.2245729+00:00",
+      "lastUpdatedByUserId": "a4a7fe08-88bc-4f56-9363-907d3d95ae90",
+      "lastUpdatedByUserName": "NFe E2E"
+    }
   }
 }
