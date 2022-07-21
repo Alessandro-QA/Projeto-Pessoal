@@ -1,56 +1,156 @@
 {
-  "autorizada": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "350",
-    "status": "Autorizada",
-    "tipoDownload": "Download XML",
-    "nomeArquivo": "proc_xml_fb040c6a-9802-43d5-981c-d8607082fb25.xml"
+  "dev": {
+    "autorizada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "350",
+      "status": "Autorizada",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_fb040c6a-9802-43d5-981c-d8607082fb25.xml"
+    },
+    "usoDenegado": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "351",
+      "status": "Uso denegado",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_39135b58-f92d-4f2a-87df-7a3531a70e7e.xml"
+    },
+    "cancelada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "349",
+      "status": "Cancelada",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_ce89411b-829a-4e90-bb8e-d0b5de7006fb.xml"
+    },
+    "contingencia": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "352",
+      "status": "Contingência",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_7ff748f5-1228-411a-9667-2a761be6c102.xml"
+    },
+    "pendente": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "348",
+      "status": "Pendente",
+      "tipoDownload": "Download XML"
+    },
+    "rejeitada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "347",
+      "status": "Rejeitada",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_2bb77153-5442-48f3-9a50-dbd51b6b8deb.xml"
+    },
+    "processando": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "354",
+      "status": "Processando",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_8babad95-743e-4a25-90b2-67c4f9ed6712.xml"
+    },
+    "loteRecebido": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "346",
+      "status": "Lote Recebido",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_a71cab63-b551-4b18-ade5-6b9fc573c419.xml"
+    },
+    "loteProcessado": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "345",
+      "status": "Lote Processado",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_f208963f-db51-4d98-ba58-314feb0174b3.xml"
+    },
+    "loteEmProcessamento": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "344",
+      "status": "Lote Em Processamento",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_5a930296-16d4-48f5-a79d-c3d6b2529726.xml"
+    },
+    "rascunho": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "343",
+      "status": "Rascunho",
+      "tipoDownload": "Download XML"
+    }
   },
-  "cancelada": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "349",
-    "status": "Cancelada",
-    "tipoDownload": "Download XML",
-    "nomeArquivo": "proc_xml_ce89411b-829a-4e90-bb8e-d0b5de7006fb.xml"
-  },
-  "pendente": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "348",
-    "status": "Pendente",
-    "tipoDownload": "Download XML"
-  },
-  "rejeitada": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "347",
-    "status": "Rejeitada",
-    "tipoDownload": "Download XML",
-    "nomeArquivo": "proc_xml_2bb77153-5442-48f3-9a50-dbd51b6b8deb.xml"
-  },
-  "loteRecebido": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "346",
-    "status": "Lote Recebido",
-    "tipoDownload": "Download XML",
-    "nomeArquivo": "proc_xml_a71cab63-b551-4b18-ade5-6b9fc573c419.xml"
-  },
-  "loteProcessado": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "345",
-    "status": "Lote Processado",
-    "tipoDownload": "Download XML",
-    "nomeArquivo": "proc_xml_f208963f-db51-4d98-ba58-314feb0174b3.xml"
-  },
-  "loteEmProcessamento": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "344",
-    "status": "Lote Em Processamento",
-    "tipoDownload": "Download XML",
-    "nomeArquivo": "proc_xml_5a930296-16d4-48f5-a79d-c3d6b2529726.xml"
-  },
-  "rascunho": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "343",
-    "status": "Rascunho",
-    "tipoDownload": "Download XML"
+  "qa": {
+    "autorizada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3001",
+      "status": "Autorizada",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_3183e2f4-d776-4144-98c5-614cc6dc1d3f.xml"
+    },
+    "usoDenegado": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3002",
+      "status": "Uso denegado",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_a8cb91bc-cc47-4b02-8459-074b16b0af23.xml"
+    },
+    "cancelada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3003",
+      "status": "Cancelada",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_0e81553b-d3ef-4fae-9984-7c318e6c6c9a.xml"
+    },
+    "contingencia": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3004",
+      "status": "Contingência",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_a23738a7-fcd2-42cb-81b6-131b472938d0.xml"
+    },
+    "pendente": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3005",
+      "status": "Pendente",
+      "tipoDownload": "Download XML"
+    },
+    "rejeitada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3006",
+      "status": "Rejeitada",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_f401a812-14cc-481c-aee0-07b4370cc917.xml"
+    },
+    "processando": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3007",
+      "status": "Processando",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_0b55da85-5492-453a-a89e-59b85186f893.xml"
+    },
+    "loteRecebido": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3008",
+      "status": "Lote Recebido",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_0f74c0bd-ef58-4344-beae-c3ecf888cea0.xml"
+    },
+    "loteProcessado": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3009",
+      "status": "Lote Processado",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_7d17b0ee-c64d-4d00-b51a-aefd77a2572e.xml"
+    },
+    "loteEmProcessamento": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3010",
+      "status": "Lote Em Processamento",
+      "tipoDownload": "Download XML",
+      "nomeArquivo": "proc_xml_2584fde9-51f6-4e9e-b074-8de86bbc18bd.xml"
+    },
+    "rascunho": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3011",
+      "status": "Rascunho",
+      "tipoDownload": "Download XML"
+    }
   }
 }

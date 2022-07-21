@@ -254,7 +254,7 @@ class Nfe {
     // Operacao
     cy.getVisible(locNfe.informacoesNota.selectOperacao).click()
       .get(locNfe.informacoesNota.selecionarOperacao)
-      .contains(seedTestNfe.nfe.informacoesNota.operacao).click()
+      .findAllByText(seedTestNfe.nfe.informacoesNota.operacao).click()
 
     // Frete
     if (seedTestNfe.nfe.informacoesNota.frete === 'Sem Frete') {
@@ -538,11 +538,17 @@ class Nfe {
     switch (seedTestNfe.status) {
       case 'Autorizada': Nfe.baixar(seedTestNfe)
         break
+      case 'Uso denegado': Nfe.naoBaixar(seedTestNfe)
+        break
       case 'Cancelada': Nfe.naoBaixar(seedTestNfe)
+        break
+      case 'Contingência': Nfe.naoBaixar(seedTestNfe)
         break
       case 'Pendente': Nfe.naoBaixar(seedTestNfe)
         break
       case 'Rejeitada': Nfe.naoBaixar(seedTestNfe)
+        break
+      case 'Processando': Nfe.naoBaixar(seedTestNfe)
         break
       case 'Lote Recebido': Nfe.naoBaixar(seedTestNfe)
         break
@@ -591,11 +597,17 @@ class Nfe {
     switch (seedTestNfe.status) {
       case 'Autorizada': Nfe.baixar(seedTestNfe)
         break
+      case 'Uso denegado': Nfe.baixar(seedTestNfe)
+        break
       case 'Cancelada': Nfe.baixar(seedTestNfe)
+        break
+      case 'Contingência': Nfe.baixar(seedTestNfe)
         break
       case 'Pendente': Nfe.naoBaixar(seedTestNfe)
         break
       case 'Rejeitada': Nfe.baixar(seedTestNfe)
+        break
+      case 'Processando': Nfe.baixar(seedTestNfe)
         break
       case 'Lote Recebido': Nfe.baixar(seedTestNfe)
         break
