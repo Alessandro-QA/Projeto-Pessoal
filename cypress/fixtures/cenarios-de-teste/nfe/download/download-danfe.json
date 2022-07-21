@@ -1,52 +1,142 @@
 {
-  "autorizada": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "350",
-    "nomeArquivo": "danfe_fb040c6a-9802-43d5-981c-d8607082fb25.pdf",
-    "status": "Autorizada",
-    "tipoDownload": "Download DANFE"
+  "dev": {
+    "autorizada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "350",
+      "nomeArquivo": "danfe_fb040c6a-9802-43d5-981c-d8607082fb25.pdf",
+      "status": "Autorizada",
+      "tipoDownload": "Download DANFE"
+    },
+    "usoDenegado": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "351",
+      "status": "Uso denegado",
+      "tipoDownload": "Download DANFE"
+    },
+    "cancelada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "349",
+      "status": "Cancelada",
+      "tipoDownload": "Download DANFE"
+    },
+    "contingencia": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "352",
+      "status": "Contingência",
+      "tipoDownload": "Download DANFE"
+    },
+    "pendente": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "348",
+      "status": "Pendente",
+      "tipoDownload": "Download DANFE"
+    },
+    "rejeitada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "347",
+      "status": "Rejeitada",
+      "tipoDownload": "Download DANFE"
+    },
+    "processando": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "354",
+      "status": "Processando",
+      "tipoDownload": "Download DANFE"
+    },
+    "loteRecebido": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "346",
+      "status": "Lote Recebido",
+      "tipoDownload": "Download DANFE"
+    },
+    "loteProcessado": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "345",
+      "status": "Lote Processado",
+      "tipoDownload": "Download DANFE"
+    },
+    "loteEmProcessamento": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "344",
+      "status": "Lote Em Processamento",
+      "tipoDownload": "Download DANFE"
+    },
+    "rascunho": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "343",
+      "nomeArquivo": "danfe_a8498a27-1e19-4051-9025-d022b7b80140.pdf",
+      "status": "Rascunho",
+      "tipoDownload": "Download DANFE"
+    }
   },
-  "cancelada": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "349",
-    "status": "Cancelada",
-    "tipoDownload": "Download DANFE"
-  },
-  "pendente": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "348",
-    "status": "Pendente",
-    "tipoDownload": "Download DANFE"
-  },
-  "rejeitada": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "347",
-    "status": "Rejeitada",
-    "tipoDownload": "Download DANFE"
-  },
-  "loteRecebido": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "346",
-    "status": "Lote Recebido",
-    "tipoDownload": "Download DANFE"
-  },
-  "loteProcessado": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "345",
-    "status": "Lote Processado",
-    "tipoDownload": "Download DANFE"
-  },
-  "loteEmProcessamento": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "344",
-    "status": "Lote Em Processamento",
-    "tipoDownload": "Download DANFE"
-  },
-  "rascunho": {
-    "empresa": "EMERSON RIVA",
-    "numeroNfe": "343",
-    "nomeArquivo": "danfe_a8498a27-1e19-4051-9025-d022b7b80140.pdf",
-    "status": "Rascunho",
-    "tipoDownload": "Download DANFE"
+  "qa": {
+    "autorizada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3001",
+      "nomeArquivo": "danfe_3183e2f4-d776-4144-98c5-614cc6dc1d3f.pdf",
+      "status": "Autorizada",
+      "tipoDownload": "Download DANFE"
+    },
+    "usoDenegado": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3002",
+      "status": "Uso denegado",
+      "tipoDownload": "Download DANFE"
+    },
+    "cancelada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3003",
+      "status": "Cancelada",
+      "tipoDownload": "Download DANFE"
+    },
+    "contingencia": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3004",
+      "status": "Contingência",
+      "tipoDownload": "Download DANFE"
+    },
+    "pendente": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3005",
+      "status": "Pendente",
+      "tipoDownload": "Download DANFE"
+    },
+    "rejeitada": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3006",
+      "status": "Rejeitada",
+      "tipoDownload": "Download DANFE"
+    },
+    "processando": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3007",
+      "status": "Processando",
+      "tipoDownload": "Download DANFE"
+    },
+    "loteRecebido": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3008",
+      "status": "Lote Recebido",
+      "tipoDownload": "Download DANFE"
+    },
+    "loteProcessado": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3009",
+      "status": "Lote Processado",
+      "tipoDownload": "Download DANFE"
+    },
+    "loteEmProcessamento": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3010",
+      "status": "Lote Em Processamento",
+      "tipoDownload": "Download DANFE"
+    },
+    "rascunho": {
+      "empresa": "EMERSON RIVA",
+      "numeroNfe": "3011",
+      "nomeArquivo": "danfe_016f9560-f5bf-4308-8c97-ed0cf34865b7.pdf",
+      "status": "Rascunho",
+      "tipoDownload": "Download DANFE"
+    }
   }
 }

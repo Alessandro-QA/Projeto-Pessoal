@@ -48,6 +48,7 @@ let queries = `
 				DELETE FROM [financeiro].[DocumentoAnexos]	WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');
 				DELETE FROM [financeiro].[DocumentoMateriais] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');
 				DELETE FROM [financeiro].[Documentos] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');
+				DELETE FROM [financeiro].[Competencias] WHERE TenantID IN ('${tenantCenarios}', '${tenantCadastro}');
 				DELETE FROM [financeiro].[RegimeCaixas] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');
 				DELETE FROM [financeiro].[LancamentoContabilCiclos] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');
 				DELETE FROM [financeiro].[LancamentoContabilCategorias] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');

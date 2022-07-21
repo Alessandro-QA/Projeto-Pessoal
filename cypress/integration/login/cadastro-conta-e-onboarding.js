@@ -4,6 +4,8 @@ import locOnboarding from '../../support/locators/funcionalidades/login/onboardi
 import locDashboard from '../../support/locators/funcionalidades/main-dashboard/locators-dashboard.js'
 import Authenticate from '../../support/commands/funcionalidades/login/login-logout.js'
 
+// Suite ignorada até refatoração da tela de onboarding
+// Adicionar .spec no nome da suite, quando for reativar
 describe.skip('Cadastro de Conta e realização de Onboarding', { tags: '@onboarding' }, () => {
   let email
   const fixtureCadastroConta = 'funcionalidades/login/onboarding/fixture-cadastro-conta'
