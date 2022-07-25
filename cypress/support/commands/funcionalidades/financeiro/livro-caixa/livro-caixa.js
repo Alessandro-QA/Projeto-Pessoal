@@ -8,10 +8,87 @@ const tituloPagina = 'Livro caixa'
 
 class LivroCaixa {
   /**
-   * Validar dashboard do Livro Caixa
+   * Validar listagem de produtores do Livro Caixa
+   * @param {*} seedTestLivroCaixa 
+   */
+  validarListagem(seedTestLivroCaixa) {
+    // Navegar para Livro Caixa
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    cy.intercept('/api/financeiro/v1/LivroCaixa/**')
+      .as('ApiLivroCaixa')
+
+    // Filtrar por Produtor
+    if (seedTestLivroCaixa.filtroProdutor) {
+      cy.getVisible(locLivroCaixa.dashboard.filtroProdutor).click()
+        .contains(seedTestLivroCaixa.filtroProdutor).click()
+    }
+
+    // Filtrar por ano
+    if (seedTestLivroCaixa.filtroAno) {
+      cy.getVisible(locLivroCaixa.dashboard.filtroAno).clear()
+        .type(`${seedTestLivroCaixa.filtroAno}{enter}`)
+    }
+
+    if (seedTestLivroCaixa.cardComparativo) {
+      const cardComparativo = seedTestLivroCaixa.cardComparativo
+      // Validar dados do card comparativo dos produtores
+      cardComparativo.forEach((comparativo, index) => {
+        // Validar quantidade de cards visíveis
+        cy.get(locLivroCaixa.dashboard.cardComparativo).should('have.length', cardComparativo.length)
+        // Validar nome da empresa
+        cy.get(locLivroCaixa.dashboard.cardComparativo).eq(index).should(($el) => {
+          expect($el).to.contain.text(comparativo.nomeEmpresa)
+        })
+        // Validar valor da entrada
+        cy.get(locLivroCaixa.dashboard.cardComparativo).eq(index).should(($el) => {
+          expect($el).to.contain.text(comparativo.valorEntrada)
+        })
+        // Validar valor da saída
+        cy.get(locLivroCaixa.dashboard.cardComparativo).eq(index).should(($el) => {
+          expect($el).to.contain.text(comparativo.valorSaida)
+        })
+      })
+    }
+
+    const cardProdutor = seedTestLivroCaixa.cardProdutores
+    // Validar dados card produtores
+    cardProdutor.forEach((produtor, index) => {
+      // Validar quantidade de cards visíveis
+      cy.get(locLivroCaixa.dashboard.cardProdutores).should('have.length', cardProdutor.length)
+
+      // Validar nome da empresa
+      cy.get(locLivroCaixa.dashboard.cardProdutoresProdutor).eq(index).should(($el) => {
+        expect($el).to.contain.text(produtor.nomeEmpresa)
+      })
+      // Validar cpf da empresa/pessoa
+      cy.get(locLivroCaixa.dashboard.cardProdutoresCpf).eq(index).should(($el) => {
+        expect($el).to.contain.text(produtor.cpfEmpresa)
+      })
+      // Validar valor total de entradas
+      cy.get(locLivroCaixa.dashboard.cardProdutoresTotalEntrada).eq(index).should(($el) => {
+        expect($el).to.contain.text(produtor.totalEntrada)
+      })
+      // Validar valor total de saídas
+      cy.get(locLivroCaixa.dashboard.cardProdutoresTotalSaida).eq(index).should(($el) => {
+        expect($el).to.contain.text(produtor.totalSaida)
+      })
+      // Validar o saldo atualizado
+      cy.get(locLivroCaixa.dashboard.cardProdutoresSaldo).eq(index).should(($el) => {
+        expect($el).to.contain.text(produtor.saldoAtualizado)
+      })
+      // Validar a estimativa de IRRF
+      cy.get(locLivroCaixa.dashboard.cardProdutoresIRRF).eq(index).should(($el) => {
+        expect($el).to.contain.text(produtor.estimativaIRRF)
+      })
+    })
+  }
+
+  /**
+   * Validar os Lançamentos do produtor no Livro Caixa
    * @param {*} seedTestLivroCaixa
    */
-  validarDashboard(seedTestLivroCaixa) {
+  validarLancamentos(seedTestLivroCaixa) {
     const url = '/financeiro/livro-caixa'
     const locatorTituloPagina = locLivroCaixa.dashboard.titulo
     const tituloPagina = 'Livro caixa'
@@ -132,7 +209,7 @@ class LivroCaixa {
   }
 
   /**
-   * Validar lançamento no Livro Caixa
+   * Validar detalhes do lançamento no Livro Caixa
    * @param {*} seedTestLancamentoLivroCaixa
    */
   validarLancamento(seedTestLancamentoLivroCaixa) {

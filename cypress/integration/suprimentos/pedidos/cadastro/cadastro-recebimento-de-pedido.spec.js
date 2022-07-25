@@ -162,13 +162,13 @@ context('Cenário de Teste', () => {
     it('Validar lançamento do titulo 101 no valor de R$ 30.000,00', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      LivroCaixa.validarDashboard(seeds.seedDetalhesFinanceiro.livroCaixa)
+      LivroCaixa.validarLancamentos(seeds.seedDetalhesFinanceiro.livroCaixa)
     })
 
     it('Validar lançamento do titulo 102 no valor de R$ 37.500,00', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      LivroCaixa.validarDashboard(seeds.seedDetalhesFinanceiro.livroCaixa)
+      LivroCaixa.validarLancamentos(seeds.seedDetalhesFinanceiro.livroCaixa)
     })
 
     it('Validar movimentação do titulo 101 no valor de R$ 30.000,00', function () {
