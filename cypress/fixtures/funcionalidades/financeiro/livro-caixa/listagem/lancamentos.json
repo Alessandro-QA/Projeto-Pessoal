@@ -1,0 +1,426 @@
+{
+  "dev": {
+    "entradaDedutivel": {
+      "produtor": {
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF",
+        "documentoPrincipal": "91535740019"
+      },
+      "empresa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "ad2f682d-3b1c-4f45-bf0d-54f43a6bd790",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "dataSubstituicaoT10:41:40-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.02",
+        "descricao": "(-) Venda p/ Entrega Futura",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300",
+        "descricao": "Conta Corrente E2E"
+      },
+      "tipoDocumento": 3,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 200,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ"
+      },
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      }
+    },
+    "entradaDedutivel2": {
+      "produtor": {
+        "id": "b800a655-d5c6-49ac-b8c6-cd17bd1e19d0",
+        "descricao": "Matheus Oliveira",
+        "documentoPrincipal": "27770797063"
+      },
+      "empresa": {
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF",
+        "inscricaoEstadual": {
+          "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+          "descricao": "IE Estadual",
+          "valor": "32165465622"
+        }
+      },
+      "data": "dataSubstituicaoT14:03:08-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.02",
+        "descricao": "(-) Venda p/ Entrega Futura",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "9cd7e883-e179-4e41-b3f3-1bb4955cfeca",
+        "descricao": "Conta E2E"
+      },
+      "tipoDocumento": 1,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 890,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "ef402791-c035-46cf-96c6-a2494042b237",
+        "descricao": "Cliente Teste Produção"
+      },
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      }
+    },
+    "entradaNaoDedutivel": {
+      "produtor": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF",
+        "documentoPrincipal": "66791418001"
+      },
+      "empresa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "ad2f682d-3b1c-4f45-bf0d-54f43a6bd790",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "2021-07-21T13:39:03-03:00",
+      "contaContabil": {
+        "codigo": "1.01.06.04",
+        "descricao": "(-) Provisão p/ Perdas",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "9cd7e883-e179-4e41-b3f3-1bb4955cfeca",
+        "descricao": "Conta E2E"
+      },
+      "tipoDocumento": 2,
+      "historico": "",
+      "saida": false,
+      "dedutivel": false,
+      "manual": true,
+      "valor": 850,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ"
+      },
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      }
+    },
+    "saidaDedutivel": {
+      "produtor": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF",
+        "documentoPrincipal": "66791418001"
+      },
+      "empresa": {
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF",
+        "inscricaoEstadual": {
+          "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+          "descricao": "IE Estadual",
+          "valor": "32165465622"
+        }
+      },
+      "data": "2021-07-21T13:47:57-03:00",
+      "contaContabil": {
+        "codigo": "1.01.03.05",
+        "descricao": "Bancos ",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300",
+        "descricao": "Conta Corrente E2E"
+      },
+      "tipoDocumento": 4,
+      "historico": "",
+      "saida": true,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 1950,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      }
+    },
+    "saidaNaoDedutivel": {
+      "produtor": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF",
+        "documentoPrincipal": "66791418001"
+      },
+      "empresa": {
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF",
+        "inscricaoEstadual": {
+          "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+          "descricao": "IE Estadual",
+          "valor": "32165465622"
+        }
+      },
+      "data": "dataSubstituicaoT13:49:36-03:00",
+      "contaContabil": {
+        "codigo": "1.01.01.03",
+        "descricao": "Numerário em Trânsito",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "9cd7e883-e179-4e41-b3f3-1bb4955cfeca",
+        "descricao": "Conta E2E"
+      },
+      "tipoDocumento": 4,
+      "historico": "",
+      "saida": true,
+      "dedutivel": false,
+      "manual": true,
+      "valor": 970,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "ef402791-c035-46cf-96c6-a2494042b237",
+        "descricao": "Cliente Teste Produção"
+      },
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      }
+    }
+  },
+  "qa": {
+    "entradaDedutivel": {
+      "produtor": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF",
+        "documentoPrincipal": "91535740019"
+      },
+      "empresa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "a8989fc6-a034-45b4-89a3-bf02889f306e",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "dataSubstituicaoT08:57:23-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.02",
+        "descricao": "(-) Venda p/ Entrega Futura",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980",
+        "descricao": "Conta Corrente E2E"
+      },
+      "tipoDocumento": 3,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 200,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+        "descricao": "Empresa Fornecedor - CNPJ"
+      },
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      }
+    },
+    "entradaDedutivel2": {
+      "produtor": {
+        "id": "d9c471f3-756c-4c98-b5d2-786ea8a3a169",
+        "descricao": "Matheus Oliveira",
+        "documentoPrincipal": "27770797063"
+      },
+      "empresa": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF",
+        "inscricaoEstadual": {
+          "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+          "descricao": "IE Estadual",
+          "valor": "32165465622"
+        }
+      },
+      "data": "dataSubstituicaoT09:01:19-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.02",
+        "descricao": "(-) Venda p/ Entrega Futura",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "036fcac3-70bd-461d-944e-8591871597b4",
+        "descricao": "Conta E2E"
+      },
+      "tipoDocumento": 1,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 890,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+        "descricao": "Cliente Teste Produção"
+      },
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      }
+    },
+    "entradaNaoDedutivel": {
+      "produtor": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF",
+        "documentoPrincipal": "66791418001"
+      },
+      "empresa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "a8989fc6-a034-45b4-89a3-bf02889f306e",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "2021-07-21T09:03:42-03:00",
+      "contaContabil": {
+        "codigo": "1.01.06.04",
+        "descricao": "(-) Provisão p/ Perdas",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "036fcac3-70bd-461d-944e-8591871597b4",
+        "descricao": "Conta E2E"
+      },
+      "tipoDocumento": 2,
+      "historico": "",
+      "saida": false,
+      "dedutivel": false,
+      "manual": true,
+      "valor": 850,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+        "descricao": "Empresa Fornecedor - CNPJ"
+      },
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      }
+    },
+    "saidaDedutivel": {
+      "produtor": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF",
+        "documentoPrincipal": "66791418001"
+      },
+      "empresa": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF",
+        "inscricaoEstadual": {
+          "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+          "descricao": "IE Estadual",
+          "valor": "32165465622"
+        }
+      },
+      "data": "2021-07-21T09:08:03-03:00",
+      "contaContabil": {
+        "codigo": "1.01.01.02",
+        "descricao": "Bancos",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980",
+        "descricao": "Conta Corrente E2E"
+      },
+      "tipoDocumento": 4,
+      "historico": "",
+      "saida": true,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 1950,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF"
+      },
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      }
+    },
+    "saidaNaoDedutivel": {
+      "produtor": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF",
+        "documentoPrincipal": "66791418001"
+      },
+      "empresa": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF",
+        "inscricaoEstadual": {
+          "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+          "descricao": "IE Estadual",
+          "valor": "32165465622"
+        }
+      },
+      "data": "dataSubstituicaoT09:11:16-03:00",
+      "contaContabil": {
+        "codigo": "1.01.01.03",
+        "descricao": "Numerário em Trânsito",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "036fcac3-70bd-461d-944e-8591871597b4",
+        "descricao": "Conta E2E"
+      },
+      "tipoDocumento": 4,
+      "historico": "",
+      "saida": true,
+      "dedutivel": false,
+      "manual": true,
+      "valor": 970,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+        "descricao": "Cliente Teste Produção"
+      },
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      }
+    }
+  }
+}
