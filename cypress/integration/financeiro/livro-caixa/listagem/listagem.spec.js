@@ -26,26 +26,26 @@ context('Funcionalidade', () => {
       Authenticate.logout()
     })
 
-    context('Realizar as movimentações de livro Caixa Via Api', () => {
-      it('Movimentação do tipo Entrada e dedutível', function () {
+    context('Realizar as lançamentos de livro Caixa Via Api', () => {
+      it('lançamentos do tipo Entrada e dedutível', function () {
         Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', bodyLancamentoEntradaDedutivel, 'login_cenarios')
         Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', bodyLancamentoEntradaDedutivel2, 'login_cenarios')
       })
 
-      it('Movimentação do tipo Entrada e não dedutível para o ano 2021', function () {
+      it('lançamentos do tipo Entrada e não dedutível para o ano 2021', function () {
         Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', lancamento.entradaNaoDedutivel, 'login_cenarios')
       })
 
-      it('Movimentação do tipo Saida e dedutível para o ano 2021', function () {
+      it('lançamentos do tipo Saida e dedutível para o ano 2021', function () {
         Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', lancamento.saidaDedutivel, 'login_cenarios')
       })
 
-      it('Movimentação do tipo Saida e não dedutível', function () {
+      it('lançamentos do tipo Saida e não dedutível', function () {
         Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', bodyLancamentoSaidaNaoDedutivel, 'login_cenarios')
       })
     })
 
-    context('Validar todas as movimentações na tela de listagem de movimentações no Livro Caixa', () => {
+    context('Validar a tela de listagem de movimentações no Livro Caixa', () => {
       it('Validar listagem sem aplicar filtros', function () {
         cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.semFiltro)
