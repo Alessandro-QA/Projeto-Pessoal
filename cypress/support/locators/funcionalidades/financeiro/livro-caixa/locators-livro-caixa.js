@@ -1,6 +1,9 @@
 const locators = {
   dashboard: {
     titulo: '[data-cy=header-livro-caixa] > h1',
+    filtroProdutor: '[data-cy=select-filter-produtores]',
+    filtroAno: '[data-cy=datepicker-filter-ano] > div > input',
+    cardComparativo: '[data-cy=card-comparativos] .progress-card.full',
     cardProdutores: '[data-cy=card-produtores]',
     cardProdutoresProdutor: '[data-cy=card-produtor-nome]',
     cardProdutoresCpf: '[data-cy=card-produtor-cpf]',
