@@ -27,18 +27,20 @@ context('Funcionalidade', () => {
     })
 
     context('Realizar as movimentações de livro Caixa Via Api', () => {
-      it('Movimentações via Api', function () {
-        // Movimentação do tipo Entrada e dedutível
+      it('Movimentação do tipo Entrada e dedutível', function () {
         Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', bodyLancamentoEntradaDedutivel, 'login_cenarios')
         Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', bodyLancamentoEntradaDedutivel2, 'login_cenarios')
+      })
 
-        // Movimentação do tipo Entrada e não dedutível para o ano 2021
+      it('Movimentação do tipo Entrada e não dedutível para o ano 2021', function () {
         Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', lancamento.entradaNaoDedutivel, 'login_cenarios')
+      })
 
-        // Movimentação do tipo Saida e dedutível para o ano 2021
+      it('Movimentação do tipo Saida e dedutível para o ano 2021', function () {
         Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', lancamento.saidaDedutivel, 'login_cenarios')
+      })
 
-        // Movimentação do tipo Saida e não dedutível
+      it('Movimentação do tipo Saida e não dedutível', function () {
         Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', bodyLancamentoSaidaNaoDedutivel, 'login_cenarios')
       })
     })
