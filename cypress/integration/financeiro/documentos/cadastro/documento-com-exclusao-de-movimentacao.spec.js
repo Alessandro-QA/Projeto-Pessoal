@@ -77,7 +77,7 @@ context('Cenário de Teste', () => {
     it('Validar lançamentos no Livro Caixa', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      LivroCaixa.validarDashboard(seedTestLivroCaixa.lancamentoLivroCaixa)
+      LivroCaixa.validarLancamentos(seedTestLivroCaixa.lancamentoLivroCaixa)
     })
 
     it('Validar resultado da safra - Dashboard', { retries: { runMode: 1, openMode: 1, }, }, function () {
