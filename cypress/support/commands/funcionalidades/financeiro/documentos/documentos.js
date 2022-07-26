@@ -404,12 +404,17 @@ class Documentos {
    * @param {*} seedTestDocumento
    */
   validarDetalhes(seedTestDocumento) {
+    cy.intercept('GET', '/api/financeiro/v1/Documento/**')
+      .as('detalhesDocumento')
+    
     // Pesquisar documento
     Documentos.pesquisar(seedTestDocumento)
 
     // Abrir documento
     cy.get(locDocumentos.dashboard.selecionarDocumento, { timeout: 15000 })
       .contains(seedTestDocumento.numeroDocumento).click({ force: true })
+
+    cy.wait('@detalhesDocumento', { timeout: 15000 })
 
     // Validar operacao
     if (seedTestDocumento.operacao) {
@@ -614,6 +619,8 @@ class Documentos {
       .as('cicloRateio')
     cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem')
       .as('financeiro')
+    cy.intercept('GET', '/api/financeiro/v1/Documento/**')
+      .as('detalhesDocumento')
 
     if (seedTestFiltro.editar) {
       const url = '/financeiro/documentos/listagem'
@@ -652,8 +659,12 @@ class Documentos {
     // abrir documento
     cy.getVisible(locDocumentos.dashboard.selecionarDocumento).click()
 
+    cy.wait('@detalhesDocumento', { timeout: 10000 })
+
     // abrir edicao de documento
     cy.getVisible(locDocumentos.detalhesDocumento.botaoEditarDocumento).click()
+
+    cy.wait('@detalhesDocumento', { timeout: 10000 })
 
     if (seedTestEdicaoDocumento.camposIndisponiveis) {
 

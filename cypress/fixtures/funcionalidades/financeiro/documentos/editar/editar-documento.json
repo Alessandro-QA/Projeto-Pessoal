@@ -123,14 +123,14 @@
 			"numeroDocumento": "369852",
 			"valor": "R$ 320,00"
 		},
-		"editarPosRecebimento": {
-			"camposIndisponiveis": true
-		},
 		"filtro": {
 			"editar": true,
 			"fazenda": "Fazenda Teste Producao",
 			"empresa": "Empresa Fornecedor - CNPJ",
 			"numeroDocumento": "369852"
+		},
+		"editarPosRecebimento": {
+			"camposIndisponiveis": true
 		},
 		"detalhesPosRecebimentoParcial": {
 			"fazenda": "Fazenda Teste Producao",
@@ -144,17 +144,33 @@
 					"saldoParcela": "R$ 320,00"
 				}
 			]
+		}
+	},
+	"documento564321": {
+		"receberDocumento": {
+			"empresa": "Empresa Produtor - CPF",
+			"fazenda": "Fazenda Teste Producao",
+			"numeroDocumento": "564321"
+		},
+		"filtro": {
+			"editar": true,
+			"fazenda": "Fazenda Teste Producao",
+			"empresa": "Empresa Produtor - CPF",
+			"numeroDocumento": "564321"
+		},
+		"editarPosRecebimento": {
+			"camposIndisponiveis": true
 		},
 		"detalhesPosRecebimento": {
 			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "369852",
+			"empresa": "Empresa Produtor - CPF",
+			"numeroDocumento": "564321",
 			"parcelas": [
 				{
 					"parcela": "1ª Parcela",
-					"valorParcela": "R$ 640,00",
+					"valorParcela": "R$ 304,00",
 					"statusParcela": "Recebido",
-					"saldoParcela": "R$ 0,00"
+					"saldoParcela": "R$ 304,00"
 				}
 			]
 		}
