@@ -141,10 +141,10 @@
           "valor": "32165465622"
         }
       },
-      "data": "2021-07-21T13:47:57-03:00",
+      "data": "2021-07-21T00:00:00-03:00",
       "contaContabil": {
-        "codigo": "1.01.03.05",
-        "descricao": "Bancos ",
+        "codigo": "1.01.01.02",
+        "descricao": "Bancos",
         "dedutivel": true
       },
       "contaBancaria": {
@@ -160,12 +160,12 @@
       "anexos": [],
       "ativo": true,
       "pessoa": {
-        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
-        "descricao": "Empresa Produtor - CPF"
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF"
       },
       "fazenda": {
-        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-        "descricao": "Fazenda Teste Producao"
+        "id": "b0f2a6e1-81a2-4123-bf46-4fc5e6a54738",
+        "descricao": "Fazenda E2E"
       }
     },
     "saidaNaoDedutivel": {
