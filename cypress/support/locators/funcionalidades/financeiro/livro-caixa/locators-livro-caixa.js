@@ -14,7 +14,18 @@ const locators = {
   },
   lancamentos: {
     titulo: '[data-cy=header-lancamentos-livro-caixa] > h1',
+    abrirFiltros: '[data-cy=page-filter-lancamento-livro-caixa] .el-button--medium',
+    filtroProdutor: '[data-cy=select-filter-produtor]',
     filtroEmpresa: '[data-cy=select-filter-produtor]',
+    filtroDataInicio: '[data-cy=datepicker-filter-data] [placeholder="Data Inicial"]',
+    filtroDataFim: '[data-cy=datepicker-filter-data] [placeholder="Data Final"]',
+    selectConta: '[data-cy=select-filter-conta-contabil]',
+    selectFazenda: '[data-cy=select-filter-fazenda]',
+    selectPessoa: '[data-cy=select-filter-pessoa]',
+    selectTipo: '[data-cy=select-filter-tipo]',
+    selectOrigem: '[data-cy=select-filter-origem]',
+    selectStatus: '[data-cy=select-filter-status]',
+    selectStatusDedutivel: '[data-cy=select-filter-dedutivel]',
     buttonExportarCSV: '[data-cy=button-exportar]',
     cardLivroCaixa: '.card-lancamento',
     cardLancamentosConta: '[data-cy=span-conta-contabil]',
@@ -26,7 +37,6 @@ const locators = {
     cardLateralDeducao: '[data-cy=info-card-deducao]',
     cardLateralEstimativaIRRF: '[data-cy=info-card-estimativa-irrf]'
   },
-
   editarLancamento: {
     tipoLancamento: '[data-cy=radio-tipo-lancamento]',
     tipoLancamentoAtivo: '[data-cy=radio-tipo-lancamento] .is-active',

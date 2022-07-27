@@ -92,12 +92,14 @@ class LivroCaixa {
     const url = '/financeiro/livro-caixa'
     const locatorTituloPagina = locLivroCaixa.dashboard.titulo
     const tituloPagina = 'Livro caixa'
-    var livrosCaixa = seedTestLivroCaixa.cardLivroCaixa
 
     // Navegar para Livro Caixa
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.intercept('/api/financeiro/v1/LivroCaixa/**').as('ApiLivroCaixa')
+    cy.intercept('/api/financeiro/v1/LivroCaixa/**')
+      .as('ApiLivroCaixa')
+    cy.intercept('/api/financeiro/v1/LivroCaixa/ProdutorLivroCaixa?**')
+      .as('ApiProdutorLivro')
 
     // Validar dados card produtores
     cy.get(locLivroCaixa.dashboard.cardProdutores).contains(seedTestLivroCaixa.nomeEmpresa)
@@ -127,10 +129,86 @@ class LivroCaixa {
       .contains(seedTestLivroCaixa.nomeEmpresa).click()
 
     cy.wait('@ApiLivroCaixa', { timeout: 10000 })
-
     // Validar titulo Lançamentos
     cy.getVisible(locLivroCaixa.lancamentos.titulo)
       .contains('Lançamentos')
+
+    if (seedTestLivroCaixa.filtros) {
+      cy.getVisible(locLivroCaixa.lancamentos.abrirFiltros).click()
+
+      cy.wait('@ApiProdutorLivro', { timeout: 20000 })
+
+      if (seedTestLivroCaixa.filtroProdutor) {
+        cy.getVisible(locLivroCaixa.lancamentos.filtroProdutor).click()
+          .contains(seedTestLivroCaixa.filtroProdutor).click()
+      }
+
+      if (seedTestLivroCaixa.filtroDataInicio) {
+        cy.getVisible(locLivroCaixa.lancamentos.filtroDataInicio).clear()
+          .type(`${seedTestLivroCaixa.filtroDataInicio}{enter}`)
+
+        cy.getVisible(locLivroCaixa.lancamentos.filtroDataFim).clear()
+          .type(`${seedTestLivroCaixa.filtroDataFim}{enter}`)
+      }
+
+      if (seedTestLivroCaixa.contaContabil) {
+        cy.getVisible(locLivroCaixa.lancamentos.selectConta).click()
+          .contains(seedTestLivroCaixa.contaContabil).click()
+      }
+
+      if (seedTestLivroCaixa.filtroFazenda) {
+        cy.getVisible(locLivroCaixa.lancamentos.selectFazenda).click()
+          .contains(seedTestLivroCaixa.filtroFazenda).click()
+      }
+
+      if (seedTestLivroCaixa.filtroPessoa) {
+        cy.getVisible(locLivroCaixa.lancamentos.selectPessoa).click()
+          .contains(seedTestLivroCaixa.filtroPessoa).click()
+      }
+
+      if (seedTestLivroCaixa.filtroTipo) {
+        cy.getVisible(locLivroCaixa.lancamentos.selectTipo).click()
+        cy.getVisible(locLivroCaixa.lancamentos.selectTipo).find('ul').then(($el) => {
+          if (seedTestLivroCaixa.filtroTipo === 'Entrada e Saída') {
+            cy.get($el).children().eq(0).click()
+          }
+          else if (seedTestLivroCaixa.filtroTipo === 'Saída') {
+            cy.get($el).children().eq(1).click()
+          }
+          else {
+            cy.get($el).children().eq(2).click()
+          }
+        })
+      }
+
+      if (seedTestLivroCaixa.filtroOrigem) {
+        cy.getVisible(locLivroCaixa.lancamentos.selectOrigem).click()
+          .contains(seedTestLivroCaixa.filtroOrigem).click()
+      }
+
+      if (seedTestLivroCaixa.filtroStatus) {
+        cy.getVisible(locLivroCaixa.lancamentos.selectOrigem).click()
+          .contains(seedTestLivroCaixa.filtroStatus).click()
+      }
+
+      if (seedTestLivroCaixa.filtroStatusDedutivel) {
+        cy.getVisible(locLivroCaixa.lancamentos.selectStatusDedutivel).click()
+        cy.getVisible(locLivroCaixa.lancamentos.selectStatusDedutivel).find('ul').then(($el) => {
+          if (seedTestLivroCaixa.filtroStatusDedutivel === 'Dedutíveis e Não dedutíveis') {
+            cy.get($el).children().eq(0).click()
+          }
+          else if (seedTestLivroCaixa.filtroStatusDedutivel === 'Dedutíveis') {
+            cy.get($el).children().eq(1).click()
+          }
+          else {
+            cy.get($el).children().eq(2).click()
+          }
+        })
+      }
+      cy.wait(2000)
+    }
+
+    cy.wait('@ApiLivroCaixa', { timeout: 20000 })
 
     // Validar dados livro caixa com mais de um lançamento
     if (seedTestLivroCaixa.cardLivroCaixa.length > 1) {
@@ -143,7 +221,7 @@ class LivroCaixa {
       if (seedTestLivroCaixa.naoDedutivel === true) {
         cy.getVisible(locLivroCaixa.lancamentos.cardLateralDeducao).click()
       }
-
+      var livrosCaixa = seedTestLivroCaixa.cardLivroCaixa
       // Validar dados do livro caixa
       livrosCaixa.forEach((livroCaixa) => {
         cy.get(locLivroCaixa.lancamentos.cardLancamentosConta).should(($el) => {
