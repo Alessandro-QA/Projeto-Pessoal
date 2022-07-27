@@ -1,0 +1,258 @@
+{
+  "produtor": {
+    "nomeEmpresa": "Empresa Fornecedor - CPF",
+    "cpfEmpresa": "915.357.400-19",
+    "totalEntrada": "R$ 561,00",
+    "totalSaida": "R$ 0,00",
+    "saldoAtualizado": "R$ 561,00",
+    "estimativaIRRF": "R$ 0,00",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "(-) Duplicatas Descontadas",
+        "historico": "",
+        "valor": "R$ 361,00",
+        "tipo": "Entrada - manual",
+        "deducao": "Dedutível"
+      },
+      {
+        "contaContabil": "(-) Venda p/ Entrega Futura",
+        "historico": "",
+        "valor": "R$ 200,00",
+        "tipo": "Entrada - manual",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "R$ 561,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+  "filtroProdutor": {
+    "nomeEmpresa": "Empresa Fornecedor - CPF",
+    "cpfEmpresa": "915.357.400-19",
+    "totalEntrada": "R$ 561,00",
+    "totalSaida": "R$ 0,00",
+    "saldoAtualizado": "R$ 561,00",
+    "estimativaIRRF": "R$ 0,00",
+    "filtros": true,
+    "filtroProdutor": "Matheus Oliveira",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "(-) Venda p/ Entrega Futura",
+        "historico": "",
+        "valor": "R$ 890,00",
+        "tipo": "Entrada - manual",
+        "deducao": "Dedutível"
+      },
+      {
+        "contaContabil": "Duplicatas a Receber",
+        "historico": "",
+        "valor": "R$ 684,00",
+        "tipo": "Entrada - manual",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "R$ 206,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+  "filtroData": {
+    "nomeEmpresa": "Empresa Produtor - CPF",
+    "cpfEmpresa": "667.914.180-01",
+    "totalEntrada": "R$ 0,00",
+    "totalSaida": "R$ 0,00",
+    "saldoAtualizado": "R$ 0,00",
+    "estimativaIRRF": "R$ 0,00",
+    "filtros": true,
+    "filtroDataInicio": "01/07/2021",
+    "filtroDataFim": "01/08/2021",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "Bancos",
+        "historico": "",
+        "valor": "R$ 1.950,00",
+        "tipo": "Saída - manual",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "-R$ 1.950,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+  "filtroConta": {
+    "nomeEmpresa": "Empresa Fornecedor - CPF",
+    "cpfEmpresa": "915.357.400-19",
+    "totalEntrada": "R$ 561,00",
+    "totalSaida": "R$ 0,00",
+    "saldoAtualizado": "R$ 561,00",
+    "estimativaIRRF": "R$ 0,00",
+    "filtros": true,
+    "contaContabil": "(-) Venda p/ Entrega Futura",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "(-) Venda p/ Entrega Futura",
+        "historico": "",
+        "valor": "R$ 200,00",
+        "tipo": "Entrada - manual",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "R$ 200,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+  "filtroFazenda": {
+    "nomeEmpresa": "Empresa Produtor - CPF",
+    "cpfEmpresa": "667.914.180-01",
+    "totalEntrada": "R$ 0,00",
+    "totalSaida": "R$ 0,00",
+    "saldoAtualizado": "R$ 0,00",
+    "estimativaIRRF": "R$ 0,00",
+    "filtros": true,
+    "filtroDataInicio": "01/07/2021",
+    "filtroDataFim": "01/08/2021",
+    "filtroFazenda": "Fazenda E2E",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "Bancos",
+        "historico": "",
+        "valor": "R$ 1.950,00",
+        "tipo": "Saída - manual",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "R$ 0,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+  "filtroPessoa": {
+  "nomeEmpresa": "Empresa Fornecedor - CPF",
+  "cpfEmpresa": "915.357.400-19",
+  "totalEntrada": "R$ 561,00",
+  "totalSaida": "R$ 0,00",
+  "saldoAtualizado": "R$ 561,00",
+  "estimativaIRRF": "R$ 0,00",
+  "filtros": true,
+  "filtroPessoa": "Matheus Oliveira",
+  "cardLivroCaixa": [
+    {
+      "contaContabil": "(-) Duplicatas Descontadas",
+      "historico": "",
+      "valor": "R$ 361,00",
+      "tipo": "Entrada - manual",
+      "deducao": "Dedutível"
+    }
+  ],
+  "saldoAnterior": "R$ 0,00",
+  "saldoAtual": "R$ 0,00",
+  "saldoDeducao": "R$ 0,00",
+  "cardEstimativaIRRF": "R$ 0,00"
+  },
+  "filtroDedutivelSaida": {
+    "nomeEmpresa": "Matheus Oliveira",
+    "cpfEmpresa": "277.707.970-63",
+    "totalEntrada": "R$ 890,00",
+    "totalSaida": "R$ 684,00",
+    "saldoAtualizado": "R$ 206,00",
+    "estimativaIRRF": "R$ 0,00",
+    "filtros": true,
+    "filtroTipo": "Saída",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "Duplicatas a Receber",
+        "historico": "",
+        "valor": "R$ 684,00",
+        "tipo": "Saída - manual",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "-R$ 684,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+  "filtroDedutivelEntrada": {
+    "nomeEmpresa": "Matheus Oliveira",
+    "cpfEmpresa": "277.707.970-63",
+    "totalEntrada": "R$ 890,00",
+    "totalSaida": "R$ 684,00",
+    "saldoAtualizado": "R$ 206,00",
+    "estimativaIRRF": "R$ 0,00",
+    "filtros": true,
+    "filtroTipo": "Entrada",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "(-) Venda p/ Entrega Futura",
+        "historico": "",
+        "valor": "R$ 890,00",
+        "tipo": "Entrada - manual",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "R$ 890,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+  "filtroOrigem": {
+    "nomeEmpresa": "Empresa Fornecedor - CPF",
+    "cpfEmpresa": "915.357.400-19",
+    "totalEntrada": "R$ 561,00",
+    "totalSaida": "R$ 0,00",
+    "saldoAtualizado": "R$ 561,00",
+    "estimativaIRRF": "R$ 0,00",
+    "filtros": true,
+    "filtroOrigem": "Manual",
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "(-) Venda p/ Entrega Futura",
+        "historico": "",
+        "valor": "R$ 361,00",
+        "tipo": "Entrada - manual",
+        "deducao": "Dedutível"
+      },
+      {
+        "contaContabil": "(-) Venda p/ Entrega Futura",
+        "historico": "",
+        "valor": "R$ 200,00",
+        "tipo": "Entrada - manual",
+        "deducao": "Dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "R$ 561,00",
+    "saldoDeducao": "R$ 0,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+  "filtroDedutivel": {
+    "nomeEmpresa": "Empresa Produtor - CPF",
+    "cpfEmpresa": "667.914.180-01",
+    "totalEntrada": "R$ 0,00",
+    "totalSaida": "R$ 0,00",
+    "saldoAtualizado": "R$ 0,00",
+    "estimativaIRRF": "R$ 0,00",
+    "filtros": true,
+    "filtroStatusDedutivel": "Não dedutíveis",
+    "naoDedutivel": true,
+    "cardLivroCaixa": [
+      {
+        "contaContabil": "Numerário em Trânsito",
+        "historico": "",
+        "valor": "R$ 970,00",
+        "tipo": "Saída - manual",
+        "deducao": "Não dedutível"
+      }
+    ],
+    "saldoAnterior": "R$ 0,00",
+    "saldoAtual": "R$ 0,00",
+    "saldoDeducao": "R$ 970,00",
+    "cardEstimativaIRRF": "R$ 0,00"
+  },
+  "exportar": {
+    "nomeEmpresa": "Empresa Produtor - CPF"
+  }
+}
