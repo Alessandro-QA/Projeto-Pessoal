@@ -5,6 +5,7 @@ import locLivroCaixa from '../../../../locators/funcionalidades/financeiro/livro
 const url = '/financeiro/livro-caixa'
 const locatorTituloPagina = locLivroCaixa.dashboard.titulo
 const tituloPagina = 'Livro caixa'
+const novoLancamento = 'Novo lançamento'
 
 class LivroCaixa {
   /**
@@ -294,13 +295,17 @@ class LivroCaixa {
     // Navegar para Livro Caixa
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.intercept('GET', '/api/pessoa/v1/Pessoa/**/IE').as('ApiPessoaIE')
-    cy.intercept('GET', '/api/pessoa/v1/Pessoa/**').as('ApiPessoa')
-    cy.intercept('GET', '/api/financeiro/v1/LivroCaixa/ProdutorLivroCaixa?**').as('ApiProdutorLivroCaixa')
+    cy.intercept('GET', '/api/pessoa/v1/Pessoa/**/IE')
+      .as('ApiPessoaIE')
+    cy.intercept('GET', '/api/pessoa/v1/Pessoa/**')
+      .as('ApiPessoa')
+    cy.intercept('GET', '/api/financeiro/v1/LivroCaixa/ProdutorLivroCaixa?**')
+      .as('ApiProdutorLivroCaixa')
 
     // Abrir livro caixa produtor
     cy.get(locLivroCaixa.dashboard.cardProdutores)
       .contains(seedTestLancamentoLivroCaixa.empresa).click()
+
     cy.wait('@ApiProdutorLivroCaixa', { timeout: 10000 })
 
     // Validar titulo Lançamentos
@@ -313,64 +318,65 @@ class LivroCaixa {
     }
 
     // Abrir lancamento livro caixa
-    cy.getVisible(locLivroCaixa.lancamentos.cardLancamentosConta).click()
+    cy.get(locLivroCaixa.lancamentos.cardLancamentosConta)
+      .contains(seedTestLancamentoLivroCaixa.contaContabil).click()
 
     // Aguarda carregamento dos dados no modal
     cy.wait('@ApiPessoa', { timeout: 10000 })
     cy.wait('@ApiPessoaIE', { timeout: 10000 })
 
     // Validar tipo de lancamento
-    cy.getVisible(locLivroCaixa.editarLancamento.tipoLancamentoAtivo).should(($el) => {
+    cy.getVisible(locLivroCaixa.adicionarLancamento.tipoLancamentoAtivo).should(($el) => {
       expect($el).to.contain.text(seedTestLancamentoLivroCaixa.tipoLancamento)
     })
 
     // Validar tipo de deducao
-    cy.getVisible(locLivroCaixa.editarLancamento.tipoDeducaoAtivo).should(($el) => {
+    cy.getVisible(locLivroCaixa.adicionarLancamento.tipoDeducaoAtivo).should(($el) => {
       expect($el).to.contain.text(seedTestLancamentoLivroCaixa.deducao)
     })
 
     // Validar conta contabil
-    cy.getVisible(locLivroCaixa.editarLancamento.contaContabil).should(($el) => {
+    cy.getVisible(locLivroCaixa.adicionarLancamento.contaContabil).should(($el) => {
       expect($el).to.contain.text(seedTestLancamentoLivroCaixa.contaContabil)
     })
 
     // Validar fazenda
-    cy.get(locLivroCaixa.editarLancamento.fazenda).should(($el) => {
+    cy.get(locLivroCaixa.adicionarLancamento.fazenda).should(($el) => {
       expect($el).to.contain.text(seedTestLancamentoLivroCaixa.fazenda)
     })
 
     // Validar tipo do documento
-    cy.getVisible(locLivroCaixa.editarLancamento.tipoDocumento).should(($el) => {
+    cy.getVisible(locLivroCaixa.adicionarLancamento.tipoDocumento).should(($el) => {
       expect($el).to.contain.text(seedTestLancamentoLivroCaixa.tipoDocumento)
     })
 
     // Validar empresa
-    cy.getVisible(locLivroCaixa.editarLancamento.empresa).should(($el) => {
+    cy.getVisible(locLivroCaixa.adicionarLancamento.empresa).should(($el) => {
       expect($el).to.contain.text(seedTestLancamentoLivroCaixa.empresa)
     })
 
     // Validar inscricao estadual
-    cy.getVisible(locLivroCaixa.editarLancamento.inscricaoEstadual).should(($el) => {
+    cy.getVisible(locLivroCaixa.adicionarLancamento.inscricaoEstadual).should(($el) => {
       expect($el).to.contain.text(seedTestLancamentoLivroCaixa.inscricaoEstadual)
     })
 
     // Validar conta bancaria
-    cy.getVisible(locLivroCaixa.editarLancamento.contaBancaria).should(($el) => {
+    cy.getVisible(locLivroCaixa.adicionarLancamento.contaBancaria).should(($el) => {
       expect($el).to.contain.text(seedTestLancamentoLivroCaixa.contaBancaria)
     })
 
     // validar pessoa
-    cy.getVisible(locLivroCaixa.editarLancamento.pessoa).should(($el) => {
+    cy.getVisible(locLivroCaixa.adicionarLancamento.pessoa).should(($el) => {
       expect($el).to.contain.text(seedTestLancamentoLivroCaixa.pessoa)
     })
 
     // Validar status
-    cy.getVisible(locLivroCaixa.editarLancamento.statusLancamentoAtivo).should(($el) => {
+    cy.getVisible(locLivroCaixa.adicionarLancamento.statusLancamentoAtivo).should(($el) => {
       expect($el).to.contain.text(seedTestLancamentoLivroCaixa.status)
     })
 
     // Fechar modal
-    cy.getVisible(locLivroCaixa.editarLancamento.cancelar).click()
+    cy.getVisible(locLivroCaixa.adicionarLancamento.cancelar).click()
   }
 
   /**
@@ -440,6 +446,75 @@ class LivroCaixa {
           expect($el).to.contain.text(seedTestExclusaoLivroCaixa.saldoDeducao)
         })
       })
+  }
+
+  /**
+   * Adicionar lançamentos no Livro Caixa
+   * @param {*} seedTestLivroCaixa 
+   */
+  adicionarLancamento(seedTestLivroCaixa) {
+    cy.intercept('GET', '/api/financeiro/v1/LivroCaixa/ProdutorLivroCaixa?**')
+      .as('ApiProdutorLivroCaixa')
+    
+    // Navegar para Livro Caixa
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    // Abrir livro caixa produtor
+    cy.get(locLivroCaixa.dashboard.cardProdutores)
+      .contains(seedTestLivroCaixa.empresa).click()
+
+    cy.wait('@ApiProdutorLivroCaixa', { timeout: 10000 })
+
+    cy.getVisible(locLivroCaixa.lancamentos.adicionarLancamento).click()
+
+    cy.getVisible(locLivroCaixa.adicionarLancamento.tituloModal)
+      .contains(novoLancamento)
+
+    cy.getVisible(locLivroCaixa.adicionarLancamento.tipoLancamento)
+      .contains(seedTestLivroCaixa.tipoLancamento).click()
+    
+    cy.wait(2000)
+
+    cy.getVisible(locLivroCaixa.adicionarLancamento.tipoDeducao)
+      .contains(seedTestLivroCaixa.deducao).click()
+
+    // codígo que traz o modal sem motivo nenhum
+    cy.getVisible(locLivroCaixa.adicionarLancamento.data).clear()
+      .type(`${seedTestLivroCaixa.data}{esc}`)
+
+    //
+    cy.getVisible(locLivroCaixa.adicionarLancamento.valor)
+      .type(seedTestLivroCaixa.valor)
+
+    cy.getVisible(locLivroCaixa.adicionarLancamento.contaContabil).click()
+      .contains(seedTestLivroCaixa.contaContabil).click({ timeout: 5000 })
+
+    if (seedTestLivroCaixa.historico) {
+      cy.getVisible(locLivroCaixa.adicionarLancamento.historico)
+        .type(`${seedTestLivroCaixa.historico}{enter}`)
+    }
+
+    cy.getVisible(locLivroCaixa.adicionarLancamento.tipoDocumento).click()
+      .contains(seedTestLivroCaixa.tipoDocumento).click()
+
+    cy.getVisible(locLivroCaixa.adicionarLancamento.empresa).click()
+      .contains(seedTestLivroCaixa.empresaLancamento).click()
+
+    cy.getVisible(locLivroCaixa.adicionarLancamento.inscricaoEstadual).click()
+      .contains(seedTestLivroCaixa.inscricaoEstadual).click()
+
+    cy.getVisible(locLivroCaixa.adicionarLancamento.contaBancaria).click()
+      .contains(seedTestLivroCaixa.contaBancaria).click()
+
+    cy.getVisible(locLivroCaixa.adicionarLancamento.pessoa).click()
+      .contains(seedTestLivroCaixa.pessoa).click()
+
+    if (seedTestLivroCaixa.salvar) {
+      cy.getVisible(locLivroCaixa.adicionarLancamento.salvar).click()
+    }
+    else {
+      cy.getVisible(locLivroCaixa.adicionarLancamento.cancelar).click()
+    }
   }
 
   /**
