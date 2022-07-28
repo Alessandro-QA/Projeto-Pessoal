@@ -15,6 +15,7 @@ const locators = {
   lancamentos: {
     titulo: '[data-cy=header-lancamentos-livro-caixa] > h1',
     abrirFiltros: '[data-cy=page-filter-lancamento-livro-caixa] .el-button--medium',
+    adicionarLancamento: '[data-cy=button-adicionar-lancamento]',
     filtroProdutor: '[data-cy=select-filter-produtor]',
     filtroEmpresa: '[data-cy=select-filter-produtor]',
     filtroDataInicio: '[data-cy=datepicker-filter-data] [placeholder="Data Inicial"]',
@@ -37,11 +38,14 @@ const locators = {
     cardLateralDeducao: '[data-cy=info-card-deducao]',
     cardLateralEstimativaIRRF: '[data-cy=info-card-estimativa-irrf]'
   },
-  editarLancamento: {
+  adicionarLancamento: {
+    tituloModal: '[data-cy=modal-lancamento] h1',
     tipoLancamento: '[data-cy=radio-tipo-lancamento]',
     tipoLancamentoAtivo: '[data-cy=radio-tipo-lancamento] .is-active',
-    tipoDeducao: '[data-cy=radio-tipo-deducao] .is-active',
+    tipoDeducao: '[data-cy=radio-tipo-deducao]',
+    fecharModalConta: '.el-dialog__wrapper .el-dialog__header .el-dialog__headerbtn',
     tipoDeducaoAtivo: '[data-cy=radio-tipo-deducao] .is-active',
+    data: '[data-cy=date-picker-data-lancamento]',
     valor: '[data-cy=input-valor-lancamento] input',
     contaContabil: '[data-cy=select-conta-contabil]',
     fazenda: '[data-cy=select-fazenda]',
