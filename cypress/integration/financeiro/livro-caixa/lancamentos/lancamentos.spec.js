@@ -67,14 +67,14 @@ context('Funcionalidade', () => {
 
       it('Ao filtrar pela conta', { retries: { runMode: 1, openMode: 1, }, }, function () {
         cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.filtrarConta)
+          .descriptionHtml(testDescription.filtroConta)
         
         LivroCaixa.validarLancamentos(seedTestLivroCaixa.filtroConta)
       })
 
       it('Ao filtrar pela fazenda', { retries: { runMode: 1, openMode: 1, }, }, function () {
         cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.filtrarFazenda)
+          .descriptionHtml(testDescription.filtroFazenda)
         
         LivroCaixa.validarLancamentos(seedTestLivroCaixa.filtroFazenda)
       })

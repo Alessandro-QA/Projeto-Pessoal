@@ -21,7 +21,51 @@ const html = {
     <strong>ENTAO</strong> será mostrado e validado os lançamentos do produtor no Livro Caixa <br/>
 </div>
   `,
-  filtrarConta: `
+  filtroProdutor: `
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Lançamentos do produtor no Livro Caixa </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente da fazenda <br/>
+    <strong>QUERO</strong> visualizar os lançamentos de um produtor o Livro Caixa <br/>
+    <strong>PARA</strong> melhor gestão do meu Livro Caixa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Filtrar por produtor </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira visualizar os lançamentos de algum produtor no Livro Caixa <br/>
+    <strong>QUANDO</strong> eu selecionar um dos produtores listados na Listagem do Livro Caixa <br/>
+    <strong>E</strong> selecionar o filtro de produtor <br/>
+    <strong>ENTAO</strong> será mostrado e validado os lançamentos do produtor no Livro Caixa <br/>
+</div>
+  `,
+  filtroData: `
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Lançamentos do produtor no Livro Caixa </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente da fazenda <br/>
+    <strong>QUERO</strong> visualizar os lançamentos de um produtor o Livro Caixa <br/>
+    <strong>PARA</strong> melhor gestão do meu Livro Caixa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Filtrar por data </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira visualizar os lançamentos de algum produtor no Livro Caixa <br/>
+    <strong>QUANDO</strong> eu selecionar um dos produtores listados na Listagem do Livro Caixa <br/>
+    <strong>E</strong> selecionar um período <br/>
+    <strong>ENTAO</strong> será mostrado e validado todos os lançamento do filtro selecionado <br/>
+</div>
+  `,
+  filtroConta: `
 <div>
     <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
     <span style="color: #b22222;"> Lançamentos do produtor no Livro Caixa </span>
@@ -43,7 +87,7 @@ const html = {
     <strong>ENTAO</strong> será mostrado e validado todos os lançamento do filtro selecionado <br/>
 </div>
   `,
-  filtrarFazenda: `
+  filtroFazenda: `
 <div>
     <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
     <span style="color: #b22222;"> Lançamentos do produtor no Livro Caixa </span>
@@ -62,6 +106,28 @@ const html = {
     <strong>DADO</strong> que eu queira visualizar os lançamentos de algum produtor no Livro Caixa <br/>
     <strong>QUANDO</strong> eu selecionar um dos produtores listados na Listagem do Livro Caixa <br/>
     <strong>E</strong> selecionar uma fazenda no filtro de fazenda <br/>
+    <strong>ENTAO</strong> será mostrado e validado todos os lançamento do filtro selecionado <br/>
+</div>
+  `,
+  filtroPessoa: `
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Lançamentos do produtor no Livro Caixa </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente da fazenda <br/>
+    <strong>QUERO</strong> visualizar os lançamentos de um produtor o Livro Caixa <br/>
+    <strong>PARA</strong> melhor gestão do meu Livro Caixa <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Filtrar por pessoa </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira visualizar os lançamentos de algum produtor no Livro Caixa <br/>
+    <strong>QUANDO</strong> eu selecionar um dos produtores listados na Listagem do Livro Caixa <br/>
+    <strong>E</strong> selecionar o filtro por pessoa <br/>
     <strong>ENTAO</strong> será mostrado e validado todos os lançamento do filtro selecionado <br/>
 </div>
   `,

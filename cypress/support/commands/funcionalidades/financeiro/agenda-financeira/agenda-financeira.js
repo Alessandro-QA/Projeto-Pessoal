@@ -127,7 +127,7 @@ class AgendaFinanceira {
     }
 
     // Botao de recebimento / pagamento
-    cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.botaoPagarReceber).click()
+    cy.get(locAgendaFinanceira.pagamentoRecebimento.botaoPagarReceber).click({ force: true })
 
     cy.get(locAgendaFinanceira.pagamentoRecebimento.mensagemSucessoPagamento).then(($message) => {
       if (seedTestAgendaFinanceira.pagamento) {
