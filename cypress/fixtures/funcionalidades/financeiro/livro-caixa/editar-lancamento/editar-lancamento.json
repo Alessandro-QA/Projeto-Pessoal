@@ -1,0 +1,37 @@
+{
+  "entrada": {
+    "empresa": "Empresa Fornecedor - CPF",
+    "editar": true,
+    "tipoLancamento": "Entrada",
+    "deducao": "Não Dedutível",
+    "data": "27/06/2022",
+    "valor": "R$ 200",
+    "contaContabil": "(-) Duplicatas Descontadas",
+    "fazenda": "Fazenda E2E",
+    "historico": "Venda de Grãos",
+    "tipoDocumento": "Recibo",
+    "empresaLancamento": "Empresa Fornecedor - CPF",
+    "inscricaoEstadual": "32165465622",
+    "contaBancaria": "Conta E2E",
+    "pessoa": "91535740019 - Empresa Fornecedor - CPF",
+    "status": "Ativo",
+    "salvar": true
+  },
+  "saida": {
+    "empresa": "Empresa Fornecedor - CPF",
+    "editar": true,
+    "tipoLancamento": "Saída",
+    "deducao": "Não Dedutível",
+    "data": "27/06/2022",
+    "valor": "R$ 350",
+    "contaContabil": "Numerário em Trânsito",
+    "fazenda": "Fazenda E2E",
+    "tipoDocumento": "Contrato",
+    "empresaLancamento": "Empresa Produtor - CPF",
+    "inscricaoEstadual": "545612",
+    "contaBancaria": "Conta Corrente E2E",
+    "pessoa": "91535740019 - Empresa Fornecedor - CPF",
+    "status": "Ativo",
+    "salvar": true
+  }
+}
