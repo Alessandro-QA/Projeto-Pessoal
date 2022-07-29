@@ -134,39 +134,47 @@ class LivroCaixa {
     cy.getVisible(locLivroCaixa.lancamentos.titulo)
       .contains('Lançamentos')
 
+      // abrir os filtros
     if (seedTestLivroCaixa.filtros) {
       cy.getVisible(locLivroCaixa.lancamentos.abrirFiltros).click()
 
       cy.wait('@ApiProdutorLivro', { timeout: 20000 })
 
+      // filtrar pelo produtor
       if (seedTestLivroCaixa.filtroProdutor) {
         cy.getVisible(locLivroCaixa.lancamentos.filtroProdutor).click()
           .contains(seedTestLivroCaixa.filtroProdutor).click()
       }
 
       if (seedTestLivroCaixa.filtroDataInicio) {
+        // informar a data ínicio do filtro
         cy.getVisible(locLivroCaixa.lancamentos.filtroDataInicio).clear()
           .type(`${seedTestLivroCaixa.filtroDataInicio}{enter}`)
 
+        // informar a data FIM do filtro
         cy.getVisible(locLivroCaixa.lancamentos.filtroDataFim).clear()
           .type(`${seedTestLivroCaixa.filtroDataFim}{enter}`)
       }
 
+      // filtrar pela conta contabil
       if (seedTestLivroCaixa.contaContabil) {
         cy.getVisible(locLivroCaixa.lancamentos.selectConta).click()
           .contains(seedTestLivroCaixa.contaContabil).click()
       }
 
+      // filtrar pela fazenda
       if (seedTestLivroCaixa.filtroFazenda) {
         cy.getVisible(locLivroCaixa.lancamentos.selectFazenda).click()
           .contains(seedTestLivroCaixa.filtroFazenda).click()
       }
 
+      // filtrar pela pessoa
       if (seedTestLivroCaixa.filtroPessoa) {
         cy.getVisible(locLivroCaixa.lancamentos.selectPessoa).click()
           .contains(seedTestLivroCaixa.filtroPessoa).click()
       }
 
+      // filtrar pelo tipo de lançamento
       if (seedTestLivroCaixa.filtroTipo) {
         cy.getVisible(locLivroCaixa.lancamentos.selectTipo).click()
         cy.getVisible(locLivroCaixa.lancamentos.selectTipo).find('ul').then(($el) => {
@@ -182,16 +190,19 @@ class LivroCaixa {
         })
       }
 
+      // filtrar pela origem do lançamento
       if (seedTestLivroCaixa.filtroOrigem) {
         cy.getVisible(locLivroCaixa.lancamentos.selectOrigem).click()
           .contains(seedTestLivroCaixa.filtroOrigem).click()
       }
 
+      // filtrar por status ativo/inativo
       if (seedTestLivroCaixa.filtroStatus) {
         cy.getVisible(locLivroCaixa.lancamentos.selectOrigem).click()
           .contains(seedTestLivroCaixa.filtroStatus).click()
       }
 
+      // filtrar por status dedutivel/naodedutivel
       if (seedTestLivroCaixa.filtroStatusDedutivel) {
         cy.getVisible(locLivroCaixa.lancamentos.selectStatusDedutivel).click()
         cy.getVisible(locLivroCaixa.lancamentos.selectStatusDedutivel).find('ul').then(($el) => {
@@ -452,10 +463,10 @@ class LivroCaixa {
    * Adicionar lançamentos no Livro Caixa
    * @param {*} seedTestLivroCaixa 
    */
-  adicionarLancamento(seedTestLivroCaixa) {
+  adicionarEditarLancamento(seedTestLivroCaixa) {
     cy.intercept('GET', '/api/financeiro/v1/LivroCaixa/ProdutorLivroCaixa?**')
       .as('ApiProdutorLivroCaixa')
-    
+
     // Navegar para Livro Caixa
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
@@ -465,54 +476,75 @@ class LivroCaixa {
 
     cy.wait('@ApiProdutorLivroCaixa', { timeout: 10000 })
 
-    cy.getVisible(locLivroCaixa.lancamentos.adicionarLancamento).click()
+    if (seedTestLivroCaixa.editar) {
+      // Abrir lancamento livro caixa
+      cy.get(locLivroCaixa.lancamentos.cardLancamentosConta)
+        .contains(seedTestLivroCaixa.contaContabil).click()
+    }
+    else {
+      // Clicar no ícone de adicionar lançamento
+      cy.getVisible(locLivroCaixa.lancamentos.adicionarLancamento).click()
 
-    cy.getVisible(locLivroCaixa.adicionarLancamento.tituloModal)
+      // Validar modal de lançamento
+      cy.getVisible(locLivroCaixa.adicionarLancamento.tituloModal)
       .contains(novoLancamento)
+    }
 
+    // selecionar o tipo de lançamento
     cy.getVisible(locLivroCaixa.adicionarLancamento.tipoLancamento)
       .contains(seedTestLivroCaixa.tipoLancamento).click()
-    
+
+    // espera necessária para que o tipo de lançamento fique estável
     cy.wait(2000)
 
+    // selecionar o tipo de dedução
     cy.getVisible(locLivroCaixa.adicionarLancamento.tipoDeducao)
       .contains(seedTestLivroCaixa.deducao).click()
 
-    // codígo que traz o modal sem motivo nenhum
+    // informar a data do lançamento
     cy.getVisible(locLivroCaixa.adicionarLancamento.data).clear()
       .type(`${seedTestLivroCaixa.data}{esc}`)
 
-    //
-    cy.getVisible(locLivroCaixa.adicionarLancamento.valor)
+    // informar o valor
+    cy.getVisible(locLivroCaixa.adicionarLancamento.valor).clear()
       .type(seedTestLivroCaixa.valor)
 
+    // selecionar a conta contabil
     cy.getVisible(locLivroCaixa.adicionarLancamento.contaContabil).click()
-      .contains(seedTestLivroCaixa.contaContabil).click({ timeout: 5000 })
+      .contains(seedTestLivroCaixa.contaContabil).click()
 
+    // informar o histórico 
     if (seedTestLivroCaixa.historico) {
       cy.getVisible(locLivroCaixa.adicionarLancamento.historico)
-        .type(`${seedTestLivroCaixa.historico}{enter}`)
+        .type(seedTestLivroCaixa.historico)
     }
 
+    // selecionar o tipo de documento
     cy.getVisible(locLivroCaixa.adicionarLancamento.tipoDocumento).click()
       .contains(seedTestLivroCaixa.tipoDocumento).click()
 
+    // selecionar a empresa
     cy.getVisible(locLivroCaixa.adicionarLancamento.empresa).click()
       .contains(seedTestLivroCaixa.empresaLancamento).click()
 
+    // selecionar a inscrição estadual da empresa
     cy.getVisible(locLivroCaixa.adicionarLancamento.inscricaoEstadual).click()
       .contains(seedTestLivroCaixa.inscricaoEstadual).click()
 
+    // selecionar a conta bancária de onde será realizada o débito/crédito
     cy.getVisible(locLivroCaixa.adicionarLancamento.contaBancaria).click()
       .contains(seedTestLivroCaixa.contaBancaria).click()
 
+    // selecionar a pessoa
     cy.getVisible(locLivroCaixa.adicionarLancamento.pessoa).click()
       .contains(seedTestLivroCaixa.pessoa).click()
 
+    // clicar em salvar o lançamento
     if (seedTestLivroCaixa.salvar) {
       cy.getVisible(locLivroCaixa.adicionarLancamento.salvar).click()
     }
     else {
+      // cancelar o lançamento
       cy.getVisible(locLivroCaixa.adicionarLancamento.cancelar).click()
     }
   }

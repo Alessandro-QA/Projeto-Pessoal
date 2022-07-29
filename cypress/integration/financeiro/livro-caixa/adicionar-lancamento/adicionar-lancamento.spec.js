@@ -23,7 +23,7 @@ context('Funcionalidade', () => {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.entradaDedutivel)
 
-        LivroCaixa.adicionarLancamento(seedTestLancamento.entradaDedutivel)
+        LivroCaixa.adicionarEditarLancamento(seedTestLancamento.entradaDedutivel)
       })
 
       it('Validar lançamento na tela de Lançamento', function () {
@@ -34,7 +34,7 @@ context('Funcionalidade', () => {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.entradaNaoDedutivel)
 
-        LivroCaixa.adicionarLancamento(seedTestLancamento.entradaNaoDedutivel)
+        LivroCaixa.adicionarEditarLancamento(seedTestLancamento.entradaNaoDedutivel)
       })
 
       it('Validar lançamento na tela de Lançamento', function () {
@@ -47,7 +47,7 @@ context('Funcionalidade', () => {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.saidaDedutivel)
 
-        LivroCaixa.adicionarLancamento(seedTestLancamento.saidaDedutivel)
+        LivroCaixa.adicionarEditarLancamento(seedTestLancamento.saidaDedutivel)
       })
 
       it('Validar lançamento na tela de Lançamento', function () {
@@ -58,7 +58,7 @@ context('Funcionalidade', () => {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.saidaNaoDedutivel)
 
-        LivroCaixa.adicionarLancamento(seedTestLancamento.saidaNaoDedutivel)
+        LivroCaixa.adicionarEditarLancamento(seedTestLancamento.saidaNaoDedutivel)
       })
 
       it('Validar lançamento na tela de Lançamento', function () {
