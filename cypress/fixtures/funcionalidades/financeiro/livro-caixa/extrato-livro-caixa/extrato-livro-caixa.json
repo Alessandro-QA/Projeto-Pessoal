@@ -115,13 +115,15 @@
     "tipoLancamento": "Entrada",
     "deducao": "Dedutível",
     "data": "01/04/2022",
-    "valor": "200",
+    "valor": "20",
     "contaContabil": "(-) Duplicatas Descontadas",
     "tipoDocumento": "Fatura",
     "empresaLancamento": "Empresa Fornecedor - CPF",
     "inscricaoEstadual": "32165465622",
     "contaBancaria": "Conta E2E",
     "pessoa": "91535740019 - Empresa Fornecedor - CPF",
+    "status": "Inativo",
+    "salvar": true,
     "filtroStatus": "Inativo",
     "valoresMes": [
       {
