@@ -491,6 +491,8 @@ class MovimentacaoBancaria {
       cy.getVisible(locMovimentacaoBancaria.conciliacaoBancaria.mensagemModal).should(($el) => {
         expect($el).to.contain.text(seedTestConciliacao.mensagem)
       })
+
+      cy.get(locMovimentacaoBancaria.conciliacaoBancaria.buttonClose).click()
     } else {
       cy.getVisible(locMovimentacaoBancaria.conciliacaoBancaria.mensagemAlerta).should(($el) => {
         expect($el).to.contain.text(seedTestConciliacao.mensagem)
