@@ -26,8 +26,8 @@ context('Funcionalidade', () => {
         LivroCaixa.adicionarEditarLancamento(seedTestLancamento.entradaDedutivel)
       })
 
-      it('Validar lançamento na tela de Lançamento', function () {
-        LivroCaixa.validarLancamento(seedTestLancamento.entradaDedutivel)
+      it('Validar detalhes do Lançamento', function () {
+        LivroCaixa.validarDetalhes(seedTestLancamento.entradaDedutivel)
       })
 
       it('Não dedutível', function () {
@@ -37,8 +37,8 @@ context('Funcionalidade', () => {
         LivroCaixa.adicionarEditarLancamento(seedTestLancamento.entradaNaoDedutivel)
       })
 
-      it('Validar lançamento na tela de Lançamento', function () {
-        LivroCaixa.validarLancamento(seedTestLancamento.entradaNaoDedutivel)
+      it('Validar detalhes do Lançamento', function () {
+        LivroCaixa.validarDetalhes(seedTestLancamento.entradaNaoDedutivel)
       })
     })
 
@@ -50,8 +50,8 @@ context('Funcionalidade', () => {
         LivroCaixa.adicionarEditarLancamento(seedTestLancamento.saidaDedutivel)
       })
 
-      it('Validar lançamento na tela de Lançamento', function () {
-        LivroCaixa.validarLancamento(seedTestLancamento.saidaDedutivel)
+      it('Validar detalhes do Lançamento', function () {
+        LivroCaixa.validarDetalhes(seedTestLancamento.saidaDedutivel)
       })
 
       it('Não dedutível', function () {
@@ -61,8 +61,8 @@ context('Funcionalidade', () => {
         LivroCaixa.adicionarEditarLancamento(seedTestLancamento.saidaNaoDedutivel)
       })
 
-      it('Validar lançamento na tela de Lançamento', function () {
-        LivroCaixa.validarLancamento(seedTestLancamento.saidaNaoDedutivel)
+      it('Validar detalhes do Lançamento', function () {
+        LivroCaixa.validarDetalhes(seedTestLancamento.saidaNaoDedutivel)
       })
     })
   })
