@@ -560,11 +560,11 @@ class LivroCaixa {
 
     // clicar em salvar o lançamento
     if (seedTestLivroCaixa.salvar) {
-      cy.getVisible(locLivroCaixa.adicionarLancamento.salvar).click()
+      cy.get(locLivroCaixa.adicionarLancamento.salvar).click({ force: true })
     }
     else {
       // cancelar o lançamento
-      cy.getVisible(locLivroCaixa.adicionarLancamento.cancelar).click()
+      cy.get(locLivroCaixa.adicionarLancamento.cancelar).click({ force: true })
     }
   }
 
@@ -607,6 +607,9 @@ class LivroCaixa {
     }
 
     cy.wait('@ApiProdutorLivro', { timeout: 10000 })
+
+    // espera necessária para que os livro caixa atualize as informações
+    cy.wait(2000)
 
     if (seedTestLivroCaixa.valoresMes) {
       const valores = seedTestLivroCaixa.valoresMes

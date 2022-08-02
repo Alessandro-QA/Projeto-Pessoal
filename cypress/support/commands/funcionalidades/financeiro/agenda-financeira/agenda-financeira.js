@@ -92,11 +92,11 @@ class AgendaFinanceira {
         cy.get($cardAgenda, { timeout: 10000 }).should('exist').and('be.visible')
 
         // abrir detalhes do titulo
-        cy.getVisible($cardAgenda, { timeout: 5000 }).click()
+        cy.getVisible($cardAgenda, { timeout: 10000 }).click()
       })
 
     // clicar no botão para ir a tela de recebimento/pagamento 
-    cy.getVisible(locAgendaFinanceira.detalhesTitulo.efetuarPagamento).click()
+    cy.getVisible(locAgendaFinanceira.detalhesTitulo.efetuarPagamento).click({ timeout: 10000 })
 
     // Selecionar forma de pagamento
     if (seedTestAgendaFinanceira.formaPagamento) {
