@@ -14,6 +14,7 @@ const locators = {
   },
   lancamentos: {
     titulo: '[data-cy=header-lancamentos-livro-caixa] > h1',
+    abrirLivroCaixa: '[data-cy=header-lancamentos-livro-caixa] .el-button.right-button.el-button--primary',
     abrirFiltros: '[data-cy=page-filter-lancamento-livro-caixa] .el-button--medium',
     adicionarLancamento: '[data-cy=button-adicionar-lancamento]',
     filtroProdutor: '[data-cy=select-filter-produtor]',
@@ -59,6 +60,14 @@ const locators = {
     statusLancamentoAtivo: '[data-cy=radio-status-lancamento] .is-active',
     cancelar: '[data-cy=modal-lancamento] .el-dialog__footer .el-button--secondary',
     salvar: '[data-cy=modal-lancamento] .el-dialog__footer .el-button--primary'
+  },
+  livroCaixa: {
+    selectProdutor: '[data-cy=select-produtor-livro-caixa]',
+    dataAno: '[data-cy=date-picker-ano-livro-caixa] > div > input',
+    abrirFiltros: '[data-cy=page-filter-extrato-livro-caixa] .el-button',
+    filtroStatus: '[data-cy=select-status-extrato-livro-caixa]',
+    butaoExportar: '[data-cy=header-extrato-livro-caixa] .el-button--secondary',
+    tabelaLivroCaixa: '[data-cy=table-extrato-livro-caixa] .el-table__body .el-table__row'
   }
 }
 
