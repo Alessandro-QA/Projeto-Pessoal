@@ -35,8 +35,8 @@
   },
   "movimentacaoData": {
     "empresa": "Selecionar Todas",
-    "filtroDataInicio": "01/06/2022",
-    "filtroDataFim": "01/07/2022",
+    "filtroDataInicio": "01/07/2022",
+    "filtroDataFim": "01/08/2022",
     "cardMovimentacao": [
       {
         "tipo": "Pagamento",
