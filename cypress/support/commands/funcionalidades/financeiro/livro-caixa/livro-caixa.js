@@ -134,7 +134,7 @@ class LivroCaixa {
     cy.getVisible(locLivroCaixa.lancamentos.titulo)
       .contains('Lançamentos')
 
-      // abrir os filtros
+    // abrir os filtros
     if (seedTestLivroCaixa.filtros) {
       cy.getVisible(locLivroCaixa.lancamentos.abrirFiltros).click()
 
@@ -302,7 +302,7 @@ class LivroCaixa {
    * Validar detalhes do lançamento no Livro Caixa
    * @param {*} seedTestLancamentoLivroCaixa
    */
-  validarLancamento(seedTestLancamentoLivroCaixa) {
+  validarDetalhes(seedTestLancamentoLivroCaixa) {
     // Navegar para Livro Caixa
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
@@ -477,6 +477,18 @@ class LivroCaixa {
     cy.wait('@ApiProdutorLivroCaixa', { timeout: 10000 })
 
     if (seedTestLivroCaixa.editar) {
+      if (seedTestLivroCaixa.filtroDataInicio) {
+        // informar a data ínicio do filtro
+        cy.getVisible(locLivroCaixa.lancamentos.filtroDataInicio).clear()
+          .type(`${seedTestLivroCaixa.filtroDataInicio}{enter}`)
+
+        // informar a data FIM do filtro
+        cy.getVisible(locLivroCaixa.lancamentos.filtroDataFim).clear()
+          .type(`${seedTestLivroCaixa.filtroDataFim}{enter}`)
+
+        cy.wait('@ApiProdutorLivroCaixa', { timeout: 20000 })
+      }
+
       // Abrir lancamento livro caixa
       cy.get(locLivroCaixa.lancamentos.cardLancamentosConta)
         .contains(seedTestLivroCaixa.contaContabil).click()
@@ -487,7 +499,7 @@ class LivroCaixa {
 
       // Validar modal de lançamento
       cy.getVisible(locLivroCaixa.adicionarLancamento.tituloModal)
-      .contains(novoLancamento)
+        .contains(novoLancamento)
     }
 
     // selecionar o tipo de lançamento
@@ -539,6 +551,13 @@ class LivroCaixa {
     cy.getVisible(locLivroCaixa.adicionarLancamento.pessoa).click()
       .contains(seedTestLivroCaixa.pessoa).click()
 
+    if (seedTestLivroCaixa.status) {
+      cy.getVisible(locLivroCaixa.adicionarLancamento.statusLancamento)
+        .contains(seedTestLivroCaixa.status).click()
+
+      cy.wait(2000)
+    }
+
     // clicar em salvar o lançamento
     if (seedTestLivroCaixa.salvar) {
       cy.getVisible(locLivroCaixa.adicionarLancamento.salvar).click()
@@ -546,6 +565,74 @@ class LivroCaixa {
     else {
       // cancelar o lançamento
       cy.getVisible(locLivroCaixa.adicionarLancamento.cancelar).click()
+    }
+  }
+
+  /**
+   * Validar extrato de lançamentos do Livro Caixa
+   * @param {*} seedTestLivroCaixa 
+   */
+  validarExtrato(seedTestLivroCaixa) {
+    const path = require('path')
+
+    cy.intercept('/api/financeiro/v1/LivroCaixa/ProdutorLivroCaixa?**')
+      .as('ApiProdutorLivro')
+
+    // Navegar para Livro Caixa
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    // Abrir livro caixa produtor
+    cy.get(locLivroCaixa.dashboard.cardProdutores)
+      .contains(seedTestLivroCaixa.empresa).click()
+
+    cy.wait('@ApiProdutorLivro')
+
+    cy.getVisible(locLivroCaixa.lancamentos.abrirLivroCaixa).click()
+
+    if (seedTestLivroCaixa.produtor) {
+      cy.getVisible(locLivroCaixa.livroCaixa.selectProdutor).click()
+        .contains(seedTestLivroCaixa.produtor).click()
+    }
+
+    if (seedTestLivroCaixa.dataAno) {
+      cy.getVisible(locLivroCaixa.livroCaixa.dataAno).clear()
+        .type(`${seedTestLivroCaixa.dataAno}{enter}`)
+    }
+
+    if (seedTestLivroCaixa.filtroStatus) {
+      cy.getVisible(locLivroCaixa.livroCaixa.abrirFiltros).click()
+
+      cy.getVisible(locLivroCaixa.livroCaixa.filtroStatus).click()
+        .contains(seedTestLivroCaixa.filtroStatus).click()
+    }
+
+    cy.wait('@ApiProdutorLivro', { timeout: 10000 })
+
+    if (seedTestLivroCaixa.valoresMes) {
+      const valores = seedTestLivroCaixa.valoresMes
+      valores.forEach((valor, index) => {
+        cy.get(locLivroCaixa.livroCaixa.tabelaLivroCaixa).should('have.length', valores.length)
+
+        // validar receitas
+        cy.get(locLivroCaixa.livroCaixa.tabelaLivroCaixa).eq(index).should(($el) => {
+          expect($el).to.contain.text(valor.receitas)
+        })
+        // validar despesas
+        cy.get(locLivroCaixa.livroCaixa.tabelaLivroCaixa).eq(index).should(($el) => {
+          expect($el).to.contain.text(valor.despesas)
+        })
+      })
+    }
+
+    if (seedTestLivroCaixa.exportar) {
+      cy.window().document().then(function (doc) {
+        doc.addEventListener('click', () => {
+          setTimeout(function () { doc.location.reload() }, 5000)
+        })
+        cy.getVisible(locLivroCaixa.livroCaixa.butaoExportar).click()
+      })
+      const downloadsFolder = Cypress.config('downloadsFolder')
+      cy.readFile(path.join(downloadsFolder, seedTestLivroCaixa.nomeArquivo), { timeout: 10000 }).should('exist')
     }
   }
 
