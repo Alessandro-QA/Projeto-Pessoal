@@ -1,0 +1,342 @@
+{
+  "dev": {
+    "entradaDedutivel1": {
+      "produtor": {
+        "id": "b800a655-d5c6-49ac-b8c6-cd17bd1e19d0",
+        "descricao": "Matheus Oliveira",
+        "documentoPrincipal": "27770797063"
+      },
+      "empresa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "ad2f682d-3b1c-4f45-bf0d-54f43a6bd790",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "2022-04-01T14:03:08-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.02",
+        "descricao": "(-) Venda p/ Entrega Futura",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "2f1bed51-f02b-4e94-ac20-a0733462e3de",
+        "descricao": "OFX - Santander"
+      },
+      "tipoDocumento": 1,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 890,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "fazenda": {
+        "id": "b0f2a6e1-81a2-4123-bf46-4fc5e6a54738",
+        "descricao": "Fazenda E2E"
+      }
+    },
+    "entradaDedutivel2": {
+      "produtor": {
+        "id": "b800a655-d5c6-49ac-b8c6-cd17bd1e19d0",
+        "descricao": "Matheus Oliveira",
+        "documentoPrincipal": "27770797063"
+      },
+      "empresa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "ad2f682d-3b1c-4f45-bf0d-54f43a6bd790",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "2022-05-23T11:18:26-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.03",
+        "descricao": "(-) Duplicatas Descontadas",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "2f1bed51-f02b-4e94-ac20-a0733462e3de",
+        "descricao": "OFX - Santander"
+      },
+      "tipoDocumento": 5,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 361,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "fazenda": {
+        "id": "b0f2a6e1-81a2-4123-bf46-4fc5e6a54738",
+        "descricao": "Fazenda E2E"
+      }
+    },
+    "entradaDedutivel3": {
+      "produtor": {
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF",
+        "documentoPrincipal": "91535740019"
+      },
+      "empresa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "ad2f682d-3b1c-4f45-bf0d-54f43a6bd790",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "2022-04-01T08:45:10-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.03",
+        "descricao": "(-) Duplicatas Descontadas",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "2f1bed51-f02b-4e94-ac20-a0733462e3de",
+        "descricao": "OFX - Santander"
+      },
+      "tipoDocumento": 1,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 200,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "fazenda": {
+        "id": "b0f2a6e1-81a2-4123-bf46-4fc5e6a54738",
+        "descricao": "Fazenda E2E"
+      }
+    },
+    "saidaDedutivel": {
+      "produtor": {
+        "id": "b800a655-d5c6-49ac-b8c6-cd17bd1e19d0",
+        "descricao": "Matheus Oliveira",
+        "documentoPrincipal": "27770797063"
+      },
+      "empresa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "ad2f682d-3b1c-4f45-bf0d-54f43a6bd790",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "2021-07-21T00:00:00-03:00",
+      "contaContabil": {
+        "codigo": "1.01.01.02",
+        "descricao": "Bancos",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "2f1bed51-f02b-4e94-ac20-a0733462e3de",
+        "descricao": "OFX - Santander"
+      },
+      "tipoDocumento": 4,
+      "historico": "",
+      "saida": true,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 1950,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "fazenda": {
+        "id": "b0f2a6e1-81a2-4123-bf46-4fc5e6a54738",
+        "descricao": "Fazenda E2E"
+      }
+    }
+  },
+  "qa": {
+    "entradaDedutivel1": {
+      "produtor": {
+        "id": "d9c471f3-756c-4c98-b5d2-786ea8a3a169",
+        "descricao": "Matheus Oliveira",
+        "documentoPrincipal": "27770797063"
+      },
+      "empresa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "a8989fc6-a034-45b4-89a3-bf02889f306e",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "2022-04-01T00:00:00-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.02",
+        "descricao": "(-) Venda p/ Entrega Futura",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "aaff51fc-464f-4c4e-b2bb-a0b1350f7e71",
+        "descricao": "OFX - Santander"
+      },
+      "tipoDocumento": 1,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 890,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "fazenda": {
+        "id": "cc6b4476-eb9a-4368-b7ab-ddecc7633255",
+        "descricao": "Fazenda E2E"
+      }
+    },
+    "entradaDedutivel2": {
+      "produtor": {
+        "id": "d9c471f3-756c-4c98-b5d2-786ea8a3a169",
+        "descricao": "Matheus Oliveira",
+        "documentoPrincipal": "27770797063"
+      },
+      "empresa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "a8989fc6-a034-45b4-89a3-bf02889f306e",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "2022-05-23T00:00:00-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.03",
+        "descricao": "(-) Duplicatas Descontadas",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "aaff51fc-464f-4c4e-b2bb-a0b1350f7e71",
+        "descricao": "OFX - Santander"
+      },
+      "tipoDocumento": 5,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 361,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "fazenda": {
+        "id": "cc6b4476-eb9a-4368-b7ab-ddecc7633255",
+        "descricao": "Fazenda E2E"
+      }
+    },
+    "entradaDedutivel3": {
+      "produtor": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF",
+        "documentoPrincipal": "91535740019"
+      },
+      "empresa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "a8989fc6-a034-45b4-89a3-bf02889f306e",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "2022-04-01T00:00:00-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.03",
+        "descricao": "(-) Duplicatas Descontadas",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "aaff51fc-464f-4c4e-b2bb-a0b1350f7e71",
+        "descricao": "OFX - Santander"
+      },
+      "tipoDocumento": 1,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 200,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "fazenda": {
+        "id": "cc6b4476-eb9a-4368-b7ab-ddecc7633255",
+        "descricao": "Fazenda E2E"
+      }
+    },
+    "saidaDedutivel": {
+      "produtor": {
+        "id": "d9c471f3-756c-4c98-b5d2-786ea8a3a169",
+        "descricao": "Matheus Oliveira",
+        "documentoPrincipal": "27770797063"
+      },
+      "empresa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "a8989fc6-a034-45b4-89a3-bf02889f306e",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "2021-07-21T08:54:56-03:00",
+      "contaContabil": {
+        "codigo": "1.01.01.02",
+        "descricao": "Bancos",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "aaff51fc-464f-4c4e-b2bb-a0b1350f7e71",
+        "descricao": "OFX - Santander"
+      },
+      "tipoDocumento": 4,
+      "historico": "",
+      "saida": true,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 1950,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF"
+      },
+      "fazenda": {
+        "id": "cc6b4476-eb9a-4368-b7ab-ddecc7633255",
+        "descricao": "Fazenda E2E"
+      }
+    }
+  }
+}
