@@ -44,9 +44,10 @@ context('Funcionalidade', () => {
       })
 
       it('Do tipo Saída', function () {
-        LivroCaixa.adicionarEditarLancamento(seedTestLivroCaixa.saida)
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.editar)
+
+        LivroCaixa.adicionarEditarLancamento(seedTestLivroCaixa.saida)
       })
     })
   })

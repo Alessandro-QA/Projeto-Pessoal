@@ -466,6 +466,8 @@ class LivroCaixa {
   adicionarEditarLancamento(seedTestLivroCaixa) {
     cy.intercept('GET', '/api/financeiro/v1/LivroCaixa/ProdutorLivroCaixa?**')
       .as('ApiProdutorLivroCaixa')
+    cy.intercept('GET', '/api/pessoa/v1/Pessoa/List?TiposClassificacao=Produtor**')
+      .as('ApiLivroCaixaClassificacao')
 
     // Navegar para Livro Caixa
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
@@ -491,11 +493,19 @@ class LivroCaixa {
 
       // Abrir lancamento livro caixa
       cy.get(locLivroCaixa.lancamentos.cardLancamentosConta)
-        .contains(seedTestLivroCaixa.contaContabil).click()
+        .contains(seedTestLivroCaixa.contaContabil).click({ force: true})
+
+      // espera necessária para que o modal termine de carregar as informações
+      cy.wait(4000)
     }
     else {
       // Clicar no ícone de adicionar lançamento
       cy.getVisible(locLivroCaixa.lancamentos.adicionarLancamento).click()
+
+      cy.wait('@ApiLivroCaixaClassificacao', { timeout: 20000 })
+
+      // espera necessária para que o modal termine de carregar as informações
+      cy.wait(2000)
 
       // Validar modal de lançamento
       cy.getVisible(locLivroCaixa.adicionarLancamento.tituloModal)
@@ -505,9 +515,6 @@ class LivroCaixa {
     // selecionar o tipo de lançamento
     cy.getVisible(locLivroCaixa.adicionarLancamento.tipoLancamento)
       .contains(seedTestLivroCaixa.tipoLancamento).click()
-
-    // espera necessária para que o tipo de lançamento fique estável
-    cy.wait(2000)
 
     // selecionar o tipo de dedução
     cy.getVisible(locLivroCaixa.adicionarLancamento.tipoDeducao)
@@ -523,7 +530,7 @@ class LivroCaixa {
 
     // selecionar a conta contabil
     cy.getVisible(locLivroCaixa.adicionarLancamento.contaContabil).click()
-      .contains(seedTestLivroCaixa.contaContabil).click()
+      .contains(seedTestLivroCaixa.contaContabil).click({force: true })
 
     // informar o histórico 
     if (seedTestLivroCaixa.historico) {
@@ -551,9 +558,9 @@ class LivroCaixa {
     cy.getVisible(locLivroCaixa.adicionarLancamento.pessoa).click()
       .contains(seedTestLivroCaixa.pessoa).click()
 
-    if (seedTestLivroCaixa.status) {
+    if (seedTestLivroCaixa.editarStatus) {
       cy.getVisible(locLivroCaixa.adicionarLancamento.statusLancamento)
-        .contains(seedTestLivroCaixa.status).click()
+        .contains(seedTestLivroCaixa.editarStatus).click()
 
       cy.wait(2000)
     }

@@ -122,7 +122,7 @@
     "inscricaoEstadual": "32165465622",
     "contaBancaria": "Conta E2E",
     "pessoa": "91535740019 - Empresa Fornecedor - CPF",
-    "status": "Inativo",
+    "editarStatus": "Inativo",
     "salvar": true,
     "filtroStatus": "Inativo",
     "valoresMes": [
