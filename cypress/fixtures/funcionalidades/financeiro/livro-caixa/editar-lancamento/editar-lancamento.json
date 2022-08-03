@@ -14,7 +14,7 @@
     "inscricaoEstadual": "32165465622",
     "contaBancaria": "Conta E2E",
     "pessoa": "91535740019 - Empresa Fornecedor - CPF",
-    "status": "Ativo",
+    "editarStatus": "Ativo",
     "salvar": true
   },
   "saida": {
@@ -31,7 +31,7 @@
     "inscricaoEstadual": "545612",
     "contaBancaria": "Conta Corrente E2E",
     "pessoa": "91535740019 - Empresa Fornecedor - CPF",
-    "status": "Ativo",
+    "editarStatus": "Ativo",
     "salvar": true
   }
 }
