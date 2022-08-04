@@ -104,7 +104,7 @@ class Pedidos {
         .clear().type(`{movetoend}${listaMaterial.precoUnitario}`)
 
       // valor total
-      cy.getVisible(locatorPedidos.registrarEditarPedido.valorTotal).eq(index).should(($el) => {
+      cy.getVisible(locatorPedidos.registrarEditarPedido.valorTotal).click().eq(index).should(($el) => {
         expect($el).to.contain.text(listaMaterial.valorTotal)
       })
     })

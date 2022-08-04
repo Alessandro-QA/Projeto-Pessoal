@@ -47,14 +47,18 @@ class Colheita {
       cy.wait('@listCiclos', { timeout: 5000 })
       cy.wait('@listColheitas', { timeout: 5000 })
 
-
+      // selecionar a card de colheita
       cy.getVisible(locListagemColheita.cardColheita).click().should(($el) => {
         expect($el).to.contain.text(seedTest.destinoEditar)
       })
 
       cy.wait('@detalhes', { timeout: 8000 })
 
+      // clicar no botão para editar colheita
       cy.get(locCadastroColheita.buttonEditar).click()
+
+      cy.wait('@conversor', { timeout: 10000 })
+
     } else {
       const url = '/producao/colheita/cadastro'
       const locatorTituloPagina = locCadastroColheita.titulo
@@ -64,75 +68,69 @@ class Colheita {
       cy.navegarPara(url, locatorTituloPagina, tituloPagina)
     }
 
-    if (seedTest.transportadora) {
-      // Selecionar transportadora
-      cy.get(locCadastroColheita.selectTransportadora).click()
-      cy.getVisible(locCadastroColheita.selecionarTransportadora)
-        .contains(seedTest.transportadora).click()
+    // informar a data da colheita
+    if (seedTest.data) {
+      cy.getVisible(locCadastroColheita.inputDataColheita)
+        .type(`${seedTest.data}{enter}`)
     }
 
-    if (seedTest.placaVeiculo) {
-      // Selecionar placa veiculo
-      cy.getVisible(locCadastroColheita.selectPlacaVeiculo).click()
-      cy.getVisible(locCadastroColheita.selecionarPlacaVeiculo)
-        .contains(seedTest.placaVeiculo).click()
-    }
+    // selecionar a transportadora
+    cy.getVisible(locCadastroColheita.selectTransportadora).click()
+      .contains(seedTest.transportadora).click()
 
+    // selecionar o veiculo pela placa
+    cy.getVisible(locCadastroColheita.selectPlacaVeiculo).click()
+      .contains(seedTest.placaVeiculo).click()
+
+    // selecionar o motorias para o transporte da colheita
     if (seedTest.guardarMotorista) {
       // Digitar nome motorista
       cy.getVisible(locCadastroColheita.spanGuardarMotorista).click()
 
       cy.getVisible(locCadastroColheita.inputMotorista).clear()
         .type(seedTest.motorista)
-    } else if (seedTest.motorista) {
+    } else {
       // Selecionar motorista
       cy.getVisible(locCadastroColheita.selectMotorista).click()
       cy.getVisible(locCadastroColheita.selecionarMotorista)
         .contains(seedTest.motorista).click()
     }
 
-    if (seedTest.fazenda) {
-      // Selecionar fazenda
-      cy.getVisible(locCadastroColheita.selectFazenda).click()
-      cy.getVisible(locCadastroColheita.selecionarFazenda)
-        .contains(seedTest.fazenda).click()
-    }
+    // selecionar a fazenda onde foi realizada colheita
+    cy.getVisible(locCadastroColheita.selectFazenda).click()
+      .contains(seedTest.fazenda).click()
 
-    if (seedTest.safra) {
-      // Selecionar safra
-      cy.getVisible(locCadastroColheita.selectSafra).click()
-      cy.getVisible(locCadastroColheita.selecionarSafra)
-        .contains(seedTest.safra).click()
-    }
+    // selecionar a safra
+    cy.getVisible(locCadastroColheita.selectSafra).click()
+    cy.getVisible(locCadastroColheita.selecionarSafra)
+      .contains(seedTest.safra)
 
-    if (seedTest.talhao) {
-      // Selecionar talhao
-      cy.getVisible(locCadastroColheita.selectTalhao).click({ force: true })
-      cy.getVisible(locCadastroColheita.selecionarTalhao)
-        .contains(seedTest.talhao).click()
-    }
+    if (seedTest.talhoes) {
+      const talhoes = seedTest.talhoes
+      talhoes.forEach((talhao) => {
+        // adicionar talhão
+        if (seedTest.adicionarTalhao) {
+          cy.getVisible(locCadastroColheita.buttonAddTalhao).click()
+        }
 
-    if (seedTest.variedade) {
-      // Validar variedade selecionada
-      cy.getVisible(locCadastroColheita.variedadeSelecionada).should(($el) => {
-        expect($el).to.contain.text(seedTest.variedade)
+        // selecionar o talhao
+        cy.get(locCadastroColheita.selectTalhao).click()
+          .contains(talhao.talhao).click()
+
+        // selecionar a varidade da cultura colhida
+        cy.get(locCadastroColheita.selectVariedade).click()
+        cy.getVisible(locCadastroColheita.variedadeSelecionada)
+          .contains(talhao.variedade).click({ force: true })
+
+        // informar a porcentagem de cada talhao colhido a ser carregado
+        cy.get(locCadastroColheita.inputPorcentagemCarga).clear()
+          .type(talhao.porcentagemCarga)
       })
-    }
-
-    if (seedTest.porcentagemCarga) {
-      // Porcentagem da carga
-      cy.getVisible(locCadastroColheita.inputPorcentagemCarga).clear()
-        .type(seedTest.porcentagemCarga)
-    }
-
-    if (seedTest.destino) {
-      // Destino
-      cy.getVisible(locCadastroColheita.toggleDestino).contains(seedTest.destino).click()
     }
 
     if (seedTest.destino === 'Externo') {
       // Selecionar cliente
-      cy.getVisible(locCadastroColheita.selectCliente).click()
+      cy.getVisible(locCadastroColheita.selectCliente).click({timeout: '@conversor'})
         .contains(seedTest.clienteDestino).click()
 
       if (seedTest.contratos === 'Todos os contratos') {
@@ -144,93 +142,116 @@ class Colheita {
         cy.getVisible(locCadastroColheita.selectContrato).click()
           .contains(seedTest.contratos).click()
       }
-    } else if (seedTest.destino === 'Interno') {
+    } else {
+      cy.getVisible(locCadastroColheita.toggleDestino)
+        .contains(seedTest.destino).click()
+
+      cy.wait('@conversor', { timeout: 10000 })
+
       // Selecionar unidade armazenamento
       cy.getVisible(locCadastroColheita.selectUnidadeArmazenamento).click()
         .contains(seedTest.unidadeArmazenamento).click()
     }
 
-    if (seedTest.pesoBruto) {
-      // Peso bruto
-      cy.getVisible(locCadastroColheita.inputPesoBrutoPesagem).clear()
-        .type(`{movetoend}${seedTest.pesoBruto}`)
+    // informar o peso bruto na pesagem interna
+    cy.getVisible(locCadastroColheita.inputPesoBrutoPesagem).clear().click()
+      .type(seedTest.pesoBrutoInterna)
 
-      cy.wait('@conversor', { timeout: 8000 })
-    }
+    // informar o peso do veiculo na pesagem interna
+    cy.getVisible(locCadastroColheita.inputTaraVeiculoPesagem).clear().click()
+      .type(seedTest.taraVeiculoInterna)
 
-    if (seedTest.taraVeiculo) {
-      // Tara do veiculo
-      cy.getVisible(locCadastroColheita.inputTaraVeiculoPesagem).clear()
-        .type(`{movetoend}${seedTest.taraVeiculo}`)
-    }
+    cy.wait('@conversor', { timeout: 10000 })
 
-    cy.wait('@conversor', { timeout: 8000 })
+    // validar o peso total apos peso bruto e o peso do veiculo
+    cy.getVisible(locCadastroColheita.spanSubtotalPesagem).click()
+      .contains(seedTest.subTotalInterno)
 
-    // Desconto classificação
     if (seedTest.descontoClassificacao) {
-      cy.getVisible(locCadastroColheita.inputDescontoClassificacaoPesagem).clear()
-        .type(`{movetoend}${seedTest.descontoClassificacao}`)
+      // informar o desconto da classificação de modo manual
+      cy.getVisible(locCadastroColheita.inputDescontoClassificacaoPesagem).clear().click()
+        .type(seedTest.descontoClassificacaoInterno)
 
-      cy.wait('@conversor', { timeout: 8000 })
-    }
+      cy.wait('@conversor', { timeout: 10000 })
 
-    if (seedTest.subtotal) {
-      // Validar subtotal
-      cy.getVisible(locCadastroColheita.spanSubtotal).should(($el) => {
-        expect($el).to.contain.text(seedTest.subtotal)
-      })
-    }
+      if (seedTest.tabelaDescontoInterno) {
+        // selecionar o checkBox da tabela de desconto
+        cy.getVisible(locCadastroColheita.checkTabelaDescontoPesagem).click()
 
-    if (seedTest.retornoCliente) {
-      // Numero romaneio
-      cy.getVisible(locCadastroColheita.inputNumeroRomaneio).clear()
-        .type(seedTest.numeroRomaneio)
-
-      // Peso bruto
-      cy.getVisible(locCadastroColheita.inputPesoBrutoRetorno).clear()
-        .type(`{movetoend}${seedTest.pesoBrutoRetorno}`)
-
-      // Tara do veiculo
-      cy.getVisible(locCadastroColheita.inputTaraVeiculoRetorno).clear({ force: true })
-        .type(`{movetoend}${seedTest.taraVeiculoRetorno}`)
-
-      // Validar subtotal
-      cy.getVisible(locCadastroColheita.spanSubTotalRetorno).should(($el) => {
-        expect($el).to.contain.text(seedTest.subtotalRetorno)
-      })
-
-      // Desconto classificação
-      if (seedTest.descontoClassificacaoRetorno) {
-        cy.getVisible(locCadastroColheita.inputDescontoClassificacaoRetorno).clear()
-          .type(`{movetoend}${seedTest.descontoClassificacaoRetorno}`)
+        cy.wait('@conversor', { timeout: 10000 })
       }
     }
 
-    // Validar Partilha
-    if (seedTest.partilha) {
-      const partilha = seedTest.partilha
-      partilha.forEach((campo, i) => {
-        cy.get(locCadastroColheita.inputQuantidadePartilha).eq(i)
-          .clear({ force: true })
-          .type(`{movetoend}${campo.partilhaValor}`)
+    if (seedTest.retornoCliente) {
+      const quantidade = seedTest.retornoCliente
+      // informar o numero do romaneio do retorno do cliente
+      cy.getVisible(locCadastroColheita.inputNumeroRomaneio).clear()
+        .type(quantidade.numeroRomaneio)
+
+      // informar o peso bruto da colheita do retorno do cliente
+      cy.getVisible(locCadastroColheita.inputPesoBrutoRetorno).clear().click()
+        .type(quantidade.pesoBrutoRetorno)
+
+      // informar o peso do veiculo do retorno do cliente
+      cy.getVisible(locCadastroColheita.inputTaraVeiculoRetorno).clear().click()
+        .type(quantidade.taraVeiculoRetorno)
+
+      cy.wait('@conversor', { timeout: 10000 })
+
+      // validar o peso total apos o peso bruto da colheita e peso do veiculo
+      cy.getVisible(locCadastroColheita.spanSubTotalRetorno).click().should(($el) => {
+        expect($el).to.contain.text(quantidade.subtotalRetorno)
       })
+
+      if (quantidade.descontoClassificacaoRetorno) {
+        // informar o desconto de classificação
+        cy.getVisible(locCadastroColheita.inputDescontoClassificacaoRetorno).clear()
+          .type(quantidade.descontoClassificacaoRetorno)
+
+        cy.wait('@conversor', { timeout: 10000 })
+
+        if (quantidade.tabelaDescontoRetorno) {
+          // selecionar o checkBox da tabela de desconto
+          cy.getVisible(locCadastroColheita.checkTabelaDescontoRetorno).click()
+
+          cy.wait('@conversor', { timeout: 10000 })
+        }
+      }
     }
 
-    // Validar total desconto
+    if (seedTest.partilha) {
+      const partilhas = seedTest.partilha
+      partilhas.forEach((partilha, index) => {
+        // informar a quantidade partilhada da colheita para cada contrato
+        cy.get(locCadastroColheita.inputQuantidadePartilha).eq(index)
+          .clear({ force: true })
+          .type(`{movetoend}${partilha.partilhaValor}`)
+      })
+
+      cy.wait('@conversor', { timeout: 10000 })
+    }
+
+    // validar o subTotal final
+    cy.getVisible(locCadastroColheita.spanSubtotal).click().should(($el) => {
+      expect($el).to.contain.text(seedTest.subTotal)
+    })
+
+    // validar o total de desconto final
     cy.getVisible(locCadastroColheita.spanTotalDesconto).should(($el) => {
       expect($el).to.contain.text(seedTest.totalDesconto)
     })
 
-    // Validar total liquido
+    // validar o total liquido final
     cy.getVisible(locCadastroColheita.spanTotalLiquido).should(($el) => {
       expect($el).to.contain.text(seedTest.totalLiquido)
     })
 
-    // Validar total em sacas
-    cy.getVisible(locCadastroColheita.spanTotalEmSacas).should(($el) => {
-      expect($el).to.contain.text(seedTest.totalEmSacas)
+    // validar conversao total de acordo com a unidade de medida da varidade colhida
+    cy.getVisible(locCadastroColheita.spanTotalCultura).should(($el) => {
+      expect($el).to.contain.text(seedTest.totalCultura)
     })
 
+    // Clicar no botão de salvar colheita
     cy.getVisible(locCadastroColheita.buttonAdicionar).click()
 
     if (seedTest.modal) {
@@ -239,11 +260,11 @@ class Colheita {
       })
 
       cy.getVisible(locCadastroColheita.btnSim).click()
+    } else {
+      cy.get(locCadastroColheita.msgSucesso).should(($el) => {
+        expect($el).to.contain.text('Colheita salva com sucesso')
+      })
     }
-
-    cy.get(locCadastroColheita.msgSucesso).should(($el) => {
-      expect($el).to.contain.text('Colheita salva com sucesso')
-    })
   }
 
   /**
@@ -275,7 +296,6 @@ class Colheita {
     cy.getVisible(locListagemColheita.selectSafra).click()
       .contains(seedTest.safra).click()
       .wait(['@listCiclos', '@listColheitas', '@iconeCultura'], { timeout: 5000 })
-
 
     // Abrir colheita
     cy.get(locListagemColheita.buttonAbrirDetalhes).click({ force: true })

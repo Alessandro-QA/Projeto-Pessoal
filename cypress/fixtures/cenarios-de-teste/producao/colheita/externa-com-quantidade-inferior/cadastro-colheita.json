@@ -1,35 +1,45 @@
 {
   "transportadora": "Transportadora Teste Producao",
   "placaVeiculo": "ABC1234",
-  "guardarMotorista": false,
   "motorista": "Motorista Teste Producao",
   "fazenda": "Fazenda Teste Producao",
   "safra": "2021/2021",
-  "talhao": "Talhão Soja - Soja - 2021/2021",
-  "variedade": "Syn1060ap",
-  "porcentagemCarga": "100,00",
+  "talhoes": [
+    {
+      "talhao": "Talhão Soja - Soja - 2021/2021",
+      "variedade": "Syn1060ap",
+      "porcentagemCarga": "10000"
+    }
+  ],
   "destino": "Externo",
   "clienteDestino": "Cliente Teste Produção",
   "contratos": "Selecionar Todos",
-  "pesoBruto": "62000",
-  "taraVeiculo": "1000",
-  "descontoClassificacao": "1000",
-  "retornoCliente": true,
-  "numeroRomaneio": "12345",
-  "pesoBrutoRetorno": "62000",
-  "taraVeiculoRetorno": "1000",
-  "subtotalRetorno": "61.000 kg",
-  "descontoClassificacaoRetorno": "1000",
-  "partilha" : [
+  "pesoBrutoInterna": "62000",
+  "taraVeiculoInterna": "1000",
+  "subTotalInterno": "61.000 kg",
+  "pesagemInterna": {
+    "pesoBrutoInterna": "62000",
+    "taraVeiculoInterna": "1000",
+    "subTotalInterno": "61.000 kg",
+    "descontoClassificacao": "1000"
+  },
+  "retornoCliente": {
+    "numeroRomaneio": "12345",
+    "pesoBrutoRetorno": "62000",
+    "taraVeiculoRetorno": "1000",
+    "subtotalRetorno": "61.000 kg",
+    "descontoClassificacaoRetorno": "1000"
+  },
+  "partilha": [
     {
-    "partilhaValor" : "40.000,00"
+      "partilhaValor": "40.000,00"
     },
     {
-    "partilhaValor": "20.000,00"
+      "partilhaValor": "20.000,00"
     }
   ],
-  "subtotal": "61.000,00 kg",
+  "subTotal": "61.000,00 kg",
   "totalDesconto": "1.000,00 kg",
   "totalLiquido": "60.000,00 kg",
-  "totalEmSacas": "1.002,00 Saca 60"
+  "totalCultura": "1.002,00 Saca 60"
 }
