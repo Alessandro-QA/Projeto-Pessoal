@@ -27,8 +27,8 @@
         "material": "Soja em Grãos",
         "quantidade": "1",
         "valorUnitario": "1",
-        "desconto": "0,00",
-        "total": "R$ 1,00",
+        "desconto": "0,98",
+        "total": "R$ 0,02",
         "cfop": "5101 - Venda de produção do estabelecimento",
         "ncm": "1201.90.00",
         "unidadeMedida": "kg"
@@ -37,32 +37,32 @@
         "icms": {
           "origemCst": "0 - Nacional",
           "cst": "10",
-          "baseCalculo": "1,00",
-          "aliquota": "2,00",
-          "valor": "R$ 0,02"
+          "baseCalculo": "0,02",
+          "aliquota": "50,00",
+          "valor": "R$ 0,01"
         },
         "pis": {
           "cst": "99",
-          "baseCalculo": "1,00",
-          "aliquota": "2,00",
-          "valor": "R$ 0,02"
+          "baseCalculo": "0,02",
+          "aliquota": "50,00",
+          "valor": "R$ 0,01"
         },
         "cofins": {
           "cst": "99",
-          "baseCalculo": "1,00",
-          "aliquota": "2,00",
-          "valor": "R$ 0,02"
+          "baseCalculo": "0,02",
+          "aliquota": "50,00",
+          "valor": "R$ 0,01"
         },
         "fcp": {
-          "baseCalculo": "1,00",
-          "aliquota": "1,00",
+          "baseCalculo": "0,02",
+          "aliquota": "50,00",
           "valor": "0,01"
         }
       },
       "retencao": {
         "contemRetencao": true,
         "retencao": "SENAR",
-        "valor": "0,02"
+        "valor": "0,01"
       },
       "contemInformcacoesComp": false,
       "informacoesComplementares": "Informacoes Complementares"
@@ -75,10 +75,10 @@
     },
 
     "totalImpostos": {
-      "icms": "0,02",
-      "pis": "0,02",
-      "cofins": "0,02",
-      "retencao": "0,02",
+      "icms": "0,01",
+      "pis": "0,01",
+      "cofins": "0,01",
+      "retencao": "0,01",
       "fcp": "0,01"
     }
   },
@@ -86,7 +86,7 @@
   "detalhesNfe": {
     "destinatario": "GIOVANI DADALT CRESPANI",
     "finalidade": "Normal",
-    "valorTotal": "R$ 1,00",
+    "valorTotal": "R$ 0,02",
     "status": "Autorizada"
   }
 }
