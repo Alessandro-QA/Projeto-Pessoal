@@ -45,7 +45,7 @@ context('Cenário de Teste', () => {
     it('Confirmar se gerou Livro Caixa', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      LivroCaixa.validarDashboard(seedTest.lancamentoLivroCaixa)
+      LivroCaixa.validarLancamentos(seedTest.lancamentoLivroCaixa)
     })
 
     it('Remover matricula de exploração individual', function () {

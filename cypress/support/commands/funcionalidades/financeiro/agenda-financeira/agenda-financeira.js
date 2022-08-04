@@ -83,17 +83,20 @@ class AgendaFinanceira {
 
     cy.wait('@listagemAgenda')
 
-    // Espera necessária para a atualização dos títulos mostrados na tela
-    cy.wait(4000)
-
     // Selecionar card na agenda financeira
-    cy.getVisible(locAgendaFinanceira.dashboard.cardAgenda, { timeout: 10000 })
+    cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento, { timeout: 10000 })
       .contains(seedTestAgendaFinanceira.numeroDocumento)
       .parent(locAgendaFinanceira.dashboard.cardAgenda)
-      .click({ force: true })
+      .within(($cardAgenda) => {
+        // card deve existir e estar visivel
+        cy.get($cardAgenda, { timeout: 10000 }).should('exist').and('be.visible')
+
+        // abrir detalhes do titulo
+        cy.getVisible($cardAgenda, { timeout: 10000 }).click()
+      })
 
     // clicar no botão para ir a tela de recebimento/pagamento 
-    cy.getVisible(locAgendaFinanceira.detalhesTitulo.efetuarPagamento).click()
+    cy.getVisible(locAgendaFinanceira.detalhesTitulo.efetuarPagamento).click({ timeout: 10000 })
 
     // Selecionar forma de pagamento
     if (seedTestAgendaFinanceira.formaPagamento) {
@@ -124,7 +127,7 @@ class AgendaFinanceira {
     }
 
     // Botao de recebimento / pagamento
-    cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.botaoPagarReceber).click()
+    cy.get(locAgendaFinanceira.pagamentoRecebimento.botaoPagarReceber).click({ force: true })
 
     cy.get(locAgendaFinanceira.pagamentoRecebimento.mensagemSucessoPagamento).then(($message) => {
       if (seedTestAgendaFinanceira.pagamento) {

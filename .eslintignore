@@ -6,3 +6,4 @@ cypress/allure-report/*
 cypress/allure-results/*
 cypress/results/*
 **/*.png
+**/*.ofx

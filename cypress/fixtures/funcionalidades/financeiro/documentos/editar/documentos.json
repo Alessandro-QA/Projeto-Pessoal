@@ -253,6 +253,97 @@
       },
       "dedutivel": true,
       "manual": true
+    },
+    "documento564321": {
+      "materiais": [
+        {
+          "material": {
+            "id": "74623de4-4efd-4768-ad68-7dbd04588bee",
+            "descricao": "65165RSF IPRO - COMPACTA"
+          },
+          "unidadeMedida": {
+            "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+            "descricao": "kg"
+          },
+          "quantidade": 2,
+          "valor": 152,
+          "total": 304
+        }
+      ],
+      "categorias": [
+        {
+          "valor": 304,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "3.02.01.03",
+            "nome": "Outras Vendas Agropecuárias",
+            "descricao": "Outras Vendas Agropecuárias"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT09:56:10-03:00",
+      "operacao": {
+        "id": "af2790f9-869b-4292-a981-eb98140badfa",
+        "descricao": "Outras Vendas Agropecuárias"
+      },
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT09:56:10-03:00",
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "tags": [
+        "documentoE2E"
+      ],
+      "pessoa": {
+        "pessoaTipo": "Cliente",
+        "numeroDocumento": "91535740019",
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF"
+      },
+      "numero": "564321",
+      "empresa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "66791418001",
+        "inscricaoEstadual": {
+          "id": "ad2f682d-3b1c-4f45-bf0d-54f43a6bd790",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "ad2f682d-3b1c-4f45-bf0d-54f43a6bd790",
+        "descricao": "IE Empresa E2E",
+        "valor": "545612",
+        "label": "545612"
+      },
+      "tipoDocumento": 1,
+      "conferido": false,
+      "financeiro": {
+        "total": 304,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
+          "descricao": "Dinheiro"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT09:56:10-03:00",
+            "valor": 304
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
     }
   },
   "qa": {
@@ -504,6 +595,94 @@
           {
             "vencimento": "dataSubstituicaoT10:52:22-03:00",
             "valor": 640
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
+    },
+    "documento564321": {
+      "materiais": [
+        {
+          "material": {
+            "id": "3aaad935-ec57-4354-9a0f-c2ffdba589e0",
+            "descricao": "65165RSF IPRO - COMPACTA"
+          },
+          "unidadeMedida": {
+            "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+            "descricao": "kg"
+          },
+          "quantidade": 2,
+          "valor": 152,
+          "total": 304
+        }
+      ],
+      "categorias": [
+        {
+          "valor": 304,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "3.02.01.03",
+            "nome": "Outras Vendas Agropecuárias",
+            "descricao": "Outras Vendas Agropecuárias"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT10:37:57-03:00",
+      "operacao": {
+        "id": "af2790f9-869b-4292-a981-eb98140badfa",
+        "descricao": "Outras Vendas Agropecuárias"
+      },
+      "safra": {
+        "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT10:37:57-03:00",
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "pessoa": {
+        "pessoaTipo": "Cliente",
+        "numeroDocumento": "91535740019",
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF"
+      },
+      "numero": "564321",
+      "empresa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "66791418001",
+        "inscricaoEstadual": {
+          "id": "a8989fc6-a034-45b4-89a3-bf02889f306e",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "a8989fc6-a034-45b4-89a3-bf02889f306e",
+        "descricao": "IE Empresa E2E",
+        "valor": "545612",
+        "label": "545612"
+      },
+      "tipoDocumento": 1,
+      "conferido": false,
+      "financeiro": {
+        "total": 304,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "3716190d-a329-42c1-a311-b32977cd1965",
+          "descricao": "Dinheiro"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT10:37:57-03:00",
+            "valor": 304
           }
         ]
       },

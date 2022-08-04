@@ -74,7 +74,6 @@ class MovimentacaoBancaria {
       cy.getVisible(locMovimentacaoBancaria.movimentacoes.selectContaBancaria).click()
         .contains(seedTestMovimentacaoBancaria.contaBancaria).click()
     }
-
     else {
 
       // Selecioanr conta bancaria de origem na movimentação do tipo transferência
@@ -294,8 +293,8 @@ class MovimentacaoBancaria {
     // Validar a quantidade de categorias
     cy.get(locMovimentacaoBancaria.detalhes.tipoCategoria)
       .should('have.length', categorias.length)
-    
-      categorias.forEach((categorias) => {
+
+    categorias.forEach((categorias) => {
       // Validar o nome da categoria
       cy.get(locMovimentacaoBancaria.detalhes.tipoCategoria).should(($el) => {
         expect($el).to.contain.text(categorias.tipoCategoria)
@@ -453,6 +452,52 @@ class MovimentacaoBancaria {
     cy.get(locMovimentacaoBancaria.dashboard.mensagemEmptyState).should(($el) => {
       expect($el).to.contain.text('Você ainda não possui nenhuma movimentação Financeira')
     })
+  }
+
+  /**
+  * Metodo para adicionar conciliação bancária
+  * @param {*} seedTestConciliacao 
+  */
+  adicionarConciliacao(seedTestConciliacao) {
+    const url = '/financeiro/movimentacoes-bancarias/listagem'
+    const locatorTituloPagina = locMovimentacaoBancaria.dashboard.titulo
+    const tituloPagina = 'Movimentações bancárias'
+
+    cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/ListFilter?**').as('contaBancaria')
+
+    // Navegar para Movimentação Bancaria
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    // Espera necessária para carrecar os componentes da tela
+    cy.wait('@contaBancaria', { timeout: 10000 })
+
+    // Abrir opções de movimentação
+    cy.getVisible(locMovimentacaoBancaria.movimentacaoMenu.dropdownMovimentacoes).click()
+
+    // Clicar em adicionar Conciliação
+    cy.getVisible(locMovimentacaoBancaria.movimentacaoMenu.conciliacao).click()
+
+    // Adicionar conciliação
+    cy.getVisible(locMovimentacaoBancaria.conciliacaoBancaria.titulo).should(($el) => {
+      expect($el).to.contain.text('Adição de Conciliação Bancária')
+    })
+
+    // Fazer upload do arquivo
+    cy.get(locMovimentacaoBancaria.conciliacaoBancaria.uploadOfx)
+      .selectFile(seedTestConciliacao.caminhoArquivo, { force: true })
+
+    if (seedTestConciliacao.valido) {
+      // Validar mensagem conciliação
+      cy.getVisible(locMovimentacaoBancaria.conciliacaoBancaria.mensagemModal).should(($el) => {
+        expect($el).to.contain.text(seedTestConciliacao.mensagem)
+      })
+
+      cy.get(locMovimentacaoBancaria.conciliacaoBancaria.buttonClose).click()
+    } else {
+      cy.getVisible(locMovimentacaoBancaria.conciliacaoBancaria.mensagemAlerta).should(($el) => {
+        expect($el).to.contain.text(seedTestConciliacao.mensagem)
+      })
+    }
   }
 }
 

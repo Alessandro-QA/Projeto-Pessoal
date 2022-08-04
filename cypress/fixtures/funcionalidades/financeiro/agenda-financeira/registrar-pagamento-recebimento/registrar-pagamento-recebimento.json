@@ -1,0 +1,13 @@
+{
+  "pagamento": {
+    "empresaDocumento": "Empresa Fornecedor - CNPJ",
+    "fazendaDocumento": "Fazenda Teste Producao",
+    "numeroDocumento": "3000",
+    "pagamento": true
+  },
+  "recebimento": {
+    "empresaDocumento": "Empresa Fornecedor - CPF",
+    "fazendaDocumento": "Fazenda Teste Producao",
+    "numeroDocumento": "3001"
+  }
+}

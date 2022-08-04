@@ -59,6 +59,13 @@ const locators = {
     adicionarTransferencia: '[data-cy=buttons-submit-transferencia] .el-button--primary',
     adicionarPagamento: '[data-cy=buttons-submit-pagamento] .el-button--primary',
     adicionarRecebimento: '[data-cy=buttons-submit-recebimento] .el-button--primary'
+  },
+  conciliacaoBancaria:{
+    titulo: '[data-cy=header-adicao-conciliacao]',
+    uploadOfx: '[data-cy=file-uploader] input',
+    mensagemModal: '[data-cy=modal-divergencias] p',
+    mensagemAlerta: '[role=alert].el-message',
+    buttonClose: '.conciliationValidationModal > .el-dialog > .el-dialog__header > .el-dialog__headerbtn > .el-dialog__close'
   }
 }
 

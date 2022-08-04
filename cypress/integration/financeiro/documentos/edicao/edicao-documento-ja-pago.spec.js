@@ -43,13 +43,13 @@ context('Cenário de Teste', () => {
     it('Validar se o cadastro refletiu no Livro Caixa', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      LivroCaixa.validarDashboard(seedCadastro.livroCaixa)
+      LivroCaixa.validarLancamentos(seedCadastro.livroCaixa)
     })
 
     it('Validar se o cadastro refletiu no lançamento do Livro Caixa', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      LivroCaixa.validarLancamento(seedCadastro.lancamentoLivroCaixa)
+      LivroCaixa.validarDetalhes(seedCadastro.lancamentoLivroCaixa)
     })
 
     it('Validar se o cadastro refletiu no resultado da safra - Dashboard', function () {
@@ -85,13 +85,13 @@ context('Cenário de Teste', () => {
     it('Validar se edição refletiu no Livro Caixa', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      LivroCaixa.validarDashboard(seedEdicao.livroCaixa)
+      LivroCaixa.validarLancamentos(seedEdicao.livroCaixa)
     })
 
     it('Validar se edição refletiu no lançamento do Livro Caixa', function () {
       cy.allure().severity('normal').startStep('test content')
 
-      LivroCaixa.validarLancamento(seedEdicao.lancamentoLivroCaixa)
+      LivroCaixa.validarDetalhes(seedEdicao.lancamentoLivroCaixa)
     })
 
     it('Validar se edição refletiu no resultado da safra - Dashboard', function () {

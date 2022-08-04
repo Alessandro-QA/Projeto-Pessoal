@@ -1,0 +1,174 @@
+{
+  "dev": {
+    "entradaDedutivel": {
+      "produtor": {
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF",
+        "documentoPrincipal": "91535740019"
+      },
+      "empresa": {
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF",
+        "inscricaoEstadual": {
+          "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
+          "descricao": "IE Estadual",
+          "valor": "32165465622"
+        }
+      },
+      "data": "dataSubstituicaoT08:45:10-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.03",
+        "descricao": "(-) Duplicatas Descontadas",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "9cd7e883-e179-4e41-b3f3-1bb4955cfeca",
+        "descricao": "Conta E2E"
+      },
+      "tipoDocumento": 1,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 200,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF"
+      },
+      "fazenda": {
+        "id": "b0f2a6e1-81a2-4123-bf46-4fc5e6a54738",
+        "descricao": "Fazenda E2E"
+      }
+    },
+    "saidaDedutivel": {
+      "produtor": {
+        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
+        "descricao": "Empresa Fornecedor - CPF",
+        "documentoPrincipal": "91535740019"
+      },
+      "empresa": {
+        "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "ad2f682d-3b1c-4f45-bf0d-54f43a6bd790",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "dataSubstituicaoT08:47:39-03:00",
+      "contaContabil": {
+        "codigo": "1.01.01.03",
+        "descricao": "Numerário em Trânsito",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "57efe1f2-b0b4-415d-b642-49cbf45ee300",
+        "descricao": "Conta Corrente E2E"
+      },
+      "tipoDocumento": 3,
+      "historico": "",
+      "saida": true,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 300,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ"
+      },
+      "fazenda": {
+        "id": "b0f2a6e1-81a2-4123-bf46-4fc5e6a54738",
+        "descricao": "Fazenda E2E"
+      }
+    }
+  },
+  "qa": {
+    "entradaDedutivel": {
+      "produtor": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF",
+        "documentoPrincipal": "91535740019"
+      },
+      "empresa": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF",
+        "inscricaoEstadual": {
+          "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+          "descricao": "IE Estadual",
+          "valor": "32165465622"
+        }
+      },
+      "data": "dataSubstituicaoT11:02:13-03:00",
+      "contaContabil": {
+        "codigo": "1.01.02.03",
+        "descricao": "(-) Duplicatas Descontadas",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "036fcac3-70bd-461d-944e-8591871597b4",
+        "descricao": "Conta E2E"
+      },
+      "tipoDocumento": 1,
+      "historico": "",
+      "saida": false,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 200,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF"
+      },
+      "fazenda": {
+        "id": "cc6b4476-eb9a-4368-b7ab-ddecc7633255",
+        "descricao": "Fazenda E2E"
+      }
+    },
+    "saidaDedutivel": {
+      "produtor": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF",
+        "documentoPrincipal": "91535740019"
+      },
+      "empresa": {
+        "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+        "descricao": "Empresa Produtor - CPF",
+        "inscricaoEstadual": {
+          "id": "a8989fc6-a034-45b4-89a3-bf02889f306e",
+          "descricao": "IE Empresa E2E",
+          "valor": "545612"
+        }
+      },
+      "data": "dataSubstituicaoT11:04:46-03:00",
+      "contaContabil": {
+        "codigo": "1.01.01.03",
+        "descricao": "Numerário em Trânsito",
+        "dedutivel": true
+      },
+      "contaBancaria": {
+        "id": "cd3e0fb2-2c54-45bb-9509-505d6f7a0980",
+        "descricao": "Conta Corrente E2E"
+      },
+      "tipoDocumento": 3,
+      "historico": "",
+      "saida": true,
+      "dedutivel": true,
+      "manual": true,
+      "valor": 300,
+      "anexos": [],
+      "ativo": true,
+      "pessoa": {
+        "id": "f03b1276-c276-4980-bccd-87dc29317818",
+        "descricao": "Empresa Fornecedor - CPF"
+      },
+      "fazenda": {
+        "id": "cc6b4476-eb9a-4368-b7ab-ddecc7633255",
+        "descricao": "Fazenda E2E"
+      }
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "filtroProdutor": {
+    "empresa": "Empresa Produtor - CPF",
+    "produtor": "Matheus Oliveira",
+    "valoresMes": [
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "R$ 890,00",
+        "despesas": "––"
+      },
+      {
+        "receitas": "R$ 361,00",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      }
+    ]
+  },
+  "filtroAno": {
+    "empresa": "Matheus Oliveira",
+    "dataAno": "2021",
+    "valoresMes": [
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "R$ 1.950,00"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      }
+    ]
+  },
+  "filtroStatus": {
+    "empresa": "Empresa Fornecedor - CPF",
+    "filtroDataInicio": "01/04/2022",
+    "filtroDataFim": "01/05/2022",
+    "editar": true,
+    "tipoLancamento": "Entrada",
+    "deducao": "Dedutível",
+    "data": "01/04/2022",
+    "valor": "20",
+    "contaContabil": "(-) Duplicatas Descontadas",
+    "tipoDocumento": "Fatura",
+    "empresaLancamento": "Empresa Fornecedor - CPF",
+    "inscricaoEstadual": "32165465622",
+    "contaBancaria": "Conta E2E",
+    "pessoa": "91535740019 - Empresa Fornecedor - CPF",
+    "editarStatus": "Inativo",
+    "salvar": true,
+    "filtroStatus": "Inativo",
+    "valoresMes": [
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "R$ 200,00",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      }
+    ]
+  },
+  "exportar": {
+    "empresa": "Matheus Oliveira",
+    "exportar": true,
+    "nomeArquivo": "lcdpr-27770797063-2022.txt",
+    "nomeEmpresa": "Matheus Oliveira",
+    "matriculaFazenda": {
+      "fazenda": "Fazenda E2E",
+      "tipoExploracao": "Exploração individual",
+      "empresa": "Empresa Produtor - CPF",
+      "ieEmpresa": "545612",
+      "cafir": "514656",
+      "caepf": "87859"
+    }
+  }
+}

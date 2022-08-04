@@ -31,7 +31,7 @@ context('Cenário de Teste', () => {
     it('Confirmar se gerou Livro Caixa com estimativa IRRF', function () {
       cy.allure().severity('critical').startStep('test content')
 
-      LivroCaixa.validarDashboard(seedTest.lancamentoLivroCaixa)
+      LivroCaixa.validarLancamentos(seedTest.lancamentoLivroCaixa)
     })
   })
 })
