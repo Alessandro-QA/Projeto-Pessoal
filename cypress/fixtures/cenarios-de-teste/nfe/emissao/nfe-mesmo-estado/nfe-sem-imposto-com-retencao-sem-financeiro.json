@@ -27,8 +27,8 @@
         "material": "Soja em Grãos",
         "quantidade": "1",
         "valorUnitario": "1",
-        "desconto": "0,00",
-        "total": "R$ 1,00",
+        "desconto": "0,96",
+        "total": "R$ 0,04",
         "cfop": "5101 - Venda de produção do estabelecimento",
         "ncm": "1201.90.00",
         "unidadeMedida": "kg"
@@ -86,7 +86,7 @@
   "detalhesNfe": {
     "destinatario": "GIOVANI DADALT CRESPANI",
     "finalidade": "Normal",
-    "valorTotal": "R$ 1,00",
+    "valorTotal": "R$ 0,04",
     "status": "Autorizada"
   }
 }
