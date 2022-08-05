@@ -5,117 +5,114 @@ import seedTestConciliacao from '../../../../fixtures/funcionalidades/financeiro
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 import { adicionarConciliacao } from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 
-// TODO: Reativar quando a conciliação bancaria parte 2 estiver em prod na branch master
-if ((Cypress.env('ambiente') === 'dev')) {
-    context('Funcionalidade', () => {
-        context('Movimentações Bancárias', () => {
-            before(function () {
-                const credenciais = Cypress.env('login_cenarios')
-                Authenticate.login(credenciais)
-            })
+context('Funcionalidade', () => {
+    context('Movimentações Bancárias', () => {
+        before(function () {
+            const credenciais = Cypress.env('login_cenarios')
+            Authenticate.login(credenciais)
+        })
 
-            after(() => {
-                Authenticate.logout()
-            })
+        after(() => {
+            Authenticate.logout()
+        })
 
-            context('Upload de arquivo OFX', () => {
-                describe('Conta Bancária', { tags: '@movimentacaoBancaria' }, () => {
-                    it('Válido, para conta cadastrada', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.contaValidaCadastrada)
+        context('Upload de arquivo OFX', () => {
+            describe('Conta Bancária', { tags: '@movimentacaoBancaria' }, () => {
+                it('Válido, para conta cadastrada', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.contaValidaCadastrada)
 
-                        adicionarConciliacao(seedTestConciliacao.contaValidaCadastrada)
-                    })
-
-                    it('Válido, para conta NÃO cadastrada', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.contaValidaNaoCadastrada)
-
-                        adicionarConciliacao(seedTestConciliacao.contaValidaNaoCadastrada)
-                    })
-
-                    it('Inválido, sem tags de identificação da conta bancária', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.contaInvalidaSemTag)
-
-                        adicionarConciliacao(seedTestConciliacao.contaInvalidaSemTagACCTID)
-                    })
+                    adicionarConciliacao(seedTestConciliacao.contaValidaCadastrada)
                 })
 
-                describe('Cartão de Crédito', { tags: '@movimentacaoBancaria' }, () => {
-                    it('Válido, para cartão cadastrado', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.cartaoValidoCadastrado)
+                it('Válido, para conta NÃO cadastrada', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.contaValidaNaoCadastrada)
 
-                        adicionarConciliacao(seedTestConciliacao.cartaoValido)
-                    })
-
-                    it('Válido, para cartão NÃO cadastrado', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.cartaoValidoNaoCadastrado)
-
-                        adicionarConciliacao(seedTestConciliacao.cartaoNaoCadastrado)
-                    })
-
-                    it('Inválido, sem tags de identificação da numeração', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.cartaoInvalidoSemTag)
-
-                        adicionarConciliacao(seedTestConciliacao.cartaoInvalidoSemTagACCTID)
-                    })
+                    adicionarConciliacao(seedTestConciliacao.contaValidaNaoCadastrada)
                 })
 
-                describe('Por banco', () => {
-                    it('Banco do Brasil', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.bancoDoBrasil)
+                it('Inválido, sem tags de identificação da conta bancária', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.contaInvalidaSemTag)
 
-                        adicionarConciliacao(seedTestConciliacao.bancoDoBrasil)
-                    })
+                    adicionarConciliacao(seedTestConciliacao.contaInvalidaSemTagACCTID)
+                })
+            })
 
-                    it('Bradesco', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.bancoBradesco)
+            describe('Cartão de Crédito', { tags: '@movimentacaoBancaria' }, () => {
+                it('Válido, para cartão cadastrado', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.cartaoValidoCadastrado)
 
-                        adicionarConciliacao(seedTestConciliacao.bradesco)
-                    })
+                    adicionarConciliacao(seedTestConciliacao.cartaoValido)
+                })
 
-                    it('Caixa', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.bancoCaixa)
+                it('Válido, para cartão NÃO cadastrado', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.cartaoValidoNaoCadastrado)
 
-                        adicionarConciliacao(seedTestConciliacao.caixa)
-                    })
+                    adicionarConciliacao(seedTestConciliacao.cartaoNaoCadastrado)
+                })
 
-                    it('Cartão de Crédito', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.cartaoValidoCadastrado)
+                it('Inválido, sem tags de identificação da numeração', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.cartaoInvalidoSemTag)
 
-                        adicionarConciliacao(seedTestConciliacao.cartaoDeCredito)
-                    })
+                    adicionarConciliacao(seedTestConciliacao.cartaoInvalidoSemTagACCTID)
+                })
+            })
 
-                    it('Itaú', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.bancoItau)
+            describe('Por banco', () => {
+                it('Banco do Brasil', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.bancoDoBrasil)
 
-                        adicionarConciliacao(seedTestConciliacao.itau)
-                    })
+                    adicionarConciliacao(seedTestConciliacao.bancoDoBrasil)
+                })
 
-                    it('Santander', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.bancoSantander)
+                it('Bradesco', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.bancoBradesco)
 
-                        adicionarConciliacao(seedTestConciliacao.santander)
-                    })
+                    adicionarConciliacao(seedTestConciliacao.bradesco)
+                })
 
-                    it('Sicred', function () {
-                        cy.allure().severity('critical').startStep('test content')
-                            .descriptionHtml(testDescription.bancoSicred)
+                it('Caixa', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.bancoCaixa)
 
-                        adicionarConciliacao(seedTestConciliacao.sicred)
-                    })
+                    adicionarConciliacao(seedTestConciliacao.caixa)
+                })
+
+                it('Cartão de Crédito', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.cartaoValidoCadastrado)
+
+                    adicionarConciliacao(seedTestConciliacao.cartaoDeCredito)
+                })
+
+                it('Itaú', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.bancoItau)
+
+                    adicionarConciliacao(seedTestConciliacao.itau)
+                })
+
+                it('Santander', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.bancoSantander)
+
+                    adicionarConciliacao(seedTestConciliacao.santander)
+                })
+
+                it('Sicred', function () {
+                    cy.allure().severity('critical').startStep('test content')
+                        .descriptionHtml(testDescription.bancoSicred)
+
+                    adicionarConciliacao(seedTestConciliacao.sicred)
                 })
             })
         })
     })
-}
+})
