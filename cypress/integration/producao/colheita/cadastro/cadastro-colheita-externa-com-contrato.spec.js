@@ -30,6 +30,7 @@ if ((Cypress.env('ambiente') === 'dev')) {
       after(() => {
         logout()
       })
+      
       it('Cadastrar contrato por API', function () {
         cy.allure().severity('normal').startStep('test content')
 

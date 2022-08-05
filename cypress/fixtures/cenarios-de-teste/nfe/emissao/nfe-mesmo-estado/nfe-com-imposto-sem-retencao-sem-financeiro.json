@@ -27,8 +27,8 @@
         "material": "Soja em Grãos",
         "quantidade": "1",
         "valorUnitario": "1",
-        "desconto": "0,00",
-        "total": "R$ 1,00",
+        "desconto": "0,97",
+        "total": "R$ 0,03",
         "cfop": "5101 - Venda de produção do estabelecimento",
         "ncm": "1201.90.00",
         "unidadeMedida": "kg"
@@ -37,26 +37,26 @@
         "icms": {
           "origemCst": "0 - Nacional",
           "cst": "10",
-          "baseCalculo": "1,00",
-          "aliquota": "2,00",
+          "baseCalculo": "0,03",
+          "aliquota": "50,00",
           "valor": "R$ 0,02"
         },
         "pis": {
           "cst": "99",
-          "baseCalculo": "1,00",
-          "aliquota": "2,00",
+          "baseCalculo": "0,03",
+          "aliquota": "50,00",
           "valor": "R$ 0,02"
         },
         "cofins": {
           "cst": "99",
-          "baseCalculo": "1,00",
-          "aliquota": "2,00",
+          "baseCalculo": "0,03",
+          "aliquota": "50,00",
           "valor": "R$ 0,02"
         },
         "fcp": {
-          "baseCalculo": "1,00",
-          "aliquota": "1,00",
-          "valor": "0,01"
+          "baseCalculo": "0,03",
+          "aliquota": "50,00",
+          "valor": "0,02"
         }
       },
       "retencao": {
@@ -79,14 +79,14 @@
       "pis": "0,02",
       "cofins": "0,02",
       "retencao": "0,00",
-      "fcp": "0,01"
+      "fcp": "0,02"
     }
   },
 
   "detalhesNfe": {
     "destinatario": "GIOVANI DADALT CRESPANI",
     "finalidade": "Normal",
-    "valorTotal": "R$ 1,00",
+    "valorTotal": "R$ 0,03",
     "status": "Autorizada"
   }
 }

@@ -12,7 +12,7 @@ import Authenticate from '../../../../support/commands/funcionalidades/login/log
 
 // Cadastro, Edição e Exclusão de Pedido com Recebimento
 context('Cenário de Teste', () => {
-  describe('Cadastro, Edição e Exclusão de Pedido com Recebimento Parcial', { tags: '@pedidos' }, () => {
+  describe('Pedido | Cadastro, Edição e Exclusão de Pedido com Recebimento Parcial', { tags: '@pedidos' }, () => {
     before(function () {
       const credenciais = Cypress.env('login_cenarios')
       Authenticate.login(credenciais)
