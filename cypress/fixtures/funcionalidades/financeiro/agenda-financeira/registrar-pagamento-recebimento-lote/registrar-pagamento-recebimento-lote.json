@@ -1,0 +1,107 @@
+{
+  "pagamentoLote": {
+    "tipoDocumento": "A pagar",
+    "cardsAgenda": [
+      {
+        "cardNumeroDocumento": "100"
+      },
+      {
+        "cardNumeroDocumento": "101"
+      }
+    ],
+    "pagamentoTitulo": true,
+    "formaPagamento": "Dinheiro",
+    "dataPagamento": "08/08/2022",
+    "contaBancaria": "Conta Corrente E2E",
+    "listaTitulo": [
+      {
+        "fornecedor": "Cliente Teste Produção",
+        "numeroDocumento": "100",
+        "valorTitulo": "R$ 500,00",
+        "valor": "500,00",
+        "juros": "0,00",
+        "multa": "0,00",
+        "desconto": "0,00",
+        "totalPagar": "R$ 500,00"
+      },
+      {
+        "fornecedor": "Cliente Teste Produção",
+        "numeroDocumento": "101",
+        "valorTitulo": "R$ 1.862,00",
+        "valor": "1.862,00",
+        "juros": "0,00",
+        "multa": "0,00",
+        "desconto": "0,00",
+        "totalPagar": "R$ 1.862,00"
+      }
+    ],
+    "valorTotal": "R$ 2.362,00",
+    "observacao": "Observação",
+    "pagamento": true,
+    "status": "Pagos",
+    "cardDocumento": [
+      {
+        "cardStatusDocumento": "Pago",
+        "cardPessoaDocumento": "Cliente Teste Produção (1/1)",
+        "cardValorDocumento": "R$ 500,00",
+        "cardSaldoAPagar": "Saldo a pagar: R$ 0,00",
+        "cardNumeroDocumento": "Número: 100"
+      },
+      {
+        "cardStatusDocumento": "Pago",
+        "cardPessoaDocumento": "Cliente Teste Produção (1/1)",
+        "cardValorDocumento": "R$ 1.862,00",
+        "cardSaldoAPagar": "Saldo a pagar: R$ 0,00",
+        "cardNumeroDocumento": "Número: 101"
+      }
+    ]
+  },
+  "recebimentoLote": {
+    "tipoDocumento": "A receber",
+    "cardsAgenda": [
+      {
+        "cardNumeroDocumento": "102"
+      },
+      {
+        "cardNumeroDocumento": "103"
+      }
+    ],
+    "formaPagamento": "Cartão de Crédito",
+    "dataPagamento": "09/08/2022",
+    "contaBancaria": "Conta E2E",
+    "listaTitulo": [
+      {
+        "fornecedor": "Cliente Teste Produção",
+        "numeroDocumento": "102",
+        "valorTitulo": "25,00",
+        "valor": "25,00",
+        "totalPagar": "R$ 25,00"
+      },
+      {
+        "fornecedor": "Cliente Teste Produção",
+        "numeroDocumento": "103",
+        "valorTitulo": "203,00",
+        "valor": "203,00",
+        "totalPagar": "R$ 203,00"
+      }
+    ],
+    "valorTotal": "R$ 228,00",
+    "status": "Recebidos",
+    "cardDocumento": [
+      {
+        "cardStatusDocumento": "Recebido",
+        "cardPessoaDocumento": "Cliente Teste Produção (1/1)",
+        "cardValorDocumento": "R$ 25,00",
+        "cardSaldoAPagar": "Saldo a receber: R$ 0,00",
+        "cardNumeroDocumento": "Número: 102"
+      },
+      {
+        "cardStatusDocumento": "Recebido",
+        "cardPessoaDocumento": "Cliente Teste Produção (1/1)",
+        "cardValorDocumento": "R$ 203,00",
+        "cardSaldoAPagar": "Saldo a receber: R$ 0,00",
+        "cardNumeroDocumento": "Número: 103"
+      }
+    ]
+  }
+}

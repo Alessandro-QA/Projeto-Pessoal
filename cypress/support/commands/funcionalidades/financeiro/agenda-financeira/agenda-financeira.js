@@ -55,6 +55,142 @@ class AgendaFinanceira {
   }
 
   /**
+   * Método para pagar o títulos em lote via listagem da Agenda Financeira
+   * @param {*} seedTestAgendaFinanceira 
+   */
+  pagarReceberLote(seedTestAgendaFinanceira) {
+    const url = '/financeiro/agenda-financeira'
+    const locatorTituloPagina = locAgendaFinanceira.dashboard.titulo
+    const tituloPagina = 'Agenda financeira'
+    const tituloPagamento = 'Pagamento de títulos'
+    const tituloRecebimento = 'Recebimento de títulos'
+
+    cy.intercept('POST', '/api/financeiro/v1/Agenda/Recebimento')
+      .as('apiRecebimento')
+    cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem')
+      .as('listagemAgenda')
+
+    // Navegar para Agenda Financeira
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    cy.wait('@listagemAgenda', { timeout: 10000 })
+
+    cy.getVisible(locAgendaFinanceira.dashboard.buttonFiltros).click()
+
+    cy.getVisible(locAgendaFinanceira.dashboard.limparFiltros).click()
+
+    cy.get(locAgendaFinanceira.dashboard.checkBoxTipoPagamentoNome, { timeout: 10000 })
+      .contains(seedTestAgendaFinanceira.tipoDocumento)
+      .parents(locAgendaFinanceira.dashboard.checkBoxTipoPagamento)
+      .within(($tipoPagamento) => {
+        cy.get($tipoPagamento, { timeout: 10000 }).should('exist').and('be.visible')
+
+        cy.getVisible($tipoPagamento, { timeout: 10000 }).click()
+      })
+    
+    cy.getVisible(locAgendaFinanceira.dashboard.titulo).click()
+
+    cy.wait(4000)
+
+    const cards = seedTestAgendaFinanceira.cardsAgenda
+    cards.forEach((card) => {
+      cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento, { timeout: 10000 })
+        .contains(card.cardNumeroDocumento)
+        .parents(locAgendaFinanceira.dashboard.cardBoard)
+        .within(() => {
+          cy.get(locAgendaFinanceira.dashboard.marcarCard)
+            .click({ force: true })
+        })
+
+      cy.getVisible(locAgendaFinanceira.dashboard.titulo).click({ force: true })
+    })
+
+    cy.getVisible(locAgendaFinanceira.dashboard.efetuarPagamento).click()
+
+    cy.wait(2000)
+
+    if (seedTestAgendaFinanceira.pagamentoTitulo) {
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.titulo).should(($el) => {
+        expect($el).to.contain.text(tituloPagamento)
+      })
+    }
+    else {
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.titulo).should(($el) => {
+        expect($el).to.contain.text(tituloRecebimento)
+      })
+    }
+
+    cy.getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.formaPagamento).click()
+      .getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.selectFormaPagamento)
+      .contains(seedTestAgendaFinanceira.formaPagamento).click()
+
+    cy.getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.dataPagamento).clear()
+      .type(seedTestAgendaFinanceira.dataPagamento)
+
+    cy.getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.contaBancaria).click()
+      .getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.selectContaBancaria)
+      .contains(seedTestAgendaFinanceira.contaBancaria).click()
+
+    if (seedTestAgendaFinanceira.numeroCheque) {
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.inputCheque)
+        .type(seedTestAgendaFinanceira.numeroCheque)
+    }
+
+    const titulos = seedTestAgendaFinanceira.listaTitulo
+    titulos.forEach((titulo, index) => {
+      cy.get(locAgendaFinanceira.pagamentoRecebimentoLote.listaTitulo).eq(index).should(($el) => {
+        expect($el).to.contain.text(titulo.fornecedor)
+      })
+
+      cy.get(locAgendaFinanceira.pagamentoRecebimentoLote.listaTitulo).eq(index).should(($el) => {
+        expect($el).to.contain.text(titulo.numeroDocumento)
+      })
+
+      cy.get(locAgendaFinanceira.pagamentoRecebimentoLote.listaTitulo).eq(index).should(($el) => {
+        expect($el).to.contain.text(titulo.valorTitulo)
+      })
+
+      cy.get(locAgendaFinanceira.pagamentoRecebimentoLote.inputValor).eq(index).clear()
+        .type(titulo.valor)
+
+      if (titulo.juros) {
+        cy.get(locAgendaFinanceira.pagamentoRecebimentoLote.inputJuros).eq(index).clear()
+          .type(titulo.juros)
+
+        cy.get(locAgendaFinanceira.pagamentoRecebimentoLote.inputMulta).eq(index).clear()
+          .type(titulo.multa)
+
+        cy.get(locAgendaFinanceira.pagamentoRecebimentoLote.inputDesconto).eq(index).clear()
+          .type(titulo.desconto)
+      }
+
+      cy.get(locAgendaFinanceira.pagamentoRecebimentoLote.totalPagar).eq(index).should(($el) => {
+        expect($el).to.have.value(titulo.totalPagar)
+      })
+    })
+
+    cy.getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.valorTotal).should(($el) => {
+      expect($el).to.contain.text(seedTestAgendaFinanceira.valorTotal)
+    })
+
+    if (seedTestAgendaFinanceira.observacao) {
+      cy.getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.observacao)
+        .type(seedTestAgendaFinanceira.observacao)
+    }
+
+    cy.getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.buttonConfirmarPagamentoRecebimento).click()
+
+    cy.get(locAgendaFinanceira.dashboard.mensagemSucessoPagamento).then(($message) => {
+      if (seedTestAgendaFinanceira.pagamento) {
+        expect($message).exist.and.to.contain.text('Pagamento feito com sucesso')
+      } else {
+        expect($message).exist.and.to.contain.text('Recebimento feito com sucesso')
+      }
+    })
+    cy.wait('@listagemAgenda')
+  }
+
+  /**
    * Metodo para pagar documento via tela de detalhes
    * @param {*} seedTestAgendaFinanceira 
    */
@@ -126,6 +262,8 @@ class AgendaFinanceira {
         .clear().type(`${seedTestAgendaFinanceira.valor}{enter}`)
     }
 
+    cy.wait('@listagemAgenda')
+
     // Botao de recebimento / pagamento
     cy.get(locAgendaFinanceira.pagamentoRecebimento.botaoPagarReceber).click({ force: true })
 
@@ -140,6 +278,71 @@ class AgendaFinanceira {
     cy.wait('@apiRecebimento')
   }
 
+  /**
+   * Método para validar títulos pagos e recebidos
+   * @param {*} seedTestAgendaFinanceira 
+   */
+  validarPagosRecebidos(seedTestAgendaFinanceira) {
+    const url = '/financeiro/agenda-financeira'
+    const locatorTituloPagina = locAgendaFinanceira.dashboard.titulo
+    const tituloPagina = 'Agenda financeira'
+
+    // Navegar para Agenda Financeira
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem').as('listagemAgenda')
+
+    cy.wait('@listagemAgenda', { timeout: 20000 })
+
+    cy.getVisible(locAgendaFinanceira.dashboard.buttonFiltros).click()
+
+    cy.getVisible(locAgendaFinanceira.dashboard.limparFiltros).click()
+
+    cy.get(locAgendaFinanceira.dashboard.checkBoxTipoPagamentoNome, { timeout: 10000 })
+      .contains(seedTestAgendaFinanceira.status)
+      .parents(locAgendaFinanceira.dashboard.checkBoxTipoPagamento)
+      .within(($tipoPagamento) => {
+        cy.get($tipoPagamento, { timeout: 10000 }).should('exist').and('be.visible')
+
+        cy.getVisible($tipoPagamento, { timeout: 10000 }).click()
+      })
+
+    cy.getVisible(locAgendaFinanceira.dashboard.titulo).click()
+
+    cy.wait('@listagemAgenda', { timeout: 20000 })
+
+    cy.wait(4000)
+
+    const cards = seedTestAgendaFinanceira.cardDocumento
+    cards.forEach((card) => {
+      cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento, { timeout: 10000 })
+      cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento).should('have.length', cards.length)
+        .contains(card.cardNumeroDocumento)
+        .parent(locAgendaFinanceira.dashboard.cardAgenda).within(() => {
+          if (card.cardStatusDocumento === 'Pago') {
+            cy.get(locAgendaFinanceira.dashboard.statusPago).should(($el) => {
+              expect($el).to.have.text(card.cardStatusDocumento)
+            })
+          } else {
+            cy.get(locAgendaFinanceira.dashboard.statusRecebido).should(($el) => {
+              expect($el).to.have.text(card.cardStatusDocumento)
+            })
+          }
+          cy.get(locAgendaFinanceira.dashboard.cardNomePessoa).should(($el) => {
+            expect($el).to.have.text(card.cardPessoaDocumento)
+          })
+          cy.get(locAgendaFinanceira.dashboard.cardValor).should(($el) => {
+            expect($el).to.have.text(card.cardValorDocumento)
+          })
+          cy.get(locAgendaFinanceira.dashboard.cardSaldoAPagar).should(($el) => {
+            expect($el).to.have.text(card.cardSaldoAPagar)
+          })
+          cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento).should(($el) => {
+            expect($el).to.have.text(card.cardNumeroDocumento)
+          })
+        })
+    })
+  }
   /**
    * Validar titulo pela Agenda Financeira
    * @param {*} seedTestAgendaFinanceira
@@ -162,7 +365,7 @@ class AgendaFinanceira {
     // cy.getVisible(locAgendaFinanceira.dashboard.filtroFazenda)
     //   .contains(seedTestAgendaFinanceira.fazendaDocumento).click()
 
-    cy.wait('@listagemAgenda', { timeout: 10000 })
+    cy.wait('@listagemAgenda', { timeout: 20000 })
 
     if (seedTestAgendaFinanceira.status === 'Pagos') {
       cy.getVisible(locAgendaFinanceira.dashboard.buttonFiltros).click()

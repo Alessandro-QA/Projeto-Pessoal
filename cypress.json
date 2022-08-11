@@ -5,6 +5,7 @@
   "scrollBehavior": "center",
   "viewportWidth": 1366,
   "viewportHeight": 768,
+  "numTestsKeptInMemory": 0,
   "screenshotOnRunFailure": true,
   "screenshotsFolder": "cypress/results/screenshots",
   "video": false,

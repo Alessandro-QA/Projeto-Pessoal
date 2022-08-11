@@ -616,7 +616,7 @@ class LivroCaixa {
     cy.wait('@ApiProdutorLivro', { timeout: 10000 })
 
     // espera necessária para que os livro caixa atualize as informações
-    cy.wait(2000)
+    cy.wait(4000)
 
     if (seedTestLivroCaixa.valoresMes) {
       const valores = seedTestLivroCaixa.valoresMes
