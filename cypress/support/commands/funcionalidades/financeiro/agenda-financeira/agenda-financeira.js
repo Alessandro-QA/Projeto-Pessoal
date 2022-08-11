@@ -319,12 +319,12 @@ class AgendaFinanceira {
       cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento).should('have.length', cards.length)
         .contains(card.cardNumeroDocumento)
         .parent(locAgendaFinanceira.dashboard.cardAgenda).within(() => {
-          if (card.cardStatusDocumento === 'Pago') {
-            cy.get(locAgendaFinanceira.dashboard.statusPago).should(($el) => {
+          if (card.cardStatusDocumento === 'Recebido') {
+            cy.get(locAgendaFinanceira.dashboard.statusRecebido).should(($el) => {
               expect($el).to.have.text(card.cardStatusDocumento)
             })
           } else {
-            cy.get(locAgendaFinanceira.dashboard.statusRecebido).should(($el) => {
+            cy.get(locAgendaFinanceira.dashboard.statusPago).should(($el) => {
               expect($el).to.have.text(card.cardStatusDocumento)
             })
           }
@@ -386,12 +386,12 @@ class AgendaFinanceira {
       .contains(seedTestAgendaFinanceira.cardNumeroDocumento)
       .parent(locAgendaFinanceira.dashboard.cardAgenda).within(() => {
         // Validar dados do card de Agenda Financeira
-        if (seedTestAgendaFinanceira.cardStatusDocumento === 'Pago') {
-          cy.get(locAgendaFinanceira.dashboard.statusPago).should(($el) => {
+        if (seedTestAgendaFinanceira.cardStatusDocumento === 'Recebido') {
+          cy.get(locAgendaFinanceira.dashboard.statusRecebido).should(($el) => {
             expect($el).to.have.text(seedTestAgendaFinanceira.cardStatusDocumento)
           })
         } else {
-          cy.get(locAgendaFinanceira.dashboard.statusRecebido).should(($el) => {
+          cy.get(locAgendaFinanceira.dashboard.statusPago).should(($el) => {
             expect($el).to.have.text(seedTestAgendaFinanceira.cardStatusDocumento)
           })
         }
