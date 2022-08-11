@@ -8,7 +8,7 @@ import testDescription from './bdd-description/listagem.description'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 
 context('Funcionalidade', () => {
-  describe('FUNCIONALIDADE > Documentos | Listagem Documento - ', { tags: '@documentos' }, () => {
+  describe('Documentos | Listagem Documento - ', { tags: '@documentos' }, () => {
     var dataAtual = Utils.getDate()
     var documento = Utils.getPayloadPorAmbiente(payloadDocumentos)
 
