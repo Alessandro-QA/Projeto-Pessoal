@@ -386,7 +386,7 @@ class AgendaFinanceira {
       .contains(seedTestAgendaFinanceira.cardNumeroDocumento)
       .parent(locAgendaFinanceira.dashboard.cardAgenda).within(() => {
         // Validar dados do card de Agenda Financeira
-        if (card.cardStatusDocumento === 'Pago') {
+        if (seedTestAgendaFinanceira.cardStatusDocumento === 'Pago') {
           cy.get(locAgendaFinanceira.dashboard.statusPago).should(($el) => {
             expect($el).to.have.text(seedTestAgendaFinanceira.cardStatusDocumento)
           })
