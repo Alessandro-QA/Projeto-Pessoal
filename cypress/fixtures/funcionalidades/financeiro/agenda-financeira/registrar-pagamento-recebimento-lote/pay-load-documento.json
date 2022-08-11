@@ -1,0 +1,662 @@
+{
+  "dev": {
+    "documento100": {
+      "categorias": [
+        {
+          "valor": 500,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.01.03",
+            "nome": "13º Salário",
+            "descricao": "13º Salário"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT17:40:00-03:00",
+      "operacao": {
+        "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
+        "descricao": "13º Salário"
+      },
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT17:40:00-03:00",
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "tags": [
+        "documentoEditado"
+      ],
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "67824142000144",
+        "id": "ef402791-c035-46cf-96c6-a2494042b237",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "100",
+      "empresa": {
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 5,
+      "conferido": false,
+      "financeiro": {
+        "total": 500,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
+          "descricao": "Dinheiro"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT17:40:00-03:00",
+            "valor": 500
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
+    },
+    "documento101": {
+      "categorias": [
+        {
+          "valor": 1862,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.09.04",
+            "nome": "Aquisição de Gado",
+            "descricao": "Aquisição de Gado"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT17:48:24-03:00",
+      "operacao": {
+        "id": "9251e5ec-ab00-48ee-a96f-4394a030f334",
+        "descricao": "Aquisição de Gado"
+      },
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT17:48:24-03:00",
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "67824142000144",
+        "id": "ef402791-c035-46cf-96c6-a2494042b237",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "101",
+      "empresa": {
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 1,
+      "conferido": false,
+      "financeiro": {
+        "total": 1862,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+          "descricao": "Boleto"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT17:48:24-03:00",
+            "valor": 1862
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
+    },
+    "documento102": {
+      "materiais": [
+        {
+          "material": {
+            "id": "f161f128-aa68-4763-95d5-1e6b48ca2724",
+            "descricao": "2,4-D (240) + PICLORAM (64) SL"
+          },
+          "unidadeMedida": {
+            "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
+            "descricao": "L"
+          },
+          "quantidade": 1,
+          "valor": 25,
+          "total": 25
+        }
+      ],
+      "categorias": [
+        {
+          "valor": 25,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "3.02.01.03",
+            "nome": "Outras Vendas Agropecuárias",
+            "descricao": "Outras Vendas Agropecuárias"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT08:21:25-03:00",
+      "operacao": {
+        "id": "af2790f9-869b-4292-a981-eb98140badfa",
+        "descricao": "Outras Vendas Agropecuárias"
+      },
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT08:21:25-03:00",
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "pessoa": {
+        "pessoaTipo": "Cliente",
+        "numeroDocumento": "67824142000144",
+        "id": "ef402791-c035-46cf-96c6-a2494042b237",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "102",
+      "empresa": {
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 1,
+      "conferido": false,
+      "financeiro": {
+        "total": 25,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
+          "descricao": "Dinheiro"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT08:21:25-03:00",
+            "valor": 25
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
+    },
+    "documento103": {
+      "materiais": [
+        {
+          "material": {
+            "id": "274e3abb-296d-4a6f-a355-c74fdfee3f52",
+            "descricao": "64161RSF IPRO - FIBRA"
+          },
+          "unidadeMedida": {
+            "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+            "descricao": "kg"
+          },
+          "quantidade": 10,
+          "valor": 20.3,
+          "total": 203
+        }
+      ],
+      "categorias": [
+        {
+          "valor": 203,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "3.02.01.03",
+            "nome": "Outras Vendas Agropecuárias",
+            "descricao": "Outras Vendas Agropecuárias"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT08:23:26-03:00",
+      "operacao": {
+        "id": "af2790f9-869b-4292-a981-eb98140badfa",
+        "descricao": "Outras Vendas Agropecuárias"
+      },
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT08:23:26-03:00",
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "tags": [
+        "documentoE2E"
+      ],
+      "pessoa": {
+        "pessoaTipo": "Cliente",
+        "numeroDocumento": "67824142000144",
+        "id": "ef402791-c035-46cf-96c6-a2494042b237",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "103",
+      "empresa": {
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 1,
+      "conferido": false,
+      "financeiro": {
+        "total": 203,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "9968ef7b-06cd-41ce-b12d-e4fce7b55462",
+          "descricao": "Cartão de Crédito"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT08:23:26-03:00",
+            "valor": 203
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
+    }
+  },
+  "qa": {
+    "documento100": {
+      "categorias": [
+        {
+          "valor": 500,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.01.03",
+            "nome": "13º Salário",
+            "descricao": "13º Salário"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT13:35:05-03:00",
+      "operacao": {
+        "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
+        "descricao": "13º Salário"
+      },
+      "safra": {
+        "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT13:35:05-03:00",
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "tags": [
+        "documentoEditado"
+      ],
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "67824142000144",
+        "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "100",
+      "empresa": {
+        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 5,
+      "conferido": false,
+      "financeiro": {
+        "total": 500,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "3716190d-a329-42c1-a311-b32977cd1965",
+          "descricao": "Dinheiro"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT13:35:05-03:00",
+            "valor": 500
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
+    },
+    "documento101": {
+      "categorias": [
+        {
+          "valor": 1862,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.09.04",
+            "nome": "Aquisição de Gado",
+            "descricao": "Aquisição de Gado"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT13:37:00-03:00",
+      "operacao": {
+        "id": "9251e5ec-ab00-48ee-a96f-4394a030f334",
+        "descricao": "Aquisição de Gado"
+      },
+      "safra": {
+        "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT13:37:00-03:00",
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "67824142000144",
+        "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "101",
+      "empresa": {
+        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 1,
+      "conferido": false,
+      "financeiro": {
+        "total": 1862,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "a40a8ed9-44f4-45ba-bebe-19386f6bee82",
+          "descricao": "Boleto"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT13:37:00-03:00",
+            "valor": 1862
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
+    },
+    "documento102": {
+      "materiais": [
+        {
+          "material": {
+            "id": "c4043fb3-e13c-4215-917f-840740181d56",
+            "descricao": "2,4-D (240) + PICLORAM (64) SL"
+          },
+          "unidadeMedida": {
+            "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
+            "descricao": "L"
+          },
+          "quantidade": 1,
+          "valor": 25,
+          "total": 25
+        }
+      ],
+      "categorias": [
+        {
+          "valor": 25,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "3.02.01.03",
+            "nome": "Outras Vendas Agropecuárias",
+            "descricao": "Outras Vendas Agropecuárias"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT13:38:33-03:00",
+      "operacao": {
+        "id": "af2790f9-869b-4292-a981-eb98140badfa",
+        "descricao": "Outras Vendas Agropecuárias"
+      },
+      "safra": {
+        "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT13:38:33-03:00",
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "pessoa": {
+        "pessoaTipo": "Cliente",
+        "numeroDocumento": "67824142000144",
+        "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "102",
+      "empresa": {
+        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 1,
+      "conferido": false,
+      "financeiro": {
+        "total": 25,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "3716190d-a329-42c1-a311-b32977cd1965",
+          "descricao": "Dinheiro"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT13:38:33-03:00",
+            "valor": 25
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
+    },
+    "documento103": {
+      "materiais": [
+        {
+          "material": {
+            "id": "e97705fc-eed1-4a71-a8cc-32768f2f4323",
+            "descricao": "64161RSF IPRO - FIBRA"
+          },
+          "unidadeMedida": {
+            "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+            "descricao": "kg"
+          },
+          "quantidade": 10,
+          "valor": 20.3,
+          "total": 203
+        }
+      ],
+      "categorias": [
+        {
+          "valor": 203,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "3.02.01.03",
+            "nome": "Outras Vendas Agropecuárias",
+            "descricao": "Outras Vendas Agropecuárias"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT13:40:27-03:00",
+      "operacao": {
+        "id": "af2790f9-869b-4292-a981-eb98140badfa",
+        "descricao": "Outras Vendas Agropecuárias"
+      },
+      "safra": {
+        "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT13:40:27-03:00",
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "tags": [
+        "documentoE2E"
+      ],
+      "pessoa": {
+        "pessoaTipo": "Cliente",
+        "numeroDocumento": "67824142000144",
+        "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "103",
+      "empresa": {
+        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 1,
+      "conferido": false,
+      "financeiro": {
+        "total": 203,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "d92c6c10-73dd-4118-9910-5850c4b7317e",
+          "descricao": "Cartão de Crédito"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT13:40:27-03:00",
+            "valor": 203
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
+    }
+  }
+}
