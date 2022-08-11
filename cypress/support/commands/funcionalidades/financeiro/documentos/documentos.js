@@ -903,7 +903,7 @@ class Documentos {
     // Pesquisar documento
     Documentos.pesquisar(seedTestDocumento)
 
-    cy.intercept('GET', '/api/financeiro/v1/Documento/**').as('apiDocumento')
+    cy.intercept('GET', '/api/financeiro/v1/Documento/**').as('detalhesDocumento')
 
     // Abrir documento
     cy.get(locDocumentos.dashboard.selecionarDocumento)
@@ -911,7 +911,7 @@ class Documentos {
       .parents(locDocumentos.dashboard.selecionarDocumento)
       .click({ force: true })
 
-    cy.wait('@apiDocumento', { timeout: 5000 })
+    cy.wait('@detalhesDocumento', { timeout: 15000 })
 
     if (seedTestDocumento.excluirInvalidado) {
       cy.getVisible(locDocumentos.detalhesDocumento.botaoRemoverDocumento)
