@@ -32,7 +32,7 @@ class DashboardProducaoUtils {
     // Selecionar cultura
     cy.get(locDashboardProducao.cardCultura).first().click()
 
-    cy.wait('@dashboard', { timeout: 8000 })
+    cy.wait('@dashboard')
 
     if (seedTest.quantidade) {
       // Validar cultura do card de cultura

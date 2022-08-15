@@ -19,7 +19,7 @@ class Pedidos {
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     // botao adicionar pedido
-    cy.getVisible(locatorPedidos.dashboard.botaoNovoPedido).click({ timeout: 5000 })
+    cy.getVisible(locatorPedidos.dashboard.botaoNovoPedido).click()
 
     // data do pedido
     cy.getVisible(locatorPedidos.registrarEditarPedido.inputDataPedido)
@@ -85,9 +85,9 @@ class Pedidos {
 
       // selecionar material
       cy.getVisible(locatorPedidos.registrarEditarPedido.selectMaterial).eq(index).click()
-      cy.getVisible(locatorPedidos.registrarEditarPedido.pesquisarMaterial, { timeout: 5000 })
+      cy.getVisible(locatorPedidos.registrarEditarPedido.pesquisarMaterial)
         .clear().type(listaMaterial.material)
-      cy.getVisible(locatorPedidos.registrarEditarPedido.listItemsMaterial, { timeout: 5000 })
+      cy.getVisible(locatorPedidos.registrarEditarPedido.listItemsMaterial)
         .findAllByText(listaMaterial.material).click()
 
       // unidade
