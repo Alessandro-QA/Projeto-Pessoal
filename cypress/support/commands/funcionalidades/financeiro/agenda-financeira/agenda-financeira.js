@@ -73,19 +73,19 @@ class AgendaFinanceira {
     // Navegar para Agenda Financeira
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.wait('@listagemAgenda', { timeout: 10000 })
+    cy.wait('@listagemAgenda')
 
     cy.getVisible(locAgendaFinanceira.dashboard.buttonFiltros).click()
 
     cy.getVisible(locAgendaFinanceira.dashboard.limparFiltros).click()
 
-    cy.get(locAgendaFinanceira.dashboard.checkBoxTipoPagamentoNome, { timeout: 10000 })
+    cy.get(locAgendaFinanceira.dashboard.checkBoxTipoPagamentoNome)
       .contains(seedTestAgendaFinanceira.tipoDocumento)
       .parents(locAgendaFinanceira.dashboard.checkBoxTipoPagamento)
       .within(($tipoPagamento) => {
-        cy.get($tipoPagamento, { timeout: 10000 }).should('exist').and('be.visible')
+        cy.get($tipoPagamento).should('exist').and('be.visible')
 
-        cy.getVisible($tipoPagamento, { timeout: 10000 }).click()
+        cy.getVisible($tipoPagamento).click()
       })
     
     cy.getVisible(locAgendaFinanceira.dashboard.titulo).click()
@@ -94,7 +94,7 @@ class AgendaFinanceira {
 
     const cards = seedTestAgendaFinanceira.cardsAgenda
     cards.forEach((card) => {
-      cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento, { timeout: 10000 })
+      cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento)
         .contains(card.cardNumeroDocumento)
         .parents(locAgendaFinanceira.dashboard.cardBoard)
         .within(() => {
@@ -220,19 +220,19 @@ class AgendaFinanceira {
     cy.wait('@listagemAgenda')
 
     // Selecionar card na agenda financeira
-    cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento, { timeout: 10000 })
+    cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento)
       .contains(seedTestAgendaFinanceira.numeroDocumento)
       .parent(locAgendaFinanceira.dashboard.cardAgenda)
       .within(($cardAgenda) => {
         // card deve existir e estar visivel
-        cy.get($cardAgenda, { timeout: 10000 }).should('exist').and('be.visible')
+        cy.get($cardAgenda).should('exist').and('be.visible')
 
         // abrir detalhes do titulo
-        cy.getVisible($cardAgenda, { timeout: 10000 }).click()
+        cy.getVisible($cardAgenda).click()
       })
 
     // clicar no botão para ir a tela de recebimento/pagamento 
-    cy.getVisible(locAgendaFinanceira.detalhesTitulo.efetuarPagamento).click({ timeout: 10000 })
+    cy.getVisible(locAgendaFinanceira.detalhesTitulo.efetuarPagamento).click({ timeout: 30000 })
 
     // Selecionar forma de pagamento
     if (seedTestAgendaFinanceira.formaPagamento) {
@@ -292,30 +292,30 @@ class AgendaFinanceira {
 
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem').as('listagemAgenda')
 
-    cy.wait('@listagemAgenda', { timeout: 20000 })
+    cy.wait('@listagemAgenda')
 
     cy.getVisible(locAgendaFinanceira.dashboard.buttonFiltros).click()
 
     cy.getVisible(locAgendaFinanceira.dashboard.limparFiltros).click()
 
-    cy.get(locAgendaFinanceira.dashboard.checkBoxTipoPagamentoNome, { timeout: 10000 })
+    cy.get(locAgendaFinanceira.dashboard.checkBoxTipoPagamentoNome)
       .contains(seedTestAgendaFinanceira.status)
       .parents(locAgendaFinanceira.dashboard.checkBoxTipoPagamento)
       .within(($tipoPagamento) => {
-        cy.get($tipoPagamento, { timeout: 10000 }).should('exist').and('be.visible')
+        cy.get($tipoPagamento).should('exist').and('be.visible')
 
-        cy.getVisible($tipoPagamento, { timeout: 10000 }).click()
+        cy.getVisible($tipoPagamento).click()
       })
 
     cy.getVisible(locAgendaFinanceira.dashboard.titulo).click()
 
-    cy.wait('@listagemAgenda', { timeout: 20000 })
+    cy.wait('@listagemAgenda')
 
     cy.wait(4000)
 
     const cards = seedTestAgendaFinanceira.cardDocumento
     cards.forEach((card) => {
-      cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento, { timeout: 10000 })
+      cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento)
       cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento).should('have.length', cards.length)
         .contains(card.cardNumeroDocumento)
         .parent(locAgendaFinanceira.dashboard.cardAgenda).within(() => {
@@ -365,7 +365,7 @@ class AgendaFinanceira {
     // cy.getVisible(locAgendaFinanceira.dashboard.filtroFazenda)
     //   .contains(seedTestAgendaFinanceira.fazendaDocumento).click()
 
-    cy.wait('@listagemAgenda', { timeout: 20000 })
+    cy.wait('@listagemAgenda')
 
     if (seedTestAgendaFinanceira.status === 'Pagos') {
       cy.getVisible(locAgendaFinanceira.dashboard.buttonFiltros).click()
@@ -382,7 +382,7 @@ class AgendaFinanceira {
 
     cy.wait(5000)
 
-    cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento, { timeout: 10000 })
+    cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento)
       .contains(seedTestAgendaFinanceira.cardNumeroDocumento)
       .parent(locAgendaFinanceira.dashboard.cardAgenda).within(() => {
         // Validar dados do card de Agenda Financeira
@@ -433,15 +433,15 @@ class AgendaFinanceira {
     cy.getVisible(locAgendaFinanceira.dashboard.pesquisarDocumento)
       .clear().type(`${seedTestAgendaFinanceira.numeroDocumento}{enter}`)
 
-    cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento, { timeout: 10000 })
+    cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento)
       .contains(seedTestAgendaFinanceira.cardNumeroDocumento)
       .parent(locAgendaFinanceira.dashboard.cardAgenda)
       .within(($cardAgenda) => {
         // card deve existir e estar visivel
-        cy.get($cardAgenda, { timeout: 10000 }).should('exist').and('be.visible')
+        cy.get($cardAgenda).should('exist').and('be.visible')
 
         // abrir detalhes do titulo
-        cy.getVisible($cardAgenda, { timeout: 5000 }).click()
+        cy.getVisible($cardAgenda).click()
       })
 
     // validar status do titulo

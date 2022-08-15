@@ -36,28 +36,28 @@ class Colheita {
       cy.get(locListagemColheita.selecionarFazenda)
         .contains(seedTest.filtroFazenda).click()
 
-      cy.wait('@listUnidadeArmazenamento', { timeout: 5000 })
-      cy.wait('@listColheitas', { timeout: 5000 })
+      cy.wait('@listUnidadeArmazenamento')
+      cy.wait('@listColheitas')
 
       // Selecionar safra
       cy.getVisible(locListagemColheita.selectSafra).click()
       cy.get(locListagemColheita.selecionarSafra)
         .contains(seedTest.filtroSafra).click()
 
-      cy.wait('@listCiclos', { timeout: 5000 })
-      cy.wait('@listColheitas', { timeout: 5000 })
+      cy.wait('@listCiclos')
+      cy.wait('@listColheitas')
 
       // selecionar a card de colheita
       cy.getVisible(locListagemColheita.cardColheita).click().should(($el) => {
         expect($el).to.contain.text(seedTest.destinoEditar)
       })
 
-      cy.wait('@detalhes', { timeout: 8000 })
+      cy.wait('@detalhes')
 
       // clicar no botão para editar colheita
       cy.get(locCadastroColheita.buttonEditar).click()
 
-      cy.wait('@conversor', { timeout: 10000 })
+      cy.wait('@conversor')
 
     } else {
       const url = '/producao/colheita/cadastro'
@@ -146,7 +146,7 @@ class Colheita {
       cy.getVisible(locCadastroColheita.toggleDestino)
         .contains(seedTest.destino).click()
 
-      cy.wait('@conversor', { timeout: 10000 })
+      cy.wait('@conversor')
 
       // Selecionar unidade armazenamento
       cy.getVisible(locCadastroColheita.selectUnidadeArmazenamento).click()
@@ -161,7 +161,7 @@ class Colheita {
     cy.getVisible(locCadastroColheita.inputTaraVeiculoPesagem).clear().click()
       .type(seedTest.taraVeiculoInterna)
 
-    cy.wait('@conversor', { timeout: 10000 })
+    cy.wait('@conversor')
 
     // validar o peso total apos peso bruto e o peso do veiculo
     cy.getVisible(locCadastroColheita.spanSubtotalPesagem).click()
@@ -172,13 +172,13 @@ class Colheita {
       cy.getVisible(locCadastroColheita.inputDescontoClassificacaoPesagem).clear().click()
         .type(seedTest.descontoClassificacaoInterno)
 
-      cy.wait('@conversor', { timeout: 10000 })
+      cy.wait('@conversor')
 
       if (seedTest.tabelaDescontoInterno) {
         // selecionar o checkBox da tabela de desconto
         cy.getVisible(locCadastroColheita.checkTabelaDescontoPesagem).click()
 
-        cy.wait('@conversor', { timeout: 10000 })
+        cy.wait('@conversor')
       }
     }
 
@@ -196,7 +196,7 @@ class Colheita {
       cy.getVisible(locCadastroColheita.inputTaraVeiculoRetorno).clear().click()
         .type(quantidade.taraVeiculoRetorno)
 
-      cy.wait('@conversor', { timeout: 10000 })
+      cy.wait('@conversor')
 
       // validar o peso total apos o peso bruto da colheita e peso do veiculo
       cy.getVisible(locCadastroColheita.spanSubTotalRetorno).click().should(($el) => {
@@ -208,13 +208,13 @@ class Colheita {
         cy.getVisible(locCadastroColheita.inputDescontoClassificacaoRetorno).clear()
           .type(quantidade.descontoClassificacaoRetorno)
 
-        cy.wait('@conversor', { timeout: 10000 })
+        cy.wait('@conversor')
 
         if (quantidade.tabelaDescontoRetorno) {
           // selecionar o checkBox da tabela de desconto
           cy.getVisible(locCadastroColheita.checkTabelaDescontoRetorno).click()
 
-          cy.wait('@conversor', { timeout: 10000 })
+          cy.wait('@conversor')
         }
       }
     }
@@ -228,7 +228,7 @@ class Colheita {
           .type(`{movetoend}${partilha.partilhaValor}`)
       })
 
-      cy.wait('@conversor', { timeout: 10000 })
+      cy.wait('@conversor')
     }
 
     // validar o subTotal final
@@ -255,13 +255,14 @@ class Colheita {
     cy.getVisible(locCadastroColheita.buttonAdicionar).click()
 
     if (seedTest.modal) {
-      cy.getVisible(locCadastroColheita.msgAlert).should(($el) => {
+      cy.getVisible(locCadastroColheita.msgAlert, { timeout: 30000}).should(($el) => {
         expect($el).to.contain.text('"A Fixar" para o Armazem cliente.')
       })
 
-      cy.getVisible(locCadastroColheita.btnSim).click()
+    cy.getVisible(locCadastroColheita.btnSim).click()
+
     } else {
-      cy.get(locCadastroColheita.msgSucesso).should(($el) => {
+      cy.get(locCadastroColheita.msgSucesso, { timeout: 30000}).should(($el) => {
         expect($el).to.contain.text('Colheita salva com sucesso')
       })
     }
@@ -290,12 +291,12 @@ class Colheita {
     // Selecionar fazenda
     cy.getVisible(locListagemColheita.selectFazenda).click()
       .contains(seedTest.fazenda).click()
-      .wait(['@listUnidadeArmazenamento', '@listColheitas'], { timeout: 5000 })
+      .wait(['@listUnidadeArmazenamento', '@listColheitas'])
 
     // Selecionar safra
     cy.getVisible(locListagemColheita.selectSafra).click()
       .contains(seedTest.safra).click()
-      .wait(['@listCiclos', '@listColheitas', '@iconeCultura'], { timeout: 5000 })
+      .wait(['@listCiclos', '@listColheitas', '@iconeCultura'])
 
     // Abrir colheita
     cy.get(locListagemColheita.buttonAbrirDetalhes).click({ force: true })
@@ -338,16 +339,16 @@ class Colheita {
     cy.get(locListagemColheita.selecionarFazenda)
       .contains(seedTest.fazenda).click()
 
-    cy.wait('@listUnidadeArmazenamento', { timeout: 5000 })
-    cy.wait('@listColheitas', { timeout: 5000 })
+    cy.wait('@listUnidadeArmazenamento')
+    cy.wait('@listColheitas')
 
     // Selecionar safra
     cy.getVisible(locListagemColheita.selectSafra).click()
     cy.get(locListagemColheita.selecionarSafra)
       .contains(seedTest.safra).click()
 
-    cy.wait('@listCiclos', { timeout: 5000 })
-    cy.wait('@listColheitas', { timeout: 5000 })
+    cy.wait('@listCiclos')
+    cy.wait('@listColheitas')
 
     if (seedTest.semCards) {
       cy.getVisible(locListagemColheita.mensagemSemDados).should(($el) => {

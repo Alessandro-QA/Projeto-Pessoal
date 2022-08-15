@@ -99,7 +99,7 @@ class Fazenda {
           .click()
       })
 
-    cy.wait('@apiFazenda', { timeout: 4000 })
+    cy.wait('@apiFazenda')
 
     // adicionar matricula
     cy.get(locFazenda.matricula.adicionarMatricula)
