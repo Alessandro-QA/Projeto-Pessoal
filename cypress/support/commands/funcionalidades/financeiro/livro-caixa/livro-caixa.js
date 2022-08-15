@@ -129,7 +129,7 @@ class LivroCaixa {
     cy.get(locLivroCaixa.dashboard.cardProdutores)
       .contains(seedTestLivroCaixa.nomeEmpresa).click()
 
-    cy.wait('@ApiLivroCaixa', { timeout: 10000 })
+    cy.wait('@ApiLivroCaixa')
     // Validar titulo Lançamentos
     cy.getVisible(locLivroCaixa.lancamentos.titulo)
       .contains('Lançamentos')
@@ -138,7 +138,7 @@ class LivroCaixa {
     if (seedTestLivroCaixa.filtros) {
       cy.getVisible(locLivroCaixa.lancamentos.abrirFiltros).click()
 
-      cy.wait('@ApiProdutorLivro', { timeout: 20000 })
+      cy.wait('@ApiProdutorLivro')
 
       // filtrar pelo produtor
       if (seedTestLivroCaixa.filtroProdutor) {
@@ -220,7 +220,7 @@ class LivroCaixa {
       cy.wait(2000)
     }
 
-    cy.wait('@ApiLivroCaixa', { timeout: 20000 })
+    cy.wait('@ApiLivroCaixa')
 
     // Validar dados livro caixa com mais de um lançamento
     if (seedTestLivroCaixa.cardLivroCaixa.length > 1) {
@@ -317,7 +317,7 @@ class LivroCaixa {
     cy.get(locLivroCaixa.dashboard.cardProdutores)
       .contains(seedTestLancamentoLivroCaixa.empresa).click()
 
-    cy.wait('@ApiProdutorLivroCaixa', { timeout: 10000 })
+    cy.wait('@ApiProdutorLivroCaixa')
 
     // Validar titulo Lançamentos
     cy.getVisible(locLivroCaixa.lancamentos.titulo)
@@ -333,8 +333,8 @@ class LivroCaixa {
       .contains(seedTestLancamentoLivroCaixa.contaContabil).click()
 
     // Aguarda carregamento dos dados no modal
-    cy.wait('@ApiPessoa', { timeout: 10000 })
-    cy.wait('@ApiPessoaIE', { timeout: 10000 })
+    cy.wait('@ApiPessoa')
+    cy.wait('@ApiPessoaIE')
 
     // Validar tipo de lancamento
     cy.getVisible(locLivroCaixa.adicionarLancamento.tipoLancamentoAtivo).should(($el) => {
@@ -476,7 +476,7 @@ class LivroCaixa {
     cy.get(locLivroCaixa.dashboard.cardProdutores)
       .contains(seedTestLivroCaixa.empresa).click()
 
-    cy.wait('@ApiProdutorLivroCaixa', { timeout: 10000 })
+    cy.wait('@ApiProdutorLivroCaixa')
 
     if (seedTestLivroCaixa.editar) {
       if (seedTestLivroCaixa.filtroDataInicio) {
@@ -488,7 +488,7 @@ class LivroCaixa {
         cy.getVisible(locLivroCaixa.lancamentos.filtroDataFim).clear()
           .type(`${seedTestLivroCaixa.filtroDataFim}{enter}`)
 
-        cy.wait('@ApiProdutorLivroCaixa', { timeout: 20000 })
+        cy.wait('@ApiProdutorLivroCaixa')
       }
 
       // Abrir lancamento livro caixa
@@ -502,7 +502,7 @@ class LivroCaixa {
       // Clicar no ícone de adicionar lançamento
       cy.getVisible(locLivroCaixa.lancamentos.adicionarLancamento).click()
 
-      cy.wait('@ApiLivroCaixaClassificacao', { timeout: 20000 })
+      cy.wait('@ApiLivroCaixaClassificacao')
 
       // espera necessária para que o modal termine de carregar as informações
       cy.wait(2000)
@@ -613,7 +613,7 @@ class LivroCaixa {
         .contains(seedTestLivroCaixa.filtroStatus).click()
     }
 
-    cy.wait('@ApiProdutorLivro', { timeout: 10000 })
+    cy.wait('@ApiProdutorLivro')
 
     // espera necessária para que os livro caixa atualize as informações
     cy.wait(4000)
@@ -642,7 +642,7 @@ class LivroCaixa {
         cy.getVisible(locLivroCaixa.livroCaixa.butaoExportar).click()
       })
       const downloadsFolder = Cypress.config('downloadsFolder')
-      cy.readFile(path.join(downloadsFolder, seedTestLivroCaixa.nomeArquivo), { timeout: 10000 }).should('exist')
+      cy.readFile(path.join(downloadsFolder, seedTestLivroCaixa.nomeArquivo)).should('exist')
     }
   }
 

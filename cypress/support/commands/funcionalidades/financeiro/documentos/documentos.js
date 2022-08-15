@@ -30,7 +30,7 @@ class Documentos {
 
     // Navegar para Documentos
     cy.navegarPara(url, locatorTituloPagina, tituloPagina).then(() => {
-      cy.wait('@listaDocumentos', { timeout: 15000 })
+      cy.wait('@listaDocumentos')
     })
 
     // botao adicionar documento
@@ -184,10 +184,10 @@ class Documentos {
       cy.wait(2000)
 
       // wait para aguardar busca dos ciclos do planejamento
-      cy.wait('@cicloRateio', { timeout: 15000 })
+      cy.wait('@cicloRateio')
 
       // timeout necessario para carregar os ciclos nos selects
-      cy.wait('@cicloProducao', { timeout: 15000 })
+      cy.wait('@cicloProducao')
 
       cy.wait(2000)
 
@@ -297,7 +297,7 @@ class Documentos {
     // Navegar para Documentos
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.wait('@listagem', { timeout: 15000 })
+    cy.wait('@listagem')
 
     cy.clearLocalStorage('financeiro-documentos-filtros')
 
@@ -318,9 +318,9 @@ class Documentos {
     if (seedTestDocumento.numeroDocumento) {
       // input pesquisar
       cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
-        .type(`${seedTestDocumento.numeroDocumento}{enter}`, { timeout: 2000 })
+        .type(`${seedTestDocumento.numeroDocumento}{enter}`)
 
-      cy.wait('@listagem', { timeout: 15000 })
+      cy.wait('@listagem')
     }
 
     // abrir filtros
@@ -411,10 +411,10 @@ class Documentos {
     Documentos.pesquisar(seedTestDocumento)
 
     // Abrir documento
-    cy.get(locDocumentos.dashboard.selecionarDocumento, { timeout: 15000 })
+    cy.get(locDocumentos.dashboard.selecionarDocumento)
       .contains(seedTestDocumento.numeroDocumento).click({ force: true })
 
-    cy.wait('@detalhesDocumento', { timeout: 15000 })
+    cy.wait('@detalhesDocumento')
 
     // Validar operacao
     if (seedTestDocumento.operacao) {
@@ -637,7 +637,7 @@ class Documentos {
       cy.getVisible('[title="Documentos"]').click()
     }
 
-    cy.wait('@financeiro', { timeout: 10000 })
+    cy.wait('@financeiro')
 
     // selecionar Fazenda
     cy.getVisible(locDocumentos.dashboard.filtroFazenda).click()
@@ -650,21 +650,21 @@ class Documentos {
     if (seedTestFiltro.numeroDocumento) {
       // input pesquisar
       cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
-        .type(`${seedTestFiltro.numeroDocumento}{enter}`, { timeout: 2000 })
+        .type(`${seedTestFiltro.numeroDocumento}{enter}`)
     }
 
-    cy.wait('@financeiro', { timeout: 10000 })
+    cy.wait('@financeiro')
     cy.wait(5000)
 
     // abrir documento
     cy.getVisible(locDocumentos.dashboard.selecionarDocumento).click()
 
-    cy.wait('@detalhesDocumento', { timeout: 10000 })
+    cy.wait('@detalhesDocumento')
 
     // abrir edicao de documento
     cy.getVisible(locDocumentos.detalhesDocumento.botaoEditarDocumento).click()
 
-    cy.wait('@detalhesDocumento', { timeout: 10000 })
+    cy.wait('@detalhesDocumento')
 
     if (seedTestEdicaoDocumento.camposIndisponiveis) {
 
@@ -836,10 +836,10 @@ class Documentos {
       cy.wait(2000)
 
       // wait para aguardar busca dos ciclos do planejamento
-      cy.wait('@cicloRateio', { timeout: 15000 })
+      cy.wait('@cicloRateio')
 
       // timeout necessario para carregar os ciclos nos selects
-      cy.wait('@cicloProducao', { timeout: 15000 })
+      cy.wait('@cicloProducao')
 
       cy.wait(2000)
 
@@ -911,7 +911,7 @@ class Documentos {
       .parents(locDocumentos.dashboard.selecionarDocumento)
       .click({ force: true })
 
-    cy.wait('@detalhesDocumento', { timeout: 15000 })
+    cy.wait('@detalhesDocumento')
 
     if (seedTestDocumento.excluirInvalidado) {
       cy.getVisible(locDocumentos.detalhesDocumento.botaoRemoverDocumento)
@@ -919,11 +919,11 @@ class Documentos {
     }
     else {
       // Excluir documento
-      cy.get(locDocumentos.detalhesDocumento.botaoRemoverDocumento, { timeout: 15000 })
+      cy.get(locDocumentos.detalhesDocumento.botaoRemoverDocumento)
         .click()
 
       // Confirmar exclusão
-      cy.get(locDocumentos.detalhesDocumento.botaoSim, { timeout: 15000 })
+      cy.get(locDocumentos.detalhesDocumento.botaoSim)
         .should('exist').and('be.visible')
         .contains('Sim').click({ force: true })
 
@@ -946,7 +946,7 @@ class Documentos {
       .click({ force: true })
 
     // Conferir Documento
-    cy.getVisible(locDocumentos.detalhesDocumento.botaoConferir, { timeout: 15000 }).click()
+    cy.getVisible(locDocumentos.detalhesDocumento.botaoConferir).click()
   }
 
   /**

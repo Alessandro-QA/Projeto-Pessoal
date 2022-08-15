@@ -39,7 +39,7 @@ class ResultadoSafra {
       cy.getVisible(locResultadosSafra.dashboard.checkboxSaldoColheita).click()
     }
 
-    cy.wait('@listaResultadoSafra', { timeout: 10000 })
+    cy.wait('@listaResultadoSafra')
 
     // Validar card de safra por ciclo
     if (seedTestResultadosSafra.cardCiclo) {
@@ -191,7 +191,7 @@ class ResultadoSafra {
       cy.getVisible(locResultadosSafra.analitica.checkboxSaldoColheita).click()
     }
 
-    cy.wait('@resultadoAnalitico', { timeout: 10000 })
+    cy.wait('@resultadoAnalitico')
 
     // Validar card Margem de Lucro
     if (seedTestResultadosSafra.margemLucro) {
@@ -247,13 +247,13 @@ class ResultadoSafra {
       var dadosTabelaDespesas = seedTestResultadosSafra.tabelaDespesas
 
       // Expandir collaps/tabela
-      cy.get(locResultadosSafra.analitica.buttonDropdownCard, { timeout: 15000 }).click().then(($button) => {
+      cy.get(locResultadosSafra.analitica.buttonDropdownCard).click().then(($button) => {
         cy.get(locResultadosSafra.analitica.iconDropdownCard).invoke('attr', 'class').then(($iconClass) => {
           $iconClass === 'siagri-icon-arrow-up' ? cy.log('Collapse aberto!') : cy.get($button).click()
         })
       })
 
-      cy.wait('@detalhesResultadoAnaliticoSafra', { timeout: 10000 })
+      cy.wait('@detalhesResultadoAnaliticoSafra')
 
       dadosTabelaDespesas.forEach((linhaTabela) => {
         // valor
