@@ -67,7 +67,6 @@ context('Funcionalidade', () => {
     })
 
     context('Não dedutivel, com tag, cartão de débito, com rateio de categoria', function () {
-
       it('Cadastrar documento', function () {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.testes4)
@@ -75,7 +74,7 @@ context('Funcionalidade', () => {
         Documentos.cadastrar(seedTestDocumento4.documento)
       })
 
-      it('Cadastrar documento', function () {
+      it('Validar detalhes do documento', function () {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.testes3)
 

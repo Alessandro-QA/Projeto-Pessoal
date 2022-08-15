@@ -21,7 +21,7 @@ class MovimentacaoBancaria {
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     // Espera necessária para carrecar os componentes da tela
-    cy.wait('@contaBancaria', { timeout: 10000 })
+    cy.wait('@contaBancaria')
 
     // Abrir opções de movimentação
     cy.getVisible(locMovimentacaoBancaria.movimentacaoMenu.dropdownMovimentacoes).click()
@@ -55,7 +55,7 @@ class MovimentacaoBancaria {
     cy.getVisible(locMovimentacaoBancaria.movimentacoes.selectEmpresa).click()
       .contains(seedTestMovimentacaoBancaria.empresa).click()
 
-    cy.wait('@contaBancaria', { timeout: 10000 })
+    cy.wait('@contaBancaria')
 
     // Inserir data da movimentação
     if (seedTestMovimentacaoBancaria.data) {
@@ -122,7 +122,7 @@ class MovimentacaoBancaria {
       cy.getVisible(locMovimentacaoBancaria.movimentacoes.adicionarRecebimento).click()
     }
 
-    cy.wait('@listaMovimentacoes', { timeout: 10000 })
+    cy.wait('@listaMovimentacoes')
 
     cy.wait(2000)
   }
@@ -143,7 +143,7 @@ class MovimentacaoBancaria {
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     // Espera necessária para carregar os componentes da tela
-    cy.wait('@contaBancaria', { timeout: 10000 })
+    cy.wait('@contaBancaria')
 
     if (seedTestMovimentacaoBancaria.empresa === 'Selecionar Todas') {
       // Selecionar Empresa
@@ -181,7 +181,7 @@ class MovimentacaoBancaria {
     }
 
     // Espera necessária para carregar as movimentações pesquisadas
-    cy.wait('@listaMovimentacoes', { timeout: 10000 })
+    cy.wait('@listaMovimentacoes')
 
     if (seedTestMovimentacaoBancaria.cardMovimentacao) {
       // Validar dados da movimentacao bancaria
@@ -232,7 +232,7 @@ class MovimentacaoBancaria {
       .get(locMovimentacaoBancaria.dashboard.listaEmpresas)
       .contains(seedTestMovimentacaoBancaria.empresa).click()
 
-    cy.wait('@listagemMovimentacao', { timeout: 20000 })
+    cy.wait('@listagemMovimentacao')
 
     // abrir filtros
     cy.getVisible(locMovimentacaoBancaria.dashboard.abrirFiltro).click()
@@ -252,7 +252,7 @@ class MovimentacaoBancaria {
     cy.getVisible(locMovimentacaoBancaria.dashboard.pesquisarMovimentacao)
       .type(`${seedTestMovimentacaoBancaria.tipo}{enter}`)
 
-    cy.wait('@listagemMovimentacao', { timeout: 20000 })
+    cy.wait('@listagemMovimentacao')
 
     // Abrir detalhes da movimentação
     cy.getVisible(locMovimentacaoBancaria.dashboard.cardMovimentacaoCategoria)
@@ -372,7 +372,7 @@ class MovimentacaoBancaria {
       .get(locMovimentacaoBancaria.dashboard.listaEmpresas)
       .contains(seedTestMovimentacaoBancaria.empresa).click()
 
-    cy.wait('@listagemMovimentacao', { timeout: 20000 })
+    cy.wait('@listagemMovimentacao')
 
     // abrir filtros
     cy.getVisible(locMovimentacaoBancaria.dashboard.abrirFiltro).click()
@@ -392,7 +392,7 @@ class MovimentacaoBancaria {
     cy.getVisible(locMovimentacaoBancaria.dashboard.pesquisarMovimentacao)
       .type(`${seedTestMovimentacaoBancaria.categorias}{enter}`)
 
-    cy.wait('@listagemMovimentacao', { timeout: 20000 })
+    cy.wait('@listagemMovimentacao')
 
     // Abrir detalhes da movimentação
     cy.getVisible(locMovimentacaoBancaria.dashboard.cardMovimentacaoCategoria)
@@ -469,7 +469,7 @@ class MovimentacaoBancaria {
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     // Espera necessária para carrecar os componentes da tela
-    cy.wait('@contaBancaria', { timeout: 10000 })
+    cy.wait('@contaBancaria')
 
     // Abrir opções de movimentação
     cy.getVisible(locMovimentacaoBancaria.movimentacaoMenu.dropdownMovimentacoes).click()

@@ -154,7 +154,7 @@ class Recebimento {
       .should('not.exist')
 
     // mensagem sucesso
-    cy.get(locatorRecebimento.dashboard.mensagemSucesso, { timeout: 10000 })
+    cy.get(locatorRecebimento.dashboard.mensagemSucesso)
       .should('contain', 'Recebimento realizado com sucesso')
   }
 }

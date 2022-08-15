@@ -481,7 +481,7 @@ class Nfe {
       .get(locGerenciadorNfe.selecionarAmbiente)
       .contains('Homologação').click()
 
-    cy.wait('@listagemNfe', { timeout: 5000 })
+    cy.wait('@listagemNfe')
 
     // Destinatario
     cy.get(locGerenciadorNfe.destinatario).first().should(($el) => {
@@ -631,7 +631,7 @@ class Nfe {
         .click().then(() => {
           cy.wait('@download')
           const downloadsFolder = Cypress.config('downloadsFolder')
-          cy.readFile(path.join(downloadsFolder, seedTestNfe.nomeArquivo), { timeout: 10000 }).should('exist')
+          cy.readFile(path.join(downloadsFolder, seedTestNfe.nomeArquivo)).should('exist')
         })
     } else {
       throw new Error('Necessário informar o Tipo de Download no seed de teste')
