@@ -17,7 +17,6 @@ const locators = {
     empresaTitular: '[data-cy=select-empresa-titular]',
     contaPrincipal: '[data-cy=checkbox-conta-principal]',
     empresasHabilitadas: '[data-cy=select-empresas-habilitadas]',
-    saldoAtual: '[data-cy=input-saldo-atual] input',
     selectBandeira: '[data-cy=select-bandeira-cartao]',
     dataFechamento: '[data-cy=input-dia-fechamento-fatura] input',
     dataVencimento: '[data-cy=input-dia-vencimento-fatura] input',
