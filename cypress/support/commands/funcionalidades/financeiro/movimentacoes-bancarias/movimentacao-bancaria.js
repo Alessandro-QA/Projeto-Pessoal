@@ -164,6 +164,11 @@ class MovimentacaoBancaria {
     // abrir filtros
     cy.getVisible(locMovimentacaoBancaria.dashboard.abrirFiltro).click()
 
+    if (seedTestMovimentacaoBancaria.contaBancaria) {
+      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroContaBancaria).click()
+        .contains(seedTestMovimentacaoBancaria.contaBancaria).click()
+    }
+
     // inserir a data de inicio e fim no filtro de período
     if (seedTestMovimentacaoBancaria.filtroDataInicio) {
       // inserir data de inicio
@@ -173,11 +178,6 @@ class MovimentacaoBancaria {
       // inserir data fim
       cy.getVisible(locMovimentacaoBancaria.dashboard.filtroDataFim).click()
         .clear().type(`${seedTestMovimentacaoBancaria.filtroDataFim}{enter}`)
-    }
-
-    if (seedTestMovimentacaoBancaria.contaBancaria) {
-      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroContaBancaria).click()
-        .contains(seedTestMovimentacaoBancaria.contaBancaria).click()
     }
 
     // Espera necessária para carregar as movimentações pesquisadas
