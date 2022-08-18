@@ -1,5 +1,6 @@
 {
 	"contaCorrente": {
+		"adicionar": true,
 		"tipoConta": "Conta corrente",
 		"nomeConta": "Conta BB",
 		"empresaTitular": "Empresa 1",
@@ -14,6 +15,7 @@
 		"contaDigito": "9"
 	},
 	"cartaoCredito": {
+		"adicionar": true,
 		"tipoConta": "Cartão de crédito",
 		"nomeConta": "Conta Cartão de Crédito",
 		"empresaTitular": "Empresa 1",
@@ -27,6 +29,7 @@
 		"contaVinculada": "Conta Bancaria Teste"
 	},
 	"contaTesouraria": {
+		"adicionar": true,
 		"tipoConta": "Conta tesouraria",
 		"nomeConta": "Tesouraria",
 		"empresaTitular": "Empresa 1",
