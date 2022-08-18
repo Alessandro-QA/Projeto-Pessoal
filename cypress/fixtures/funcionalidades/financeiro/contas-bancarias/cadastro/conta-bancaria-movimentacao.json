@@ -1,7 +1,8 @@
 {
   "contaBancaria": {
+    "adicionar": true,
     "tipoConta": "Conta corrente",
-    "nomeConta": "Conta BB",
+    "nomeConta": "Conta Banco do Brasil",
     "empresaTitular": "Empresa 1",
     "empresasHabilitadas": "Empresa 1",
     "dataSaldoInicial": "18/05/2021",
@@ -15,7 +16,7 @@
   },
   "listagemMovimentacao": {
     "empresa": "Empresa 1",
-    "contaBancaria": "Conta BB",
+    "contaBancaria": "Conta Banco do Brasil",
     "filtroDataInicio": "01/05/2021",
     "filtroDataFim": "31/05/2022",
     "cardMovimentacao": [

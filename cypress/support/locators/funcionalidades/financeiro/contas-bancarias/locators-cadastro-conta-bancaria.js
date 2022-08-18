@@ -10,6 +10,11 @@ const locators = {
     pesquisarConta: '[data-cy=page-filter-contas-bancarias] input'
   },
 
+  detalhesConta: {
+    buttonEditar: '[data-cy=header-detalhes-conta-bancaria] .siagri-icon-edit-xsmall',
+    nomeConta: '[data-cy=span-nome-conta]'
+  },
+
   contaBancaria: {
     titulo: '[data-cy=header-cadastro-edicao-conta-bancaria] h1',
     tipoConta: '[data-cy=select-tipo-conta]',
@@ -21,7 +26,7 @@ const locators = {
     dataFechamento: '[data-cy=input-dia-fechamento-fatura] input',
     dataVencimento: '[data-cy=input-dia-vencimento-fatura] input',
     numeroCartao: '[data-cy=input-numero-cartao]',
-    limiteCartao: '[data-cy=input-limite-cartao]',
+    limiteCartao: '[data-cy=input-limite-cartao] input',
     selectContaVinculada: '[data-cy=select-conta-corrente-vinculada]',
     dataSaldoInicial: '[data-cy=date-picker-data-saldo-inicial] input',
     saldoInicial: '[data-cy=input-saldo-inicial] > input',
@@ -32,6 +37,7 @@ const locators = {
     numeroConta: '[data-cy=input-numero-conta] input',
     contaDigito: '[data-cy=input-digito-conta]',
     incluirSaldo: '[data-cy=checkbox-incluir-saldo-disponivel]',
+    ativarInativar: '[data-cy=radio-situacao]',
     cancelar: '[data-cy=button-cancelar-salvar] > .el-button--secondary',
     adicionar: '[data-cy=button-cancelar-salvar] > .el-button--primary',
     mensagemSucesso: '.el-message__content'

@@ -22,7 +22,7 @@ context('Cenário de Teste', () => {
         cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.contaCorrenteMovimentacao)
 
-        ContaBancaria.cadastro(seedTestContaBancaria.contaBancaria)
+        ContaBancaria.cadastroEditar(seedTestContaBancaria.contaBancaria)
       })
 
       it('Validar movimentação financeira', function () {
