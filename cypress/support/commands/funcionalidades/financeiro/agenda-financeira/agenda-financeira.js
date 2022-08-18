@@ -298,6 +298,8 @@ class AgendaFinanceira {
 
     cy.getVisible(locAgendaFinanceira.dashboard.limparFiltros).click()
 
+    cy.wait(2000)
+
     cy.get(locAgendaFinanceira.dashboard.checkBoxTipoPagamentoNome)
       .contains(seedTestAgendaFinanceira.status)
       .parents(locAgendaFinanceira.dashboard.checkBoxTipoPagamento)
