@@ -12,7 +12,8 @@
     "agencia": "123",
     "agenciaDigito": "4",
     "numeroConta": "5678",
-    "contaDigito": "9"
+    "contaDigito": "9",
+    "validarContas": true
   },
   "listagemMovimentacao": {
     "empresa": "Empresa 1",

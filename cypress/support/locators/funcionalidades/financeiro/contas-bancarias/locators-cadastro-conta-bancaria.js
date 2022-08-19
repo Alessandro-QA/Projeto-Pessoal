@@ -12,7 +12,11 @@ const locators = {
 
   detalhesConta: {
     buttonEditar: '[data-cy=header-detalhes-conta-bancaria] .siagri-icon-edit-xsmall',
-    nomeConta: '[data-cy=span-nome-conta]'
+    buttonExcluir: '[data-cy=header-detalhes-conta-bancaria] .siagri-icon-trash-alt-xsmall',
+    confirmarExclusao: '.el-button--primary',
+    cancelarExclusao: '.el-button--primary-outline',
+    nomeConta: '[data-cy=span-nome-conta]',
+    mensagemExclusao: '.el-message__content'
   },
 
   contaBancaria: {

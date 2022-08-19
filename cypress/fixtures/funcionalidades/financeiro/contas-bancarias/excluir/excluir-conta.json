@@ -1,0 +1,15 @@
+{
+  "contaCorrente": {
+    "nomeConta": "Conta Para Excluir",
+    "confirmarExclusao": true
+  },
+  "cartaoCredito": {
+    "nomeConta": "Cartão Para Excluir",
+    "numeroCartao": true,
+    "confirmarExclusao": true
+  },
+  "contaTesouraria": {
+    "nomeConta": "Tesouraria Para Excluir",
+    "confirmarExclusao": true
+  }
+}

@@ -4,7 +4,7 @@ import locContaBancaria from '../../../../locators/funcionalidades/financeiro/co
 
 class ContaBancaria {
   /**
-   * Metodo para o cadastro de uma conta Bancaria
+   * Metodo para o cadastro e edição de uma conta Bancaria
    * @param {*} seedTestContaBancaria
    */
   cadastroEditar(seedTestContaBancaria) {
@@ -25,7 +25,7 @@ class ContaBancaria {
       cy.getVisible(locContaBancaria.contaBancaria.titulo).should(($el) => {
         expect($el).to.contain.text('Nova Conta')
       })
-    } 
+    }
     // Editar uma conta existente
     else {
       // input pesquisar
@@ -127,7 +127,7 @@ class ContaBancaria {
         cy.getVisible(locContaBancaria.contaBancaria.contaDigito).clear()
           .type(seedTestContaBancaria.contaDigito)
       }
-    } 
+    }
     // Se a conta for do Tipo cartão de crédito
     else {
       // valida saldo Atual
@@ -218,6 +218,63 @@ class ContaBancaria {
   }
 
   /**
+   * 
+   * @param {*} seedTestContaBancaria 
+   */
+  excluir(seedTestContaBancaria) {
+    const url = '/financeiro/contas-bancarias'
+    const locatorTituloPagina = locContaBancaria.dashboard.titulo
+    const tituloPagina = 'Contas bancárias'
+
+    cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/**').as('detalhesConta')
+
+    // Navegar para Contas Bancárias
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    cy.wait('@detalhesConta')
+
+    // input pesquisar
+    cy.getVisible(locContaBancaria.dashboard.pesquisarConta).clear()
+      .type(seedTestContaBancaria.nomeConta)
+
+    // selecionar a conta bancaria listada
+    if (seedTestContaBancaria.numeroCartao) {
+      // card conta bancaria
+      cy.getVisible(locContaBancaria.dashboard.nomeCartaoCredito)
+        .contains(seedTestContaBancaria.nomeConta).click()
+    } else {
+      // card cartao de credito
+      cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria)
+        .contains(seedTestContaBancaria.nomeConta).click()
+    }
+
+    cy.wait('@detalhesConta')
+
+    // validar nome da conta na tela de detalhes
+    cy.getVisible(locContaBancaria.detalhesConta.nomeConta).should(($el) => {
+      expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
+    })
+
+    // clicar no botão de excluir conta bancaria
+    cy.getVisible(locContaBancaria.detalhesConta.buttonExcluir).click()
+
+    if (seedTestContaBancaria.confirmarExclusao) {
+      // Cancelar exclusão
+      cy.getVisible(locContaBancaria.detalhesConta.confirmarExclusao).click()
+    } else {
+      // Confirmar exclusão
+      cy.getVisible(locContaBancaria.detalhesConta.confirmarExclusao).click()
+    }
+
+    cy.wait('@detalhesConta')
+
+    // valida mensagem de sucesso
+    cy.get(locContaBancaria.detalhesConta.mensagemExclusao).should(($el) => {
+      expect($el).exist.and.to.contain.text('Exclusão realizada com sucesso')
+    })
+  }
+
+  /**
    * Validação da Dashboard de Conta Bancaria
    * @param {*} seedTestContaBancaria
    */
@@ -229,21 +286,34 @@ class ContaBancaria {
     // Navegar para Contas Bancárias
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
+    cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/**').as('detalhesConta')
+
+    cy.wait('@detalhesConta')
+
     // input pesquisar
-    cy.getVisible(locContaBancaria.dashboard.pesquisarConta)
-      .clear()
+    cy.getVisible(locContaBancaria.dashboard.pesquisarConta).clear()
       .type(seedTestContaBancaria.nomeConta)
 
-    if (seedTestContaBancaria.numeroCartao) {
-      // card conta bancaria
-      cy.getVisible(locContaBancaria.dashboard.nomeCartaoCredito).should(($el) => {
-        expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
-      })
+    if (seedTestContaBancaria.validarContas) {
+      if (seedTestContaBancaria.numeroCartao) {
+        // card conta bancaria
+        cy.getVisible(locContaBancaria.dashboard.nomeCartaoCredito).should(($el) => {
+          expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
+        })
+      } else {
+        // card cartao de credito
+        cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria).should(($el) => {
+          expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
+        })
+      }
     } else {
-      // card cartao de credito
-      cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria).should(($el) => {
-        expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
-      })
+      if (seedTestContaBancaria.numeroCartao) {
+        // card conta bancaria
+        cy.get(locContaBancaria.dashboard.nomeCartaoCredito).should('not.exist')
+      } else {
+        // card cartao de credito
+        cy.get(locContaBancaria.dashboard.nomeContaBancaria).should('not.exist')
+      }
     }
   }
 }
