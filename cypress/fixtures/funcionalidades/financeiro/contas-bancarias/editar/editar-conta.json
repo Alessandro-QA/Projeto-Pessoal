@@ -27,7 +27,7 @@
     "dataVencimento": "10",
     "numeroCartao": "1234 5678 9741 8552",
     "limiteCartao": "R$ 5.000,00",
-    "contaVinculada": "",
+    "contaVinculada": "Conta Bancaria Teste",
     "validarContas": true
   },
   "contaTesouraria": {
