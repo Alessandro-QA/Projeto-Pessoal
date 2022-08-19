@@ -12,7 +12,8 @@
 		"agencia": "123",
 		"agenciaDigito": "4",
 		"numeroConta": "5678",
-		"contaDigito": "9"
+		"contaDigito": "9",
+		"validarContas": true
 	},
 	"cartaoCredito": {
 		"adicionar": true,
@@ -26,7 +27,8 @@
 		"dataVencimento": "15",
 		"numeroCartao": "4929 9000 9294 3670",
 		"limiteCartao": "R$ 15.000,00",
-		"contaVinculada": "Conta Bancaria Teste"
+		"contaVinculada": "Conta Bancaria Teste",
+		"validarContas": true
 	},
 	"contaTesouraria": {
 		"adicionar": true,
@@ -36,6 +38,7 @@
 		"empresasHabilitadas": "Empresa 1",
 		"dataSaldoInicial": "10/01/2022",
 		"saldoInicial": "50000",
-		"saldoAtual": "R$ 500,00"
+		"saldoAtual": "R$ 500,00",
+		"validarContas": true
 	}
 }
