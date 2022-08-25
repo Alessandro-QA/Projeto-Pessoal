@@ -1,0 +1,44 @@
+{
+  "contaCorrente": {
+    "nomeConta": "Conta Errada",
+    "editarNomeConta": "Conta Editada",
+    "tipoConta": "Conta corrente",
+    "empresaTitular": "Empresa 1",
+    "empresasHabilitadas": "Empresa 1",
+    "dataSaldoInicial": "02/03/2022",
+    "saldoInicial": "250000",
+    "saldoAtual": "R$ 2.500,00",
+    "banco": "Banco do Brasil S.A. - 1",
+    "agencia": "4321",
+    "agenciaDigito": "2",
+    "numeroConta": "321456",
+    "contaDigito": "1",
+    "validarContas": true
+  },
+  "cartaoCredito": {
+    "nomeConta": "Cartão Errado",
+    "editarNomeConta": "Cartão Editado",
+    "tipoConta": "Cartão de crédito",
+    "empresaTitular": "Empresa 1",
+    "empresasHabilitadas": "Empresa 1",
+    "saldoAtual": "R$ 5.000,00",
+    "bandeira": "Visa",
+    "dataFechamento": "5",
+    "dataVencimento": "10",
+    "numeroCartao": "1234 5678 9741 8552",
+    "limiteCartao": "R$ 5.000,00",
+    "contaVinculada": "Conta Bancaria Teste",
+    "validarContas": true
+  },
+  "contaTesouraria": {
+    "nomeConta": "Tesouraria Errada",
+    "editarNomeConta": "Tesouraria Editada",
+    "tipoConta": "Conta tesouraria",
+    "empresaTitular": "Empresa 1",
+    "empresasHabilitadas": "Empresa 1",
+    "dataSaldoInicial": "01/08/2022",
+    "saldoInicial": "500000",
+    "saldoAtual": "R$ 5.000,00",
+    "validarContas": true
+  }
+}
