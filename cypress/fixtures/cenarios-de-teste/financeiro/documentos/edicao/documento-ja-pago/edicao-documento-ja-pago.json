@@ -5,6 +5,7 @@
   },
 
   "edicaoDocumento": {
+    "editar": true,
     "dedutivel": "Não",
     "fazenda": "Fazenda Reserva",
     "safra": "2020/2020",
