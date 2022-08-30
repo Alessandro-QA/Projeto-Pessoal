@@ -194,18 +194,12 @@ class Documentos {
       const ciclos = seedTestDocumento.ciclos
       ciclos.forEach((ciclo, index) => {
         // nome do ciclo
-        cy.get(locDocumentos.documento.cicloSelecionado)
-          .eq(index)
-          .should(($el) => {
-            expect($el).to.contain.text(ciclo.nome)
-          })
+        cy.get(locDocumentos.documento.ciclo)
+          .eq(index).click().contains(ciclo.nome).click()
 
         // valor do ciclo
         cy.get(locDocumentos.documento.rateioCicloValor)
-          .eq(index)
-          .should(($el) => {
-            expect($el).to.have.value(ciclo.valor)
-          })
+          .eq(index).clear().type(ciclo.valor)
       })
     }
 

@@ -6,13 +6,13 @@
     "dedutivel": "Sim",
     "pessoa": "Empresa 1",
     "fazenda": "Fazenda Onboarding",
-    "safra": "2021/2021",
+    "safra": "2020/2020",
     "empresa": "Empresa 1",
     "observacao": "Observações do Documento",
-    "valorTotal": "200,00",
+    "valorTotal": "265,00",
     "formaPagamento": "Boleto",
     "condicaoPagamento": "Parcelado",
-    "quantidadeParcela": "2",
+    "quantidadeParcela": "3",
     "valorFixo": true,
     "numeroBoleto": [
       {
@@ -20,24 +20,31 @@
       },
       {
         "numero": "22222222222222222222222222222222222222222222222"
+      },
+      {
+        "numero": "33333333333333333333333333333333333333333333333"
       }
     ],
     "rateioEntreCiclosPlanejamento": true,
     "ciclos": [
       {
-        "nome": "Soja - 2021/2021",
-        "valor": "R$ 114,28"
+        "nome": "Milho - 2020/2020",
+        "valor": "R$ 96,38"
       },
       {
-        "nome": "Milho - 2021/2021",
-        "valor": "R$ 85,72"
+        "nome": "Soja - 2020/2020",
+        "valor": "R$ 72,27"
+      },
+      {
+        "nome": "Café - 2020/2020",
+        "valor": "R$ 96,35"
       }
     ],
     "rateioEntreCategoriasPorOperacao": true,
     "categorias": [
       {
         "nome": "13º Salário",
-        "valor": "R$ 200,00"
+        "valor": "R$ 265,00"
       }
     ]
   },
@@ -48,42 +55,52 @@
     "numeroDocumento": "1533",
     "pessoa": "Empresa 1",
     "fazenda": "Fazenda Onboarding",
-    "safra": "2021/2021",
+    "safra": "2020/2020",
     "empresa": "Empresa 1",
     "observacao": "Observações do Documento",
-    "valorTotal": "R$ 200,00",
+    "valorTotal": "R$ 265,00",
     "formaPagamento": "Boleto",
     "condicaoPagamento": "Parcelado",
-    "qtdParcelas": "2 parcelas",
+    "qtdParcelas": "3 parcelas",
     "parcelas": [
       {
         "parcela": "1ª Parcela",
-        "valorParcela": "R$ 100,00",
+        "valorParcela": "R$ 88,34",
         "statusParcela": "A pagar",
-        "saldoParcela": "R$ 100,00"
+        "saldoParcela": "R$ 88,34"
       },
       {
         "parcela": "2ª Parcela",
-        "valorParcela": "R$ 100,00",
+        "valorParcela": "R$ 88,33",
         "statusParcela": "A pagar",
-        "saldoParcela": "R$ 100,00"
+        "saldoParcela": "R$ 88,33"
+      },
+      {
+        "parcela": "3ª Parcela",
+        "valorParcela": "R$ 88,33",
+        "statusParcela": "A pagar",
+        "saldoParcela": "R$ 88,33"
       }
     ],
     "ciclos": [
       {
-        "nome": "Soja - 2021/2021",
-        "valor": "R$ 114,28"
+        "nome": "Soja - 2020/2020",
+        "valor": "R$ 72,27"
       },
       {
-        "nome": "Milho - 2021/2021",
-        "valor": "R$ 85,72"
+        "nome": "Café - 2020/2020",
+        "valor": "R$ 96,35"
+      },
+      {
+        "nome": "Milho - 2020/2020",
+        "valor": "R$ 96,38"
       }
     ],
     "categorias": [
       {
         "nome": "13º Salário",
         "porcentagem": "100%",
-        "valor": "R$ 200,00"
+        "valor": "R$ 265,00"
       }
     ]
   }

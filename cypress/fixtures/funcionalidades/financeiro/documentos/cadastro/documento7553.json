@@ -9,18 +9,22 @@
     "safra": "2021/2021",
     "empresa": "Empresa 1",
     "tag": "documentoE2E 2",
-    "valorTotal": "300,00",
+    "valorTotal": "325,00",
     "condicaoPagamento": "À vista",
     "formaPagamento": "Cartão de Débito",
     "rateioCategoriaSelecionar": true,
     "categorias": [
       {
         "nome": "Combustíveis",
-        "valor": "150,00"
+        "valor": "R$ 108,33"
       },
       {
         "nome": "Óleo Diesel",
-        "valor": "150,00"
+        "valor": "R$ 108,33"
+      },
+      {
+        "nome": "Lubrificantes",
+        "valor": "R$ 108,34"
       }
     ]
   },
@@ -34,28 +38,33 @@
     "safra": "2021/2021",
     "empresa": "Empresa 1",
     "tag": "documentoE2E 2",
-    "valorTotal": "R$ 300,00",
+    "valorTotal": "R$ 325,00",
     "formaPagamento": "Cartão de Débito",
     "condicaoPagamento": "À vista",
     "qtdParcelas": "Parcela única",
     "parcelas": [
       {
         "parcela": "1ª Parcela",
-        "valorParcela": "R$ 300,00",
+        "valorParcela": "R$ 325,00",
         "statusParcela": "A pagar",
-        "saldoParcela": "R$ 300,00"
+        "saldoParcela": "R$ 325,00"
       }
     ],
     "categorias": [
       {
         "nome": "Combustíveis",
-        "porcentagem": "50%",
-        "valor": "R$ 150,00"
+        "porcentagem": "33.3323%",
+        "valor": "R$ 108,33"
       },
       {
         "nome": "Óleo Diesel",
-        "porcentagem": "50%",
-        "valor": "R$ 150,00"
+        "porcentagem": "33.3323%",
+        "valor": "R$ 108,33"
+      },
+      {
+        "nome": "Lubrificantes",
+        "porcentagem": "33.3354%",
+        "valor": "R$ 108,34"
       }
     ]
   }
