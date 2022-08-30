@@ -98,7 +98,7 @@ context('Funcionalidade', () => {
       })
     })
 
-    context('Não dedutivel, com obersavação, transferência bancaria, parcelado, com anexo', function () {
+    context('Não dedutivel, com observação, transferência bancaria, parcelado, com anexo', function () {
       it('Cadastrar documento', function () {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.testes6)
