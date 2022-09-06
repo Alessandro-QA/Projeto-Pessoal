@@ -4,6 +4,7 @@
     "mensagem": "Existem 1 Registros Divergentes no seu Extrato. O que você deseja fazer?",
     "continuarConciliacao": true,
     "valido": true,
+    "finalizarComDivergencia": false,
 
     "periodoReferencia": "30/07/2021 - 31/08/2021",
     "extratoBancario": {
@@ -35,6 +36,8 @@
     "mensagem": "Existem 1 Registros Divergentes no seu Extrato. O que você deseja fazer?",
     "continuarConciliacao": true,
     "valido": true,
+    "finalizarComDivergencia": false,
+
     "periodoReferencia": "01/08/2022 - 31/08/2022",
     "extratoBancario": {
       "banco": "Banco do Brasil - 46532",

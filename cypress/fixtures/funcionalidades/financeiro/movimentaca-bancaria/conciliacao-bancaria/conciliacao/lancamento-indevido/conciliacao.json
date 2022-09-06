@@ -1,0 +1,84 @@
+{
+  "pagamento": {
+    "pagamento": true,
+    "tipo": "Pagamento",
+    "empresa": "Empresa Produtor - CPF",
+    "data": "03/08/2021",
+    "categorias": "Sementes",
+    "valorMovimentacao": "R$ 200,00",
+    "contaBancaria": "OFX - Banco do Brasil"
+  },
+
+  "recebimento": {
+    "recebimento": true,
+    "tipo": "Recebimento",
+    "empresa": "Empresa Produtor - CPF",
+    "data": "03/08/2022",
+    "categorias": "Arroz",
+    "valorMovimentacao": "R$ 3500,00",
+    "contaBancaria": "OFX - Banco do Brasil"
+  },
+
+  "lancamentoIndevidoPagamento": {
+    "caminhoArquivo": "cypress/fixtures/funcionalidades/financeiro/movimentaca-bancaria/conciliacao-bancaria/conciliacao/lancamento-indevido/ofx/lancamentoIndevidoPagamento.ofx",
+    "mensagem": "Existem 1 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "continuarConciliacao": true,
+    "valido": true,
+    "finalizarComDivergencia": true,
+
+    "periodoReferencia": "30/07/2021 - 31/08/2021",
+    "extratoBancario": {
+      "banco": "Banco do Brasil - 46532",
+      "saldoTotal": "0,00",
+      "dataLancamento": "03/08/2021 - Terça-feira",
+      "saldoDoDia": "200,00"
+    },
+    "extratoMyFarm": {
+      "banco": "Banco do Brasil S.A. - OFX - Banco do Brasil",
+      "saldoTotal": "200,00",
+      "dataLancamento": "03/08/2021 - Terça-feira",
+      "lancamentos": [
+        {
+          "valor": "200,00",
+          "data": "03/08/2021",
+          "conciliacaoDoDia": "0,00",
+          "saldoDoDia": "200,00"
+        }
+      ]
+    },
+    "totalDivergencia": "Total de Divergências: 1",
+    "lancamentosAConfirmar": "Lançamentos a Confirmar: 0"
+  },
+
+  "lancamentoIndevidoRecebimento": {
+    "caminhoArquivo": "cypress/fixtures/funcionalidades/financeiro/movimentaca-bancaria/conciliacao-bancaria/conciliacao/lancamento-indevido/ofx/lancamentoIndevidoRecebimento.ofx",
+    "mensagem": "Existem 1 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "continuarConciliacao": true,
+    "valido": true,
+    "finalizarComDivergencia": true,
+
+    "periodoReferencia": "01/08/2022 - 31/08/2022",
+    "extratoBancario": {
+      "banco": "Banco do Brasil - 46532",
+      "saldoTotal": "0,00",
+      "dataLancamento": "03/08/2022 - Quarta-feira",
+      "saldoDoDia": "3.500,00"
+    },
+
+    "extratoMyFarm": {
+      "banco": "Banco do Brasil S.A. - OFX - Banco do Brasil",
+      "saldoTotal": "3.500,00",
+      "dataLancamento": "03/08/2022 - Quarta-feira",
+      "lancamentos": [
+        {
+          "valor": "3.500,00",
+          "data": "03/08/2022",
+          "conciliacaoDoDia": "0,00",
+          "saldoDoDia": "3.500,00"
+        }
+      ]
+    },
+    "totalDivergencia": "Total de Divergências: 1",
+    "lancamentosAConfirmar": "Lançamentos a Confirmar: 0"
+  }
+}

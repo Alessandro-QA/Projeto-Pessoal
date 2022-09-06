@@ -21,7 +21,10 @@ const locators = {
     periodoReferencia: '[data-cy=header-divergencias] .referencePeriod--period',
     footer: '[data-cy=footer-extrato]',
     buttoFinalizarConciliacao: '[data-cy=button-finalizar-conciliacao]',
+    buttonFinalizarComDivergencia: '[data-cy=button-finalizar-divergencia]',
+    msgDivergencia: '[data-cy=msg-finalizar-conciliacao]',
     mensagemSucesso: '.el-message--success .el-message__content',
+    mensagemAlerta: '[role=alert].el-message',
     divergenciasExtratoBancario: '[data-cy=divergencia-extrato-bancario]',
     extratoBancario: {
       banco: '.divergenceExtractHeader--title',
@@ -39,6 +42,8 @@ const locators = {
       saldoTotal: '[data-cy=info-extrato] > [data-testid=saldo-extrato]',
       dataLancamento: '[data-testid=divergence-validation-extract-daily] > .mf_text--color_green',
       cardLancamentoAusente: '[data-cy=card-lancamento-ausente]',
+      valorItem: '[data-cy=card-lancamento-presente] > [data-testid=description-value] > .valueContainer > .mf_text',
+      dataItem: '[data-cy=card-lancamento-presente] .el-input__inner',
       conciliacaoDoDia: '[data-cy=card-conciliacao-dia] .mf_text--bold',
       saldoDoDia: '[data-cy=card-conciliacao-dia] .mf_text--bold'
     }
