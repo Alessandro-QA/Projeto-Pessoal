@@ -61,47 +61,57 @@ class ConciliacaoBancaria {
     *   @param {*} seedTestConciliacao 
     */
     validarLancamentoPresenteMyFarm(seedTestConciliacao) {
+        this.uploadOfx(seedTestConciliacao)
 
-        // Periodo de Referencia
+        cy.log('Periodo de Referencia')
         cy.getVisible(locConciliacaoBancaria.validacaoDivergencias.periodoReferencia).should(($el) => {
             expect($el).to.contain.text(seedTestConciliacao.periodoReferencia)
         })
 
         cy.getVisible(locConciliacaoBancaria.validacaoDivergencias.divergenciasExtratoMyFarm)
             .within(() => {
-                // Nome do banco e conta bancária
+                cy.log('Nome do banco e conta bancária')
                 cy.getVisible(locConciliacaoBancaria.validacaoDivergencias.extratoMyFarm.banco).should(($el) => {
                     expect($el).to.contain.text(seedTestConciliacao.extratoMyFarm.banco)
                 })
 
-                // Saldo total
+                cy.log('Saldo total')
                 cy.getVisible(locConciliacaoBancaria.validacaoDivergencias.extratoMyFarm.saldoTotal).should(($el) => {
                     expect($el).to.contain.text(seedTestConciliacao.extratoMyFarm.saldoTotal)
                 })
 
-                // Data do Lancamento
+                cy.log('Data do Lancamento')
                 cy.get(locConciliacaoBancaria.validacaoDivergencias.extratoMyFarm.dataLancamento).should(($el) => {
                     expect($el).to.contain.text(seedTestConciliacao.extratoMyFarm.dataLancamento)
                 })
 
-                // Mensagem do card
-                cy.get(locConciliacaoBancaria.validacaoDivergencias.extratoMyFarm.cardLancamentoAusente).should(($el) => {
-                    expect($el).to.contain.text('Lançamento Ausente')
-                    expect($el).to.contain.text('Os dados informados no Extrato Bancário, à esquerda, não constam no Extrato do myFarm. clique no card e adicione os lançamentos manualmente.')
-                })
+                const lancamentos = seedTestConciliacao.extratoMyFarm.lancamentos
 
-                // Conciliacao do dia
-                cy.get(locConciliacaoBancaria.validacaoDivergencias.extratoMyFarm.conciliacaoDoDia).should(($el) => {
-                    expect($el).to.contain.text(seedTestConciliacao.extratoMyFarm.conciliacaoDoDia)
-                })
+                lancamentos.forEach((lancamento) => {
+                    cy.log('Valor do lancamento')
+                    cy.get(locConciliacaoBancaria.validacaoDivergencias.extratoMyFarm.valorItem).should(($el) => {
+                        expect($el).to.contain.text(lancamento.valor)
+                    })
 
-                // Saldo do dia
-                cy.get(locConciliacaoBancaria.validacaoDivergencias.extratoMyFarm.saldoDoDia).should(($el) => {
-                    expect($el).to.contain.text(seedTestConciliacao.extratoMyFarm.saldoDoDia)
+                    cy.log('Data do lancamento')
+                    cy.get(locConciliacaoBancaria.validacaoDivergencias.extratoMyFarm.dataItem).should(($el) => {
+                        expect($el).to.have.value(lancamento.data)
+                    })
+
+                    cy.log('Saldo do dia')
+                    cy.get(locConciliacaoBancaria.validacaoDivergencias.extratoMyFarm.saldoDoDia).should(($el) => {
+                        expect($el).to.contain.text(lancamento.saldoDoDia)
+                    })
+
+                    cy.log('Conciliacao do dia')
+                    cy.get(locConciliacaoBancaria.validacaoDivergencias.extratoMyFarm.conciliacaoDoDia).should(($el) => {
+                        expect($el).to.contain.text(lancamento.conciliacaoDoDia)
+                    })
+
                 })
             })
 
-        // Validar rodapé
+        cy.log('Validar rodapé')
         cy.get(locConciliacaoBancaria.validacaoDivergencias.footer).should(($el) => {
             expect($el).to.contain.text(seedTestConciliacao.totalDivergencia)
             expect($el).to.contain.text(seedTestConciliacao.lancamentosAConfirmar)
@@ -228,6 +238,7 @@ class ConciliacaoBancaria {
     * @param {*} seedTestConciliacao 
     */
     validarLancamentoIndevidoExtratoBancario(seedTestConciliacao) {
+        this.uploadOfx(seedTestConciliacao)
 
         // Periodo de Referencia
         cy.getVisible(locConciliacaoBancaria.validacaoDivergencias.periodoReferencia).should(($el) => {
@@ -254,7 +265,7 @@ class ConciliacaoBancaria {
                 // Mensagem do card
                 cy.get(locConciliacaoBancaria.validacaoDivergencias.extratoBancario.cardLancamentoIndevido).should(($el) => {
                     expect($el).to.contain.text('Lançamento Indevido')
-                    expect($el).to.contain.text(seedTestConciliacao.extratoBancario.descricao)
+                    expect($el).to.contain.text('Clique no lançamento destacado no Extrato do Cartão, a direita, para fazer a conciliação manualmente.')
                 })
 
                 // Saldo do dia
@@ -273,11 +284,28 @@ class ConciliacaoBancaria {
     /**
     * Metodo para finalizar a conciliacao bancaria 
     */
-    finalizarConciliacao() {
+    finalizarConciliacao(seedTestConciliacao) {
         cy.getVisible(locConciliacaoBancaria.validacaoDivergencias.buttoFinalizarConciliacao).click()
-        cy.getVisible(locConciliacaoBancaria.validacaoDivergencias.mensagemSucesso).should(($el) => {
-            expect($el).to.contain.text('Conciliação realizada com sucesso')
-        })
+
+        if (seedTestConciliacao.finalizarComDivergencia) {
+            cy.log('Finalizar com divergências')
+            cy.getVisible(locConciliacaoBancaria.validacaoDivergencias.msgDivergencia).should(($el) => {
+                expect($el).to.contain.text('Lançamentos Divergentes ou não Confirmados')
+                expect($el).to.contain.text('Tem certeza que deseja finalizar esta Conciliação?')
+            })
+
+            cy.getVisible(locConciliacaoBancaria.validacaoDivergencias.buttonFinalizarComDivergencia).click()
+
+            cy.get(locConciliacaoBancaria.validacaoDivergencias.mensagemAlerta).should(($el) => {
+                expect($el).to.contain.text('A Conciliação Manual foi realizada com sucesso, entretanto existem divergências nos lançamentos.')
+            })
+        }
+        else {
+            cy.log('Finalizar conciliação')
+            cy.get(locConciliacaoBancaria.validacaoDivergencias.mensagemSucesso).should(($el) => {
+                expect($el).to.contain.text('Conciliação realizada com sucesso')
+            })
+        }
     }
 }
 

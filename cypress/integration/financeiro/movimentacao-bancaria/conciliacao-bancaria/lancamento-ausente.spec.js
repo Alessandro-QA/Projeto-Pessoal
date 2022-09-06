@@ -19,37 +19,42 @@ context('Funcionalidade', () => {
         context('Conciliação Bancária', () => {
             describe('Lançamento Ausente - Pagamento', { tags: '@movimentacaoBancaria' }, () => {
                 it('Validar card no Extrato Bancário', function () {
-                    cy.allure().severity('critical').startStep('test content')
-                        .descriptionHtml(testDescription.lancamentoAusente)
+                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoAusente)
 
                     ConciliacaoBancaria.validarLancamentoPresenteExtratoBancario(seedTestConciliacao.lancamentoAusentePagamento)
                 })
 
                 it('Validar card no Extrato do MyFarm e finalizar conciliação', function () {
-                    cy.allure().severity('critical').startStep('test content')
-                        .descriptionHtml(testDescription.lancamentoAusente)
+                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoAusente)
 
                     ConciliacaoBancaria.validarLancamentoAusenteMyFarm(seedTestConciliacao.lancamentoAusentePagamento)
-                    ConciliacaoBancaria.finalizarConciliacao()
                 })
 
+                it('Finalizar a Conciliação Bancária', function () {
+                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.finalizarConciliacao)
+
+                    ConciliacaoBancaria.finalizarConciliacao(seedTestConciliacao.lancamentoAusentePagamento)
+                })
 
             })
 
             describe('Lançamento Ausente - Recebimento', { tags: '@movimentacaoBancaria' }, () => {
                 it('Validar card no Extrato Bancário', function () {
-                    cy.allure().severity('critical').startStep('test content')
-                        .descriptionHtml(testDescription.lancamentoAusente)
+                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoAusente)
 
                     ConciliacaoBancaria.validarLancamentoPresenteExtratoBancario(seedTestConciliacao.lancamentoAusenteRecebimento)
                 })
 
                 it('Validar card no Extrato do MyFarm e finalizar conciliação', function () {
-                    cy.allure().severity('critical').startStep('test content')
-                        .descriptionHtml(testDescription.lancamentoAusente)
+                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoAusente)
 
                     ConciliacaoBancaria.validarLancamentoAusenteMyFarm(seedTestConciliacao.lancamentoAusenteRecebimento)
-                    ConciliacaoBancaria.finalizarConciliacao()
+                })
+
+                it('Finalizar a Conciliação Bancária', function () {
+                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.finalizarConciliacao)
+
+                    ConciliacaoBancaria.finalizarConciliacao(seedTestConciliacao.lancamentoAusentePagamento)
                 })
             })
         })
