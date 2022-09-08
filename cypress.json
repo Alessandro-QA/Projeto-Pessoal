@@ -12,5 +12,6 @@
   "video": false,
   "videosFolder": "cypress/results/videos",
   "trashAssetsBeforeRuns": true,
-  "ignoreTestFiles": "*.description.js"
+  "ignoreTestFiles": "*.description.js",
+  "watchForFileChanges": false
 }

@@ -1,3 +1,4 @@
+/* eslint no-console: ["error", { allow: ["log", "error"] }] */
 /// <reference types="cypress" />
 
 import locNfe from '../../../locators/funcionalidades/nfe/nfe/locators-add-editar-nfe.js'
@@ -166,6 +167,7 @@ class Nfe {
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     cy.intercept('/api/nota-fiscal/v1/NotaFiscal/Listagem').as('listagemNfe')
+    cy.intercept('POST', '/api/nota-fiscal/v1/NotaFiscal/Transmitir/**').as('transmitirNFe')
 
     // Selecionar emitente
     cy.getVisible(locGerenciadorNfe.selectEmissor).click()
@@ -448,11 +450,26 @@ class Nfe {
         expect($el).to.have.value(seedTestNfe.nfe.rateio.valor)
       })
     }
+
     // Gera nota
     cy.getVisible(locNfe.buttonGerarNota).click()
 
+    cy.wait('@transmitirNFe', { timeout: 60000, requestTimeout: 60000, responseTimeout: 60000 })
+      .then((interception) => {
+
+        cy.log(`Numero do Recibo: ${interception.response.body.data.numeroRecibo}`)
+        cy.log(`Chave da NFe: ${interception.response.body.data.chave}`)
+        cy.log(`Retorno do Sync: ${interception.response.body.data.nfeSyncReturn}`)
+        cy.log(`Nome Normalizado: ${interception.response.body.data.nomeNormalizado}`)
+        cy.log(JSON.stringify(interception))
+
+        // assert.equal(interception.response.statusCode, '200')
+        // assert.equal(interception.response.body.data.ambiente, '2')
+        // assert.equal(interception.response.body.data.retornoSefaz, 'Autorizado o uso da NF-e')
+      })
+
     // Aguardar mensagem de autorizacao da nota
-    cy.get(locNfe.msgAutorizada, { timeout: 40000 }).should(($el) => {
+    cy.get(locNfe.msgAutorizada, { timeout: 60000 }).should(($el) => {
       expect($el).to.contain.text('Nota autorizada com sucesso!')
     })
 

@@ -1,0 +1,65 @@
+{
+  "lancamentoAusentePagamento": {
+    "caminhoArquivo": "cypress/fixtures/funcionalidades/financeiro/movimentaca-bancaria/conciliacao-bancaria/conciliacao/lancamento-ausente/ofx/lancamentoAusentePagamento.ofx",
+    "mensagem": "Existem 1 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "continuarConciliacao": true,
+    "valido": true,
+    "finalizarComDivergencia": false,
+
+    "periodoReferencia": "30/07/2021 - 31/08/2021",
+    "extratoBancario": {
+      "banco": "Banco do Brasil - 46532",
+      "saldoTotal": "220,00",
+      "dataLancamento": "02/08/2021 - Segunda-feira",
+      "lancamentos": [
+        {
+          "descricao": "PIX - Enviado - Data balanc.: 02/08/2021",
+          "valor": "220,00",
+          "data": "02/08/2021",
+          "saldoDoDia": "0,00"
+        }
+      ]
+    },
+    "extratoMyFarm": {
+      "banco": "Banco do Brasil S.A. - OFX - Banco do Brasil",
+      "saldoTotal": "0,00",
+      "dataLancamento": "02/08/2021 - Segunda-feira",
+      "conciliacaoDoDia": "0,00",
+      "saldoDoDia": "0,00"
+    },
+    "totalDivergencia": "Total de Divergências: 1",
+    "lancamentosAConfirmar": "Lançamentos a Confirmar: 0"
+  },
+
+  "lancamentoAusenteRecebimento": {
+    "caminhoArquivo": "cypress/fixtures/funcionalidades/financeiro/movimentaca-bancaria/conciliacao-bancaria/conciliacao/lancamento-ausente/ofx/lancamentoAusenteRecebimento.ofx",
+    "mensagem": "Existem 1 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "continuarConciliacao": true,
+    "valido": true,
+    "finalizarComDivergencia": false,
+
+    "periodoReferencia": "01/08/2022 - 31/08/2022",
+    "extratoBancario": {
+      "banco": "Banco do Brasil - 46532",
+      "saldoTotal": "250,00",
+      "dataLancamento": "15/08/2022 - Segunda-feira",
+      "lancamentos": [
+        {
+          "descricao": "Resgate Investimento - Titulo de Capitalizacao",
+          "valor": "250,00",
+          "data": "15/08/2022",
+          "saldoDoDia": "0,00"
+        }
+      ]
+    },
+    "extratoMyFarm": {
+      "banco": "Banco do Brasil S.A. - OFX - Banco do Brasil",
+      "saldoTotal": "0,00",
+      "dataLancamento": "15/08/2022 - Segunda-feira",
+      "conciliacaoDoDia": "0,00",
+      "saldoDoDia": "0,00"
+    },
+    "totalDivergencia": "Total de Divergências: 1",
+    "lancamentosAConfirmar": "Lançamentos a Confirmar: 0"
+  }
+}
