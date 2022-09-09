@@ -6,7 +6,7 @@ import Authenticate from '../../../support/commands/funcionalidades/login/login-
 import testDescription from './bdd-description/empresa.description.js'
 
 context('Funcionalidade', () => {
-  describe('Atividades Agricolas | Cadastro de Empresa', { tags: '@cadastro' }, () => {
+  context('Atividades Agricolas', () => {
     before(function () {
       const credenciais = Cypress.env('login_cadastro')
       Authenticate.login(credenciais)
@@ -16,19 +16,41 @@ context('Funcionalidade', () => {
       Authenticate.logout()
     })
 
-    // Teste de cadastro de uma nova empresa
-    it('Deve cadastrar uma empresa', function () {
-      cy.allure().severity('critical').startStep('test content')
-        .descriptionHtml(testDescription.empresa)
+    context('Cadastro de Empresa', () => {
 
-      Empresa.cadastro(seedTestEmpresa)
-    })
+      describe('Jurídica', { tags: '@cadastro' }, () => {
+        it('Com Inscrição Estadual ativa', function () {
+          cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.empresa)
 
-    // Validação da Dashboard de empresa
-    it('Deve validar a Dashboard de empresa', function () {
-      cy.allure().severity('minor').startStep('test content')
+          Empresa.cadastro(seedTestEmpresa.juridicaComIe)
+        })
 
-      Empresa.validarDashboard(seedTestEmpresa)
+        it('Sem Inscrição Estadual', function () {
+          cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.empresa)
+
+          Empresa.cadastro(seedTestEmpresa.juridicaSemIe)
+        })
+      })
+
+      describe('Física', { tags: '@cadastro' }, () => {
+        it('Com Inscrição Estadual ativa', function () {
+          cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.empresa)
+
+          Empresa.cadastro(seedTestEmpresa.fisicaComIe)
+        })
+
+        it('Com Inscrição Estadual inativa', function () {
+          cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.empresa)
+
+          Empresa.cadastro(seedTestEmpresa.fisicaComIeInativa)
+        })
+
+        it('Sem Inscrição Estadual', function () {
+          cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.empresa)
+
+          Empresa.cadastro(seedTestEmpresa.fisicaSemIe)
+        })
+      })
     })
   })
 })
