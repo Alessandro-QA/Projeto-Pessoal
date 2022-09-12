@@ -2,12 +2,23 @@ const locators = {
   dashboard: {
     titulo: '[data-cy=header-contas-bancarias] > h1',
     novaConta: '[data-cy=header-contas-bancarias] button',
+    abrirFiltros: '[data-cy=page-filter-contas-bancarias] .el-button--medium',
+    fecharFiltro: '[data-cy=page-filter-contas-bancarias] .el-button--secondary',
+    selectFiltroTipo: '[data-cy=select-filter-tipo-conta]',
+    selectFiltroEmpresa: '[data-cy=select-filter-empresas]',
+    selectFiltroStatus: '[data-cy=select-filter-situacao]',
+    pesquisarConta: '[data-cy=page-filter-contas-bancarias] input',
+    cardConta: '[data-cy=card-conta]',
+    cardCartao: '[data-cy=card-cartao]',
     nomeContaBancaria: '[data-cy=nome-conta]',
     nomeCartaoCredito: '[data-cy=nome-conta-cartao]',
+    dataSaldoInicial: '[data-cy=span-data-saldo-inicial]',
+    saldo: '[data-cy=span-saldo]',
     agencia: '[data-cy=span-agencia]',
     conta: '[data-cy=span-conta]',
     empresaTitular: '[data-cy=span-empresa-titular]',
-    pesquisarConta: '[data-cy=page-filter-contas-bancarias] input'
+    limiteDisponivelCartao: '[data-cy=span-limite-disponivel]',
+    dataVencimentoCartao: '[data-cy=span-vencimento-cartao]'
   },
 
   detalhesConta: {
@@ -41,7 +52,7 @@ const locators = {
     numeroConta: '[data-cy=input-numero-conta] input',
     contaDigito: '[data-cy=input-digito-conta]',
     incluirSaldo: '[data-cy=checkbox-incluir-saldo-disponivel]',
-    ativarInativar: '[data-cy=radio-situacao]',
+    ativarInativar: '.situacao.el-col.el-col-5',
     cancelar: '[data-cy=button-cancelar-salvar] > .el-button--secondary',
     adicionar: '[data-cy=button-cancelar-salvar] > .el-button--primary',
     mensagemSucesso: '.el-message__content'
