@@ -1,0 +1,164 @@
+{
+  "dev": {
+    "contaCorrente": {
+      "empresaTitular": {
+        "id": "7eb40fe3-e81d-4df1-89d3-57ea2169f2c1",
+        "descricao": "Empresa 1"
+      },
+      "tipoConta": "ContaCorrente",
+      "nome": "Conta Corrente",
+      "banco": {
+        "id": "77fbaa99-0415-556a-3088-5bea3ac28e25",
+        "descricao": "Banco Santander (Brasil) S.A.",
+        "codigoBacen": "33"
+      },
+      "agencia": 3735,
+      "agenciaDigitoVerificador": "1",
+      "conta": 951753,
+      "contaDigitoVerificador": "2",
+      "saldoInicial": 1000,
+      "dataInicialSaldo": "2022-02-02T03:00:00.000Z",
+      "contaBancariaEmpresas": [
+        {
+          "empresa": {
+            "id": "7eb40fe3-e81d-4df1-89d3-57ea2169f2c1",
+            "descricao": "Empresa 1"
+          }
+        }
+      ],
+      "tipoTransferencia": "DOC",
+      "ativo": true
+    },
+    "cartaoCredito": {
+      "empresaTitular": {
+        "id": "7eb40fe3-e81d-4df1-89d3-57ea2169f2c1",
+        "descricao": "Empresa 1"
+      },
+      "tipoConta": "CartaoCredito",
+      "nome": "Cartão de Crédito",
+      "banco": {
+        "codigoBacen": null
+      },
+      "numeroCartao": 1234567897418552,
+      "limiteCartao": 5000,
+      "bandeiraCartao": "Visa",
+      "fechamentoFatura": 5,
+      "vencimentoFatura": 10,
+      "contaCorrenteId": "6a291558-4989-4ea9-b307-db1e1348774e",
+      "contaBancariaEmpresas": [
+        {
+          "empresa": {
+            "id": "7eb40fe3-e81d-4df1-89d3-57ea2169f2c1",
+            "descricao": "Empresa 1"
+          }
+        }
+      ],
+      "tipoTransferencia": "DOC",
+      "ativo": true
+    },
+    "contaTesouraria": {
+      "empresaTitular": {
+        "id": "7eb40fe3-e81d-4df1-89d3-57ea2169f2c1",
+        "descricao": "Empresa 1"
+      },
+      "tipoConta": "CaixaTesouraria",
+      "nome": "Conta Tesouraria",
+      "banco": {
+        "codigoBacen": null
+      },
+      "saldoInicial": 500,
+      "dataInicialSaldo": "2022-09-10T03:00:00.000Z",
+      "contaBancariaEmpresas": [
+        {
+          "empresa": {
+            "id": "7eb40fe3-e81d-4df1-89d3-57ea2169f2c1",
+            "descricao": "Empresa 1"
+          }
+        }
+      ],
+      "tipoTransferencia": "DOC",
+      "ativo": true
+    }
+  },
+  "qa": {
+    "contaCorrente": {
+      "empresaTitular": {
+        "id": "edc6df6c-a5ab-43d2-b994-429b06ad9638",
+        "descricao": "Empresa 1"
+      },
+      "tipoConta": "ContaCorrente",
+      "nome": "Conta Corrente",
+      "banco": {
+        "id": "77fbaa99-0415-556a-3088-5bea3ac28e25",
+        "descricao": "Banco Santander (Brasil) S.A.",
+        "codigoBacen": "33"
+      },
+      "agencia": 3735,
+      "agenciaDigitoVerificador": "1",
+      "conta": 951753,
+      "contaDigitoVerificador": "2",
+      "saldoInicial": 1000,
+      "dataInicialSaldo": "2022-02-02T03:00:00.000Z",
+      "contaBancariaEmpresas": [
+        {
+          "empresa": {
+            "id": "edc6df6c-a5ab-43d2-b994-429b06ad9638",
+            "descricao": "Empresa 1"
+          }
+        }
+      ],
+      "tipoTransferencia": "DOC",
+      "ativo": true
+    },
+    "cartaoCredito": {
+      "empresaTitular": {
+        "id": "edc6df6c-a5ab-43d2-b994-429b06ad9638",
+        "descricao": "Empresa 1"
+      },
+      "tipoConta": "CartaoCredito",
+      "nome": "Cartão de Crédito",
+      "banco": {
+        "codigoBacen": null
+      },
+      "numeroCartao": 1234567897418552,
+      "limiteCartao": 5000,
+      "bandeiraCartao": "Visa",
+      "fechamentoFatura": 5,
+      "vencimentoFatura": 10,
+      "contaCorrenteId": "1e0ec29f-28ab-4dc3-beea-e73d4ef8d0fa",
+      "contaBancariaEmpresas": [
+        {
+          "empresa": {
+            "id": "edc6df6c-a5ab-43d2-b994-429b06ad9638",
+            "descricao": "Empresa 1"
+          }
+        }
+      ],
+      "tipoTransferencia": "DOC",
+      "ativo": true
+    },
+    "contaTesouraria": {
+      "empresaTitular": {
+        "id": "edc6df6c-a5ab-43d2-b994-429b06ad9638",
+        "descricao": "Empresa 1"
+      },
+      "tipoConta": "CaixaTesouraria",
+      "nome": "Conta Tesouraria",
+      "banco": {
+        "codigoBacen": null
+      },
+      "saldoInicial": 500,
+      "dataInicialSaldo": "2022-09-10T03:00:00.000Z",
+      "contaBancariaEmpresas": [
+        {
+          "empresa": {
+            "id": "edc6df6c-a5ab-43d2-b994-429b06ad9638",
+            "descricao": "Empresa 1"
+          }
+        }
+      ],
+      "tipoTransferencia": "DOC",
+      "ativo": true
+    }
+  }
+}

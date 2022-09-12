@@ -27,7 +27,7 @@ context('Funcionalidade', () => {
       it('Deve validar na listagem o cadastro da conta Bancária', function () {
         cy.allure().severity('minor').startStep('test content')
 
-        ContaBancaria.validarDashboard(seedTestContaBancaria.contaCorrente)
+        ContaBancaria.validarListagem(seedTestContaBancaria.contaCorrente)
       })
     })
 
@@ -42,7 +42,7 @@ context('Funcionalidade', () => {
       it('Deve validar na listagem o cadastro do cartão de crédito', function () {
         cy.allure().severity('minor').startStep('test content')
 
-        ContaBancaria.validarDashboard(seedTestContaBancaria.cartaoCredito)
+        ContaBancaria.validarListagem(seedTestContaBancaria.cartaoCredito)
       })
     })
 
@@ -57,7 +57,7 @@ context('Funcionalidade', () => {
       it('Deve validar na listagem o cadastro da conta Tesouraria', function () {
         cy.allure().severity('minor').startStep('test content')
 
-        ContaBancaria.validarDashboard(seedTestContaBancaria.contaTesouraria)
+        ContaBancaria.validarListagem(seedTestContaBancaria.contaTesouraria)
       })
     })
   })
