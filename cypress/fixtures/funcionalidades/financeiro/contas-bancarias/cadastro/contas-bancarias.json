@@ -1,8 +1,10 @@
 {
 	"contaCorrente": {
 		"adicionar": true,
+		"contaBancaria": true,
 		"tipoConta": "Conta corrente",
 		"nomeConta": "Conta BB",
+		"pesquisar": true,
 		"empresaTitular": "Empresa 1",
 		"empresasHabilitadas": "Empresa 1",
 		"dataSaldoInicial": "18/05/2021",
@@ -19,6 +21,7 @@
 		"adicionar": true,
 		"tipoConta": "Cartão de crédito",
 		"nomeConta": "Conta Cartão de Crédito",
+		"pesquisar": true,
 		"empresaTitular": "Empresa 1",
 		"empresasHabilitadas": "Empresa 1",
 		"saldoAtual": "R$ 0,00",
@@ -32,8 +35,10 @@
 	},
 	"contaTesouraria": {
 		"adicionar": true,
+		"contaBancaria": true,
 		"tipoConta": "Conta tesouraria",
 		"nomeConta": "Tesouraria",
+		"pesquisar": true,
 		"empresaTitular": "Empresa 1",
 		"empresasHabilitadas": "Empresa 1",
 		"dataSaldoInicial": "10/01/2022",

@@ -1,14 +1,20 @@
 {
   "contaCorrente": {
+    "naoExiste": true,
+    "pesquisar": true,
     "nomeConta": "Conta Para Excluir",
     "confirmarExclusao": true
   },
   "cartaoCredito": {
+    "naoExiste": true,
+    "pesquisar": true,
     "nomeConta": "Cartão Para Excluir",
     "numeroCartao": true,
     "confirmarExclusao": true
   },
   "contaTesouraria": {
+    "naoExiste": true,
+    "pesquisar": true,
     "nomeConta": "Tesouraria Para Excluir",
     "confirmarExclusao": true
   }

@@ -16,6 +16,7 @@
     "validarContas": true
   },
   "listagemMovimentacao": {
+    "pesquisar": true,
     "empresa": "Empresa 1",
     "contaBancaria": "Conta Banco do Brasil",
     "filtroDataInicio": "01/05/2021",
