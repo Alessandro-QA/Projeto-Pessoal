@@ -8,8 +8,8 @@ const locators = {
     selectFiltroEmpresa: '[data-cy=select-filter-empresas]',
     selectFiltroStatus: '[data-cy=select-filter-situacao]',
     pesquisarConta: '[data-cy=page-filter-contas-bancarias] input',
-    cardConta: '[data-cy=card-conta]',
-    cardCartao: '[data-cy=card-cartao]',
+    cardConta: '.card-conta',
+    cardCartao: '.card-cartao',
     nomeContaBancaria: '[data-cy=nome-conta]',
     nomeCartaoCredito: '[data-cy=nome-conta-cartao]',
     dataSaldoInicial: '[data-cy=span-data-saldo-inicial]',
@@ -18,7 +18,8 @@ const locators = {
     conta: '[data-cy=span-conta]',
     empresaTitular: '[data-cy=span-empresa-titular]',
     limiteDisponivelCartao: '[data-cy=span-limite-disponivel]',
-    dataVencimentoCartao: '[data-cy=span-vencimento-cartao]'
+    dataVencimentoCartao: '[data-cy=span-vencimento-cartao]',
+    verLancamentos: '[data-cy=span-ver-lancamentos]'
   },
 
   detalhesConta: {
@@ -56,6 +57,19 @@ const locators = {
     cancelar: '[data-cy=button-cancelar-salvar] > .el-button--secondary',
     adicionar: '[data-cy=button-cancelar-salvar] > .el-button--primary',
     mensagemSucesso: '.el-message__content'
+  },
+
+  lancamentosCartao: {
+    titulo: '.siagri-template__header.el-row',
+    buttonVoltar: '[data-cy=button-voltar]',
+    abrirFiltros: '[data-cy=button-mostrar-filtros]',
+    inputPesquisar: '[data-cy=input-pesquisar-lancamento]',
+    dataInicio: '[placeholder=Início]',
+    dataFim: '[placeholder=Fim]',
+    cardsPeriodo: '.card-timeline',
+    cardLancamento: '[data-cy=card-lancamentos]',
+    cardSpanCategoria: '[data-cy=span-categoria-lancamento]',
+    cardDetalhes: '.card-details__info.el-row'
   }
 }
 
