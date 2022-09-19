@@ -31,6 +31,8 @@ class LivroCaixa {
         .type(`${seedTestLivroCaixa.filtroAno}{enter}`)
     }
 
+    cy.wait(2000)
+
     if (seedTestLivroCaixa.cardComparativo) {
       const cardComparativo = seedTestLivroCaixa.cardComparativo
       // Validar dados do card comparativo dos produtores
