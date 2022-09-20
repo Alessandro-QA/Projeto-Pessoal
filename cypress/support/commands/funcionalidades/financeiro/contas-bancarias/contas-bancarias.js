@@ -296,6 +296,11 @@ class ContaBancaria {
       cy.log('Pesquisar Conta Bancaria')
       cy.getVisible(locContaBancaria.dashboard.pesquisarConta).clear()
         .type(seedTestContaBancaria.nomeConta)
+
+      if (seedTestContaBancaria.validarCartao) {
+        cy.log('Chamada da função para validar os lançamentos do cartão de crédito')
+        ContaBancaria.lancamentosCartaoCredito(seedTestContaBancaria.validarCartao)
+      }
     }
 
     if (seedTestContaBancaria.filtros) {
@@ -348,7 +353,7 @@ class ContaBancaria {
       cardsContas.forEach((cards) => {
         cy.get(locContaBancaria.dashboard.nomeContaBancaria).should('have.length', cardsContas.length)
           .contains(cards.nomeContaBancaria)
-          .parents(locContaBancaria.dashboard.cardConta).within(() => {
+          .parents(locContaBancaria.dashboard.cardConta).click().within(() => {
             if (cards.agencia) {
               cy.log('Validar Agencia da conta bancaria')
               cy.get(locContaBancaria.dashboard.agencia).should(($el) => {
@@ -393,6 +398,79 @@ class ContaBancaria {
           })
       })
     }
+  }
+
+  /**
+ * Validar lançamentos dos cartão de crédito via tela de Listagem de Contas Bancárias
+ * @param {*} validarCartao 
+ */
+  static lancamentosCartaoCredito(validarCartao) {
+    const tituloPagina = 'Lançamentos – OFX - Cartao de Credito'
+    
+    cy.intercept('GET', '/api/financeiro/v1/Movimentacao/Cartao?ContaId=**').as('listagemLancamentos')
+
+    const cartao = validarCartao
+    cartao.forEach((cardCartao) => {
+      cy.log('Selecionar o cartão e clicar em Ver lançamentos')
+      cy.get(locContaBancaria.dashboard.nomeCartaoCredito)
+        .contains(cardCartao.nomeCartaoCredito)
+        .parents(locContaBancaria.dashboard.cardCartao).within(() => {
+          cy.get(locContaBancaria.dashboard.verLancamentos).click()
+        })
+
+      cy.wait('@listagemLancamentos')
+  
+      cy.wait(2000)
+
+      cy.log('Validar titulo')
+      cy.getVisible(locContaBancaria.lancamentosCartao.titulo)
+        .contains(tituloPagina)
+
+      if (cardCartao.filtros) {
+        cy.log('Abrir filtros')
+        cy.getVisible(locContaBancaria.lancamentosCartao.abrirFiltros).click()
+
+        cy.log('Limpar o campo data inicio e inserir nova data')
+        cy.getVisible(locContaBancaria.lancamentosCartao.dataInicio).clear()
+          .type(cardCartao.dataInicio)
+
+        cy.log('Limpar o campo data fim de inserir nova data')
+        cy.getVisible(locContaBancaria.lancamentosCartao.dataFim).clear()
+          .type(`${cardCartao.dataFim}{enter}`)
+
+        cy.wait('@listagemLancamentos')
+      }
+
+      const cards = cardCartao.card
+      cards.forEach((card) => {
+        cy.log('Validar card da movimentação no cartão')
+        cy.get(locContaBancaria.lancamentosCartao.cardSpanCategoria).should('have.length', cards.length)
+        cy.get(locContaBancaria.lancamentosCartao.cardSpanCategoria)
+          .contains(card.spanCategoria)
+          .parents(locContaBancaria.lancamentosCartao.cardLancamento).within(() => {
+            cy.log('Validar o tipo de operação (Recebimento/Pagamento)')
+            cy.get(locContaBancaria.lancamentosCartao.cardDetalhes).should(($el) => {
+              expect($el).to.contain.text(card.operacao)
+            })
+
+            cy.log('Validar o valor')
+            cy.get(locContaBancaria.lancamentosCartao.cardDetalhes).should(($el) => {
+              expect($el).to.contain.text(card.valor)
+            })
+          })
+      })
+    })
+
+    cy.log('Clicar no butão de voltar a listagem de contas bancarias')
+    cy.getVisible(locContaBancaria.lancamentosCartao.buttonVoltar).click()
+
+    cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/**').as('detalhesConta')
+
+    cy.wait('@detalhesConta')
+
+    cy.getVisible(locContaBancaria.dashboard.titulo).should(($el) => {
+      expect($el).to.contain.text('Contas bancárias')
+    })
   }
 }
 
