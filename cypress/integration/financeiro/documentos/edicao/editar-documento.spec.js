@@ -17,6 +17,7 @@ context('Funcionalidade', () => {
 		var bodyDocumento357357 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento357357)
 		var bodyDocumento369852 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento369852)
 		var bodyDocumento564321 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento564321)
+		var bodyDocumento789 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento789)
 
 		before(function () {
 			const credenciais = Cypress.env('login_cenarios')
@@ -34,7 +35,7 @@ context('Funcionalidade', () => {
 				Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento357357, 'login_cenarios')
 				Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento369852, 'login_cenarios')
 				Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento564321, 'login_cenarios')
-			
+				Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento789, 'login_cenarios')
 			})
 		})
 
@@ -139,6 +140,16 @@ context('Funcionalidade', () => {
 					.descriptionHtml(testDescritpion.recebido)
 
 				validarDetalhes(seedTestDocumento.documento564321.detalhesPosRecebimento)
+			})
+		})
+
+		context('Excluir anexo do documento', () => {
+			it('Editar documento, excluir anexo', function () {
+				editar(seedTestDocumento.documento789.filtro, seedTestDocumento.documento789.editar)
+			})
+
+			it('Validar detalhes após excluir anexo', function () {
+				validarDetalhes(seedTestDocumento.documento789.detalhes)
 			})
 		})
 	})
