@@ -145,6 +145,9 @@ context('Funcionalidade', () => {
 
 		context('Excluir anexo do documento', () => {
 			it('Editar documento, excluir anexo', function () {
+				cy.allure().severity('normal').startStep('test content')
+					.descriptionHtml(testDescritpion.excluirAnexo)
+
 				editar(seedTestDocumento.documento789.filtro, seedTestDocumento.documento789.editar)
 			})
 
