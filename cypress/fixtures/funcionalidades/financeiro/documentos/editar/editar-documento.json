@@ -174,5 +174,19 @@
 				}
 			]
 		}
+	},
+	"documento789": {
+		"filtro": {
+			"editar": true,
+			"fazenda": "Fazenda E2E",
+			"empresa": "Empresa Fornecedor - CPF",
+			"numeroDocumento": "789"
+		},
+		"editar": {
+			"anexoExcluir": true
+		},
+		"detalhes": {
+			"numeroDocumento": "789"
+		}
 	}
 }

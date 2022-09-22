@@ -31,6 +31,7 @@ let queries = `
 				DELETE FROM [safra].[Safras] WHERE TenantId = '${tenantCadastro}'; 
 
 			-- Deletar registros dos testes de cadastro de documento
+			DELETE FROM [financeiro].[LivroCaixaAnexos] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');
 				DELETE FROM [financeiro].[LivroCaixas] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');
 				DELETE FROM [financeiro].[LivroCaixaHistoricos] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');
 				DELETE FROM [financeiro].[MovimentacaoTitulos] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');

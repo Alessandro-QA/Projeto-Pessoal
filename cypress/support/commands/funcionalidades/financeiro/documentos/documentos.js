@@ -598,6 +598,8 @@ class Documentos {
       cy.getVisible(locDocumentos.detalhesDocumento.anexos).should(($el) => {
         expect($el).to.contain.text(seedTestDocumento.anexos)
       })
+    } else {
+      cy.get(locDocumentos.detalhesDocumento.anexos).should('not.exist')
     }
   }
 
@@ -879,6 +881,11 @@ class Documentos {
           .clear().type(categoria.valor)
       })
     }
+
+    if (seedTestEdicaoDocumento.anexoExcluir) {
+      cy.getVisible(locDocumentos.documento.excluirAnexo).click()
+    }
+
     // salvar alterações
     cy.getVisible(locDocumentos.documento.adicionar).click()
 

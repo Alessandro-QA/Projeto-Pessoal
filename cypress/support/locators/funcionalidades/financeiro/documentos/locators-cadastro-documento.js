@@ -88,6 +88,7 @@ const locators = {
     adicionarCategoria: '[data-cy=button-delete-add-categoria] .siagri-icon-plus-xsmall',
     anexarArquivo: '[data-cy=upload-anexo] [name="file"]',
     anexo: '.anexos-list .anexos-list__item',
+    excluirAnexo: '.siagri-icon-trash-alt',
     cancelar: '[data-cy=button-cancelar-adicionar-documento] .el-button--secondary',
     adicionar: '[data-cy=button-cancelar-adicionar-documento] .el-button--primary'
   },
