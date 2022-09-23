@@ -353,7 +353,7 @@ class ContaBancaria {
       cardsContas.forEach((cards) => {
         cy.get(locContaBancaria.dashboard.nomeContaBancaria).should('have.length', cardsContas.length)
           .contains(cards.nomeContaBancaria)
-          .parents(locContaBancaria.dashboard.cardConta).click().within(() => {
+          .parents(locContaBancaria.dashboard.cardConta).within(() => {
             if (cards.agencia) {
               cy.log('Validar Agencia da conta bancaria')
               cy.get(locContaBancaria.dashboard.agencia).should(($el) => {
