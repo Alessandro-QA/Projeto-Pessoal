@@ -31,6 +31,7 @@ let queries = `
 				DELETE FROM [safra].[Safras] WHERE TenantId = '${tenantCadastro}' AND Id NOT IN ('BA57B4F1-4F41-414F-8C1E-2566D88D41F4', 'BFCB0F35-B72A-41B6-BCA3-37912D702ABD'); 
 
 			-- Deletar registros dos testes de cadastro de documento
+			DELETE FROM [financeiro].[LivroCaixaAnexos] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');
 				DELETE FROM [financeiro].[LivroCaixas] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');
 				DELETE FROM [financeiro].[LivroCaixaHistoricos] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');
 				DELETE FROM [financeiro].[MovimentacaoTitulos] WHERE TenantId IN ('${tenantCenarios}', '${tenantCadastro}');

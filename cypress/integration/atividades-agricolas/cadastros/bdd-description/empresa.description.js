@@ -18,7 +18,6 @@ const html = {
     <strong>DADO</strong> que eu queira cadastrar uma nova empresa/pessoa <br/>
     <strong>QUANDO</strong> eu entrar na Dashboard de Empresas <br/>
     <strong>E</strong> clicar em <b>"Adicionar  empresa"</b> <br/>
-    <strong>E</strong> selecionar Jurídica <br/>
     <strong>E</strong> preencher todos os campos obrigatórios <br/>
     <strong>E</strong> clicar em <b>"Adicionar"</b> <br/>
     <strong>ENTAO</strong> será salvo e validado a dashboard de Empresas <br/>

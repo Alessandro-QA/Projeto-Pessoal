@@ -46,7 +46,7 @@ context('Funcionalidade', () => {
       it('Validar exclusão na listagem', function () {
         cy.allure().severity('minor').startStep('test content')
 
-        ContaBancaria.validarDashboard(seedTestExcluirConta.contaCorrente)
+        ContaBancaria.validarListagem(seedTestExcluirConta.contaCorrente)
       })
     })
 
@@ -61,7 +61,7 @@ context('Funcionalidade', () => {
       it('Validar exclusão na listagem', function () {
         cy.allure().severity('minor').startStep('test content')
 
-        ContaBancaria.validarDashboard(seedTestExcluirConta.cartaoCredito)
+        ContaBancaria.validarListagem(seedTestExcluirConta.cartaoCredito)
       })
     })
 
@@ -76,7 +76,7 @@ context('Funcionalidade', () => {
       it('Validar exclusão na listagem de contas bancárias', function () {
         cy.allure().severity('minor').startStep('test content')
 
-        ContaBancaria.validarDashboard(seedTestExcluirConta.contaTesouraria)
+        ContaBancaria.validarListagem(seedTestExcluirConta.contaTesouraria)
       })
     })
   })
