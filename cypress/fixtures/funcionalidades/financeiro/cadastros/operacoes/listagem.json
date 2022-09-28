@@ -1,0 +1,45 @@
+{
+  "tipoOperacao": {
+    "entrada": {
+      "filtros": true,
+      "tipoOperacao": "Entrada",
+      "operacoes": [
+        
+      ]
+    },
+    "saida": {
+      "filtros": true,
+      "tipoOperacao": "Saída",
+      "operacoes": [
+        {
+          "codigo": "271",
+          "nome": "Devolução de Compra de Mercadorias",
+          "tipoOperacao": "Saída",
+          "finalidadeOperacao": "-",
+          "movimentacaoFinanceira": "Pagar"
+        },
+        {
+          "codigo": "88",
+          "nome": "Outras Vendas Agropecuárias",
+          "tipoOperacao": "Saída",
+          "finalidadeOperacao": "-",
+          "movimentacaoFinanceira": "Receber"
+        },
+        {
+          "codigo": "87",
+          "nome": "Venda de Gado",
+          "tipoOperacao": "Saída",
+          "finalidadeOperacao": "-",
+          "movimentacaoFinanceira": "Receber"
+        },
+        {
+          "codigo": "77",
+          "nome": "Venda de Mercadoria",
+          "tipoOperacao": "Saída",
+          "finalidadeOperacao": "-",
+          "movimentacaoFinanceira": "Receber"
+        }
+      ]
+    }
+  }
+}
