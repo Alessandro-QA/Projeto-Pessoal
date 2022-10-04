@@ -1,0 +1,174 @@
+{
+  "dev": {
+    "campoPesquisar": {
+      "tipoFiltro": "pesquisa",
+      "filtro": "Entrada Estoque",
+      "operacoes": [
+        {
+          "codigo": "459",
+          "nome": "Entrada Estoque",
+          "tipoOperacao": "Entrada",
+          "finalidadeOperacao": "–",
+          "movimentacaoFinanceira": "Não aplica"
+        },
+        {
+          "codigo": "40",
+          "nome": "Transferencia De Entrada Estoque",
+          "tipoOperacao": "–",
+          "finalidadeOperacao": "–",
+          "movimentacaoFinanceira": "Não aplica"
+        }
+      ]
+    },
+    "tipoDaOperacao": {
+      "entrada": {
+        "tipoFiltro": "tipoDaOperacao",
+        "filtro": "Entrada",
+        "operacoes": [
+          {
+            "codigo": "459",
+            "nome": "Entrada Estoque",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Não aplica"
+          }
+        ]
+      },
+      "saida": {
+        "tipoFiltro": "tipoDaOperacao",
+        "filtro": "Saída",
+        "operacoes": [
+          {
+            "codigo": "271",
+            "nome": "Devolução de Compra de Mercadorias",
+            "tipoOperacao": "Saída",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": "88",
+            "nome": "Outras Vendas Agropecuárias",
+            "tipoOperacao": "Saída",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Receber"
+          },
+          {
+            "codigo": "87",
+            "nome": "Venda de Gado",
+            "tipoOperacao": "Saída",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Receber"
+          },
+          {
+            "codigo": "77",
+            "nome": "Venda de Mercadoria",
+            "tipoOperacao": "Saída",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Receber"
+          }
+        ]
+      }
+    },
+    "finalidadeDaOperacao": {
+      "normal": {
+        "tipoFiltro": "finalidadeDaOperacao",
+        "filtro": "Entrada",
+        "operacoes": [
+          {
+            "codigo": "459",
+            "nome": "Entrada Estoque",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Não aplica"
+          }
+        ]
+      }
+    }
+  },
+  "qa": {
+    "campoPesquisar": {
+      "tipoFiltro": "pesquisa",
+      "filtro": "Entrada Estoque",
+      "operacoes": [
+        {
+          "codigo": "198",
+          "nome": "Entrada Estoque",
+          "tipoOperacao": "Entrada",
+          "finalidadeOperacao": "–",
+          "movimentacaoFinanceira": "Não aplica"
+        },
+        {
+          "codigo": "38",
+          "nome": "Transferencia De Entrada Estoque",
+          "tipoOperacao": "–",
+          "finalidadeOperacao": "–",
+          "movimentacaoFinanceira": "Não aplica"
+        }
+      ]
+    },
+    "tipoDaOperacao": {
+      "entrada": {
+        "tipoFiltro": "tipoDaOperacao",
+        "filtro": "Entrada",
+        "operacoes": [
+          {
+            "codigo": "198",
+            "nome": "Entrada Estoque",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Não aplica"
+          }
+        ]
+      },
+      "saida": {
+        "tipoFiltro": "tipoDaOperacao",
+        "filtro": "Saída",
+        "operacoes": [
+          {
+            "codigo": "110",
+            "nome": "Devolução de Compra de Mercadorias",
+            "tipoOperacao": "Saída",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": "75",
+            "nome": "Outras Vendas Agropecuárias",
+            "tipoOperacao": "Saída",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Receber"
+          },
+          {
+            "codigo": "74",
+            "nome": "Venda de Gado",
+            "tipoOperacao": "Saída",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Receber"
+          },
+          {
+            "codigo": "72",
+            "nome": "Venda de Mercadoria",
+            "tipoOperacao": "Saída",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Receber"
+          }
+        ]
+      }
+    },
+    "finalidadeDaOperacao": {
+      "normal": {
+        "tipoFiltro": "finalidadeDaOperacao",
+        "filtro": "Entrada",
+        "operacoes": [
+          {
+            "codigo": "459",
+            "nome": "Entrada Estoque",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Não aplica"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -420,7 +420,7 @@ class ContaBancaria {
 
       cy.wait('@listagemLancamentos')
   
-      cy.wait(2000)
+      cy.wait(4000)
 
       cy.log('Validar titulo')
       cy.getVisible(locContaBancaria.lancamentosCartao.titulo)
