@@ -406,7 +406,7 @@ class ContaBancaria {
  */
   static lancamentosCartaoCredito(validarCartao) {
     const tituloPagina = 'Lançamentos – OFX - Cartao de Credito'
-    
+
     cy.intercept('GET', '/api/financeiro/v1/Movimentacao/Cartao?ContaId=**').as('listagemLancamentos')
 
     const cartao = validarCartao
@@ -419,12 +419,8 @@ class ContaBancaria {
         })
 
       cy.wait('@listagemLancamentos')
-  
-      cy.wait(4000)
 
-      cy.log('Validar titulo')
-      cy.getVisible(locContaBancaria.lancamentosCartao.titulo)
-        .contains(tituloPagina)
+      cy.wait(4000)
 
       if (cardCartao.filtros) {
         cy.log('Abrir filtros')
