@@ -418,6 +418,10 @@ class ContaBancaria {
 
       cy.wait('@listagemLancamentos')
 
+      // Validação necessária para carregar os dados na tela e evitar quebra por timeOut
+      cy.get(locContaBancaria.lancamentosCartao.saldoDoDia).should('exist').and('be.visible')
+      cy.get(locContaBancaria.lancamentosCartao.cardLancamento).should('exist').and('be.visible')
+      
       cy.wait(4000)
 
       if (cardCartao.filtros) {

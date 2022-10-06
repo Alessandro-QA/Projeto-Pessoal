@@ -31,6 +31,34 @@
             "tipoOperacao": "Entrada",
             "finalidadeOperacao": "–",
             "movimentacaoFinanceira": "Não aplica"
+          },
+          {
+            "codigo": "461",
+            "nome": "Juros s/ Tributos e Contribuições",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Normal",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": "462",
+            "nome": "Juros Empréstimo/Financiamento",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Complementar",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": "463",
+            "nome": "Juros Passivos",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Ajuste",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": "464",
+            "nome": "Contribuição Sindical",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Devolução",
+            "movimentacaoFinanceira": "Pagar"
           }
         ]
       },
@@ -72,14 +100,53 @@
     "finalidadeDaOperacao": {
       "normal": {
         "tipoFiltro": "finalidadeDaOperacao",
-        "filtro": "Entrada",
+        "filtro": "Normal",
         "operacoes": [
           {
-            "codigo": "459",
-            "nome": "Entrada Estoque",
+            "codigo": "461",
+            "nome": "Juros s/ Tributos e Contribuições",
             "tipoOperacao": "Entrada",
-            "finalidadeOperacao": "–",
-            "movimentacaoFinanceira": "Não aplica"
+            "finalidadeOperacao": "Normal",
+            "movimentacaoFinanceira": "Pagar"
+          }
+        ]
+      },
+      "complementar": {
+        "tipoFiltro": "finalidadeDaOperacao",
+        "filtro": "Complementar",
+        "operacoes": [
+          {
+            "codigo": "462",
+            "nome": "Juros Empréstimo/Financiamento",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Complementar",
+            "movimentacaoFinanceira": "Pagar"
+          }
+        ]
+      },
+      "ajuste": {
+        "tipoFiltro": "finalidadeDaOperacao",
+        "filtro": "Ajuste",
+        "operacoes": [
+          {
+            "codigo": "463",
+            "nome": "Juros Passivos",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Ajuste",
+            "movimentacaoFinanceira": "Pagar"
+          }
+        ]
+      },
+      "devolucao": {
+        "tipoFiltro": "finalidadeDaOperacao",
+        "filtro": "Devolução",
+        "operacoes": [
+          {
+            "codigo": "464",
+            "nome": "Contribuição Sindical",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Devolução",
+            "movimentacaoFinanceira": "Pagar"
           }
         ]
       }
@@ -117,6 +184,34 @@
             "tipoOperacao": "Entrada",
             "finalidadeOperacao": "–",
             "movimentacaoFinanceira": "Não aplica"
+          },
+          {
+            "codigo": "199",
+            "nome": "Juros s/ Tributos e Contribuições",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Normal",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": "200",
+            "nome": "Juros Empréstimo/Financiamento",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Complementar",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": "201",
+            "nome": "Juros Passivos",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Ajuste",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": "202",
+            "nome": "Contribuição Sindical",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Devolução",
+            "movimentacaoFinanceira": "Pagar"
           }
         ]
       },
@@ -158,14 +253,53 @@
     "finalidadeDaOperacao": {
       "normal": {
         "tipoFiltro": "finalidadeDaOperacao",
-        "filtro": "Entrada",
+        "filtro": "Normal",
         "operacoes": [
           {
-            "codigo": "459",
-            "nome": "Entrada Estoque",
+            "codigo": "199",
+            "nome": "Juros s/ Tributos e Contribuições",
             "tipoOperacao": "Entrada",
-            "finalidadeOperacao": "–",
-            "movimentacaoFinanceira": "Não aplica"
+            "finalidadeOperacao": "Normal",
+            "movimentacaoFinanceira": "Pagar"
+          }
+        ]
+      },
+      "complementar": {
+        "tipoFiltro": "finalidadeDaOperacao",
+        "filtro": "Complementar",
+        "operacoes": [
+          {
+            "codigo": "200",
+            "nome": "Juros Empréstimo/Financiamento",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Complementar",
+            "movimentacaoFinanceira": "Pagar"
+          }
+        ]
+      },
+      "ajuste": {
+        "tipoFiltro": "finalidadeDaOperacao",
+        "filtro": "Ajuste",
+        "operacoes": [
+          {
+            "codigo": "201",
+            "nome": "Juros Passivos",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Ajuste",
+            "movimentacaoFinanceira": "Pagar"
+          }
+        ]
+      },
+      "devolucao": {
+        "tipoFiltro": "finalidadeDaOperacao",
+        "filtro": "Devolução",
+        "operacoes": [
+          {
+            "codigo": "202",
+            "nome": "Contribuição Sindical",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Devolução",
+            "movimentacaoFinanceira": "Pagar"
           }
         ]
       }

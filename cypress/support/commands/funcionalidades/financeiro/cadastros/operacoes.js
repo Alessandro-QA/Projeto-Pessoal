@@ -73,8 +73,7 @@ class Operacoes {
 
       cy.get(locatorsOperacoes.listagem.inputPesquisar).type(seedTestOperacoes.filtro)
     }
-
-    if (seedTestOperacoes.tipoFiltro === 'tipoDaOperacao') {
+    else if (seedTestOperacoes.tipoFiltro === 'tipoDaOperacao') {
       cy.getVisible(locatorsOperacoes.listagem.selectTipoOperacao).click()
         .contains(seedTestOperacoes.filtro).click()
 
@@ -89,6 +88,25 @@ class Operacoes {
       cy.getVisible(locatorsOperacoes.listagem.statusSelecionado).should(($el) => {
         expect($el).to.contain.text('Ativo')
       })
+    }
+    else if (seedTestOperacoes.tipoFiltro === 'finalidadeDaOperacao') {
+      cy.getVisible(locatorsOperacoes.listagem.tipoOperacaoSelecionado).should(($el) => {
+        expect($el).to.contain.text('Todos')
+      })
+
+      cy.getVisible(locatorsOperacoes.listagem.selectFinalidadeOperacao).click()
+        .contains(seedTestOperacoes.filtro).click()
+
+      cy.getVisible(locatorsOperacoes.listagem.movimentaFinanceiroSelecionado).should(($el) => {
+        expect($el).to.contain.text('Todos')
+      })
+
+      cy.getVisible(locatorsOperacoes.listagem.statusSelecionado).should(($el) => {
+        expect($el).to.contain.text('Ativo')
+      })
+    }
+    else {
+      cy.log('Não foi encontrado nenhum filtro para ser aplicado!')
     }
   }
 }
