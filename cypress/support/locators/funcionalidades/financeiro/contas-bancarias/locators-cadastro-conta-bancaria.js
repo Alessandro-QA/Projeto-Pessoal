@@ -69,7 +69,8 @@ const locators = {
     cardsPeriodo: '.card-timeline',
     cardLancamento: '[data-cy=card-lancamentos]',
     cardSpanCategoria: '[data-cy=span-categoria-lancamento]',
-    cardDetalhes: '.card-details__info.el-row'
+    cardDetalhes: '.card-details__info.el-row',
+    saldoDoDia: '[data-cy=span-saldo-do-dia]'
   }
 }
 
