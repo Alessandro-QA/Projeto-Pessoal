@@ -4,7 +4,7 @@ const locators = {
     pesquisarMaterial: '[data-cy=select-material] [placeholder="Pesquisar"]',
     selecionarMaterial: '[data-cy=select-material] .list-items',
     inputQuantidade: '.informacoes [data-cy=input-quantidade] input',
-    inputValorUnitario: '[data-cy=input-valor-unitario] input',
+    inputValorUnitario: '[data-cy=mf-input-valor]',
     inputDesconto: '[data-cy=input-desconto] > input',
     spanTotal: '[data-cy=span-total]',
     selectCfop: '[data-cy=select-cfop]',

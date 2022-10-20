@@ -405,8 +405,6 @@ class ContaBancaria {
  * @param {*} validarCartao 
  */
   static lancamentosCartaoCredito(validarCartao) {
-    const tituloPagina = 'Lançamentos – OFX - Cartao de Credito'
-    
     cy.intercept('GET', '/api/financeiro/v1/Movimentacao/Cartao?ContaId=**').as('listagemLancamentos')
 
     const cartao = validarCartao
@@ -419,24 +417,29 @@ class ContaBancaria {
         })
 
       cy.wait('@listagemLancamentos')
-  
-      cy.wait(2000)
+      cy.wait(4000)
 
-      cy.log('Validar titulo')
-      cy.getVisible(locContaBancaria.lancamentosCartao.titulo)
-        .contains(tituloPagina)
+      cy.log('Validação necessária para carregar os dados na tela e evitar quebra por timeOut')
+      cy.get(locContaBancaria.lancamentosCartao.saldoDoDia).should('exist').and('be.visible')
+      cy.get(locContaBancaria.lancamentosCartao.cardLancamento).should('exist').and('be.visible')
 
       if (cardCartao.filtros) {
         cy.log('Abrir filtros')
         cy.getVisible(locContaBancaria.lancamentosCartao.abrirFiltros).click()
 
+        var data = new Date()
+        var dia = String(data.getDate()).padStart(2, '0')
+        var mes = String(data.getMonth() + 1).padStart(2, '0')
+        var ano = data.getFullYear()
+        var dataAtual = dia + '/' + mes + '/' + ano
+
         cy.log('Limpar o campo data inicio e inserir nova data')
         cy.getVisible(locContaBancaria.lancamentosCartao.dataInicio).clear()
-          .type(cardCartao.dataInicio)
+          .type(dataAtual)
 
         cy.log('Limpar o campo data fim de inserir nova data')
         cy.getVisible(locContaBancaria.lancamentosCartao.dataFim).clear()
-          .type(`${cardCartao.dataFim}{enter}`)
+          .type(`${dataAtual}{enter}`)
 
         cy.wait('@listagemLancamentos')
       }
