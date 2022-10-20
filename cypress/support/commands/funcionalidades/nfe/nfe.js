@@ -15,51 +15,51 @@ class Nfe {
  * @param {*} seedTestMateriais
  */
   adicionarMaterial(seedTestMateriais) {
-    // Adicionar material
+    cy.log('Adicionar material')
     cy.getVisible(locNfe.materiais.buttonNovoMateiral).click()
 
     cy.wait(7000)
 
-    // Pesquisar e selecionar material
+    cy.log('Pesquisar e selecionar material')
     cy.getVisible(locMaterial.informacoesProduto.selectMaterial).click()
     cy.getVisible(locMaterial.informacoesProduto.pesquisarMaterial)
       .type(seedTestMateriais.produto.material)
       .getVisible(locMaterial.informacoesProduto.selecionarMaterial)
       .contains(seedTestMateriais.produto.material).click()
 
-    // Quantidade
+    cy.log('Quantidade')
     cy.getVisible(locMaterial.informacoesProduto.inputQuantidade).clear()
       .type(`{movetoend}${seedTestMateriais.produto.quantidade}`)
 
-    // Valor unitario
+    cy.log('Valor unitario')
     cy.getVisible(locMaterial.informacoesProduto.inputValorUnitario).clear()
       .type(`{movetoend}${seedTestMateriais.produto.valorUnitario}`)
 
-    // Desconto
+    cy.log('Desconto')
     cy.getVisible(locMaterial.informacoesProduto.inputDesconto).clear()
       .type(`{movetoend}${seedTestMateriais.produto.desconto}`)
 
-    // Total
+    cy.log('Total')
     cy.getVisible(locMaterial.informacoesProduto.spanTotal).should(($el) => {
       expect($el).to.contain.text(seedTestMateriais.produto.total)
     })
 
-    // Selecionar CFOP
+    cy.log('Selecionar CFOP')
     cy.getVisible(locMaterial.informacoesProduto.selectCfop).click()
       .get(locMaterial.informacoesProduto.selecionarCfop)
       .contains(seedTestMateriais.produto.cfop).click()
 
-    // Ncm
+    cy.log('Ncm')
     cy.getVisible(locMaterial.informacoesProduto.spanNcm).should(($el) => {
       expect($el).to.contain.text(seedTestMateriais.produto.ncm)
     })
 
-    // Unidade Medida
+    cy.log('Unidade Medida')
     cy.getVisible(locMaterial.informacoesProduto.spanUnidadeMedida).should(($el) => {
       expect($el).to.contain.text(seedTestMateriais.produto.unidadeMedida)
     })
 
-    // ICMS - Origem CST
+    cy.log('ICMS - Origem CST')
     if (seedTestMateriais.imposto === '0 - Nacional') {
       cy.getVisible(locMaterial.impostos.icms.origemSelecionada).should(($el) => {
         expect($el).to.contain.text(seedTestMateriais.imposto.icms.origemCst)
@@ -70,86 +70,86 @@ class Nfe {
         .contains(seedTestMateriais.imposto.icms.origemCst).click()
     }
 
-    // ICMS - CST
+    cy.log('ICMS - CST')
     cy.getVisible(locMaterial.impostos.icms.selectCst).click()
       .get(locMaterial.impostos.icms.selecionarCst)
       .contains(seedTestMateriais.imposto.icms.cst).click()
 
-    // ICMS - Base Calculo
+    cy.log('ICMS - Base Calculo')
     cy.getVisible(locMaterial.impostos.icms.inputBaseCalculo).clear()
       .type(`{movetoend}${seedTestMateriais.imposto.icms.baseCalculo}`)
 
-    // ICMS - Aliquota
+    cy.log('ICMS - Aliquota')
     cy.getVisible(locMaterial.impostos.icms.inputAliquota).clear()
       .type(`{movetoend}${seedTestMateriais.imposto.icms.aliquota}`)
 
-    // ICMS - Total
+    cy.log('ICMS - Total')
     cy.getVisible(locMaterial.impostos.icms.spanValor).should(($el) => {
       expect($el).to.contain.text(seedTestMateriais.imposto.icms.valor)
     })
 
-    // PIS - CST
+    cy.log('PIS - CST')
     cy.getVisible(locMaterial.impostos.pis.selectCst).click()
       .get(locMaterial.impostos.pis.selecionarCst)
       .contains(seedTestMateriais.imposto.pis.cst).click()
 
-    // PIS - Base Calculo
+    cy.log('PIS - Base Calculo')
     cy.getVisible(locMaterial.impostos.pis.inputBaseCalculo).clear()
       .type(`{movetoend}${seedTestMateriais.imposto.pis.baseCalculo}`)
 
-    // PIS - Aliquota
+    cy.log('PIS - Aliquota')
     cy.getVisible(locMaterial.impostos.pis.inputAliquota).clear()
       .type(`{movetoend}${seedTestMateriais.imposto.pis.aliquota}`)
 
-    // PIS - Total
+    cy.log('PIS - Total')
     cy.getVisible(locMaterial.impostos.pis.spanValor).should(($el) => {
       expect($el).to.contain.text(seedTestMateriais.imposto.pis.valor)
     })
 
-    // COFINS - CST
+    cy.log('COFINS - CST')
     cy.getVisible(locMaterial.impostos.cofins.selectCst).click()
       .get(locMaterial.impostos.cofins.selecionarCst)
       .contains(seedTestMateriais.imposto.cofins.cst).click()
 
-    // COFINS - Base Calculo
+    cy.log('COFINS - Base Calculo')
     cy.getVisible(locMaterial.impostos.cofins.inputBaseCalculo).clear()
       .type(`{movetoend}${seedTestMateriais.imposto.cofins.baseCalculo}`)
 
-    // COFINS - Aliquota
+    cy.log('COFINS - Aliquota')
     cy.getVisible(locMaterial.impostos.cofins.inputAliquota).clear()
       .type(`{movetoend}${seedTestMateriais.imposto.cofins.aliquota}`)
 
-    // COFINS - Total
+    cy.log('COFINS - Total')
     cy.getVisible(locMaterial.impostos.cofins.spanValor).should(($el) => {
       expect($el).to.contain.text(seedTestMateriais.imposto.cofins.valor)
     })
 
-    // FCP - Base Calculo
+    cy.log('FCP - Base Calculo')
     cy.getVisible(locMaterial.impostos.fcp.inputBaseCalculo).clear()
       .type(`{movetoend}${seedTestMateriais.imposto.fcp.baseCalculo}`)
 
-    // FCP - Aliquota
+    cy.log('FCP - Aliquota')
     cy.getVisible(locMaterial.impostos.fcp.inputAliquota).clear()
       .type(`{movetoend}${seedTestMateriais.imposto.fcp.aliquota}`)
 
-    // FCP - Total
+    cy.log('FCP - Total')
     cy.getVisible(locMaterial.impostos.fcp.spanValor).should(($el) => {
       expect($el).to.contain.text(seedTestMateriais.imposto.fcp.valor)
     })
 
-    // Retencao
+    cy.log('Retencao')
     if (seedTestMateriais.retencao.contemRetencao) {
-      // Retencao
+      cy.log('Retencao')
       cy.getVisible(locMaterial.retencao.selectRetencao).click()
         .get(locMaterial.retencao.selecionarRetencao)
         .contains(seedTestMateriais.retencao.retencao).click()
 
-      // Valor
+      cy.log('Valor')
       cy.getVisible(locMaterial.retencao.inputValor).clear()
         .type(`{movetoend}${seedTestMateriais.retencao.valor}`)
     }
 
-    // Informacoes complementares
+    cy.log('Informacoes complementares')
     if (seedTestMateriais.contemInformcacoesComp) {
       cy.getVisible(locMaterial.informacoesComplementares).clear()
         .type(`{movetoend}${seedTestMateriais.informacoesComplementares}`)
@@ -163,86 +163,86 @@ class Nfe {
    * @param {*} seedTestNfe
    */
   cadastrar(seedTestNfe) {
-    // Navegar para Gerenciador de NFe
+    cy.log('Navegar para Gerenciador de NFe')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     cy.intercept('/api/nota-fiscal/v1/NotaFiscal/Listagem').as('listagemNfe')
     cy.intercept('POST', '/api/nota-fiscal/v1/NotaFiscal/Transmitir/**').as('transmitirNFe')
 
-    // Selecionar emitente
+    cy.log('Selecionar emitente')
     cy.getVisible(locGerenciadorNfe.selectEmissor).click()
       .get(locGerenciadorNfe.selecionarEmissor)
       .contains(seedTestNfe.nfe.emitente.empresa).click()
 
-    // Selecionar ambiente
+    cy.log('Selecionar ambiente')
     cy.getVisible(locGerenciadorNfe.selectAmbiente).click()
       .get(locGerenciadorNfe.selecionarAmbiente)
       .contains('Homologação').click()
 
     cy.wait('@listagemNfe')
 
-    // Botao nova NFe
+    cy.log('Botao nova NFe')
     cy.getVisible(locGerenciadorNfe.buttonNovaNfe).click()
 
-    // Wait necessario para carregamento dos dados na tela
+    cy.log('Wait necessario para carregamento dos dados na tela')
     cy.wait(7000)
 
-    // Empresa emitente selecionada
+    cy.log('Empresa emitente selecionada')
     cy.getVisible(locNfe.emitente.empresaSelecionada).should(($el) => {
       expect($el).to.contain.text(seedTestNfe.nfe.emitente.empresa)
     })
 
-    // IE emitente selecionada
+    cy.log('IE emitente selecionada')
     cy.getVisible(locNfe.emitente.IESelecionada).should(($el) => {
       expect($el).to.contain.text(seedTestNfe.nfe.emitente.inscricaoEstadual)
     })
 
-    // CPF/CNPJ emitente
+    cy.log('CPF/CNPJ emitente')
     cy.getVisible(locNfe.emitente.cpfCnpj).should(($el) => {
       expect($el).to.contain.text(seedTestNfe.nfe.emitente.cpfCnpj)
     })
 
-    // Fazenda emitente selecionada
+    cy.log('Fazenda emitente selecionada')
     cy.getVisible(locNfe.emitente.fazendaSelecionada).should(($el) => {
       expect($el).to.contain.text(seedTestNfe.nfe.emitente.fazenda)
     })
 
-    // Selecionar safra emitente
+    cy.log('Selecionar safra emitente')
     cy.getVisible(locNfe.emitente.selectSafra).click()
       .get(locNfe.emitente.selecionarSafra)
       .contains(seedTestNfe.nfe.emitente.safra).click()
 
-    // Selecionar empresa destinatario
+    cy.log('Selecionar empresa destinatario')
     cy.getVisible(locNfe.destinatario.selectEmpresa).click()
       .get(locNfe.destinatario.selecionarEmpresa)
       .contains(seedTestNfe.nfe.destinatario.empresa).click()
 
 
-    // Inscricao Estadual Destinatario
+    cy.log('Inscricao Estadual Destinatario')
     if (seedTestNfe.nfe.destinatario.tipoDestinatario === 'CNPJ') {
       cy.getVisible(locNfe.destinatario.IECnpj).should(($el) => {
         expect($el).to.contain.text(seedTestNfe.nfe.destinatario.inscricaoEstadual)
       })
     } else {
-      // IE destinatario selecionada
+      cy.log('IE destinatario selecionada')
       cy.getVisible(locNfe.destinatario.IESelecionada).should(($el) => {
         expect($el).to.contain.text(seedTestNfe.nfe.destinatario.inscricaoEstadual)
       })
     }
 
-    // CPF/CNPJ destinatario
+    cy.log('CPF/CNPJ destinatario')
     cy.getVisible(locNfe.destinatario.cpfCnpj).should(($el) => {
       expect($el).to.contain.text(seedTestNfe.nfe.destinatario.cpfCnpj)
     })
 
     cy.wait(3000)
 
-    // NFe rascunho
+    cy.log('NFe rascunho')
     if (seedTestNfe.nfe.informacoesNota.gerarNfeRascunho) {
       cy.getVisible(locNfe.informacoesNota.buttoGerarNFeRascunho).click()
     }
 
-    // Finalidade NFe
+    cy.log('Finalidade NFe')
     if (seedTestNfe.nfe.informacoesNota.finalidade === 'NF-e Normal') {
       cy.getVisible(locNfe.informacoesNota.finalidadeSelecionada).should(($el) => {
         expect($el).to.contain.text(seedTestNfe.nfe.informacoesNota.finalidade)
@@ -253,160 +253,160 @@ class Nfe {
         .contains(seedTestNfe.nfe.informacoesNota.finalidade).click()
     }
 
-    // Operacao
+    cy.log('Operacao')
     cy.getVisible(locNfe.informacoesNota.selectOperacao).click()
       .get(locNfe.informacoesNota.selecionarOperacao)
       .findAllByText(seedTestNfe.nfe.informacoesNota.operacao).click()
 
-    // Frete
+    cy.log('Frete')
     if (seedTestNfe.nfe.informacoesNota.frete === 'Sem Frete') {
-      // Tipo Frete
+      cy.log('Tipo Frete')
       cy.getVisible(locNfe.informacoesNota.selectFrete).click()
         .get(locNfe.informacoesNota.selecionarFrete)
         .contains(seedTestNfe.nfe.informacoesNota.frete).click()
     } else {
-      // Tipo Frete
+      cy.log('Tipo Frete')
       cy.getVisible(locNfe.informacoesNota.selectFrete).click()
         .get(locNfe.informacoesNota.selecionarFrete)
         .contains(seedTestNfe.nfe.informacoesNota.frete).click()
 
-      // Transportadora
+      cy.log('Transportadora')
       cy.getVisible(locNfe.transportador.selectTransportador).click()
         .get(locNfe.transportador.selecionarTransportador)
         .contains(seedTestNfe.nfe.transportador.transportadora).click()
 
-      // Veiculo
+      cy.log('Veiculo')
       cy.getVisible(locNfe.transportador.selectVeiculo).click()
         .get(locNfe.transportador.selecionarVeiculo)
         .contains(seedTestNfe.nfe.transportador.veiculo).click()
 
-      // Quantidade
+      cy.log('Quantidade')
       cy.getVisible(locNfe.transportador.quantidade).clear()
         .type(seedTestNfe.nfe.transportador.quantidade)
 
-      // Especie
+      cy.log('Especie')
       cy.getVisible(locNfe.transportador.especie).clear()
         .type(seedTestNfe.nfe.transportador.especie)
 
-      // Marca
+      cy.log('Marca')
       cy.getVisible(locNfe.transportador.marca).clear()
         .type(seedTestNfe.nfe.transportador.marca)
 
-      // Numeracao
+      cy.log('Numeracao')
       cy.getVisible(locNfe.transportador.numeracao).clear()
         .type(seedTestNfe.nfe.transportador.numeracao)
 
-      // Peso Bruto
+      cy.log('Peso Bruto')
       cy.getVisible(locNfe.transportador.pesoBruto).clear()
         .type(seedTestNfe.nfe.transportador.pesoBruto)
 
-      // Peso Liquido
+      cy.log('Peso Liquido')
       cy.getVisible(locNfe.transportador.pesoLiquido).clear()
         .type(seedTestNfe.nfe.transportador.pesoLiquido)
     }
 
 
-    // Adicionar e validar material
+    cy.log('Adicionar e validar material')
     this.adicionarMaterial(seedTestNfe.nfe.materiais)
     cy.getVisible(locNfe.materiais.nomeMaterial).should(($el) => {
       expect($el).to.contain.text(seedTestNfe.nfe.materiais.produto.material)
     })
 
-    // Outros valores
+    cy.log('Outros valores')
     if (seedTestNfe.nfe.outrosValores.contemOutrosValores) {
       cy.getVisible(locNfe.outrosValores.collapse).click()
 
-      // Valor do frete
+      cy.log('Valor do frete')
       cy.getVisible(locNfe.outrosValores.inputValorFrete).clear()
         .type(`{movetoend}${seedTestNfe.nfe.outrosValores.valorFrete}`)
 
-      // Valor do seguro
+      cy.log('Valor do seguro')
       cy.getVisible(locNfe.outrosValores.inputValorSeguro).clear()
         .type(`{movetoend}${seedTestNfe.nfe.outrosValores.valorSeguro}`)
 
-      // Outras despesas
+      cy.log('Outras despesas')
       cy.getVisible(locNfe.outrosValores.inputOutrasDespesas).clear()
         .type(`{movetoend}${seedTestNfe.nfe.outrosValores.outrasDespesas}`)
     }
 
-    // Total impostos
+    cy.log('Total impostos')
     cy.getVisible(locNfe.totalImpostos.collapse).click().then(() => {
-      // ICMS
+      cy.log('ICMS')
       cy.getVisible(locNfe.totalImpostos.icms).should(($el) => {
         expect($el).to.contain.text(seedTestNfe.nfe.totalImpostos.icms)
       })
 
-      // PIS
+      cy.log('PIS')
       cy.getVisible(locNfe.totalImpostos.pis).should(($el) => {
         expect($el).to.contain.text(seedTestNfe.nfe.totalImpostos.pis)
       })
 
-      // COFINS
+      cy.log('COFINS')
       cy.getVisible(locNfe.totalImpostos.cofins).should(($el) => {
         expect($el).to.contain.text(seedTestNfe.nfe.totalImpostos.cofins)
       })
 
-      // Retencao
+      cy.log('Retencao')
       cy.getVisible(locNfe.totalImpostos.retencao).should(($el) => {
         expect($el).to.contain.text(seedTestNfe.nfe.totalImpostos.retencao)
       })
 
-      // FCP
+      cy.log('FCP')
       cy.getVisible(locNfe.totalImpostos.fcp).should(($el) => {
         expect($el).to.contain.text(seedTestNfe.nfe.totalImpostos.fcp)
       })
     })
 
 
-    // Financeiro
+    cy.log('Financeiro')
     if (seedTestNfe.nfe.financeiro) {
-      // Expandir collapse
+      cy.log('Expandir collapse')
       cy.getVisible(locNfe.financeiro.collapse).click()
 
-      // Valor Total
+      cy.log('Valor Total')
       cy.getVisible(locNfe.financeiro.inputValorTotal).should(($el) => {
         expect($el).to.have.value(seedTestNfe.nfe.financeiro.valorTotal)
       })
 
       if (seedTestNfe.nfe.financeiro.jaFoiPago) {
-        // Checkbox Ja Foi Pago
+        cy.log('Checkbox Ja Foi Pago')
         cy.getVisible(locNfe.financeiro.checkboxFoiPago).click()
 
-        // Conta Bancaria
+        cy.log('Conta Bancaria')
         cy.getVisible(locNfe.financeiro.selectContaBancaria).click()
           .get(locNfe.financeiro.selecionarContaBancaria)
           .contains(seedTestNfe.nfe.financeiro.contaBancaria).click()
 
-        // Data do pagamento
+        cy.log('Data do pagamento')
         // cy.getVisible(locNfe.financeiro.inputDataPagamento).clear()
         //   .type(`{movetoend}${seedTestNfe.nfe.financeiro.dataPagamento}{enter}`)
       }
 
-      // Dedutível
+      cy.log('Dedutível')
       if (seedTestNfe.nfe.financeiro.dedutivel) {
         cy.get(locNfe.financeiro.toggleDeducao).contains('Dedutível').click()
       } else {
         cy.get(locNfe.financeiro.toggleDeducao).contains('Não Dedutível').click()
       }
 
-      // Forma de pagamento
+      cy.log('Forma de pagamento')
       cy.getVisible(locNfe.financeiro.selectFormaPagamento).click()
         .get(locNfe.financeiro.selecionarFormaPagamento)
         .contains(seedTestNfe.nfe.financeiro.formaPagamento).click()
 
-      // Condicoes de pagamento
+      cy.log('Condicoes de pagamento')
       if (seedTestNfe.nfe.financeiro.quantidadeParcelas > 1) {
         const parcelas = seedTestNfe.nfe.financeiro.parcelas
 
-        // Selecionar parcelado
+        cy.log('Selecionar parcelado')
         cy.getVisible(locNfe.financeiro.toggleCondicaoPagamento).contains('Parcelado').click()
 
-        // Quantidade de parcelas
+        cy.log('Quantidade de parcelas')
         cy.getVisible(locNfe.financeiro.inputQtdParcela).clear()
           .type(`{movetoend}${seedTestNfe.nfe.financeiro.quantidadeParcelas}`).blur()
 
         parcelas.forEach((parcela, index) => {
-          // parcela
+          cy.log('parcela')
           cy.get(locNfe.financeiro.inputValorParcela).eq(index)
             .clear().type(parcela.valorParcela)
 
@@ -419,7 +419,7 @@ class Nfe {
 
         cy.getVisible(locNfe.financeiro.toggleCondicaoPagamento).contains('À vista').click()
 
-        // Quantidade Parcelas
+        cy.log('Quantidade Parcelas')
         cy.getVisible(locNfe.financeiro.inputValorParcela).should(($el) => {
           expect($el).to.have.value(parcelas[0].valorParcela)
         })
@@ -430,28 +430,28 @@ class Nfe {
       }
     }
 
-    // Rateio
+    cy.log('Rateio')
     if (seedTestNfe.nfe.rateio) {
-      // Expandir collapse
+      cy.log('Expandir collapse')
       cy.getVisible(locNfe.rateio.collapse).click()
 
-      // Categoria
+      cy.log('Categoria')
       cy.getVisible(locNfe.rateio.selectCategoria).click()
         .get(locNfe.rateio.selecionarCategoria)
         .contains(seedTestNfe.nfe.rateio.categoria).click()
 
-      // Porcentagem
+      cy.log('Porcentagem')
       cy.getVisible(locNfe.rateio.inputPorcentagem).should(($el) => {
         expect($el).to.have.value(seedTestNfe.nfe.rateio.porcentagem)
       })
 
-      // Valor
+      cy.log('Valor')
       cy.getVisible(locNfe.rateio.inputValorCategoria).should(($el) => {
         expect($el).to.have.value(seedTestNfe.nfe.rateio.valor)
       })
     }
 
-    // Gera nota
+    cy.log('Gera nota')
     cy.getVisible(locNfe.buttonGerarNota).click()
 
     cy.wait('@transmitirNFe', { timeout: 60000, requestTimeout: 60000, responseTimeout: 60000 })
@@ -468,12 +468,12 @@ class Nfe {
         // assert.equal(interception.response.body.data.retornoSefaz, 'Autorizado o uso da NF-e')
       })
 
-    // Aguardar mensagem de autorizacao da nota
+    cy.log('Aguardar mensagem de autorizacao da nota')
     cy.get(locNfe.msgAutorizada, { timeout: 60000 }).should(($el) => {
       expect($el).to.contain.text('Nota autorizada com sucesso!')
     })
 
-    // Fechar modal de autorizacao
+    cy.log('Fechar modal de autorizacao')
     cy.getVisible(locNfe.buttonFecharModalNfe).click()
     cy.get(locNfe.buttonCancelar).should('not.exist')
   }
@@ -483,39 +483,39 @@ class Nfe {
    * @param {*} seedTestNFe
    */
   validarDetalhes(seedTestNfe) {
-    // Navegar para Gerenciador de NFe
+    cy.log('Navegar para Gerenciador de NFe')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    // Selecionar emitente
+    cy.log('Selecionar emitente')
     cy.getVisible(locGerenciadorNfe.selectEmissor).click()
       .get(locGerenciadorNfe.selecionarEmissor)
       .contains(seedTestNfe.nfe.emitente.empresa).click()
 
     cy.intercept('/api/nota-fiscal/v1/NotaFiscal/Listagem').as('listagemNfe')
 
-    // Selecionar ambiente
+    cy.log('Selecionar ambiente')
     cy.getVisible(locGerenciadorNfe.selectAmbiente).click()
       .get(locGerenciadorNfe.selecionarAmbiente)
       .contains('Homologação').click()
 
     cy.wait('@listagemNfe')
 
-    // Destinatario
+    cy.log('Destinatario')
     cy.get(locGerenciadorNfe.destinatario).first().should(($el) => {
       expect($el).to.contain.text(seedTestNfe.detalhesNfe.destinatario)
     })
 
-    // Finalidade
+    cy.log('Finalidade')
     cy.get(locGerenciadorNfe.finalidade).first().should(($el) => {
       expect($el).to.contain.text(seedTestNfe.detalhesNfe.finalidade)
     })
 
-    // Valor total
+    cy.log('Valor total')
     cy.get(locGerenciadorNfe.valorTotal).first().should(($el) => {
       expect($el).to.contain.text(seedTestNfe.detalhesNfe.valorTotal)
     })
 
-    // Status
+    cy.log('Status')
     cy.get(locGerenciadorNfe.statusNota).first().should(($el) => {
       expect($el).to.contain.text(seedTestNfe.detalhesNfe.status)
     })
@@ -528,28 +528,28 @@ class Nfe {
   downloadDanfe(seedTestNfe) {
     cy.intercept('POST', '/api/nota-fiscal/v1/NotaFiscal/Listagem').as('listagemNfe')
 
-    // Selecionar emitente
+    cy.log('Selecionar emitente')
     cy.getVisible(locGerenciadorNfe.selectEmissor).click()
       .get(locGerenciadorNfe.selecionarEmissor)
       .contains(seedTestNfe.empresa).click()
 
-    // Selecionar ambiente
+    cy.log('Selecionar ambiente')
     cy.getVisible(locGerenciadorNfe.selectAmbiente).click()
       .get(locGerenciadorNfe.selecionarAmbiente)
       .contains('Homologação').click()
 
-    // Pesquisar NFE
+    cy.log('Pesquisar NFE')
     cy.getVisible(locGerenciadorNfe.inputPesquisar)
       .clear().type(seedTestNfe.numeroNfe)
 
     cy.wait('@listagemNfe')
 
-    // Validar status da nota
+    cy.log('Validar status da nota')
     cy.get(locGerenciadorNfe.statusNota).should(($el) => {
       expect($el).to.contains.text(seedTestNfe.status)
     })
 
-    // Selecionar NFe
+    cy.log('Selecionar NFe')
     cy.getVisible(locGerenciadorNfe.btnSelecionarNfe).click()
 
     switch (seedTestNfe.status) {
@@ -587,28 +587,28 @@ class Nfe {
   downloadXml(seedTestNfe) {
     cy.intercept('POST', '/api/nota-fiscal/v1/NotaFiscal/Listagem').as('listagemNfe')
 
-    // Selecionar emitente
+    cy.log('Selecionar emitente')
     cy.getVisible(locGerenciadorNfe.selectEmissor).click()
       .get(locGerenciadorNfe.selecionarEmissor)
       .contains(seedTestNfe.empresa).click()
 
-    // Selecionar ambiente
+    cy.log('Selecionar ambiente')
     cy.getVisible(locGerenciadorNfe.selectAmbiente).click()
       .get(locGerenciadorNfe.selecionarAmbiente)
       .contains('Homologação').click()
 
-    // Pesquisar NFE
+    cy.log('Pesquisar NFE')
     cy.getVisible(locGerenciadorNfe.inputPesquisar)
       .clear().type(seedTestNfe.numeroNfe)
 
     cy.wait('@listagemNfe')
 
-    // Validar status da nota
+    cy.log('Validar status da nota')
     cy.get(locGerenciadorNfe.statusNota).should(($el) => {
       expect($el).to.contains.text(seedTestNfe.status)
     })
 
-    // Selecionar NFe
+    cy.log('Selecionar NFe')
     cy.getVisible(locGerenciadorNfe.btnSelecionarNfe).click()
 
     switch (seedTestNfe.status) {
