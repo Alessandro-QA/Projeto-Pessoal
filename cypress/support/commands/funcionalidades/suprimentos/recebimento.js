@@ -14,146 +14,146 @@ class Recebimento {
   cadastrar(seedTest) {
     var ciclos = seedTest.ciclos
 
-    cy.log('Navegar para Recebimento')
+    // Navegar para Recebimento
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.log('lancar nota fiscal manual')
-    cy.log('Selecionar fornecedor')
+    // lancar nota fiscal manual
+    // selecionar fornecedor
     cy.getVisible(locatorRecebimento.dashboard.selectFornecedor).click()
       .contains(seedTest.fornecedor).click()
 
-    cy.log('Validar cnpj fornecedor')
+    // validar cnpj fornecedor
     cy.getVisible(locatorRecebimento.dashboard.cnpjFornecedor)
       .contains(seedTest.cnpjFornecedor)
 
-    cy.log('buscar fornecedor')
+    // buscar fornecedor
     cy.getVisible(locatorRecebimento.dashboard.botaoBuscar).click()
 
-    cy.log('validar fornecedor')
+    // validar fornecedor
     cy.getVisible(locatorRecebimento.recebimentoManual.selectFornecedor)
       .should('contain', seedTest.fornecedor)
 
-    cy.log('validar cnpj fornecedor')
+    // validar cnpj fornecedor
     cy.getVisible(locatorRecebimento.recebimentoManual.cnpjFornecedor)
       .should('contain', seedTest.cnpjFornecedor)
 
-    cy.log('numero da nota')
+    // numero da nota
     cy.getVisible(locatorRecebimento.recebimentoManual.inputNumeroNota)
       .clear().type(`{movetoend}${seedTest.numeroNota}`)
 
-    cy.log('serie nota')
+    // serie nota
     cy.getVisible(locatorRecebimento.recebimentoManual.inputSerieNota)
       .clear().type(`{movetoend}${seedTest.serieNota}`)
 
-    cy.log('data emissao')
+    // data emissao
     cy.getVisible(locatorRecebimento.recebimentoManual.inputDataEmissao)
       .clear().type(`${seedTest.dataEmissao}{enter}`)
 
-    cy.log('data recebimento')
+    // data recebimento
     cy.getVisible(locatorRecebimento.recebimentoManual.inputDataRecebimento)
       .clear().type(`${seedTest.dataRecebimento}{enter}`)
 
-    cy.log('hora recebimento')
+    // hora recebimento
     cy.getVisible(locatorRecebimento.recebimentoManual.inputHoraRecebimento)
       .clear().type(`${seedTest.horaRecebimento}{enter}`)
 
-    cy.log('selecionar fazenda')
+    // selecionar fazenda
     cy.getVisible(locatorRecebimento.recebimentoManual.selectFazenda).click()
       .contains(seedTest.fazenda).click()
 
-    cy.log('selecionar empresa')
+    // selecionar empresa
     cy.getVisible(locatorRecebimento.recebimentoManual.selectEmpresa).click()
       .contains(seedTest.empresa).click()
 
-    cy.log('validar incricao estadual')
+    // validar incricao estadual
     cy.getVisible(locatorRecebimento.recebimentoManual.selecetInscricaoEstadual)
       .should('contain', seedTest.inscricaoEstadual)
 
-    cy.log('selecionar safra')
+    // selecionar safra
     cy.getVisible(locatorRecebimento.recebimentoManual.selectSafra).click()
       .contains(seedTest.safra).click()
 
-    cy.log('validar nome material')
+    // validar nome material
     cy.getVisible(locatorRecebimento.materiais.nomeMaterial)
       .should('contain', seedTest.nomeMaterial)
 
     cy.getVisible(locatorRecebimento.materiais.collapseMaterial).click().then(() => {
-      cy.log('validar unidade armazenamento')
+      // validar unidade armazenamento
       cy.getVisible(locatorRecebimento.materiais.unidadeArmazenamento)
         .should('contain', seedTest.unidadeArmazenamento)
 
-      cy.log('quantidade material')
+      // quantidade material
       cy.getVisible(locatorRecebimento.materiais.quantidadeMaterialRecebido)
         .clear().type(`{movetoend}${seedTest.quantidadeMaterial}{enter}`)
 
-      cy.log('preco material - NF')
+      // preco material - NF
       cy.getVisible(locatorRecebimento.materiais.precoMaterialRecebido)
         .clear().type(`{movetoend}${seedTest.precoMaterial}{enter}`)
 
-      cy.log('Total')
+      // Total
       cy.get(locatorRecebimento.materiais.total).should(($el) => {
         expect($el).to.contain.text(seedTest.totalMaterial)
       })
 
-      cy.log('Preco Pedido')
+      // Preco Pedido
       cy.get(locatorRecebimento.materiais.total).should(($el) => {
         expect($el).to.contain.text(seedTest.precoPedido)
       })
 
-      cy.log('confirmar material')
+      // confirmar material
       cy.get(locatorRecebimento.materiais.botaoConfirmarMaterial).click()
     })
 
-    cy.log('forma de pagamento')
+    // forma de pagamento
     cy.getVisible(locatorRecebimento.recebimentoManual.selectFormaPagamento).click()
       .contains(seedTest.formaPagamento).click()
 
-    cy.log('valor parcela')
+    // valor parcela
     cy.getVisible(locatorRecebimento.recebimentoManual.valorParcela)
       .should('contain', seedTest.valorParcela)
 
-    cy.log('categoria')
+    // categoria
     cy.getVisible(locatorRecebimento.recebimentoManual.selectCategoria)
       .should('contain', seedTest.categoria)
 
-    cy.log('porcentagem categoria')
+    // porcentagem categoria
     cy.getVisible(locatorRecebimento.recebimentoManual.inputPorcentagemCategoria)
       .should('have.value', seedTest.porcentagemCategoria)
 
-    cy.log('valor categoria')
+    // valor categoria
     cy.getVisible(locatorRecebimento.recebimentoManual.inputValorCategoria)
       .should('have.value', seedTest.valorCategoria)
 
-    cy.log('rateio entre ciclos')
+    // rateio entre ciclos
     cy.getVisible(locatorRecebimento.recebimentoManual.checkBoxRateioEntreCiclos)
       .should('have.attr', 'aria-checked')
 
-    cy.log('validar nome, porcentagem e valor dos ciclos')
+    // validar nome, porcentagem e valor dos ciclos
     ciclos.forEach((ciclo, index) => {
-      cy.log('nome ciclo')
+      // nome ciclo
       cy.get(locatorRecebimento.recebimentoManual.selectCiclo).eq(index)
         .should('contain', ciclo.nomeCiclo)
 
-      cy.log('porcentagem ciclo')
+      // porcentagem ciclo
       cy.get(locatorRecebimento.recebimentoManual.inputPorcentagemCiclo).eq(index)
         .should('have.value', ciclo.porcentagemCiclo)
 
-      cy.log('valor ciclo')
+      // valor ciclo
       cy.get(locatorRecebimento.recebimentoManual.inputValorCiclo).eq(index)
         .should('have.value', ciclo.valorCiclo)
     })
 
-    cy.log('total valor recebimento')
+    // total valor recebimento
     cy.get(locatorRecebimento.recebimentoManual.totalRecebimento)
       .should('contain', seedTest.totalRecebimento)
 
-    cy.log('salvar recebimento')
+    // salvar recebimento
     cy.getVisible(locatorRecebimento.recebimentoManual.botaoFinalizarRecebimento).click()
 
     cy.get(locatorRecebimento.recebimentoManual.botaoFinalizarRecebimento)
       .should('not.exist')
 
-    cy.log('mensagem sucesso')
+    // mensagem sucesso
     cy.get(locatorRecebimento.dashboard.mensagemSucesso)
       .should('contain', 'Recebimento realizado com sucesso')
   }
