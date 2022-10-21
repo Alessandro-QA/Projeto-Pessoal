@@ -111,7 +111,7 @@
             "valor": 200
           }
         ],
-        "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
+        "dataPagamento": "2022-09-10T00:00:00-03:00",
         "contaId": "5cff22e4-9a88-4a47-9e71-e88b47cdd0d7"
       },
       "dedutivel": true,
@@ -362,7 +362,7 @@
             "valor": 200
           }
         ],
-        "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
+        "dataPagamento": "2022-09-10T00:00:00-03:00",
         "contaId": "9d2fa680-9367-4ccd-8c52-add526b0692d"
       },
       "dedutivel": true,

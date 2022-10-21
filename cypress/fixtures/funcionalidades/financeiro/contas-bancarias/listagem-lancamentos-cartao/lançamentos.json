@@ -27,12 +27,9 @@
       {
         "nomeCartaoCredito": "OFX - Cartao de Credito",
         "filtros": true,
+        "dataInicio": "09/09/2022",
+        "dataFim": "11/09/2022",
         "card": [
-          {
-            "spanCategoria": "Outras Vendas Agropecuárias",
-            "operacao": "Recebimento",
-            "valor": "R$ 300,23"
-          },
           {
             "spanCategoria": "Combustíveis",
             "operacao": "Pagamento",
