@@ -1,79 +1,75 @@
 /// <reference types="cypress" />
 
-import payLoad from '../../../../fixtures/funcionalidades/financeiro/contas-bancarias/excluir/payLoad.json'
-import seedTestExcluirConta from '../../../../fixtures/funcionalidades/financeiro/contas-bancarias/excluir/excluir-conta.json'
+import payLoad from '../../../../fixtures/financeiro/contas-bancarias/excluir/payLoad.json'
+import seedTestExcluirConta from '../../../../fixtures/financeiro/contas-bancarias/excluir/excluir-conta.json'
 import ContaBancaria from '../../../../support/commands/funcionalidades/financeiro/contas-bancarias/contas-bancarias.js'
 import testDescription from './bdd-description/excluir-conta-bancaria.description.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 import Utils from '../../../../support/utils/utils.js'
 
-context('Funcionalidade', () => {
-  describe('Contas Bancárias | Excluir Conta Bancária', { tags: '@contasBancarias' }, () => {
-    var contaBancaria = Utils.getPayloadPorAmbiente(payLoad)
+describe('Financeiro', { tags: '@financeiro' }, () => {
+  var contaBancaria = Utils.getPayloadPorAmbiente(payLoad)
 
-    before(function () {
-      const credenciais = Cypress.env('login_cadastro')
-      Authenticate.login(credenciais)
-      Utils.setAccessTokenToEnv(credenciais)
-    })
+  before(function () {
+    const credenciais = Cypress.env('login_cadastro')
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
+  })
 
-    after(() => {
-      Authenticate.logout()
-    })
-
-    context('Realiza cadastro de contas bancárias via api', () => {
-      it('Do tipo Conta Corrente', function () {
+  after(() => {
+    Authenticate.logout()
+  })
+  describe('Contas Bancárias', { tags: '@contasBancarias' }, () => {
+    context('Exclusão de Conta - Conta Corrente', () => {
+      it('Deve cadastrar conta bancária via API - Conta Corrente', function () {
         Utils.requestApi('POST', '/api/financeiro/v1/ContaBancaria', contaBancaria.contaCorrente, 'login_cadastro')
       })
 
-      it('Do tipo Cartão de Crédito', function () {
-        Utils.requestApi('POST', '/api/financeiro/v1/ContaBancaria', contaBancaria.cartaoCredito, 'login_cadastro')
-      })
-
-      it('Do tipo Conta Tesouraria', function () {
-        Utils.requestApi('POST', '/api/financeiro/v1/ContaBancaria', contaBancaria.contaTesouraria, 'login_cadastro')
-      })
-    })
-
-    context('Excluir Conta Corrente', () => {
-      it('Realizar exclusão', function () {
+      it('Deve excluir conta bancária - Conta Corrente', function () {
         cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.excluir)
 
         ContaBancaria.excluir(seedTestExcluirConta.contaCorrente)
       })
 
-      it('Validar exclusão na listagem', function () {
+      it('Deve validar exclusão na listagem - Conta Corrente', function () {
         cy.allure().severity('minor').startStep('test content')
 
         ContaBancaria.validarListagem(seedTestExcluirConta.contaCorrente)
       })
     })
 
-    context('Excluir cartão de crédito', () => {
-      it('Do tipo Cartão de crédito', function () {
+    context('Exclusão de Conta - Cartão de Crédito', () => {
+      it('Deve cadastrar conta bancária via API - Cartão de Crédito', function () {
+        Utils.requestApi('POST', '/api/financeiro/v1/ContaBancaria', contaBancaria.cartaoCredito, 'login_cadastro')
+      })
+
+      it('Deve excluir conta bancária - Cartão de Crédito', function () {
         cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.excluir)
 
         ContaBancaria.excluir(seedTestExcluirConta.cartaoCredito)
       })
 
-      it('Validar exclusão na listagem', function () {
+      it('Deve validar exclusão na listagem - Cartão de Crédito', function () {
         cy.allure().severity('minor').startStep('test content')
 
         ContaBancaria.validarListagem(seedTestExcluirConta.cartaoCredito)
       })
     })
+    context('Exclusão de Conta - Conta Tesouraria', () => {
+      it('Deve cadastrar conta bancária via API - Conta Tesouraria', function () {
+        Utils.requestApi('POST', '/api/financeiro/v1/ContaBancaria', contaBancaria.contaTesouraria, 'login_cadastro')
+      })
 
-    context('Excluir conta Tesouraria', () => {
-      it('Do tipo Conta Tesouraria', function () {
+      it('Deve excluir conta bancária - Conta Tesouraria', function () {
         cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.excluir)
 
         ContaBancaria.excluir(seedTestExcluirConta.contaTesouraria)
       })
 
-      it('Validar exclusão na listagem de contas bancárias', function () {
+      it('Deve validar exclusão na listagem - Conta Tesouraria', function () {
         cy.allure().severity('minor').startStep('test content')
 
         ContaBancaria.validarListagem(seedTestExcluirConta.contaTesouraria)

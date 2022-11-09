@@ -1,0 +1,67 @@
+{
+  "contaValidaCadastrada": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/contaValidaCadastrada.ofx",
+    "mensagem": "Existem 64 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "valido": true
+  },
+  "contaValidaNaoCadastrada": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/contaValidaNaoCadastrada.ofx",
+    "mensagem": "A conta do arquivo OFX selecionado não está cadastrado(a) em contas bancárias.",
+    "valido": false
+  },
+  "contaInvalidaSemTagACCTID": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/contaInvalidaSemTagACCTID.ofx",
+    "mensagem": "OPS! Falha ao leitura do arquivo OFX. Detalhes: Dados da conta não encontrados",
+    "valido": false
+  },
+  "cartaoValido": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/cartaoValido.ofx",
+    "mensagem": "Existem 15 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "valido": true
+  },
+  "cartaoNaoCadastrado": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/cartaoNaoCadastrado.ofx",
+    "mensagem": "O cartão do arquivo OFX selecionado não está cadastrado(a) em contas bancárias.",
+    "valido": false
+  },
+  "cartaoInvalidoSemTagACCTID": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/cartaoInvalidoSemTagACCTID.ofx",
+    "mensagem": "OPS! Falha ao leitura do arquivo OFX. Detalhes: Dados da conta não encontrados",
+    "valido": false
+  },
+  "bancoDoBrasil": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/bancoDoBrasil.ofx",
+    "mensagem": "Existem 64 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "valido": true
+  },
+  "bradesco": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/bradesco.ofx",
+    "mensagem": "Existem 9 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "valido": true
+  },
+  "caixa": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/caixa.ofx",
+    "mensagem": "Existem 1 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "valido": true
+  },
+  "cartaoDeCredito": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/cartaoDeCredito.ofx",
+    "mensagem": "Existem 15 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "valido": true
+  },
+  "itau": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/itau.ofx",
+    "mensagem": "Existem 4 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "valido": true
+  },
+  "santander": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/santander.ofx",
+    "mensagem": "Existem 3 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "valido": true
+  },
+  "sicred": {
+    "caminhoArquivo": "cypress/fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/ofx/sicred.ofx",
+    "mensagem": "Existem 1 Registros Divergentes no seu Extrato. O que você deseja fazer?",
+    "valido": true
+  }
+}

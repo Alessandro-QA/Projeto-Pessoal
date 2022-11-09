@@ -275,6 +275,56 @@ class ContaBancaria {
   }
 
   /**
+   * 
+   * @param {*} seedTestContaBancaria 
+   */
+  inativar(seedTestContaBancaria) {
+    const url = '/financeiro/contas-bancarias'
+    const locatorTituloPagina = locContaBancaria.dashboard.titulo
+    const tituloPagina = 'Contas bancárias'
+
+    cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/**').as('detalhesConta')
+
+    cy.log('Navegar para Contas Bancárias')
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    cy.log('input pesquisar')
+    cy.getVisible(locContaBancaria.dashboard.pesquisarConta).clear()
+      .type(seedTestContaBancaria.nomeConta)
+
+    cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria)
+      .contains(seedTestContaBancaria.nomeConta).click()
+
+    cy.wait('@detalhesConta')
+
+    cy.log('validar nome da conta na tela de detalhes')
+    cy.getVisible(locContaBancaria.detalhesConta.nomeConta).should(($el) => {
+      expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
+    })
+
+    cy.log('clicar no botão de editar conta bancaria')
+    cy.getVisible(locContaBancaria.detalhesConta.buttonEditar).click()
+
+    cy.wait('@detalhesConta')
+
+    cy.getVisible(locContaBancaria.contaBancaria.ativarInativar).click()
+
+    cy.log('botão adicionar conta')
+    cy.getVisible(locContaBancaria.contaBancaria.adicionar)
+      .click()
+
+    cy.wait('@detalhesConta')
+
+    cy.log('valida mensagem de sucesso')
+    cy.get(locContaBancaria.contaBancaria.mensagemSucesso).should(($el) => {
+      expect($el).exist.and.to.contain.text('Conta salva com sucesso')
+    })
+
+    cy.log('validar que o botão de adicionar não exista mais')
+    cy.get(locContaBancaria.contaBancaria.adicionar).should('not.exist')
+  }
+
+  /**
    * Validar Listagem de Contas Bancarias
    * @param {*} seedTestContaBancaria
    */
@@ -414,10 +464,10 @@ class ContaBancaria {
         .contains(cardCartao.nomeCartaoCredito)
         .parents(locContaBancaria.dashboard.cardCartao).within(() => {
           cy.get(locContaBancaria.dashboard.verLancamentos).click()
-        })
 
-      cy.wait('@listagemLancamentos')
-      cy.wait(4000)
+          cy.wait(10000)
+          cy.wait('@listagemLancamentos')
+        })
 
       cy.log('Validação necessária para carregar os dados na tela e evitar quebra por timeOut')
       cy.get(locContaBancaria.lancamentosCartao.saldoDoDia).should('exist').and('be.visible')

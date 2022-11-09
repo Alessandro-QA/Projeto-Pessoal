@@ -1,33 +1,38 @@
 /// <reference types="cypress" />
 
-import seedTestNfe from '../../../../../fixtures/cenarios-de-teste/nfe/emissao/nfe-estado-diferente/nfe-mt-para-go.json'
+import seedTestNfe from '../../../../../fixtures/nfe/emissao/nfe-estado-diferente/nfe-mt-para-go.json'
 import Nfe from '../../../../../support/commands/funcionalidades/nfe/nfe.js'
 import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
 import testDescription from './bdd-descritpion/nfe-MT-para-GO.description.js'
 
-context('Funcionalidade', () => {
-  describe('NFe | Emissão de NFe: Emitente MT para Destinatário GO', { tags: '@nfe' }, () => {
-    before(function () {
-      const credenciais = Cypress.env('login_nfe')
-      Authenticate.login(credenciais)
-    })
+describe('NF-e', { tags: '@nfe' }, () => {
+  before(function () {
+    const credenciais = Cypress.env('login_nfe')
+    Authenticate.login(credenciais)
+  })
 
-    after(() => {
-      Authenticate.logout()
-    })
+  after(() => {
+    Authenticate.logout()
+  })
 
-    it('Cadastrar nfe', function () {
-      cy.allure().severity('blocker').startStep('test content')
-        .tag('nfe').description(testDescription.cadastrarNfe)
+  describe('NF-e', { tags: '@nfe' }, () => {
+    describe('Emissão', () => {
 
-      Nfe.cadastrar(seedTestNfe)
-    })
+      context('Emitente MT para Destinatário GO', () => {
+        it('Deve cadastrar NF-e', function () {
+          cy.allure().severity('blocker').startStep('test content')
+            .tag('nfe').description(testDescription.cadastrarNfe)
 
-    it('Validar detalhes da nfe cadastrada', function () {
-      cy.allure().severity('critical').startStep('test content')
-        .tag('nfe').description(testDescription.validarDetalhes)
+          Nfe.cadastrar(seedTestNfe)
+        })
 
-      Nfe.validarDetalhes(seedTestNfe)
+        it('Deve validar detalhes da NF-e cadastrada', function () {
+          cy.allure().severity('critical').startStep('test content')
+            .tag('nfe').description(testDescription.validarDetalhes)
+
+          Nfe.validarDetalhes(seedTestNfe)
+        })
+      })
     })
   })
 })

@@ -3,20 +3,20 @@ import locDashboard from '../../support/locators/funcionalidades/main-dashboard/
 import Authenticate from '../../support/commands/funcionalidades/login/login-logout.js'
 import testDescription from './bdd-description/login.description.js'
 
-context('Funcionalidade', () => {
-  describe('Login | Login e Logout na aplicação ', { tags: '@login' }, () => {
-    const credenciais = Cypress.env('login_cadastro')
+describe('Login', { tags: '@login' }, () => {
+  const credenciais = Cypress.env('login_cadastro')
 
-    before(() => {
-      cy.clearCookies()
-      cy.clearLocalStorage()
-    })
+  before(() => {
+    cy.clearCookies()
+    cy.clearLocalStorage()
+  })
 
-    afterEach(() => {
-      cy.clearCookies()
-      cy.clearLocalStorage()
-    })
+  afterEach(() => {
+    cy.clearCookies()
+    cy.clearLocalStorage()
+  })
 
+  describe('Login', () => {
     it('Deve realizar login', function () {
       cy.allure().severity('blocker').startStep('test content')
         .descriptionHtml(testDescription.realizarLogin)
@@ -28,7 +28,9 @@ context('Funcionalidade', () => {
         .scrollIntoView().should('exist')
         .and('be.visible').and('have.text', 'Dashboard geral')
     })
+  })
 
+  describe('Logout', () => {
     it('Deve realizar logout', function () {
       cy.allure().severity('normal').startStep('test content')
         .descriptionHtml(testDescription.realizarLogout)
@@ -43,3 +45,4 @@ context('Funcionalidade', () => {
     })
   })
 })
+

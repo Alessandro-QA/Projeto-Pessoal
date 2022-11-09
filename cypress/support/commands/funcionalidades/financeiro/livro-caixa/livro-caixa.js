@@ -465,6 +465,48 @@ class LivroCaixa {
    * Adicionar lançamentos no Livro Caixa
    * @param {*} seedTestLivroCaixa 
    */
+  inativarLancamento(seedTestLivroCaixa) {
+    cy.intercept('GET', '/api/financeiro/v1/LivroCaixa/ProdutorLivroCaixa?**')
+      .as('ApiProdutorLivroCaixa')
+
+    // Navegar para Livro Caixa
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    // Abrir livro caixa produtor
+    cy.get(locLivroCaixa.dashboard.cardProdutores)
+      .contains(seedTestLivroCaixa.empresa).click()
+
+    cy.wait('@ApiProdutorLivroCaixa')
+
+    // informar a data ínicio do filtro
+    cy.getVisible(locLivroCaixa.lancamentos.filtroDataInicio).clear()
+      .type(`${seedTestLivroCaixa.filtroDataInicio}{enter}`)
+
+    // informar a data FIM do filtro
+    cy.getVisible(locLivroCaixa.lancamentos.filtroDataFim).clear()
+      .type(`${seedTestLivroCaixa.filtroDataFim}{enter}`)
+
+    cy.wait('@ApiProdutorLivroCaixa')
+
+    // Abrir lancamento livro caixa
+    cy.get(locLivroCaixa.lancamentos.cardLancamentosConta)
+      .contains(seedTestLivroCaixa.contaContabil).click({ force: true })
+
+    // espera necessária para que o modal termine de carregar as informações
+    cy.wait(4000)
+
+    // Clicar em inativar
+    cy.getVisible(locLivroCaixa.adicionarLancamento.statusLancamento)
+      .contains(seedTestLivroCaixa.status).click()
+
+    cy.wait(2000)
+
+    cy.get(locLivroCaixa.adicionarLancamento.salvar).click({ force: true })
+  }
+  /**
+   * Adicionar lançamentos no Livro Caixa
+   * @param {*} seedTestLivroCaixa 
+   */
   adicionarEditarLancamento(seedTestLivroCaixa) {
     cy.intercept('GET', '/api/financeiro/v1/LivroCaixa/ProdutorLivroCaixa?**')
       .as('ApiProdutorLivroCaixa')
@@ -495,7 +537,7 @@ class LivroCaixa {
 
       // Abrir lancamento livro caixa
       cy.get(locLivroCaixa.lancamentos.cardLancamentosConta)
-        .contains(seedTestLivroCaixa.contaContabil).click({ force: true})
+        .contains(seedTestLivroCaixa.contaContabil).click({ force: true })
 
       // espera necessária para que o modal termine de carregar as informações
       cy.wait(4000)
@@ -532,7 +574,7 @@ class LivroCaixa {
 
     // selecionar a conta contabil
     cy.getVisible(locLivroCaixa.adicionarLancamento.contaContabil).click()
-      .contains(seedTestLivroCaixa.contaContabil).click({force: true })
+      .contains(seedTestLivroCaixa.contaContabil).click({ force: true })
 
     // informar o histórico 
     if (seedTestLivroCaixa.historico) {
@@ -559,13 +601,6 @@ class LivroCaixa {
     // selecionar a pessoa
     cy.getVisible(locLivroCaixa.adicionarLancamento.pessoa).click()
       .contains(seedTestLivroCaixa.pessoa).click()
-
-    if (seedTestLivroCaixa.editarStatus) {
-      cy.getVisible(locLivroCaixa.adicionarLancamento.statusLancamento)
-        .contains(seedTestLivroCaixa.editarStatus).click()
-
-      cy.wait(2000)
-    }
 
     // clicar em salvar o lançamento
     if (seedTestLivroCaixa.salvar) {

@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-import payloadColheita from '../../../../fixtures/cenarios-de-teste/producao/colheita/editar-colheita/cadastro-colheita.json'
-import seedTestEditar from '../../../../fixtures/cenarios-de-teste/producao/colheita/editar-colheita/editar.json'
-import seedTestDashboard from '../../../../fixtures/cenarios-de-teste/producao/colheita/editar-colheita/dashboar-colheita.json'
+import payloadColheita from '../../../../fixtures/producao/colheita/editar-colheita/cadastro-colheita.json'
+import seedTestEditar from '../../../../fixtures/producao/colheita/editar-colheita/editar.json'
+import seedTestDashboard from '../../../../fixtures/producao/colheita/editar-colheita/dashboar-colheita.json'
 import testDescription from './bdd-description/editar.description.js'
 import { cadastrarEditar, validarListagem } from '../../../../support/commands/funcionalidades/producao/colheita.js'
 import { getDate, replacer, setAccessTokenToEnv, requestApi, getPayloadPorAmbiente } from '../../../../support/utils/utils.js'
@@ -12,40 +12,45 @@ import { login, logout } from '../../../../support/commands/funcionalidades/logi
 // Os teste de cadastro de colheita no Ambiente de QA estão em pausa devido a divergência nos ambiente, onde
 // será necessário aguardar a resolução do bug descrito para a reativação do mesmo
 if ((Cypress.env('ambiente') === 'dev')) {
-  context('Funcionalidade', () => {
-    describe('Colheitas | Edição de colheita', { tags: '@colheita' }, () => {
-      var colheita = getPayloadPorAmbiente(payloadColheita)
+  describe('Produção', { tags: '@producao' }, () => {
+    var colheita = getPayloadPorAmbiente(payloadColheita)
 
-      var dataAtual = getDate()
-      var bodyColheita = replacer('dataSubstituicao', dataAtual, colheita)
+    var dataAtual = getDate()
+    var bodyColheita = replacer('dataSubstituicao', dataAtual, colheita)
 
-      before(function () {
-        const credenciais = Cypress.env('login_cenarios')
-        login(credenciais)
-        setAccessTokenToEnv(credenciais)
-      })
+    before(function () {
+      const credenciais = Cypress.env('login_cenarios')
+      login(credenciais)
+      setAccessTokenToEnv(credenciais)
+    })
 
-      after(() => {
-        logout()
-      })
+    after(() => {
+      logout()
+    })
 
-      it('Cadastrar colheita por API', function () {
-        cy.allure().severity('normal').startStep('test content')
+    describe('Colheita', { tags: '@colheita' }, () => {
+      describe('Edição', { tags: '@edicao' }, () => {
 
-        requestApi('POST', '/api/producao-agricola/v1/colheitas', bodyColheita, 'login_cenarios')
-      })
+        context('Edição de colheita externa', () => {
+          it('Deve cadastrar colheita por API', function () {
+            cy.allure().severity('normal').startStep('test content')
 
-      it('Editar colheita', { retries: { runMode: 1, openMode: 1, }, }, function () {
-        cy.allure().severity('critical').startStep('test content')
-          .descriptionHtml(testDescription.editar)
+            requestApi('POST', '/api/producao-agricola/v1/colheitas', bodyColheita, 'login_cenarios')
+          })
 
-        cadastrarEditar(seedTestEditar)
-      })
+          it('Deve editar colheita', { retries: { runMode: 1, openMode: 1, }, }, function () {
+            cy.allure().severity('critical').startStep('test content')
+              .descriptionHtml(testDescription.editar)
 
-      it('Validar listagem de colheita após edição', { retries: { runMode: 1, openMode: 1, }, }, function () {
-        cy.allure().severity('normal').startStep('test content')
+            cadastrarEditar(seedTestEditar)
+          })
 
-        validarListagem(seedTestDashboard)
+          it('Deve validar listagem de colheita após edição', { retries: { runMode: 1, openMode: 1, }, }, function () {
+            cy.allure().severity('normal').startStep('test content')
+
+            validarListagem(seedTestDashboard)
+          })
+        })
       })
     })
   })
