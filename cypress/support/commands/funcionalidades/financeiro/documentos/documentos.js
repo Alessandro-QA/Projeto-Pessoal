@@ -265,7 +265,7 @@ class Documentos {
     }
 
     if (seedTestDocumento.anexo) {
-      cy.get(locDocumentos.documento.anexarArquivo).selectFile('cypress/fixtures/funcionalidades/financeiro/documentos/cadastro/arquivos/Exemplo-DANFE.png', { force: true })
+      cy.get(locDocumentos.documento.anexarArquivo).selectFile('cypress/fixtures/financeiro/documentos/cadastro/arquivos/Exemplo-DANFE.png', { force: true })
       cy.getVisible(locDocumentos.documento.anexo).should(($el) => {
         expect($el).to.contain.text(seedTestDocumento.anexos)
       })

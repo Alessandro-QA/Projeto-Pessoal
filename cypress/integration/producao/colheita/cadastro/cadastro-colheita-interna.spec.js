@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-import seedTestDashboardColheita from '../../../../fixtures/cenarios-de-teste/producao/colheita/interna/dashboard-colheita.json'
-import seedTestCadastro from '../../../../fixtures/cenarios-de-teste/producao/colheita/interna/cadastro-colheita.json'
-import seedTestDashboardProducao from '../../../../fixtures/cenarios-de-teste/producao/colheita/interna/dashboard-producao.json'
+import seedTestDashboardColheita from '../../../../fixtures/producao/colheita/interna/dashboard-colheita.json'
+import seedTestCadastro from '../../../../fixtures/producao/colheita/interna/cadastro-colheita.json'
+import seedTestDashboardProducao from '../../../../fixtures/producao/colheita/interna/dashboard-producao.json'
 import testDescription from './bdd-description/cadastro-colheita.description.js'
 import { cadastrarEditar, validarListagem } from '../../../../support/commands/funcionalidades/producao/colheita.js'
 import { validarDashboard } from '../../../../support/commands/funcionalidades/producao/dashboardProducao.js'
@@ -12,34 +12,39 @@ import { login, logout } from '../../../../support/commands/funcionalidades/logi
 // Os teste de cadastro de colheita no Ambiente de QA estão em pausa devido a divergência nos ambiente, onde
 // será necessário aguardar a resolução do bug descrito para a reativalção do mesmo
 if ((Cypress.env('ambiente') === 'dev')) {
-  context('Funcionalidade', () => {
-    describe('Colheitas | Cadastro de colheita interna', { tags: '@colheita' }, () => {
-      before(function () {
-        const credenciais = Cypress.env('login_cenarios')
-        login(credenciais)
-      })
+  describe('Produção', { tags: '@producao' }, () => {
+    before(function () {
+      const credenciais = Cypress.env('login_cenarios')
+      login(credenciais)
+    })
 
-      after(() => {
-        logout()
-      })
+    after(() => {
+      logout()
+    })
 
-      it('Cadastrar colheita interna', function () {
-        cy.allure().severity('critical').startStep('test content')
-          .descriptionHtml(testDescription.interna)
+    describe('Colheita', { tags: '@colheita' }, () => {
+      describe('Cadastro', { tags: '@cadastro' }, () => {
 
-        cadastrarEditar(seedTestCadastro)
-      })
+        context('Colheita interna', () => {
+          it('Deve cadastrar colheita interna', function () {
+            cy.allure().severity('critical').startStep('test content')
+              .descriptionHtml(testDescription.interna)
 
-      it('Validar listagem de Colheita', { retries: { runMode: 1, openMode: 1, }, }, function () {
-        cy.allure().severity('normal').startStep('test content')
+            cadastrarEditar(seedTestCadastro)
+          })
 
-        validarListagem(seedTestDashboardColheita)
-      })
+          it('Deve validar listagem de Colheita', { retries: { runMode: 1, openMode: 1, }, }, function () {
+            cy.allure().severity('normal').startStep('test content')
 
-      it('Validar dashboard de Produção', function () {
-        cy.allure().severity('normal').startStep('test content')
+            validarListagem(seedTestDashboardColheita)
+          })
 
-        validarDashboard(seedTestDashboardProducao)
+          it('Deve validar dashboard de Produção', function () {
+            cy.allure().severity('normal').startStep('test content')
+
+            validarDashboard(seedTestDashboardProducao)
+          })
+        })
       })
     })
   })

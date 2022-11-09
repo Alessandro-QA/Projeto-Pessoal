@@ -1,56 +1,59 @@
 /// <reference types="cypress" />
 
-import payloadDocumentos from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/detalhes/documento.json'
-import seedTestExcluir from '../../../../fixtures/funcionalidades/financeiro/movimentaca-bancaria/excluir/excluir.json'
+import payloadDocumentos from '../../../../fixtures/financeiro/movimentaca-bancaria/detalhes/documento.json'
+import seedTestExcluir from '../../../../fixtures/financeiro/movimentaca-bancaria/excluir/excluir.json'
 import testDescription from './bdd-description/excluir.description.js'
 import Utils from '../../../../support/utils/utils.js'
 import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
 import { excluir, validarExclusao } from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 
-context('Funcionalidade', () => {
-  describe('Movimentação Bancaria | Excluir movimentação bancaria', { tags: '@movimentacaoBancaria' }, () => {
-    var documento = Utils.getPayloadPorAmbiente(payloadDocumentos)
+describe('Financeiro', { tags: '@financeiro' }, () => {
+  var documento = Utils.getPayloadPorAmbiente(payloadDocumentos)
 
-    before(function () {
-      const credenciais = Cypress.env('login_cenarios')
-      Authenticate.login(credenciais)
-      Utils.setAccessTokenToEnv(credenciais)
-    })
+  before(function () {
+    const credenciais = Cypress.env('login_cenarios')
+    Authenticate.login(credenciais)
+    Utils.setAccessTokenToEnv(credenciais)
+  })
 
-    after(() => {
-      Authenticate.logout()
-    })
+  after(() => {
+    Authenticate.logout()
+  })
 
-    context('Cadastro de documento já pago/recebido', () => {
-      it('Via API', function () {
-        Utils.requestApi('POST', '/api/financeiro/v1/Documento', documento.documentoPagamento, 'login_cenarios')
-        Utils.requestApi('POST', '/api/financeiro/v1/Documento', documento.documentoRecebimento, 'login_cenarios')
-      })
-    })
+  describe('Movimentações Bancárias', { tags: '@movimentacoesBancarias' }, () => {
+    context('Exclusão', () => {
+      context('Excluir Movimentação Bancária - Do tipo Pagamento', () => {
+        it('Deve cadastrar documento já pago por API', function () {
+          Utils.requestApi('POST', '/api/financeiro/v1/Documento', documento.documentoPagamento, 'login_cenarios')
+        })
 
-    context('Excluir movimentacao do tipo pagamento na tela de detalhes de movimentações', () => {
-      it('Selecionar movimentação do tipo pagamento e excluir movimentação', function () {
-        cy.allure().severity('critical').startStep('test content')
-          .descriptionHtml(testDescription.excluir)
+        it('Deve excluir Movimentação Bancária', function () {
+          cy.allure().severity('critical').startStep('test content')
+            .descriptionHtml(testDescription.excluir)
 
-        excluir(seedTestExcluir.excluirPagamento)
-      })
+          excluir(seedTestExcluir.excluirPagamento)
+        })
 
-      it('Validar exclusão de movimentação', function () {
-        validarExclusao(seedTestExcluir.excluirPagamento)
-      })
-    })
-
-    context('Excluir movimentacao do tipo recebimento na tela de detalhes de movimentações', () => {
-      it('Selecionar movimentação do tipo recebimento e excluir movimentação', function () {
-        cy.allure().severity('critical').startStep('test content')
-          .descriptionHtml(testDescription.excluir)
-
-        excluir(seedTestExcluir.excluirRecebimento)
+        it('Deve validar exclusão da Movimentação Bancária', function () {
+          validarExclusao(seedTestExcluir.excluirPagamento)
+        })
       })
 
-      it('Validar exclusão de movimentação', function () {
-        validarExclusao(seedTestExcluir.excluirRecebimento)
+      context('Excluir Movimentação Bancária - Do tipo Recebimento', () => {
+        it('Deve cadastrar documento já recebido por API', function () {
+          Utils.requestApi('POST', '/api/financeiro/v1/Documento', documento.documentoRecebimento, 'login_cenarios')
+        })
+
+        it('Deve excluir Movimentação Bancária', function () {
+          cy.allure().severity('critical').startStep('test content')
+            .descriptionHtml(testDescription.excluir)
+
+          excluir(seedTestExcluir.excluirRecebimento)
+        })
+
+        it('Deve validar exclusão da Movimentação Bancária', function () {
+          validarExclusao(seedTestExcluir.excluirRecebimento)
+        })
       })
     })
   })
