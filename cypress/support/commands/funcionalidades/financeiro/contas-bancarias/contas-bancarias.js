@@ -275,6 +275,56 @@ class ContaBancaria {
   }
 
   /**
+   * 
+   * @param {*} seedTestContaBancaria 
+   */
+  inativar(seedTestContaBancaria) {
+    const url = '/financeiro/contas-bancarias'
+    const locatorTituloPagina = locContaBancaria.dashboard.titulo
+    const tituloPagina = 'Contas bancárias'
+
+    cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/**').as('detalhesConta')
+
+    cy.log('Navegar para Contas Bancárias')
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+    cy.log('input pesquisar')
+    cy.getVisible(locContaBancaria.dashboard.pesquisarConta).clear()
+      .type(seedTestContaBancaria.nomeConta)
+
+    cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria)
+      .contains(seedTestContaBancaria.nomeConta).click()
+
+    cy.wait('@detalhesConta')
+
+    cy.log('validar nome da conta na tela de detalhes')
+    cy.getVisible(locContaBancaria.detalhesConta.nomeConta).should(($el) => {
+      expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
+    })
+
+    cy.log('clicar no botão de editar conta bancaria')
+    cy.getVisible(locContaBancaria.detalhesConta.buttonEditar).click()
+
+    cy.wait('@detalhesConta')
+
+    cy.getVisible(locContaBancaria.contaBancaria.ativarInativar).click()
+
+    cy.log('botão adicionar conta')
+    cy.getVisible(locContaBancaria.contaBancaria.adicionar)
+      .click()
+
+    cy.wait('@detalhesConta')
+
+    cy.log('valida mensagem de sucesso')
+    cy.get(locContaBancaria.contaBancaria.mensagemSucesso).should(($el) => {
+      expect($el).exist.and.to.contain.text('Conta salva com sucesso')
+    })
+
+    cy.log('validar que o botão de adicionar não exista mais')
+    cy.get(locContaBancaria.contaBancaria.adicionar).should('not.exist')
+  }
+
+  /**
    * Validar Listagem de Contas Bancarias
    * @param {*} seedTestContaBancaria
    */
@@ -405,8 +455,6 @@ class ContaBancaria {
  * @param {*} validarCartao 
  */
   static lancamentosCartaoCredito(validarCartao) {
-    const tituloPagina = 'Lançamentos – OFX - Cartao de Credito'
-    
     cy.intercept('GET', '/api/financeiro/v1/Movimentacao/Cartao?ContaId=**').as('listagemLancamentos')
 
     const cartao = validarCartao
@@ -416,27 +464,32 @@ class ContaBancaria {
         .contains(cardCartao.nomeCartaoCredito)
         .parents(locContaBancaria.dashboard.cardCartao).within(() => {
           cy.get(locContaBancaria.dashboard.verLancamentos).click()
+
+          cy.wait(10000)
+          cy.wait('@listagemLancamentos')
         })
 
-      cy.wait('@listagemLancamentos')
-  
-      cy.wait(2000)
-
-      cy.log('Validar titulo')
-      cy.getVisible(locContaBancaria.lancamentosCartao.titulo)
-        .contains(tituloPagina)
+      cy.log('Validação necessária para carregar os dados na tela e evitar quebra por timeOut')
+      cy.get(locContaBancaria.lancamentosCartao.saldoDoDia).should('exist').and('be.visible')
+      cy.get(locContaBancaria.lancamentosCartao.cardLancamento).should('exist').and('be.visible')
 
       if (cardCartao.filtros) {
         cy.log('Abrir filtros')
         cy.getVisible(locContaBancaria.lancamentosCartao.abrirFiltros).click()
 
+        var data = new Date()
+        var dia = String(data.getDate()).padStart(2, '0')
+        var mes = String(data.getMonth() + 1).padStart(2, '0')
+        var ano = data.getFullYear()
+        var dataAtual = dia + '/' + mes + '/' + ano
+
         cy.log('Limpar o campo data inicio e inserir nova data')
         cy.getVisible(locContaBancaria.lancamentosCartao.dataInicio).clear()
-          .type(cardCartao.dataInicio)
+          .type(dataAtual)
 
         cy.log('Limpar o campo data fim de inserir nova data')
         cy.getVisible(locContaBancaria.lancamentosCartao.dataFim).clear()
-          .type(`${cardCartao.dataFim}{enter}`)
+          .type(`${dataAtual}{enter}`)
 
         cy.wait('@listagemLancamentos')
       }
