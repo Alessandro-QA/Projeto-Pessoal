@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 
-import seedTestNfe from '../../../../../fixtures/nfe/emissao/nfe-mesmo-estado/destinatario-ie-isenta/nfe-destinatario-ie-isenta.spec.json'
-import payloadDestinatario from '../../../../../fixtures/nfe/emissao/nfe-mesmo-estado/destinatario-ie-isenta/destinatario.json'
-import Nfe from '../../../../../support/commands/funcionalidades/nfe/nfe.js'
+import seedTestNfe from '../../../../../fixtures/nfe/nfe/emissao/nfe-mesmo-estado/destinatario-ie-isenta/nfe-destinatario-ie-isenta.spec.json'
+import payloadDestinatario from '../../../../../fixtures/nfe/nfe/emissao/nfe-mesmo-estado/destinatario-ie-isenta/destinatario.json'
+import Nfe from '../../../../../support/commands/nfe/nfe/nfe.js'
 import Utils from '../../../../../support/utils/utils.js'
-import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../../support/commands/login/login-logout.js'
 
 describe('NF-e', { tags: '@nfe' }, () => {
   var inscricaoEstadual = Utils.getPayloadPorAmbiente(payloadDestinatario)

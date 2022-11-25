@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-import seedTestNfe from '../../../../../fixtures/nfe/emissao/nfe-estado-diferente/nfe-mt-para-go.json'
-import Nfe from '../../../../../support/commands/funcionalidades/nfe/nfe.js'
-import Authenticate from '../../../../../support/commands/funcionalidades/login/login-logout.js'
+import seedTestNfe from '../../../../../fixtures/nfe/nfe/emissao/nfe-estado-diferente/nfe-mt-para-go.json'
+import Nfe from '../../../../../support/commands/nfe/nfe/nfe.js'
+import Authenticate from '../../../../../support/commands/login/login-logout.js'
 import testDescription from './bdd-descritpion/nfe-MT-para-GO.description.js'
 
 describe('NF-e', { tags: '@nfe' }, () => {

@@ -2,9 +2,9 @@
 
 import payLoad from '../../../../fixtures/financeiro/contas-bancarias/excluir/payLoad.json'
 import seedTestExcluirConta from '../../../../fixtures/financeiro/contas-bancarias/excluir/excluir-conta.json'
-import ContaBancaria from '../../../../support/commands/funcionalidades/financeiro/contas-bancarias/contas-bancarias.js'
+import ContaBancaria from '../../../../support/commands/financeiro/contas-bancarias/contas-bancarias.js'
 import testDescription from './bdd-description/excluir-conta-bancaria.description.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 import Utils from '../../../../support/utils/utils.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {

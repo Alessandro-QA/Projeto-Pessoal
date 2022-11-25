@@ -1,11 +1,11 @@
 /// <reference types="cypress" />
 
 import seedTest from '../../../../fixtures/financeiro/documentos/cadastro/documento-pago-por-agenda-financeira.json'
-import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa'
-import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria'
-import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira'
+import LivroCaixa from '../../../../support/commands/financeiro/livro-caixa/livro-caixa'
+import Movimentacao from '../../../../support/commands/financeiro/movimentacoes-bancarias/movimentacao-bancaria'
+import AgendaFinanceira from '../../../../support/commands/financeiro/agenda-financeira/agenda-financeira'
 import Utils from '../../../../support/utils/utils.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
   var dataAtual = Utils.getDate()

@@ -3,9 +3,9 @@
 import Utils from '../../../../support/utils/utils.js'
 import payloadColheita from '../../../../fixtures/suprimentos/consultas/extrato-de-materiais/extrato-expedicao-interna-interna/colheita.json'
 import payloadExpedicao from '../../../../fixtures/suprimentos/consultas/extrato-de-materiais/extrato-expedicao-interna-interna/expedicao.json'
-import ExtratoMateriais from '../../../../support/commands/funcionalidades/suprimentos/consultas/extratoMateriais.js'
+import ExtratoMateriais from '../../../../support/commands/suprimentos/consultas/extratoMateriais.js'
 import seedTest from '../../../../fixtures/suprimentos/consultas/extrato-de-materiais/extrato-expedicao-interna-interna/extratoMateriais.json'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 import testDescription from './bdd-description/extrato-de-expedicao-interna-interna.description'
 
 if ((Cypress.env('ambiente') === 'dev')) {

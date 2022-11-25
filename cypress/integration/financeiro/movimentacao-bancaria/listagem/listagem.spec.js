@@ -3,11 +3,11 @@
 import payloadDocumentos from '../../../../fixtures/financeiro/movimentaca-bancaria/listagem/documentos.json'
 import seedTestListagemMovimentacao from '../../../../fixtures/financeiro/movimentaca-bancaria/listagem/validar-listagem.json'
 import seedTestAgenda from '../../../../fixtures/financeiro/movimentaca-bancaria/listagem/pagar-pela-agenda.json'
-import { pagarPelaAgenda, pagarReceberTitulo } from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
-import { validarListagem } from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
+import { pagarPelaAgenda, pagarReceberTitulo } from '../../../../support/commands/financeiro/agenda-financeira/agenda-financeira.js'
+import { validarListagem } from '../../../../support/commands/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 import testDescritpion from './bdd-description/listagem.description.js'
 import Utils from '../../../../support/utils/utils.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
   var dataAtual = Utils.getDate()

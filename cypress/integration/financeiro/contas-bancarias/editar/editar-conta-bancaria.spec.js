@@ -2,9 +2,9 @@
 
 import payLoadContaBancaria from '../../../../fixtures/financeiro/contas-bancarias/editar/pay-load.json'
 import seedTestEditarConta from '../../../../fixtures/financeiro/contas-bancarias/editar/editar-conta.json'
-import ContaBancaria from '../../../../support/commands/funcionalidades/financeiro/contas-bancarias/contas-bancarias.js'
+import ContaBancaria from '../../../../support/commands/financeiro/contas-bancarias/contas-bancarias.js'
 import testDescription from './bdd-descprition/editar.description.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 import Utils from '../../../../support/utils/utils.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {

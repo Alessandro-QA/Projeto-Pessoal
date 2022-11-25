@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 
 import seedTest from '../../../../fixtures/financeiro/documentos/cadastro/documento-entrada-com-estimativa-IRRF.json'
-import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa.js'
+import LivroCaixa from '../../../../support/commands/financeiro/livro-caixa/livro-caixa.js'
 import Utils from '../../../../support/utils/utils.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
   var dataAtual = Utils.getDate()

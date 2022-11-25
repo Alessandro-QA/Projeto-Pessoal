@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
 import seedTestSafra from '../../../fixtures/atividades-agricolas/cadastros/fixture-safra.json'
-import Safra from '../../../support/commands/funcionalidades/atividades-agricolas/cadastros/safra/safra.js'
-import Authenticate from '../../../support/commands/funcionalidades/login/login-logout.js'
+import Safra from '../../../support/commands/atividades-agricolas/cadastros/safra/safra.js'
+import Authenticate from '../../../support/commands/login/login-logout.js'
 import testDescription from './bdd-description/safra.description.js'
 
 describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {

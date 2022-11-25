@@ -1,6 +1,7 @@
 import '@testing-library/cypress/add-commands'
-import '../commands/imports'
 import 'cypress-localstorage-commands'
+import './login/login-logout.js'
+import './login/onboarding/cadastrar-conta.js'
 
 // Command Cypress para desabilitar a popup de notificação do MyFarm,
 // setando um item no localStorage. 

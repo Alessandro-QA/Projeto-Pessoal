@@ -2,8 +2,8 @@
 
 import testDescription from './bdd-description/upload-ofx.description.js'
 import seedTestConciliacao from '../../../../fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/upload-ofx/upload-ofx.json'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
-import { uploadOfx } from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/conciliacao-bancaria.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
+import { uploadOfx } from '../../../../support/commands/financeiro/movimentacoes-bancarias/conciliacao-bancaria.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
     before(function () {

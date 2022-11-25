@@ -1,6 +1,6 @@
-import locLogin from '../../support/locators/funcionalidades/login/locators-login'
-import locDashboard from '../../support/locators/funcionalidades/main-dashboard/locators-dashboard'
-import Authenticate from '../../support/commands/funcionalidades/login/login-logout.js'
+import locLogin from '../../support/locators/login/locators-login'
+import locDashboard from '../../support/locators/main-dashboard/locators-dashboard'
+import Authenticate from '../../support/commands/login/login-logout.js'
 import testDescription from './bdd-description/login.description.js'
 
 describe('Login', { tags: '@login' }, () => {
