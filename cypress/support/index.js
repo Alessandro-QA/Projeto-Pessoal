@@ -1,6 +1,7 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
 // import '@cypress/code-coverage/support'
+import 'cypress-real-events'
 import './commands/commands'
 import deletarRegistroTabelasDev from './utils/queries/deletar-por-tabela-dev.js'
 import deletarRegistroTabelasQa from './utils/queries/deletar-por-tabela-qa.js'

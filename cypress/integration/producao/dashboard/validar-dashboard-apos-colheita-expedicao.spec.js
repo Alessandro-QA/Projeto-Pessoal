@@ -7,9 +7,9 @@ import payloadColheita from '../../../fixtures/producao/dashboard/cadastro-colhe
 import payloadExpedicao from '../../../fixtures/producao/dashboard/cadastro-expedicao/expedicao.json'
 import seedTestDashboard from '../../../fixtures/producao/dashboard/validar-dashboard/dashboard-producao.json'
 import seedTestDashboardAposExpedicao from '../../../fixtures/producao/dashboard/validar-dashboard/dashboard-apos-expedicao.json'
-import Producao from '../../../support/commands/funcionalidades/producao/dashboardProducao.js'
+import Producao from '../../../support/commands/producao/dashboardProducao.js'
 import { getDate, replacer, setAccessTokenToEnv, requestApi, getPayloadPorAmbiente } from '../../../support/utils/utils.js'
-import { login, logout } from '../../../support/commands/funcionalidades/login/login-logout.js'
+import { login, logout } from '../../../support/commands/login/login-logout.js'
 
 // TODO: Bug 41593: Conversão de unidade está divergente entre as bases de Dev, QA e Produção
 // Os teste de cadastro de colheita no Ambiente de QA estão em pausa devido a divergência nos ambiente, onde

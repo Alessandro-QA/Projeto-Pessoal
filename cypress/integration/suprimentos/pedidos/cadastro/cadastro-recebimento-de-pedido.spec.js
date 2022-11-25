@@ -1,14 +1,14 @@
 /// <reference types="cypress" />
 
 import * as seeds from '../../../../fixtures/suprimentos/pedidos/cadastro-e-recebimento-de-pedido/imports-seed.js'
-import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa.js'
-import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
-import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
-import Pedidos from '../../../../support/commands/funcionalidades/suprimentos/pedidos.js'
-import Recebimento from '../../../../support/commands/funcionalidades/suprimentos/recebimento.js'
-import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
+import LivroCaixa from '../../../../support/commands/financeiro/livro-caixa/livro-caixa.js'
+import Movimentacao from '../../../../support/commands/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
+import AgendaFinanceira from '../../../../support/commands/financeiro/agenda-financeira/agenda-financeira.js'
+import Pedidos from '../../../../support/commands/suprimentos/pedidos.js'
+import Recebimento from '../../../../support/commands/suprimentos/recebimento.js'
+import Documentos from '../../../../support/commands/financeiro/documentos/documentos.js'
 import testDescription from './bdd-description/cadastro-recebimento-pedido.description.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 // Cadastro, Edição e Exclusão de Pedido com Recebimento
 describe('Suprimentos', { tags: '@suprimentos' }, () => {

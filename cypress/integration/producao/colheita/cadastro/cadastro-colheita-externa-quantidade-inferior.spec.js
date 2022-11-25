@@ -7,10 +7,10 @@ import seedTestDashboardProducao from '../../../../fixtures/producao/colheita/ex
 // import seedTestDashboardContrato from '../../../../fixtures/producao/colheita/externa-com-quantidade-excedente.js/dashboard-contrato.json'
 import payloadContrato from '../../../../fixtures/producao/colheita/externa-com-quantidade-inferior/contratos.json'
 import testDescription from './bdd-description/cadastro-colheita.description.js'
-import { cadastrarEditar, validarListagem } from '../../../../support/commands/funcionalidades/producao/colheita.js'
-import { validarDashboard } from '../../../../support/commands/funcionalidades/producao/dashboardProducao.js'
+import { cadastrarEditar, validarListagem } from '../../../../support/commands/producao/colheita.js'
+import { validarDashboard } from '../../../../support/commands/producao/dashboardProducao.js'
 import { getDate, replacer, requestApi, setAccessTokenToEnv, getPayloadPorAmbiente } from '../../../../support/utils/utils.js'
-import { login, logout } from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import { login, logout } from '../../../../support/commands/login/login-logout.js'
 
 // TODO: Bug 41593: Conversão de unidade está divergente entre as bases de Dev, QA e Produção
 // Os teste de cadastro de colheita no Ambiente de QA estão em pausa devido a divergência nos ambiente, onde

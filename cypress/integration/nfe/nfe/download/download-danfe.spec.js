@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 
-import Nfe from '../../../../support/commands/funcionalidades/nfe/nfe.js'
-import seedTestNfe from '../../../../fixtures/nfe/download/download-danfe.json'
+import Nfe from '../../../../support/commands/nfe/nfe/nfe.js'
+import seedTestNfe from '../../../../fixtures/nfe/nfe/download/download-danfe.json'
 import Utils from '../../../../support/utils/utils.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 // https://dev.azure.com/conexalabs/ProjetoX/_wiki/wikis/ProjetoX.wiki/3033/NF-e#**funcionalidade%3A**-download-de-danfe
 

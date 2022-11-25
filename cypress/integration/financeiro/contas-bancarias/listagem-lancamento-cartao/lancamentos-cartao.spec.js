@@ -3,11 +3,12 @@
 import payLoadDocumentos from '../../../../fixtures/financeiro/contas-bancarias/listagem-lancamentos-cartao/pay-load-documentos.json'
 import seedTestLancamentoCartao from '../../../../fixtures/financeiro/contas-bancarias/listagem-lancamentos-cartao/lançamentos.json'
 import testDescription from './bdd-description/lancamentos-cartao.description.js'
-import ContasBancarias from '../../../../support/commands/funcionalidades/financeiro/contas-bancarias/contas-bancarias.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import ContasBancarias from '../../../../support/commands/financeiro/contas-bancarias/contas-bancarias.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 import Utils from '../../../../support/utils/utils.js'
 
-describe('Financeiro', { tags: '@financeiro' }, () => {
+// TODO: Refatorar método de validação de listagem de lançamentos de cartão de credito
+describe.skip('Financeiro', { tags: '@financeiro' }, () => {
   var documento = Utils.getPayloadPorAmbiente(payLoadDocumentos)
 
   var dataAtual = Utils.getDate()

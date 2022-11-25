@@ -3,8 +3,8 @@
 import payLoadContaBancaria from '../../../../fixtures/financeiro/contas-bancarias/listagem/pay-load.json'
 import seedTestListagem from '../../../../fixtures/financeiro/contas-bancarias/listagem/listagem.json'
 import testDescription from './bdd-description/listagem.description.js'
-import ContasBancaria from '../../../../support/commands/funcionalidades/financeiro/contas-bancarias/contas-bancarias.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import ContasBancaria from '../../../../support/commands/financeiro/contas-bancarias/contas-bancarias.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 import Utils from '../../../../support/utils/utils.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {

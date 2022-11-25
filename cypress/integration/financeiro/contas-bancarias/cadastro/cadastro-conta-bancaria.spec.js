@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 
 import seedTestContaBancaria from '../../../../fixtures/financeiro/contas-bancarias/cadastro/contas-bancarias.json'
-import ContaBancaria from '../../../../support/commands/funcionalidades/financeiro/contas-bancarias/contas-bancarias.js'
+import ContaBancaria from '../../../../support/commands/financeiro/contas-bancarias/contas-bancarias.js'
 import testDescription from './bdd-description/cadastro-conta-bancaria.description.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
   before(function () {
