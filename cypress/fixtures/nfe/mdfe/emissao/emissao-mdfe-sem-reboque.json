@@ -1,0 +1,70 @@
+{
+  "mdfe": {
+    "manifesto": {
+      "gerarRascunho": false,
+      "tipoEmitente": "Transportador de Carga Própria",
+      "tipoTrasnportador": "Transportador Autônomo de Cargas",
+      "indicadorCarregamentoPosterior": "Não",
+      "tipoAmbiente": "Homologação",
+      "modelo": "58",
+      "modalidadeTransporte": "Rodoviário"
+    },
+    "emitente": {
+      "empresa": "VILMAR BORDIGNON",
+      "cpfCnpj": "46149562972",
+      "inscricaoEstadual": "156747138",
+      "cep": "68379-500",
+      "pais": "Brasil",
+      "estado": "Pará",
+      "municipio": "Altamira",
+      "bairro": "ZONA RURAL",
+      "complemento": "CACHOEIRA DA SERRA",
+      "logradouro": "ROD BR 163 PA KM 130 M/E",
+      "numero": "0"
+    },
+    "notasFiscais": {
+      "origem": "Manual",
+      "serie": "920",
+      "chaveDeAcesso": "51221100050240102134559200000019367037693921"
+    },
+    "veiculo": {
+      "placaDoVeiculo": "ABC1234",
+      "renavam": "987654321",
+      "tipoDaCarroceria": "00 - Não Aplicável",
+      "ufDeLicenciamento": "PA",
+      "tara": "1500",
+      "capacidadeKg": "80000",
+      "capacidadeM3": "80",
+      "tipoDeRodado": "05 - Utilitário",
+      "proprietarioDoVeiculo": "Proprio"
+    },
+    "condutor": {
+      "condutor": "Motorista Teste"
+    },
+    "carregamento": {
+      "estado": "Pará",
+      "municipio": "Altamira"
+    },
+    "descarregamento": {
+      "estado": "Pará",
+      "municipio": "Abaetetuba"
+    },
+    "totaisDeCarga": {
+      "unidadeDeMedida": "KG",
+      "valorTotalDaCarga": "0,01",
+      "pesoBrutoTotal": "70000",
+      "totalDeNfe": "1",
+      "unidadeDeMedidaDaCarga": "KG"
+    }
+  },
+  "detalhesMdfe": {
+    "ufCarregamento": "PA",
+    "ufDescarregamento": "PA",
+    "tipoEmissao": "Normal",
+    "modalidade": "Rodoviário",
+    "situacao": "Autorizado",
+    "motorista": "Motorista Teste",
+    "totaisMdfe": "0,01",
+    "ultimaRespostaSefaz": "Autorizado o uso do MDF-e"
+  }
+}
