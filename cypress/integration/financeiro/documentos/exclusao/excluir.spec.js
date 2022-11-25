@@ -3,9 +3,9 @@
 import payloadDocumentos from '../../../../fixtures/financeiro/documentos/exclusao/documento.json'
 import seedTestExcluir from '../../../../fixtures/financeiro/documentos/exclusao/excluir.json'
 import testDescription from './bdd-description/excluir.description.js'
-import { excluir, conferir } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
+import { excluir, conferir } from '../../../../support/commands/financeiro/documentos/documentos.js'
 import Utils from '../../../../support/utils/utils.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 // Cadastro, Edição e Exclusão de Documento Já Pago
 describe('Financeiro', { tags: '@financeiro' }, () => {

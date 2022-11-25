@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
 import seedTestPessoa from '../../../fixtures/atividades-agricolas/cadastros/fixture-pessoa.json'
-import Pessoa from '../../../support/commands/funcionalidades/atividades-agricolas/cadastros/pessoa/pessoa.js'
-import Authenticate from '../../../support/commands/funcionalidades/login/login-logout.js'
+import Pessoa from '../../../support/commands/atividades-agricolas/cadastros/pessoa/pessoa.js'
+import Authenticate from '../../../support/commands/login/login-logout.js'
 import testDescription from './bdd-description/pessoa.description.js'
 
 describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {

@@ -6,9 +6,9 @@ import seedTestDocumento3 from '../../../../fixtures/financeiro/documentos/cadas
 import seedTestDocumento4 from '../../../../fixtures/financeiro/documentos/cadastro/documento7553.json'
 import seedTestDocumento5 from '../../../../fixtures/financeiro/documentos/cadastro/documento3557.json'
 import seedTestDocumento6 from '../../../../fixtures/financeiro/documentos/cadastro/documento5537.json'
-import Documentos from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
+import Documentos from '../../../../support/commands/financeiro/documentos/documentos.js'
 import testDescription from './bdd-description/cadastro-documento.description.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
   before(function () {

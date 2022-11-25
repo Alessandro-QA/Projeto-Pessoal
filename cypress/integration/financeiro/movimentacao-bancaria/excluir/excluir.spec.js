@@ -4,8 +4,8 @@ import payloadDocumentos from '../../../../fixtures/financeiro/movimentaca-banca
 import seedTestExcluir from '../../../../fixtures/financeiro/movimentaca-bancaria/excluir/excluir.json'
 import testDescription from './bdd-description/excluir.description.js'
 import Utils from '../../../../support/utils/utils.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
-import { excluir, validarExclusao } from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
+import { excluir, validarExclusao } from '../../../../support/commands/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
   var documento = Utils.getPayloadPorAmbiente(payloadDocumentos)

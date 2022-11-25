@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 
 import seedTestPagamento from '../../../../fixtures/financeiro/movimentaca-bancaria/realizar-movimentacao/pagamento.json'
-import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
+import Movimentacao from '../../../../support/commands/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 import testDescritpion from './bdd-description/realizar-movimentacao.description.js'
 import Utils from '../../../../support/utils/utils.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
   before(function () {

@@ -3,8 +3,8 @@
 import payLoadLivroCaixa from '../../../../fixtures/financeiro/livro-caixa/lancamentos/realizar-lancamentos.json'
 import seedTestLivroCaixa from '../../../../fixtures/financeiro/livro-caixa/lancamentos/lancamentos.json'
 import testDescription from './bdd-description/lancamentos.description.js'
-import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import LivroCaixa from '../../../../support/commands/financeiro/livro-caixa/livro-caixa'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 import Utils from '../../../../support/utils/utils.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {

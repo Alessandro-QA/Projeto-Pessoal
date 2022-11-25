@@ -2,11 +2,11 @@
 
 import payLoadLivroCaixa from '../../../../fixtures/financeiro/livro-caixa/extrato-livro-caixa/pay-load.json'
 import seedTestLivroCaixa from '../../../../fixtures/financeiro/livro-caixa/extrato-livro-caixa/extrato-livro-caixa.json'
-import Fazenda from '../../../../support/commands/funcionalidades/atividades-agricolas/cadastros/fazenda/fazenda.js'
-import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa.js'
+import Fazenda from '../../../../support/commands/atividades-agricolas/cadastros/fazenda/fazenda.js'
+import LivroCaixa from '../../../../support/commands/financeiro/livro-caixa/livro-caixa.js'
 import testDescription from './bdd-description/extrato-livro-caixa.description.js'
 import Utils from '../../../../support/utils/utils.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
   var lancamento = Utils.getPayloadPorAmbiente(payLoadLivroCaixa)

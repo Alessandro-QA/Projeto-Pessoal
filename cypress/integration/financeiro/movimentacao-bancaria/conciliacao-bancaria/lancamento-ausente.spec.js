@@ -2,8 +2,8 @@
 
 import testDescription from './bdd-description/lancamento-ausente.description.js'
 import seedTestConciliacao from '../../../../fixtures/financeiro/movimentaca-bancaria/conciliacao-bancaria/conciliacao/lancamento-ausente/conciliacao.json'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
-import ConciliacaoBancaria from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/conciliacao-bancaria.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
+import ConciliacaoBancaria from '../../../../support/commands/financeiro/movimentacoes-bancarias/conciliacao-bancaria.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
     before(function () {

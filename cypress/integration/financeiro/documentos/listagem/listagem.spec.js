@@ -2,10 +2,10 @@
 
 import payloadDocumentos from '../../../../fixtures/financeiro/documentos/listagem/documentos.json'
 import seedTestDocumento from '../../../../fixtures/financeiro/documentos/listagem/listagem.json'
-import { listagem, conferir } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
+import { listagem, conferir } from '../../../../support/commands/financeiro/documentos/documentos.js'
 import Utils from '../../../../support/utils/utils.js'
 import testDescription from './bdd-description/listagem.description'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
   var dataAtual = Utils.getDate()

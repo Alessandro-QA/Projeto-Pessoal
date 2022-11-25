@@ -4,15 +4,15 @@ import seedTestAgenda from '../../../../fixtures/financeiro/documentos/cadastro/
 import seedTestLivroCaixa from '../../../../fixtures/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/lancamentos-livro-caixa.json'
 import seedTestMovimentacao from '../../../../fixtures/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/movimentacoes-bancarias.json'
 import seedTestResultadoSafra from '../../../../fixtures/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/resultado-da-safra.json'
-import { excluir } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
-import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa.js'
-import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
-import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
-import ResultadoSafra from '../../../../support/commands/funcionalidades/resultados-safra/resultado-safra.js'
+import { excluir } from '../../../../support/commands/financeiro/documentos/documentos.js'
+import LivroCaixa from '../../../../support/commands/financeiro/livro-caixa/livro-caixa.js'
+import Movimentacao from '../../../../support/commands/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
+import AgendaFinanceira from '../../../../support/commands/financeiro/agenda-financeira/agenda-financeira.js'
+import ResultadoSafra from '../../../../support/commands/resultados-safra/resultado-safra.js'
 import payloadDocumentos from '../../../../fixtures/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/documentos.json'
 import seedExcluirDocumento from '../../../../fixtures/financeiro/documentos/cadastro/documento-com-exclusao-de-movimentacao/excluirDocumentos.json'
 import Utils from '../../../../support/utils/utils.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
 

@@ -2,9 +2,9 @@
 
 import Utils from '../../../../support/utils/utils.js'
 import payloadColheita from '../../../../fixtures/suprimentos/consultas/extrato-de-materiais/extrato-colheita-interna/colheita.json'
-import ExtratoMateriais from '../../../../support/commands/funcionalidades/suprimentos/consultas/extratoMateriais.js'
+import ExtratoMateriais from '../../../../support/commands/suprimentos/consultas/extratoMateriais.js'
 import seedTest from '../../../../fixtures/suprimentos/consultas/extrato-de-materiais/extrato-colheita-interna/extratoMaterial.json'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 import testDescription from './bdd-description/extrato-de-colheita-interna.description.js'
 
 // TODO: Bug 41593: Conversão de unidade está divergente entre as bases de Dev, QA e Produção

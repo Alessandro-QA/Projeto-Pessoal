@@ -2,11 +2,11 @@
 
 import payloadDocumentos from '../../../../fixtures/financeiro/documentos/edicao/documentos.json'
 import seedTestDocumento from '../../../../fixtures/financeiro/documentos/edicao/editar-documento.json'
-import { editar, listagem, validarDetalhes } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
-import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
+import { editar, listagem, validarDetalhes } from '../../../../support/commands/financeiro/documentos/documentos.js'
+import AgendaFinanceira from '../../../../support/commands/financeiro/agenda-financeira/agenda-financeira.js'
 import testDescritpion from './bdd-description/editar-documento.description.js'
 import Utils from '../../../../support/utils/utils.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
 	var dataAtual = Utils.getDate()

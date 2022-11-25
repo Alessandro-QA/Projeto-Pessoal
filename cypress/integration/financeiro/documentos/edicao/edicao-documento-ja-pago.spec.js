@@ -3,12 +3,12 @@
 import seedCadastro from '../../../../fixtures/financeiro/documentos/edicao/documento-ja-pago/cadastro-documento-ja-pago.json'
 import seedEdicao from '../../../../fixtures/financeiro/documentos/edicao/documento-ja-pago/edicao-documento-ja-pago.json'
 import seedExclusao from '../../../../fixtures/financeiro/documentos/edicao/documento-ja-pago/exclusao-documento-ja-pago.json'
-import { editar, validarDetalhes, excluir, validarExclusao } from '../../../../support/commands/funcionalidades/financeiro/documentos/documentos.js'
-import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa'
-import Movimentacao from '../../../../support/commands/funcionalidades/financeiro/movimentacoes-bancarias/movimentacao-bancaria'
-import ResultadoSafra from '../../../../support/commands/funcionalidades/resultados-safra/resultado-safra'
+import { editar, validarDetalhes, excluir, validarExclusao } from '../../../../support/commands/financeiro/documentos/documentos.js'
+import LivroCaixa from '../../../../support/commands/financeiro/livro-caixa/livro-caixa'
+import Movimentacao from '../../../../support/commands/financeiro/movimentacoes-bancarias/movimentacao-bancaria'
+import ResultadoSafra from '../../../../support/commands/resultados-safra/resultado-safra'
 import Utils from '../../../../support/utils/utils.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
   var dataAtual = Utils.getDate()

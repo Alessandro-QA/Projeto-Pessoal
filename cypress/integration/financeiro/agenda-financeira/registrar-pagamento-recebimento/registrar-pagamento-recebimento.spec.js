@@ -3,8 +3,8 @@
 import payLoadDocumento from '../../../../fixtures/financeiro/agenda-financeira/registrar-pagamento-recebimento/pay-load-documento.json'
 import seedTestAgendaFinanceira from '../../../../fixtures/financeiro/agenda-financeira/registrar-pagamento-recebimento/registrar-pagamento-recebimento.json'
 import testDescription from './bdd-description/registrar-pagamento-recebimento.description.js'
-import AgendaFinanceira from '../../../../support/commands/funcionalidades/financeiro/agenda-financeira/agenda-financeira.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import AgendaFinanceira from '../../../../support/commands/financeiro/agenda-financeira/agenda-financeira.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 import Utils from '../../../../support/utils/utils.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {

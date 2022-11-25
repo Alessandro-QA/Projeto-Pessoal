@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
 import seedTestCiclo from '../../../fixtures/atividades-agricolas/cadastros/fixture-ciclo.json'
-import Ciclo from '../../../support/commands/funcionalidades/atividades-agricolas/cadastros/ciclo/ciclo.js'
-import Authenticate from '../../../support/commands/funcionalidades/login/login-logout.js'
+import Ciclo from '../../../support/commands/atividades-agricolas/cadastros/ciclo/ciclo.js'
+import Authenticate from '../../../support/commands/login/login-logout.js'
 import testDescription from './bdd-description/ciclo.description.js'
 
 describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {

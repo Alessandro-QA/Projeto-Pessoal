@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 
 import seedTestLancamento from '../../../../fixtures/financeiro/livro-caixa/adicionar-lancamentos/adicionar-lancamento.json'
-import LivroCaixa from '../../../../support/commands/funcionalidades/financeiro/livro-caixa/livro-caixa.js'
+import LivroCaixa from '../../../../support/commands/financeiro/livro-caixa/livro-caixa.js'
 import testDescription from './bdd-description/adicionar-lancamento.description.js'
-import Authenticate from '../../../../support/commands/funcionalidades/login/login-logout.js'
+import Authenticate from '../../../../support/commands/login/login-logout.js'
 import Utils from '../../../../support/utils/utils.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
