@@ -46,7 +46,7 @@
       "imposto": {
         "icms": {
           "origemCst": "0 - Nacional",
-          "cst": "00",
+          "cst": "40",
           "baseCalculo": "0,01",
           "aliquota": "0,00",
           "valor": "R$ 0,00"

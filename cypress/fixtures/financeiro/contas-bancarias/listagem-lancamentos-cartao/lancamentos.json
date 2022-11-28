@@ -1,0 +1,45 @@
+{
+  "semFiltro": {
+    "pesquisar": true,
+    "nomeConta": "OFX - Cartao de Credito",
+    "validarCartao": [
+      {
+        "nomeCartaoCredito": "OFX - Cartao de Credito",
+        "card": [
+          {
+            "spanCategoria": "Outras Vendas Agropecuárias",
+            "operacao": "Recebimento",
+            "valor": "R$ 300,23"
+          },
+          {
+            "spanCategoria": "Combustíveis",
+            "operacao": "Pagamento",
+            "valor": "R$ - 200,00"
+          }
+        ]
+      }
+    ]
+  },
+  "filtrarPeriodo": {
+    "pesquisar": true,
+    "nomeConta": "OFX - Cartao de Credito",
+    "validarCartao": [
+      {
+        "nomeCartaoCredito": "OFX - Cartao de Credito",
+        "filtros": true,
+        "card": [
+          {
+            "spanCategoria": "Outras Vendas Agropecuárias",
+            "operacao": "Recebimento",
+            "valor": "R$ 300,23"
+          },
+          {
+            "spanCategoria": "Combustíveis",
+            "operacao": "Pagamento",
+            "valor": "R$ - 200,00"
+          }
+        ]
+      }
+    ]
+  }
+}
