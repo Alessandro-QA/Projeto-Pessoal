@@ -11,7 +11,7 @@
         "valor": "- R$  2.000,00"
       }
     ],
-    "saldoDoDia": "-R$ 6.003,00"
+    "saldoDoDia": "-R$ 2.000,00"
   },
 
   "movimentacaoBancaria2001": {
@@ -26,7 +26,7 @@
         "valor": "- R$  2.001,00"
       }
     ],
-    "saldoDoDia": "-R$ 6.003,00"
+    "saldoDoDia": "-R$ 2.001,00"
   },
 
   "movimentacaoBancaria2002": {
@@ -41,6 +41,6 @@
         "valor": "- R$  2.002,00"
       }
     ],
-    "saldoDoDia": "-R$ 6.003,00"
+    "saldoDoDia": "-R$ 2.002,00"
   }
 }
