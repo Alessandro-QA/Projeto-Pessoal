@@ -61,7 +61,7 @@
     },
     "totaisDeCarga": {
       "unidadeDeMedida": "KG",
-      "valorTotalDaCarga": "0,01",
+      "valorTotalDaCarga": "1,00",
       "pesoBrutoTotal": "70000",
       "totalDeNfe": "1",
       "unidadeDeMedidaDaCarga": "KG"
@@ -74,7 +74,7 @@
     "modalidade": "Rodoviário",
     "situacao": "Autorizado",
     "motorista": "Motorista Teste",
-    "totaisMdfe": "0,01",
+    "totaisMdfe": "1,00",
     "ultimaRespostaSefaz": "Autorizado o uso do MDF-e"
   }
 }
