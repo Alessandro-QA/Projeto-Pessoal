@@ -61,7 +61,7 @@
     },
     "totaisDeCarga": {
       "unidadeDeMedida": "KG",
-      "valorTotalDaCarga": "1,00",
+      "valorTotalDaCarga": "0,01",
       "pesoBrutoTotal": "70000",
       "totalDeNfe": "1",
       "unidadeDeMedidaDaCarga": "KG"
