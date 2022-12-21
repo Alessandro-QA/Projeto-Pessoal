@@ -49,16 +49,21 @@
     "selecionarEmpresa": "Empresa 1",
     "cardContasBancaria": [
       {
+        "nomeContaBancaria": "Conta Bancaria Teste",
+        "agencia": "1234-2",
+        "conta": "1234567-1",
+        "empresaTitular": "Empresa 1"
+      },
+      {
         "nomeContaBancaria": "Conta Corrente",
         "agencia": "3735-1",
         "conta": "951753-2",
         "empresaTitular": "Empresa 1"
       },
       {
-        "nomeContaBancaria": "Conta Bancaria Teste",
-        "agencia": "1234-2",
-        "conta": "1234567-1",
-        "empresaTitular": "Empresa 1"
+        "nomeContaBancaria": "Conta Tesouraria",
+        "empresaTitular": "Empresa 1",
+        "dataSaldoInicial": "10/09/2022"
       }
     ],
     "cardContasCartao": [
