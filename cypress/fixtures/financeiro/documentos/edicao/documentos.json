@@ -1,5 +1,79 @@
 {
   "dev": {
+    "documento8765432": {
+      "categorias": [
+        {
+          "valor": 134,
+          "contaContabil": {
+            "dedutivel": false,
+            "codigo": "4.02.01.03",
+            "nome": "13º Salário",
+            "descricao": "13º Salário"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT17:30:30-03:00",
+      "operacao": {
+        "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
+        "descricao": "13º Salário"
+      },
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT17:30:30-03:00",
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "tags": ["documentoE2E"],
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "67824142000144",
+        "id": "ef402791-c035-46cf-96c6-a2494042b237",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "8765432",
+      "empresa": {
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 5,
+      "conferido": false,
+      "financeiro": {
+        "total": 134,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "b48af165-0c66-4203-9163-2b241662b4fd",
+          "descricao": "Transferência Bancária"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT17:30:30-03:00",
+            "valor": 134
+          }
+        ]
+      },
+      "dedutivel": false,
+      "manual": true
+    },
     "documento789456": {
       "categorias": [
         {
@@ -126,6 +200,98 @@
         "descricao": "Matheus Oliveira"
       },
       "numero": "357357",
+      "empresa": {
+        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 2,
+      "conferido": false,
+      "financeiro": {
+        "total": 500,
+        "pago": false,
+        "rateioEntreCiclos": true,
+        "formaPagamento": {
+          "id": "8d5b14ec-b6f4-44b8-acf0-bd128fb39a7d",
+          "descricao": "Cartão de Débito"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT10:10:03-03:00",
+            "valor": 500
+          }
+        ]
+      },
+      "dedutivel": true,
+      "manual": true
+    },
+    "documento741852": {
+      "ciclos": [
+        {
+          "ciclo": {
+            "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+            "descricao": "Soja - 2021/2021"
+          },
+          "valor": 375,
+          "percentual": 75
+        },
+        {
+          "ciclo": {
+            "id": "b2147793-d5d7-4414-9aaa-c762672e15bb",
+            "descricao": "Milho - 2021/2021"
+          },
+          "valor": 125,
+          "percentual": 25
+        }
+      ],
+      "categorias": [
+        {
+          "valor": 500,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.01.06",
+            "nome": "Assistência Médica",
+            "descricao": "Assistência Médica"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT10:10:03-03:00",
+      "operacao": {
+        "id": "0f83ddf1-83bb-a2e2-788d-36a6084e42f0",
+        "descricao": "Assistência Médica"
+      },
+      "safra": {
+        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT10:10:03-03:00",
+      "fazenda": {
+        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "tags": ["documentoEditado"],
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "27770797063",
+        "id": "b800a655-d5c6-49ac-b8c6-cd17bd1e19d0",
+        "descricao": "Matheus Oliveira"
+      },
+      "numero": "741852",
       "empresa": {
         "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
         "descricao": "Empresa Fornecedor - CNPJ",
@@ -295,9 +461,7 @@
         "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
         "descricao": "Fazenda Teste Producao"
       },
-      "tags": [
-        "documentoE2E"
-      ],
+      "tags": ["documentoE2E"],
       "pessoa": {
         "pessoaTipo": "Cliente",
         "numeroDocumento": "91535740019",
@@ -494,6 +658,80 @@
     }
   },
   "qa": {
+    "documento8765432": {
+      "categorias": [
+        {
+          "valor": 134,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.01.03",
+            "nome": "13º Salário",
+            "descricao": "13º Salário"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT10:50:13-03:00",
+      "operacao": {
+        "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
+        "descricao": "13º Salário"
+      },
+      "safra": {
+        "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT10:50:13-03:00",
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "tags": ["documentoE2E"],
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "67824142000144",
+        "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+        "descricao": "Cliente Teste Produção"
+      },
+      "numero": "8765432",
+      "empresa": {
+        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 5,
+      "conferido": false,
+      "financeiro": {
+        "total": 134,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+          "id": "a2bdd5d3-2096-4c52-9ec0-1563e799b358",
+          "descricao": "Transferência Bancária"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT10:50:13-03:00",
+            "valor": 134
+          }
+        ]
+      },
+      "dedutivel": false,
+      "manual": true
+    },
     "documento789456": {
       "categorias": [
         {
@@ -566,6 +804,98 @@
         ]
       },
       "dedutivel": false,
+      "manual": true
+    },
+    "documento741852": {
+      "ciclos": [
+        {
+          "ciclo": {
+            "id": "4781c56a-86e5-4d53-b1ce-364f03751c1b",
+            "descricao": "Soja - 2021/2021"
+          },
+          "valor": 375,
+          "percentual": 75
+        },
+        {
+          "ciclo": {
+            "id": "16b2fcdd-8b81-4251-b87e-4cb494970cce",
+            "descricao": "Milho - 2021/2021"
+          },
+          "valor": 125,
+          "percentual": 25
+        }
+      ],
+      "categorias": [
+        {
+          "valor": 500,
+          "contaContabil": {
+            "dedutivel": true,
+            "codigo": "4.02.01.06",
+            "nome": "Assistência Médica",
+            "descricao": "Assistência Médica"
+          }
+        }
+      ],
+      "dataRecebimento": "dataSubstituicaoT10:54:35-03:00",
+      "operacao": {
+        "id": "0f83ddf1-83bb-a2e2-788d-36a6084e42f0",
+        "descricao": "Assistência Médica"
+      },
+      "safra": {
+        "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+        "descricao": "2021/2021"
+      },
+      "data": "dataSubstituicaoT10:54:35-03:00",
+      "fazenda": {
+        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+        "descricao": "Fazenda Teste Producao"
+      },
+      "tags": ["documentoEditado"],
+      "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "27770797063",
+        "id": "d9c471f3-756c-4c98-b5d2-786ea8a3a169",
+        "descricao": "Matheus Oliveira"
+      },
+      "numero": "741852",
+      "empresa": {
+        "id": "5bd9cb06-e9e9-4f4e-aaec-3c5e27921df9",
+        "descricao": "Empresa Fornecedor - CNPJ",
+        "empresaDeSaoPaulo": false,
+        "documentoPrincipal": "37062568000147",
+        "inscricaoEstadual": {
+          "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+          "descricao": "110137116",
+          "valor": "110137116"
+        }
+      },
+      "ieDaEmpresa": {
+        "id": "59d4caad-eff4-4d7d-9045-b67825606840",
+        "descricao": "110137116",
+        "valor": "110137116",
+        "label": "110137116"
+      },
+      "tipoDocumento": 2,
+      "conferido": false,
+      "financeiro": {
+        "total": 500,
+        "pago": false,
+        "rateioEntreCiclos": true,
+        "formaPagamento": {
+          "id": "f38343b1-7f1f-4d68-b627-e2601edfdaad",
+          "descricao": "Cartão de Débito"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": false,
+        "parcelas": [
+          {
+            "vencimento": "dataSubstituicaoT10:54:35-03:00",
+            "valor": 500
+          }
+        ]
+      },
+      "dedutivel": true,
       "manual": true
     },
     "documento357357": {
