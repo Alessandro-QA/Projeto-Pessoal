@@ -1,21 +1,21 @@
 {
   "safra": "2021/2021",
   "fazenda": "Fazenda Teste Producao",
-  "quantidade": "5,01 Saca 60 /ha",
-  "quantidadeCultura": "1.002 Saca 60 de Soja",
+  "quantidade": "5 Saca 60 /ha",
+  "quantidadeCultura": "1.000 Saca 60 de Soja",
   "hectareCultura": "200,00 hectares",
-  "sacaFazendaProdutiva": "5.01 Saca 60/ha",
+  "sacaFazendaProdutiva": "5.00 Saca 60/ha",
   "variedadeProducao": "Syn1060ap",
-  "sacaProducao": "1002.00 Saca 60",
+  "sacaProducao": "1000.00 Saca 60",
   "talhaoProducao": "Talhão Soja",
-  "sacaTalhaoProducao": "1002.00 Saca 60",
+  "sacaTalhaoProducao": "1000.00 Saca 60",
   "varidadeProdutividade": "Syn1060ap",
-  "sacaProdutividade": "5.01 Saca 60/ha",
+  "sacaProdutividade": "5.00 Saca 60/ha",
   "talhaoProdutividade": "Talhão Soja",
-  "sacatalhaoProdutividade": "5.01 Saca 60/ha",
+  "sacatalhaoProdutividade": "5.00 Saca 60/ha",
   "totalArmazenagemInterna": "0",
   "sacaArmazenagemInterna": "Saca 60",
-  "totalArmazenagemExterna": "1.002",
+  "totalArmazenagemExterna": "1.000",
   "sacaArmazenagemExterna": "Saca 60",
   "totalRecebido": "0,00",
   "totalAReceber": "0,00",
@@ -23,34 +23,34 @@
   "entregaFixacoes": [
     {
       "cliente": "Cliente Teste Produção",
-      "entregue": "1.002",
+      "entregue": "1.000",
       "arrendamentos": "0",
       "contratosFixados": "0",
       "fixacoes": "0",
       "transferencias": "0",
-      "saldo": "1.002"
+      "saldo": "1.000"
     }
   ],
   "contratosEntregasFixacoes": [
     {
       "expandir": true,
       "cliente": "1 - 1",
-      "entregue": "668",
+      "entregue": "666,67",
       "arrendamentos": "0",
       "contratosFixados": "0",
       "fixacoes": "0",
       "transferencias": "0",
-      "saldo": "668"
+      "saldo": "666,67"
     },
     {
       "cliente": "2 - 2",
-      "entregue": "334",
+      "entregue": "333,33",
       "arrendamentos": "0",
       "contratosFixados": "0",
       "fixacoes": "0",
       "transferencias": "0",
-      "saldo": "334"
+      "saldo": "333,33"
     }
   ],
-  "saldoTotalFixar": "1.002 Saca 60"
+  "saldoTotalFixar": "1.000 Saca 60"
 }

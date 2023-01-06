@@ -2,20 +2,20 @@
   "safra": "2021/2021",
   "fazenda": "Fazenda Teste Producao",
   "quantidade": "2,17 Saca 60 /ha",
-  "quantidadeCultura": "217,1 Saca 60 de Milho",
+  "quantidadeCultura": "216,67 Saca 60 de Milho",
   "hectareCultura": "100,00 hectares",
   "sacaFazendaProdutiva": "2.17 Saca 60/ha",
   "variedadeProducao": "C000106",
-  "sacaProducao": "217.10 Saca 60",
+  "sacaProducao": "216.67 Saca 60",
   "talhaoProducao": "Talhão Milho",
-  "sacaTalhaoProducao": "217.10 Saca 60",
+  "sacaTalhaoProducao": "216.67 Saca 60",
   "varidadeProdutividade": "C000106",
   "sacaProdutividade": "2.17 Saca 60/ha",
   "talhaoProdutividade": "Talhão Milho",
   "sacatalhaoProdutividade": "2.17 Saca 60/ha",
   "totalArmazenagemInterna": "0",
   "sacaArmazenagemInterna": "Saca 60",
-  "totalArmazenagemExterna": "217,1",
+  "totalArmazenagemExterna": "216,67",
   "sacaArmazenagemExterna": "Saca 60",
   "totalRecebido": "0,00",
   "totalAReceber": "0,00",
@@ -23,27 +23,27 @@
   "entregaFixacoes": [
     {
       "cliente": "Cliente Teste Produção",
-      "entregue": "217,1",
+      "entregue": "216,67",
       "arrendamentos": "0",
       "contratosFixados": "0",
       "fixacoes": "0",
       "transferencias": "0",
-      "saldo": "217,1"
+      "saldo": "216,67"
     }
   ],
   "contratosEntregasFixacoes": [
     {
       "expandir": true,
       "cliente": "0 - Sem Contrato",
-      "entregue": "217,1",
+      "entregue": "216,67",
       "arrendamentos": "0",
       "contratosFixados": "0",
       "fixacoes": "0",
       "transferencias": "0",
-      "saldo": "217,1"
+      "saldo": "216,67"
     }
   ],
-  "saldoTotalFixar": "217,1 Saca 60",
+  "saldoTotalFixar": "216,67 Saca 60",
   "precoMedioPorCliente": false,
   "precoMedioPorSafra": false,
   "clientePrecoMedio": "",
