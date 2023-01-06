@@ -1,0 +1,333 @@
+{
+  "mesmoEstado": {
+    "cadastro": {
+      "operacao": "DIEF - CST 041",
+      "tipoDocumento": "Outros",
+      "numeroDocumento": "4101",
+      "pessoa": "32872012000100 - Pessoa Teste DIEF - AC",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - AC",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "2.500,00",
+      "jaPago": true,
+      "rateioEntreCiclos": true,
+      "ciclos": [
+        {
+          "nome": "Milho - 2021/2021",
+          "valor": "R$ 1.250,00"
+        },
+        {
+          "nome": "Soja - 2021/2021",
+          "valor": "R$ 1.250,00"
+        }
+      ],
+      "contaBancaria": "Conta DIEF",
+      "contaDestino": "Conta DIEF",
+      "formaPagamento": "Cartão de Crédito",
+      "condicaoPagamento": "À vista",
+      "rateioEntreCategorias": true,
+      "categorias": [
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.250,00"
+        },
+        {
+          "nome": "Outros Custos",
+          "valor": "R$ 1.250,00"
+        }
+      ],
+      "tributacoes": {
+        "modelo": "55",
+        "serie": "290",
+        "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
+        "baseCalculoIcms": "R$ 0,00",
+        "icmsCredito": "R$ 0,00",
+        "isentasIcms": "R$ 2.500,00",
+        "outrosIcms": "R$ 0,00",
+        "baseCalculoIcmsSt": "R$ 0,00",
+        "valorIcmsRetido": "R$ 0,00",
+        "despesasAcessorias": "R$ 0,00",
+        "frete": "R$ 0,00",
+        "valorDoIpi": "R$ 0,00",
+        "isenta": "R$ 0,00",
+        "outros": "R$ 0,00"
+      }
+    },
+    "edicao": {
+      "operacao": "DIEF - CST 041",
+      "tipoDocumento": "Outros",
+      "dedutivel": "Sim",
+      "numeroDocumento": "4101",
+      "pessoa": "32872012000100 - Pessoa Teste DIEF - AC",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - AC",
+      "ieEmpresa": "478178718718",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "R$ 2.500,00",
+      "foiPago": true,
+      "rateioEntreCiclos": true,
+      "ciclos": [
+        {
+          "nome": "Soja - 2021/2021",
+          "valor": "R$ 1.250,00"
+        },
+        {
+          "nome": "Milho - 2021/2021",
+          "valor": "R$ 1.250,00"
+        }
+      ],
+      "formaPagamento": "Cartão de Crédito",
+      "condicaoPagamento": "À vista",
+      "valorParcela": "R$ 2.500,00",
+      "categorias": [
+        {
+          "nome": "Outros Custos",
+          "valor": "R$ 1.250,00"
+        },
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.250,00"
+        }
+      ],
+      "modelo": "55",
+      "serie": "290",
+      "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
+      "baseCalculoIcms": "R$ 0,00",
+      "icmsCredito": "R$ 0,00",
+      "isentasIcms": "R$ 2.500,00",
+      "outrosIcms": "R$ 0,00",
+      "baseCalculoIcmsSt": "R$ 0,00",
+      "valorIcmsRetido": "R$ 0,00",
+      "despesasAcessorias": "R$ 0,00",
+      "frete": "R$ 0,00",
+      "valorDoIpi": "R$ 0,00",
+      "isenta": "R$ 0,00",
+      "outros": "R$ 0,00"
+    }
+  },
+
+  "estadoDiferente": {
+    "cadastro": {
+      "operacao": "DIEF - CST 041",
+      "tipoDocumento": "Outros",
+      "numeroDocumento": "4102",
+      "pessoa": "32872012000100 - Pessoa Teste DIEF - AC",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - AL",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "2.550,00",
+      "jaPago": true,
+      "rateioEntreCiclos": true,
+      "ciclos": [
+        {
+          "nome": "Milho - 2021/2021",
+          "valor": "R$ 1.275,00"
+        },
+        {
+          "nome": "Soja - 2021/2021",
+          "valor": "R$ 1.275,00"
+        }
+      ],
+      "contaBancaria": "Conta DIEF",
+      "contaDestino": "Conta DIEF",
+      "formaPagamento": "Cartão de Débito",
+      "condicaoPagamento": "À vista",
+      "rateioEntreCategorias": true,
+      "categorias": [
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.275,00"
+        },
+        {
+          "nome": "Outros Custos",
+          "valor": "R$ 1.275,00"
+        }
+      ],
+      "tributacoes": {
+        "modelo": "59",
+        "serie": "220",
+        "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
+        "baseCalculoIcms": "R$ 0,00",
+        "icmsCredito": "R$ 0,00",
+        "isentasIcms": "R$ 2.550,00",
+        "outrosIcms": "R$ 0,00",
+        "baseCalculoIcmsSt": "R$ 0,00",
+        "valorIcmsRetido": "R$ 0,00",
+        "despesasAcessorias": "R$ 0,00",
+        "frete": "R$ 0,00",
+        "valorDoIpi": "R$ 0,00",
+        "isenta": "R$ 0,00",
+        "outros": "R$ 0,00"
+      }
+    },
+    "edicao": {
+      "operacao": "DIEF - CST 041",
+      "tipoDocumento": "Outros",
+      "dedutivel": "Sim",
+      "numeroDocumento": "4102",
+      "pessoa": "32872012000100 - Pessoa Teste DIEF - AC",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - AL",
+      "ieEmpresa": "7717817",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "R$ 2.550,00",
+      "foiPago": true,
+      "rateioEntreCiclos": true,
+      "ciclos": [
+        {
+          "nome": "Soja - 2021/2021",
+          "valor": "R$ 1.275,00"
+        },
+        {
+          "nome": "Milho - 2021/2021",
+          "valor": "R$ 1.275,00"
+        }
+      ],
+      "formaPagamento": "Cartão de Débito",
+      "condicaoPagamento": "À vista",
+      "valorParcela": "R$ 2.550,00",
+      "categorias": [
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.275,00"
+        },
+        {
+          "nome": "Outros Custos",
+          "valor": "R$ 1.275,00"
+        }
+      ],
+      "modelo": "59",
+      "serie": "220",
+      "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
+      "baseCalculoIcms": "R$ 0,00",
+      "icmsCredito": "R$ 0,00",
+      "isentasIcms": "R$ 2.550,00",
+      "outrosIcms": "R$ 0,00",
+      "baseCalculoIcmsSt": "R$ 0,00",
+      "valorIcmsRetido": "R$ 0,00",
+      "despesasAcessorias": "R$ 0,00",
+      "frete": "R$ 0,00",
+      "valorDoIpi": "R$ 0,00",
+      "isenta": "R$ 0,00",
+      "outros": "R$ 0,00"
+    }
+  },
+  "todosTodos": {
+    "cadastro": {
+      "operacao": "DIEF - CST 041",
+      "tipoDocumento": "Outros",
+      "numeroDocumento": "4103",
+      "pessoa": "72995732000170 - Pessoa Teste DIEF - TODOS",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - TODOS",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "2.560,00",
+      "jaPago": true,
+      "rateioEntreCiclos": true,
+      "ciclos": [
+        {
+          "nome": "Milho - 2021/2021",
+          "valor": "R$ 1.280,00"
+        },
+        {
+          "nome": "Soja - 2021/2021",
+          "valor": "R$ 1.280,00"
+        }
+      ],
+      "contaBancaria": "Conta DIEF",
+      "contaDestino": "Conta DIEF",
+      "formaPagamento": "Cheque",
+      "condicaoPagamento": "À vista",
+      "rateioEntreCategorias": true,
+      "categorias": [
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.280,00"
+        },
+        {
+          "nome": "Outros Custos",
+          "valor": "R$ 1.280,00"
+        }
+      ],
+      "tributacoes": {
+        "modelo": "59",
+        "serie": "220",
+        "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
+        "baseCalculoIcms": "R$ 0,00",
+        "icmsCredito": "R$ 0,00",
+        "isentasIcms": "R$ 2.560,00",
+        "outrosIcms": "R$ 0,00",
+        "baseCalculoIcmsSt": "R$ 0,00",
+        "valorIcmsRetido": "R$ 0,00",
+        "despesasAcessorias": "R$ 0,00",
+        "frete": "R$ 0,00",
+        "valorDoIpi": "R$ 0,00",
+        "isenta": "R$ 0,00",
+        "outros": "R$ 0,00"
+      }
+    },
+    "edicao": {
+      "operacao": "DIEF - CST 041",
+      "tipoDocumento": "Outros",
+      "dedutivel": "Sim",
+      "numeroDocumento": "4103",
+      "pessoa": "72995732000170 - Pessoa Teste DIEF - TODOS",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - TODOS",
+      "ieEmpresa": "541871781",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "R$ 2.560,00",
+      "foiPago": true,
+      "rateioEntreCiclos": true,
+      "ciclos": [
+        {
+          "nome": "Soja - 2021/2021",
+          "valor": "R$ 1.280,00"
+        },
+        {
+          "nome": "Milho - 2021/2021",
+          "valor": "R$ 1.280,00"
+        }
+      ],
+      "formaPagamento": "Cheque",
+      "condicaoPagamento": "À vista",
+      "valorParcela": "R$ 2.560,00",
+      "categorias": [
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.280,00"
+        },
+        {
+          "nome": "Outros Custos",
+          "valor": "R$ 1.280,00"
+        }
+      ],
+      "modelo": "59",
+      "serie": "220",
+      "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
+      "baseCalculoIcms": "R$ 0,00",
+      "icmsCredito": "R$ 0,00",
+      "isentasIcms": "R$ 2.560,00",
+      "outrosIcms": "R$ 0,00",
+      "baseCalculoIcmsSt": "R$ 0,00",
+      "valorIcmsRetido": "R$ 0,00",
+      "despesasAcessorias": "R$ 0,00",
+      "frete": "R$ 0,00",
+      "valorDoIpi": "R$ 0,00",
+      "isenta": "R$ 0,00",
+      "outros": "R$ 0,00"
+    }
+  }
+}

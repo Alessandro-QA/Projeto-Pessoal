@@ -1,0 +1,258 @@
+{
+  "mesmoEstado": {
+    "cadastro": {
+      "operacao": "DIEF - CST 010",
+      "tipoDocumento": "Outros",
+      "numeroDocumento": "1001",
+      "pessoa": "32872012000100 - Pessoa Teste DIEF - AC",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - AC",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "1.550,00",
+      "jaPago": false,
+      "rateioEntreCiclos": false,
+      "formaPagamento": "Boleto",
+      "numeroBoleto": [
+        {
+          "numero": "12345678910111213585748748718187817817874187187"
+        }
+      ],
+      "rateioEntreCategoriasPorOperacao": true,
+      "categorias": [
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.550,00"
+        }
+      ],
+      "tributacoes": {
+        "modelo": "55",
+        "serie": "290",
+        "cfop": "1910 - Entrada de bonificação, doação ou brinde",
+        "baseCalculoIcms": "R$ 0,00",
+        "icmsCredito": "R$ 0,00",
+        "isentasIcms": "R$ 170,50",
+        "outrosIcms": "R$ 0,00",
+        "baseCalculoIcmsSt": "R$ 1.379,50",
+        "valorIcmsRetido": "R$ 151,74",
+        "despesasAcessorias": "R$ 0,00",
+        "frete": "R$ 0,00",
+        "valorDoIpi": "R$ 0,00",
+        "isenta": "R$ 0,00",
+        "outros": "R$ 0,00"
+      }
+    },
+    "edicao": {
+      "operacao": "DIEF - CST 010",
+      "tipoDocumento": "Outros",
+      "dedutivel": "Sim",
+      "numeroDocumento": "1001",
+      "pessoa": "32872012000100 - Pessoa Teste DIEF - AC",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - AC",
+      "ieEmpresa": "478178718718",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "R$ 1.550,00",
+      "foiPago": false,
+      "rateioEntreCiclos": false,
+      "formaPagamento": "Boleto",
+      "condicaoPagamento": "À vista",
+      "valorParcela": "R$ 1.550,00",
+      "numeroBoleto": "12345.67891 01112.135857 48748.718187 8 17817874187187",
+      "categorias": [
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.550,00"
+        }
+      ],
+      "modelo": "55",
+      "serie": "290",
+      "cfop": "1910 - Entrada de bonificação, doação ou brinde",
+      "baseCalculoIcms": "R$ 0,00",
+      "icmsCredito": "R$ 0,00",
+      "isentasIcms": "R$ 170,50",
+      "outrosIcms": "R$ 0,00",
+      "baseCalculoIcmsSt": "R$ 1.379,50",
+      "valorIcmsRetido": "R$ 151,74",
+      "despesasAcessorias": "R$ 0,00",
+      "frete": "R$ 0,00",
+      "valorDoIpi": "R$ 0,00",
+      "isenta": "R$ 0,00",
+      "outros": "R$ 0,00"
+    }
+  },
+
+  "estadoDiferente": {
+    "cadastro": {
+      "operacao": "DIEF - CST 010",
+      "tipoDocumento": "Outros",
+      "numeroDocumento": "1002",
+      "pessoa": "32872012000100 - Pessoa Teste DIEF - AC",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - AL",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "1.560,00",
+      "jaPago": false,
+      "rateioEntreCiclos": false,
+      "formaPagamento": "Boleto",
+      "numeroBoleto": [
+        {
+          "numero": "12345678910111213585748748718187817817874187187"
+        }
+      ],
+      "rateioEntreCategoriasPorOperacao": true,
+      "categorias": [
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.560,00"
+        }
+      ],
+      "tributacoes": {
+        "modelo": "65",
+        "serie": "390",
+        "cfop": "1910 - Entrada de bonificação, doação ou brinde",
+        "baseCalculoIcms": "R$ 0,00",
+        "icmsCredito": "R$ 0,00",
+        "isentasIcms": "R$ 156,00",
+        "outrosIcms": "R$ 0,00",
+        "baseCalculoIcmsSt": "R$ 1.404,00",
+        "valorIcmsRetido": "R$ 140,40",
+        "despesasAcessorias": "R$ 0,00",
+        "frete": "R$ 0,00",
+        "valorDoIpi": "R$ 0,00",
+        "isenta": "R$ 0,00",
+        "outros": "R$ 0,00"
+      }
+    },
+    "edicao": {
+      "operacao": "DIEF - CST 010",
+      "tipoDocumento": "Outros",
+      "dedutivel": "Sim",
+      "numeroDocumento": "1002",
+      "pessoa": "32872012000100 - Pessoa Teste DIEF - AC",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - AL",
+      "ieEmpresa": "7717817",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "R$ 1.560,00",
+      "foiPago": false,
+      "rateioEntreCiclos": false,
+      "formaPagamento": "Boleto",
+      "condicaoPagamento": "À vista",
+      "valorParcela": "R$ 1.560,00",
+      "numeroBoleto": "12345.67891 01112.135857 48748.718187 8 17817874187187",
+      "categorias": [
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.560,00"
+        }
+      ],
+      "modelo": "65",
+      "serie": "390",
+      "cfop": "1910 - Entrada de bonificação, doação ou brinde",
+      "baseCalculoIcms": "R$ 0,00",
+      "icmsCredito": "R$ 0,00",
+      "isentasIcms": "R$ 156,00",
+      "outrosIcms": "R$ 0,00",
+      "baseCalculoIcmsSt": "R$ 1.404,00",
+      "valorIcmsRetido": "R$ 140,40",
+      "despesasAcessorias": "R$ 0,00",
+      "frete": "R$ 0,00",
+      "valorDoIpi": "R$ 0,00",
+      "isenta": "R$ 0,00",
+      "outros": "R$ 0,00"
+    }
+  },
+  "todosTodos": {
+    "cadastro": {
+      "operacao": "DIEF - CST 010",
+      "tipoDocumento": "Outros",
+      "numeroDocumento": "1003",
+      "pessoa": "72995732000170 - Pessoa Teste DIEF - TODOS",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - TODOS",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "1.570,00",
+      "jaPago": false,
+      "rateioEntreCiclos": false,
+      "formaPagamento": "Boleto",
+      "numeroBoleto": [
+        {
+          "numero": "12345678910111213585748748718187817817874187187"
+        }
+      ],
+      "rateioEntreCategoriasPorOperacao": true,
+      "categorias": [
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.570,00"
+        }
+      ],
+      "tributacoes": {
+        "modelo": "57",
+        "serie": "490",
+        "cfop": "1910 - Entrada de bonificação, doação ou brinde",
+        "baseCalculoIcms": "R$ 0,00",
+        "icmsCredito": "R$ 0,00",
+        "isentasIcms": "R$ 188,40",
+        "outrosIcms": "R$ 0,00",
+        "baseCalculoIcmsSt": "R$ 1.381,60",
+        "valorIcmsRetido": "R$ 165,79",
+        "despesasAcessorias": "R$ 0,00",
+        "frete": "R$ 0,00",
+        "valorDoIpi": "R$ 0,00",
+        "isenta": "R$ 0,00",
+        "outros": "R$ 0,00"
+      }
+    },
+    "edicao": {
+      "operacao": "DIEF - CST 010",
+      "tipoDocumento": "Outros",
+      "dedutivel": "Sim",
+      "numeroDocumento": "1003",
+      "pessoa": "72995732000170 - Pessoa Teste DIEF - TODOS",
+      "fazenda": "Fazenda Teste DIEF",
+      "safra": "2021/2021",
+      "empresa": "Empresa Teste DIEF - TODOS",
+      "ieEmpresa": "541871781",
+      "tag": "tagDIEF",
+      "observacao": "Observações do DIEF",
+      "valorTotal": "R$ 1.570,00",
+      "foiPago": false,
+      "rateioEntreCiclos": false,
+      "formaPagamento": "Boleto",
+      "condicaoPagamento": "À vista",
+      "valorParcela": "R$ 1.570,00",
+      "numeroBoleto": "12345.67891 01112.135857 48748.718187 8 17817874187187",
+      "categorias": [
+        {
+          "nome": "Caixa Geral",
+          "valor": "R$ 1.570,00"
+        }
+      ],
+      "modelo": "57",
+      "serie": "490",
+      "cfop": "1910 - Entrada de bonificação, doação ou brinde",
+      "baseCalculoIcms": "R$ 0,00",
+      "icmsCredito": "R$ 0,00",
+      "isentasIcms": "R$ 188,40",
+      "outrosIcms": "R$ 0,00",
+      "baseCalculoIcmsSt": "R$ 1.381,60",
+      "valorIcmsRetido": "R$ 165,79",
+      "despesasAcessorias": "R$ 0,00",
+      "frete": "R$ 0,00",
+      "valorDoIpi": "R$ 0,00",
+      "isenta": "R$ 0,00",
+      "outros": "R$ 0,00"
+    }
+  }
+}
