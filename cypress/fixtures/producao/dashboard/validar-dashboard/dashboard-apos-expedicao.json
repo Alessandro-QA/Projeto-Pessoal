@@ -7,7 +7,7 @@
   "sacaFazendaProdutiva": "7.52 Saca 60/ha",
   "totalArmazenagemInterna": "0",
   "sacaArmazenagemInterna": "Saca 60",
-  "totalArmazenagemExterna": "503",
+  "totalArmazenagemExterna": "502",
   "sacaArmazenagemExterna": "Saca 60",
   "totalRecebido": "0,00",
   "totalAReceber": "0,00",
@@ -33,12 +33,12 @@
     },
     {
       "cliente": "Cliente Teste Produção",
-      "entregue": "2.505",
+      "entregue": "2.504",
       "arrendamentos": "0",
       "contratosFixados": "1.000",
       "fixacoes": "0",
       "transferencias": "1.002",
-      "saldo": "503"
+      "saldo": "502"
     }
   ],
   "contratosEntregasFixacoes": [
@@ -99,13 +99,13 @@
     {
       "encolherLista": false,
       "cliente": "3 - 3",
-      "entregue": "501",
+      "entregue": "500",
       "arrendamentos": "0",
       "contratosFixados": "0",
       "fixacoes": "0",
       "transferencias": "0",
-      "saldo": "501"
+      "saldo": "500"
     }
   ],
-  "saldoTotalFixar": "503 Saca 60"
+  "saldoTotalFixar": "502 Saca 60"
 }
