@@ -1,192 +1,315 @@
 {
-	"documento789456": {
-		"filtro": {
-			"editar": true,
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "789456"
-		},
-		"editar": {
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "789456",
-			"operacao": "Aluguéis",
-			"tipoDocumento": "Outros",
-			"dedutivel": "Não",
-			"pessoa": "Fornecedor",
-			"validarValorRateioCiclos": true,
-			"ciclos": [
-				{
-					"nome": "Soja - 2021/2021",
-					"valor": "R$ 100,50"
-				},
-				{
-					"nome:": "Milho - 2021/2021",
-					"valor": "R$ 33,50"
-				}
-			]
-		},
-		"detalhes": {
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "789456",
-			"cardDocumento": [
-				{
-					"numeroDocumento": "789456",
-					"pessoa": "Fornecedor",
-					"conferido": "Não",
-					"valor": "R$ 134,00"
-				}
-			]
-		},
-		"pagarDocumento": {
-			"fazendaDocumento": "Fazenda Teste Producao",
-			"empresaDocumento": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "789456",
-			"pagamento": true,
-			"cardStatusDocumento": "A pagar",
-			"cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
-			"cardValorDocumento": "R$ 134,00",
-			"cardSaldoAPagar": "Saldo a pagar: R$ 134,00",
-			"cardNumeroDocumento": "Número: 789456"
-		}
-	},
-	"documento357357": {
-		"filtro": {
-			"editar": true,
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "357357"
-		},
-		"editar": {
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "357357",
-			"operacao": "Assistência Médica",
-			"tipoDocumento": "Fatura",
-			"dedutivel": "Sim",
-			"pessoa": "Fornecedor",
-			"validarValorRateioCiclos": true
-		},
-		"detalhes": {
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "357357",
-			"cardDocumento": [
-				{
-					"numeroDocumento": "357357",
-					"pessoa": "Fornecedor",
-					"conferido": "Não",
-					"valor": "R$ 500,00"
-				}
-			]
-		},
-		"pagarDocumento": {
-			"pagamento": true,
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "357357",
-			"valor": "R$ 200,00"
-		},
-		"editarPosPagamento": {
-			"camposIndisponiveis": true
-		},
-		"detalhesPosPagamento": {
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "357357",
-			"parcelas": [
-				{
-					"parcela": "1ª Parcela",
-					"valorParcela": "R$ 500,00",
-					"statusParcela": "Pago parcialmente",
-					"saldoParcela": "R$ 300,00"
-				}
-			]
-		}
-	},
-	"documentoPago": {
-		"filtro": {
-			"editar": true,
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "789456"
-		},
-		"editar": {
-			"camposIndisponiveis": true
-		}
-	},
-	"documento369852": {
-		"receberDocumento": {
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Produtor - CPF",
-			"numeroDocumento": "369852",
-			"valor": "R$ 320,00"
-		},
-		"filtro": {
-			"editar": true,
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "369852"
-		},
-		"editarPosRecebimento": {
-			"camposIndisponiveis": true
-		},
-		"detalhesPosRecebimentoParcial": {
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
-			"numeroDocumento": "369852",
-			"parcelas": [
-				{
-					"parcela": "1ª Parcela",
-					"valorParcela": "R$ 640,00",
-					"statusParcela": "Recebido parcialmente",
-					"saldoParcela": "R$ 320,00"
-				}
-			]
-		}
-	},
-	"documento564321": {
-		"receberDocumento": {
-			"empresa": "Empresa Produtor - CPF",
-			"fazenda": "Fazenda Teste Producao",
-			"numeroDocumento": "564321"
-		},
-		"filtro": {
-			"editar": true,
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Produtor - CPF",
-			"numeroDocumento": "564321"
-		},
-		"editarPosRecebimento": {
-			"camposIndisponiveis": true
-		},
-		"detalhesPosRecebimento": {
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Produtor - CPF",
-			"numeroDocumento": "564321",
-			"parcelas": [
-				{
-					"parcela": "1ª Parcela",
-					"valorParcela": "R$ 304,00",
-					"statusParcela": "Recebido",
-					"saldoParcela": "R$ 304,00"
-				}
-			]
-		}
-	},
-	"documento789": {
-		"filtro": {
-			"editar": true,
-			"fazenda": "Fazenda E2E",
-			"empresa": "Empresa Fornecedor - CPF",
-			"numeroDocumento": "789"
-		},
-		"editar": {
-			"anexoExcluir": true
-		},
-		"detalhes": {
-			"numeroDocumento": "789"
-		}
-	}
+  "documento8765432": {
+    "filtro": {
+      "editar": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "789456"
+    },
+    "editar": {
+      "editar": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "ieEmpresa": "110137116",
+      "numeroDocumento": "8765432",
+      "operacao": "Aluguéis",
+      "tipoDocumento": "Outros",
+      "dedutivel": "Não",
+      "pessoa": "Cliente Teste Produção",
+      "validarValorRateioCiclos": true,
+      "ciclos": [
+        {
+          "nome": "Soja - 2021/2021",
+          "valor": "R$ 100,50"
+        },
+        {
+          "nome:": "Milho - 2021/2021",
+          "valor": "R$ 33,50"
+        }
+      ]
+    },
+    "detalhes": {
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "8765432",
+      "cardDocumento": [
+        {
+          "numeroDocumento": "8765432",
+          "pessoa": "Cliente Teste Produção",
+          "conferido": "Não",
+          "valor": "R$ 134,00"
+        }
+      ]
+    },
+    "pagarDocumento": {
+      "fazendaDocumento": "Fazenda Teste Producao",
+      "empresaDocumento": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "8765432",
+      "pagamento": true,
+      "cardStatusDocumento": "A pagar",
+      "cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
+      "cardValorDocumento": "R$ 134,00",
+      "cardSaldoAPagar": "Saldo a pagar: R$ 134,00",
+      "cardNumeroDocumento": "Número: 8765432"
+    }
+  },
+  "documento789456": {
+    "filtro": {
+      "editar": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "789456"
+    },
+    "editar": {
+      "editar": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "ieEmpresa": "110137116",
+      "numeroDocumento": "789456",
+      "operacao": "Aluguéis",
+      "tipoDocumento": "Outros",
+      "dedutivel": "Não",
+      "pessoa": "Cliente Teste Produção",
+      "validarValorRateioCiclos": true,
+      "ciclos": [
+        {
+          "nome": "Soja - 2021/2021",
+          "valor": "R$ 100,50"
+        },
+        {
+          "nome:": "Milho - 2021/2021",
+          "valor": "R$ 33,50"
+        }
+      ]
+    },
+    "detalhes": {
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "789456",
+      "cardDocumento": [
+        {
+          "numeroDocumento": "789456",
+          "pessoa": "Cliente Teste Produção",
+          "conferido": "Não",
+          "valor": "R$ 134,00"
+        }
+      ]
+    },
+    "pagarDocumento": {
+      "fazendaDocumento": "Fazenda Teste Producao",
+      "empresaDocumento": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "789456",
+      "pagamento": true,
+      "cardStatusDocumento": "A pagar",
+      "cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
+      "cardValorDocumento": "R$ 134,00",
+      "cardSaldoAPagar": "Saldo a pagar: R$ 134,00",
+      "cardNumeroDocumento": "Número: 789456"
+    }
+  },
+  "documento741852": {
+    "filtro": {
+      "editar": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "741852"
+    },
+    "editar": {
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "ieEmpresa": "110137116",
+      "numeroDocumento": "741852",
+      "operacao": "Assistência Médica",
+      "tipoDocumento": "Fatura",
+      "dedutivel": "Sim",
+      "pessoa": "Cliente Teste Produção",
+      "validarValorRateioCiclos": true
+    },
+    "detalhes": {
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "741852",
+      "cardDocumento": [
+        {
+          "numeroDocumento": "741852",
+          "pessoa": "Cliente Teste Produção",
+          "conferido": "Não",
+          "valor": "R$ 500,00"
+        }
+      ]
+    },
+    "pagarDocumento": {
+      "pagamento": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "741852",
+      "valor": "R$ 200,00"
+    },
+    "editarPosPagamento": {
+      "camposIndisponiveis": true
+    },
+    "detalhesPosPagamento": {
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "741852",
+      "parcelas": [
+        {
+          "parcela": "1ª Parcela",
+          "valorParcela": "R$ 500,00",
+          "statusParcela": "Pago parcialmente",
+          "saldoParcela": "R$ 300,00"
+        }
+      ]
+    }
+  },
+  "documento357357": {
+    "filtro": {
+      "editar": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "357357"
+    },
+    "editar": {
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "ieEmpresa": "110137116",
+      "numeroDocumento": "357357",
+      "operacao": "Assistência Médica",
+      "tipoDocumento": "Fatura",
+      "dedutivel": "Sim",
+      "pessoa": "Cliente Teste Produção",
+      "validarValorRateioCiclos": true
+    },
+    "detalhes": {
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "357357",
+      "cardDocumento": [
+        {
+          "numeroDocumento": "357357",
+          "pessoa": "Cliente Teste Produção",
+          "conferido": "Não",
+          "valor": "R$ 500,00"
+        }
+      ]
+    },
+    "pagarDocumento": {
+      "pagamento": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "357357",
+      "valor": "R$ 200,00"
+    },
+    "editarPosPagamento": {
+      "camposIndisponiveis": true
+    },
+    "detalhesPosPagamento": {
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "357357",
+      "parcelas": [
+        {
+          "parcela": "1ª Parcela",
+          "valorParcela": "R$ 500,00",
+          "statusParcela": "Pago parcialmente",
+          "saldoParcela": "R$ 300,00"
+        }
+      ]
+    }
+  },
+  "documentoPago8765432": {
+    "filtro": {
+      "editar": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "8765432"
+    },
+    "editar": {
+      "camposIndisponiveis": true
+    }
+  },
+  "documentoPago": {
+    "filtro": {
+      "editar": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "789456"
+    },
+    "editar": {
+      "camposIndisponiveis": true
+    }
+  },
+  "documento369852": {
+    "receberDocumento": {
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Produtor - CPF",
+      "numeroDocumento": "369852",
+      "valor": "R$ 320,00"
+    },
+    "filtro": {
+      "editar": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "369852"
+    },
+    "editarPosRecebimento": {
+      "camposIndisponiveis": true
+    },
+    "detalhesPosRecebimentoParcial": {
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "369852",
+      "parcelas": [
+        {
+          "parcela": "1ª Parcela",
+          "valorParcela": "R$ 640,00",
+          "statusParcela": "Recebido parcialmente",
+          "saldoParcela": "R$ 320,00"
+        }
+      ]
+    }
+  },
+  "documento564321": {
+    "receberDocumento": {
+      "empresa": "Empresa Produtor - CPF",
+      "fazenda": "Fazenda Teste Producao",
+      "numeroDocumento": "564321"
+    },
+    "filtro": {
+      "editar": true,
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Produtor - CPF",
+      "numeroDocumento": "564321"
+    },
+    "editarPosRecebimento": {
+      "camposIndisponiveis": true
+    },
+    "detalhesPosRecebimento": {
+      "fazenda": "Fazenda Teste Producao",
+      "empresa": "Empresa Produtor - CPF",
+      "numeroDocumento": "564321",
+      "parcelas": [
+        {
+          "parcela": "1ª Parcela",
+          "valorParcela": "R$ 304,00",
+          "statusParcela": "Recebido",
+          "saldoParcela": "R$ 304,00"
+        }
+      ]
+    }
+  },
+  "documento789": {
+    "filtro": {
+      "editar": true,
+      "fazenda": "Fazenda E2E",
+      "empresa": "Empresa Fornecedor - CPF",
+      "numeroDocumento": "789"
+    },
+    "editar": {
+      "anexoExcluir": true
+    },
+    "detalhes": {
+      "numeroDocumento": "789"
+    }
+  }
 }

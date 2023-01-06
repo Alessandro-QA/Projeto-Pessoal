@@ -12,8 +12,10 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 	var dataAtual = Utils.getDate()
 	var documento = Utils.getPayloadPorAmbiente(payloadDocumentos)
 
+	var bodyDocumento8765432 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento8765432)
 	var bodyDocumento789456 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento789456)
 	var bodyDocumento357357 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento357357)
+	var bodyDocumento741852 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento741852)
 	var bodyDocumento369852 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento369852)
 	var bodyDocumento564321 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento564321)
 	var bodyDocumento789 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento789)
@@ -70,35 +72,43 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 			})
 
 			context('Já pago', () => {
+				it('Cadastrar documento 8765432 por API', function () {
+					Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento8765432, 'login_cenarios')
+				})
+
 				it('Pagar documento', function () {
-					AgendaFinanceira.pagarPelaAgenda(seedTestDocumento.documento789456.pagarDocumento)
+					AgendaFinanceira.pagarPelaAgenda(seedTestDocumento.documento8765432.pagarDocumento)
 				})
 
 				it('Editar documento (campos de edição não devem estar disponíveis)', function () {
 					cy.allure().severity('normal').startStep('test content')
 						.descriptionHtml(testDescritpion.jaPago)
 
-					editar(seedTestDocumento.documentoPago.filtro, seedTestDocumento.documentoPago.editar)
+					editar(seedTestDocumento.documentoPago8765432.filtro, seedTestDocumento.documentoPago8765432.editar)
 				})
 			})
 
 			context('Parcialmente pago', () => {
+				it('Cadastrar documento 741852 por API', function () {
+					Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento741852, 'login_cenarios')
+				})
+
 				it('Pagar parcialmente documento', function () {
-					AgendaFinanceira.pagarReceberTitulo(seedTestDocumento.documento357357.pagarDocumento)
+					AgendaFinanceira.pagarReceberTitulo(seedTestDocumento.documento741852.pagarDocumento)
 				})
 
 				it('Editar documento (campos de edição não devem estar dispovíveis)', function () {
 					cy.allure().severity('critical').startStep('test content')
 						.descriptionHtml(testDescritpion.parcialmentePago)
 
-					editar(seedTestDocumento.documento357357.filtro, seedTestDocumento.documento357357.editarPosPagamento)
+					editar(seedTestDocumento.documento741852.filtro, seedTestDocumento.documento741852.editarPosPagamento)
 				})
 
 				it('Validar status de parcialmente pago', function () {
 					cy.allure().severity('normal').startStep('test content')
 						.descriptionHtml(testDescritpion.parcialmentePago)
 
-					validarDetalhes(seedTestDocumento.documento357357.detalhesPosPagamento)
+					validarDetalhes(seedTestDocumento.documento741852.detalhesPosPagamento)
 				})
 			})
 
