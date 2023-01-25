@@ -18,13 +18,13 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
   describe('Cadastros', { tags: '@cadastro' }, () => {
     context('Empresa', () => {
       describe('Jurídica', () => {
-        it('Deve cadastrar empresa com Inscrição Estadual ativa', function () {
+        it('Deve cadastrar empresa com Inscrição Estadual ativa', { retries: { runMode: 1, openMode: 1, }, }, function () {
           cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.empresa)
 
           Empresa.cadastro(seedTestEmpresa.juridicaComIe)
         })
 
-        it('Deve cadastrar empresa sem Inscrição Estadual', function () {
+        it('Deve cadastrar empresa sem Inscrição Estadual', { retries: { runMode: 1, openMode: 1, }, }, function () {
           cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.empresa)
 
           Empresa.cadastro(seedTestEmpresa.juridicaSemIe)
@@ -32,19 +32,19 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
       })
 
       describe('Física', () => {
-        it('Deve cadastrar empresa com Inscrição Estadual ativa', function () {
+        it('Deve cadastrar empresa com Inscrição Estadual ativa', { retries: { runMode: 1, openMode: 1, }, }, function () {
           cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.empresa)
 
           Empresa.cadastro(seedTestEmpresa.fisicaComIe)
         })
 
-        it('Deve cadastrar empresa com Inscrição Estadual inativa', function () {
+        it('Deve cadastrar empresa com Inscrição Estadual inativa', { retries: { runMode: 1, openMode: 1, }, }, function () {
           cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.empresa)
 
           Empresa.cadastro(seedTestEmpresa.fisicaComIeInativa)
         })
 
-        it('Deve cadastrar empresa sem Inscrição Estadual', function () {
+        it('Deve cadastrar empresa sem Inscrição Estadual', { retries: { runMode: 1, openMode: 1, }, }, function () {
           cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.empresa)
 
           Empresa.cadastro(seedTestEmpresa.fisicaSemIe)

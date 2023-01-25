@@ -622,30 +622,35 @@ class LivroCaixa {
     cy.intercept('/api/financeiro/v1/LivroCaixa/ProdutorLivroCaixa?**')
       .as('ApiProdutorLivro')
 
-    // Navegar para Livro Caixa
+    cy.log('Navegar para Livro Caixa')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    // Abrir livro caixa produtor
+    cy.log('Abrir livro caixa produtor')
     cy.get(locLivroCaixa.dashboard.cardProdutores)
       .contains(seedTestLivroCaixa.empresa).click()
 
     cy.wait('@ApiProdutorLivro')
 
+    cy.log('Abrir Livro Caixa')
     cy.getVisible(locLivroCaixa.lancamentos.abrirLivroCaixa).click()
 
     if (seedTestLivroCaixa.produtor) {
+      cy.log('Selecionar Produtor')
       cy.getVisible(locLivroCaixa.livroCaixa.selectProdutor).click()
         .contains(seedTestLivroCaixa.produtor).click()
     }
 
     if (seedTestLivroCaixa.dataAno) {
+      cy.log('Selecionar Ano')
       cy.getVisible(locLivroCaixa.livroCaixa.dataAno).clear()
         .type(`${seedTestLivroCaixa.dataAno}{enter}`)
     }
 
     if (seedTestLivroCaixa.filtroStatus) {
+      cy.log('Abrir Filtros')
       cy.getVisible(locLivroCaixa.livroCaixa.abrirFiltros).click()
 
+      cy.log('Filtrar por status')
       cy.getVisible(locLivroCaixa.livroCaixa.filtroStatus).click()
         .contains(seedTestLivroCaixa.filtroStatus).click()
     }
