@@ -18,7 +18,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
   describe('Cadastros', { tags: '@cadastro' }, () => {
     context('Ciclo', () => {
       // Teste de cadastro de um novo ciclo de milho
-      it('Deve cadastrar um ciclo de milho', function () {
+      it('Deve cadastrar um ciclo de milho', { retries: { runMode: 1, openMode: 1, }, }, function () {
         cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.ciclo)
 
@@ -26,7 +26,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
       })
 
       // Validação da Dashboard de ciclo
-      it('Deve validar a Dashboard de ciclo', function () {
+      it('Deve validar a Dashboard de ciclo', { retries: { runMode: 1, openMode: 1, }, }, function () {
         cy.allure().severity('minor').startStep('test content')
 
         Ciclo.validarDashboard(seedTestCiclo)

@@ -2,6 +2,7 @@
   "filtroProdutor": {
     "empresa": "Empresa Produtor - CPF",
     "produtor": "Matheus Oliveira",
+    "dataAno": 2022,
     "valoresMes": [
       {
         "receitas": "––",
