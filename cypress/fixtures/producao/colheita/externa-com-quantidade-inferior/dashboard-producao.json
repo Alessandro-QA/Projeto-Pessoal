@@ -34,6 +34,7 @@
   "contratosEntregasFixacoes": [
     {
       "expandir": true,
+      "clientePrincipal": "Cliente Teste Produção",
       "cliente": "1 - 1",
       "entregue": "666,67",
       "arrendamentos": "0",
@@ -44,6 +45,7 @@
     },
     {
       "cliente": "2 - 2",
+      "clientePrincipal": "Cliente Teste Produção",
       "entregue": "333,33",
       "arrendamentos": "0",
       "contratosFixados": "0",

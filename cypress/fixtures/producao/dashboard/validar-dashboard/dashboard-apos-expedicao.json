@@ -45,6 +45,7 @@
     {
       "encolherLista": true,
       "expandir": true,
+      "clientePrincipal": "U.A. Silo",
       "cliente": "0 - Sem Contrato",
       "entregue": "1.002",
       "arrendamentos": "0",
@@ -56,6 +57,7 @@
     {
       "encolherLista": true,
       "expandir": true,
+      "clientePrincipal": "U.A. Teste Estoque",
       "cliente": "0 - Sem Contrato",
       "entregue": "0",
       "arrendamentos": "0",
@@ -66,8 +68,9 @@
     },
     {
       "contador": true,
-      "encolherLista": true,
+      "encolherLista": false,
       "expandir": true,
+      "clientePrincipal": "Cliente Teste Produção",
       "cliente": "2 - 2",
       "entregue": "0",
       "arrendamentos": "0",
@@ -78,6 +81,7 @@
     },
     {
       "encolherLista": false,
+      "clientePrincipal": "Cliente Teste Produção",
       "cliente": "0 - Sem Contrato",
       "entregue": "2.004",
       "arrendamentos": "0",
@@ -88,6 +92,7 @@
     },
     {
       "encolherLista": false,
+      "clientePrincipal": "Cliente Teste Produção",
       "cliente": "1 - 1",
       "entregue": "0",
       "arrendamentos": "0",
@@ -97,7 +102,8 @@
       "saldo": "- 500"
     },
     {
-      "encolherLista": false,
+      "encolherLista": true,
+      "clientePrincipal": "Cliente Teste Produção",
       "cliente": "3 - 3",
       "entregue": "500",
       "arrendamentos": "0",

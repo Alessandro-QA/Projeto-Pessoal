@@ -1,7 +1,9 @@
 const locators = {
   titulo: '[data-cy=header-dashboard-contrato] h1',
   selectFazenda: '[data-cy=select-fazenda]',
+  listaFazenda: '[data-cy=select-fazenda] .list__items',
   selectSafra: '[data-cy=select-safra]',
+  listaSafra: '[data-cy=select-safra] .list__items',
   buttonNovoContrato: '[data-cy=header-dashboard-contrato] > .el-button',
   buttonFiltros: '[data-cy=filtros-contrato] .siagri-icon-filter-xsmall',
   inputPesquisar: '[data-cy=filtros-contrato] [name="search"]',

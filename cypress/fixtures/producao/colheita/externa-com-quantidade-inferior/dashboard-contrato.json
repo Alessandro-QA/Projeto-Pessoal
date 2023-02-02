@@ -6,9 +6,9 @@
     "cardContrato": "Soja",
     "statusEntrega": "Entrega Pendente",
     "numeroContrato": "1",
-    "informacaoFixar": "A fixar",
+    "informacaoFixar": "A fixar R$ 87.000,00",
     "valorRecebido": "R$ 0,00",
-    "quantidadeEntregue": "668,00 de 1000 Saca 60",
+    "quantidadeEntregue": "666,67 de 1000 Saca 60",
     "tipoNegociacao": "Venda"
     }
   ,
@@ -16,9 +16,9 @@
     "cardContrato": "Soja",
     "statusEntrega": "Entrega Pendente",
     "numeroContrato": "2",
-    "informacaoFixar": "A fixar",
+    "informacaoFixar": "A fixar R$ 108.000,00",
     "valorRecebido": "R$ 0,00",
-    "quantidadeEntregue": "334,00 de 1000 Saca 60",
+    "quantidadeEntregue": "333,33 de 1000 Saca 60",
     "tipoNegociacao": "Venda"
     }
   ]

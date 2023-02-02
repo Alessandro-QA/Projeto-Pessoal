@@ -14,45 +14,45 @@ class DashboardProducaoUtils {
 
     cy.intercept('GET', 'api/producao-agricola/v1/Dashboard/PrecoMediaSafraCliente?**').as('dashboard')
 
-    // Navegar para dashboard de Producao
+    cy.log('Navegar para dashboard de Producao')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    // Fechar cotacoes
+    cy.log('Fechar cotacoes')
     cy.get(locDashboardProducao.cardCotacoes).click()
 
-    // Selecionar safra
+    cy.log('Selecionar safra')
     cy.getVisible(locDashboardProducao.selectSafra).click()
       .contains(seedTest.safra).click()
 
-    // Selecionar fazenda
+    cy.log('Selecionar fazenda')
     cy.get(locDashboardProducao.limparSelectFazenda).click({ force: true })
     cy.getVisible(locDashboardProducao.selectFazenda).click()
       .contains(seedTest.fazenda).click()
 
-    // Selecionar cultura
+    cy.log('Selecionar cultura')
     cy.get(locDashboardProducao.cardCultura).first().click()
 
     cy.wait('@dashboard')
 
     if (seedTest.quantidade) {
-      // Validar cultura do card de cultura
+      cy.log('Validar cultura do card de cultura')
       cy.get(locDashboardProducao.spanTituloCultura).should(($el) => {
         expect($el).to.contain.text(seedTest.quantidade)
       })
 
-      // Validar quantidade do card de cultura
+      cy.log('Validar quantidade do card de cultura')
       cy.get(locDashboardProducao.spanQuantidadeCultura).should(($el) => {
         expect($el).to.contain.text(seedTest.quantidadeCultura)
       })
 
-      // Validar hectares do card de cultura
+      cy.log('Validar hectares do card de cultura')
       cy.get(locDashboardProducao.spanHectareCultura).should(($el) => {
         expect($el).to.contain.text(seedTest.hectareCultura)
       })
     }
 
     if (seedTest.fazenda) {
-      // Validar dados do card de fazendas mais produtivas
+      cy.log('Validar dados do card de fazendas mais produtivas')
       cy.get(locDashboardProducao.cardFazendasProdutivas).should(($el) => {
         expect($el).to.contain.text(seedTest.fazenda)
         expect($el).to.contain.text(seedTest.sacaFazendaProdutiva)
@@ -60,14 +60,14 @@ class DashboardProducaoUtils {
     }
 
     if (seedTest.variedadeProducao) {
-      // Validar dados do card de Produção por variedade
+      cy.log('Validar dados do card de Produção por variedade')
       cy.get(locDashboardProducao.cardProducao).should(($el) => {
         expect($el).to.contain.text(seedTest.variedadeProducao)
         expect($el).to.contain.text(seedTest.sacaProducao)
       })
-      // Alterar visibilidade para talhao
+      cy.log('Alterar visibilidade para talhao')
       cy.get(locDashboardProducao.toggleCardProducao).contains('Talhão').click()
-      // Validar dados do card de Produção por talhao
+      cy.log('Validar dados do card de Produção por talhao')
       cy.get(locDashboardProducao.cardProducao).should(($el) => {
         expect($el).to.contain.text(seedTest.talhaoProducao)
         expect($el).to.contain.text(seedTest.fazenda)
@@ -76,14 +76,15 @@ class DashboardProducaoUtils {
     }
 
     if (seedTest.varidadeProdutividade) {
-      // Validar dados do card de Produtividade por variedade
+      cy.log('Validar dados do card de Produtividade por variedade')
       cy.get(locDashboardProducao.cardProdutividade).should(($el) => {
         expect($el).to.contain.text(seedTest.varidadeProdutividade)
         expect($el).to.contain.text(seedTest.sacaProdutividade)
       })
-      // Alterar visibilidade para talhao
+      cy.log('Alterar visibilidade para talhao')
       cy.get(locDashboardProducao.toggleCardProdutividade).contains('Talhão').click()
-      // Validar dados do card de Produtividade por variedade
+
+      cy.log('Validar dados do card de Produtividade por variedade')
       cy.get(locDashboardProducao.cardProdutividade).should(($el) => {
         expect($el).to.contain.text(seedTest.talhaoProdutividade)
         expect($el).to.contain.text(seedTest.fazenda)
@@ -91,138 +92,152 @@ class DashboardProducaoUtils {
       })
     }
 
-    // Validar card de armazenagem interna
+    cy.log('Validar card de armazenagem interna')
     cy.get(locDashboardProducao.cardArmazenagemInterna).should(($el) => {
       expect($el).to.contain.text(seedTest.totalArmazenagemInterna)
       expect($el).to.contain.text(seedTest.sacaArmazenagemInterna)
     })
 
-    // Validar card de armazenagem externa
+    cy.log('Validar card de armazenagem externa')
     cy.get(locDashboardProducao.cardArmazenagemExterna).should(($el) => {
       expect($el).to.contain.text(seedTest.totalArmazenagemExterna)
       expect($el).to.contain.text(seedTest.sacaArmazenagemExterna)
     })
 
-    // Validar card de total recebido
+    cy.log('Validar card de total recebido')
     cy.get(locDashboardProducao.cardTotalRecebido).should(($el) => {
       expect($el).to.contain.text(seedTest.totalRecebido)
     })
 
-    // Validar card de total a receber
+    cy.log('Validar card de total a receber')
     cy.get(locDashboardProducao.cardTotalReceber).should(($el) => {
       expect($el).to.contain.text(seedTest.totalRecebido)
     })
 
     if (seedTest.entregaFixacoes) {
-      // Validar dados da tabela Entrega e Fixacoes
+      cy.log('Validar dados da tabela Entrega e Fixacoes')
       const entregaFixacoes = seedTest.entregaFixacoes
-      entregaFixacoes.forEach((dadoTabela, i) => {
-        cy.get(locDashboardProducao.spanCliente).should('have.length', entregaFixacoes.length)
+      cy.get(locDashboardProducao.spanCliente).should('have.length', entregaFixacoes.length)
 
-        // cliente
-        cy.get(locDashboardProducao.spanCliente).eq(i).should(($el) => {
-          expect($el).to.contain.text(dadoTabela.cliente)
-        })
+      entregaFixacoes.forEach((dadoTabela) => {
 
-        // entregue
-        cy.get(locDashboardProducao.spanEntregue).eq(i).should(($el) => {
-          expect($el).to.contain.text(dadoTabela.entregue)
-        })
+        cy.get(locDashboardProducao.spanCliente).contains(dadoTabela.cliente)
+          .parents('.el-tree-node').within(() => {
 
-        // arrendamentos
-        cy.get(locDashboardProducao.spanArrendamentos).eq(i).should(($el) => {
-          expect($el).to.contain.text(dadoTabela.arrendamentos)
-        })
+            cy.log('Validar cliente')
+            cy.get(locDashboardProducao.spanCliente).should(($el) => {
+              expect($el).to.contain.text(dadoTabela.cliente)
+            })
 
-        // contratos fixados
-        cy.get(locDashboardProducao.spanContratosFixados).eq(i).should(($el) => {
-          expect($el).to.contain.text(dadoTabela.contratosFixados)
-        })
+            cy.log('Validar entregue')
+            cy.get(locDashboardProducao.spanEntregue).should(($el) => {
+              expect($el).to.contain.text(dadoTabela.entregue)
+            })
 
-        // fixacoes
-        cy.get(locDashboardProducao.spanFixacoes).eq(i).should(($el) => {
-          expect($el).to.contain.text(dadoTabela.fixacoes)
-        })
+            cy.log('Validar arrendamentos')
+            cy.get(locDashboardProducao.spanArrendamentos).should(($el) => {
+              expect($el).to.contain.text(dadoTabela.arrendamentos)
+            })
 
-        // transferencias
-        cy.get(locDashboardProducao.spanTransferencias).eq(i).should(($el) => {
-          expect($el).to.contain.text(dadoTabela.transferencias)
-        })
+            cy.log('Validar contratos fixados')
+            cy.get(locDashboardProducao.spanContratosFixados).should(($el) => {
+              expect($el).to.contain.text(dadoTabela.contratosFixados)
+            })
 
-        // saldo
-        cy.get(locDashboardProducao.spanSaldo).eq(i).should(($el) => {
-          expect($el).to.contain.text(dadoTabela.saldo)
-        })
+            cy.log('Validar fixacoes')
+            cy.get(locDashboardProducao.spanFixacoes).should(($el) => {
+              expect($el).to.contain.text(dadoTabela.fixacoes)
+            })
+
+            cy.log('Validar transferencias')
+            cy.get(locDashboardProducao.spanTransferencias).should(($el) => {
+              expect($el).to.contain.text(dadoTabela.transferencias)
+            })
+
+            cy.log('Validar saldo')
+            cy.get(locDashboardProducao.spanSaldo).should(($el) => {
+              expect($el).to.contain.text(dadoTabela.saldo)
+            })
+          })
       })
     }
 
     if (seedTest.contratosEntregasFixacoes) {
-      // Validar contratos na tabela Entregas e Fixações
+      cy.log('Validar contratos na tabela Entregas e Fixações')
+
       const contratosEntregasFixacoes = seedTest.contratosEntregasFixacoes
+
       contratosEntregasFixacoes.forEach((contrato, i) => {
+
         cy.wait(2000)
 
-        // Expandir lista de entregas
         if (contrato.expandir) {
-          cy.get(locDashboardProducao.buttonCollapse).eq(i).click()
+          cy.log('Expandir lista de entregas')
+
+          cy.get('[data-cy=lista-entregas] .el-tree-node__content')
+            .contains(contrato.clientePrincipal)
+            .parents('.el-tree-node__content').within(() => {
+              cy.get('.el-tree-node__expand-icon.siagri-icon-arrow-right-xsmall').click()
+
+              cy.wait(3000)
+            })
         }
 
-        cy.wait(2000)
+        cy.log('Validar itens da tabela Entregas e Fixações')
+        cy.get('[data-cy=lista-entregas] .el-tree-node__content').contains(contrato.clientePrincipal)
+          .parents('.el-tree-node.is-expanded.is-focusable')
+          .children('.el-tree-node__children').contains(contrato.cliente)
+          .parents('.custom-tree-node').within(() => {
 
-        cy.get(locDashboardProducao.subTabelaEntregaFixacao).within(() => {
-          if (contrato.contador) {
-            cy.get(locDashboardProducao.spanCliente).should('have.length', contratosEntregasFixacoes.length)
-          }
+            cy.log('Validar cliente')
+            cy.get(locDashboardProducao.spanCliente).should(($el) => {
+              expect($el).to.contain.text(contrato.cliente)
+            })
 
-          // cliente
-          cy.get(locDashboardProducao.spanCliente).should(($el) => {
-            expect($el).to.contain.text(contrato.cliente)
+            cy.log('Validar entregue')
+            cy.get(locDashboardProducao.spanEntregue).should(($el) => {
+              expect($el).to.contain.text(contrato.entregue)
+            })
+
+            cy.log('Validar arrendamentos')
+            cy.get(locDashboardProducao.spanArrendamentos).should(($el) => {
+              expect($el).to.contain.text(contrato.arrendamentos)
+            })
+
+            cy.log('Validar contratos fixados')
+            cy.get(locDashboardProducao.spanContratosFixados).should(($el) => {
+              expect($el).to.contain.text(contrato.contratosFixados)
+            })
+
+            cy.log('Validar fixacoes')
+            cy.get(locDashboardProducao.spanFixacoes).should(($el) => {
+              expect($el).to.contain.text(contrato.fixacoes)
+            })
+
+            cy.log('Validar transferencias')
+            cy.get(locDashboardProducao.spanTransferencias).should(($el) => {
+              expect($el).to.contain.text(contrato.transferencias)
+            })
+
+            cy.log('Validar saldo')
+            cy.get(locDashboardProducao.spanSaldo).should(($el) => {
+              expect($el).to.contain.text(contrato.saldo)
+            })
           })
-
-          // entregue
-          cy.get(locDashboardProducao.spanEntregue).should(($el) => {
-            expect($el).to.contain.text(contrato.entregue)
-          })
-
-          // arrendamentos
-          cy.get(locDashboardProducao.spanArrendamentos).should(($el) => {
-            expect($el).to.contain.text(contrato.arrendamentos)
-          })
-
-          // contratos fixados
-          cy.get(locDashboardProducao.spanContratosFixados).should(($el) => {
-            expect($el).to.contain.text(contrato.contratosFixados)
-          })
-
-          // fixacoes
-          cy.get(locDashboardProducao.spanFixacoes).should(($el) => {
-            expect($el).to.contain.text(contrato.fixacoes)
-          })
-
-          // transferencias
-          cy.get(locDashboardProducao.spanTransferencias).should(($el) => {
-            expect($el).to.contain.text(contrato.transferencias)
-          })
-
-          // saldo
-          cy.get(locDashboardProducao.spanSaldo).should(($el) => {
-            expect($el).to.contain.text(contrato.saldo)
-          })
-        })
 
         if (contrato.encolherLista) {
-          // Encolher lista de entregas
+          cy.log('Encolher lista de entregas')
           cy.get(locDashboardProducao.buttonExpanded).click({ force: true })
         }
       })
     }
 
-    // Saldo total a fixar
+    cy.log('Saldo total a fixar')
     cy.get(locDashboardProducao.spanSaldoTotalFixar).should(($el) => {
       expect($el).to.contain.text(seedTest.saldoTotalFixar)
     })
 
-    // Validar card de preco media de venda por cliente
+    cy.log('Validar card de preco media de venda por cliente')
     if (seedTest.precoMedioPorCliente) {
       cy.get(locDashboardProducao.cardPrecoMedioCliente).should(($el) => {
         expect($el).to.contain.text(seedTest.clientePrecoMedio)
@@ -231,7 +246,7 @@ class DashboardProducaoUtils {
       })
     }
 
-    // Validar card de preco media de venda por safra
+    cy.log('Validar card de preco media de venda por safra')
     if (seedTest.precoMedioPorSafra) {
       cy.get(locDashboardProducao.spanMediaNegociacao).should(($el) => {
         expect($el).to.contain.text(seedTest.precoMediaSafra)

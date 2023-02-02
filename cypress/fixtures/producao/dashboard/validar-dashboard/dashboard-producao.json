@@ -28,6 +28,7 @@
     {
       "contador": true,
       "expandir": true,
+      "clientePrincipal": "Cliente Teste Produção",
       "cliente": "1 - 1",
       "entregue": "0",
       "arrendamentos": "0",
@@ -37,6 +38,7 @@
       "saldo": "- 500"
     },
     {
+      "clientePrincipal": "Cliente Teste Produção",
       "cliente": "2 - 2",
       "entregue": "0",
       "arrendamentos": "0",
@@ -46,6 +48,7 @@
       "saldo": "- 500"
     },
     {
+      "clientePrincipal": "Cliente Teste Produção",
       "cliente": "0 - Sem Contrato",
       "entregue": "1.503",
       "arrendamentos": "0",
