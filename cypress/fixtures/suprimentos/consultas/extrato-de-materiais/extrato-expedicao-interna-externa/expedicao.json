@@ -100,7 +100,7 @@
     }
   },
   "qa": {
-    "data": "dataSubstituicaoT14:45:43-03:00",
+    "data": "dataSubstituicaoT17:01:41-03:00",
     "fazenda": {
       "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
       "descricao": "Fazenda Teste Producao"
@@ -178,7 +178,7 @@
       "taraVeiculo": 1500,
       "desconto": 1000
     },
-    "totalCultura": 132.67,
+    "totalCultura": 132.93,
     "totais": {
       "pesoBruto": 8960,
       "taraVeiculo": 1000,

@@ -1,100 +1,202 @@
 {
-  "data": "dataSubstituicaoT15:26:41-03:00",
-  "fazenda": {
-    "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-    "descricao": "Fazenda Teste Producao"
-  },
-  "ciclo": {
-    "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
-    "descricao": "Soja - 2021/2021",
-    "cultura": {
-      "unidadeMedida": {
-        "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-        "sigla": "Saca 60"
+  "dev": {
+    "data": "dataSubstituicaoT15:26:41-03:00",
+    "fazenda": {
+      "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
+      "descricao": "Fazenda Teste Producao"
+    },
+    "ciclo": {
+      "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+      "descricao": "Soja - 2021/2021",
+      "cultura": {
+        "unidadeMedida": {
+          "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "sigla": "Saca 60"
+        },
+        "variedades": [
+          {
+            "area": 200,
+            "id": "5f3e5c4f-fd7f-4718-9433-007cdd21ec8c",
+            "descricao": "Syn1060ap "
+          }
+        ],
+        "areaTotal": 200,
+        "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+        "descricao": "Soja"
+      }
+    },
+    "safra": {
+      "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
+      "descricao": "2021/2021"
+    },
+    "motorista": {
+      "id": "33a06a7c-9f8a-4aea-9ab4-fa944ccfa5e3",
+      "documentoPrincipal": "86201988076",
+      "descricao": "Motorista Teste Producao"
+    },
+    "transportadora": {
+      "id": "0e21161c-4656-4e26-85fe-7e4c5326a540",
+      "documentoPrincipal": "04158743000145",
+      "descricao": "Transportadora Teste Producao"
+    },
+    "veiculo": {
+      "id": "73aea114-e7e5-4cdf-bd71-730c4c6d4bf1",
+      "placa": "ABC1234"
+    },
+    "unidadeArmazenamentoOrigemTerceiro": {
+      "id": "ef402791-c035-46cf-96c6-a2494042b237",
+      "documentoPrincipal": "67824142000144",
+      "descricao": "Cliente Teste Produção",
+      "pais": {
+        "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+        "descricao": "Brasil"
       },
-      "variedades": [
-        {
-          "area": 200,
-          "id": "5f3e5c4f-fd7f-4718-9433-007cdd21ec8c",
-          "descricao": "Syn1060ap "
-        }
-      ],
-      "areaTotal": 200,
+      "municipio": {
+        "id": "f182eeff-7b30-412a-8389-e043cdb5920a",
+        "descricao": "Goiânia",
+        "codigo": 5208707
+      },
+      "estado": {
+        "id": "c9fb9b54-9760-42e8-b0d7-2934535a505a",
+        "descricao": "Goiás",
+        "sigla": "GO"
+      }
+    },
+    "unidadeArmazenamentoDestinoProprio": {
+      "id": "a196162f-4fdf-4f94-9712-59d209a04347",
+      "descricao": "U.A. Teste Estoque"
+    },
+    "ticket": 0,
+    "pesagemInterna": {
+      "pesoBruto": 17000,
+      "taraVeiculo": 1000,
+      "desconto": 0
+    },
+    "pesagemExterna": {
+      "numeroRomaneio": 1234,
+      "pesoBruto": 17000,
+      "taraVeiculo": 1000,
+      "desconto": 1000
+    },
+    "totalCultura": 250.5,
+    "totais": {
+      "pesoBruto": 16000,
+      "taraVeiculo": 1000,
+      "subTotal": 15000,
+      "desconto": 1000
+    },
+    "cultura": {
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "Saca 60",
       "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
       "descricao": "Soja"
+    },
+    "material": {
+      "tipoMaterial": "Silo",
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "sc60",
+      "id": "e1a2ab6b-fea2-40bb-b786-37e87b53c04c",
+      "descricao": "Soja em Grãos"
     }
   },
-  "safra": {
-    "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
-    "descricao": "2021/2021"
-  },
-  "motorista": {
-    "id": "33a06a7c-9f8a-4aea-9ab4-fa944ccfa5e3",
-    "documentoPrincipal": "86201988076",
-    "descricao": "Motorista Teste Producao"
-  },
-  "transportadora": {
-    "id": "0e21161c-4656-4e26-85fe-7e4c5326a540",
-    "documentoPrincipal": "04158743000145",
-    "descricao": "Transportadora Teste Producao"
-  },
-  "veiculo": {
-    "id": "73aea114-e7e5-4cdf-bd71-730c4c6d4bf1",
-    "placa": "ABC1234"
-  },
-  "unidadeArmazenamentoOrigemTerceiro": {
-    "id": "ef402791-c035-46cf-96c6-a2494042b237",
-    "documentoPrincipal": "67824142000144",
-    "descricao": "Cliente Teste Produção",
-    "pais": {
-      "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
-      "descricao": "Brasil"
+  "qa": {
+    "data": "dataSubstituicaoT15:26:41-03:00",
+    "fazenda": {
+      "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+      "descricao": "Fazenda Teste Producao"
     },
-    "municipio": {
-      "id": "f182eeff-7b30-412a-8389-e043cdb5920a",
-      "descricao": "Goiânia",
-      "codigo": 5208707
+    "ciclo": {
+      "id": "4781c56a-86e5-4d53-b1ce-364f03751c1b",
+      "descricao": "Soja - 2021/2021",
+      "cultura": {
+        "unidadeMedida": {
+          "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "sigla": "Saca 60"
+        },
+        "variedades": [
+          {
+            "area": 200,
+            "id": "d8e10120-c32a-473e-aff7-416d774b2be6",
+            "descricao": "Syn1060ap "
+          }
+        ],
+        "areaTotal": 200,
+        "id": "a838c1f8-ed23-4f42-8b59-6dc7770954c0",
+        "descricao": "Soja"
+      }
     },
-    "estado": {
-      "id": "c9fb9b54-9760-42e8-b0d7-2934535a505a",
-      "descricao": "Goiás",
-      "sigla": "GO"
+    "safra": {
+      "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+      "descricao": "2021/2021"
+    },
+    "motorista": {
+      "id": "eed1013d-c149-4b39-b613-30270e9af91c",
+      "documentoPrincipal": "86201988076",
+      "descricao": "Motorista Teste Producao"
+    },
+    "transportadora": {
+      "id": "f62a58db-0e73-479d-aa15-1a6ca68fa292",
+      "documentoPrincipal": "04158743000145",
+      "descricao": "Transportadora Teste Producao"
+    },
+    "veiculo": {
+      "id": "6ff20f68-068e-4b16-820b-f29794b5bea0",
+      "placa": "ABC1234"
+    },
+    "unidadeArmazenamentoOrigemTerceiro": {
+      "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+      "documentoPrincipal": "67824142000144",
+      "descricao": "Cliente Teste Produção",
+      "pais": {
+        "id": "0698a30c-cba4-4161-95b9-2ce4ca9efbda",
+        "descricao": "Brasil"
+      },
+      "municipio": {
+        "id": "b0a2fabe-d8d4-463b-8f0f-e1cb62c23ed8",
+        "descricao": "Goiânia",
+        "codigo": 5208707
+      },
+      "estado": {
+        "id": "5b6cc773-f040-433f-87de-2b4a1b17099e",
+        "descricao": "Goiás",
+        "sigla": "GO"
+      }
+    },
+    "unidadeArmazenamentoDestinoProprio": {
+      "id": "78f14cdb-29f3-4916-a804-b3ca5df13416",
+      "descricao": "U.A. Teste Estoque"
+    },
+    "ticket": 0,
+    "pesagemInterna": {
+      "pesoBruto": 17000,
+      "taraVeiculo": 1000,
+      "desconto": 0
+    },
+    "pesagemExterna": {
+      "numeroRomaneio": 1234,
+      "pesoBruto": 17000,
+      "taraVeiculo": 1000,
+      "desconto": 1000
+    },
+    "totalCultura": 250.5,
+    "totais": {
+      "pesoBruto": 16000,
+      "taraVeiculo": 1000,
+      "subTotal": 15000,
+      "desconto": 1000
+    },
+    "cultura": {
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "Saca 60",
+      "id": "a838c1f8-ed23-4f42-8b59-6dc7770954c0",
+      "descricao": "Soja"
+    },
+    "material": {
+      "tipoMaterial": "Silo",
+      "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+      "unidadeMedidaSigla": "sc60",
+      "id": "1b064da5-9c64-4577-8525-a72e39369c61",
+      "descricao": "Soja em Grãos"
     }
-  },
-  "unidadeArmazenamentoDestinoProprio": {
-    "id": "a196162f-4fdf-4f94-9712-59d209a04347",
-    "descricao": "U.A. Teste Estoque"
-  },
-  "ticket": 0,
-  "pesagemInterna": {
-    "pesoBruto": 17000,
-    "taraVeiculo": 1000,
-    "desconto": 0
-  },
-  "pesagemExterna": {
-    "numeroRomaneio": 1234,
-    "pesoBruto": 17000,
-    "taraVeiculo": 1000,
-    "desconto": 1000
-  },
-  "totalCultura": 250.5,
-  "totais": {
-    "pesoBruto": 16000,
-    "taraVeiculo": 1000,
-    "subTotal": 15000,
-    "desconto": 1000
-  },
-  "cultura": {
-    "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-    "unidadeMedidaSigla": "Saca 60",
-    "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
-    "descricao": "Soja"
-  },
-  "material": {
-    "tipoMaterial": "Silo",
-    "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-    "unidadeMedidaSigla": "sc60",
-    "id": "e1a2ab6b-fea2-40bb-b786-37e87b53c04c",
-    "descricao": "Soja em Grãos"
   }
 }
