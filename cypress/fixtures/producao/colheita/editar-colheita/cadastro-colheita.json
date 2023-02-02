@@ -97,6 +97,100 @@
     }
   },
   "qa": {
-    "QA": "Aguardando resolução do TODO"
+    "talhaoVariedades": [
+      {
+        "talhao": {
+          "id": "b2c42afa-e6c3-4399-86d9-05f087232679",
+          "descricao": "Talhão Soja"
+        },
+        "ciclo": {
+          "id": "4781c56a-86e5-4d53-b1ce-364f03751c1b",
+          "descricao": "Soja - 2021/2021"
+        },
+        "cultura": {
+          "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "unidadeMedidaSigla": "Saca 60",
+          "id": "a838c1f8-ed23-4f42-8b59-6dc7770954c0",
+          "descricao": "Soja"
+        },
+        "variedade": {
+          "id": "d8e10120-c32a-473e-aff7-416d774b2be6",
+          "descricao": "Syn1060ap "
+        },
+        "percentualCarga": 100,
+        "totalHectaresVariedade": 200,
+        "totalHectaresCultura": 200,
+        "custoEstimadoCultura": 0,
+        "material": {
+          "unidadeMedidaId": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+          "unidadeMedidaSigla": "sc60",
+          "id": "1b064da5-9c64-4577-8525-a72e39369c61",
+          "descricao": "Soja em Grãos",
+          "tipoMaterial": "Silo"
+        }
+      }
+    ],
+    "unidadeArmazenamentoDestinoTerceiro": {
+      "partilhas": [],
+      "documentoPrincipal": "67824142000144",
+      "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+      "descricao": "Cliente Teste Produção",
+      "municipio": {
+        "id": "b0a2fabe-d8d4-463b-8f0f-e1cb62c23ed8",
+        "descricao": "Goiânia",
+        "codigo": 5208707
+      },
+      "estado": {
+        "id": "5b6cc773-f040-433f-87de-2b4a1b17099e",
+        "descricao": "Goiás",
+        "sigla": "GO"
+      },
+      "pais": {
+        "id": "0698a30c-cba4-4161-95b9-2ce4ca9efbda",
+        "descricao": "Brasil"
+      }
+    },
+    "transportadora": {
+      "id": "f62a58db-0e73-479d-aa15-1a6ca68fa292",
+      "documentoPrincipal": "04158743000145",
+      "descricao": "Transportadora Teste Producao"
+    },
+    "ticket": 0,
+    "data": "dataSubstituicaoT11:42:54-03:00",
+    "fazenda": {
+      "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+      "descricao": "Fazenda Teste Producao"
+    },
+    "safra": {
+      "id": "f718a4cb-2478-49a8-97a4-d43ac98d8096",
+      "descricao": "2021/2021"
+    },
+    "motorista": {
+      "id": "eed1013d-c149-4b39-b613-30270e9af91c",
+      "documentoPrincipal": "86201988076",
+      "descricao": "Motorista Teste Producao"
+    },
+    "veiculo": {
+      "id": "6ff20f68-068e-4b16-820b-f29794b5bea0",
+      "placa": "ABC1234"
+    },
+    "pesagemInterna": {
+      "pesoBruto": 32000,
+      "taraVeiculo": 1000,
+      "desconto": 1000
+    },
+    "pesagemExterna": {
+      "numeroRomaneio": 123456,
+      "pesoBruto": 320000,
+      "taraVeiculo": 1000,
+      "desconto": 1000
+    },
+    "totalCultura": 5300,
+    "totais": {
+      "pesoBruto": 319000,
+      "taraVeiculo": 1000,
+      "subTotal": 318000,
+      "desconto": 1000
+    }
   }
 }
