@@ -114,7 +114,7 @@
       "descricao": "Transportadora Teste Producao"
     },
     "ticket": 0,
-    "data": "dataSubstituicaoT17:11:47-03:00",
+    "data": "dataSubstituicaoT17:16:12-03:00",
     "fazenda": {
       "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
       "descricao": "Fazenda Teste Producao"
@@ -136,8 +136,12 @@
       "id": "f41b8f67-c06b-4e53-a519-5124f59f1ecc",
       "descricao": "U.A. Silo"
     },
-    "pesagemInterna": { "pesoBruto": 10000, "taraVeiculo": 0, "desconto": 0 },
-    "totalCultura": 166.67,
+    "pesagemInterna": {
+      "pesoBruto": 10000,
+      "taraVeiculo": 0,
+      "desconto": 0
+    },
+    "totalCultura": 167,
     "totais": {
       "pesoBruto": 10000,
       "taraVeiculo": 0,
