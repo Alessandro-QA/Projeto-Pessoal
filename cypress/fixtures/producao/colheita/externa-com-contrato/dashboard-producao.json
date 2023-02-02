@@ -19,7 +19,7 @@
   "sacaArmazenagemExterna": "Saca 60",
   "totalRecebido": "0,00",
   "totalAReceber": "0,00",
-  
+
   "entregaFixacoes": [
     {
       "cliente": "Cliente Teste Produção",
@@ -34,6 +34,7 @@
   "contratosEntregasFixacoes": [
     {
       "expandir": true,
+      "clientePrincipal": "Cliente Teste Produção",
       "cliente": "1 - 1",
       "entregue": "100",
       "arrendamentos": "0",

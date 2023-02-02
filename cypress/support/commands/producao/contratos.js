@@ -2,7 +2,7 @@
 
 import locDashboardContrato from '../../locators/producao/contratos/locators-dashboard-contrato.js'
 
-class ContratoUtils {
+class Contrato {
   /**
    * Método para validar a dashboard de contrato
    * @param {} seedTest
@@ -13,7 +13,7 @@ class ContratoUtils {
     const locatorTituloPagina = locDashboardContrato.titulo
     const tituloPagina = 'Contratos'
 
-    // Navegar para dashboard contrato
+    cy.log('Navegar para dashboard contrato')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     cy.intercept('GET', '/api/producao-agricola/v1/contratos/List?**')
@@ -22,61 +22,63 @@ class ContratoUtils {
       .as('contratos')
     cy.intercept('GET', `${Cypress.env('daasUrl')}/api/cultura/v1/cultura/icone?**`)
       .as('iconesCultura')
-    cy.intercept('GET', 'https://api.aliare.digital/user/v1.0-dev/user/applications')
-      .as('userApplications')
 
-    // Selecionar fazenda
+    cy.log('Selecionar fazenda')
     cy.getVisible(locDashboardContrato.selectFazenda).click()
-      .contains(seedTest.fazenda).click()
+      .get(locDashboardContrato.listaFazenda).contains(seedTest.fazenda).click()
 
-    // Selecionar safra
+    cy.log('Selecionar safra')
     cy.getVisible(locDashboardContrato.selectSafra).click()
-      .contains(seedTest.safra).click()
+      .get(locDashboardContrato.listaSafra).contains(seedTest.safra).click()
 
     cy.wait('@listContratos')
     cy.wait('@contratos')
     cy.wait('@iconesCultura')
-    cy.wait('@userApplications')
 
-    // Validar cards de contratos
+    cy.log('Validar cards de contratos')
     const cardsContratos = seedTest.cardsContratos
+
     cardsContratos.forEach((dadosCard, i) => {
-      // Validar card contrato
-      cy.get(locDashboardContrato.spanCultura).eq(i).should(($el) => {
-        expect($el).to.contain.text(dadosCard.cardContrato)
-      })
+      cy.get(locDashboardContrato.spanNumeroContrato).contains(dadosCard.numeroContrato)
+        .parents(locDashboardContrato.cardContrato).within(() => {
 
-      // Validar status da entrega
-      cy.get(locDashboardContrato.spanStatusContrato).eq(i).should(($el) => {
-        expect($el).to.contain.text(dadosCard.statusEntrega)
-      })
+          cy.log('Validar card contrato')
+          cy.get(locDashboardContrato.spanCultura).should(($el) => {
+            expect($el).to.contain.text(dadosCard.cardContrato)
+          })
 
-      // Validar numero do contrato
-      cy.get(locDashboardContrato.spanNumeroContrato).should(($el) => {
-        expect($el).to.contain.text(dadosCard.numeroContrato)
-      })
+          cy.log('Validar status da entrega')
+          cy.get(locDashboardContrato.spanStatusContrato).should(($el) => {
+            expect($el).to.contain.text(dadosCard.statusEntrega)
+          })
 
-      // Validar status de fixar
-      cy.get(locDashboardContrato.spanFormacaoValor).eq(i).should(($el) => {
-        expect($el).to.contain.text(dadosCard.informacaoFixar)
-      })
+          cy.log('Validar numero do contrato')
+          cy.get(locDashboardContrato.spanNumeroContrato).should(($el) => {
+            expect($el).to.contain.text(dadosCard.numeroContrato)
+          })
 
-      // Validar valor recebido
-      cy.get(locDashboardContrato.spanValorRecebido).eq(i).should(($el) => {
-        expect($el).to.contain.text(dadosCard.valorRecebido)
-      })
+          cy.log('Validar status de fixar')
+          cy.get(locDashboardContrato.spanFormacaoValor).should(($el) => {
+            expect($el).to.contain.text(dadosCard.informacaoFixar)
+          })
 
-      // Validar quantidade entregue
-      cy.get(locDashboardContrato.spanQuantidadeEntregue).eq(i).should(($el) => {
-        expect($el).to.contain.text(dadosCard.quantidadeEntregue)
-      })
+          cy.log('Validar valor recebido')
+          cy.get(locDashboardContrato.spanValorRecebido).should(($el) => {
+            expect($el).to.contain.text(dadosCard.valorRecebido)
+          })
 
-      // Valida o tipo de negociação
-      cy.get(locDashboardContrato.spanNegociacao).eq(i).should(($el) => {
-        expect($el).to.contain.text(dadosCard.tipoNegociacao)
-      })
+          cy.log('Validar quantidade entregue')
+          cy.get(locDashboardContrato.spanQuantidadeEntregue).should(($el) => {
+            expect($el).to.contain.text(dadosCard.quantidadeEntregue)
+          })
+
+          cy.log('Validar o tipo de negociação')
+          cy.get(locDashboardContrato.spanNegociacao).should(($el) => {
+            expect($el).to.contain.text(dadosCard.tipoNegociacao)
+          })
+        })
     })
   }
 }
 
-export default new ContratoUtils()
+export default new Contrato()

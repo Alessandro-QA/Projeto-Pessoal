@@ -10,18 +10,13 @@ class Colheita {
    * @param {} seedTest
    * */
   cadastrarEditar(seedTest) {
-    cy.intercept('POST', `${Cypress.env('daasUrl')}/api/unidade-medida/v1/ConversorUnidadeMedida/ConverterUnidade`)
-      .as('conversor')
-    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/cultura/v1/cultura/icone?**`)
-      .as('iconeCultura')
-    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/list?**`)
-      .as('listCiclos')
-    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/**')
-      .as('detalhes')
-    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/List?**')
-      .as('listColheitas')
-    cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**')
-      .as('listUnidadeArmazenamento')
+    cy.intercept('POST', `${Cypress.env('daasUrl')}/api/unidade-medida/v1/ConversorUnidadeMedida/ConverterUnidade`).as('conversor')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/cultura/v1/cultura/icone?**`).as('iconeCultura')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/list?**`).as('listCiclos')
+    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/**').as('detalhes')
+    cy.intercept('GET', '/api/producao-agricola/v1/colheitas/List?**').as('listColheitas')
+    cy.intercept('GET', '/api/fazenda/v1/UnidadeArmazenamento/List?**').as('listUnidadeArmazenamento')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/atividades-agricolas/v1/Planejamento/Safra/Safras/**`).as('getSafra')
 
     if (seedTest.editar) {
       const url = '/producao/colheita'
@@ -82,7 +77,7 @@ class Colheita {
     cy.getVisible(locCadastroColheita.selectPlacaVeiculo).click()
       .get(locCadastroColheita.selecionarPlacaVeiculo).contains(seedTest.placaVeiculo).click()
 
-    cy.log('selecionar o motorias para o transporte da colheita')
+    cy.log('selecionar motorista')
     if (seedTest.guardarMotorista) {
       cy.log('Digitar nome motorista')
       cy.getVisible(locCadastroColheita.spanGuardarMotorista).click()
@@ -95,13 +90,15 @@ class Colheita {
         .get(locCadastroColheita.selecionarMotorista).contains(seedTest.motorista).click()
     }
 
-    cy.log('selecionar a fazenda onde foi realizada colheita')
+    cy.log('selecionar a fazenda')
     cy.getVisible(locCadastroColheita.selectFazenda).click()
       .get(locCadastroColheita.selecionarFazenda).contains(seedTest.fazenda).click()
 
+    cy.wait('@getSafra')
+
     cy.log('selecionar a safra')
     cy.getVisible(locCadastroColheita.selectSafra).click()
-      .get(locCadastroColheita.selecionarSafra).contains(seedTest.safra)
+      .get(locCadastroColheita.selecionarSafra).contains(seedTest.safra).click()
 
     if (seedTest.talhoes) {
       const talhoes = seedTest.talhoes

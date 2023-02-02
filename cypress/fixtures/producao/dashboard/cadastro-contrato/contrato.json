@@ -21,22 +21,6 @@
         },
         "ciclos": [
           {
-            "id": "83e1564b-66bd-47b7-b1ab-93735231d9ff",
-            "cultura": {
-              "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
-              "nomeNormalizado": "Soja"
-            },
-            "ciclo": {
-              "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
-              "nomeNormalizado": "Soja - 2021/2021"
-            },
-            "unidadeMedida": {
-              "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-              "nomeNormalizado": "Saca 60"
-            },
-            "valorExpectativa": 10000
-          },
-          {
             "id": "f6bdab42-1e1f-4fdc-9ec0-d74aab770d74",
             "cultura": {
               "id": "842c660c-a54c-4864-a6a3-bd3c6a6725f1",
@@ -51,6 +35,22 @@
               "nomeNormalizado": "Saca 60"
             },
             "valorExpectativa": 100000
+          },
+          {
+            "id": "83e1564b-66bd-47b7-b1ab-93735231d9ff",
+            "cultura": {
+              "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+              "nomeNormalizado": "Soja"
+            },
+            "ciclo": {
+              "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+              "nomeNormalizado": "Soja - 2021/2021"
+            },
+            "unidadeMedida": {
+              "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+              "nomeNormalizado": "Saca 60"
+            },
+            "valorExpectativa": 10000
           }
         ],
         "statusPlanejamentoSafra": 1,
@@ -141,22 +141,6 @@
         },
         "ciclos": [
           {
-            "id": "83e1564b-66bd-47b7-b1ab-93735231d9ff",
-            "cultura": {
-              "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
-              "nomeNormalizado": "Soja"
-            },
-            "ciclo": {
-              "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
-              "nomeNormalizado": "Soja - 2021/2021"
-            },
-            "unidadeMedida": {
-              "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-              "nomeNormalizado": "Saca 60"
-            },
-            "valorExpectativa": 10000
-          },
-          {
             "id": "f6bdab42-1e1f-4fdc-9ec0-d74aab770d74",
             "cultura": {
               "id": "842c660c-a54c-4864-a6a3-bd3c6a6725f1",
@@ -171,6 +155,22 @@
               "nomeNormalizado": "Saca 60"
             },
             "valorExpectativa": 100000
+          },
+          {
+            "id": "83e1564b-66bd-47b7-b1ab-93735231d9ff",
+            "cultura": {
+              "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+              "nomeNormalizado": "Soja"
+            },
+            "ciclo": {
+              "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+              "nomeNormalizado": "Soja - 2021/2021"
+            },
+            "unidadeMedida": {
+              "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+              "nomeNormalizado": "Saca 60"
+            },
+            "valorExpectativa": 10000
           }
         ],
         "statusPlanejamentoSafra": 1,
@@ -262,22 +262,6 @@
         },
         "ciclos": [
           {
-            "id": "83e1564b-66bd-47b7-b1ab-93735231d9ff",
-            "cultura": {
-              "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
-              "nomeNormalizado": "Soja"
-            },
-            "ciclo": {
-              "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
-              "nomeNormalizado": "Soja - 2021/2021"
-            },
-            "unidadeMedida": {
-              "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
-              "nomeNormalizado": "Saca 60"
-            },
-            "valorExpectativa": 10000
-          },
-          {
             "id": "f6bdab42-1e1f-4fdc-9ec0-d74aab770d74",
             "cultura": {
               "id": "842c660c-a54c-4864-a6a3-bd3c6a6725f1",
@@ -292,6 +276,22 @@
               "nomeNormalizado": "Saca 60"
             },
             "valorExpectativa": 100000
+          },
+          {
+            "id": "83e1564b-66bd-47b7-b1ab-93735231d9ff",
+            "cultura": {
+              "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+              "nomeNormalizado": "Soja"
+            },
+            "ciclo": {
+              "id": "3a6e043f-2d91-48ad-b0cc-b1c52604a563",
+              "nomeNormalizado": "Soja - 2021/2021"
+            },
+            "unidadeMedida": {
+              "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+              "nomeNormalizado": "Saca 60"
+            },
+            "valorExpectativa": 10000
           }
         ],
         "statusPlanejamentoSafra": 1,
@@ -360,7 +360,7 @@
         "dataVencimento": null
       },
       "anexos": []
-    }    
+    }
   },
   "qa": {
     "contrato1": {
@@ -604,6 +604,7 @@
       "anexos": []
     },
     "contrato3": {
+      "id": "30531537-b5b8-44f7-8918-b9a87ff23ad1",
       "descricao": "3",
       "dataContrato": "dataSubstituicaoT00:00:00-03:00",
       "dataValidade": "2026-07-19T23:59:59-03:00",

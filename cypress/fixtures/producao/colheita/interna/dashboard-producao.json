@@ -34,6 +34,7 @@
   "contratosEntregasFixacoes": [
     {
       "expandir": true,
+      "clientePrincipal": "U.A. Silo",
       "cliente": "0 - Sem Contrato",
       "entregue": "150",
       "arrendamentos": "0",
