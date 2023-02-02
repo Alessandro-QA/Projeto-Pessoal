@@ -34,6 +34,7 @@ const locators = {
     inputInscricaoEstadual: '[data-cy=card-inscricao-estadual] [data-cy=input-inscricao-estadual] input',
     inputDescricaoIe: '[data-cy=card-inscricao-estadual] [data-cy=input-nome-inscricao-estadual] input',
     inputCepIe: '[data-cy=card-inscricao-estadual] [data-cy="input-cep"] input',
+    selectPais: '[data-cy=card-inscricao-estadual] [data-cy=select-pais]',
     selectEstadoIe: '[data-cy=card-inscricao-estadual] [data-cy=select-estado]',
     selectMunicipioIe: '[data-cy=card-inscricao-estadual] [data-cy=select-municipio]',
     inputBairroIe: '[data-cy=card-inscricao-estadual] [data-cy=input-bairro] input',

@@ -77,6 +77,10 @@ class Empresa {
         cy.getVisible(locEmpresa.cadastroEmpresa.inputCepIe)
           .type(seedTestEmpresa.cepIe)
 
+        cy.log('Preencher pais')
+        cy.get(locEmpresa.cadastroEmpresa.selectPais)
+          .click().contains(seedTestEmpresa.pais).click()
+
         cy.log('Preencher estado')
         cy.get(locEmpresa.cadastroEmpresa.selectEstadoIe)
           .click().contains(seedTestEmpresa.estadoIe).click()
@@ -120,6 +124,10 @@ class Empresa {
     cy.log('Preencher cep')
     cy.getVisible(locEmpresa.cadastroEmpresa.cep)
       .type(seedTestEmpresa.cep)
+
+    cy.log('Preencher pais')
+    cy.get(locEmpresa.cadastroEmpresa.pais).first()
+      .click().contains(seedTestEmpresa.pais).click()
 
     cy.log('Preencher estado')
     cy.get(locEmpresa.cadastroEmpresa.estado)

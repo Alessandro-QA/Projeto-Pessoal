@@ -29,7 +29,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
   describe('Livro Caixa', { tags: '@livroCaixa' }, () => {
     context('Extrato do Livro Caixa', () => {
       context('Filtragem', () => {
-        it('Cadastrar documentos por API', function () {
+        it('Cadastrar Lançamentos por API', function () {
           Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', lancamento.entradaDedutivel1, 'login_cenarios')
           Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', lancamento.entradaDedutivel2, 'login_cenarios')
           Utils.requestApi('POST', '/api/financeiro/v1/LivroCaixa', lancamento.entradaDedutivel3, 'login_cenarios')
@@ -50,15 +50,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
           LivroCaixa.validarExtrato(seedTestLivroCaixa.filtroAno)
         })
 
-        // TODO: Aguardando resolução do bug #46609
-        it.skip('Deve filtrar por todos (Ativo e Inativo)', function () {
+        it('Deve filtrar por todos (Ativo e Inativo)', function () {
           cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtroTodos)
 
-          // Inativar lancamento no livro caixa
+          cy.log('Inativar lancamento no livro caixa')
           LivroCaixa.inativarLancamento(seedTestLivroCaixa.filtroStatus)
 
-          // Validar detalhes do extrato
+          cy.log('Validar detalhes do extrato')
           LivroCaixa.validarExtrato(seedTestLivroCaixa.filtroStatus)
         })
 
