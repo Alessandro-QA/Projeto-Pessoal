@@ -15,7 +15,7 @@
           "valor": "545612"
         }
       },
-      "data": "2022-04-01T14:03:08-03:00",
+      "data": "2023-04-01T00:00:00-03:00",
       "contaContabil": {
         "codigo": "1.01.02.02",
         "descricao": "(-) Venda p/ Entrega Futura",
@@ -57,7 +57,7 @@
           "valor": "545612"
         }
       },
-      "data": "2022-05-23T11:18:26-03:00",
+      "data": "2023-05-01T00:00:00-03:00",
       "contaContabil": {
         "codigo": "1.01.02.03",
         "descricao": "(-) Duplicatas Descontadas",
@@ -99,7 +99,7 @@
           "valor": "545612"
         }
       },
-      "data": "2022-04-01T08:45:10-03:00",
+      "data": "2023-01-01T00:00:00-03:00",
       "contaContabil": {
         "codigo": "1.01.02.03",
         "descricao": "(-) Duplicatas Descontadas",
@@ -141,7 +141,7 @@
           "valor": "545612"
         }
       },
-      "data": "2021-07-21T00:00:00-03:00",
+      "data": "2022-07-21T00:00:00-03:00",
       "contaContabil": {
         "codigo": "1.01.01.02",
         "descricao": "Bancos",
@@ -185,7 +185,7 @@
           "valor": "545612"
         }
       },
-      "data": "2022-04-01T00:00:00-03:00",
+      "data": "2023-04-01T00:00:00-03:00",
       "contaContabil": {
         "codigo": "1.01.02.02",
         "descricao": "(-) Venda p/ Entrega Futura",
@@ -227,7 +227,7 @@
           "valor": "545612"
         }
       },
-      "data": "2022-05-23T00:00:00-03:00",
+      "data": "2023-05-01T00:00:00-03:00",
       "contaContabil": {
         "codigo": "1.01.02.03",
         "descricao": "(-) Duplicatas Descontadas",
@@ -269,7 +269,7 @@
           "valor": "545612"
         }
       },
-      "data": "2022-04-01T00:00:00-03:00",
+      "data": "2023-01-01T00:00:00-03:00",
       "contaContabil": {
         "codigo": "1.01.02.03",
         "descricao": "(-) Duplicatas Descontadas",
@@ -311,7 +311,7 @@
           "valor": "545612"
         }
       },
-      "data": "2021-07-21T08:54:56-03:00",
+      "data": "2022-07-21T00:00:00-03:00",
       "contaContabil": {
         "codigo": "1.01.01.02",
         "descricao": "Bancos",

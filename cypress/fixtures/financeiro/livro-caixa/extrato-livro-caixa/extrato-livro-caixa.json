@@ -2,7 +2,7 @@
   "filtroProdutor": {
     "empresa": "Empresa Produtor - CPF",
     "produtor": "Matheus Oliveira",
-    "dataAno": 2022,
+    "dataAno": 2023,
     "valoresMes": [
       {
         "receitas": "––",
@@ -56,7 +56,7 @@
   },
   "filtroAno": {
     "empresa": "Matheus Oliveira",
-    "dataAno": "2021",
+    "dataAno": "2022",
     "valoresMes": [
       {
         "receitas": "––",
@@ -110,12 +110,12 @@
   },
   "filtroStatus": {
     "empresa": "Empresa Fornecedor - CPF",
-    "filtroDataInicio": "01/04/2022",
-    "filtroDataFim": "01/05/2022",
+    "filtroDataInicio": "01/01/2023",
+    "filtroDataFim": "01/05/2023",
     "editar": true,
     "tipoLancamento": "Entrada",
     "deducao": "Dedutível",
-    "data": "01/04/2022",
+    "data": "01/04/2023",
     "valor": "20",
     "contaContabil": "(-) Duplicatas Descontadas",
     "tipoDocumento": "Fatura",
@@ -128,19 +128,19 @@
     "filtroStatus": "Inativo",
     "valoresMes": [
       {
-        "receitas": "––",
-        "despesas": "––"
-      },
-      {
-        "receitas": "––",
-        "despesas": "––"
-      },
-      {
-        "receitas": "––",
-        "despesas": "––"
-      },
-      {
         "receitas": "R$ 200,00",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
+        "despesas": "––"
+      },
+      {
+        "receitas": "––",
         "despesas": "––"
       },
       {
