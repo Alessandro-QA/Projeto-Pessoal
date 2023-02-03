@@ -79,7 +79,7 @@
     }
   },
   "qa": {
-    "data": "dataSubstituicaoT17:16:25-03:00",
+    "data": "dataSubstituicaoT17:18:30-03:00",
     "fazenda": {
       "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
       "descricao": "Fazenda Teste Producao"
@@ -131,8 +131,12 @@
       "descricao": "U.A. Teste Estoque"
     },
     "ticket": 0,
-    "pesagemInterna": { "pesoBruto": 5000, "taraVeiculo": 0, "desconto": 0 },
-    "totalCultura": 83.33,
+    "pesagemInterna": {
+      "pesoBruto": 5000,
+      "taraVeiculo": 0,
+      "desconto": 0
+    },
+    "totalCultura": 83.5,
     "totais": {
       "pesoBruto": 5000,
       "taraVeiculo": 0,
