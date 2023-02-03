@@ -167,8 +167,7 @@ class DashboardProducaoUtils {
 
       const contratosEntregasFixacoes = seedTest.contratosEntregasFixacoes
 
-      contratosEntregasFixacoes.forEach((contrato, i) => {
-
+      contratosEntregasFixacoes.forEach((contrato) => {
         cy.wait(2000)
 
         if (contrato.expandir) {

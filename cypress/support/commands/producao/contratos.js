@@ -38,7 +38,7 @@ class Contrato {
     cy.log('Validar cards de contratos')
     const cardsContratos = seedTest.cardsContratos
 
-    cardsContratos.forEach((dadosCard, i) => {
+    cardsContratos.forEach((dadosCard) => {
       cy.get(locDashboardContrato.spanNumeroContrato).contains(dadosCard.numeroContrato)
         .parents(locDashboardContrato.cardContrato).within(() => {
 
