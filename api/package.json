@@ -1,0 +1,26 @@
+{
+  "name": "testes_api_myfarm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Testes de API do projeto MyFarm",
+  "scripts": {
+    "test:allure:dev": "cypress run --env allure=true,allureResultsPath=cypress/allure-results,allureAttachRequests=true,ambiente=dev",
+    "test:allure:qa": "cypress run --env allure=true,allureResultsPath=cypress/allure-results,allureAttachRequests=true,ambiente=qa",
+    "allure:open": "npm run allure:generate && allure open cypress/allure-report",
+    "allure:generate": "allure generate cypress/allure-results --clean -o cypress/allure-report",
+    "cypress:open": "cypress open",
+    "cypress:open:qa": "cypress open --env ambiente=qa 'cypress/integration/*.spec.js'",
+    "cypress:open:dev": "cypress open --env ambiente=dev 'cypress/integration/*.spec.js'",
+    "cypress:run:spec": "cypress run --spec 'cypress/integration/CAMINHO_DA_SPEC'",
+    "run:spec:allure-dev": "cypress run --env allure=true,allureResultsPath=cypress/allure-results,allureAttachRequests=true,ambiente=dev --spec 'cypress/integration/login/login.spec.js'",
+    "run:spec:allure-qa": "cypress run --env allure=true,allureResultsPath=cypress/allure-results,allureAttachRequests=true,ambiente=qa --spec 'cypress/integration/login/login.spec.js'",
+    "eslint": "eslint ./cypress/**",
+    "teamsReport": "cypress-msteams-reporter --verbose --report-path cypress/allure-report/__Env.buildNumber__/widgets/status-chart.json --testEnv-path cypress/allure-report/__Env.buildNumber__/widgets/environment.json --report-url __EndToEndTest.AllureUrl__"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "@testing-library/cypress": "^8.0.7",
+    "cypress": "^12.4.0",
+    "cypress-plugin-api": "^2.6.1"
+  }
+}

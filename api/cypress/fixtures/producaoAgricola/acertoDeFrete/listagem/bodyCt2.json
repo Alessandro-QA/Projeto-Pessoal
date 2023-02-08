@@ -1,0 +1,94 @@
+[
+    {
+        "id": "254f22d9-b07f-4f5d-8e0a-42ee2ec03aac",
+        "numero": 22,
+        "dataAcerto": "2022-12-09T13:51:32.022+00:00",
+        "statusAcerto": 1,
+        "motorista": {
+            "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+            "documentoPrincipal": "99292525093",
+            "descricao": "Motorista Teste API 2"
+        },
+        "veiculo": {
+            "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+            "placa": "SFD1656"
+        },
+        "tipoValorManual": 2,
+        "valorManual": 0,
+        "valorTotal": 4500,
+        "romaneios": [
+            {
+                "quantidadePesagem": 4500,
+                "id": "c37edb68-2c6f-4d92-b074-3bab822dc991",
+                "valor": 4500,
+                "ticket": 8,
+                "data": "2022-12-09T10:24:09-03:00",
+                "origem": {
+                    "id": "3b1cd3e5-ea7d-4b0b-b75a-2d0ac9a5d93b",
+                    "descricao": "U.A. Silo"
+                },
+                "destino": {
+                    "id": "de869555-55dd-4930-803d-e043c250b970",
+                    "descricao": "Cliente Teste API"
+                },
+                "motorista": {
+                    "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+                    "documentoPrincipal": "99292525093",
+                    "descricao": "Motorista Teste API 2"
+                },
+                "veiculo": {
+                    "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+                    "placa": "SFD1656"
+                },
+                "tipo": 2
+            }
+        ],
+        "despesas": []
+    },
+    {
+        "id": "a7886e4c-f250-4180-917b-b03339b54f9a",
+        "numero": 21,
+        "dataAcerto": "2022-12-09T13:49:49.582+00:00",
+        "statusAcerto": 1,
+        "motorista": {
+            "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+            "documentoPrincipal": "99292525093",
+            "descricao": "Motorista Teste API 2"
+        },
+        "veiculo": {
+            "id": "ee07a786-fed4-4909-bb42-1383c4611984",
+            "placa": "ABC4321"
+        },
+        "tipoValorManual": 2,
+        "valorManual": 0,
+        "valorTotal": 3500,
+        "romaneios": [
+            {
+                "quantidadePesagem": 3500,
+                "id": "93b21dea-dba1-4c16-9a6e-88a62d289e4d",
+                "valor": 3500,
+                "ticket": 9,
+                "data": "2022-12-09T10:24:56-03:00",
+                "origem": {
+                    "id": "de869555-55dd-4930-803d-e043c250b970",
+                    "descricao": "Cliente Teste API"
+                },
+                "destino": {
+                    "id": "aeaa79aa-9726-45dd-88bc-41efe81c45f5",
+                    "descricao": "U.A. Teste API"
+                },
+                "motorista": {
+                    "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+                    "documentoPrincipal": "99292525093",
+                    "descricao": "Motorista Teste API 2"
+                },
+                "veiculo": {
+                    "id": "ee07a786-fed4-4909-bb42-1383c4611984",
+                    "placa": "ABC4321"
+                },
+                "tipo": 2
+            }
+        ],
+        "despesas": []
+    }
+]
