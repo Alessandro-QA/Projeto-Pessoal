@@ -1,0 +1,16 @@
+{
+  "semFiltro": {
+    "page": 1,
+    "size": 20
+  },
+  "semFiltro2Resultados": {
+    "page": 1,
+    "size": 2
+  },
+  "porMotorista": {
+    "motoristaId": "93d5937c-fa3b-45e3-9964-d76a865e30b9"
+  },
+  "porPlaca": {
+    "veiculoId": "b792b57c-98d0-46e8-ba31-539478f130a9"
+  }
+}

@@ -1,0 +1,10 @@
+node_modules
+.nyc_output
+coverage
+cypress/results/*
+cypress/config-files/*
+cypress/allure-report/*
+cypress/allure-results/*
+.vscode/*
+cypress/config-files/qa.json
+cypress/config-files/dev.json

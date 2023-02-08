@@ -1,0 +1,17 @@
+{
+  "name": "performance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Teste de Performance com K6",
+  "main": "index.js",
+  "scripts": {
+    "test": "k6 run ./tests/runSuites.js",
+    "testLocal": "k6 run -o influxdb=http://localhost:8086/myk6db ./testes/runSuites.js",
+    "upGrafanaInflux": "docker-compose -f .\\k6\\docker-compose.yml up -d influxdb grafana",
+    "gerarRelatorioPerformance": "docker-compose -f .\\k6\\docker-compose.yml run k6 run /scripts/runSuites.js"
+  },
+  "author": "Gabriel Messias Ribeiro dos Santos",
+  "devDependencies": {
+    "k6": "0.0.0"
+  }
+}
