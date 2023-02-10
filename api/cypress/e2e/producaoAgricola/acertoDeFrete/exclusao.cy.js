@@ -4,7 +4,7 @@
 import bodyCt4 from '../../../fixtures/producaoAgricola/acertoDeFrete/listagem/bodyCt4.json'
 import seedTeste from '../../../fixtures/producaoAgricola/acertoDeFrete/listagem/seedTeste.json'
 
-context('Acerto de Frete', () => {
+context.skip('Acerto de Frete', () => {
     context('Listagem (AcertoFretes/List)', () => {
         describe('Filtragem de cabeçalho', () => {
             it('CT1 - Deve trazer 20 resultados sem filtro', () => {

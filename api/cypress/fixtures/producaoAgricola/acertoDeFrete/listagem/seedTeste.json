@@ -12,5 +12,61 @@
   },
   "porPlaca": {
     "veiculoId": "b792b57c-98d0-46e8-ba31-539478f130a9"
+  },
+  "porPeriodo": {
+    "dataInicio": "2023-02-09T00:00:00-03:00",
+    "dataFim": "2023-02-10T23:59:59-03:00",
+    "page": 1,
+    "size": 20
+  },
+  "porOrigemUA": {
+    "Origens": ["3b1cd3e5-ea7d-4b0b-b75a-2d0ac9a5d93b"],
+    "page": 1,
+    "size": 20
+  },
+  "porOrigemCliente": {
+    "Origens": ["de869555-55dd-4930-803d-e043c250b970"],
+    "page": 1,
+    "size": 20
+  },
+  "porDestinoUA": {
+    "destinos": ["3b1cd3e5-ea7d-4b0b-b75a-2d0ac9a5d93b"],
+    "page": 1,
+    "size": 20
+  },
+  "porDestinoCliente": {
+    "destinos": ["de869555-55dd-4930-803d-e043c250b970"],
+    "page": 1,
+    "size": 20
+  },
+  "porSafra": {
+    "SafraId": "998718c2-8e3f-49f5-9434-ed0d86b97b20",
+    "page": 1,
+    "size": 20
+  },
+  "porFazenda": {
+    "FazendaId": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+    "page": 1,
+    "size": 20
+  },
+  "porStatusLiquidado": {
+    "StatusAcerto": [3],
+    "page": 1,
+    "size": 20
+  },
+  "porStatusPendente": {
+    "StatusAcerto": [1],
+    "page": 1,
+    "size": 20
+  },
+  "porStatusAcertado": {
+    "StatusAcerto": [2],
+    "page": 1,
+    "size": 20
+  },
+  "porPalavra": {
+    "pesquisar": "Motorista Teste API 2",
+    "page": 1,
+    "size": 20
   }
 }
