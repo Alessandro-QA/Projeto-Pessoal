@@ -1,5 +1,5 @@
 Cypress.Commands.add('getToken', (email, password) => {
-    cy.api({
+    cy.request({
         method: 'POST',
         url: 'https://auth.dev.conexa.com.br/connect/token',
         headers: {
@@ -21,7 +21,7 @@ Cypress.Commands.add('getToken', (email, password) => {
         const baseUrl = Cypress.config('baseUrl')
 
         if (method === 'GET')
-            return cy.api({
+            return cy.request({
                 "method": method,
                 "url": `${baseUrl + url}`,
                 "headers": {
@@ -32,7 +32,7 @@ Cypress.Commands.add('getToken', (email, password) => {
             })
 
         if (method === 'POST')
-            return cy.api({
+            return cy.request({
                 "method": method,
                 "url": `${baseUrl + url}`,
                 "headers": {
