@@ -1,0 +1,176 @@
+{
+  "dataAcerto": "2023-02-20",
+  "motorista": {
+    "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+    "documentoPrincipal": "99292525093",
+    "pessoaTipo": 0,
+    "descricao": "Motorista Teste API 2"
+  },
+  "veiculo": {
+    "fabricante": {
+      "id": "e35356bf-09d1-4e84-9b21-be7f268b2272",
+      "descricao": "Scania"
+    },
+    "modelo": {
+      "id": "7a959c94-f6e2-411a-a7b0-7def50aa0b5f",
+      "descricao": "F50",
+      "classificacaoBemId": "62640c78-c9e5-4e85-917f-61376979af71",
+      "fabricante": {
+        "id": "e35356bf-09d1-4e84-9b21-be7f268b2272",
+        "descricao": "Scania"
+      }
+    },
+    "estado": {
+      "sigla": "AP",
+      "id": "90ea87ac-c231-4ac4-be8e-7f16fd5be5b6",
+      "descricao": "Amapá"
+    },
+    "pais": {
+      "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+      "descricao": "Brasil"
+    },
+    "placa": "SFD1656",
+    "tipoMedidor": 0,
+    "posicaoInicialMedidor": 0,
+    "anoFabricacao": 2020,
+    "volumeTanque": 650,
+    "valorAtualMedidor": 0,
+    "valorAcumuladoMedidor": 0,
+    "combustiveis": [
+      {
+        "id": "18216df9-f474-4eb6-bc24-b46ad661d538",
+        "descricao": "Diesel"
+      }
+    ],
+    "ativo": true,
+    "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+    "classificacaoBem": {
+      "ativo": true,
+      "id": "62640c78-c9e5-4e85-917f-61376979af71",
+      "mascaraNiveis": null,
+      "codigo": "003.0001",
+      "descricao": "Caminhões",
+      "categoria": 2,
+      "tipoClassificacaoBem": 1,
+      "estruturaClassificacaoBem": {
+        "id": "feb6b857-fc11-4114-b959-eeca713257fb",
+        "codigo": null,
+        "descricao": null,
+        "classificacoes": [],
+        "maquinas": []
+      },
+      "classificacaoBemPai": {
+        "ativo": true,
+        "id": "6af2eaa7-acbd-4bfc-8c13-6de5ad27ffae",
+        "mascaraNiveis": "000.0000.0000",
+        "codigo": "003",
+        "descricao": "Veículos Próprios",
+        "categoria": 2,
+        "tipoClassificacaoBem": 0,
+        "estruturaClassificacaoBem": {
+          "id": "feb6b857-fc11-4114-b959-eeca713257fb",
+          "codigo": null,
+          "descricao": null,
+          "classificacoes": [],
+          "maquinas": []
+        },
+        "classificacaoBemPai": null,
+        "classificacoesFilhas": [
+          {
+            "ativo": true,
+            "id": "62640c78-c9e5-4e85-917f-61376979af71",
+            "mascaraNiveis": null,
+            "codigo": "003.0001",
+            "descricao": "Caminhões",
+            "categoria": 2,
+            "tipoClassificacaoBem": 0,
+            "estruturaClassificacaoBem": null,
+            "classificacaoBemPai": null,
+            "classificacoesFilhas": [],
+            "gruposEmpresariais": [],
+            "empresas": [],
+            "tipoMedidor": 0,
+            "icone": "siagri-icon-veiculo"
+          },
+          {
+            "ativo": true,
+            "id": "43ecbd4c-26eb-4182-a831-d600b0396c94",
+            "mascaraNiveis": null,
+            "codigo": "003.0002",
+            "descricao": "Carros",
+            "categoria": 2,
+            "tipoClassificacaoBem": 0,
+            "estruturaClassificacaoBem": null,
+            "classificacaoBemPai": null,
+            "classificacoesFilhas": [],
+            "gruposEmpresariais": [],
+            "empresas": [],
+            "tipoMedidor": 0,
+            "icone": "siagri-icon-veiculo"
+          },
+          {
+            "ativo": true,
+            "id": "c7396153-cc87-4fc9-b3e9-f2db90ef40d1",
+            "mascaraNiveis": null,
+            "codigo": "003.0003",
+            "descricao": "Outros",
+            "categoria": 2,
+            "tipoClassificacaoBem": 0,
+            "estruturaClassificacaoBem": null,
+            "classificacaoBemPai": null,
+            "classificacoesFilhas": [],
+            "gruposEmpresariais": [],
+            "empresas": [],
+            "tipoMedidor": 0,
+            "icone": "siagri-icon-veiculo"
+          }
+        ],
+        "gruposEmpresariais": [],
+        "empresas": [],
+        "tipoMedidor": 0,
+        "icone": "siagri-icon-veiculo"
+      },
+      "classificacoesFilhas": [],
+      "gruposEmpresariais": [],
+      "empresas": [],
+      "tipoMedidor": 0,
+      "icone": "siagri-icon-veiculo"
+    },
+    "descricao": "Caminhão Teste API 2",
+    "numeroPatrimonio": "6145415",
+    "observacoes": null,
+    "dataAquisicao": "2022-12-02T03:00:00+00:00",
+    "categoria": 2,
+    "urlImage": null,
+    "imageBase64": null
+  },
+  "tipoValorManual": 2,
+  "romaneios": [
+    {
+      "quantidadePesagem": 19000,
+      "id": "6fc10568-ba10-4b54-ad68-27d733ab6b48",
+      "valor": 19123,
+      "ticket": 10,
+      "data": "2022-12-09T09:55:10-03:00",
+      "origem": {
+        "id": "00000000-0000-0000-0000-000000000000"
+      },
+      "destino": {
+        "id": "aeaa79aa-9726-45dd-88bc-41efe81c45f5",
+        "descricao": "U.A. Teste API"
+      },
+      "motorista": {
+        "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+        "documentoPrincipal": "99292525093",
+        "descricao": "Motorista Teste API 2"
+      },
+      "veiculo": {
+        "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+        "placa": "SFD1656"
+      },
+      "tipo": 1
+    }
+  ],
+  "valorManual": 0,
+  "despesas": []
+}
