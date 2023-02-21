@@ -17,11 +17,11 @@ Cypress.Commands.add('getToken', (email, password) => {
         cy.log('Access Token definido nas variaveis de ambiente do Cypress com sucesso!')
     })
 
-    Cypress.Commands.add('executeRequest', (method, url, body) => {
+    Cypress.Commands.add('executeRequest', (method, url, body, id) => {
         const baseUrl = Cypress.config('baseUrl')
 
         if (method === 'GET')
-            return cy.request({
+            return cy.api({
                 "method": method,
                 "url": `${baseUrl + url}`,
                 "headers": {
@@ -32,7 +32,7 @@ Cypress.Commands.add('getToken', (email, password) => {
             })
 
         if (method === 'POST')
-            return cy.request({
+            return cy.api({
                 "method": method,
                 "url": `${baseUrl + url}`,
                 "headers": {
@@ -41,6 +41,17 @@ Cypress.Commands.add('getToken', (email, password) => {
                     'authorization': `Bearer ${Cypress.env('access_token')}`,
                 },
                 "body": body
+            })
+
+        if (method === 'DELETE')
+            return cy.api({
+                "method": method,
+                "url": `${baseUrl + url}/${id}`,
+                "headers": {
+                    'x-tenant': Cypress.env('tenant'),
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${Cypress.env('access_token')}`,
+                },
             })
 
 
