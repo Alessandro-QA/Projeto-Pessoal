@@ -10,7 +10,7 @@
       "empresa": "Empresa Teste DIEF - AC",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "1.500,00",
+      "valorTotal": "R$1.500,00",
       "jaPago": false,
       "rateioEntreCiclos": false,
       "formaPagamento": "Boleto",
@@ -23,24 +23,24 @@
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.500,00"
+          "valor": "R$1.500,00"
         }
       ],
       "tributacoes": {
         "modelo": "55",
         "serie": "290",
         "cfop": "1102 - Compra p/ comercialização",
-        "baseCalculoIcms": "R$ 1.500,00",
-        "icmsCredito": "R$ 165,00",
-        "isentasIcms": "R$ 0,00",
-        "outrosIcms": "R$ 0,00",
-        "baseCalculoIcmsSt": "R$ 0,00",
-        "valorIcmsRetido": "R$ 0,00",
-        "despesasAcessorias": "R$ 0,00",
-        "frete": "R$ 0,00",
-        "valorDoIpi": "R$ 0,00",
-        "isenta": "R$ 0,00",
-        "outros": "R$ 0,00"
+        "baseCalculoIcms": "R$1.500,00",
+        "icmsCredito": "R$165,00",
+        "isentasIcms": "R$0,00",
+        "outrosIcms": "R$0,00",
+        "baseCalculoIcmsSt": "R$0,00",
+        "valorIcmsRetido": "R$0,00",
+        "despesasAcessorias": "R$0,00",
+        "frete": "R$0,00",
+        "valorDoIpi": "R$0,00",
+        "isenta": "R$0,00",
+        "outros": "R$0,00"
       }
     },
     "edicao": {
@@ -55,33 +55,33 @@
       "ieEmpresa": "478178718718",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "R$ 1.500,00",
+      "valorTotal": "R$1.500,00",
       "foiPago": false,
       "rateioEntreCiclos": false,
       "formaPagamento": "Boleto",
       "condicaoPagamento": "À vista",
-      "valorParcela": "R$ 1.500,00",
+      "valorParcela": "R$1.500,00",
       "numeroBoleto": "12345.67891 01112.135857 48748.718187 8 17817874187187",
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.500,00"
+          "valor": "R$1.500,00"
         }
       ],
       "modelo": "55",
       "serie": "290",
       "cfop": "1102 - Compra p/ comercialização",
-      "baseCalculoIcms": "R$ 1.500,00",
-      "icmsCredito": "R$ 165,00",
-      "isentasIcms": "R$ 0,00",
-      "outrosIcms": "R$ 0,00",
-      "baseCalculoIcmsSt": "R$ 0,00",
-      "valorIcmsRetido": "R$ 0,00",
-      "despesasAcessorias": "R$ 0,00",
-      "frete": "R$ 0,00",
-      "valorDoIpi": "R$ 0,00",
-      "isenta": "R$ 0,00",
-      "outros": "R$ 0,00"
+      "baseCalculoIcms": "R$1.500,00",
+      "icmsCredito": "R$165,00",
+      "isentasIcms": "R$0,00",
+      "outrosIcms": "R$0,00",
+      "baseCalculoIcmsSt": "R$0,00",
+      "valorIcmsRetido": "R$0,00",
+      "despesasAcessorias": "R$0,00",
+      "frete": "R$0,00",
+      "valorDoIpi": "R$0,00",
+      "isenta": "R$0,00",
+      "outros": "R$0,00"
     }
   },
 
@@ -96,7 +96,7 @@
       "empresa": "Empresa Teste DIEF - AL",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "1.700,00",
+      "valorTotal": "R$1.700,00",
       "jaPago": false,
       "rateioEntreCiclos": false,
       "formaPagamento": "Boleto",
@@ -109,24 +109,24 @@
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.700,00"
+          "valor": "R$1.700,00"
         }
       ],
       "tributacoes": {
         "modelo": "55",
         "serie": "290",
         "cfop": "1102 - Compra p/ comercialização",
-        "baseCalculoIcms": "R$ 1.700,00",
-        "icmsCredito": "R$ 170,00",
-        "isentasIcms": "R$ 0,00",
-        "outrosIcms": "R$ 0,00",
-        "baseCalculoIcmsSt": "R$ 0,00",
-        "valorIcmsRetido": "R$ 0,00",
-        "despesasAcessorias": "R$ 0,00",
-        "frete": "R$ 0,00",
-        "valorDoIpi": "R$ 0,00",
-        "isenta": "R$ 0,00",
-        "outros": "R$ 0,00"
+        "baseCalculoIcms": "R$1.700,00",
+        "icmsCredito": "R$170,00",
+        "isentasIcms": "R$0,00",
+        "outrosIcms": "R$0,00",
+        "baseCalculoIcmsSt": "R$0,00",
+        "valorIcmsRetido": "R$0,00",
+        "despesasAcessorias": "R$0,00",
+        "frete": "R$0,00",
+        "valorDoIpi": "R$0,00",
+        "isenta": "R$0,00",
+        "outros": "R$0,00"
       }
     },
     "edicao": {
@@ -141,33 +141,33 @@
       "ieEmpresa": "7717817",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "R$ 1.700,00",
+      "valorTotal": "R$1.700,00",
       "foiPago": false,
       "rateioEntreCiclos": false,
       "formaPagamento": "Boleto",
       "condicaoPagamento": "À vista",
-      "valorParcela": "R$ 1.700,00",
+      "valorParcela": "R$1.700,00",
       "numeroBoleto": "12345.67891 01112.135857 48748.718187 8 17817874187187",
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.700,00"
+          "valor": "R$1.700,00"
         }
       ],
       "modelo": "55",
       "serie": "290",
       "cfop": "1102 - Compra p/ comercialização",
-      "baseCalculoIcms": "R$ 1.700,00",
-      "icmsCredito": "R$ 170,00",
-      "isentasIcms": "R$ 0,00",
-      "outrosIcms": "R$ 0,00",
-      "baseCalculoIcmsSt": "R$ 0,00",
-      "valorIcmsRetido": "R$ 0,00",
-      "despesasAcessorias": "R$ 0,00",
-      "frete": "R$ 0,00",
-      "valorDoIpi": "R$ 0,00",
-      "isenta": "R$ 0,00",
-      "outros": "R$ 0,00"
+      "baseCalculoIcms": "R$1.700,00",
+      "icmsCredito": "R$170,00",
+      "isentasIcms": "R$0,00",
+      "outrosIcms": "R$0,00",
+      "baseCalculoIcmsSt": "R$0,00",
+      "valorIcmsRetido": "R$0,00",
+      "despesasAcessorias": "R$0,00",
+      "frete": "R$0,00",
+      "valorDoIpi": "R$0,00",
+      "isenta": "R$0,00",
+      "outros": "R$0,00"
     }
   },
   "todosTodos": {
@@ -181,7 +181,7 @@
       "empresa": "Empresa Teste DIEF - TODOS",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "1.800,00",
+      "valorTotal": "R$1.800,00",
       "jaPago": false,
       "rateioEntreCiclos": false,
       "formaPagamento": "Boleto",
@@ -194,24 +194,24 @@
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.800,00"
+          "valor": "R$1.800,00"
         }
       ],
       "tributacoes": {
         "modelo": "65",
         "serie": "390",
         "cfop": "1102 - Compra p/ comercialização",
-        "baseCalculoIcms": "R$ 1.800,00",
-        "icmsCredito": "R$ 216,00",
-        "isentasIcms": "R$ 0,00",
-        "outrosIcms": "R$ 0,00",
-        "baseCalculoIcmsSt": "R$ 0,00",
-        "valorIcmsRetido": "R$ 0,00",
-        "despesasAcessorias": "R$ 0,00",
-        "frete": "R$ 0,00",
-        "valorDoIpi": "R$ 0,00",
-        "isenta": "R$ 0,00",
-        "outros": "R$ 0,00"
+        "baseCalculoIcms": "R$1.800,00",
+        "icmsCredito": "R$216,00",
+        "isentasIcms": "R$0,00",
+        "outrosIcms": "R$0,00",
+        "baseCalculoIcmsSt": "R$0,00",
+        "valorIcmsRetido": "R$0,00",
+        "despesasAcessorias": "R$0,00",
+        "frete": "R$0,00",
+        "valorDoIpi": "R$0,00",
+        "isenta": "R$0,00",
+        "outros": "R$0,00"
       }
     },
     "edicao": {
@@ -226,33 +226,33 @@
       "ieEmpresa": "541871781",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "R$ 1.800,00",
+      "valorTotal": "R$1.800,00",
       "foiPago": false,
       "rateioEntreCiclos": false,
       "formaPagamento": "Boleto",
       "condicaoPagamento": "À vista",
-      "valorParcela": "R$ 1.800,00",
+      "valorParcela": "R$1.800,00",
       "numeroBoleto": "12345.67891 01112.135857 48748.718187 8 17817874187187",
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.800,00"
+          "valor": "R$1.800,00"
         }
       ],
       "modelo": "65",
       "serie": "390",
       "cfop": "1102 - Compra p/ comercialização",
-      "baseCalculoIcms": "R$ 1.800,00",
-      "icmsCredito": "R$ 216,00",
-      "isentasIcms": "R$ 0,00",
-      "outrosIcms": "R$ 0,00",
-      "baseCalculoIcmsSt": "R$ 0,00",
-      "valorIcmsRetido": "R$ 0,00",
-      "despesasAcessorias": "R$ 0,00",
-      "frete": "R$ 0,00",
-      "valorDoIpi": "R$ 0,00",
-      "isenta": "R$ 0,00",
-      "outros": "R$ 0,00"
+      "baseCalculoIcms": "R$1.800,00",
+      "icmsCredito": "R$216,00",
+      "isentasIcms": "R$0,00",
+      "outrosIcms": "R$0,00",
+      "baseCalculoIcmsSt": "R$0,00",
+      "valorIcmsRetido": "R$0,00",
+      "despesasAcessorias": "R$0,00",
+      "frete": "R$0,00",
+      "valorDoIpi": "R$0,00",
+      "isenta": "R$0,00",
+      "outros": "R$0,00"
     }
   }
 }

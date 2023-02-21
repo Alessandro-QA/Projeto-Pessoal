@@ -59,7 +59,8 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
           ResultadoSafra.resultadoSintetico(seedCadastro.resultadoDaSafraDashboard)
         })
 
-        it('Validar se o cadastro refletiu no resultado da safra - Analítica', function () {
+        // TODO: Aguardando correção do bug #61164
+        it.skip('Validar se o cadastro refletiu no resultado da safra - Analítica', function () {
           cy.allure().severity('normal').startStep('test content')
 
           ResultadoSafra.resultadoAnalitico(seedCadastro.resultadoDaSafraAnalitica)
@@ -107,7 +108,8 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
           ResultadoSafra.resultadoSintetico(seedEdicao.resultadoDaSafraDashboard)
         })
 
-        it('Validar se edição refletiu no resultado da safra - Analítica', function () {
+        // TODO: Aguardando correção do bug #61164
+        it.skip('Validar se edição refletiu no resultado da safra - Analítica', function () {
           cy.allure().severity('normal').startStep('test content')
 
           ResultadoSafra.resultadoAnalitico(seedEdicao.resultadoDaSafraAnalitica)

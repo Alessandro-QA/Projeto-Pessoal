@@ -23,24 +23,24 @@
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.550,00"
+          "valor": "R$1.550,00"
         }
       ],
       "tributacoes": {
         "modelo": "55",
         "serie": "290",
         "cfop": "1407 - Compra de mercadoria p/ uso ou consumo cuja mercadoria está sujeita a ST",
-        "baseCalculoIcms": "R$ 0,00",
-        "icmsCredito": "R$ 0,00",
-        "isentasIcms": "R$ 124,00",
-        "outrosIcms": "R$ 0,00",
-        "baseCalculoIcmsSt": "R$ 1.426,00",
-        "valorIcmsRetido": "R$ 114,08",
-        "despesasAcessorias": "R$ 0,00",
-        "frete": "R$ 0,00",
-        "valorDoIpi": "R$ 0,00",
-        "isenta": "R$ 0,00",
-        "outros": "R$ 0,00"
+        "baseCalculoIcms": "R$0,00",
+        "icmsCredito": "R$0,00",
+        "isentasIcms": "R$124,00",
+        "outrosIcms": "R$0,00",
+        "baseCalculoIcmsSt": "R$1.426,00",
+        "valorIcmsRetido": "R$114,08",
+        "despesasAcessorias": "R$0,00",
+        "frete": "R$0,00",
+        "valorDoIpi": "R$0,00",
+        "isenta": "R$0,00",
+        "outros": "R$0,00"
       }
     },
     "edicao": {
@@ -55,33 +55,33 @@
       "ieEmpresa": "478178718718",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "R$ 1.550,00",
+      "valorTotal": "R$1.550,00",
       "foiPago": false,
       "rateioEntreCiclos": false,
       "formaPagamento": "Boleto",
       "condicaoPagamento": "À vista",
-      "valorParcela": "R$ 1.550,00",
+      "valorParcela": "R$1.550,00",
       "numeroBoleto": "12345.67891 01112.135857 48748.718187 8 17817874187187",
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.550,00"
+          "valor": "R$1.550,00"
         }
       ],
       "modelo": "55",
       "serie": "290",
       "cfop": "1407 - Compra de mercadoria p/ uso ou consumo cuja mercadoria está sujeita a ST",
-      "baseCalculoIcms": "R$ 0,00",
-      "icmsCredito": "R$ 0,00",
-      "isentasIcms": "R$ 124,00",
-      "outrosIcms": "R$ 0,00",
-      "baseCalculoIcmsSt": "R$ 1.426,00",
-      "valorIcmsRetido": "R$ 114,08",
-      "despesasAcessorias": "R$ 0,00",
-      "frete": "R$ 0,00",
-      "valorDoIpi": "R$ 0,00",
-      "isenta": "R$ 0,00",
-      "outros": "R$ 0,00"
+      "baseCalculoIcms": "R$0,00",
+      "icmsCredito": "R$0,00",
+      "isentasIcms": "R$124,00",
+      "outrosIcms": "R$0,00",
+      "baseCalculoIcmsSt": "R$1.426,00",
+      "valorIcmsRetido": "R$114,08",
+      "despesasAcessorias": "R$0,00",
+      "frete": "R$0,00",
+      "valorDoIpi": "R$0,00",
+      "isenta": "R$0,00",
+      "outros": "R$0,00"
     }
   },
 
@@ -109,24 +109,24 @@
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.560,00"
+          "valor": "R$1.560,00"
         }
       ],
       "tributacoes": {
         "modelo": "65",
         "serie": "390",
         "cfop": "1407 - Compra de mercadoria p/ uso ou consumo cuja mercadoria está sujeita a ST",
-        "baseCalculoIcms": "R$ 0,00",
-        "icmsCredito": "R$ 0,00",
-        "isentasIcms": "R$ 109,20",
-        "outrosIcms": "R$ 0,00",
-        "baseCalculoIcmsSt": "R$ 1.450,80",
-        "valorIcmsRetido": "R$ 101,56",
-        "despesasAcessorias": "R$ 0,00",
-        "frete": "R$ 0,00",
-        "valorDoIpi": "R$ 0,00",
-        "isenta": "R$ 0,00",
-        "outros": "R$ 0,00"
+        "baseCalculoIcms": "R$0,00",
+        "icmsCredito": "R$0,00",
+        "isentasIcms": "R$109,20",
+        "outrosIcms": "R$0,00",
+        "baseCalculoIcmsSt": "R$1.450,80",
+        "valorIcmsRetido": "R$101,56",
+        "despesasAcessorias": "R$0,00",
+        "frete": "R$0,00",
+        "valorDoIpi": "R$0,00",
+        "isenta": "R$0,00",
+        "outros": "R$0,00"
       }
     },
     "edicao": {
@@ -141,33 +141,33 @@
       "ieEmpresa": "7717817",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "R$ 1.560,00",
+      "valorTotal": "R$1.560,00",
       "foiPago": false,
       "rateioEntreCiclos": false,
       "formaPagamento": "Boleto",
       "condicaoPagamento": "À vista",
-      "valorParcela": "R$ 1.560,00",
+      "valorParcela": "R$1.560,00",
       "numeroBoleto": "12345.67891 01112.135857 48748.718187 8 17817874187187",
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.560,00"
+          "valor": "R$1.560,00"
         }
       ],
       "modelo": "65",
       "serie": "390",
       "cfop": "1407 - Compra de mercadoria p/ uso ou consumo cuja mercadoria está sujeita a ST",
-      "baseCalculoIcms": "R$ 0,00",
-      "icmsCredito": "R$ 0,00",
-      "isentasIcms": "R$ 109,20",
-      "outrosIcms": "R$ 0,00",
-      "baseCalculoIcmsSt": "R$ 1.450,80",
-      "valorIcmsRetido": "R$ 101,56",
-      "despesasAcessorias": "R$ 0,00",
-      "frete": "R$ 0,00",
-      "valorDoIpi": "R$ 0,00",
-      "isenta": "R$ 0,00",
-      "outros": "R$ 0,00"
+      "baseCalculoIcms": "R$0,00",
+      "icmsCredito": "R$0,00",
+      "isentasIcms": "R$109,20",
+      "outrosIcms": "R$0,00",
+      "baseCalculoIcmsSt": "R$1.450,80",
+      "valorIcmsRetido": "R$101,56",
+      "despesasAcessorias": "R$0,00",
+      "frete": "R$0,00",
+      "valorDoIpi": "R$0,00",
+      "isenta": "R$0,00",
+      "outros": "R$0,00"
     }
   },
   "todosTodos": {
@@ -194,24 +194,24 @@
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.570,00"
+          "valor": "R$1.570,00"
         }
       ],
       "tributacoes": {
         "modelo": "57",
         "serie": "490",
         "cfop": "1407 - Compra de mercadoria p/ uso ou consumo cuja mercadoria está sujeita a ST",
-        "baseCalculoIcms": "R$ 0,00",
-        "icmsCredito": "R$ 0,00",
-        "isentasIcms": "R$ 141,30",
-        "outrosIcms": "R$ 0,00",
-        "baseCalculoIcmsSt": "R$ 1.428,70",
-        "valorIcmsRetido": "R$ 128,58",
-        "despesasAcessorias": "R$ 0,00",
-        "frete": "R$ 0,00",
-        "valorDoIpi": "R$ 0,00",
-        "isenta": "R$ 0,00",
-        "outros": "R$ 0,00"
+        "baseCalculoIcms": "R$0,00",
+        "icmsCredito": "R$0,00",
+        "isentasIcms": "R$141,30",
+        "outrosIcms": "R$0,00",
+        "baseCalculoIcmsSt": "R$1.428,70",
+        "valorIcmsRetido": "R$128,58",
+        "despesasAcessorias": "R$0,00",
+        "frete": "R$0,00",
+        "valorDoIpi": "R$0,00",
+        "isenta": "R$0,00",
+        "outros": "R$0,00"
       }
     },
     "edicao": {
@@ -226,33 +226,33 @@
       "ieEmpresa": "541871781",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "R$ 1.570,00",
+      "valorTotal": "R$1.570,00",
       "foiPago": false,
       "rateioEntreCiclos": false,
       "formaPagamento": "Boleto",
       "condicaoPagamento": "À vista",
-      "valorParcela": "R$ 1.570,00",
+      "valorParcela": "R$1.570,00",
       "numeroBoleto": "12345.67891 01112.135857 48748.718187 8 17817874187187",
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.570,00"
+          "valor": "R$1.570,00"
         }
       ],
       "modelo": "57",
       "serie": "490",
       "cfop": "1407 - Compra de mercadoria p/ uso ou consumo cuja mercadoria está sujeita a ST",
-      "baseCalculoIcms": "R$ 0,00",
-      "icmsCredito": "R$ 0,00",
-      "isentasIcms": "R$ 141,30",
-      "outrosIcms": "R$ 0,00",
-      "baseCalculoIcmsSt": "R$ 1.428,70",
-      "valorIcmsRetido": "R$ 128,58",
-      "despesasAcessorias": "R$ 0,00",
-      "frete": "R$ 0,00",
-      "valorDoIpi": "R$ 0,00",
-      "isenta": "R$ 0,00",
-      "outros": "R$ 0,00"
+      "baseCalculoIcms": "R$0,00",
+      "icmsCredito": "R$0,00",
+      "isentasIcms": "R$141,30",
+      "outrosIcms": "R$0,00",
+      "baseCalculoIcmsSt": "R$1.428,70",
+      "valorIcmsRetido": "R$128,58",
+      "despesasAcessorias": "R$0,00",
+      "frete": "R$0,00",
+      "valorDoIpi": "R$0,00",
+      "isenta": "R$0,00",
+      "outros": "R$0,00"
     }
   }
 }

@@ -16,11 +16,11 @@
       "ciclos": [
         {
           "nome": "Milho - 2021/2021",
-          "valor": "R$ 1.250,00"
+          "valor": "R$1.250,00"
         },
         {
           "nome": "Soja - 2021/2021",
-          "valor": "R$ 1.250,00"
+          "valor": "R$1.250,00"
         }
       ],
       "contaBancaria": "Conta DIEF",
@@ -31,28 +31,28 @@
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.250,00"
+          "valor": "R$1.250,00"
         },
         {
           "nome": "Outros Custos",
-          "valor": "R$ 1.250,00"
+          "valor": "R$1.250,00"
         }
       ],
       "tributacoes": {
         "modelo": "55",
         "serie": "290",
         "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
-        "baseCalculoIcms": "R$ 0,00",
-        "icmsCredito": "R$ 0,00",
-        "isentasIcms": "R$ 2.500,00",
-        "outrosIcms": "R$ 0,00",
-        "baseCalculoIcmsSt": "R$ 0,00",
-        "valorIcmsRetido": "R$ 0,00",
-        "despesasAcessorias": "R$ 0,00",
-        "frete": "R$ 0,00",
-        "valorDoIpi": "R$ 0,00",
-        "isenta": "R$ 0,00",
-        "outros": "R$ 0,00"
+        "baseCalculoIcms": "R$0,00",
+        "icmsCredito": "R$0,00",
+        "isentasIcms": "R$2.500,00",
+        "outrosIcms": "R$0,00",
+        "baseCalculoIcmsSt": "R$0,00",
+        "valorIcmsRetido": "R$0,00",
+        "despesasAcessorias": "R$0,00",
+        "frete": "R$0,00",
+        "valorDoIpi": "R$0,00",
+        "isenta": "R$0,00",
+        "outros": "R$0,00"
       }
     },
     "edicao": {
@@ -67,46 +67,46 @@
       "ieEmpresa": "478178718718",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "R$ 2.500,00",
+      "valorTotal": "R$2.500,00",
       "foiPago": true,
       "rateioEntreCiclos": true,
       "ciclos": [
         {
           "nome": "Soja - 2021/2021",
-          "valor": "R$ 1.250,00"
+          "valor": "R$1.250,00"
         },
         {
           "nome": "Milho - 2021/2021",
-          "valor": "R$ 1.250,00"
+          "valor": "R$1.250,00"
         }
       ],
       "formaPagamento": "Cartão de Crédito",
       "condicaoPagamento": "À vista",
-      "valorParcela": "R$ 2.500,00",
+      "valorParcela": "R$2.500,00",
       "categorias": [
         {
           "nome": "Outros Custos",
-          "valor": "R$ 1.250,00"
+          "valor": "R$1.250,00"
         },
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.250,00"
+          "valor": "R$1.250,00"
         }
       ],
       "modelo": "55",
       "serie": "290",
       "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
-      "baseCalculoIcms": "R$ 0,00",
-      "icmsCredito": "R$ 0,00",
-      "isentasIcms": "R$ 2.500,00",
-      "outrosIcms": "R$ 0,00",
-      "baseCalculoIcmsSt": "R$ 0,00",
-      "valorIcmsRetido": "R$ 0,00",
-      "despesasAcessorias": "R$ 0,00",
-      "frete": "R$ 0,00",
-      "valorDoIpi": "R$ 0,00",
-      "isenta": "R$ 0,00",
-      "outros": "R$ 0,00"
+      "baseCalculoIcms": "R$0,00",
+      "icmsCredito": "R$0,00",
+      "isentasIcms": "R$2.500,00",
+      "outrosIcms": "R$0,00",
+      "baseCalculoIcmsSt": "R$0,00",
+      "valorIcmsRetido": "R$0,00",
+      "despesasAcessorias": "R$0,00",
+      "frete": "R$0,00",
+      "valorDoIpi": "R$0,00",
+      "isenta": "R$0,00",
+      "outros": "R$0,00"
     }
   },
 
@@ -127,11 +127,11 @@
       "ciclos": [
         {
           "nome": "Milho - 2021/2021",
-          "valor": "R$ 1.275,00"
+          "valor": "R$1.275,00"
         },
         {
           "nome": "Soja - 2021/2021",
-          "valor": "R$ 1.275,00"
+          "valor": "R$1.275,00"
         }
       ],
       "contaBancaria": "Conta DIEF",
@@ -142,28 +142,28 @@
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.275,00"
+          "valor": "R$1.275,00"
         },
         {
           "nome": "Outros Custos",
-          "valor": "R$ 1.275,00"
+          "valor": "R$1.275,00"
         }
       ],
       "tributacoes": {
         "modelo": "59",
         "serie": "220",
         "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
-        "baseCalculoIcms": "R$ 0,00",
-        "icmsCredito": "R$ 0,00",
-        "isentasIcms": "R$ 2.550,00",
-        "outrosIcms": "R$ 0,00",
-        "baseCalculoIcmsSt": "R$ 0,00",
-        "valorIcmsRetido": "R$ 0,00",
-        "despesasAcessorias": "R$ 0,00",
-        "frete": "R$ 0,00",
-        "valorDoIpi": "R$ 0,00",
-        "isenta": "R$ 0,00",
-        "outros": "R$ 0,00"
+        "baseCalculoIcms": "R$0,00",
+        "icmsCredito": "R$0,00",
+        "isentasIcms": "R$2.550,00",
+        "outrosIcms": "R$0,00",
+        "baseCalculoIcmsSt": "R$0,00",
+        "valorIcmsRetido": "R$0,00",
+        "despesasAcessorias": "R$0,00",
+        "frete": "R$0,00",
+        "valorDoIpi": "R$0,00",
+        "isenta": "R$0,00",
+        "outros": "R$0,00"
       }
     },
     "edicao": {
@@ -178,46 +178,46 @@
       "ieEmpresa": "7717817",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "R$ 2.550,00",
+      "valorTotal": "R$2.550,00",
       "foiPago": true,
       "rateioEntreCiclos": true,
       "ciclos": [
         {
           "nome": "Soja - 2021/2021",
-          "valor": "R$ 1.275,00"
+          "valor": "R$1.275,00"
         },
         {
           "nome": "Milho - 2021/2021",
-          "valor": "R$ 1.275,00"
+          "valor": "R$1.275,00"
         }
       ],
       "formaPagamento": "Cartão de Débito",
       "condicaoPagamento": "À vista",
-      "valorParcela": "R$ 2.550,00",
+      "valorParcela": "R$2.550,00",
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.275,00"
+          "valor": "R$1.275,00"
         },
         {
           "nome": "Outros Custos",
-          "valor": "R$ 1.275,00"
+          "valor": "R$1.275,00"
         }
       ],
       "modelo": "59",
       "serie": "220",
       "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
-      "baseCalculoIcms": "R$ 0,00",
-      "icmsCredito": "R$ 0,00",
-      "isentasIcms": "R$ 2.550,00",
-      "outrosIcms": "R$ 0,00",
-      "baseCalculoIcmsSt": "R$ 0,00",
-      "valorIcmsRetido": "R$ 0,00",
-      "despesasAcessorias": "R$ 0,00",
-      "frete": "R$ 0,00",
-      "valorDoIpi": "R$ 0,00",
-      "isenta": "R$ 0,00",
-      "outros": "R$ 0,00"
+      "baseCalculoIcms": "R$0,00",
+      "icmsCredito": "R$0,00",
+      "isentasIcms": "R$2.550,00",
+      "outrosIcms": "R$0,00",
+      "baseCalculoIcmsSt": "R$0,00",
+      "valorIcmsRetido": "R$0,00",
+      "despesasAcessorias": "R$0,00",
+      "frete": "R$0,00",
+      "valorDoIpi": "R$0,00",
+      "isenta": "R$0,00",
+      "outros": "R$0,00"
     }
   },
   "todosTodos": {
@@ -237,11 +237,11 @@
       "ciclos": [
         {
           "nome": "Milho - 2021/2021",
-          "valor": "R$ 1.280,00"
+          "valor": "R$1.280,00"
         },
         {
           "nome": "Soja - 2021/2021",
-          "valor": "R$ 1.280,00"
+          "valor": "R$1.280,00"
         }
       ],
       "contaBancaria": "Conta DIEF",
@@ -252,28 +252,28 @@
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.280,00"
+          "valor": "R$1.280,00"
         },
         {
           "nome": "Outros Custos",
-          "valor": "R$ 1.280,00"
+          "valor": "R$1.280,00"
         }
       ],
       "tributacoes": {
         "modelo": "59",
         "serie": "220",
         "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
-        "baseCalculoIcms": "R$ 0,00",
-        "icmsCredito": "R$ 0,00",
-        "isentasIcms": "R$ 2.560,00",
-        "outrosIcms": "R$ 0,00",
-        "baseCalculoIcmsSt": "R$ 0,00",
-        "valorIcmsRetido": "R$ 0,00",
-        "despesasAcessorias": "R$ 0,00",
-        "frete": "R$ 0,00",
-        "valorDoIpi": "R$ 0,00",
-        "isenta": "R$ 0,00",
-        "outros": "R$ 0,00"
+        "baseCalculoIcms": "R$0,00",
+        "icmsCredito": "R$0,00",
+        "isentasIcms": "R$2.560,00",
+        "outrosIcms": "R$0,00",
+        "baseCalculoIcmsSt": "R$0,00",
+        "valorIcmsRetido": "R$0,00",
+        "despesasAcessorias": "R$0,00",
+        "frete": "R$0,00",
+        "valorDoIpi": "R$0,00",
+        "isenta": "R$0,00",
+        "outros": "R$0,00"
       }
     },
     "edicao": {
@@ -288,46 +288,46 @@
       "ieEmpresa": "541871781",
       "tag": "tagDIEF",
       "observacao": "Observações do DIEF",
-      "valorTotal": "R$ 2.560,00",
+      "valorTotal": "R$2.560,00",
       "foiPago": true,
       "rateioEntreCiclos": true,
       "ciclos": [
         {
           "nome": "Soja - 2021/2021",
-          "valor": "R$ 1.280,00"
+          "valor": "R$1.280,00"
         },
         {
           "nome": "Milho - 2021/2021",
-          "valor": "R$ 1.280,00"
+          "valor": "R$1.280,00"
         }
       ],
       "formaPagamento": "Cheque",
       "condicaoPagamento": "À vista",
-      "valorParcela": "R$ 2.560,00",
+      "valorParcela": "R$2.560,00",
       "categorias": [
         {
           "nome": "Caixa Geral",
-          "valor": "R$ 1.280,00"
+          "valor": "R$1.280,00"
         },
         {
           "nome": "Outros Custos",
-          "valor": "R$ 1.280,00"
+          "valor": "R$1.280,00"
         }
       ],
       "modelo": "59",
       "serie": "220",
       "cfop": "1410 - Devolução de venda de mercadoria, de produção do estabelecimento, sujeita a ST",
-      "baseCalculoIcms": "R$ 0,00",
-      "icmsCredito": "R$ 0,00",
-      "isentasIcms": "R$ 2.560,00",
-      "outrosIcms": "R$ 0,00",
-      "baseCalculoIcmsSt": "R$ 0,00",
-      "valorIcmsRetido": "R$ 0,00",
-      "despesasAcessorias": "R$ 0,00",
-      "frete": "R$ 0,00",
-      "valorDoIpi": "R$ 0,00",
-      "isenta": "R$ 0,00",
-      "outros": "R$ 0,00"
+      "baseCalculoIcms": "R$0,00",
+      "icmsCredito": "R$0,00",
+      "isentasIcms": "R$2.560,00",
+      "outrosIcms": "R$0,00",
+      "baseCalculoIcmsSt": "R$0,00",
+      "valorIcmsRetido": "R$0,00",
+      "despesasAcessorias": "R$0,00",
+      "frete": "R$0,00",
+      "valorDoIpi": "R$0,00",
+      "isenta": "R$0,00",
+      "outros": "R$0,00"
     }
   }
 }
