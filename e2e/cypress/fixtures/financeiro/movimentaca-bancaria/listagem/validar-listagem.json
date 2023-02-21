@@ -7,14 +7,14 @@
         "categorias": "13º Salário",
         "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
         "conferido": "Não",
-        "valor": "- R$  300,00"
+        "valor": "- R$ 300,00"
       },
       {
         "tipo": "Recebimento",
         "categorias": "Outras Vendas Agropecuárias",
         "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
         "conferido": "Não",
-        "valor": "+ R$ 320,00"
+        "valor": "+ R$320,00"
       }
     ]
   },
@@ -29,7 +29,7 @@
         "categorias": "Assistência Médica",
         "conta": "Banco: Banco Itaucard S.A. Ag.: 341 Conta: 6630341524-3",
         "conferido": "Não",
-        "valor": "- R$  250,00"
+        "valor": "- R$ 250,00"
       }
     ]
   },
@@ -43,7 +43,7 @@
         "categorias": "Assistência Médica",
         "conta": "Banco: Banco Itaucard S.A. Ag.: 341 Conta: 6630341524-3",
         "conferido": "Não",
-        "valor": "- R$  250,00"
+        "valor": "- R$ 250,00"
       }
     ]
   }

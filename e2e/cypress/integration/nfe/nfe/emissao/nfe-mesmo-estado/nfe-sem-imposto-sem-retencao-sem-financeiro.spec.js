@@ -4,8 +4,7 @@ import seedTestNfe from '../../../../../fixtures/nfe/nfe/emissao/nfe-mesmo-estad
 import Nfe from '../../../../../support/commands/nfe/nfe/nfe.js'
 import Authenticate from '../../../../../support/commands/login/login-logout.js'
 
-// TODO: Aguardando renovação do certificado digital
-describe.skip('NF-e', { tags: '@nfe' }, () => {
+describe('NF-e', { tags: '@nfe' }, () => {
   before(function () {
     const credenciais = Cypress.env('login_nfe')
     Authenticate.login(credenciais)

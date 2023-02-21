@@ -14,75 +14,75 @@ class ContaBancaria {
 
     cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/**').as('detalhesConta')
 
-    // Navegar para Contas Bancárias
+    cy.log('Navegar para Contas Bancárias')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    // Se for adicionar uma conta nova
     if (seedTestContaBancaria.adicionar) {
-      // botao adicionar conta
+      cy.log('Adicionar uma conta nova')
+      cy.log('Clicar no botao adicionar conta')
       cy.getVisible(locContaBancaria.dashboard.novaConta).click()
 
       cy.getVisible(locContaBancaria.contaBancaria.titulo).should(($el) => {
         expect($el).to.contain.text('Nova Conta')
       })
     }
-    // Editar uma conta existente
     else {
-      // input pesquisar
+      cy.log('Editar uma conta existente')
+      cy.log('Digitar no input pesquisar')
       cy.getVisible(locContaBancaria.dashboard.pesquisarConta).clear()
         .type(seedTestContaBancaria.nomeConta)
 
-      // selecionar a conta bancaria listada
       if (seedTestContaBancaria.numeroCartao) {
-        // card conta bancaria
+        cy.log('Selecionar a conta bancaria listada')
+        cy.log('Clicar no card conta bancaria')
         cy.getVisible(locContaBancaria.dashboard.nomeCartaoCredito)
           .contains(seedTestContaBancaria.nomeConta).click()
       } else {
-        // card cartao de credito
+        cy.log('Selecionar card cartao de credito')
         cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria)
           .contains(seedTestContaBancaria.nomeConta).click()
       }
 
       cy.wait('@detalhesConta')
 
-      // validar nome da conta na tela de detalhes
+      cy.log('Validar nome da conta na tela de detalhes')
       cy.getVisible(locContaBancaria.detalhesConta.nomeConta).should(($el) => {
         expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
       })
 
-      // clicar no botão de editar conta bancaria
+      cy.log('Clicar no botão de editar conta bancaria')
       cy.getVisible(locContaBancaria.detalhesConta.buttonEditar).click()
 
       cy.wait('@detalhesConta')
     }
 
     if (seedTestContaBancaria.adicionar) {
-      // tipo de conta
+      cy.log('Selecionar tipo de conta')
       cy.get(locContaBancaria.contaBancaria.tipoConta).click()
         .contains(seedTestContaBancaria.tipoConta).click()
     } else {
-      // Validar o tipo de conta
+      cy.log('Validar o tipo de conta')
       cy.getVisible(locContaBancaria.contaBancaria.tipoConta).should(($el) => {
         expect($el).to.contain.text(seedTestContaBancaria.tipoConta)
       })
     }
 
-    // nome da conta bancaria
+    cy.log('Digitar nome da conta bancaria')
     cy.getVisible(locContaBancaria.contaBancaria.nomeConta).clear()
       .type(seedTestContaBancaria.nomeConta)
 
     if (seedTestContaBancaria.adicionar) {
-      // empresa titular
+      cy.log('Selecionar empresa titular')
       cy.getVisible(locContaBancaria.contaBancaria.empresaTitular).click()
         .contains(seedTestContaBancaria.empresaTitular).click()
     } else {
-      // validar empresa titular da conta bancária
+      cy.log('Validar empresa titular da conta bancária')
       cy.getVisible(locContaBancaria.contaBancaria.empresaTitular).should(($el) => {
         expect($el).to.contain.text(seedTestContaBancaria.empresaTitular)
       })
     }
 
-    // empresas habilitadas
+    cy.log('Selecionar empresas habilitadas')
     cy.getVisible(locContaBancaria.contaBancaria.empresasHabilitadas).click()
       .contains(seedTestContaBancaria.empresasHabilitadas).click()
 
@@ -90,130 +90,130 @@ class ContaBancaria {
       cy.getVisible(locContaBancaria.contaBancaria.contaPrincipal).click()
     }
 
-    // Se a conta for do Tipo Conta Corrente/Tesouraria
     if (seedTestContaBancaria.dataSaldoInicial) {
-      // data do saldo inicial
+      cy.log('Se a conta for do Tipo Conta Corrente/Tesouraria')
+      cy.log('Digitar data do saldo inicial')
       cy.getVisible(locContaBancaria.contaBancaria.dataSaldoInicial).clear()
         .type(`${seedTestContaBancaria.dataSaldoInicial}{enter}`)
 
-      // saldo inicial
+      cy.log('Digitar saldo inicial')
       cy.getVisible(locContaBancaria.contaBancaria.saldoInicial).clear()
         .type(seedTestContaBancaria.saldoInicial)
 
-      // valida saldo Atual
+      cy.log('Validar saldo Atual')
       cy.getVisible(locContaBancaria.contaBancaria.saldoAtual).should(($el) => {
         expect($el).to.have.value(seedTestContaBancaria.saldoAtual)
       })
 
-      // Se a conta for do tipo Conta Corrente
       if (seedTestContaBancaria.banco) {
-        // banco
+        cy.log('Se a conta for do tipo Conta Corrente')
+        cy.log('Selecionar banco')
         cy.get(locContaBancaria.contaBancaria.banco).click()
           .contains(seedTestContaBancaria.banco).click()
 
-        // agencia
+        cy.log('Digitar agencia')
         cy.getVisible(locContaBancaria.contaBancaria.agencia).clear()
           .type(seedTestContaBancaria.agencia)
 
-        // digito da agencia
+        cy.log('Digitar digito da agencia')
         cy.getVisible(locContaBancaria.contaBancaria.agenciaDigito).clear()
           .type(seedTestContaBancaria.agenciaDigito)
 
-        // numero da conta
+        cy.log('numero da conta')
         cy.getVisible(locContaBancaria.contaBancaria.numeroConta).clear()
           .type(seedTestContaBancaria.numeroConta)
 
-        // digito da conta
+        cy.log('Digitar digito da conta')
         cy.getVisible(locContaBancaria.contaBancaria.contaDigito).clear()
           .type(seedTestContaBancaria.contaDigito)
       }
     }
-    // Se a conta for do Tipo cartão de crédito
     else {
-      // valida saldo Atual
+      cy.log('Se a conta for do Tipo cartão de crédito')
+      cy.log('Validar saldo Atual')
       cy.getVisible(locContaBancaria.contaBancaria.saldoAtual).should(($el) => {
         expect($el).to.have.value(seedTestContaBancaria.saldoAtual)
       })
 
       if (seedTestContaBancaria.adicionar) {
-        // seleciona a bandeira do cartão
+        cy.log('Selecionar a bandeira do cartão')
         cy.getVisible(locContaBancaria.contaBancaria.selectBandeira).click()
           .find('li').contains(seedTestContaBancaria.bandeira).click()
 
-        // seleciona a Data do fechamento
+        cy.log('Selecionar a Data do fechamento')
         cy.getVisible(locContaBancaria.contaBancaria.dataFechamento).clear()
           .type(seedTestContaBancaria.dataFechamento)
 
-        // informar a data de vencimento do cartão
+        cy.log('Informar a data de vencimento do cartão')
         cy.getVisible(locContaBancaria.contaBancaria.dataVencimento).clear()
           .type(seedTestContaBancaria.dataVencimento)
 
-        // informar o numero do cartão
+        cy.log('Informar o numero do cartão')
         cy.getVisible(locContaBancaria.contaBancaria.numeroCartao).clear()
           .type(seedTestContaBancaria.numeroCartao)
 
-        // informar o limite do cartão
+        cy.log('Informar o limite do cartão')
         cy.getVisible(locContaBancaria.contaBancaria.limiteCartao).clear()
           .type(seedTestContaBancaria.limiteCartao)
 
-        // selecionar a conta que será vinculada ao cartão
+        cy.log('Selecionar a conta que será vinculada ao cartão')
         cy.getVisible(locContaBancaria.contaBancaria.selectContaVinculada).click()
           .find('li').contains(seedTestContaBancaria.contaVinculada).click({ force: true })
       } else {
-        // Valida a bandeira do cartão
+        cy.log('Validar a bandeira do cartão')
         cy.getVisible(locContaBancaria.contaBancaria.selectBandeira).should(($el) => {
           expect($el).to.contain.text(seedTestContaBancaria.bandeira)
         })
 
-        // Valida a data de fechamento do cartão
+        cy.log('Validar a data de fechamento do cartão')
         cy.getVisible(locContaBancaria.contaBancaria.dataFechamento).should(($el) => {
           expect($el).to.have.value(seedTestContaBancaria.dataFechamento)
         })
 
-        // Valida a data de vencimento do cartão
+        cy.log('Validar a data de vencimento do cartão')
         cy.getVisible(locContaBancaria.contaBancaria.dataVencimento).should(($el) => {
           expect($el).to.have.value(seedTestContaBancaria.dataVencimento)
         })
 
-        // Valida o numero do cartão
+        cy.log('Validar o numero do cartão')
         cy.getVisible(locContaBancaria.contaBancaria.numeroCartao).should(($el) => {
           expect($el).to.have.value(seedTestContaBancaria.numeroCartao)
         })
 
-        // Valida o limite do cartão
+        cy.log('Validar o limite do cartão')
         cy.getVisible(locContaBancaria.contaBancaria.limiteCartao).should(($el) => {
           expect($el).to.have.value(seedTestContaBancaria.limiteCartao)
         })
 
-        // Valida a conta vinculada ao cartão
+        cy.log('Validar a conta vinculada ao cartão')
         cy.getVisible(locContaBancaria.contaBancaria.selectContaVinculada).should(($el) => {
           expect($el).to.contain.text(seedTestContaBancaria.contaVinculada)
         })
       }
     }
 
-    // Clica no icone de adicionar o valor do saldo a dashboard financeira
     if (seedTestContaBancaria.incluirSaldo) {
+      cy.log('Clicar no icone de adicionar o valor do saldo a dashboard financeira')
       cy.getVisible(locContaBancaria.contaBancaria.incluirSaldo).click()
     }
 
-    // inativa ou ativa a conta bancaria
     if (seedTestContaBancaria.ativarInativar) {
+      cy.log('Inativar ou ativar a conta bancaria')
       cy.getVisible(locContaBancaria.contaBancaria.ativarInativar).click()
     }
 
-    // botão adicionar conta
+    cy.log('Clicar no botão adicionar conta')
     cy.getVisible(locContaBancaria.contaBancaria.adicionar)
       .click()
 
     cy.wait('@detalhesConta')
 
-    // valida mensagem de sucesso
+    cy.log('Validar mensagem de sucesso')
     cy.get(locContaBancaria.contaBancaria.mensagemSucesso).should(($el) => {
       expect($el).exist.and.to.contain.text('Conta salva com sucesso')
     })
 
-    // validar que o botão de adicionar não exista mais
+    cy.log('Validar que o botão de adicionar não exista mais')
     cy.get(locContaBancaria.contaBancaria.adicionar).should('not.exist')
   }
 
@@ -228,47 +228,47 @@ class ContaBancaria {
 
     cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/**').as('detalhesConta')
 
-    // Navegar para Contas Bancárias
+    cy.log('Navegar para Contas Bancárias')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     cy.wait('@detalhesConta')
 
-    // input pesquisar
+    cy.log('Digitar no input pesquisar')
     cy.getVisible(locContaBancaria.dashboard.pesquisarConta).clear()
       .type(seedTestContaBancaria.nomeConta)
 
-    // selecionar a conta bancaria listada
+    cy.log('Selecionar a conta bancaria listada')
     if (seedTestContaBancaria.numeroCartao) {
-      // card conta bancaria
+      cy.log('card conta bancaria')
       cy.getVisible(locContaBancaria.dashboard.nomeCartaoCredito)
         .contains(seedTestContaBancaria.nomeConta).click()
     } else {
-      // card cartao de credito
+      cy.log('Clicar no card cartao de credito')
       cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria)
         .contains(seedTestContaBancaria.nomeConta).click()
     }
 
     cy.wait('@detalhesConta')
 
-    // validar nome da conta na tela de detalhes
+    cy.log('Validar nome da conta na tela de detalhes')
     cy.getVisible(locContaBancaria.detalhesConta.nomeConta).should(($el) => {
       expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
     })
 
-    // clicar no botão de excluir conta bancaria
+    cy.log('Clicar no botão de excluir conta bancaria')
     cy.getVisible(locContaBancaria.detalhesConta.buttonExcluir).click()
 
     if (seedTestContaBancaria.confirmarExclusao) {
-      // Cancelar exclusão
+      cy.log('Cancelar exclusão')
       cy.getVisible(locContaBancaria.detalhesConta.confirmarExclusao).click()
     } else {
-      // Confirmar exclusão
+      cy.log('Confirmar exclusão')
       cy.getVisible(locContaBancaria.detalhesConta.confirmarExclusao).click()
     }
 
     cy.wait('@detalhesConta')
 
-    // valida mensagem de sucesso
+    cy.log('Validar mensagem de sucesso')
     cy.get(locContaBancaria.detalhesConta.mensagemExclusao).should(($el) => {
       expect($el).exist.and.to.contain.text('Exclusão realizada com sucesso')
     })
@@ -288,7 +288,7 @@ class ContaBancaria {
     cy.log('Navegar para Contas Bancárias')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.log('input pesquisar')
+    cy.log('Digitar no input pesquisar')
     cy.getVisible(locContaBancaria.dashboard.pesquisarConta).clear()
       .type(seedTestContaBancaria.nomeConta)
 
@@ -297,30 +297,30 @@ class ContaBancaria {
 
     cy.wait('@detalhesConta')
 
-    cy.log('validar nome da conta na tela de detalhes')
+    cy.log('Validar nome da conta na tela de detalhes')
     cy.getVisible(locContaBancaria.detalhesConta.nomeConta).should(($el) => {
       expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
     })
 
-    cy.log('clicar no botão de editar conta bancaria')
+    cy.log('Clicar no botão de editar conta bancaria')
     cy.getVisible(locContaBancaria.detalhesConta.buttonEditar).click()
 
     cy.wait('@detalhesConta')
 
     cy.getVisible(locContaBancaria.contaBancaria.ativarInativar).click()
 
-    cy.log('botão adicionar conta')
+    cy.log('Clicar botão adicionar conta')
     cy.getVisible(locContaBancaria.contaBancaria.adicionar)
       .click()
 
     cy.wait('@detalhesConta')
 
-    cy.log('valida mensagem de sucesso')
+    cy.log('Validar mensagem de sucesso')
     cy.get(locContaBancaria.contaBancaria.mensagemSucesso).should(($el) => {
       expect($el).exist.and.to.contain.text('Conta salva com sucesso')
     })
 
-    cy.log('validar que o botão de adicionar não exista mais')
+    cy.log('Validar que o botão de adicionar não exista mais')
     cy.get(locContaBancaria.contaBancaria.adicionar).should('not.exist')
   }
 
@@ -333,7 +333,7 @@ class ContaBancaria {
     const locatorTituloPagina = locContaBancaria.dashboard.titulo
     const tituloPagina = 'Contas bancárias'
 
-    // Navegar para Contas Bancárias
+    cy.log('Navegar para Contas Bancárias')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/**').as('detalhesConta')

@@ -201,7 +201,7 @@ class MovimentacaoBancaria {
         cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoConferido).eq(index).should(($el) => {
           expect($el).to.contain.text(movimentacao.conferido)
         })
-        cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoValor).should(($el) => {
+        cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoValor).eq(index).should(($el) => {
           expect($el).to.contain.text(movimentacao.valor)
         })
       })

@@ -6,8 +6,7 @@ import Nfe from '../../../../../support/commands/nfe/nfe/nfe.js'
 import Utils from '../../../../../support/utils/utils.js'
 import Authenticate from '../../../../../support/commands/login/login-logout.js'
 
-// TODO: Aguardando renovação do certificado digital
-describe.skip('NF-e', { tags: '@nfe' }, () => {
+describe('NF-e', { tags: '@nfe' }, () => {
   var inscricaoEstadual = Utils.getPayloadPorAmbiente(payloadDestinatario)
   var payloadDestinatarioIsento = Utils.replacer('dataSubstituicao', Utils.getDate(), inscricaoEstadual.isenta)
   var payloadDestinatarioNaoIsento = Utils.replacer('dataSubstituicao', Utils.getDate(), inscricaoEstadual.naoIsenta)

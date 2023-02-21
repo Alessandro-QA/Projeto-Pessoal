@@ -15,7 +15,7 @@
         "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
         "categorias": "Sementes",
         "conferido": "Não",
-        "valor": "- R$  20,00"
+        "valor": "- R$ 20,00"
       }
     ],
     "saldoDoDia": "-R$ 20,00"
@@ -36,7 +36,7 @@
         "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
         "categorias": "Arroz",
         "conferido": "Não",
-        "valor": "R$ 30,00"
+        "valor": "+ R$30,00"
       }
     ],
     "saldoDoDia": "R$ 30,00"
@@ -59,13 +59,13 @@
         "tipo": "Transferência",
         "conta": "Banco: Banco do Brasil S.A. Ag.: 65432 Conta: 3456-7",
         "conferido": "Não",
-        "valor": "- R$  50,00"
+        "valor": "- R$ 50,00"
       },
       {
         "tipo": "Transferência",
         "conta": "Banco: Banco Itaucard S.A. Ag.: 341 Conta: 6630341524-3",
         "conferido": "Não",
-        "valor": "R$ 50,00"
+        "valor": "+ R$50,00"
       }
     ],
     "saldoDoDia": "R$ 0,00"

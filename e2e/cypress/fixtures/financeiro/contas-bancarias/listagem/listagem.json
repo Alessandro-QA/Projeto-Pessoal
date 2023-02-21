@@ -82,7 +82,7 @@
       "empresasHabilitadas": "Empresa 1",
       "dataSaldoInicial": "02/02/2022",
       "saldoInicial": "R$ 1.000,00",
-      "saldoAtual": "R$ 1.000,00",
+      "saldoAtual": "R$1.000,00",
       "ativarInativar": "Inativo"
     },
     "filtros": true,
