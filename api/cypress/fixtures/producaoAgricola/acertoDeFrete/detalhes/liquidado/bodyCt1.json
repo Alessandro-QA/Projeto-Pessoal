@@ -1,0 +1,85 @@
+{
+  "success": true,
+  "data": {
+    "id": "fe510e9c-28ac-4b3e-9c99-3885ec3bbc7f",
+    "numero": 11,
+    "dataAcerto": "2023-02-10T00:00:00+00:00",
+    "statusAcerto": 3,
+    "tipoValorManual": 1,
+    "valorManual": 12000,
+    "valorTotal": 11000,
+    "documentoId": "1bef5342-30f8-4877-b0c8-719825f26533",
+    "motorista": {
+      "id": "93d5937c-fa3b-45e3-9964-d76a865e30b9",
+      "documentoPrincipal": "11329740033",
+      "descricao": "Motorista Teste API"
+    },
+    "veiculo": {
+      "id": "ee07a786-fed4-4909-bb42-1383c4611984",
+      "placa": "ABC4321"
+    },
+    "documento": {
+      "id": "1bef5342-30f8-4877-b0c8-719825f26533",
+      "numero": "11",
+      "operacao": {
+        "id": "94e2d221-95be-2436-8703-3a462c8a4c3a",
+        "descricao": "Frete"
+      },
+      "valor": 11000,
+      "pago": true
+    },
+    "romaneios": [
+      {
+        "quantidadePesagem": 11000,
+        "id": "130a416b-7037-44f5-b857-e9f159d2018d",
+        "valor": 11000,
+        "ticket": 6,
+        "data": "2022-12-09T09:53:11-03:00",
+        "origem": {
+          "id": "00000000-0000-0000-0000-000000000000"
+        },
+        "destino": {
+          "id": "de869555-55dd-4930-803d-e043c250b970",
+          "descricao": "Cliente Teste API"
+        },
+        "motorista": {
+          "id": "93d5937c-fa3b-45e3-9964-d76a865e30b9",
+          "documentoPrincipal": "11329740033",
+          "descricao": "Motorista Teste API"
+        },
+        "veiculo": {
+          "id": "ee07a786-fed4-4909-bb42-1383c4611984",
+          "placa": "ABC4321"
+        },
+        "tipo": 1
+      }
+    ],
+    "despesas": [
+      {
+        "id": "bc22c910-1b33-4b59-bb72-191c4dc2d047",
+        "acertoFreteId": "fe510e9c-28ac-4b3e-9c99-3885ec3bbc7f",
+        "documentoId": "dd84b126-442e-401e-82e4-fbb49d90be3b",
+        "valor": 12000,
+        "numero": "11-1",
+        "data": "2023-02-27T16:26:02-03:00",
+        "pessoa": {
+          "documentoPrincipal": "57046724000193",
+          "pessoaTipo": 1,
+          "id": "3812aaa0-9cee-4a21-b22d-d2205df2fc97",
+          "descricao": "Fornecedor Teste API"
+        },
+        "operacao": {
+          "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
+          "descricao": "13º Salário"
+        },
+        "detalhes": [
+          {
+            "valor": 12000,
+            "saldo": 12000,
+            "status": 4
+          }
+        ]
+      }
+    ]
+  }
+}
