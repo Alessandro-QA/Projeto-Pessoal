@@ -1,0 +1,42 @@
+{
+  "dataAcerto": "2023-02-10",
+  "motorista": {
+    "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+    "documentoPrincipal": "99292525093",
+    "descricao": "Motorista Teste API 2"
+  },
+  "veiculo": {
+    "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+    "placa": "SFD1656"
+  },
+  "tipoValorManual": 2,
+  "romaneios": [
+    {
+      "quantidadePesagem": 33500,
+      "id": "bae74825-532e-4b49-9ec1-59c294250de5",
+      "valor": 33500,
+      "ticket": 12,
+      "data": "2022-12-09T09:56:14-03:00",
+      "origem": { "id": "00000000-0000-0000-0000-000000000000" },
+      "destino": {
+        "id": "aeaa79aa-9726-45dd-88bc-41efe81c45f5",
+        "descricao": "U.A. Teste API"
+      },
+      "motorista": {
+        "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+        "documentoPrincipal": "99292525093",
+        "descricao": "Motorista Teste API 2"
+      },
+      "veiculo": {
+        "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+        "placa": "SFD1656"
+      },
+      "tipo": 1
+    }
+  ],
+  "valorManual": 0,
+  "despesas": [],
+  "id": "5c6ba425-b9ab-4e41-b76b-eeefc708b4eb",
+  "numero": 19,
+  "statusAcerto": 1
+}
