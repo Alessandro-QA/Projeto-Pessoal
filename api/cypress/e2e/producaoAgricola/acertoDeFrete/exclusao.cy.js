@@ -1,33 +1,25 @@
 /// <reference types='Cypress' />
 
+context('Acerto de Frete', () => {
+    context('Exclusão - DELETE /api/producao-agricola/v1/AcertoFretes', () => {
+        describe('Pendente', () => {
+            it('CT1 - Deve deletar acerto pendente', () => {
+                cy.fixture('producaoAgricola/acertoDeFrete/exclusao/payloadCt1.json').then((payload) => {
+                    cy.step('Cadastrar Acerto para deleção')
+                    cy.executeRequest('POST', '/api/producao-agricola/v1/AcertoFretes', payload)
+                        .then((response) => {
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.status).to.equal(200)
+                            expect(response.body.data).to.be.not.null
+                            expect(response.body.data.id).to.be.not.null
+                            expect(response.body.success).to.equal(true)
 
-//import bodyCt4 from '../../../fixtures/producaoAgricola/acertoDeFrete/listagem/bodyCt4.json'
-import seedTeste from '../../../fixtures/producaoAgricola/acertoDeFrete/listagem/seedTeste.json'
-
-context.skip('Acerto de Frete', () => {
-    context('Listagem (AcertoFretes/List)', () => {
-        describe.skip('Filtragem de cabeçalho', () => {
-            it('CT1 - Deve trazer 20 resultados sem filtro', () => {
-
-                cy.executeRequest('POST', '/producao-agricola/v1/AcertoFretes/List', seedTeste.semFiltro)
-                    .then((response) => {
-                        expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
-                        expect(response.status).to.equal(200)
-                        expect(response.body).to.have.lengthOf(20).to.be.not.null
-                        //expect(JSON.stringify(response.body)).to.equal(JSON.stringify(bodyCt1))
-                    })
-            })
-        })
-
-        describe.skip('Filtragem funil', () => {
-            it('CT1 - Deve filtrar por periodo', () => {
-                cy.executeRequest('POST', '/producao-agricola/v1/AcertoFretes/List', seedTeste.porPlaca)
-                    .then((response) => {
-                        expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
-                        expect(response.status).to.equal(200)
-                        expect(response.body).to.have.lengthOf(11).to.be.not.null
-                        //expect(JSON.stringify(response.body)).to.equal(JSON.stringify(bodyCt4))
-                    })
+                            cy.step('Deletar Acerto Criado')
+                            const id = response.body.data.id
+                            cy.section('Deletar acerto cadastrado')
+                            cy.executeRequest('DELETE', '/api/producao-agricola/v1/AcertoFretes', '', id)
+                        })
+                })
             })
         })
     })
