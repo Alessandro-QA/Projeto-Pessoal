@@ -8,7 +8,7 @@ module.exports = defineConfig({
       allureWriter(on, config);
       return config;
     },
-    baseUrl: 'https://myfarm.dev.conexa.com.br/api',
+    baseUrl: 'https://myfarm.dev.conexa.com.br',
     trashAssetsBeforeRuns: true,
     experimentalSessionAndOrigin: true
   },
