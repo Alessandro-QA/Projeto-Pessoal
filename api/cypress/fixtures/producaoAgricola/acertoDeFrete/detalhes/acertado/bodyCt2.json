@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "data": {
+    "id": "26d1b415-e4fb-4672-aea3-31ac26cc18cd",
+    "numero": 13,
+    "dataAcerto": "2023-02-10T00:00:00+00:00",
+    "statusAcerto": 2,
+    "motorista": {
+      "id": "93d5937c-fa3b-45e3-9964-d76a865e30b9",
+      "documentoPrincipal": "11329740033",
+      "descricao": "Motorista Teste API"
+    },
+    "veiculo": {
+      "id": "ee07a786-fed4-4909-bb42-1383c4611984",
+      "placa": "ABC4321"
+    },
+    "tipoValorManual": 2,
+    "valorManual": 1000,
+    "valorTotal": 9000,
+    "documentoId": "c3466614-dba2-42e3-818e-3146245637bf",
+    "documento": {
+      "id": "c3466614-dba2-42e3-818e-3146245637bf",
+      "numero": "13",
+      "operacao": {
+        "id": "94e2d221-95be-2436-8703-3a462c8a4c3a",
+        "descricao": "Frete"
+      },
+      "valor": 9000,
+      "pago": false
+    },
+    "romaneios": [
+      {
+        "quantidadePesagem": 9000,
+        "id": "b1b56a03-0393-4c9a-89aa-a89557c8f123",
+        "valor": 10000,
+        "ticket": 4,
+        "data": "2022-12-09T09:51:51-03:00",
+        "origem": {
+          "id": "00000000-0000-0000-0000-000000000000"
+        },
+        "destino": {
+          "id": "de869555-55dd-4930-803d-e043c250b970",
+          "descricao": "Cliente Teste API"
+        },
+        "motorista": {
+          "id": "93d5937c-fa3b-45e3-9964-d76a865e30b9",
+          "documentoPrincipal": "11329740033",
+          "descricao": "Motorista Teste API"
+        },
+        "veiculo": {
+          "id": "ee07a786-fed4-4909-bb42-1383c4611984",
+          "placa": "ABC4321"
+        },
+        "tipo": 1
+      }
+    ],
+    "despesas": []
+  }
+}

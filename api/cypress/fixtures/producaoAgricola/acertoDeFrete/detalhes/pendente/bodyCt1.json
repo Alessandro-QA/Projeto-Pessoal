@@ -1,0 +1,75 @@
+{
+  "success": true,
+  "data": {
+    "id": "2f7381c4-1648-4ef7-878f-0c54fb18a24a",
+    "numero": 7,
+    "dataAcerto": "2023-02-10T00:00:00+00:00",
+    "statusAcerto": 1,
+    "tipoValorManual": 1,
+    "valorManual": 56123,
+    "valorTotal": 5000,
+    "motorista": {
+      "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+      "documentoPrincipal": "99292525093",
+      "descricao": "Motorista Teste API 2"
+    },
+    "veiculo": {
+      "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+      "placa": "SFD1656"
+    },
+    "romaneios": [
+      {
+        "quantidadePesagem": 5000,
+        "id": "0cb97549-cae3-49c1-9862-1d7b391f3ee5",
+        "valor": 5000,
+        "ticket": 11,
+        "data": "2022-12-13T09:03:26-03:00",
+        "origem": {
+          "id": "aeaa79aa-9726-45dd-88bc-41efe81c45f5",
+          "descricao": "U.A. Teste API"
+        },
+        "destino": {
+          "id": "de869555-55dd-4930-803d-e043c250b970",
+          "descricao": "Cliente Teste API"
+        },
+        "motorista": {
+          "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+          "documentoPrincipal": "99292525093",
+          "descricao": "Motorista Teste API 2"
+        },
+        "veiculo": {
+          "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+          "placa": "SFD1656"
+        },
+        "tipo": 2
+      }
+    ],
+    "despesas": [
+      {
+        "id": "7a0e7240-84b7-44d5-8d76-bb56f95e004a",
+        "acertoFreteId": "2f7381c4-1648-4ef7-878f-0c54fb18a24a",
+        "documentoId": "fcfc95e8-10c2-4966-9f6e-a24467d9d311",
+        "valor": 56123,
+        "numero": "1234",
+        "data": "2023-02-20T18:17:47-03:00",
+        "pessoa": {
+          "documentoPrincipal": "57046724000193",
+          "pessoaTipo": 1,
+          "id": "3812aaa0-9cee-4a21-b22d-d2205df2fc97",
+          "descricao": "Fornecedor Teste API"
+        },
+        "operacao": {
+          "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
+          "descricao": "13º Salário"
+        },
+        "detalhes": [
+          {
+            "valor": 56123,
+            "saldo": 0,
+            "status": 5
+          }
+        ]
+      }
+    ]
+  }
+}
