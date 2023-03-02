@@ -25,7 +25,7 @@ Cypress.Commands.add('executeRequest', (method, url, payload, id) => {
 
     cy.section(`Executando request do tipo "${method}" no endpoint "${url}"`)
 
-    if (method === 'GET')
+    if (method === 'GET' && !url.includes('ListRomaneios'))
         return cy.api({
             "method": method,
             "url": `${baseUrl + url}`,
@@ -34,6 +34,18 @@ Cypress.Commands.add('executeRequest', (method, url, payload, id) => {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${Cypress.env('access_token')}`,
             }
+        })
+
+    if (method === 'GET' && url.includes('ListRomaneios'))
+        return cy.api({
+            "method": method,
+            "url": `${baseUrl + url}`,
+            "headers": {
+                'x-tenant': Cypress.env('tenant'),
+                'content-type': 'application/json',
+                'authorization': `Bearer ${Cypress.env('access_token')}`,
+            },
+            "qs": payload
         })
 
     if (method === 'POST')

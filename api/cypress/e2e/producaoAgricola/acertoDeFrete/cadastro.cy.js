@@ -1,7 +1,7 @@
 /// <reference types='Cypress' />
 
 context('Acerto de Frete', () => {
-    describe('Cadastro - POST /api/producao-agricola/v1/AcertoFretes', () => {
+    describe('Cadastro - POST - /api/producao-agricola/v1/AcertoFretes', () => {
         it('CT1 - Deve cadastrar Acerto de Frete', () => {
             cy.fixture('producaoAgricola/acertoDeFrete/cadastro/payloadCt1.json').then((payload) => {
                 cy.executeRequest('POST', '/api/producao-agricola/v1/AcertoFretes', payload)

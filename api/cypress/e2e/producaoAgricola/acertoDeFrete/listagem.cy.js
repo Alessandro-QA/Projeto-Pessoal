@@ -3,7 +3,7 @@
 import seedTeste from '../../../fixtures/producaoAgricola/acertoDeFrete/listagem/seedTeste.json'
 
 context('Acerto de Frete', () => {
-    context('Listagem - POST /api/producao-agricola/v1/AcertoFretes/List)', () => {
+    context('Listagem - POST - /api/producao-agricola/v1/AcertoFretes/List', () => {
         describe('Filtragem de cabeçalho', () => {
             it('CT1 - Deve trazer 20 resultados sem filtro', () => {
                 cy.executeRequest('POST', '/api/producao-agricola/v1/AcertoFretes/List', seedTeste.semFiltro)
