@@ -1,7 +1,7 @@
 /// <reference types='Cypress' />
 
 context('Acerto de Frete', () => {
-    context('Exclusão - DELETE /api/producao-agricola/v1/AcertoFretes', () => {
+    context('Exclusão - DELETE - /api/producao-agricola/v1/AcertoFretes', () => {
         describe('Pendente', () => {
             it('CT1 - Deve deletar acerto pendente', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/exclusao/payloadCt1.json').then((payload) => {

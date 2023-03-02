@@ -1,7 +1,7 @@
 /// <reference types='Cypress' />
 
 context('Acerto de Frete', () => {
-    context('Detalhes - POST /api/producao-agricola/v1/AcertoFretes/{ID})', () => {
+    context('Detalhes - GET - /api/producao-agricola/v1/AcertoFretes/{ID}', () => {
         describe('Pendente', () => {
             it('CT1 - Deve exibir detalhes de Acerto Com Despesas vinculadas', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/detalhes/pendente/bodyCt1.json').then((body) => {
