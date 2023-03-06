@@ -96,7 +96,7 @@ class Recebimento {
       })
 
       cy.log('Preco Pedido')
-      cy.get(locatorRecebimento.materiais.total).should(($el) => {
+      cy.get(locatorRecebimento.materiais.precoPedido).should(($el) => {
         expect($el).to.contain.text(seedTest.precoPedido)
       })
 

@@ -16,8 +16,8 @@
   "unidadeArmazenamento": "U.A. Insumos",
   "quantidadeMaterial": "500",
   "precoMaterial": "60",
-  "totalMaterial": "R$ 30.000,00",
-  "precoPedido": "R$ 60,00",
+  "totalMaterial": "R$  30.000,00",
+  "precoPedido": "R$  60,00",
 
   "formaPagamento": "Boleto",
   "valorParcela": "R$ 30.000,00",
