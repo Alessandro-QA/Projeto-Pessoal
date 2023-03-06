@@ -19,7 +19,7 @@
     "test:junit:report": "cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json --env ambiente=dev",
     "allure:open": "npm run allure:generate && allure open cypress/allure-report",
     "allure:generate": "allure generate cypress/allure-results/e2e --clean -o cypress/allure-report",
-    "cypress:open": "cypress open",
+    "cypress:open": "cypress open --env ambiente=dev",
     "cypress:open:qa": "cypress open --env ambiente=qa 'cypress/integration/*.spec.js'",
     "cypress:open:dev": "cypress open --env ambiente=dev 'cypress/integration/*.spec.js'",
     "cypress:run:ambiente": "cypress run --env ambiente=NOME_DO_AMBIENTE 'cypress/integration/*.spec.js'",

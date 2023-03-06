@@ -55,7 +55,8 @@ const locators = {
     unidadeArmazenamento: '.storage_unity .selected',
     quantidadeMaterialRecebido: '.request_quantity input',
     precoMaterialRecebido: 'input[data-cy=mf-input-valor]',
-    total: '.suggested_request_line_large span',
+    total: '.suggested_request_line_large > :nth-child(5)',
+    precoPedido: '.suggested_request_line_large > :nth-child(6)',
     botaoConfirmarMaterial: '.suggested_request_line_large .el-switch__core'
   }
 }
