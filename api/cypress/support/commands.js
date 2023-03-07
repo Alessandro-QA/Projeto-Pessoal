@@ -1,3 +1,5 @@
+import './request.js'
+
 Cypress.Commands.add('getToken', (email, password) => {
     cy.section(`Gerando Access Token para o usuário "${email}"`)
 
@@ -18,68 +20,4 @@ Cypress.Commands.add('getToken', (email, password) => {
         Cypress.env('access_token', response.body.access_token)
         cy.step(`Access Token do usuário ${email} definido nas variaveis de ambiente do Cypress com sucesso!`)
     })
-})
-
-Cypress.Commands.add('executeRequest', (method, url, payload, id) => {
-    const baseUrl = Cypress.config('baseUrl')
-
-    cy.section(`Executando request do tipo "${method}" no endpoint "${url}"`)
-
-    if (method === 'GET' && !url.includes('ListRomaneios'))
-        return cy.api({
-            "method": method,
-            "url": `${baseUrl + url}`,
-            "headers": {
-                'x-tenant': Cypress.env('tenant'),
-                'content-type': 'application/json',
-                'authorization': `Bearer ${Cypress.env('access_token')}`,
-            }
-        })
-
-    if (method === 'GET' && url.includes('ListRomaneios'))
-        return cy.api({
-            "method": method,
-            "url": `${baseUrl + url}`,
-            "headers": {
-                'x-tenant': Cypress.env('tenant'),
-                'content-type': 'application/json',
-                'authorization': `Bearer ${Cypress.env('access_token')}`,
-            },
-            "qs": payload
-        })
-
-    if (method === 'POST')
-        return cy.api({
-            "method": method,
-            "url": `${baseUrl + url}`,
-            "headers": {
-                'x-tenant': Cypress.env('tenant'),
-                'content-type': 'application/json',
-                'authorization': `Bearer ${Cypress.env('access_token')}`,
-            },
-            "body": payload
-        })
-
-    if (method === 'DELETE')
-        return cy.api({
-            "method": method,
-            "url": `${baseUrl + url}/${id}`,
-            "headers": {
-                'x-tenant': Cypress.env('tenant'),
-                'content-type': 'application/json',
-                'authorization': `Bearer ${Cypress.env('access_token')}`,
-            },
-        })
-
-    if (method === 'PUT')
-        return cy.api({
-            "method": method,
-            "url": `${baseUrl + url}`,
-            "headers": {
-                'x-tenant': Cypress.env('tenant'),
-                'content-type': 'application/json',
-                'authorization': `Bearer ${Cypress.env('access_token')}`,
-            },
-            "body": payload
-        })
 })
