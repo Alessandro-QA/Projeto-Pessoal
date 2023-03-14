@@ -1,0 +1,23 @@
+{
+  "saldoInicial": 0,
+  "fluxos": [
+    {
+      "data": "2023-03",
+      "saldoReal": 99984999.98,
+      "saldoProjecao": 0,
+      "receitaReal": 100000000,
+      "receitaProjecao": 0,
+      "despesaReal": 15000.02,
+      "despesaProjecao": 0
+    },
+    {
+      "data": "2023-04",
+      "saldoReal": 99984999.98,
+      "saldoProjecao": -4000.02,
+      "receitaReal": 0,
+      "receitaProjecao": 100000,
+      "despesaReal": 0,
+      "despesaProjecao": 104000.02
+    }
+  ]
+}

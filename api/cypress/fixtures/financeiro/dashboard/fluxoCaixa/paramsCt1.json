@@ -1,0 +1,11 @@
+{
+  "dataInicial": "2022-09-06T00:00:00-03:00",
+  "dataFinal": "2023-09-06T23:59:59-03:00",
+  "saldoReal": "true",
+  "saldoProjecao": "true",
+  "receitasReal": "true",
+  "receitasProjecao": "true",
+  "despesasReal": "true",
+  "despesasProjecao": "true",
+  "empresaId": "e6b80cac-9af1-473a-81ad-6dbec66df3b0"
+}

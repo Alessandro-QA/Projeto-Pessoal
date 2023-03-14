@@ -1,0 +1,13 @@
+[
+    {
+        "detalhes": [],
+        "categoria": {
+            "codigo": "3.02.01.01",
+            "descricao": "Venda de Gado",
+            "dedutivel": true
+        },
+        "valorTotal": 70000.000000000000000,
+        "valorCategoria": 70000.000000000000000,
+        "porcentagem": 100.0
+    }
+]

@@ -1,0 +1,26 @@
+{
+    "ciclos": [
+        {
+            "id": "896c758f-2e4a-4d44-a314-e3e1e313caaf",
+            "descricao": "Soja - 2023/2023",
+            "receita": {
+                "ciclo": 0.00,
+                "hectare": 0.00,
+                "valor": 0.00
+            },
+            "despesa": {
+                "ciclo": 0.00,
+                "hectare": 15.50,
+                "valor": 31000.00
+            },
+            "margem": {
+                "ciclo": 0.00,
+                "hectare": -15.50,
+                "valor": -31000.00
+            }
+        }
+    ],
+    "margemLucro": 0.00,
+    "despesaTotal": 31000.00,
+    "receitaTotal": 0.00
+}

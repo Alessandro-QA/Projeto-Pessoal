@@ -1,0 +1,17 @@
+{
+  "fazendaIds": [
+      "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b"
+  ],
+  "safraId": "998718c2-8e3f-49f5-9434-ed0d86b97b20",
+  "ApresentarDocumentosNaoPagosERecebidos": false,
+  "AdicionarSaldoAFixarDeColheitas": true,
+  "cicloContas": [],
+  "ciclos": [
+      {
+          "id": "896c758f-2e4a-4d44-a314-e3e1e313caaf",
+          "mediaNegociada": 0,
+          "area": 2000,
+          "descricao": "Soja - 2023/2023"
+      }
+  ]
+}

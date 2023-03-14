@@ -1,0 +1,33 @@
+{
+  "fazendaIds": [
+      "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b"
+  ],
+  "safraId": "998718c2-8e3f-49f5-9434-ed0d86b97b20",
+  "AdicionarSaldoAFixarDeColheitas": false,
+  "ciclos": [
+      {
+          "area": 2000,
+          "descricao": "Soja - 2023/2023",
+          "id": "896c758f-2e4a-4d44-a314-e3e1e313caaf",
+          "mediaNegociada": 0,
+          "CulturaId": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+          "cultura": {
+              "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+              "nomeNormalizado": "Soja",
+              "unidadeMedida": {
+                  "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+                  "nomeNormalizado": "Saca 60"
+              },
+              "icon": "siagri-icon-soja",
+              "MaterialId": "d83f1554-9057-4087-a82e-c01e9f6da158"
+          },
+          "unidadeMedida": {
+              "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+              "nomeNormalizado": "Saca 60"
+          },
+          "MaterialId": "d83f1554-9057-4087-a82e-c01e9f6da158"
+      }
+  ],
+  "cicloContas": [],
+  "ApresentarDocumentosNaoPagosERecebidos": true
+}
