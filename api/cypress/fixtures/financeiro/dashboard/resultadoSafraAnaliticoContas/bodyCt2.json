@@ -1,0 +1,33 @@
+{
+    "receitas": [
+        {
+            "conta": "Venda de Gado",
+            "codigo": "3.02.01.01",
+            "valor": 100000.00,
+            "percentual": 100.00
+        }
+    ],
+    "despesas": [
+        {
+            "conta": "Fretes e Carretos",
+            "codigo": "4.02.02.03",
+            "valor": 66500.00,
+            "percentual": 39.82
+        },
+        {
+            "conta": "13º Salário",
+            "codigo": "4.02.01.03",
+            "valor": 93000.00,
+            "percentual": 55.69
+        },
+        {
+            "conta": "Sementes",
+            "codigo": "4.01.01.01",
+            "valor": 7500.00,
+            "percentual": 4.49
+        }
+    ],
+    "margemLucro": -67.00,
+    "despesaTotal": 167000.00,
+    "receitaTotal": 100000.00
+}

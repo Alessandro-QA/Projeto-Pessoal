@@ -1,0 +1,26 @@
+[
+    {
+        "id": "12ee4c91-50cc-4d3a-b50f-a945fdc78ba6",
+        "data": "2023-03-06T16:22:05-03:00",
+        "contaBancaria": {
+            "id": "4d488389-8197-4e2d-af23-8d4ed17a847b",
+            "descricao": "Cartão Teste Dashboard Financeiro"
+        },
+        "categoria": "4.02.01.03",
+        "valor": 1000.00,
+        "pessoa": "Cliente Teste API",
+        "documento": "999"
+    },
+    {
+        "id": "4410ea42-b039-4943-9a10-98c8a69ded47",
+        "data": "2023-03-07T12:18:34-03:00",
+        "contaBancaria": {
+            "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+            "descricao": "Banco: Omni SA Crédito Financiamento Investimento Ag.: 142541 Conta: 65146154-6"
+        },
+        "categoria": "4.02.01.03",
+        "valor": 0.01,
+        "pessoa": "Empresa Teste API",
+        "documento": "111"
+    }
+]

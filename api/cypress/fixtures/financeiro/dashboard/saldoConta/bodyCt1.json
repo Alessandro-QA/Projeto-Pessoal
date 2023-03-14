@@ -1,0 +1,12 @@
+{
+  "saldoTotal": 100049999.98,
+  "saldoPrincipal": 100049999.98,
+  "saldoSecundarias": 0.0,
+  "saldoContasBancarias": [
+    {
+      "saldo": 100049999.98,
+      "contaPrincipal": true,
+      "nome": "Teste Dashboard Financeiro"
+    }
+  ]
+}

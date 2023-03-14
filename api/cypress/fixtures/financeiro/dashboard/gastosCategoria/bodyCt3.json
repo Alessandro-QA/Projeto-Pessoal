@@ -1,0 +1,13 @@
+[
+    {
+        "detalhes": [],
+        "categoria": {
+            "codigo": "4.02.09.04",
+            "descricao": "Aquisição de Gado",
+            "dedutivel": true
+        },
+        "valorTotal": 10000.000000000000000,
+        "valorCategoria": 10000.000000000000000,
+        "porcentagem": 100.0
+    }
+]

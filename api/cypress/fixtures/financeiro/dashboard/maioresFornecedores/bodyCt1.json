@@ -1,0 +1,41 @@
+{
+    "total": 16000.020000000000000,
+    "pessoas": [
+        {
+            "valor": 10000.000000000000000,
+            "pessoa": {
+                "pessoaTipo": 2,
+                "numeroDocumento": "86163271000183",
+                "id": "4a246e36-00fc-4677-a195-b335babc357a",
+                "descricao": "Produtor Teste API"
+            }
+        },
+        {
+            "valor": 5000.000000000000000,
+            "pessoa": {
+                "pessoaTipo": 1,
+                "numeroDocumento": "57046724000193",
+                "id": "3812aaa0-9cee-4a21-b22d-d2205df2fc97",
+                "descricao": "Fornecedor Teste API"
+            }
+        },
+        {
+            "valor": 1000.000000000000000,
+            "pessoa": {
+                "pessoaTipo": 2,
+                "numeroDocumento": "51634860047",
+                "id": "de869555-55dd-4930-803d-e043c250b970",
+                "descricao": "Cliente Teste API"
+            }
+        },
+        {
+            "valor": 0.020000000000000,
+            "pessoa": {
+                "pessoaTipo": 1,
+                "numeroDocumento": "68104971026",
+                "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+                "descricao": "Empresa Teste API"
+            }
+        }
+    ]
+}

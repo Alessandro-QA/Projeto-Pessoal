@@ -1,0 +1,82 @@
+/// <reference types='Cypress' />
+
+context('Financeiro', () => {
+    context('Dashboard', () => {
+        describe('Detalhes por Categoria - GET - /api/financeiro/v1/Dashboard/DetalhesCategoria{params}', () => {
+            it('CT1 - Deve buscar dados dos Detalhes por Categoria - Pagamento', () => {
+                cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt1.json').then((params) => {
+                    cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/DetalhesCategoria', params)
+                        .then((response) => {
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.status).be.equal(200)
+                            expect(response.body).be.not.null
+                            expect(response.body).to.exist
+                            cy.fixture('financeiro/dashboard/detalhesCategoria/bodyCt1.json').then((body) => {
+                                expect(response.body).to.be.eql(body)
+                            })
+                        })
+                })
+            })
+
+            it('CT2 - Deve buscar dados dos Detalhes por Categoria - Recebimento', () => {
+                cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt2.json').then((params) => {
+                    cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/DetalhesCategoria', params)
+                        .then((response) => {
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.status).be.equal(200)
+                            expect(response.body).be.not.null
+                            expect(response.body).to.exist
+                            cy.fixture('financeiro/dashboard/detalhesCategoria/bodyCt2.json').then((body) => {
+                                expect(response.body).to.be.eql(body)
+                            })
+                        })
+                })
+            })
+
+            it('CT3 - Deve buscar dados dos Detalhes por Categoria - Transferência', () => {
+                cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt3.json').then((params) => {
+                    cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/DetalhesCategoria', params)
+                        .then((response) => {
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.status).be.equal(200)
+                            expect(response.body).be.not.null
+                            expect(response.body).to.exist
+                            cy.fixture('financeiro/dashboard/detalhesCategoria/bodyCt3.json').then((body) => {
+                                expect(response.body).to.be.eql(body)
+                            })
+                        })
+                })
+            })
+
+            it('CT4 - Deve buscar dados dos Detalhes por Categoria - Por Tag', () => {
+                cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt4.json').then((params) => {
+                    cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/DetalhesCategoria', params)
+                        .then((response) => {
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.status).be.equal(200)
+                            expect(response.body).be.not.null
+                            expect(response.body).to.exist
+                            cy.fixture('financeiro/dashboard/detalhesCategoria/bodyCt4.json').then((body) => {
+                                expect(response.body).to.be.eql(body)
+                            })
+                        })
+                })
+            })
+
+            it('CT4 - Deve buscar dados dos Detalhes por Categoria - Por Pesquisa', () => {
+                cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt5.json').then((params) => {
+                    cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/DetalhesCategoria', params)
+                        .then((response) => {
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.status).be.equal(200)
+                            expect(response.body).be.not.null
+                            expect(response.body).to.exist
+                            cy.fixture('financeiro/dashboard/detalhesCategoria/bodyCt5.json').then((body) => {
+                                expect(response.body).to.be.eql(body)
+                            })
+                        })
+                })
+            })
+        })
+    })
+})

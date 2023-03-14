@@ -1,0 +1,23 @@
+{
+  "total": 70000.000000000000000,
+  "pessoas": [
+      {
+          "valor": 60000.000000000000000,
+          "pessoa": {
+              "pessoaTipo": 2,
+              "numeroDocumento": "51634860047",
+              "id": "de869555-55dd-4930-803d-e043c250b970",
+              "descricao": "Cliente Teste API"
+          }
+      },
+      {
+          "valor": 10000.000000000000000,
+          "pessoa": {
+              "pessoaTipo": 2,
+              "numeroDocumento": "86163271000183",
+              "id": "4a246e36-00fc-4677-a195-b335babc357a",
+              "descricao": "Produtor Teste API"
+          }
+      }
+  ]
+}
