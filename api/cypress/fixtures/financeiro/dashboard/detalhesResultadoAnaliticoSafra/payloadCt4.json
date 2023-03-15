@@ -1,0 +1,18 @@
+{
+    "tipoLancamento": "despesa",
+    "categoria": "4.02.01.03",
+    "cicloContas": [],
+    "ciclos": [
+        {
+            "id": "896c758f-2e4a-4d44-a314-e3e1e313caaf",
+            "CulturaId": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+            "MaterialId": "d83f1554-9057-4087-a82e-c01e9f6da158"
+        }
+    ],
+    "fazendaIds": [
+        "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b"
+    ],
+    "safraId": "998718c2-8e3f-49f5-9434-ed0d86b97b20",
+    "ApresentarDocumentosNaoPagosERecebidos": false,
+    "AdicionarSaldoAFixarDeColheitas": true
+}

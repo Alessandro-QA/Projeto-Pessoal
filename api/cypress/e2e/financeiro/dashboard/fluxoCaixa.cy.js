@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('Fluxo de Caixa - GET - /api/financeiro/v1/Dashboard/FluxoCaixa{params}', () => {
+        describe('GET - /api/financeiro/v1/Dashboard/FluxoCaixa{params} - Fluxo de Caixa', () => {
             it('CT1 - Deve buscar dados do gráfico de Fluxo de Caixa', () => {
                 cy.fixture('financeiro/dashboard/fluxoCaixa/paramsCt1.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/FluxoCaixa', params)

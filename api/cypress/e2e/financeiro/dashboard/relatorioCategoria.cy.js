@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('Relatório de Movimentações por Categoria - GET - /api/financeiro/v1/Dashboard/RelatorioCategoria{params}', () => {
+        describe('GET - /api/financeiro/v1/Dashboard/RelatorioCategoria{params} - Relatório de Movimentações por Categoria', () => {
             it('CT1 - Deve buscar Relatório de Movimentações por Categoria - Pagamento', () => {
                 cy.fixture('financeiro/dashboard/relatorioCategoria/paramsCt1.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/RelatorioCategoria', params)

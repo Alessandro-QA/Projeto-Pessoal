@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('Recebimentos por Categoria - GET - /api/financeiro/v1/Dashboard/RecebimentosCategoria{params}', () => {
+        describe('GET - /api/financeiro/v1/Dashboard/RecebimentosCategoria{params} - Recebimentos por Categoria', () => {
             it('CT1 - Deve buscar dados de Recebimentos por Categoria', () => {
                 cy.fixture('financeiro/dashboard/recebimentosCategoria/paramsCt1.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/RecebimentosCategoria', params)

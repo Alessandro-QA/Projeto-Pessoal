@@ -1,0 +1,35 @@
+[
+  {
+      "produtor": {
+          "documentoPrincipal": "68104971026",
+          "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+          "descricao": "Empresa Teste API"
+      },
+      "entrada": 0.00,
+      "saida": 30000.00,
+      "estimativaIR": 0.00,
+      "saldo": -30000.00
+  },
+  {
+      "produtor": {
+          "documentoPrincipal": "81222171000167",
+          "id": "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
+          "descricao": "Empresa Teste Financeiro - Dashboard"
+      },
+      "entrada": 0.00,
+      "saida": 16000.02,
+      "estimativaIR": 0.00,
+      "saldo": -16000.02
+  },
+  {
+      "produtor": {
+          "documentoPrincipal": "57046724000193",
+          "id": "3812aaa0-9cee-4a21-b22d-d2205df2fc97",
+          "descricao": "Fornecedor Teste API"
+      },
+      "entrada": 70000.00,
+      "saida": 146123.00,
+      "estimativaIR": 0.00,
+      "saldo": -76123.00
+  }
+]

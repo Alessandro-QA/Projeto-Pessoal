@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('Resultado da Safra - POST - /api/financeiro/v1/Dashboard/ResultadoSafra', () => {
+        describe('POST - /api/financeiro/v1/Dashboard/ResultadoSafra - Resultado da Safra', () => {
             it('CT1 - Deve buscar Resultado da Safra - Com saldo a Fixar de Colheitas', () => {
                 cy.fixture('financeiro/dashboard/resultadoSafra/payloadCt1.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Dashboard/ResultadoSafra', payload)

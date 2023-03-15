@@ -1,14 +1,14 @@
 {
   "pagamento": {
-    "valor": 185000.0,
-    "quantidadeTitulos": 16,
-    "proximosSeteDias": 37000.0,
-    "proximosQuinzeDias": 37000.0
+    "valor": 185200,
+    "quantidadeTitulos": 18,
+    "proximosSeteDias": 37000,
+    "proximosQuinzeDias": 37000
   },
   "recebimento": {
-    "valor": 100000.0,
+    "valor": 100000,
     "quantidadeTitulos": 1,
-    "proximosSeteDias": 0.0,
-    "proximosQuinzeDias": 0.0
+    "proximosSeteDias": 0,
+    "proximosQuinzeDias": 0
   }
 }
