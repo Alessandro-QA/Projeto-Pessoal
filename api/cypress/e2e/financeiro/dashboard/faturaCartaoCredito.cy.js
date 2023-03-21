@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('Fatura do Cartão de Crédito - GET - /api/financeiro/v1/Dashboard/FaturaCartaoCredito{params}', () => {
+        describe('GET - /api/financeiro/v1/Dashboard/FaturaCartaoCredito{params} - Fatura do Cartão de Crédito', () => {
             it('CT1 - Deve buscar dados da Fatura do Cartão de Crédito', () => {
                 cy.fixture('financeiro/dashboard/faturaCartaoCredito/paramsCt1.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/FaturaCartaoCredito', params)

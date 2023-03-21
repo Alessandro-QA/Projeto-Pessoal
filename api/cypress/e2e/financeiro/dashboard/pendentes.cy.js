@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('Pendentes - GET - /api/financeiro/v1/Dashboard/Pendentes{params}', () => {
+        describe('GET - /api/financeiro/v1/Dashboard/Pendentes{params} - Pendentes', () => {
             it('CT1 - Deve buscar recebimentos ou pagamentos pendentes por empresa e data', () => {
                 cy.fixture('financeiro/dashboard/pendentes/paramsCt1.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/Pedentes', params)

@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('Maiores Fornecedores - GET - /api/financeiro/v1/Dashboard/MaioresFornecedores{params}', () => {
+        describe('GET - /api/financeiro/v1/Dashboard/MaioresFornecedores{params} - Maiores Fornecedores', () => {
             it('CT1 - Deve buscar dados dos Maiores Clientes', () => {
                 cy.fixture('financeiro/dashboard/maioresFornecedores/paramsCt1.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/MaioresFornecedores', params)

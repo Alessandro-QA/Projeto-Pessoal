@@ -1,0 +1,13 @@
+[
+  {
+      "produtor": {
+          "documentoPrincipal": "68104971026",
+          "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+          "descricao": "Empresa Teste API"
+      },
+      "entrada": 0.00,
+      "saida": 30000.00,
+      "estimativaIR": 0.00,
+      "saldo": -30000.00
+  }
+]

@@ -2,7 +2,7 @@
 
 context('Produção Agrícola', () => {
     context('Acerto de Frete', () => {
-        describe('Listagem de Romaneios - GET - /api/producao-agricola/v1/AcertoFretes/ListRomaneios?{params}', () => {
+        describe('GET - /api/producao-agricola/v1/AcertoFretes/ListRomaneios?{params} - Listagem de Romaneios', () => {
             it('CT1 - Deve listar romaneios por motorista', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/listagemRomaneio/paramsCt1.json').then((params) => {
                     cy.getRequestWhitParams('/api/producao-agricola/v1/AcertoFretes/ListRomaneios', params)

@@ -1,0 +1,10 @@
+[
+    {
+        "id": "fbca7e45-e53d-477e-9f65-9353c0bf3419",
+        "data": "2023-03-07T00:00:00+00:00",
+        "valor": 5000.00,
+        "pessoa": "Cliente Teste API",
+        "documento": "1122",
+        "origem": "Documento"
+    }
+]

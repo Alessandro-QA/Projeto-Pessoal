@@ -2,7 +2,7 @@
 
 context('Produção Agrícola', () => {
     context('Acerto de Frete', () => {
-        describe('Cadastro - POST - /api/producao-agricola/v1/AcertoFretes', () => {
+        describe('POST - /api/producao-agricola/v1/AcertoFretes - Cadastro', () => {
             it('CT1 - Deve cadastrar Acerto de Frete', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/cadastro/payloadCt1.json').then((payload) => {
                     cy.postRequest('/api/producao-agricola/v1/AcertoFretes', payload)

@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('Saldo em Conta - GET - /api/financeiro/v1/Dashboard/SaldoConta{params}', () => {
+        describe('GET - /api/financeiro/v1/Dashboard/SaldoConta{params} - Saldo em Conta', () => {
             it('CT1 - Deve buscar dados do Saldo em Conta', () => {
                 cy.fixture('financeiro/dashboard/saldoConta/paramsCt1.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/SaldoConta', params)

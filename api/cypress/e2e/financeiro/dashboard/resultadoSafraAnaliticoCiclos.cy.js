@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('Resultado da Safra Analítico Ciclos - POST - /api/financeiro/v1/Dashboard/ResultadoSafraAnaliticoCiclos', () => {
+        describe('POST - /api/financeiro/v1/Dashboard/ResultadoSafraAnaliticoCiclos - Resultado da Safra Analítico Ciclos', () => {
             it('CT1 - Deve buscar Resultado da Safra Analítico Ciclos - Com saldo a Fixar de Colheitas', () => {
                 cy.fixture('financeiro/dashboard/resultadoSafraAnaliticoCiclos/payloadCt1.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Dashboard/ResultadoSafraAnaliticoCiclos', payload)

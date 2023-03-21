@@ -2,7 +2,7 @@
 
 context('Produção Agrícola', () => {
     context('Acerto de Frete', () => {
-        context('Detalhes - GET - /api/producao-agricola/v1/AcertoFretes/{ID}', () => {
+        context('GET - /api/producao-agricola/v1/AcertoFretes/{ID} - Detalhes', () => {
             describe('Pendente', () => {
                 it('CT1 - Deve exibir detalhes de Acerto Com Despesas vinculadas', () => {
                     cy.fixture('producaoAgricola/acertoDeFrete/detalhes/pendente/bodyCt1.json').then((body) => {
