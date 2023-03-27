@@ -1,42 +1,44 @@
 {
-    "baseUrl": "__Env.MyFarm.BaseAddress__",
-    "env": {
-      "authUrl": "__Env.MyFarm.AuthUrl__",
-      "returnURL": "__Env.MyFarm.ReturnURL__",
-      "daasUrl": "__Env.MyFarm.DassURL__",
-      "scope": "__Env.MyFarm.Scope__",
-      "authorization": "__Env.MyFarm.Authorization__",
-      "login_cenarios": {
-        "email": "__EndToEndTest.LoginCenarios.Email__",
-        "senha": "__EndToEndTest.LoginCenarios.Password__",
-        "tenant": "__EndToEndTest.LoginCenarios.tenant__",
-        "usernameDevClient": "__EndToEndTest.usernameDevClient__",
-        "passwordDevClient": "__EndToEndTest.passwordDevClient__"
-      },
-      "login_cadastro": {
-        "email": "__EndToEndTest.LoginCadastro.Email__",
-        "senha": "__EndToEndTest.LoginCadastro.Password__",
-        "tenant": "__EndToEndTest.LoginCadastro.tenant__",
-        "usernameDevClient": "__EndToEndTest.usernameDevClient__",
-        "passwordDevClient": "__EndToEndTest.passwordDevClient__"
-      },
-      "login_nfe": {
-        "email": "__EndToEndTest.LoginNFe.Email__",
-        "senha": "__EndToEndTest.LoginNFe.Password__",
-        "tenant": "__EndToEndTest.LoginNFe.tenant__",
-        "usernameDevClient": "__EndToEndTest.usernameDevClient__",
-        "passwordDevClient": "__EndToEndTest.passwordDevClient__"
-      },
-      "db": {
-        "server": "__EndToEndTest.Db.Server__",
-        "database": "__EndToEndTest.Db.Database__",
-        "user": "__EndToEndTest.Db.UserName__",
-        "password": "__EndToEndTest.Db.UserPassword__",
-        "options": {
-          "encrypt": true,
-          "trustServerCertificate": false
-        }
+  "baseUrl": "__Env.MyFarm.BaseAddress__",
+  "env": {
+    "authUrl": "__Env.MyFarm.AuthUrl__",
+    "returnURL": "__Env.MyFarm.ReturnURL__",
+    "daasUrl": "__Env.MyFarm.DassURL__",
+    "scope": "__Env.MyFarm.Scope__",
+    "authorization": "__Env.MyFarm.Authorization__",
+    "login_cenarios": {
+      "email": "__EndToEndTest.LoginCenarios.Email__",
+      "senha": "__EndToEndTest.LoginCenarios.Password__",
+      "tenant": "__EndToEndTest.LoginCenarios.tenant__",
+      "usernameDevClient": "__EndToEndTest.usernameDevClient__",
+      "passwordDevClient": "__EndToEndTest.passwordDevClient__"
+    },
+    "login_cadastro": {
+      "email": "__EndToEndTest.LoginCadastro.Email__",
+      "senha": "__EndToEndTest.LoginCadastro.Password__",
+      "tenant": "__EndToEndTest.LoginCadastro.tenant__",
+      "usernameDevClient": "__EndToEndTest.usernameDevClient__",
+      "passwordDevClient": "__EndToEndTest.passwordDevClient__"
+    },
+    "login_nfe": {
+      "email": "__EndToEndTest.LoginNFe.Email__",
+      "senha": "__EndToEndTest.LoginNFe.Password__",
+      "tenant": "__EndToEndTest.LoginNFe.tenant__",
+      "usernameDevClient": "__EndToEndTest.usernameDevClient__",
+      "passwordDevClient": "__EndToEndTest.passwordDevClient__"
+    },
+    "db": {
+      "server": "__EndToEndTest.Db.Server__",
+      "database": "__EndToEndTest.Db.Database__",
+      "user": "__EndToEndTest.Db.UserName__",
+      "password": "__EndToEndTest.Db.UserPassword__",
+      "port": 1433,
+      "connectionTimeout": 60000,
+      "requestTimeout": 60000,
+      "options": {
+        "encrypt": true,
+        "trustServerCertificate": false
       }
     }
   }
-  
+}

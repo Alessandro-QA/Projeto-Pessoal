@@ -18,9 +18,9 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 before(function () {
   switch (Cypress.env('ambiente')) {
-    case 'dev': cy.executarQuery(deletarRegistroTabelasDev).then(function (recordset) { cy.log(recordset) })
+    case 'dev': cy.executarQuery(deletarRegistroTabelasDev).then((recordset) => { cy.log(`Consulta executada com sucesso: `, recordset) })
       break
-    case 'qa': cy.executarQuery(deletarRegistroTabelasQa).then(function (recordset) { cy.log(recordset) })
+    case 'qa': cy.executarQuery(deletarRegistroTabelasQa).then(function (recordset) { cy.log(`Consulta executada com sucesso: `, recordset) })
       break
     default:
       throw new Error('Não foi possivel carregar as variáveis de ambiente')

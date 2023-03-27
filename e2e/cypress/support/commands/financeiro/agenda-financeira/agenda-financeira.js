@@ -15,30 +15,30 @@ class AgendaFinanceira {
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Recebimento').as('apiRecebimento')
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem').as('listagemAgenda')
 
-    // Navegar para Agenda Financeira
+    cy.log('Navegar para Agenda Financeira')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    // Selecionar Empresa
+    cy.log('Selecionar Empresa')
     cy.getVisible(locAgendaFinanceira.dashboard.filtroEmpresa)
       .contains(seedTestAgendaFinanceira.empresaDocumento).click()
 
-    // Selecionar Fazenda
+    cy.log('Selecionar Fazenda')
     cy.getVisible(locAgendaFinanceira.dashboard.filtroFazenda)
       .contains(seedTestAgendaFinanceira.fazendaDocumento).click()
 
-    // Pesquisar por numero do documento
+    cy.log('Pesquisar por numero do documento')
     cy.getVisible(locAgendaFinanceira.dashboard.pesquisarDocumento)
       .clear().type(`${seedTestAgendaFinanceira.numeroDocumento}{enter}`)
 
     cy.get(locAgendaFinanceira.dashboard.cardAgenda)
       .contains(seedTestAgendaFinanceira.numeroDocumento)
       .parents(locAgendaFinanceira.dashboard.cardAgenda).within(() => {
-        // Realizar pagamento
+        cy.log('Realizar pagamento')
         cy.getVisible(locAgendaFinanceira.dashboard.buttonReceberOuPagar)
           .should('exist').click()
       })
 
-    // Confirmar pagamento
+    cy.log('Confirmar pagamento')
     cy.getVisible(locAgendaFinanceira.dashboard.buttonConfirmarPagamento)
       .should('exist').click()
 
@@ -70,7 +70,7 @@ class AgendaFinanceira {
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem')
       .as('listagemAgenda')
 
-    // Navegar para Agenda Financeira
+    cy.log('Navegar para Agenda Financeira')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     cy.wait('@listagemAgenda')
@@ -201,62 +201,65 @@ class AgendaFinanceira {
 
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Recebimento').as('apiRecebimento')
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem').as('listagemAgenda')
+    cy.intercept('GET', '/api/financeiro/v1/Titulo/**').as('getTitulo')
 
-    // Navegar para Agenda Financeira
+    cy.log('Navegar para Agenda Financeira')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    // Selecionar Empresa
+    cy.log('Selecionar Empresa')
     cy.getVisible(locAgendaFinanceira.dashboard.filtroEmpresa)
       .contains(seedTestAgendaFinanceira.empresa).click()
 
-    // Selecionar Fazenda
+    cy.log('Selecionar Fazenda')
     cy.getVisible(locAgendaFinanceira.dashboard.filtroFazenda)
       .contains(seedTestAgendaFinanceira.fazenda).click()
 
-    // Pesquisar por numero do documento
+    cy.log('Pesquisar por numero do documento')
     cy.getVisible(locAgendaFinanceira.dashboard.pesquisarDocumento)
       .clear().type(`${seedTestAgendaFinanceira.numeroDocumento}{enter}`)
 
     cy.wait('@listagemAgenda')
 
-    // Selecionar card na agenda financeira
+    cy.log('Selecionar card na agenda financeira')
     cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento)
       .contains(seedTestAgendaFinanceira.numeroDocumento)
       .parent(locAgendaFinanceira.dashboard.cardAgenda)
       .within(($cardAgenda) => {
-        // card deve existir e estar visivel
+        cy.log('card deve existir e estar visivel')
         cy.get($cardAgenda).should('exist').and('be.visible')
 
-        // abrir detalhes do titulo
+        cy.log('abrir detalhes do titulo')
         cy.getVisible($cardAgenda).click()
       })
 
-    // clicar no botão para ir a tela de recebimento/pagamento 
+    cy.wait('@getTitulo')
+    
+    cy.log('clicar no botão para ir ao modal de recebimento/pagamento')
     cy.getVisible(locAgendaFinanceira.detalhesTitulo.efetuarPagamento).click({ timeout: 30000 })
 
-    // Selecionar forma de pagamento
+    cy.log('Selecionar forma de pagamento')
     if (seedTestAgendaFinanceira.formaPagamento) {
       cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.formaPagamento).click()
         .contains(seedTestAgendaFinanceira.formaPagamento).click()
 
-      // Informar a data do pagamento/recebimento
+      cy.log('Informar a data do pagamento/recebimento')
       cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.dataPagamento)
         .clear().type(`${seedTestAgendaFinanceira.dataPagamento}{enter}`)
 
-      // Selecionar a conta bancaria
+      cy.log('Selecionar a conta bancaria')
       cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.contaBancaria).click()
         .contains(seedTestAgendaFinanceira.contaBancaria).click()
 
-      // Selecionar tag
+      cy.log('Selecionar tag')
       cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.tags).click()
         .contains(seedTestAgendaFinanceira.tags).click()
 
-      // Infomar uma Observação no pagamento / recebimento
+      cy.log('Infomar uma Observação no pagamento / recebimento')
       cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.observacao)
         .clear().type(`${seedTestAgendaFinanceira.observacao}{enter}`)
     }
 
-    // Informar o valor de pagamento
+    cy.log('Informar o valor de pagamento')
     if (seedTestAgendaFinanceira.valor) {
       cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.valor)
         .clear().type(`${seedTestAgendaFinanceira.valor}{enter}`)
@@ -264,7 +267,7 @@ class AgendaFinanceira {
 
     cy.wait('@listagemAgenda')
 
-    // Botao de recebimento / pagamento
+    cy.log('Botao de recebimento / pagamento')
     cy.get(locAgendaFinanceira.pagamentoRecebimento.botaoPagarReceber).click({ force: true })
 
     cy.get(locAgendaFinanceira.pagamentoRecebimento.mensagemSucessoPagamento).then(($message) => {
@@ -287,7 +290,7 @@ class AgendaFinanceira {
     const locatorTituloPagina = locAgendaFinanceira.dashboard.titulo
     const tituloPagina = 'Agenda financeira'
 
-    // Navegar para Agenda Financeira
+    cy.log('Navegar para Agenda Financeira')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem').as('listagemAgenda')
@@ -355,7 +358,7 @@ class AgendaFinanceira {
     const locatorTituloPagina = locAgendaFinanceira.dashboard.titulo
     const tituloPagina = 'Agenda financeira'
 
-    // Navegar para Agenda Financeira
+    cy.log('Navegar para Agenda Financeira')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem').as('listagemAgenda')
@@ -379,7 +382,7 @@ class AgendaFinanceira {
       cy.wait(3000)
     }
 
-    // Pesquisar por numero do documento
+    cy.log('Pesquisar por numero do documento')
     cy.getVisible(locAgendaFinanceira.dashboard.pesquisarDocumento)
       .clear().type(`${seedTestAgendaFinanceira.numeroDocumento}{enter}`)
 
@@ -388,7 +391,7 @@ class AgendaFinanceira {
     cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento)
       .contains(seedTestAgendaFinanceira.cardNumeroDocumento)
       .parent(locAgendaFinanceira.dashboard.cardAgenda).within(() => {
-        // Validar dados do card de Agenda Financeira
+        cy.log('Validar dados do card de Agenda Financeira')
         if (seedTestAgendaFinanceira.cardStatusDocumento === 'Recebido') {
           cy.get(locAgendaFinanceira.dashboard.statusRecebido).should(($el) => {
             expect($el).to.have.text(seedTestAgendaFinanceira.cardStatusDocumento)
@@ -421,18 +424,18 @@ class AgendaFinanceira {
     const url = '/financeiro/agenda-financeira'
     const locatorTituloPagina = locAgendaFinanceira.dashboard.titulo
     const tituloPagina = 'Agenda financeira'
-    // Navegar para Agenda Financeira
+    cy.log('Navegar para Agenda Financeira')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    // Selecionar Empresa
+    cy.log('Selecionar Empresa')
     cy.getVisible(locAgendaFinanceira.dashboard.filtroEmpresa)
       .contains(seedTestAgendaFinanceira.empresaDocumento).click()
 
-    // Selecionar Fazenda
+    cy.log('Selecionar Fazenda')
     cy.getVisible(locAgendaFinanceira.dashboard.filtroFazenda)
       .contains(seedTestAgendaFinanceira.fazendaDocumento).click()
 
-    // Pesquisar por numero do documento
+    cy.log('Pesquisar por numero do documento')
     cy.getVisible(locAgendaFinanceira.dashboard.pesquisarDocumento)
       .clear().type(`${seedTestAgendaFinanceira.numeroDocumento}{enter}`)
 
@@ -440,45 +443,45 @@ class AgendaFinanceira {
       .contains(seedTestAgendaFinanceira.cardNumeroDocumento)
       .parent(locAgendaFinanceira.dashboard.cardAgenda)
       .within(($cardAgenda) => {
-        // card deve existir e estar visivel
+        cy.log('card deve existir e estar visivel')
         cy.get($cardAgenda).should('exist').and('be.visible')
 
-        // abrir detalhes do titulo
+        cy.log('abrir detalhes do titulo')
         cy.getVisible($cardAgenda).click()
       })
 
-    // validar status do titulo
+    cy.log('validar status do titulo')
     cy.getVisible(locAgendaFinanceira.detalhesTitulo.statusTitulo).should(($el) => {
       expect($el).to.contain.text(seedTestAgendaFinanceira.statusTitulo)
     })
 
-    // valor do titulo
+    cy.log('valor do titulo')
     cy.getVisible(locAgendaFinanceira.detalhesTitulo.valorTitulo).should(($el) => {
       expect($el).to.contain.text(seedTestAgendaFinanceira.valorTitulo)
     })
 
-    // forma de pagamento
+    cy.log('forma de pagamento')
     cy.getVisible(locAgendaFinanceira.detalhesTitulo.formaPagamento).should(($el) => {
       expect($el).to.contain.text(seedTestAgendaFinanceira.formaPagamento)
     })
 
-    // condicao de pagamento
+    cy.log('condicao de pagamento')
     cy.getVisible(locAgendaFinanceira.detalhesTitulo.condicaoPagamento).should(($el) => {
       expect($el).to.contain.text(seedTestAgendaFinanceira.condicaoPagamento)
     })
 
-    // nome fornecedor
+    cy.log('nome fornecedor')
     cy.getVisible(locAgendaFinanceira.detalhesTitulo.fornecedor).should(($el) => {
       expect($el).to.contain.text(seedTestAgendaFinanceira.fornecedor)
     })
 
-    // cnpj fornecedor
+    cy.log('cnpj fornecedor')
     cy.getVisible(locAgendaFinanceira.detalhesTitulo.cnpj).should(($el) => {
       expect($el).to.contain.text(seedTestAgendaFinanceira.cnpj)
     })
 
     if (seedTestAgendaFinanceira.validarTabelaHistorico) {
-      // valor
+      cy.log('valor')
       cy.get(locAgendaFinanceira.detalhesTitulo.tabelaHistoricoPagamento).should(($tabela) => {
         expect($tabela).to.contain(seedTestAgendaFinanceira.valor)
         expect($tabela).to.contain(seedTestAgendaFinanceira.valorPagamento)
