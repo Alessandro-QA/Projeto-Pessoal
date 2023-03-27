@@ -13,7 +13,7 @@ Cypress.Commands.add('desabilitarPopUpNotificacao', () => {
 // que faz preparação da instrução que será enviada ao banco de dados.
 Cypress.Commands.add('executarQuery', (query) => {
   const dbConfig = Cypress.env('db')
-  cy.task('preparedStatement', { query, dbConfig })
+  return cy.task('preparedStatement', { query, dbConfig }, { timeout: 60000 })
 })
 
 // Command para navegar entre as páginas

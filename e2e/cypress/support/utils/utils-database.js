@@ -14,17 +14,15 @@ class UtilsDatabase {
           console.log(`Consulta realizada com sucesso: `, result.recordsets)
           conn.close()
           return resolve(result.recordsets)
-        })
-          .catch(function (err) {
-            console.log(`Erro ao executar a consulta: `, err)
-            conn.close()
-            return reject(err)
-          })
-      })
-        .catch(function (err) {
-          console.log('Erro ao conectar ao banco de dados: ', err)
+        }).catch(function (err) {
+          console.log(`Erro ao executar a consulta: `, err)
+          conn.close()
           return reject(err)
         })
+      }).catch(function (err) {
+        console.log('Erro ao conectar ao banco de dados: ', err)
+        return reject(err)
+      })
     })
   }
 }

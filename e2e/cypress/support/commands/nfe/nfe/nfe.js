@@ -454,22 +454,31 @@ class Nfe {
     cy.log('Gera nota')
     cy.getVisible(locNfe.buttonGerarNota).click()
 
-    cy.wait('@transmitirNFe', { timeout: 90000, requestTimeout: 90000, responseTimeout: 90000 })
+    let timeoutTransmissao = 0
+    if (Cypress.env('ambiente') === 'dev') {
+      timeoutTransmissao = 90000
+    } else {
+      timeoutTransmissao = 120000
+    }
+
+    cy.log(`Timeout transmissão ambiente de ${Cypress.env('ambiente')}: ${timeoutTransmissao}`)
+
+    cy.wait('@transmitirNFe', { timeout: timeoutTransmissao, requestTimeout: timeoutTransmissao, responseTimeout: timeoutTransmissao })
       .then((interception) => {
+        expect(interception.response.body.data.numeroRecibo).to.exist
+        expect(interception.response.body.data.chave).to.exist
+        expect(interception.response.body.data.nfeSyncReturn).to.exist
+        expect(interception.response.body.data.nomeNormalizado).to.exist
 
         cy.log(`Numero do Recibo: ${interception.response.body.data.numeroRecibo}`)
         cy.log(`Chave da NFe: ${interception.response.body.data.chave}`)
         cy.log(`Retorno do Sync: ${interception.response.body.data.nfeSyncReturn}`)
         cy.log(`Nome Normalizado: ${interception.response.body.data.nomeNormalizado}`)
         cy.log(JSON.stringify(interception))
-
-        // assert.equal(interception.response.statusCode, '200')
-        // assert.equal(interception.response.body.data.ambiente, '2')
-        // assert.equal(interception.response.body.data.retornoSefaz, 'Autorizado o uso da NF-e')
       })
 
     cy.log('Aguardar mensagem de autorizacao da nota')
-    cy.get(locNfe.msgAutorizada, { timeout: 90000 }).should(($el) => {
+    cy.get(locNfe.msgAutorizada, { timeout: timeoutTransmissao }).should(($el) => {
       expect($el).to.contain.text('Nota autorizada com sucesso!')
     })
 
