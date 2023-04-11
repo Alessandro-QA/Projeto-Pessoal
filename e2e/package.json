@@ -30,7 +30,7 @@
     "cypress:run:tag": "cypress run --env grepTags=@NOME_DA_TAG,ambiente=dev 'cypress/integration/*.spec.js'",
     "cypress:dashboard": "cypress run --record --key be93c1be-6ff1-440a-8fc4-656daac9b59c",
     "eslint": "eslint ./cypress/**",
-    "teamsReport": "cypress-msteams-reporter --verbose --report-path cypress/allure-report/__Env.buildNumber__/widgets/status-chart.json --testEnv-path cypress/allure-report/__Env.buildNumber__/widgets/environment.json --report-url __EndToEndTest.AllureUrl__"
+    "teamsReport": "cypress-msteams-reporter --verbose --report-path cypress/allure-report/widgets/status-chart.json --testEnv-path cypress/allure-report/widgets/environment.json --report-url __EndToEndTest.AllureUrl__"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.11",
