@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ALLURE_SERVER='https://allure.conexa.com.br/'
+ALLURE_SERVER='https://allure.conexa.com.br'
 EXECUTION_TYPE='default-icon'
 
 ALLURE_RESULTS_DIRECTORY='__Env.Allure.Results.Directory__'
@@ -36,7 +36,6 @@ declare -a FILES
 for FILE in $FILES_TO_SEND; do
   i=$((i+1))
   n=$((i / 100))
-  echo "========================= $n ======================="
   FILES[n]+="-F files[]=@$FILE "
 done
 
