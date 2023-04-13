@@ -1,4 +1,4 @@
-/// <reference types='Cypress' />resultadoSafra
+/// <reference types='Cypress' />
 
 context('Financeiro', () => {
     context('Dashboard', () => {
