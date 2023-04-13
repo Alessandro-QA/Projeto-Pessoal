@@ -1,0 +1,15 @@
+api/node_modules
+api/cypress/results/*
+api/cypress/allure-report/*
+api/cypress/allure-results/*
+
+e2e/node_modules
+e2e/cypress/results/*
+e2e/cypress/allure-report/*
+e2e/cypress/allure-results/*
+e2e/cypress/config-files/*
+e2e/cypress/config-files/qa.json
+e2e/cypress/config-files/dev.json
+
+.vscode/*
+send-allure-results-BKP.sh
