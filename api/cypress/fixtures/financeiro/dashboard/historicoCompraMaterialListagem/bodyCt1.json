@@ -1,14 +1,14 @@
 [
     {
-        "documentoNumero": "1",
-        "variacao": 0.0,
-        "documentoId": "7a58cb86-be72-4881-b0ed-2a04049a9ab6",
-        "fornecedor": {
-            "id": "e19eee46-8ac3-4bdf-a27b-021e34c67a42",
-            "descricao": "Fornecedor 2"
-        },
-        "data": "2023-03-14T03:00:00+00:00",
-        "valor": 1.000000000000000,
-        "quantidade": 100.000000000000000
+      "documentoNumero": "1",
+      "variacao": 0,
+      "documentoId": "7a58cb86-be72-4881-b0ed-2a04049a9ab6",
+      "fornecedor": {
+        "id": "e19eee46-8ac3-4bdf-a27b-021e34c67a42",
+        "descricao": "Fornecedor 2"
+      },
+      "data": "2023-03-14T00:00:00-03:00",
+      "valor": 1,
+      "quantidade": 100
     }
-]
+  ]

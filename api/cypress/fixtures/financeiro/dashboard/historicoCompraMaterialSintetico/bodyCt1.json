@@ -1,22 +1,22 @@
 {
     "material": {
-        "id": "eed355b8-e749-4e92-93b1-18f1a5df48d7",
-        "descricao": "2,4 - D 98%"
+      "id": "eed355b8-e749-4e92-93b1-18f1a5df48d7",
+      "descricao": "2,4 - D 98%"
     },
     "menorCompra": {
-        "fornecedor": {
-            "id": "e19eee46-8ac3-4bdf-a27b-021e34c67a42",
-            "descricao": "Fornecedor 2"
-        },
-        "data": "2023-03-14T03:00:00+00:00",
-        "valor": 1.000000000000000,
-        "quantidade": 100.000000000000000
+      "fornecedor": {
+        "id": "e19eee46-8ac3-4bdf-a27b-021e34c67a42",
+        "descricao": "Fornecedor 2"
+      },
+      "data": "2023-03-14T00:00:00-03:00",
+      "valor": 1,
+      "quantidade": 100
     },
     "compras": [
-        {
-            "data": "2023-03-14T03:00:00+00:00",
-            "valor": 1.000000000000000,
-            "quantidade": 100.000000000000000
-        }
+      {
+        "data": "2023-03-14T00:00:00-03:00",
+        "valor": 1,
+        "quantidade": 100
+      }
     ]
-}
+  }
