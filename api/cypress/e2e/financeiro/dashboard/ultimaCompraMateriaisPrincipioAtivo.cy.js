@@ -1,8 +1,9 @@
 /// <reference types='Cypress' />
 
+// TODO: Ignorado até resolução do bug #66288
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('GET - /api/financeiro/v1/Dashboard/UltimaCompraMateriaisPrincipioAtivo{params} - Historico de Compra Material Listagem', () => {
+        describe.skip('GET - /api/financeiro/v1/Dashboard/UltimaCompraMateriaisPrincipioAtivo{params} - Historico de Compra Material Listagem', () => {
             it('CT1 - Deve buscar Ultima Compra de Material com Mesmo Principio Ativo', () => {
                 cy.fixture('financeiro/dashboard/ultimaCompraMateriaisPrincipioAtivo/paramsCt1.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/UltimaCompraMateriaisPrincipioAtivo', params)

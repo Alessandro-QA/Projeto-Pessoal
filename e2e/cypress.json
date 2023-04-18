@@ -13,5 +13,10 @@
   "videosFolder": "cypress/results/videos",
   "trashAssetsBeforeRuns": true,
   "ignoreTestFiles": "*.description.js",
-  "watchForFileChanges": false
+  "watchForFileChanges": false,
+  "env": {
+    "allure": true,
+    "allureResultsPath": "cypress/allure-results",
+    "allureAttachRequests": true
+  }
 }

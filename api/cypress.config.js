@@ -17,7 +17,8 @@ module.exports = defineConfig({
     password: 'teste@123',
     tenant: '273276e0-7cc1-4891-94de-55e9ced2aad2',
     allure: true,
-    allureResultsPath: 'cypress/allure-results'
+    allureResultsPath: 'cypress/allure-results',
+    allureAttachRequests: true
   },
   video: false,
   watchForFileChanges: false,

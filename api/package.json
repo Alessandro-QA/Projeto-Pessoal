@@ -7,7 +7,7 @@
     "cypress:open": "cypress open",
     "cypress:run:spec": "cypress run --browser chrome --spec 'cypress/e2e/producaoAgricola/acertoDeFrete/listagem.cy.js'",
     "cypress:run:allure": "cypress run --browser chrome",
-    "allure:generate": "allure generate cypress/allure-results/api --clean -o cypress/allure-report",
+    "allure:generate": "allure generate cypress/allure-results --clean -o cypress/allure-report",
     "allure:open": "npm run allure:generate && allure open cypress/allure-report",
     "eslint": "eslint ./cypress/**",
     "teamsReport": "cypress-msteams-reporter --verbose --report-path cypress/allure-report/widgets/status-chart.json --testEnv-path cypress/allure-report/widgets/environment.json --report-url __EndToEndTest.AllureUrl__"
