@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+    "nomeConta": "Teste Dashboard Financeiro",
+    "numeroConta": "65146154",
+    "digitoConta": "6",
+    "agenciaConta": "142541",
+    "digitoAgencia": "1",
+    "saldoConta": 100049999.98,
+    "empresaTitular": "Empresa Teste Financeiro - Dashboard",
+    "ativo": true
+  },
+  {
+    "id": "745a3fa9-87f5-4dce-9732-966c30d44186",
+    "nomeConta": "Conta Teste API",
+    "numeroConta": "5678",
+    "digitoConta": "9",
+    "agenciaConta": "123",
+    "digitoAgencia": "4",
+    "saldoConta": -171123,
+    "empresaTitular": "Teste Conta Bancaria",
+    "ativo": true
+  },
+  {
+    "id": "55764151-a910-4050-bd36-ca18a3f2bd8c",
+    "nomeConta": "Conta Edição",
+    "numeroConta": "963852",
+    "digitoConta": "7",
+    "agenciaConta": "741852",
+    "digitoAgencia": "9",
+    "saldoConta": 0,
+    "empresaTitular": "Empresa Teste Edição",
+    "ativo": true
+  }
+]

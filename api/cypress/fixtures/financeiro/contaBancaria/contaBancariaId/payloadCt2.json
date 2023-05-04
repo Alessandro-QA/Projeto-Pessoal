@@ -1,0 +1,28 @@
+{
+  "empresaTitular": {
+    "id": "880459f3-42fe-48df-935a-591e7fa61419",
+    "descricao": "Empresa Teste Exclusão"
+  },
+  "tipoConta": "ContaCorrente",
+  "nome": "Conta Exclusão",
+  "banco": {
+    "id": "f2f13b75-1f36-7183-3c66-6b4df4b24113",
+    "descricao": "Banco Clássico S.A.",
+    "codigoBacen": "241"
+  },
+  "agencia": 789456,
+  "agenciaDigitoVerificador": "4",
+  "conta": 4560123,
+  "contaDigitoVerificador": "8",
+  "dataInicialSaldo": "2023-04-28T03:00:00.000Z",
+  "contaBancariaEmpresas": [
+    {
+      "empresa": {
+        "id": "880459f3-42fe-48df-935a-591e7fa61419",
+        "descricao": "Empresa Teste Exclusão"
+      }
+    }
+  ],
+  "tipoTransferencia": "DOC",
+  "ativo": true
+}

@@ -1,0 +1,20 @@
+[
+  {
+      "id": "6211d3da-95d7-45e5-940a-8ca7224d1c9f",
+      "nomeConta": "Conta Tesouraria",
+      "saldoInicial": 0.000000000000000,
+      "saldo": 0.000000000000000,
+      "dataSaldoInicial": "2023-04-20T03:00:00+00:00",
+      "empresaTitular": "Empresa 2",
+      "ativo": true
+  },
+  {
+      "id": "8a606446-6311-4831-b256-f4c0115f1573",
+      "nomeConta": "Tesouraria Inativa",
+      "saldoInicial": 0.000000000000000,
+      "saldo": 0.000000000000000,
+      "dataSaldoInicial": "2023-04-20T03:00:00+00:00",
+      "empresaTitular": "Teste Conta Bancaria",
+      "ativo": false
+  }
+]

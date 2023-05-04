@@ -1,0 +1,238 @@
+[
+  {
+    "id": "4d488389-8197-4e2d-af23-8d4ed17a847b",
+    "empresaTitular": {
+      "id": "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
+      "descricao": "Empresa Teste Financeiro - Dashboard"
+    },
+    "tipoConta": 2,
+    "nome": "Cartão Teste Dashboard Financeiro",
+    "contaPrincipal": false,
+    "numerarioEmTransito": false,
+    "banco": {
+      "id": "00000000-0000-0000-0000-000000000000"
+    },
+    "saldoInicial": 100000000,
+    "saldoAtual": 99999000,
+    "incluirSaldoDisponivel": false,
+    "numeroCartao": 5414654514655416,
+    "limiteCartao": 100000000,
+    "bandeiraCartao": 1,
+    "fechamentoFatura": 10,
+    "vencimentoFatura": 20,
+    "contaCorrenteId": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+    "codigo": 3,
+    "openBanking": false,
+    "ativo": true,
+    "contaBancariaEmpresas": [
+      {
+        "id": "9c2d61a4-69c5-4acb-98c3-9dac09b8cc26",
+        "empresa": {
+          "id": "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
+          "descricao": "Empresa Teste Financeiro - Dashboard"
+        }
+      }
+    ]
+  },
+  {
+    "id": "180b2c2e-d2e6-4a75-8d89-1ae0e2f50e22",
+    "empresaTitular": {
+      "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+      "descricao": "Empresa 2"
+    },
+    "tipoConta": 1,
+    "nome": "Conta Inativa",
+    "contaPrincipal": false,
+    "numerarioEmTransito": false,
+    "banco": {
+      "id": "d55d482b-442d-9133-9ce3-0658c7831e40",
+      "codigoBacen": "604",
+      "descricao": "Banco Industrial do Brasil S.A."
+    },
+    "agencia": "32145415",
+    "agenciaDigitoVerificador": "5",
+    "conta": "514514",
+    "contaDigitoVerificador": "5",
+    "saldoInicial": 0,
+    "saldoAtual": 0,
+    "dataInicialSaldo": "2023-04-20T03:00:00+00:00",
+    "incluirSaldoDisponivel": false,
+    "codigo": 4,
+    "openBanking": false,
+    "ativo": false,
+    "contaBancariaEmpresas": [
+      {
+        "id": "3af86cb2-d705-4a1d-b50b-b9809250ee2e",
+        "empresa": {
+          "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+          "descricao": "Empresa 2"
+        }
+      }
+    ]
+  },
+  {
+    "id": "6211d3da-95d7-45e5-940a-8ca7224d1c9f",
+    "empresaTitular": {
+      "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+      "descricao": "Empresa 2"
+    },
+    "tipoConta": 3,
+    "nome": "Conta Tesouraria",
+    "contaPrincipal": false,
+    "numerarioEmTransito": false,
+    "banco": {
+      "id": "00000000-0000-0000-0000-000000000000"
+    },
+    "saldoInicial": 0,
+    "saldoAtual": 0,
+    "dataInicialSaldo": "2023-04-20T03:00:00+00:00",
+    "incluirSaldoDisponivel": false,
+    "codigo": 5,
+    "openBanking": false,
+    "ativo": true,
+    "contaBancariaEmpresas": [
+      {
+        "id": "1a196dcb-96a1-4131-a2ee-8dc2bb9b2af1",
+        "empresa": {
+          "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+          "descricao": "Empresa 2"
+        }
+      }
+    ]
+  },
+  {
+    "id": "745a3fa9-87f5-4dce-9732-966c30d44186",
+    "empresaTitular": {
+      "id": "3812aaa0-9cee-4a21-b22d-d2205df2fc97",
+      "descricao": "Fornecedor Teste API"
+    },
+    "tipoConta": 1,
+    "nome": "Conta Teste API",
+    "contaPrincipal": false,
+    "numerarioEmTransito": false,
+    "banco": {
+      "id": "cc351928-a4bc-479a-85c0-008a9a7b3c0f",
+      "descricao": "Crediare S.A. Crédito, Financiamento e Investimento"
+    },
+    "agencia": "123",
+    "agenciaDigitoVerificador": "4",
+    "conta": "5678",
+    "contaDigitoVerificador": "9",
+    "saldoInicial": 0,
+    "saldoAtual": -171123,
+    "dataInicialSaldo": "2022-12-09T03:00:00+00:00",
+    "incluirSaldoDisponivel": false,
+    "codigo": 1,
+    "openBanking": false,
+    "ativo": true,
+    "contaBancariaEmpresas": [
+      {
+        "id": "f09c7e13-cde3-4098-a5b6-a65ce1d00e7a",
+        "empresa": {
+          "id": "3812aaa0-9cee-4a21-b22d-d2205df2fc97",
+          "descricao": "Fornecedor Teste API"
+        }
+      }
+    ]
+  },
+  {
+    "id": "827dad45-b48b-4b06-8bcf-3d92c76a8731",
+    "empresaTitular": {
+      "id": "577f4472-fa74-463f-8503-5a77658e5e2c",
+      "descricao": "Teste Conta Bancaria"
+    },
+    "tipoConta": 2,
+    "nome": "Credito Inativo",
+    "contaPrincipal": false,
+    "numerarioEmTransito": false,
+    "banco": {
+      "id": "00000000-0000-0000-0000-000000000000"
+    },
+    "saldoInicial": 500000,
+    "saldoAtual": 500000,
+    "incluirSaldoDisponivel": false,
+    "numeroCartao": 6246541641641654,
+    "limiteCartao": 500000,
+    "bandeiraCartao": 1,
+    "fechamentoFatura": 1,
+    "vencimentoFatura": 1,
+    "contaCorrenteId": "180b2c2e-d2e6-4a75-8d89-1ae0e2f50e22",
+    "codigo": 6,
+    "openBanking": false,
+    "ativo": false,
+    "contaBancariaEmpresas": [
+      {
+        "id": "82ca46a9-59c0-49ef-9231-abf366ad6e1d",
+        "empresa": {
+          "id": "577f4472-fa74-463f-8503-5a77658e5e2c",
+          "descricao": "Teste Conta Bancaria"
+        }
+      }
+    ]
+  },
+  {
+    "id": "8a606446-6311-4831-b256-f4c0115f1573",
+    "empresaTitular": {
+      "id": "577f4472-fa74-463f-8503-5a77658e5e2c",
+      "descricao": "Teste Conta Bancaria"
+    },
+    "tipoConta": 3,
+    "nome": "Tesouraria Inativa",
+    "contaPrincipal": false,
+    "numerarioEmTransito": false,
+    "banco": {
+      "id": "00000000-0000-0000-0000-000000000000"
+    },
+    "saldoInicial": 0,
+    "saldoAtual": 0,
+    "dataInicialSaldo": "2023-04-20T03:00:00+00:00",
+    "incluirSaldoDisponivel": false,
+    "codigo": 7,
+    "openBanking": false,
+    "ativo": false,
+    "contaBancariaEmpresas": [
+      {
+        "id": "1705d663-2537-4363-95b9-a3c1e5d3a049",
+        "empresa": {
+          "id": "577f4472-fa74-463f-8503-5a77658e5e2c",
+          "descricao": "Teste Conta Bancaria"
+        }
+      }
+    ]
+  },
+  {
+    "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+    "empresaTitular": {
+      "id": "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
+      "descricao": "Empresa Teste Financeiro - Dashboard"
+    },
+    "tipoConta": 1,
+    "nome": "Teste Dashboard Financeiro",
+    "contaPrincipal": true,
+    "numerarioEmTransito": false,
+    "banco": {
+      "id": "b86e2b06-88d6-14de-0893-0155b55388b7",
+      "descricao": "Omni SA Crédito Financiamento Investimento"
+    },
+    "agencia": "142541",
+    "agenciaDigitoVerificador": "1",
+    "conta": "65146154",
+    "contaDigitoVerificador": "6",
+    "saldoInicial": 100000000,
+    "saldoAtual": 100049999.98,
+    "dataInicialSaldo": "2023-03-06T03:00:00+00:00",
+    "incluirSaldoDisponivel": true,
+    "codigo": 2,
+    "openBanking": false,
+    "ativo": true,
+    "contaBancariaEmpresas": [
+      {
+        "id": "f4a36d75-e85b-44c4-a4e5-0a6584211cce",
+        "empresa": {
+          "id": "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
+          "descricao": "Empresa Teste Financeiro - Dashboard"
+        }
+      }
+    ]
+  }
+]

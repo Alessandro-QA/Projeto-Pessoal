@@ -1,0 +1,68 @@
+[
+  {
+      "id": "180b2c2e-d2e6-4a75-8d89-1ae0e2f50e22",
+      "tipoConta": 1,
+      "nome": "Conta Inativa",
+      "contaPrincipal": false,
+      "numerarioEmTransito": false,
+      "agencia": "32145415",
+      "agenciaDigitoVerificador": "5",
+      "conta": "514514",
+      "contaDigitoVerificador": "5",
+      "saldoInicial": 0.000000000000000,
+      "saldoAtual": 0.000000000000000,
+      "dataInicialSaldo": "2023-04-20T03:00:00+00:00",
+      "incluirSaldoDisponivel": false,
+      "codigo": 4,
+      "openBanking": false,
+      "ativo": false,
+      "empresaTitular": {
+          "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+          "descricao": "Empresa 2"
+      },
+      "banco": {
+          "id": "d55d482b-442d-9133-9ce3-0658c7831e40",
+          "codigoBacen": "604",
+          "descricao": "Banco Industrial do Brasil S.A."
+      },
+      "contaBancariaEmpresas": [
+          {
+              "id": "3af86cb2-d705-4a1d-b50b-b9809250ee2e",
+              "empresa": {
+                  "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+                  "descricao": "Empresa 2"
+              }
+          }
+      ]
+  },
+  {
+      "id": "6211d3da-95d7-45e5-940a-8ca7224d1c9f",
+      "tipoConta": 3,
+      "nome": "Conta Tesouraria",
+      "contaPrincipal": false,
+      "numerarioEmTransito": false,
+      "saldoInicial": 0.000000000000000,
+      "saldoAtual": 0.000000000000000,
+      "dataInicialSaldo": "2023-04-20T03:00:00+00:00",
+      "incluirSaldoDisponivel": false,
+      "codigo": 5,
+      "openBanking": false,
+      "ativo": true,
+      "empresaTitular": {
+          "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+          "descricao": "Empresa 2"
+      },
+      "banco": {
+          "id": "00000000-0000-0000-0000-000000000000"
+      },
+      "contaBancariaEmpresas": [
+          {
+              "id": "1a196dcb-96a1-4131-a2ee-8dc2bb9b2af1",
+              "empresa": {
+                  "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+                  "descricao": "Empresa 2"
+              }
+          }
+      ]
+  }
+]

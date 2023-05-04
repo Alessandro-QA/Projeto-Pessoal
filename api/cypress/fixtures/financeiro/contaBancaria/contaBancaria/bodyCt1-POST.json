@@ -1,0 +1,38 @@
+{
+    "success": true,
+    "data": {
+        "id": "bcd3e16b-b475-44dd-aac8-692f6c1712e1",
+        "empresaTitular": {
+            "id": "577f4472-fa74-463f-8503-5a77658e5e2c",
+            "descricao": "Teste Conta Bancaria"
+        },
+        "tipoConta": 1,
+        "nome": "Teste Adição",
+        "contaPrincipal": false,
+        "numerarioEmTransito": false,
+        "banco": {
+            "id": "4a7d8452-8983-1575-99ec-102a16d8627d",
+            "descricao": "BTG Pactual Asset Management S.A. Distribuidora de Títulos e Valores Mobiliários"
+        },
+        "agencia": "32145",
+        "agenciaDigitoVerificador": "5",
+        "conta": "65413",
+        "contaDigitoVerificador": "2",
+        "saldoInicial": 0.00,
+        "saldoAtual": 0.00,
+        "dataInicialSaldo": "2023-04-27T03:00:00+00:00",
+        "incluirSaldoDisponivel": false,
+        "codigo": 8,
+        "openBanking": false,
+        "ativo": true,
+        "contaBancariaEmpresas": [
+            {
+                "id": "262bc9e6-9e1a-46d2-b54a-823a796de71b",
+                "empresa": {
+                    "id": "577f4472-fa74-463f-8503-5a77658e5e2c",
+                    "descricao": "Teste Conta Bancaria"
+                }
+            }
+        ]
+    }
+}

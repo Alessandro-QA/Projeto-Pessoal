@@ -17,8 +17,11 @@ context('Produção Agrícola', () => {
 
                                 cy.step('Deletar Acerto Criado')
                                 const id = response.body.data.id
-                                cy.section('Deletar acerto cadastrado')
-                                cy.deleteRequest('/api/producao-agricola/v1/AcertoFretes', id)
+                                const assertResponse = { "success": true, "data": true }
+
+                                cy.deleteRequest('/api/producao-agricola/v1/AcertoFretes', id).then((response) => {
+                                    expect(response.body).to.deep.equal(assertResponse)
+                                })
                             })
                     })
                 })

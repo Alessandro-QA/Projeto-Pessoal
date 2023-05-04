@@ -1,0 +1,50 @@
+{
+  "corrente": [
+    {
+      "id": "180b2c2e-d2e6-4a75-8d89-1ae0e2f50e22",
+      "nomeConta": "Conta Inativa",
+      "numeroConta": "514514",
+      "digitoConta": "5",
+      "agenciaConta": "32145415",
+      "digitoAgencia": "5",
+      "saldoConta": 0,
+      "empresaTitular": "Empresa 2",
+      "ativo": false
+    },
+    {
+      "id": "251037b1-3968-4ca9-a6c6-6c0f1979bc40",
+      "nomeConta": "Conta Edição - Inativa",
+      "numeroConta": "67890",
+      "digitoConta": "2",
+      "agenciaConta": "123456",
+      "digitoAgencia": "7",
+      "saldoConta": 0,
+      "empresaTitular": "Teste Conta Bancaria",
+      "ativo": false
+    }
+  ],
+  "credito": [
+    {
+      "id": "827dad45-b48b-4b06-8bcf-3d92c76a8731",
+      "nomeConta": "Credito Inativo",
+      "bandeira": 1,
+      "numeroCartao": 6246541641641654,
+      "empresaTitular": "Teste Conta Bancaria",
+      "diaVencimentoCartao": 1,
+      "limiteCartao": 500000,
+      "limiteInicialCartao": 500000,
+      "ativo": false
+    }
+  ],
+  "caixaTesouraria": [
+    {
+      "id": "8a606446-6311-4831-b256-f4c0115f1573",
+      "nomeConta": "Tesouraria Inativa",
+      "saldoInicial": 0,
+      "saldo": 0,
+      "dataSaldoInicial": "2023-04-20T03:00:00+00:00",
+      "empresaTitular": "Teste Conta Bancaria",
+      "ativo": false
+    }
+  ]
+}
