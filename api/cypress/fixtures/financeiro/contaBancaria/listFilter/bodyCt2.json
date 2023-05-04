@@ -1,0 +1,32 @@
+[
+  {
+      "id": "8a606446-6311-4831-b256-f4c0115f1573",
+      "tipoConta": 3,
+      "nome": "Tesouraria Inativa",
+      "contaPrincipal": false,
+      "numerarioEmTransito": false,
+      "saldoInicial": 0.000000000000000,
+      "saldoAtual": 0.000000000000000,
+      "dataInicialSaldo": "2023-04-20T03:00:00+00:00",
+      "incluirSaldoDisponivel": false,
+      "codigo": 7,
+      "openBanking": false,
+      "ativo": false,
+      "empresaTitular": {
+          "id": "577f4472-fa74-463f-8503-5a77658e5e2c",
+          "descricao": "Teste Conta Bancaria"
+      },
+      "banco": {
+          "id": "00000000-0000-0000-0000-000000000000"
+      },
+      "contaBancariaEmpresas": [
+          {
+              "id": "1705d663-2537-4363-95b9-a3c1e5d3a049",
+              "empresa": {
+                  "id": "577f4472-fa74-463f-8503-5a77658e5e2c",
+                  "descricao": "Teste Conta Bancaria"
+              }
+          }
+      ]
+  }
+]

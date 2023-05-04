@@ -1,0 +1,35 @@
+{
+  "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+  "empresaTitular": {
+    "id": "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
+    "descricao": "Empresa Teste Financeiro - Dashboard"
+  },
+  "tipoConta": 1,
+  "nome": "Teste Dashboard Financeiro",
+  "contaPrincipal": true,
+  "numerarioEmTransito": false,
+  "banco": {
+    "id": "b86e2b06-88d6-14de-0893-0155b55388b7",
+    "descricao": "Omni SA Crédito Financiamento Investimento"
+  },
+  "agencia": "142541",
+  "agenciaDigitoVerificador": "1",
+  "conta": "65146154",
+  "contaDigitoVerificador": "6",
+  "saldoInicial": 100000000,
+  "saldoAtual": 100049999.98,
+  "dataInicialSaldo": "2023-03-06T03:00:00+00:00",
+  "incluirSaldoDisponivel": true,
+  "codigo": 2,
+  "openBanking": false,
+  "ativo": true,
+  "contaBancariaEmpresas": [
+    {
+      "id": "f4a36d75-e85b-44c4-a4e5-0a6584211cce",
+      "empresa": {
+        "id": "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
+        "descricao": "Empresa Teste Financeiro - Dashboard"
+      }
+    }
+  ]
+}

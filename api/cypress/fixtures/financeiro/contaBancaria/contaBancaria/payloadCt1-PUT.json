@@ -1,0 +1,29 @@
+{
+  "id": "55764151-a910-4050-bd36-ca18a3f2bd8c",
+  "empresaTitular": {
+    "id": "c79da4b4-fb34-417c-9ab8-8c943c91c032",
+    "descricao": "Empresa Teste Edição"
+  },
+  "tipoConta": "ContaCorrente",
+  "nome": "Conta Edição - Editada",
+  "banco": {
+    "id": "c0e6facd-c4e3-47a9-af13-01c36f98310f",
+    "descricao": "Cooperativa de Crédito de Livre Admissão Sul Maranhense - SICOOB SUL MARANHENSE",
+    "codigoBacen": "756"
+  },
+  "agencia": 7418521,
+  "agenciaDigitoVerificador": "0",
+  "conta": 9638521,
+  "contaDigitoVerificador": "0",
+  "dataInicialSaldo": "2023-04-27T03:00:00.000Z",
+  "contaBancariaEmpresas": [
+    {
+      "empresa": {
+        "id": "c79da4b4-fb34-417c-9ab8-8c943c91c032",
+        "descricao": "Empresa Teste Edição"
+      }
+    }
+  ],
+  "tipoTransferencia": "TED",
+  "ativo": true
+}

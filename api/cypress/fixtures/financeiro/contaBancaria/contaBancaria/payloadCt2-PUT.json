@@ -1,0 +1,29 @@
+{
+  "id": "55764151-a910-4050-bd36-ca18a3f2bd8c",
+  "empresaTitular": {
+    "id": "c79da4b4-fb34-417c-9ab8-8c943c91c032",
+    "descricao": "Empresa Teste Edição"
+  },
+  "tipoConta": "ContaCorrente",
+  "nome": "Conta Edição",
+  "banco": {
+    "id": "d55d482b-442d-9133-9ce3-0658c7831e40",
+    "descricao": "Banco Industrial do Brasil S.A.",
+    "codigoBacen": "604"
+  },
+  "agencia": 741852,
+  "agenciaDigitoVerificador": "9",
+  "conta": 963852,
+  "contaDigitoVerificador": "7",
+  "dataInicialSaldo": "2023-04-28T03:00:00.000Z",
+  "contaBancariaEmpresas": [
+    {
+      "empresa": {
+        "id": "c79da4b4-fb34-417c-9ab8-8c943c91c032",
+        "descricao": "Empresa Teste Edição"
+      }
+    }
+  ],
+  "tipoTransferencia": "DOC",
+  "ativo": true
+}

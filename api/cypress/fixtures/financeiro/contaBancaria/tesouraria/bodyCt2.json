@@ -1,0 +1,11 @@
+[
+  {
+      "id": "8a606446-6311-4831-b256-f4c0115f1573",
+      "nomeConta": "Tesouraria Inativa",
+      "saldoInicial": 0.000000000000000,
+      "saldo": 0.000000000000000,
+      "dataSaldoInicial": "2023-04-20T03:00:00+00:00",
+      "empresaTitular": "Teste Conta Bancaria",
+      "ativo": false
+  }
+]

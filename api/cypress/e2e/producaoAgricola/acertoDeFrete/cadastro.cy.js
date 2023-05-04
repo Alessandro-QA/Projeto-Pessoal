@@ -1,5 +1,7 @@
 /// <reference types='Cypress' />
 
+const assertResponse = { "success": true, "data": true }
+
 context('Produção Agrícola', () => {
     context('Acerto de Frete', () => {
         describe('POST - /api/producao-agricola/v1/AcertoFretes - Cadastro', () => {
@@ -16,7 +18,10 @@ context('Produção Agrícola', () => {
                             cy.section('Deletar Acerto Criado Para não conflitar com outros testes')
 
                             const id = response.body.data.id
-                            cy.deleteRequest('/api/producao-agricola/v1/AcertoFretes', id)
+
+                            cy.deleteRequest('/api/producao-agricola/v1/AcertoFretes', id).then((response) => {
+                                expect(response.body).to.deep.equal(assertResponse)
+                            })
                         })
                 })
             })
@@ -37,7 +42,10 @@ context('Produção Agrícola', () => {
                             cy.section('Deletar Acerto Criado Para não conflitar com outros testes')
 
                             const id = response.body.data.id
-                            cy.deleteRequest('/api/producao-agricola/v1/AcertoFretes', id)
+
+                            cy.deleteRequest('/api/producao-agricola/v1/AcertoFretes', id).then((response) => {
+                                expect(response.body).to.deep.equal(assertResponse)
+                            })
                         })
                 })
             })
@@ -59,7 +67,10 @@ context('Produção Agrícola', () => {
                             cy.section('Deletar Acerto Criado Para não conflitar com outros testes')
 
                             const id = response.body.data.id
-                            cy.deleteRequest('/api/producao-agricola/v1/AcertoFretes', id)
+
+                            cy.deleteRequest('/api/producao-agricola/v1/AcertoFretes', id).then((response) => {
+                                expect(response.body).to.deep.equal(assertResponse)
+                            })
                         })
                 })
             })

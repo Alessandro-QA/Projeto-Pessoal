@@ -11,6 +11,7 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
+                            expect(response.body).to.be.an('array').that.is.not.empty
                             cy.fixture('financeiro/dashboard/detalhesCategoria/bodyCt1.json').then((body) => {
                                 expect(response.body).to.be.eql(body)
                             })
@@ -26,6 +27,7 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
+                            expect(response.body).to.be.an('array').that.is.not.empty
                             cy.fixture('financeiro/dashboard/detalhesCategoria/bodyCt2.json').then((body) => {
                                 expect(response.body).to.be.eql(body)
                             })
@@ -41,6 +43,7 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
+                            expect(response.body).to.be.an('array')
                             cy.fixture('financeiro/dashboard/detalhesCategoria/bodyCt3.json').then((body) => {
                                 expect(response.body).to.be.eql(body)
                             })
@@ -56,6 +59,7 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
+                            expect(response.body).to.be.an('array')
                             cy.fixture('financeiro/dashboard/detalhesCategoria/bodyCt4.json').then((body) => {
                                 expect(response.body).to.be.eql(body)
                             })
@@ -71,6 +75,7 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
+                            expect(response.body).to.be.an('array')
                             cy.fixture('financeiro/dashboard/detalhesCategoria/bodyCt5.json').then((body) => {
                                 expect(response.body).to.be.eql(body)
                             })

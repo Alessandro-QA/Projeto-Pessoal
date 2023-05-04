@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": {
+      "conta": {
+          "agencia": "-",
+          "conta": "-",
+          "descricao": " - Cartão Teste Dashboard Financeiro",
+          "empresa": "Empresa Teste Financeiro - Dashboard",
+          "empresaModel": {
+              "id": "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
+              "descricao": "Empresa Teste Financeiro - Dashboard"
+          }
+      },
+      "movimentacoes": [
+          {
+              "id": "cadecafe-1f27-4915-9675-02950f970b3f",
+              "dataMovimentacao": "2023-04-03T00:00:00",
+              "tipo": 1,
+              "valor": 99999000.000000000000000,
+              "saldo": 99999000.000000000000000,
+              "historico": "Saldo Anterior"
+          }
+      ],
+      "saldoPeriodo": 99999000.000000000000000
+  }
+}

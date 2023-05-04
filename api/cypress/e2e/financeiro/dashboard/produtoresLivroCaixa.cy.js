@@ -11,6 +11,7 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
+                            expect(response.body).to.be.an('array').that.is.not.empty
                             cy.fixture('financeiro/dashboard/produtoresLivroCaixa/bodyCt1.json').then((body) => {
                                 expect(response.body).to.be.eql(body)
                             })
@@ -26,6 +27,7 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
+                            expect(response.body).to.be.an('array')
                             cy.fixture('financeiro/dashboard/produtoresLivroCaixa/bodyCt2.json').then((body) => {
                                 expect(response.body).to.be.eql(body)
                             })
@@ -41,6 +43,7 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
+                            expect(response.body).to.be.an('array').that.is.not.empty
                             cy.fixture('financeiro/dashboard/produtoresLivroCaixa/bodyCt3.json').then((body) => {
                                 expect(response.body).to.be.eql(body)
                             })
