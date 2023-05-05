@@ -38,7 +38,7 @@ class Pedidos {
     cy.getVisible(locatorPedidos.registrarEditarPedido.inputNumeroPedidoFornecedor)
       .clear().type(seedTest.numeroPedidoFornecedor)
 
-    cy.intercept('GET', '/api/atividades-agricolas/v1/Planejamento/Safra/**').as('getSafra')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?SafraId=**`).as('getSafra')
 
     // safra
     cy.getVisible(locatorPedidos.registrarEditarPedido.selectSafra).click()
