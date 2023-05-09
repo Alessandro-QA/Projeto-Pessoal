@@ -21,12 +21,10 @@ class Documentos {
    * @param {*} seedTestDocumento
    */
   cadastrar(seedTestDocumento) {
-    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?**`)
-      .as('cicloProducao')
-    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**`)
-      .as('cicloRateio')
-    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem')
-      .as('listaDocumentos')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?**`).as('cicloProducao')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**`).as('cicloRateio')
+    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem').as('listaDocumentos')
+    cy.intercept('GET', 'https://economia.awesomeapi.com.br/last/**').as('getCotacaoMoeda')
 
     cy.log('Navegar para Documentos')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina).then(() => {
@@ -92,13 +90,27 @@ class Documentos {
         .clear().type(seedTestDocumento.observacao)
     }
 
+    if (seedTestDocumento.moedaEstrangeira) {
+      cy.log('Preencher moeda estrangeira')
 
-    cy.log('Digitar valor total')
-    cy.getVisible(locDocumentos.documento.valorTotal).click()
-      .clear().type(seedTestDocumento.valorTotal)
+      cy.get(locDocumentos.documento.checkMoedaEstrangeira).contains('Pagamento em moeda estrangeira').click()
 
-    // Wait para aguardar preenchimento dos valores de tributacoes/dief
-    cy.wait(5000)
+      cy.get(locDocumentos.documento.selectMoeda).click()
+        .get(locDocumentos.documento.listMoedas).contains(seedTestDocumento.moeda).click()
+
+      cy.wait('@getCotacaoMoeda')
+
+      cy.get(locDocumentos.documento.inputValorMoeda).clear().type(seedTestDocumento.valorTotal)
+
+      cy.get(locDocumentos.documento.inputCotacaoMoeda).invoke('val').should('not.be.empty')
+
+      cy.getVisible(locDocumentos.documento.valorTotal).invoke('val').should('not.be.empty')
+    }
+    else {
+      cy.log('Digitar valor total')
+      cy.getVisible(locDocumentos.documento.valorTotal).click()
+        .clear().type(seedTestDocumento.valorTotal)
+    }
 
     if (seedTestDocumento.jaPago) {
       cy.log('Selecionar ja foi pago')
@@ -181,16 +193,25 @@ class Documentos {
 
       cy.wait(2000)
 
-      const ciclos = seedTestDocumento.ciclos
-      ciclos.forEach((ciclo, index) => {
-        cy.log('Selecionar nome do ciclo')
-        cy.get(locDocumentos.documento.ciclo)
-          .eq(index).click().contains(ciclo.nome).click()
+      if (seedTestDocumento.moedaEstrangeira) {
+        const ciclos = seedTestDocumento.ciclos
 
-        cy.log('Digitar valor do ciclo')
-        cy.get(locDocumentos.documento.rateioCicloValor)
-          .eq(index).clear().type(ciclo.valor)
-      })
+        ciclos.forEach((ciclo) => {
+          cy.log('Validar nome do ciclo')
+          cy.get(locDocumentos.documento.ciclo).contains(ciclo.nome)
+        })
+      } else {
+        const ciclos = seedTestDocumento.ciclos
+        ciclos.forEach((ciclo, index) => {
+          cy.log('Selecionar nome do ciclo')
+          cy.get(locDocumentos.documento.ciclo)
+            .eq(index).click().contains(ciclo.nome).click()
+
+          cy.log('Digitar valor do ciclo')
+          cy.get(locDocumentos.documento.rateioCicloValor)
+            .eq(index).clear().type(ciclo.valor)
+        })
+      }
     }
 
     if (seedTestDocumento.rateioCategoriaSelecionar) {
@@ -240,7 +261,7 @@ class Documentos {
       const categorias = seedTestDocumento.categorias
       categorias.forEach((categoria, index) => {
         cy.log('Validar nome categoria')
-        cy.get(locDocumentos.documento.selecionarCategoria)
+        cy.get(locDocumentos.documento.categoriaSelecionada)
           .eq(index)
           .should(($el) => {
             expect($el).to.contain.text(categoria.nome)

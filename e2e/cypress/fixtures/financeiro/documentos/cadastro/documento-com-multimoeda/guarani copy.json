@@ -1,0 +1,86 @@
+{
+  "cadastro": {
+    "operacao": "IPTU",
+    "tipoDocumento": "Fatura",
+    "numeroDocumento": "GY01",
+    "pessoa": "66791418001 - Empresa Produtor - CPF",
+    "fazenda": "Fazenda E2E",
+    "safra": "2021/2021",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "tag": "tagGuarani",
+    "observacao": "Observações Guarani",
+    "valorTotal": "R$2.000,00",
+    "moedaEstrangeira": true,
+    "jaPago": false,
+    "rateioEntreCiclos": false,
+    "formaPagamento": "Boleto",
+    "numeroBoleto": [
+      {
+        "numero": "12345678910111213585748748718187817817874187187"
+      }
+    ],
+    "rateioEntreCategoriasPorOperacao": true,
+    "categorias": [
+      {
+        "nome": "Caixa Geral",
+        "valor": "R$1.500,00"
+      }
+    ],
+    "tributacoes": {
+      "modelo": "55",
+      "serie": "290",
+      "cfop": "1102 - Compra p/ comercialização",
+      "baseCalculoIcms": "R$1.500,00",
+      "icmsCredito": "R$165,00",
+      "isentasIcms": "R$0,00",
+      "outrosIcms": "R$0,00",
+      "baseCalculoIcmsSt": "R$0,00",
+      "valorIcmsRetido": "R$0,00",
+      "despesasAcessorias": "R$0,00",
+      "frete": "R$0,00",
+      "valorDoIpi": "R$0,00",
+      "isenta": "R$0,00",
+      "outros": "R$0,00"
+    }
+  },
+  "edicao": {
+    "operacao": "DIEF - CST 000",
+    "tipoDocumento": "Outros",
+    "dedutivel": "Sim",
+    "numeroDocumento": "C001",
+    "pessoa": "32872012000100 - Pessoa Teste DIEF - AC",
+    "fazenda": "Fazenda Teste DIEF",
+    "safra": "2021/2021",
+    "empresa": "Empresa Teste DIEF - AC",
+    "ieEmpresa": "478178718718",
+    "tag": "tagDIEF",
+    "observacao": "Observações do DIEF",
+    "valorTotal": "R$1.500,00",
+    "foiPago": false,
+    "rateioEntreCiclos": false,
+    "formaPagamento": "Boleto",
+    "condicaoPagamento": "À vista",
+    "valorParcela": "R$1.500,00",
+    "numeroBoleto": "12345.67891 01112.135857 48748.718187 8 17817874187187",
+    "categorias": [
+      {
+        "nome": "Caixa Geral",
+        "valor": "R$1.500,00"
+      }
+    ],
+    "modelo": "55",
+    "serie": "290",
+    "cfop": "1102 - Compra p/ comercialização",
+    "baseCalculoIcms": "R$1.500,00",
+    "icmsCredito": "R$165,00",
+    "isentasIcms": "R$0,00",
+    "outrosIcms": "R$0,00",
+    "baseCalculoIcmsSt": "R$0,00",
+    "valorIcmsRetido": "R$0,00",
+    "despesasAcessorias": "R$0,00",
+    "frete": "R$0,00",
+    "valorDoIpi": "R$0,00",
+    "isenta": "R$0,00",
+    "outros": "R$0,00"
+  }
+}
