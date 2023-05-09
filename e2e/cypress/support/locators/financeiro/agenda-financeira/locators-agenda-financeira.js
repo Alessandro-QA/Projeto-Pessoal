@@ -54,7 +54,7 @@ const locators = {
     fornecedor: '[data-cy=span-fornecedor]',
     cnpj: '[data-cy=span-cnpj]',
     tabelaHistoricoPagamento: '.el-table__row .cell',
-    efetuarPagamento: '[data-cy=button-efetuar-pagamento-recebimento]',
+    efetuarPagamento: '.footer .el-button',
   },
 
   pagamentoRecebimento: {
