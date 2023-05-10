@@ -233,7 +233,9 @@ class AgendaFinanceira {
       })
 
     cy.wait('@getTitulo')
-    
+
+    cy.reload()
+
     cy.log('clicar no botão para ir ao modal de recebimento/pagamento')
     cy.getVisible(locAgendaFinanceira.detalhesTitulo.efetuarPagamento).click({ timeout: 30000 })
 

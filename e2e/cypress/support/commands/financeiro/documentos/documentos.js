@@ -21,12 +21,10 @@ class Documentos {
    * @param {*} seedTestDocumento
    */
   cadastrar(seedTestDocumento) {
-    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?**`)
-      .as('cicloProducao')
-    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**`)
-      .as('cicloRateio')
-    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem')
-      .as('listaDocumentos')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?**`).as('cicloProducao')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**`).as('cicloRateio')
+    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem').as('listaDocumentos')
+    cy.intercept('GET', 'https://economia.awesomeapi.com.br/last/**').as('getCotacaoMoeda')
 
     cy.log('Navegar para Documentos')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina).then(() => {
@@ -92,13 +90,27 @@ class Documentos {
         .clear().type(seedTestDocumento.observacao)
     }
 
+    if (seedTestDocumento.moedaEstrangeira) {
+      cy.log('Preencher moeda estrangeira')
 
-    cy.log('Digitar valor total')
-    cy.getVisible(locDocumentos.documento.valorTotal).click()
-      .clear().type(seedTestDocumento.valorTotal)
+      cy.get(locDocumentos.documento.checkMoedaEstrangeira).contains('Pagamento em moeda estrangeira').click()
 
-    // Wait para aguardar preenchimento dos valores de tributacoes/dief
-    cy.wait(5000)
+      cy.get(locDocumentos.documento.selectMoeda).click()
+        .get(locDocumentos.documento.listMoedas).contains(seedTestDocumento.moeda).click()
+
+      cy.wait('@getCotacaoMoeda')
+
+      cy.get(locDocumentos.documento.inputValorMoeda).clear().type(seedTestDocumento.valorTotal)
+
+      cy.get(locDocumentos.documento.inputCotacaoMoeda).invoke('val').should('not.be.empty')
+
+      cy.getVisible(locDocumentos.documento.valorTotal).invoke('val').should('not.be.empty')
+    }
+    else {
+      cy.log('Digitar valor total')
+      cy.getVisible(locDocumentos.documento.valorTotal).click()
+        .clear().type(seedTestDocumento.valorTotal)
+    }
 
     if (seedTestDocumento.jaPago) {
       cy.log('Selecionar ja foi pago')
@@ -181,16 +193,25 @@ class Documentos {
 
       cy.wait(2000)
 
-      const ciclos = seedTestDocumento.ciclos
-      ciclos.forEach((ciclo, index) => {
-        cy.log('Selecionar nome do ciclo')
-        cy.get(locDocumentos.documento.ciclo)
-          .eq(index).click().contains(ciclo.nome).click()
+      if (seedTestDocumento.moedaEstrangeira) {
+        const ciclos = seedTestDocumento.ciclos
 
-        cy.log('Digitar valor do ciclo')
-        cy.get(locDocumentos.documento.rateioCicloValor)
-          .eq(index).clear().type(ciclo.valor)
-      })
+        ciclos.forEach((ciclo) => {
+          cy.log('Validar nome do ciclo')
+          cy.get(locDocumentos.documento.ciclo).contains(ciclo.nome)
+        })
+      } else {
+        const ciclos = seedTestDocumento.ciclos
+        ciclos.forEach((ciclo, index) => {
+          cy.log('Selecionar nome do ciclo')
+          cy.get(locDocumentos.documento.ciclo)
+            .eq(index).click().contains(ciclo.nome).click()
+
+          cy.log('Digitar valor do ciclo')
+          cy.get(locDocumentos.documento.rateioCicloValor)
+            .eq(index).clear().type(ciclo.valor)
+        })
+      }
     }
 
     if (seedTestDocumento.rateioCategoriaSelecionar) {
@@ -240,7 +261,7 @@ class Documentos {
       const categorias = seedTestDocumento.categorias
       categorias.forEach((categoria, index) => {
         cy.log('Validar nome categoria')
-        cy.get(locDocumentos.documento.selecionarCategoria)
+        cy.get(locDocumentos.documento.categoriaSelecionada)
           .eq(index)
           .should(($el) => {
             expect($el).to.contain.text(categoria.nome)
@@ -680,20 +701,12 @@ class Documentos {
     cy.intercept('GET', '/api/financeiro/v1/Documento/**').as('detalhesDocumento')
     cy.intercept('GET', '/api/pessoa/v1/Pessoa/**').as('pessoa')
 
-    if (seedTestFiltro.editar) {
-      const url = '/financeiro/documentos/listagem'
-      const locatorTituloPagina = locDocumentos.dashboard.titulo
-      const tituloPagina = 'Documentos'
+    const url = '/financeiro/documentos/listagem'
+    const locatorTituloPagina = locDocumentos.dashboard.titulo
+    const tituloPagina = 'Documentos'
 
-      cy.log('Navegar para Documentos')
-      cy.navegarPara(url, locatorTituloPagina, tituloPagina)
-    }
-    else {
-      // TODO: Solução temporaria até resolução da atividade #29377
-      cy.getVisible('.siagri-navbar--logo').click()
-      cy.getVisible('.siagri-icon-financeiro').click()
-      cy.getVisible('[title="Documentos"]').click()
-    }
+    cy.log('Navegar para Documentos')
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
     cy.wait('@financeiro')
 
@@ -894,10 +907,20 @@ class Documentos {
     }
 
     if (seedTestEdicaoDocumento.valorTotal) {
-      cy.log('Alterar valor total')
+      if (seedTestEdicaoDocumento.moedaEstrangeira) {
+        cy.log('Alterar valor negociado em moeda estrangeira')
 
-      cy.getVisible(locDocumentos.documento.valorTotal)
-        .clear().type(seedTestEdicaoDocumento.valorTotal)
+        cy.get(locDocumentos.documento.inputValorMoeda).clear().type(seedTestEdicaoDocumento.valorTotal)
+
+        cy.get(locDocumentos.documento.inputCotacaoMoeda).invoke('val').should('not.be.empty')
+
+        cy.getVisible(locDocumentos.documento.valorTotal).invoke('val').should('not.be.empty')
+      } else {
+        cy.log('Alterar valor total')
+
+        cy.getVisible(locDocumentos.documento.valorTotal)
+          .clear().type(seedTestEdicaoDocumento.valorTotal)
+      }
     }
 
     if (seedTestEdicaoDocumento.jaPago) {
@@ -922,6 +945,23 @@ class Documentos {
       cy.getVisible(locDocumentos.documento.formaDePagamento).click()
         .get(locDocumentos.documento.selecionarFormaPagamento)
         .contains(seedTestEdicaoDocumento.formaPagamento).click()
+    }
+
+    if (seedTestEdicaoDocumento.condicaoPagamento) {
+      cy.log('Selecionar Condicao de pagamento')
+      cy.getVisible(locDocumentos.documento.condicaoPagamento)
+        .contains(seedTestEdicaoDocumento.condicaoPagamento).click()
+
+      if (seedTestEdicaoDocumento.quantidadeParcela) {
+        cy.log('Informar quantidade de parcelas')
+        cy.getVisible(locDocumentos.documento.quantidadeParcela)
+          .clear().type(seedTestEdicaoDocumento.quantidadeParcela)
+      }
+
+      if (seedTestEdicaoDocumento.valorFixo) {
+        cy.log('Selecionar valor fixo')
+        cy.getVisible(locDocumentos.documento.valorFixo).click()
+      }
     }
 
     if (seedTestEdicaoDocumento.alterarValorRateioCiclos) {
@@ -1163,10 +1203,29 @@ class Documentos {
       expect($el).to.have.value(seedTestDocumento.observacao)
     })
 
-    cy.log('Validar valor total')
-    cy.get(locDocumentos.documento.valorTotal).should(($el) => {
-      expect($el).to.have.value(seedTestDocumento.valorTotal)
-    })
+    if (seedTestDocumento.moedaEstrangeira) {
+      cy.log('Validar moeda estrangeira')
+
+      cy.get(locDocumentos.documento.checkMoedaEstrangeira).should(($el) => {
+        expect($el).to.have.class('is-checked')
+      })
+
+      cy.get(locDocumentos.documento.moedaSelecionada).should(($el) => {
+        expect($el).to.contain.text(seedTestDocumento.moeda)
+      })
+
+      cy.get(locDocumentos.documento.inputValorMoeda).invoke('val').should('not.be.empty')
+
+      cy.get(locDocumentos.documento.inputCotacaoMoeda).invoke('val').should('not.be.empty')
+
+      cy.getVisible(locDocumentos.documento.valorTotal).invoke('val').should('not.be.empty')
+    }
+    else {
+      cy.log('Validar valor total')
+      cy.get(locDocumentos.documento.valorTotal).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.valorTotal)
+      })
+    }
 
     cy.log('Validar ja foi pago')
     cy.get(locDocumentos.documento.foiPago).should(($el) => {
@@ -1194,19 +1253,23 @@ class Documentos {
     })
 
     cy.log('Validar condicao de pagamento')
-    cy.get(locDocumentos.documento.condicaoPagamentoSelecionada).should(($el) => {
-      if (seedTestDocumento.condicaoPagamento === 'À vista') {
+    cy.get(locDocumentos.documento.condicaoPagamentoSelecionada)
+      .contains(seedTestDocumento.condicaoPagamento).parents('label').should(($el) => {
         expect($el).to.have.class('is-active')
-      }
-      else {
-        expect($el).to.not.have.class('is-active')
-      }
-    })
+      })
 
-    cy.log('Validar valor parcela')
-    cy.get(locDocumentos.documento.valorParcela).should(($el) => {
-      expect($el).to.have.value(seedTestDocumento.valorParcela)
-    })
+    if (seedTestDocumento.quantidadeParcela) {
+      cy.get(locDocumentos.documento.quantidadeParcela).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.quantidadeParcela)
+      })
+    }
+
+    if (!seedTestDocumento.moedaEstrangeira) {
+      cy.log('Validar valor parcela')
+      cy.get(locDocumentos.documento.valorParcela).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.valorParcela)
+      })
+    }
 
     if (seedTestDocumento.numeroBoleto) {
       cy.log('Validar numero boleto')
@@ -1215,7 +1278,7 @@ class Documentos {
       })
     }
 
-    if (seedTestDocumento.rateioEntreCiclos === true) {
+    if (seedTestDocumento.rateioEntreCiclos) {
       cy.log('Validar rateio entre ciclos')
       const ciclos = seedTestDocumento.ciclos
 
@@ -1232,70 +1295,73 @@ class Documentos {
       })
     }
 
-    cy.log('Validar rateio entre categorias')
-    const categorias = seedTestDocumento.categorias
+    if (seedTestDocumento.categorias) {
+      cy.log('Validar rateio entre categorias')
+      const categorias = seedTestDocumento.categorias
 
-    categorias.forEach((categoria) => {
-      cy.log('Validar nome categoria')
-      cy.get(locDocumentos.documento.categoriaSelecionada).should(($el) => {
-        expect($el).to.contain.text(categoria.nome)
+      categorias.forEach((categoria) => {
+        cy.log('Validar nome categoria')
+        cy.get(locDocumentos.documento.categoriaSelecionada).should(($el) => {
+          expect($el).to.contain.text(categoria.nome)
+        })
+
+        cy.log('Validar valor categoria')
+        cy.get(locDocumentos.documento.categoriaValor).should(($el) => {
+          expect($el).to.have.value(categoria.valor)
+        })
+      })
+    }
+    if (seedTestDocumento.modelo) {
+      cy.log('Validar modelo - Tributações')
+      cy.get(locDocumentos.documento.modelo).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.modelo)
       })
 
-      cy.log('Validar valor categoria')
-      cy.get(locDocumentos.documento.categoriaValor).should(($el) => {
-        expect($el).to.have.value(categoria.valor)
+      cy.log('Validar serie - Tributações')
+      cy.get(locDocumentos.documento.serie).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.serie)
       })
-    })
 
-    cy.log('Validar modelo - Tributações')
-    cy.get(locDocumentos.documento.modelo).should(($el) => {
-      expect($el).to.have.value(seedTestDocumento.modelo)
-    })
+      cy.log('Validar cfop - Tributações')
+      cy.get(locDocumentos.documento.cfop).should(($el) => {
+        expect($el).to.contain.text(seedTestDocumento.cfop)
+      })
 
-    cy.log('Validar serie - Tributações')
-    cy.get(locDocumentos.documento.serie).should(($el) => {
-      expect($el).to.have.value(seedTestDocumento.serie)
-    })
+      cy.log('Validar base de calculo do ICMS - Tributações')
+      cy.get(locDocumentos.documento.baseCalculoIcmsSt).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.baseCalculoIcmsSt)
+      })
 
-    cy.log('Validar cfop - Tributações')
-    cy.get(locDocumentos.documento.cfop).should(($el) => {
-      expect($el).to.contain.text(seedTestDocumento.cfop)
-    })
+      cy.log('Validar valor do ICMS retido - Tributações')
+      cy.get(locDocumentos.documento.valorIcmsRetido).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.valorIcmsRetido)
+      })
 
-    cy.log('Validar base de calculo do ICMS - Tributações')
-    cy.get(locDocumentos.documento.baseCalculoIcmsSt).should(($el) => {
-      expect($el).to.have.value(seedTestDocumento.baseCalculoIcmsSt)
-    })
+      cy.log('Validar valor da despesa acessoria - Tributações')
+      cy.get(locDocumentos.documento.despesasAcessorias).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.despesasAcessorias)
+      })
 
-    cy.log('Validar valor do ICMS retido - Tributações')
-    cy.get(locDocumentos.documento.valorIcmsRetido).should(($el) => {
-      expect($el).to.have.value(seedTestDocumento.valorIcmsRetido)
-    })
+      cy.log('Validar valor do frete - Tributações')
+      cy.get(locDocumentos.documento.frete).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.frete)
+      })
 
-    cy.log('Validar valor da despesa acessoria - Tributações')
-    cy.get(locDocumentos.documento.despesasAcessorias).should(($el) => {
-      expect($el).to.have.value(seedTestDocumento.despesasAcessorias)
-    })
+      cy.log('Validar valor do IPI - Tributações')
+      cy.get(locDocumentos.documento.valorDoIpi).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.valorDoIpi)
+      })
 
-    cy.log('Validar valor do frete - Tributações')
-    cy.get(locDocumentos.documento.frete).should(($el) => {
-      expect($el).to.have.value(seedTestDocumento.frete)
-    })
+      cy.log('Validar isenta do IPI - Tributações')
+      cy.get(locDocumentos.documento.isenta).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.isenta)
+      })
 
-    cy.log('Validar valor do IPI - Tributações')
-    cy.get(locDocumentos.documento.valorDoIpi).should(($el) => {
-      expect($el).to.have.value(seedTestDocumento.valorDoIpi)
-    })
-
-    cy.log('Validar isenta do IPI - Tributações')
-    cy.get(locDocumentos.documento.isenta).should(($el) => {
-      expect($el).to.have.value(seedTestDocumento.isenta)
-    })
-
-    cy.log('Validar outros do IPI - Tributações')
-    cy.get(locDocumentos.documento.outros).should(($el) => {
-      expect($el).to.have.value(seedTestDocumento.outros)
-    })
+      cy.log('Validar outros do IPI - Tributações')
+      cy.get(locDocumentos.documento.outros).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.outros)
+      })
+    }
 
     cy.log('Atualizar lançamento')
     cy.getVisible(locDocumentos.documento.adicionar).click({ force: true })

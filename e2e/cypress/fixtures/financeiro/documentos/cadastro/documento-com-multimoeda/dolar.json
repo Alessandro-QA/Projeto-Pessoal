@@ -1,0 +1,143 @@
+{
+  "ct1": {
+    "operacao": "IPTU",
+    "tipoDocumento": "Fatura",
+    "numeroDocumento": "DOL01",
+    "pessoa": "66791418001 - Empresa Produtor - CPF",
+    "fazenda": "Fazenda E2E",
+    "safra": "2021/2021",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "tag": "tagDolar",
+    "observacao": "Observações Dolar",
+    "valorTotal": "2.100,00",
+    "moedaEstrangeira": true,
+    "moeda": "Dólar",
+    "jaPago": false,
+    "rateioEntreCiclos": false,
+    "formaPagamento": "Boleto",
+    "numeroBoleto": [
+      {
+        "numero": "12345678910111213585748748718187817817874187187"
+      }
+    ]
+  },
+  "ct2": {
+    "operacao": "IPTU",
+    "tipoDocumento": "Fatura",
+    "numeroDocumento": "DOL02",
+    "pessoa": "66791418001 - Empresa Produtor - CPF",
+    "fazenda": "Fazenda Reserva",
+    "safra": "2020/2020",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "tag": "tagDolar",
+    "observacao": "Observações Dolar",
+    "valorTotal": "2.200,00",
+    "moedaEstrangeira": true,
+    "moeda": "Dólar",
+    "jaPago": false,
+    "rateioEntreCiclosPlanejamento": true,
+    "ciclos": [
+      {
+        "nome": "Arroz - 2020/2020"
+      },
+      {
+        "nome": "Algodão - 2020/2020"
+      }
+    ],
+    "formaPagamento": "Boleto",
+    "numeroBoleto": [
+      {
+        "numero": "12345678910111213585748748718187817817874187187"
+      }
+    ]
+  },
+  "ct3": {
+    "operacao": "IPTU",
+    "tipoDocumento": "Fatura",
+    "numeroDocumento": "DOL03",
+    "pessoa": "66791418001 - Empresa Produtor - CPF",
+    "fazenda": "Fazenda E2E",
+    "safra": "2021/2021",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "tag": "tagDolar",
+    "observacao": "Observações Dolar",
+    "valorTotal": "2.300,00",
+    "moedaEstrangeira": true,
+    "moeda": "Dólar",
+    "jaPago": false,
+    "condicaoPagamento": "Parcelado",
+    "quantidadeParcela": "3",
+    "valorFixo": true,
+    "formaPagamento": "Boleto",
+    "numeroBoleto": [
+      {
+        "numero": "11111111111111111111111111111111111111111111111"
+      },
+      {
+        "numero": "22222222222222222222222222222222222222222222222"
+      },
+      {
+        "numero": "33333333333333333333333333333333333333333333333"
+      }
+    ],
+    "contaBancaria": "Conta Corrente E2E",
+    "contaDestino": "Conta Corrente E2E",
+    "rateioEntreCiclos": false
+  },
+  "ct4": {
+    "operacao": "IPTU",
+    "tipoDocumento": "Fatura",
+    "numeroDocumento": "DOL04",
+    "pessoa": "66791418001 - Empresa Produtor - CPF",
+    "fazenda": "Fazenda E2E",
+    "safra": "2021/2021",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "tag": "tagDolar",
+    "observacao": "Observações Dolar",
+    "valorTotal": "2.400,00",
+    "moedaEstrangeira": true,
+    "moeda": "Dólar",
+    "jaPago": true,
+    "contaBancaria": "Conta Corrente E2E",
+    "contaDestino": "Conta Corrente E2E",
+    "rateioEntreCiclos": false,
+    "formaPagamento": "Boleto",
+    "numeroBoleto": [
+      {
+        "numero": "12345678910111213585748748718187817817874187187"
+      }
+    ]
+  },
+  "ct5": {
+    "operacao": "IPTU",
+    "tipoDocumento": "Fatura",
+    "numeroDocumento": "DOL05",
+    "pessoa": "66791418001 - Empresa Produtor - CPF",
+    "fazenda": "Fazenda Reserva",
+    "safra": "2020/2020",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "tag": "tagDolar",
+    "observacao": "Observações Dolar",
+    "valorTotal": "2.500,00",
+    "moedaEstrangeira": true,
+    "moeda": "Dólar",
+    "jaPago": true,
+    "contaBancaria": "Conta Corrente E2E",
+    "contaDestino": "Conta Corrente E2E",
+    "rateioEntreCiclosPlanejamento": true,
+    "ciclos": [
+      {
+        "nome": "Arroz - 2020/2020"
+      },
+      {
+        "nome": "Algodão - 2020/2020"
+      }
+    ],
+    "formaPagamento": "Boleto",
+    "numeroBoleto": [
+      {
+        "numero": "12345678910111213585748748718187817817874187187"
+      }
+    ]
+  }
+}

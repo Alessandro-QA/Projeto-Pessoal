@@ -1,0 +1,69 @@
+{
+  "ct1": {
+    "operacao": "IPTU",
+    "tipoDocumento": "Fatura",
+    "numeroDocumento": "DLEDT01",
+    "pessoa": "66791418001 - Empresa Produtor - CPF",
+    "fazenda": "Fazenda E2E",
+    "safra": "2021/2021",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "tag": "tagDolar",
+    "observacao": "Observações Dolar",
+    "moedaEstrangeira": true,
+    "valorTotal": "2.200,00",
+    "moeda": "Dólar",
+    "jaPago": false,
+    "rateioEntreCiclos": false,
+    "formaPagamento": "Boleto",
+    "numeroBoleto": [
+      {
+        "numero": "12345678910111213585748748718187817817874187187"
+      }
+    ]
+  },
+  "ct2": {
+    "filtro": {
+      "fazenda": "Fazenda E2E",
+      "empresa": "Empresa Fornecedor - CNPJ",
+      "numeroDocumento": "DLEDT01"
+    },
+    "editar": {
+      "operacao": "IPVA",
+      "tipoDocumento": "Fatura",
+      "dedutivel": "Não",
+      "numeroDocumento": "DLEDT-01",
+      "pessoa": "91535740019 - Empresa Fornecedor - CPF",
+      "fazenda": "Fazenda Reserva",
+      "empresa": "Empresa Produtor - CPF",
+      "ieEmpresa": "545612",
+      "tag": "tagDolarEditado",
+      "observacao": "Observações Dolar Editado",
+      "moedaEstrangeira": true,
+      "valorTotal": "2.255,00",
+      "formaPagamento": "Dinheiro",
+      "condicaoPagamento": "Parcelado",
+      "quantidadeParcela": "3",
+      "valorFixo": true
+    }
+  },
+  "ct3": {
+    "operacao": "IPVA",
+    "tipoDocumento": "Fatura",
+    "dedutivel": "Não",
+    "numeroDocumento": "DLEDT-01",
+    "pessoa": "91535740019 - Empresa Fornecedor - CPF",
+    "fazenda": "Fazenda Reserva",
+    "safra": "2021/2021",
+    "empresa": "Empresa Produtor - CPF",
+    "ieEmpresa": "545612",
+    "tag": "tagDolarEditado",
+    "observacao": "Observações Dolar Editado",
+    "moedaEstrangeira": true,
+    "moeda": "Dólar",
+    "valorTotal": "2.255,00",
+    "formaPagamento": "Dinheiro",
+    "condicaoPagamento": "Parcelado",
+    "quantidadeParcela": "3",
+    "valorFixo": true
+  }
+}
