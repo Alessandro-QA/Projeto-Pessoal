@@ -1,0 +1,88 @@
+{
+  "ct1": {
+    "operacao": "IPTU",
+    "tipoDocumento": "Fatura",
+    "numeroDocumento": "DLPGT002",
+    "pessoa": "66791418001 - Empresa Produtor - CPF",
+    "fazenda": "Fazenda E2E",
+    "safra": "2021/2021",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "tag": "tagDólar",
+    "observacao": "Observações Dólar",
+    "moedaEstrangeira": true,
+    "moeda": "Dólar",
+    "valorTotalNegociado": "2.100,00",
+    "cotacaoMoeda": "4,8925",
+    "valorTotal": "10.274,25",
+    "jaPago": false,
+    "rateioEntreCiclos": false,
+    "formaPagamento": "Boleto",
+    "numeroBoleto": [
+      {
+        "numero": "12345678910111213585748748718187817817874187189"
+      }
+    ]
+  },
+  "ct2": {
+    "empresaDocumento": "Empresa Fornecedor - CNPJ",
+    "fazendaDocumento": "Fazenda E2E",
+    "numeroDocumento": "DLPGT002",
+    "moedaEstrangeira": true,
+    "pagamento": true
+  },
+  "ct3": {
+    "tipoDocumento": "A pagar",
+    "cardsAgenda": [
+      {
+        "cardNumeroDocumento": "DLPGT002"
+      }
+    ],
+    "pagamentoTitulo": true,
+    "formaPagamento": "Boleto",
+    "dataPagamento": "15/05/2023",
+    "contaBancaria": "Conta Corrente E2E",
+    "listaTitulo": [
+      {
+        "fornecedor": "Empresa Produtor - CPF",
+        "numeroDocumento": "DLPGT002",
+        "valorTitulo": "R$ 10.274,25",
+        "valor": "10.274,25",
+        "juros": "50,00",
+        "multa": "10,00",
+        "desconto": "5,00",
+        "totalPagar": "R$ 10.329,25"
+      }
+    ],
+    "valorTotal": "R$ 10.329,25",
+    "observacao": "Pagamento em moeda estrangeira",
+    "pagamento": true,
+    "moedaEstrangeira": true
+  },
+  "ct4": {
+    "pagamento": true,
+    "moedaEstrangeira": true,
+    "fazenda": "Fazenda E2E",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "numeroDocumento": "DLPGT002",
+    "valorEmMoedaEstrangeira": "2.100,00",
+    "valorPagoMoedaEstrangeira": "2.100,00",
+    "cotacaoDiaPagamento": "4,892500",
+    "valorTitulo": "10.274,25",
+    "cotacao": "4,892500",
+    "valor": "10.274,25",
+    "variacaoCambial": "0,00",
+    "totalPagar": "10.274,25"
+  },
+  "ct5": {
+    "status": "Pagos",
+    "cardDocumento": [
+      {
+        "cardStatusDocumento": "Pago",
+        "cardPessoaDocumento": "Empresa Produtor - CPF (1/1)",
+        "cardValorDocumento": "R$ 10.274,25",
+        "cardSaldoAPagar": "Saldo a pagar: R$ 0,00",
+        "cardNumeroDocumento": "Número: DLPGT002"
+      }
+    ]
+  }
+}

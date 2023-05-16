@@ -31,7 +31,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento3000, 'login_cenarios')
       })
 
-      it('Deve cadastrar registrar Pagamento', function () {
+      it('Deve registrar Pagamento', function () {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.pagamento)
 
@@ -43,7 +43,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento3001, 'login_cenarios')
       })
 
-      it('Deve cadastrar registrar Recebimento', function () {
+      it('Deve registrar Recebimento', function () {
         cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.recebimento)
 

@@ -70,7 +70,7 @@ const locators = {
     selectMoeda: '.select[name="moedaPgto"]',
     listMoedas: '.select[name="moedaPgto"] .list',
     moedaSelecionada: '.select[name="moedaPgto"] .selected',
-    inputValorMoeda: '[name="totalAlternativo"] input',
+    inputValorNegociado: '[name="totalAlternativo"] input',
     inputCotacaoMoeda: '.input-value .input',
     valorTotal: '[data-cy=input-valor-total] input',
     valorTotalInativo: '[data-cy=input-valor-total] > input',

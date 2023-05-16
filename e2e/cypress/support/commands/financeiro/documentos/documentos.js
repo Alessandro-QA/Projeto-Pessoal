@@ -93,18 +93,25 @@ class Documentos {
     if (seedTestDocumento.moedaEstrangeira) {
       cy.log('Preencher moeda estrangeira')
 
+      cy.log('Marcar check moeda estrangeira')
       cy.get(locDocumentos.documento.checkMoedaEstrangeira).contains('Pagamento em moeda estrangeira').click()
 
+      cy.log('Selecionar moeda estrangeira')
       cy.get(locDocumentos.documento.selectMoeda).click()
         .get(locDocumentos.documento.listMoedas).contains(seedTestDocumento.moeda).click()
 
       cy.wait('@getCotacaoMoeda')
 
-      cy.get(locDocumentos.documento.inputValorMoeda).clear().type(seedTestDocumento.valorTotal)
+      cy.log('Digitar total negociado moeda estrangeira')
+      cy.get(locDocumentos.documento.inputValorNegociado).clear().type(seedTestDocumento.valorTotalNegociado)
 
-      cy.get(locDocumentos.documento.inputCotacaoMoeda).invoke('val').should('not.be.empty')
+      cy.log('Digitar cotação moeda estrangeira')
+      cy.get(locDocumentos.documento.inputCotacaoMoeda).clear().realType(seedTestDocumento.cotacaoMoeda)
 
-      cy.getVisible(locDocumentos.documento.valorTotal).invoke('val').should('not.be.empty')
+      cy.log('Validar valor total')
+      cy.getVisible(locDocumentos.documento.valorTotal).should(($el) => {
+        expect($el).to.contains.value(seedTestDocumento.valorTotal)
+      })
     }
     else {
       cy.log('Digitar valor total')
@@ -910,11 +917,24 @@ class Documentos {
       if (seedTestEdicaoDocumento.moedaEstrangeira) {
         cy.log('Alterar valor negociado em moeda estrangeira')
 
-        cy.get(locDocumentos.documento.inputValorMoeda).clear().type(seedTestEdicaoDocumento.valorTotal)
+        cy.log('Validar se check moeda estrangeira esta marcado')
+        cy.get(locDocumentos.documento.checkMoedaEstrangeira).first().should(($el) => {
+          expect($el).to.have.class('is-checked')
+        })
 
-        cy.get(locDocumentos.documento.inputCotacaoMoeda).invoke('val').should('not.be.empty')
+        cy.log('Validar moeda estrangeira selecionada')
+        cy.get(locDocumentos.documento.moedaSelecionada).contains(seedTestEdicaoDocumento.moeda)
 
-        cy.getVisible(locDocumentos.documento.valorTotal).invoke('val').should('not.be.empty')
+        cy.log('Digitar total negociado moeda estrangeira')
+        cy.get(locDocumentos.documento.inputValorNegociado).clear().type(seedTestEdicaoDocumento.valorTotalNegociado)
+
+        cy.log('Digitar cotação moeda estrangeira')
+        cy.get(locDocumentos.documento.inputCotacaoMoeda).clear().realType(seedTestEdicaoDocumento.cotacaoMoeda)
+
+        cy.log('Validar valor total')
+        cy.getVisible(locDocumentos.documento.valorTotal).should(($el) => {
+          expect($el).to.contains.value(seedTestEdicaoDocumento.valorTotal)
+        })
       } else {
         cy.log('Alterar valor total')
 
@@ -1206,19 +1226,30 @@ class Documentos {
     if (seedTestDocumento.moedaEstrangeira) {
       cy.log('Validar moeda estrangeira')
 
+      cy.log('Validar check moeda estrangeira')
       cy.get(locDocumentos.documento.checkMoedaEstrangeira).should(($el) => {
         expect($el).to.have.class('is-checked')
       })
 
+      cy.log('Validar moeda estrangeira selecionada')
       cy.get(locDocumentos.documento.moedaSelecionada).should(($el) => {
         expect($el).to.contain.text(seedTestDocumento.moeda)
       })
 
-      cy.get(locDocumentos.documento.inputValorMoeda).invoke('val').should('not.be.empty')
+      cy.log('Validar valor Total Negociado')
+      cy.get(locDocumentos.documento.inputValorNegociado).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.valorTotalNegociado)
+      })
 
-      cy.get(locDocumentos.documento.inputCotacaoMoeda).invoke('val').should('not.be.empty')
+      cy.log('Validar cotacao da Moeda')
+      cy.get(locDocumentos.documento.inputCotacaoMoeda).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.cotacaoMoeda)
+      })
 
-      cy.getVisible(locDocumentos.documento.valorTotal).invoke('val').should('not.be.empty')
+      cy.log('Validar valor total')
+      cy.get(locDocumentos.documento.valorTotal).should(($el) => {
+        expect($el).to.have.value(seedTestDocumento.valorTotal)
+      })
     }
     else {
       cy.log('Validar valor total')

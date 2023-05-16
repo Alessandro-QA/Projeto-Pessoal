@@ -3,8 +3,8 @@
 // import '@cypress/code-coverage/support'
 import 'cypress-real-events'
 import './commands/commands'
-import deletarRegistroTabelasDev from './utils/queries/deletar-por-tabela-dev.js'
-import deletarRegistroTabelasQa from './utils/queries/deletar-por-tabela-qa.js'
+import deletarRegistroTabelasDev from './utils/queries/update-por-tabela-dev.js'
+import deletarRegistroTabelasQa from './utils/queries/update-por-tabela-qa.js'
 import '@shelex/cypress-allure-plugin'
 import registerCypressGrep from 'cypress-grep'
 registerCypressGrep()
@@ -18,12 +18,12 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 before(function () {
   switch (Cypress.env('ambiente')) {
-    case 'dev': cy.executarQuery(deletarRegistroTabelasDev).then((recordset) => { cy.log(`Consulta executada com sucesso: `, recordset) })
+    case 'dev': cy.executarQuery(deletarRegistroTabelasDev).then((recordset) => { cy.log(`Query executada com sucesso: `, recordset) })
       break
-    case 'qa': cy.executarQuery(deletarRegistroTabelasQa).then(function (recordset) { cy.log(`Consulta executada com sucesso: `, recordset) })
+    case 'qa': cy.executarQuery(deletarRegistroTabelasQa).then(function (recordset) { cy.log(`Query executada com sucesso: `, recordset) })
       break
     default:
-      throw new Error('Não foi possivel carregar as variáveis de ambiente')
+      throw new Error('Não foi possivel executar a query, verifique se as variaveis de ambiente estao corretas')
   }
 })
 
