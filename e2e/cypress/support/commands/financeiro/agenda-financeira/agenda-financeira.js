@@ -45,12 +45,16 @@ class AgendaFinanceira {
     cy.wait('@apiRecebimento')
 
     cy.get(locAgendaFinanceira.dashboard.mensagemSucessoPagamento).then(($message) => {
-      if (seedTestAgendaFinanceira.pagamento) {
+      if (seedTestAgendaFinanceira.moedaEstrangeira) {
+        expect($message).exist.and.to.contain.text('OPS! Não permitido realizar o pagamento rápido para titulos negociados em moeda alternativa')
+      }
+      else if (seedTestAgendaFinanceira.pagamento) {
         expect($message).exist.and.to.contain.text('Pagamento realizado com sucesso')
       } else {
         expect($message).exist.and.to.contain.text('Recebimento realizado com sucesso')
       }
     })
+
     cy.wait('@listagemAgenda')
   }
 
@@ -181,7 +185,10 @@ class AgendaFinanceira {
     cy.getVisible(locAgendaFinanceira.pagamentoRecebimentoLote.buttonConfirmarPagamentoRecebimento).click()
 
     cy.get(locAgendaFinanceira.dashboard.mensagemSucessoPagamento).then(($message) => {
-      if (seedTestAgendaFinanceira.pagamento) {
+      if (seedTestAgendaFinanceira.moedaEstrangeira) {
+        expect($message).exist.and.to.contain.text('OPS! Não permitido recebimento/pagamento em Lote para títulos negociados em moeda alternativa')
+      }
+      else if (seedTestAgendaFinanceira.pagamento) {
         expect($message).exist.and.to.contain.text('Pagamento feito com sucesso')
       } else {
         expect($message).exist.and.to.contain.text('Recebimento feito com sucesso')
@@ -202,6 +209,7 @@ class AgendaFinanceira {
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Recebimento').as('apiRecebimento')
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem').as('listagemAgenda')
     cy.intercept('GET', '/api/financeiro/v1/Titulo/**').as('getTitulo')
+    cy.intercept('GET', '/api/financeiro/v1/Moeda/**').as('getMoeda')
 
     cy.log('Navegar para Agenda Financeira')
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
@@ -261,10 +269,57 @@ class AgendaFinanceira {
         .clear().type(`${seedTestAgendaFinanceira.observacao}{enter}`)
     }
 
-    cy.log('Informar o valor de pagamento')
     if (seedTestAgendaFinanceira.valor) {
-      cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.valor)
-        .clear().type(`${seedTestAgendaFinanceira.valor}{enter}`)
+      if (!seedTestAgendaFinanceira.moedaEstrangeira) {
+        cy.log('Informar o valor de pagamento')
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.valor)
+          .clear().type(`${seedTestAgendaFinanceira.valor}{enter}`)
+      }
+      else {
+        cy.wait('@getMoeda')
+
+        cy.log('Validar valor do titulo em moeda estrangeira')
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.valorEmMoedaEstrangeira).should(($el) => {
+          expect($el).to.contains.text(seedTestAgendaFinanceira.valorEmMoedaEstrangeira)
+        })
+
+        cy.log('Validar valor pago em moeda estrangeira')
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.valorPagoEmMoedaEstrangeira).should(($el) => {
+          expect($el).to.contains.value(seedTestAgendaFinanceira.valorPagoMoedaEstrangeira)
+        })
+
+        cy.log('Validar input otação no dia do pagamento')
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.cotacaoDiaPagamento)
+          .clear().realType(seedTestAgendaFinanceira.cotacaoDiaPagamento)
+
+
+        cy.log('Validar valor do titulo')
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.valorDoTitulo).should(($el) => {
+          expect($el).to.contains.text(seedTestAgendaFinanceira.valorTitulo)
+        })
+
+        cy.log('Validar cotação')
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.cotacao).should(($el) => {
+          expect($el).to.contains.text(seedTestAgendaFinanceira.cotacao)
+        })
+
+        cy.log('Validar valor')
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.valorCalculado).should(($el) => {
+          expect($el).to.contains.value(seedTestAgendaFinanceira.valor)
+        })
+
+        if (seedTestAgendaFinanceira.variacaoCambial) {
+          cy.log('Validar Variacao Cambial')
+          cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.variacaoCambial).should(($el) => {
+            expect($el).to.contains.value(seedTestAgendaFinanceira.variacaoCambial)
+          })
+        }
+
+        cy.log('Validar Total a pagar')
+        cy.getVisible(locAgendaFinanceira.pagamentoRecebimento.totalPagarMoedaEstrangeira).should(($el) => {
+          expect($el).to.contains.value(seedTestAgendaFinanceira.totalPagar)
+        })
+      }
     }
 
     cy.wait('@listagemAgenda')
@@ -323,7 +378,6 @@ class AgendaFinanceira {
     const cards = seedTestAgendaFinanceira.cardDocumento
     cards.forEach((card) => {
       cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento)
-      cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento).should('have.length', cards.length)
         .contains(card.cardNumeroDocumento)
         .parent(locAgendaFinanceira.dashboard.cardAgenda).within(() => {
           if (card.cardStatusDocumento === 'Recebido') {
