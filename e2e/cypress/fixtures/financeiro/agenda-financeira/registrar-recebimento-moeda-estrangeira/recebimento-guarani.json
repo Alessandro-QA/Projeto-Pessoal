@@ -1,0 +1,88 @@
+{
+  "ct1": {
+    "operacao": "Venda de Grãos",
+    "tipoDocumento": "Nota Fiscal",
+    "numeroDocumento": "GYPGT001",
+    "pessoa": "66791418001 - Empresa Produtor - CPF",
+    "fazenda": "Fazenda E2E",
+    "safra": "2021/2021",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "tag": "tagGuarani",
+    "observacao": "Observações Guarani",
+    "moedaEstrangeira": true,
+    "moeda": "Guarani",
+    "valorTotalNegociado": "1.100,00",
+    "cotacaoMoeda": "0,00068",
+    "valorTotal": "0,75",
+    "jaPago": false,
+    "rateioEntreCiclos": false,
+    "formaPagamento": "Boleto",
+    "numeroBoleto": [
+      {
+        "numero": "12345678910111213585748748718187817817874187189"
+      }
+    ]
+  },
+  "ct2": {
+    "empresaDocumento": "Empresa Fornecedor - CNPJ",
+    "fazendaDocumento": "Fazenda E2E",
+    "numeroDocumento": "GYPGT001",
+    "moedaEstrangeira": true,
+    "pagamento": false
+  },
+  "ct3": {
+    "tipoDocumento": "A receber",
+    "cardsAgenda": [
+      {
+        "cardNumeroDocumento": "GYPGT001"
+      }
+    ],
+    "pagamentoTitulo": false,
+    "formaPagamento": "Dinheiro",
+    "dataPagamento": "15/05/2023",
+    "contaBancaria": "Conta Corrente E2E",
+    "listaTitulo": [
+      {
+        "fornecedor": "Empresa Produtor - CPF",
+        "numeroDocumento": "GYPGT001",
+        "valorTitulo": "R$ 0,75",
+        "valor": "0,75",
+        "juros": "0,05",
+        "multa": "0,10",
+        "desconto": "0,05",
+        "totalPagar": "R$ 0,85"
+      }
+    ],
+    "valorTotal": "R$ 0,85",
+    "observacao": "Recebimento em moeda estrangeira",
+    "pagamento": false,
+    "moedaEstrangeira": true
+  },
+  "ct4": {
+    "pagamento": false,
+    "moedaEstrangeira": true,
+    "fazenda": "Fazenda E2E",
+    "empresa": "Empresa Fornecedor - CNPJ",
+    "numeroDocumento": "GYPGT001",
+    "valorEmMoedaEstrangeira": "1.100,00",
+    "valorPagoMoedaEstrangeira": "1.100,00",
+    "cotacaoDiaPagamento": "0,000680",
+    "valorTitulo": "0,75",
+    "cotacao": "0,000680",
+    "variacaoCambial": "0,00",
+    "valor": "0,75",
+    "totalPagar": "0,75"
+  },
+  "ct5": {
+    "status": "Recebidos",
+    "cardDocumento": [
+      {
+        "cardStatusDocumento": "Recebido",
+        "cardPessoaDocumento": "Empresa Produtor - CPF (1/1)",
+        "cardValorDocumento": "R$ 0,75",
+        "cardSaldoAPagar": "Saldo a receber: R$ 0,00",
+        "cardNumeroDocumento": "Número: GYPGT001"
+      }
+    ]
+  }
+}

@@ -10,8 +10,8 @@ let fazendaId = '12ea6038-58da-4b75-b277-354617a445af'
 
 let queries = `
 			--  Exclusao Logica dos registros dos testes de cadastro de atores
-				UPDATE [cicloproducao].[Ciclos] SET Visible = 0 SET Visible = 0 WHERE Descricao = 'Safra Milho - 2021/2021' AND SafraDescricao = '2021/2021' AND TenantId = '${tenantCadastro}';
-				UPDATE [financeiro].[ContaBancariaEmpresas] SET Visible = 0 SET Visible = 0 WHERE TenantId = '${tenantCadastro}' and ContaBancariaId != '${contaBancariaId}';
+				UPDATE [cicloproducao].[Ciclos] SET Visible = 0 WHERE Descricao = 'Safra Milho - 2021/2021' AND SafraDescricao = '2021/2021' AND TenantId = '${tenantCadastro}';
+				UPDATE [financeiro].[ContaBancariaEmpresas] SET Visible = 0 WHERE TenantId = '${tenantCadastro}' and ContaBancariaId != '${contaBancariaId}';
 				UPDATE [financeiro].[Movimentacoes] SET Visible = 0 WHERE TenantId = '${tenantCadastro}' and ContaBancariaId != '${contaBancariaId}';
 				UPDATE [financeiro].[ContaBancarias] SET Visible = 0 WHERE TenantId = '${tenantCadastro}' and Id != '${contaBancariaId}';
 				UPDATE [pessoa].[EnderecosDocumentos] SET Visible = 0 WHERE TenantId = '${tenantCadastro}' and DocumentoId != '${documentoId}';
