@@ -46,7 +46,11 @@ class AgendaFinanceira {
 
     cy.get(locAgendaFinanceira.dashboard.mensagemSucessoPagamento).then(($message) => {
       if (seedTestAgendaFinanceira.moedaEstrangeira) {
-        expect($message).exist.and.to.contain.text('OPS! Não permitido realizar o pagamento rápido para titulos negociados em moeda alternativa')
+        if (seedTestAgendaFinanceira.pagamento) {
+          expect($message).exist.and.to.contain.text('OPS! Não permitido realizar o pagamento rápido para titulos negociados em moeda alternativa')
+        } else {
+          expect($message).exist.and.to.contain.text('OPS! Não permitido realizar o recebimento rápido para titulos negociados em moeda alternativa')
+        }
       }
       else if (seedTestAgendaFinanceira.pagamento) {
         expect($message).exist.and.to.contain.text('Pagamento realizado com sucesso')
