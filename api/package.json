@@ -15,12 +15,15 @@
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.38.4",
     "@testing-library/cypress": "^9.0.0",
-    "cypress": "^12.11.0",
+    "cypress": "^12.17.4",
     "cypress-eslint-preprocessor": "^1.2.2",
     "cypress-msteams-reporter": "^1.0.4",
     "cypress-plugin-api": "^2.11.0",
     "cypress-plugin-steps": "^1.1.1",
     "eslint-plugin-cypress": "^2.13.3",
     "eslint-plugin-json": "^3.1.0"
+  },
+  "dependencies": {
+    "save-dev": "^0.0.1-security"
   }
 }

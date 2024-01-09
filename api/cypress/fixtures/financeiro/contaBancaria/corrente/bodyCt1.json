@@ -11,6 +11,17 @@
     "ativo": false
   },
   {
+    "id": "8940dc7e-9d54-4087-b7c8-579d12c837da",
+    "nomeConta": "Conta Exclusão",
+    "numeroConta": "4560123",
+    "digitoConta": "8",
+    "agenciaConta": "789456",
+    "digitoAgencia": "4",
+    "saldoConta": 0,
+    "empresaTitular": "Empresa Teste Exclusão",
+    "ativo": true
+  },
+  {
     "id": "251037b1-3968-4ca9-a6c6-6c0f1979bc40",
     "nomeConta": "Conta Edição - Inativa",
     "numeroConta": "67890",
@@ -52,6 +63,17 @@
     "digitoAgencia": "9",
     "saldoConta": 0,
     "empresaTitular": "Empresa Teste Edição",
+    "ativo": true
+  },
+  {
+    "id": "e6165d06-dfd7-4746-b404-f4752fe94e77",
+    "nomeConta": "Teste Adição",
+    "numeroConta": "65413",
+    "digitoConta": "2",
+    "agenciaConta": "32145",
+    "digitoAgencia": "5",
+    "saldoConta": 0,
+    "empresaTitular": "Teste Conta Bancaria",
     "ativo": true
   }
 ]
