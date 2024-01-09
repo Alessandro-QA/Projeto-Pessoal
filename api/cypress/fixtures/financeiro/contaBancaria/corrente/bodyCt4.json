@@ -1,5 +1,16 @@
 [
   {
+    "id": "8940dc7e-9d54-4087-b7c8-579d12c837da",
+    "nomeConta": "Conta Exclusão",
+    "numeroConta": "4560123",
+    "digitoConta": "8",
+    "agenciaConta": "789456",
+    "digitoAgencia": "4",
+    "saldoConta": 0,
+    "empresaTitular": "Empresa Teste Exclusão",
+    "ativo": true
+  },
+  {
     "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
     "nomeConta": "Teste Dashboard Financeiro",
     "numeroConta": "65146154",
@@ -30,6 +41,17 @@
     "digitoAgencia": "9",
     "saldoConta": 0,
     "empresaTitular": "Empresa Teste Edição",
+    "ativo": true
+  },
+  {
+    "id": "e6165d06-dfd7-4746-b404-f4752fe94e77",
+    "nomeConta": "Teste Adição",
+    "numeroConta": "65413",
+    "digitoConta": "2",
+    "agenciaConta": "32145",
+    "digitoAgencia": "5",
+    "saldoConta": 0,
+    "empresaTitular": "Teste Conta Bancaria",
     "ativo": true
   }
 ]
