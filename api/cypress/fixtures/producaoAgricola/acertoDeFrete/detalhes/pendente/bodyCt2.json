@@ -5,6 +5,9 @@
     "numero": 17,
     "dataAcerto": "2023-02-10T00:00:00+00:00",
     "statusAcerto": 1,
+    "tipoValorManual": 2,
+    "valorManual": 0,
+    "valorTotal": 10000,
     "motorista": {
       "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
       "documentoPrincipal": "99292525093",
@@ -14,14 +17,10 @@
       "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
       "placa": "SFD1656"
     },
-    "tipoValorManual": 2,
-    "valorManual": 0.0,
-    "valorTotal": 10000.0,
     "romaneios": [
       {
-        "quantidadePesagem": 10000.0,
         "id": "5ab10b0e-ac68-4d25-a57e-2f6cfbbe3f86",
-        "valor": 10000.0,
+        "valor": 10000,
         "ticket": 5,
         "data": "2022-12-09T10:02:27-03:00",
         "origem": {
@@ -41,7 +40,9 @@
           "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
           "placa": "SFD1656"
         },
-        "tipo": 2
+        "quantidadePesagem": 10000,
+        "tipo": 2,
+        "possuiRomaneio": false
       }
     ],
     "despesas": []

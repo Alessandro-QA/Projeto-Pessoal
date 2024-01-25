@@ -19,7 +19,6 @@
     },
     "romaneios": [
       {
-        "quantidadePesagem": 5000,
         "id": "0cb97549-cae3-49c1-9862-1d7b391f3ee5",
         "valor": 5000,
         "ticket": 11,
@@ -41,12 +40,14 @@
           "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
           "placa": "SFD1656"
         },
-        "tipo": 2
+        "quantidadePesagem": 5000,
+        "tipo": 2,
+        "possuiRomaneio": false
       }
     ],
     "despesas": [
       {
-        "id": "7a0e7240-84b7-44d5-8d76-bb56f95e004a",
+        "id": "9a6ef318-b2a6-44e2-86be-f268e7378abd",
         "acertoFreteId": "2f7381c4-1648-4ef7-878f-0c54fb18a24a",
         "documentoId": "fcfc95e8-10c2-4966-9f6e-a24467d9d311",
         "valor": 56123,

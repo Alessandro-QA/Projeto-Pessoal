@@ -1,35 +1,38 @@
 [
-  {
+    {
       "detalhes": [],
       "categoria": {
-          "codigo": "4.02.09.04",
-          "descricao": "Aquisição de Gado",
-          "dedutivel": true
+        "codigo": "4.02.09.04",
+        "descricao": "Aquisição de Gado",
+        "dedutivel": true,
+        "adiantamento": false
       },
-      "valorTotal": 16000.020000000000000,
-      "valorCategoria": 10000.000000000000000,
-      "porcentagem": 62.499921875097656127929840088
-  },
-  {
+      "valorTotal": 16000.02,
+      "valorCategoria": 10000,
+      "porcentagem": 62.499921875097655
+    },
+    {
       "detalhes": [],
       "categoria": {
-          "codigo": "4.02.03.02",
-          "descricao": "Aluguéis",
-          "dedutivel": true
+        "codigo": "4.02.03.02",
+        "descricao": "Aluguéis",
+        "dedutivel": true,
+        "adiantamento": false
       },
-      "valorTotal": 16000.020000000000000,
-      "valorCategoria": 5000.010000000000000,
-      "porcentagem": 31.250023437470703161621047974
-  },
-  {
+      "valorTotal": 16000.02,
+      "valorCategoria": 5000.01,
+      "porcentagem": 31.250023437470702
+    },
+    {
       "detalhes": [],
       "categoria": {
-          "codigo": "4.02.01.03",
-          "descricao": "13º Salário",
-          "dedutivel": true
+        "codigo": "4.02.01.03",
+        "descricao": "13º Salário",
+        "dedutivel": true,
+        "adiantamento": false
       },
-      "valorTotal": 16000.020000000000000,
-      "valorCategoria": 1000.010000000000000,
-      "porcentagem": 6.2500546874316407104491119386
-  }
-]
+      "valorTotal": 16000.02,
+      "valorCategoria": 1000.01,
+      "porcentagem": 6.250054687431641
+    }
+  ]

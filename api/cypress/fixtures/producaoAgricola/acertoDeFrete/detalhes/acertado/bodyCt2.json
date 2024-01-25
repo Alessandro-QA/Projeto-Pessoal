@@ -1,3 +1,4 @@
+
 {
   "success": true,
   "data": {
@@ -5,6 +6,10 @@
     "numero": 13,
     "dataAcerto": "2023-02-10T00:00:00+00:00",
     "statusAcerto": 2,
+    "tipoValorManual": 2,
+    "valorManual": 1000,
+    "valorTotal": 9000,
+    "documentoId": "c3466614-dba2-42e3-818e-3146245637bf",
     "motorista": {
       "id": "93d5937c-fa3b-45e3-9964-d76a865e30b9",
       "documentoPrincipal": "11329740033",
@@ -14,10 +19,6 @@
       "id": "ee07a786-fed4-4909-bb42-1383c4611984",
       "placa": "ABC4321"
     },
-    "tipoValorManual": 2,
-    "valorManual": 1000,
-    "valorTotal": 9000,
-    "documentoId": "c3466614-dba2-42e3-818e-3146245637bf",
     "documento": {
       "id": "c3466614-dba2-42e3-818e-3146245637bf",
       "numero": "13",
@@ -30,7 +31,6 @@
     },
     "romaneios": [
       {
-        "quantidadePesagem": 9000,
         "id": "b1b56a03-0393-4c9a-89aa-a89557c8f123",
         "valor": 10000,
         "ticket": 4,
@@ -51,7 +51,9 @@
           "id": "ee07a786-fed4-4909-bb42-1383c4611984",
           "placa": "ABC4321"
         },
-        "tipo": 1
+        "quantidadePesagem": 9000,
+        "tipo": 1,
+        "possuiRomaneio": false
       }
     ],
     "despesas": []
