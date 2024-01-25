@@ -1,98 +1,92 @@
 [
-  {
+    {
       "detalhes": [
-          {
-              "id": "84ddf07c-7597-4f32-9cda-4e58e8d741b6",
-              "data": "2023-03-07T12:18:48-03:00",
-              "contaBancaria": {
-                  "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
-                  "descricao": "Banco: Omni SA Crédito Financiamento Investimento Ag.: 142541 Conta: 65146154-6"
-              },
-              "categoria": "4.02.09.04",
-              "valor": 10000.00,
-              "pessoa": "Produtor Teste API",
-              "documento": "333"
-          }
-      ],
-      "categoria": {
-          "codigo": "4.02.09.04",
-          "descricao": "Aquisição de Gado",
-          "dedutivel": true
-      },
-      "valorTotal": 16000.020000000000000,
-      "valorCategoria": 10000.000000000000000,
-      "porcentagem": 62.499921875097656127929840088
-  },
-  {
-      "detalhes": [
-          {
-              "id": "e7b1556e-93a1-45ac-90fa-210e153d8268",
-              "data": "2023-03-07T12:18:44-03:00",
-              "contaBancaria": {
-                  "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
-                  "descricao": "Banco: Omni SA Crédito Financiamento Investimento Ag.: 142541 Conta: 65146154-6"
-              },
-              "categoria": "4.02.03.02",
-              "valor": 0.01,
-              "pessoa": "Empresa Teste API",
-              "documento": "222"
+        {
+          "id": "84ddf07c-7597-4f32-9cda-4e58e8d741b6",
+          "data": "2023-03-07T12:18:48-03:00",
+          "contaBancaria": {
+            "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+            "descricao": "Banco: Omni SA Crédito Financiamento Investimento Ag.: 142541 Conta: 65146154-6"
           },
-          {
-              "id": "f2455b8d-e0c0-4a46-93f8-d5a19875ba5f",
-              "data": "2023-03-07T12:18:52-03:00",
-              "contaBancaria": {
-                  "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
-                  "descricao": "Banco: Omni SA Crédito Financiamento Investimento Ag.: 142541 Conta: 65146154-6"
-              },
-              "categoria": "4.02.03.02",
-              "valor": 5000.00,
-              "pessoa": "Fornecedor Teste API",
-              "documento": "444"
-          }
+          "categoria": "4.02.09.04",
+          "valor": 10000
+        }
       ],
       "categoria": {
-          "codigo": "4.02.03.02",
-          "descricao": "Aluguéis",
-          "dedutivel": true
+        "codigo": "4.02.09.04",
+        "descricao": "Aquisição de Gado",
+        "dedutivel": true,
+        "adiantamento": false
       },
-      "valorTotal": 16000.020000000000000,
-      "valorCategoria": 5000.010000000000000,
-      "porcentagem": 31.250023437470703161621047974
-  },
-  {
+      "valorTotal": 16000.02,
+      "valorCategoria": 10000,
+      "porcentagem": 62.499921875097655
+    },
+    {
       "detalhes": [
-          {
-              "id": "4410ea42-b039-4943-9a10-98c8a69ded47",
-              "data": "2023-03-07T12:18:34-03:00",
-              "contaBancaria": {
-                  "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
-                  "descricao": "Banco: Omni SA Crédito Financiamento Investimento Ag.: 142541 Conta: 65146154-6"
-              },
-              "categoria": "4.02.01.03",
-              "valor": 0.01,
-              "pessoa": "Empresa Teste API",
-              "documento": "111"
+        {
+          "id": "e7b1556e-93a1-45ac-90fa-210e153d8268",
+          "data": "2023-03-07T12:18:44-03:00",
+          "contaBancaria": {
+            "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+            "descricao": "Banco: Omni SA Crédito Financiamento Investimento Ag.: 142541 Conta: 65146154-6"
           },
-          {
-              "id": "12ee4c91-50cc-4d3a-b50f-a945fdc78ba6",
-              "data": "2023-03-06T16:22:05-03:00",
-              "contaBancaria": {
-                  "id": "4d488389-8197-4e2d-af23-8d4ed17a847b",
-                  "descricao": "Cartão Teste Dashboard Financeiro"
-              },
-              "categoria": "4.02.01.03",
-              "valor": 1000.00,
-              "pessoa": "Cliente Teste API",
-              "documento": "999"
-          }
+          "categoria": "4.02.03.02",
+          "valor": 0.01
+        },
+        {
+          "id": "f2455b8d-e0c0-4a46-93f8-d5a19875ba5f",
+          "data": "2023-03-07T12:18:52-03:00",
+          "contaBancaria": {
+            "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+            "descricao": "Banco: Omni SA Crédito Financiamento Investimento Ag.: 142541 Conta: 65146154-6"
+          },
+          "categoria": "4.02.03.02",
+          "valor": 5000
+        }
       ],
       "categoria": {
-          "codigo": "4.02.01.03",
-          "descricao": "13º Salário",
-          "dedutivel": true
+        "codigo": "4.02.03.02",
+        "descricao": "Aluguéis",
+        "dedutivel": true,
+        "adiantamento": false
       },
-      "valorTotal": 16000.020000000000000,
-      "valorCategoria": 1000.010000000000000,
-      "porcentagem": 6.2500546874316407104491119386
-  }
-]
+      "valorTotal": 16000.02,
+      "valorCategoria": 5000.01,
+      "porcentagem": 31.250023437470702
+    },
+    {
+      "detalhes": [
+        {
+          "id": "4410ea42-b039-4943-9a10-98c8a69ded47",
+          "data": "2023-03-07T12:18:34-03:00",
+          "contaBancaria": {
+            "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+            "descricao": "Banco: Omni SA Crédito Financiamento Investimento Ag.: 142541 Conta: 65146154-6"
+          },
+          "categoria": "4.02.01.03",
+          "valor": 0.01
+        },
+        {
+          "id": "12ee4c91-50cc-4d3a-b50f-a945fdc78ba6",
+          "data": "2023-03-06T16:22:05-03:00",
+          "contaBancaria": {
+            "id": "4d488389-8197-4e2d-af23-8d4ed17a847b",
+            "descricao": "Cartão Teste Dashboard Financeiro"
+          },
+          "categoria": "4.02.01.03",
+          "valor": 1000
+        }
+      ],
+      "categoria": {
+        "codigo": "4.02.01.03",
+        "descricao": "13º Salário",
+        "dedutivel": true,
+        "adiantamento": false
+      },
+      "valorTotal": 16000.02,
+      "valorCategoria": 1000.01,
+      "porcentagem": 6.250054687431641
+    }
+  ]
+  

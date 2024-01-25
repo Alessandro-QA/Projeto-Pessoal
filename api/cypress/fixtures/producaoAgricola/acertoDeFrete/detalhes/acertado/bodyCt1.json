@@ -30,7 +30,6 @@
     },
     "romaneios": [
       {
-        "quantidadePesagem": 39000,
         "id": "b61672ad-f00d-4d7e-ad28-317191028abe",
         "valor": 39000,
         "ticket": 4,
@@ -52,7 +51,9 @@
           "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
           "placa": "SFD1656"
         },
-        "tipo": 2
+        "quantidadePesagem": 39000,
+        "tipo": 2,
+        "possuiRomaneio": false
       }
     ],
     "despesas": [

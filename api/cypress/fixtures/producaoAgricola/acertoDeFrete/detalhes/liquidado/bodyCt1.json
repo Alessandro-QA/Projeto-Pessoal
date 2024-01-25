@@ -30,7 +30,6 @@
     },
     "romaneios": [
       {
-        "quantidadePesagem": 11000,
         "id": "130a416b-7037-44f5-b857-e9f159d2018d",
         "valor": 11000,
         "ticket": 6,
@@ -51,7 +50,9 @@
           "id": "ee07a786-fed4-4909-bb42-1383c4611984",
           "placa": "ABC4321"
         },
-        "tipo": 1
+        "quantidadePesagem": 11000,
+        "tipo": 1,
+        "possuiRomaneio": false
       }
     ],
     "despesas": [
