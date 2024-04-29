@@ -7,7 +7,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt1.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/DetalhesCategoria', params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
@@ -23,7 +23,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt2.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/DetalhesCategoria', params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
@@ -39,7 +39,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt3.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/DetalhesCategoria', params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
@@ -55,7 +55,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt4.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/DetalhesCategoria', params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
@@ -71,7 +71,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt5.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/DetalhesCategoria', params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist

@@ -6,7 +6,7 @@ context('Financeiro', () => {
             it('CT1 - Deve obter contas bancária por ID', () => {
                 cy.getRequest('/api/financeiro/v1/ContaBancaria/745a3fa9-87f5-4dce-9732-966c30d44186')
                     .then((response) => {
-                        expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                        expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                         expect(response.status).be.equal(200)
                         expect(response.body).to.exist
                         expect(response.body).be.not.null
@@ -23,7 +23,7 @@ context('Financeiro', () => {
                     cy.section('Cadastrar conta bancária para exclusão')
                     cy.postRequest('/api/financeiro/v1/ContaBancaria', payload)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null

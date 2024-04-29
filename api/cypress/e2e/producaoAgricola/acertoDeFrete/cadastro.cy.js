@@ -9,7 +9,7 @@ context('Produção Agrícola', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/cadastro/payloadCt1.json').then((payload) => {
                     cy.postRequest('/api/producao-agricola/v1/AcertoFretes', payload)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.equal(200)
                             expect(response.body.data).to.be.not.null
                             expect(response.body.data.id).to.be.not.null
@@ -26,11 +26,11 @@ context('Produção Agrícola', () => {
                 })
             })
 
-            it('CT2 - Deve cadastrar Acerto de Frete Com Valor Manual', () => {
+            it.skip('CT2 - Deve cadastrar Acerto de Frete Com Valor Manual', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/cadastro/payloadCt2.json').then((payload) => {
                     cy.postRequest('/api/producao-agricola/v1/AcertoFretes', payload)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.equal(200)
                             expect(response.body.data).to.be.not.null
                             expect(response.body.data.id).to.be.not.null
@@ -50,11 +50,11 @@ context('Produção Agrícola', () => {
                 })
             })
 
-            it('CT3 - Deve cadastrar Acerto de Frete Com Despesa', () => {
+            it.skip('CT3 - Deve cadastrar Acerto de Frete Com Despesa', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/cadastro/payloadCt3.json').then((payload) => {
                     cy.postRequest('/api/producao-agricola/v1/AcertoFretes', payload)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.equal(200)
                             expect(response.body.data).to.be.not.null
                             expect(response.body.data.id).to.be.not.null

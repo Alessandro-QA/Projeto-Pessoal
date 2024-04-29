@@ -7,7 +7,7 @@ context('Produção Agrícola', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/listagemRomaneio/paramsCt1.json').then((params) => {
                     cy.getRequestWhitParams('/api/producao-agricola/v1/AcertoFretes/ListRomaneios', params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
@@ -20,7 +20,7 @@ context('Produção Agrícola', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/listagemRomaneio/paramsCt2.json').then((params) => {
                     cy.getRequestWhitParams('/api/producao-agricola/v1/AcertoFretes/ListRomaneios', params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
