@@ -7,7 +7,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/dashboard/detalhesResultadoAnaliticoSafra/payloadCt1.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Dashboard/DetalhesResultadoAnaliticoSafra', payload)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
@@ -23,7 +23,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/dashboard/detalhesResultadoAnaliticoSafra/payloadCt2.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Dashboard/DetalhesResultadoAnaliticoSafra', payload)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
@@ -39,7 +39,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/dashboard/detalhesResultadoAnaliticoSafra/payloadCt3.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Dashboard/DetalhesResultadoAnaliticoSafra', payload)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
@@ -55,7 +55,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/dashboard/detalhesResultadoAnaliticoSafra/payloadCt4.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Dashboard/DetalhesResultadoAnaliticoSafra', payload)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist

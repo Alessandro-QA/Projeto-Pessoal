@@ -8,7 +8,7 @@ context('Produção Agrícola', () => {
                     cy.fixture('producaoAgricola/acertoDeFrete/edicao/pendente/payloadCt1.json').then((payload) => {
                         cy.putRequest('/api/producao-agricola/v1/AcertoFretes', payload)
                             .then((response) => {
-                                expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                                expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                                 expect(response.status).to.equal(200)
                                 expect(response.body.data).not.be.null
                                 expect(response.body.success).to.equal(true)
@@ -24,7 +24,7 @@ context('Produção Agrícola', () => {
                     cy.fixture('producaoAgricola/acertoDeFrete/edicao/pendente/payloadCt2.json').then((payload) => {
                         cy.putRequest('/api/producao-agricola/v1/AcertoFretes', payload)
                             .then((response) => {
-                                expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                                expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                                 expect(response.status).to.equal(200)
                                 expect(response.body.data).not.be.null
                                 expect(response.body.success).to.equal(true)

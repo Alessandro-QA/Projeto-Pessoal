@@ -6,7 +6,7 @@ context('Financeiro', () => {
             it('CT1 - Deve obter todas as contas correntes', () => {
                 cy.getRequest('/api/financeiro/v1/ContaBancaria/Corrente')
                     .then((response) => {
-                        expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                        expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                         expect(response.status).be.equal(200)
                         expect(response.body).to.exist
                         expect(response.body).be.not.null
@@ -21,7 +21,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/contaBancaria/corrente/paramsCt2.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Corrente', params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
@@ -37,7 +37,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/contaBancaria/corrente/paramsCt3.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Corrente', params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
@@ -53,7 +53,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/contaBancaria/corrente/paramsCt4.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Corrente', params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
@@ -69,7 +69,7 @@ context('Financeiro', () => {
                 cy.fixture('financeiro/contaBancaria/corrente/paramsCt5.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Corrente', params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
