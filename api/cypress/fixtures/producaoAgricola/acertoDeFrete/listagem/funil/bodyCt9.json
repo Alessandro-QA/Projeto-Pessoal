@@ -1,5 +1,143 @@
 [
   {
+    "id": "d0dfe8d0-56b2-47ad-aa8a-2c81ea89ffd5",
+    "numero": 22,
+    "dataAcerto": "2023-02-20T00:00:00+00:00",
+    "statusAcerto": 1,
+    "motorista": {
+      "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+      "documentoPrincipal": "99292525093",
+      "descricao": "Motorista Teste API 2"
+    },
+    "veiculo": {
+      "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+      "placa": "SFD1656"
+    },
+    "tipoValorManual": 2,
+    "valorManual": 2500,
+    "valorTotal": 53623,
+    "romaneios": [
+      {
+        "id": "d68fe102-2fe0-498e-9f65-af364d5867b3",
+        "valor": 56123,
+        "ticket": 3,
+        "data": "2022-12-08T17:19:05-03:00",
+        "origem": {
+          "id": "00000000-0000-0000-0000-000000000000"
+        },
+        "destino": {
+          "id": "de869555-55dd-4930-803d-e043c250b970",
+          "descricao": "Cliente Teste API"
+        },
+        "motorista": {
+          "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+          "documentoPrincipal": "99292525093",
+          "descricao": "Motorista Teste API 2"
+        },
+        "veiculo": {
+          "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+          "placa": "SFD1656"
+        },
+        "quantidadePesagem": 56000,
+        "tipo": 1,
+        "possuiRomaneio": false
+      }
+    ],
+    "despesas": []
+  },
+  {
+    "id": "2209daad-0287-4474-aa96-62367d223718",
+    "numero": 21,
+    "dataAcerto": "2023-02-20T00:00:00+00:00",
+    "statusAcerto": 1,
+    "motorista": {
+      "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+      "documentoPrincipal": "99292525093",
+      "descricao": "Motorista Teste API 2"
+    },
+    "veiculo": {
+      "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+      "placa": "SFD1656"
+    },
+    "tipoValorManual": 2,
+    "valorManual": 1500,
+    "valorTotal": 8033,
+    "romaneios": [
+      {
+        "id": "238d9fab-c95c-4312-849d-93be11abce16",
+        "valor": 9533,
+        "ticket": 9,
+        "data": "2022-12-09T09:54:49-03:00",
+        "origem": {
+          "id": "00000000-0000-0000-0000-000000000000"
+        },
+        "destino": {
+          "id": "aeaa79aa-9726-45dd-88bc-41efe81c45f5",
+          "descricao": "U.A. Teste API"
+        },
+        "motorista": {
+          "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+          "documentoPrincipal": "99292525093",
+          "descricao": "Motorista Teste API 2"
+        },
+        "veiculo": {
+          "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+          "placa": "SFD1656"
+        },
+        "quantidadePesagem": 9500,
+        "tipo": 1,
+        "possuiRomaneio": false
+      }
+    ],
+    "despesas": []
+  },
+  {
+    "id": "de461dbe-a665-49c0-9c8d-d5d00d6637ea",
+    "numero": 23,
+    "dataAcerto": "2023-02-20T00:00:00+00:00",
+    "statusAcerto": 1,
+    "motorista": {
+      "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+      "documentoPrincipal": "99292525093",
+      "descricao": "Motorista Teste API 2"
+    },
+    "veiculo": {
+      "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+      "placa": "SFD1656"
+    },
+    "tipoValorManual": 2,
+    "valorManual": 0,
+    "valorTotal": 19123,
+    "romaneios": [
+      {
+        "id": "6fc10568-ba10-4b54-ad68-27d733ab6b48",
+        "valor": 19123,
+        "ticket": 10,
+        "data": "2022-12-09T09:55:10-03:00",
+        "origem": {
+          "id": "00000000-0000-0000-0000-000000000000"
+        },
+        "destino": {
+          "id": "aeaa79aa-9726-45dd-88bc-41efe81c45f5",
+          "descricao": "U.A. Teste API"
+        },
+        "motorista": {
+          "id": "3a7269ef-b1f4-4abf-b721-bc9379bcf90e",
+          "documentoPrincipal": "99292525093",
+          "descricao": "Motorista Teste API 2"
+        },
+        "veiculo": {
+          "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
+          "placa": "SFD1656"
+        },
+        "quantidadePesagem": 19000,
+        "tipo": 1,
+        "possuiRomaneio": false
+      }
+    ],
+    "despesas": []
+  },
+  {
     "id": "2f7381c4-1648-4ef7-878f-0c54fb18a24a",
     "numero": 7,
     "dataAcerto": "2023-02-10T00:00:00+00:00",
@@ -13,14 +151,13 @@
       "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
       "placa": "SFD1656"
     },
-    "tipoValorManual": 2,
-    "valorManual": 0.0,
-    "valorTotal": 5000.0,
+    "tipoValorManual": 1,
+    "valorManual": 56123,
+    "valorTotal": 5000,
     "romaneios": [
       {
-        "quantidadePesagem": 5000.0,
         "id": "0cb97549-cae3-49c1-9862-1d7b391f3ee5",
-        "valor": 5000.0,
+        "valor": 5000,
         "ticket": 11,
         "data": "2022-12-13T09:03:26-03:00",
         "origem": {
@@ -40,10 +177,38 @@
           "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
           "placa": "SFD1656"
         },
-        "tipo": 2
+        "quantidadePesagem": 5000,
+        "tipo": 2,
+        "possuiRomaneio": false
       }
     ],
-    "despesas": []
+    "despesas": [
+      {
+        "id": "9a6ef318-b2a6-44e2-86be-f268e7378abd",
+        "acertoFreteId": "2f7381c4-1648-4ef7-878f-0c54fb18a24a",
+        "documentoId": "fcfc95e8-10c2-4966-9f6e-a24467d9d311",
+        "valor": 56123,
+        "numero": "1234",
+        "data": "2023-02-20T18:17:47-03:00",
+        "pessoa": {
+          "documentoPrincipal": "57046724000193",
+          "pessoaTipo": 1,
+          "id": "3812aaa0-9cee-4a21-b22d-d2205df2fc97",
+          "descricao": "Fornecedor Teste API"
+        },
+        "operacao": {
+          "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
+          "descricao": "13º Salário"
+        },
+        "detalhes": [
+          {
+            "valor": 56123,
+            "saldo": 0,
+            "status": 5
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "9c43f216-d82c-460f-a9c3-1127abd9da55",
@@ -60,13 +225,12 @@
       "placa": "SFD1656"
     },
     "tipoValorManual": 2,
-    "valorManual": 0.0,
-    "valorTotal": 10000.0,
+    "valorManual": 0,
+    "valorTotal": 10000,
     "romaneios": [
       {
-        "quantidadePesagem": 10000.0,
         "id": "5ab10b0e-ac68-4d25-a57e-2f6cfbbe3f86",
-        "valor": 10000.0,
+        "valor": 10000,
         "ticket": 5,
         "data": "2022-12-09T10:02:27-03:00",
         "origem": {
@@ -86,7 +250,9 @@
           "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
           "placa": "SFD1656"
         },
-        "tipo": 2
+        "quantidadePesagem": 10000,
+        "tipo": 2,
+        "possuiRomaneio": false
       }
     ],
     "despesas": []
@@ -106,13 +272,12 @@
       "placa": "ABC4321"
     },
     "tipoValorManual": 2,
-    "valorManual": 0.0,
-    "valorTotal": 3500.0,
+    "valorManual": 0,
+    "valorTotal": 3500,
     "romaneios": [
       {
-        "quantidadePesagem": 3500.0,
         "id": "93b21dea-dba1-4c16-9a6e-88a62d289e4d",
-        "valor": 3500.0,
+        "valor": 3500,
         "ticket": 9,
         "data": "2022-12-09T10:24:56-03:00",
         "origem": {
@@ -132,7 +297,9 @@
           "id": "ee07a786-fed4-4909-bb42-1383c4611984",
           "placa": "ABC4321"
         },
-        "tipo": 2
+        "quantidadePesagem": 3500,
+        "tipo": 2,
+        "possuiRomaneio": false
       }
     ],
     "despesas": []
@@ -152,16 +319,17 @@
       "placa": "SFD1656"
     },
     "tipoValorManual": 2,
-    "valorManual": 0.0,
-    "valorTotal": 45000.0,
+    "valorManual": 0,
+    "valorTotal": 45000,
     "romaneios": [
       {
-        "quantidadePesagem": 45000.0,
         "id": "e386aeb3-605f-40b9-85af-afe4a30e7b86",
-        "valor": 45000.0,
+        "valor": 45000,
         "ticket": 13,
         "data": "2022-12-09T09:56:46-03:00",
-        "origem": { "id": "00000000-0000-0000-0000-000000000000" },
+        "origem": {
+          "id": "00000000-0000-0000-0000-000000000000"
+        },
         "destino": {
           "id": "aeaa79aa-9726-45dd-88bc-41efe81c45f5",
           "descricao": "U.A. Teste API"
@@ -175,7 +343,9 @@
           "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
           "placa": "SFD1656"
         },
-        "tipo": 1
+        "quantidadePesagem": 45000,
+        "tipo": 1,
+        "possuiRomaneio": false
       }
     ],
     "despesas": []
@@ -195,13 +365,12 @@
       "placa": "ABC4321"
     },
     "tipoValorManual": 2,
-    "valorManual": 0.0,
-    "valorTotal": 4000.0,
+    "valorManual": 0,
+    "valorTotal": 4000,
     "romaneios": [
       {
-        "quantidadePesagem": 4000.0,
         "id": "70800a94-32d0-4152-b14c-c89042a22a01",
-        "valor": 4000.0,
+        "valor": 4000,
         "ticket": 10,
         "data": "2022-12-13T09:01:58-03:00",
         "origem": {
@@ -221,7 +390,9 @@
           "id": "ee07a786-fed4-4909-bb42-1383c4611984",
           "placa": "ABC4321"
         },
-        "tipo": 2
+        "quantidadePesagem": 4000,
+        "tipo": 2,
+        "possuiRomaneio": false
       }
     ],
     "despesas": []
@@ -241,13 +412,12 @@
       "placa": "ABC4321"
     },
     "tipoValorManual": 2,
-    "valorManual": 0.0,
-    "valorTotal": 13800.0,
+    "valorManual": 0,
+    "valorTotal": 13800,
     "romaneios": [
       {
-        "quantidadePesagem": 13800.0,
         "id": "28185038-3cc0-4349-bf4c-2feb799018ce",
-        "valor": 13800.0,
+        "valor": 13800,
         "ticket": 2,
         "data": "2022-12-09T09:56:57-03:00",
         "origem": {
@@ -267,7 +437,9 @@
           "id": "ee07a786-fed4-4909-bb42-1383c4611984",
           "placa": "ABC4321"
         },
-        "tipo": 2
+        "quantidadePesagem": 13800,
+        "tipo": 2,
+        "possuiRomaneio": false
       }
     ],
     "despesas": []
@@ -287,13 +459,12 @@
       "placa": "ABC4321"
     },
     "tipoValorManual": 2,
-    "valorManual": 0.0,
-    "valorTotal": 8000.0,
+    "valorManual": 0,
+    "valorTotal": 8000,
     "romaneios": [
       {
-        "quantidadePesagem": 8000.0,
         "id": "20f24c19-9a8a-4255-9753-e7cb886cf0fb",
-        "valor": 8000.0,
+        "valor": 8000,
         "ticket": 6,
         "data": "2022-12-09T10:03:07-03:00",
         "origem": {
@@ -313,7 +484,9 @@
           "id": "ee07a786-fed4-4909-bb42-1383c4611984",
           "placa": "ABC4321"
         },
-        "tipo": 2
+        "quantidadePesagem": 8000,
+        "tipo": 2,
+        "possuiRomaneio": false
       }
     ],
     "despesas": []
@@ -333,13 +506,12 @@
       "placa": "SFD1656"
     },
     "tipoValorManual": 2,
-    "valorManual": 0.0,
-    "valorTotal": 11000.0,
+    "valorManual": 0,
+    "valorTotal": 11000,
     "romaneios": [
       {
-        "quantidadePesagem": 11000.0,
         "id": "91ee353e-5956-457f-a009-39b712d2dfca",
-        "valor": 11000.0,
+        "valor": 11000,
         "ticket": 3,
         "data": "2022-12-09T10:01:08-03:00",
         "origem": {
@@ -359,7 +531,9 @@
           "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
           "placa": "SFD1656"
         },
-        "tipo": 2
+        "quantidadePesagem": 11000,
+        "tipo": 2,
+        "possuiRomaneio": false
       }
     ],
     "despesas": []
@@ -379,13 +553,12 @@
       "placa": "SFD1656"
     },
     "tipoValorManual": 2,
-    "valorManual": 0.0,
-    "valorTotal": 4500.0,
+    "valorManual": 0,
+    "valorTotal": 4500,
     "romaneios": [
       {
-        "quantidadePesagem": 4500.0,
         "id": "c37edb68-2c6f-4d92-b074-3bab822dc991",
-        "valor": 4500.0,
+        "valor": 4500,
         "ticket": 8,
         "data": "2022-12-09T10:24:09-03:00",
         "origem": {
@@ -405,7 +578,9 @@
           "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
           "placa": "SFD1656"
         },
-        "tipo": 2
+        "quantidadePesagem": 4500,
+        "tipo": 2,
+        "possuiRomaneio": false
       }
     ],
     "despesas": []
@@ -425,16 +600,17 @@
       "placa": "SFD1656"
     },
     "tipoValorManual": 2,
-    "valorManual": 0.0,
-    "valorTotal": 33500.0,
+    "valorManual": 0,
+    "valorTotal": 33500,
     "romaneios": [
       {
-        "quantidadePesagem": 33500.0,
         "id": "bae74825-532e-4b49-9ec1-59c294250de5",
-        "valor": 33500.0,
+        "valor": 33500,
         "ticket": 12,
         "data": "2022-12-09T09:56:14-03:00",
-        "origem": { "id": "00000000-0000-0000-0000-000000000000" },
+        "origem": {
+          "id": "00000000-0000-0000-0000-000000000000"
+        },
         "destino": {
           "id": "aeaa79aa-9726-45dd-88bc-41efe81c45f5",
           "descricao": "U.A. Teste API"
@@ -448,7 +624,9 @@
           "id": "b792b57c-98d0-46e8-ba31-539478f130a9",
           "placa": "SFD1656"
         },
-        "tipo": 1
+        "quantidadePesagem": 38500,
+        "tipo": 1,
+        "possuiRomaneio": false
       }
     ],
     "despesas": []
