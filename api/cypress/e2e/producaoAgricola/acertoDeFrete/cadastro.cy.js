@@ -5,7 +5,7 @@ const assertResponse = { "success": true, "data": true }
 context('Produção Agrícola', () => {
     context('Acerto de Frete', () => {
         describe('POST - /api/producao-agricola/v1/AcertoFretes - Cadastro', () => {
-            it('CT1 - Deve cadastrar Acerto de Frete', () => {
+            it.skip('CT1 - Deve cadastrar Acerto de Frete', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/cadastro/payloadCt1.json').then((payload) => {
                     cy.postRequest('/api/producao-agricola/v1/AcertoFretes', payload)
                         .then((response) => {

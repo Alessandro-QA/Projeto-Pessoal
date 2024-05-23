@@ -13,3 +13,4 @@ e2e/cypress/config-files/dev.json
 
 .vscode/*
 send-allure-results-BKP.sh
+node_modules
