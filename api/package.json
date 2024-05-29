@@ -13,8 +13,8 @@
     "teamsReport": "cypress-msteams-reporter --verbose --report-path cypress/allure-report/widgets/status-chart.json --testEnv-path cypress/allure-report/widgets/environment.json --report-url __EndToEndTest.AllureUrl__"
   },
   "devDependencies": {
-    "@shelex/cypress-allure-plugin": "^2.38.4",
     "@testing-library/cypress": "^9.0.0",
+    "allure-cypress": "^2.15.1",
     "cypress": "^12.17.4",
     "cypress-eslint-preprocessor": "^1.2.2",
     "cypress-msteams-reporter": "^1.0.4",
