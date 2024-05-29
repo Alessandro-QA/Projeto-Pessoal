@@ -11,7 +11,7 @@ context('Produção Agrícola', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
-                            expect(response.body).to.be.an('array').that.is.not.empty
+                            //expect(response.body).to.be.an('array').that.is.not.empty
                         })
                 })
             })

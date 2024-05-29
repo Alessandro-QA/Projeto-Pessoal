@@ -2,6 +2,8 @@ api/node_modules
 api/cypress/results/*
 api/cypress/allure-report/*
 api/cypress/allure-results/*
+api/cypress/screenshots/*
+api/cypress/downloads/*
 
 e2e/node_modules
 e2e/cypress/results/*

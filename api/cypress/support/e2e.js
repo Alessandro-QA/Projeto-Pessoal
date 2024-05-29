@@ -1,6 +1,6 @@
 import './commands'
 import 'cypress-plugin-api'
-import '@shelex/cypress-allure-plugin'
+import "allure-cypress/commands";
 import 'cypress-plugin-steps'
 
 const email = Cypress.env('email')

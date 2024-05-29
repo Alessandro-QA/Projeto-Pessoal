@@ -38,7 +38,7 @@ context('Produção Agrícola', () => {
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.equal(200)
-                            expect(response.body).to.have.lengthOf(11).to.be.not.null
+                            expect(response.body).to.have.lengthOf(12).to.be.not.null
                         })
                 })
             })
