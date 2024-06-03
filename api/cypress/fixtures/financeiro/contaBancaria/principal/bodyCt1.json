@@ -9,8 +9,9 @@
   "contaPrincipal": true,
   "numerarioEmTransito": false,
   "banco": {
-    "id": "b86e2b06-88d6-14de-0893-0155b55388b7",
-    "descricao": "Omni SA Crédito Financiamento Investimento"
+    "id": "24dba03d-222d-96df-63ee-342b13eb4a8d",
+    "codigoBacen": "204",
+    "descricao": "Banco Bradesco Cartões S.A."
   },
   "agencia": "142541",
   "agenciaDigitoVerificador": "1",
@@ -25,7 +26,14 @@
   "ativo": true,
   "contaBancariaEmpresas": [
     {
-      "id": "f4a36d75-e85b-44c4-a4e5-0a6584211cce",
+      "id": "aeb42b44-7ffa-4bef-815f-3fbe8a613dc3",
+      "empresa": {
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API"
+      }
+    },
+    {
+      "id": "6471c6f3-0973-4f6f-9e5a-6ce2b6561eb1",
       "empresa": {
         "id": "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
         "descricao": "Empresa Teste Financeiro - Dashboard"
