@@ -67,7 +67,7 @@ context('Financeiro', () => {
                 })
             })
 
-            it('CT4 - Deve buscar dados dos Detalhes por Categoria - Por Pesquisa', () => {
+            it('CT5 - Deve buscar dados dos Detalhes por Categoria - Por Pesquisa', () => {
                 cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt5.json').then((params) => {
                     cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/DetalhesCategoria', params)
                         .then((response) => {

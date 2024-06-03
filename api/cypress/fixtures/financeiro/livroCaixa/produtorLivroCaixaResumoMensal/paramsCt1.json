@@ -1,0 +1,10 @@
+{
+    "ProdutorId": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+    "Ano":2024,
+    "Origem": "Todas", 
+    "TipoMovimentacao": "Todas",
+    "Dedutivel": "Todos",
+    "Active" : true,
+    "Page": 1 ,
+    "Size" : 20
+}
