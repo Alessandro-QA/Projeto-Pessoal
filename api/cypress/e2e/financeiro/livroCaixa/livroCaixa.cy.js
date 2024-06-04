@@ -3,7 +3,7 @@
 context('Financeiro', () => {
     context('Livro Caixa', () => {
         describe('GET - /api/financeiro/v1/LivroCaixa - Obtém registros do Livro Caixa', () => {
-            
+
             it('CT1 - Obter Todos os Registros do Livro Caixa', () => {
                 cy.getRequest('/api/financeiro/v1/LivroCaixa')
                     .then((response) => {
