@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "de5237c9-55f9-4ec4-86fb-6892ffbb9ab7",
+      "descricao": "Dólar",
+      "codigo": 840,
+      "sigla": "USD",
+      "simbolo": "U$",
+      "ativo": true
+    },
+    {
+      "id": "29cc9fb1-a5d3-4e2e-be9d-ab7492b4e06b",
+      "descricao": "Guarani",
+      "codigo": 600,
+      "sigla": "PYG",
+      "simbolo": "₲",
+      "ativo": true
+    },
+    {
+      "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+      "descricao": "Real",
+      "codigo": 986,
+      "sigla": "BRL",
+      "simbolo": "R$",
+      "ativo": true
+    }
+  ]
+}
