@@ -90,3 +90,18 @@ Cypress.Commands.add('putRequest', (url, payload) => {
         "body": payload
     })
 })
+
+Cypress.Commands.add('patchRequest', (url, payload) => {
+    cy.section(`Executando request do tipo "PATCH" no endpoint "${url}"`)
+  
+    return cy.api({
+      "method": 'PATCH',
+      "url": `${baseUrl + url}`,
+      "headers": {
+        'x-tenant': tenant,
+        'content-type': 'application/json',
+        'authorization': `Bearer ${Cypress.env('access_token')}`,
+      },
+      "body": payload
+    })
+})
