@@ -1,0 +1,54 @@
+{
+  "id": "b510cc00-272e-4d7d-9f7d-134221684be5",
+  "origemId": "b95a1f29-3875-46d9-9244-e1e026a940f0",
+  "produtor": {
+    "documentoPrincipal": "57046724000193",
+    "id": "3812aaa0-9cee-4a21-b22d-d2205df2fc97",
+    "descricao": "Fornecedor Teste API"
+  },
+  "empresa": {
+    "inscricaoEstadual": {
+      "id": "19182834-9633-4442-9eaa-447ba12e1867",
+      "descricao": "ISENTO",
+      "valor": "ISENTO",
+      "isento": false
+    },
+    "empresaDeSaoPaulo": false,
+    "id": "3812aaa0-9cee-4a21-b22d-d2205df2fc97",
+    "descricao": "Fornecedor Teste API"
+  },
+  "fazenda": {
+    "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+    "descricao": "Fazenda Teste API"
+  },
+  "formaPagamento": {
+    "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+    "descricao": "Boleto"
+  },
+  "pessoa": {
+    "id": "de869555-55dd-4930-803d-e043c250b970",
+    "descricao": "Cliente Teste API"
+  },
+  "data": "2023-03-07T12:33:27-03:00",
+  "contaContabil": {
+    "codigo": "3.02.01.01",
+    "descricao": "Venda de Gado",
+    "dedutivel": true,
+    "adiantamento": false
+  },
+  "historico": "",
+  "saida": false,
+  "valor": 20000,
+  "dedutivel": true,
+  "isDedutivel": true,
+  "isAdiantamento": false,
+  "manual": false,
+  "ativo": true,
+  "tipoDocumento": 1,
+  "contaBancaria": {
+    "id": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+    "descricao": "Banco: Banco Bradesco Cartões S.A. Ag.: 142541 Conta: 65146154-6"
+  },
+  "modificado": false,
+  "anexos": []
+}

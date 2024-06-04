@@ -1,0 +1,45 @@
+{
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "origemId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "produtor": {
+      "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+      "descricao": "Empresa Teste API",
+      "documentoPrincipal": "68104971026"
+    },
+    "empresa": {
+      "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+      "descricao": "Empresa Teste API",
+      "inscricaoEstadual": {
+        "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+        "descricao": "IE",
+        "valor": "ISENTO"
+      }
+    },
+    "data": "2024-06-03T17:02:33-03:00",
+    "contaContabil": {
+      "codigo": "1.01.02.02",
+      "descricao": "(-) Venda p/ Entrega Futura",
+      "dedutivel": true,
+      "adiantamento": false
+    },
+    "contaBancaria": {
+      "id": "4d488389-8197-4e2d-af23-8d4ed17a847b",
+      "descricao": "Cartão Teste Dashboard Financeiro"
+    },
+    "tipoDocumento": 2,
+    "historico": "",
+    "saida": false,
+    "dedutivel": true,
+    "manual": true,
+    "valor": 60,
+    "anexos": [],
+    "ativo": true,
+    "pessoa": {
+      "id": "de869555-55dd-4930-803d-e043c250b970",
+      "descricao": "Cliente Teste API"
+    },
+    "fazenda": {
+      "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+      "descricao": "Fazenda Teste API"
+    }
+  }
