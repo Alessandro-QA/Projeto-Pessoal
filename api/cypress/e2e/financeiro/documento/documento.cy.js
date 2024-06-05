@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Documento', () => {
-        describe('GET - /api/financeiro/v1/Documento - Obtém registros de documentos', () => {
+        describe('GET - /api/financeiro/v1/Documento/{id} - Obtém registros de documentos', () => {
 
             it('CT1 - Obtém Registro de Documento pelo ID', () => {
                 cy.getRequest('/api/financeiro/v1/Documento/7a58cb86-be72-4881-b0ed-2a04049a9ab6')
