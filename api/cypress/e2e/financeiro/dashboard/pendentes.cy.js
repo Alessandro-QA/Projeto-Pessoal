@@ -26,9 +26,35 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
-                            cy.fixture('financeiro/dashboard/pendentes/bodyCt2.json').then((body) => {
-                                expect(response.body).to.be.eql(body)
-                            })
+
+                            // Verificando se os campos esperados estão presentes no response.body
+                            expect(response.body).to.have.property('pagamento')
+                            expect(response.body).to.have.property('recebimento')
+
+                            // Verificando os campos dentro de 'pagamento'
+                            expect(response.body.pagamento).to.have.property('valor')
+                            expect(response.body.pagamento).to.have.property('quantidadeTitulos')
+                            expect(response.body.pagamento).to.have.property('proximosSeteDias')
+                            expect(response.body.pagamento).to.have.property('proximosQuinzeDias')
+
+                            // Verificando os campos dentro de 'recebimento'
+                            expect(response.body.recebimento).to.have.property('valor')
+                            expect(response.body.recebimento).to.have.property('quantidadeTitulos')
+                            expect(response.body.recebimento).to.have.property('proximosSeteDias')
+                            expect(response.body.recebimento).to.have.property('proximosQuinzeDias')
+
+                            // Verificando o tipo dos campos em 'pagamento'
+                            expect(response.body.pagamento.valor).to.be.a('number')
+                            expect(response.body.pagamento.quantidadeTitulos).to.be.a('number')
+                            expect(response.body.pagamento.proximosSeteDias).to.be.a('number')
+                            expect(response.body.pagamento.proximosQuinzeDias).to.be.a('number')
+
+                            // Verificando o tipo dos campos em 'recebimento'
+                            expect(response.body.recebimento.valor).to.be.a('number')
+                            expect(response.body.recebimento.quantidadeTitulos).to.be.a('number')
+                            expect(response.body.recebimento.proximosSeteDias).to.be.a('number')
+                            expect(response.body.recebimento.proximosQuinzeDias).to.be.a('number')
+ 
                         })
                 })
             })

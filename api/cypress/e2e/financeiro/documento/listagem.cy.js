@@ -42,6 +42,28 @@ context('Financeiro', () => {
                         })
                 })
             })
+
+            it('CT2 - Obter Registros de Documentos com Filtro', () => {
+                cy.fixture('financeiro/documento/listagem/payloadCt2.json').then((payload) => {
+
+                    // Extrair PessoaId do payload
+                    const pessoaId = payload.PessoaId;
+
+                    cy.postRequest('/api/financeiro/v1/Documento/Listagem', payload)
+                        .then((response) => {
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
+                            expect(response.status).be.equal(200)
+                            expect(response.body).be.not.null
+                            expect(response.body).to.exist
+                            
+                            // Verificar se todos os documentos no response correspondem ao filtro
+                            response.body.forEach((documento) => {
+                                expect(documento.pessoa.id).to.equal(pessoaId);
+                            });
+                        
+                        })
+                })
+            })
         })
     })
 })
