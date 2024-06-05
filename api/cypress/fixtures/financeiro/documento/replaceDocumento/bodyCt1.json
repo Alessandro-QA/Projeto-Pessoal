@@ -1,0 +1,133 @@
+{
+    "id": "05153663-a270-4b91-b9aa-4a0e65ba0b41",
+    "numero": "874632",
+    "codigo": 61,
+    "operacao": {
+        "id": "7cd539ea-66bb-4ff2-9258-e994391a0fd5",
+        "descricao": "Compra de Fertilizantes"
+    },
+    "safra": {
+        "id": "9e18aa78-692d-4244-9db4-97cf8967000e",
+        "descricao": "2023 / 2024"
+    },
+    "dataRecebimento": "2024-06-05T09:36:35-03:00",
+    "data": "2024-06-05T09:36:35-03:00",
+    "pessoa": {
+        "pessoaTipo": 1,
+        "numeroDocumento": "51634860047",
+        "id": "de869555-55dd-4930-803d-e043c250b970",
+        "descricao": "Cliente Teste API"
+    },
+    "fazenda": {
+        "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+        "descricao": "Fazenda Teste API"
+    },
+    "empresa": {
+        "inscricaoEstadual": {
+            "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+            "descricao": "IE",
+            "valor": "ISENTO",
+            "isento": false
+        },
+        "empresaDeSaoPaulo": false,
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API"
+    },
+    "manual": true,
+    "dedutivel": true,
+    "isMoedaAlternativa": false,
+    "origem": {
+        "tipo": 1
+    },
+    "materiais": [],
+    "financeiro": {
+        "id": "edeee415-902d-43ad-bd85-ced8a2e36100",
+        "total": 500,
+        "totalAlternativo": 0,
+        "cotacao": 0,
+        "pago": true,
+        "dataPagamento": "2024-06-05T00:00:00-03:00",
+        "formaPagamento": {
+            "id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
+            "descricao": "Dinheiro"
+        },
+        "quantidadeParcelas": 1,
+        "condicaoPagamento": 1,
+        "contaId": "4d488389-8197-4e2d-af23-8d4ed17a847b",
+        "valorFixo": false,
+        "contaFornecedor": {
+            "id": "6211d3da-95d7-45e5-940a-8ca7224d1c9f"
+        },
+        "parcelas": [
+            {
+                "id": "1a07ca82-637a-4fe8-8de5-a33449b0334c",
+                "vencimento": "2024-07-05T09:36:35-03:00",
+                "moeda": {
+                    "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+                    "descricao": "Real",
+                    "codigo": "986"
+                },
+                "valor": 500,
+                "saldo": 0,
+                "status": 0,
+                "numeroParcela": 1
+            }
+        ]
+    },
+    "observacao": "Criação Teste",
+    "tipoDocumento": 1,
+    "conferido": false,
+    "tags": [
+        {
+            "id": "a1a1cf46-1b23-4cb4-b8cf-0c08b4568d03",
+            "descricao": "TAG"
+        }
+    ],
+    "ciclos": [],
+    "categorias": [
+        {
+            "id": "a458744a-8c97-4ee8-87b4-86853dabfb2f",
+            "contaContabil": {
+                "codigo": "4.01.01.02",
+                "descricao": "Adubos e Fertilizantes",
+                "dedutivel": true,
+                "adiantamento": false
+            },
+            "porcentagem": 100,
+            "valor": 500
+        }
+    ],
+    "documentoMaterialImpostos": [],
+    "categoriasDescricao": "Adubos e Fertilizantes",
+    "anexos": [],
+    "tributacoesTotais": {
+        "serie": 0,
+        "cfop": {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "descricao": "string",
+            "codigo": "string"
+        },
+        "baseCalculoICMS": 0,
+        "valorTotalICMS": 0,
+        "isentasNaoTributadas": 0,
+        "outrosICMS": 0,
+        "baseCalculoSubst": 0,
+        "valorICMSRetido": 0,
+        "valorIPI": 0,
+        "isentas": 0,
+        "outrosIPI": 0
+    },
+    "outrosValores": {
+        "frete": 0,
+        "seguro": 0,
+        "despesas": 0,
+        "descontos": 0,
+        "total": 0
+    },
+    "adiantamentoDocumento": false,
+    "totalIcms": 0,
+    "totalPis": 0,
+    "totalCofins": 0,
+    "totalFCP": 0,
+    "totalIPI": 0
+}

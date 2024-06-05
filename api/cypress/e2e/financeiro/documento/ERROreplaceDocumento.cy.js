@@ -3,14 +3,15 @@
 context('Financeiro', () => {
     context('Documento', () => {
 
+        // Passos para esse teste: Criar um Documento - Editar o seu ID - Validar que ID antigo não existe e que novo é existente - Apagar docuemento criado
         let documentoID;
         let randomNumber
         let bodyedit
 
-        describe('POST/PUT/DELETE - /api/financeiro/v1/Documento - Criar Documento', () => {
+        describe('PUTS - /api/financeiro/v1/Documento/ReplaceDocumento - Recriar o mesmo documento porém atualizando o ID', () => {
             
             it('CT1 - Deve criar um novo documento', () => {
-                cy.fixture('financeiro/documento/criarDocumento/payloadCt1.json').then((payload) => {
+                cy.fixture('financeiro/documento/replaceDocumento/payloadCt1.json').then((payload) => {
 
                     // Gerar um novo número aleatório, pois o documento não pode possuir o mesmo número
                     randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
@@ -37,17 +38,17 @@ context('Financeiro', () => {
                 })
             })
 
-            it('CT2 - Deve Editar o Documento Criado', () => {
-                cy.fixture('financeiro/documento/criarDocumento/bodyCt1.json').then((payload) => {
+            it('CT2 - Deve Editar o Documento Criado Atualizando o ID', () => {
+                cy.fixture('financeiro/documento/replaceDocumento/bodyCt1.json').then((payload) => {
                     
                     //Copiando o body do cenário anterior
                     payload = bodyedit
-                    //Alterando um valor daquele qual foi criado para ter alguma troca na edição
-                    payload.financeiro.total = 550
-                    payload.categorias[0].valor = 550
-                    payload.financeiro.parcelas[0].valor = 550
                     
-                    cy.putRequest('/api/financeiro/v1/Documento', payload)
+                    //Gerar um novo número aleatório, pois o documento não pode possuir o mesmo número
+                    //randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
+                    //payload.numero = randomNumber.toString(); // Atualiza o campo 'numero' no payload
+                    
+                    cy.putRequest('/api/financeiro/v1/Documento/ReplaceDocumento', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -56,7 +57,7 @@ context('Financeiro', () => {
 
                             // Verificando se o response está como foi editado
                             expect(response.body.data).to.deep.equal(payload)
-                            
+                            //documentoID = response.body.data.id;
                         })
                 })
             })
