@@ -14,7 +14,7 @@ context('Financeiro', () => {
                         expect(response.body.id).to.equal('7a58cb86-be72-4881-b0ed-2a04049a9ab6')
 
                         // Verifica todas as propriedades do corpo da resposta
-                        const body = response.body; //pra não ter que digitar response.body o tempo inteiro amém
+                        const body = response.body;
 
                         expect(body.id).to.be.a('string');
                         expect(body.numero).to.be.a('string');
@@ -175,3 +175,4 @@ context('Financeiro', () => {
         })
     })
 })
+
