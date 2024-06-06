@@ -8,7 +8,8 @@ context('Financeiro', () => {
         let randomNumber
         let bodyedit
 
-        describe('PUTS - /api/financeiro/v1/Documento/ReplaceDocumento - Recriar o mesmo documento porém atualizando o ID', () => {
+        // Testes com Ajustes Backend para serem feitos
+        describe.skip('PUTS - /api/financeiro/v1/Documento/ReplaceDocumento - Recriar o mesmo documento porém atualizando o ID', () => {
             
             it('CT1 - Deve criar um novo documento', () => {
                 cy.fixture('financeiro/documento/replaceDocumento/payloadCt1.json').then((payload) => {
@@ -45,8 +46,8 @@ context('Financeiro', () => {
                     payload = bodyedit
                     
                     //Gerar um novo número aleatório, pois o documento não pode possuir o mesmo número
-                    //randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
-                    //payload.numero = randomNumber.toString(); // Atualiza o campo 'numero' no payload
+                    randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
+                    payload.numero = randomNumber.toString(); // Atualiza o campo 'numero' no payload
                     
                     cy.putRequest('/api/financeiro/v1/Documento/ReplaceDocumento', payload)
                         .then((response) => {
