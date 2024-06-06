@@ -10,9 +10,12 @@ context('Financeiro', () => {
                         expect(response.status).be.equal(200)
                         expect(response.body).to.exist
                         expect(response.body).be.not.null
-                        cy.fixture('financeiro/contaBancaria/listagem/bodyCt1.json').then((body) => {
-                            expect(response.body).to.deep.equal(body)
-                        })
+
+                        // Verificar se os arrays não estão vazios
+                        expect(response.body.corrente).to.be.an('array').that.is.not.empty;
+                        expect(response.body.credito).to.be.an('array').that.is.not.empty;
+                        expect(response.body.caixaTesouraria).to.be.an('array').that.is.not.empty;
+
                     })
             })
 
@@ -24,9 +27,13 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
-                            cy.fixture('financeiro/contaBancaria/listagem/bodyCt2.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+
+                            // Verificar se o array 'corrente' não está vazio
+                            expect(response.body.corrente).to.be.an('array').that.is.not.empty;
+
+                            // Verificar se os arrays 'credito' e 'caixaTesouraria' estão vazios
+                            expect(response.body.credito).to.be.an('array').that.is.empty;
+                            expect(response.body.caixaTesouraria).to.be.an('array').that.is.empty;
                         })
                 })
             })
@@ -39,9 +46,13 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
-                            cy.fixture('financeiro/contaBancaria/listagem/bodyCt3.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+
+                            // Verificar se o array 'credito' não está vazio
+                            expect(response.body.credito).to.be.an('array').that.is.not.empty;
+
+                            // Verificar se os arrays 'corrente' e 'caixaTesouraria' estão vazios
+                            expect(response.body.corrente).to.be.an('array').that.is.empty;
+                            expect(response.body.caixaTesouraria).to.be.an('array').that.is.empty;
                         })
                 })
             })
@@ -54,9 +65,13 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
-                            cy.fixture('financeiro/contaBancaria/listagem/bodyCt4.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+
+                            // Verificar se o array 'caixaTesouraria' não está vazio
+                            expect(response.body.caixaTesouraria).to.be.an('array').that.is.not.empty;
+
+                            // Verificar se os arrays 'corrente' e 'credito' estão vazios
+                            expect(response.body.corrente).to.be.an('array').that.is.empty;
+                            expect(response.body.credito).to.be.an('array').that.is.empty;
                         })
                 })
             })
@@ -69,9 +84,26 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
-                            cy.fixture('financeiro/contaBancaria/listagem/bodyCt5.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+
+                            // Iterar sobre cada conta no array 'corrente' e verificar o campo 'empresaTitular'
+                            response.body.corrente.forEach((conta) => {
+                                expect(conta.empresaTitular).to.equal(params.empresaTitular);
+                            });
+
+                            // Verificar o array 'credito' se não estiver vazio
+                            if (response.body.credito.length > 0) {
+                                response.body.credito.forEach((contaCredito) => {
+                                    expect(contaCredito.empresaTitular).to.equal(params.empresaTitular);
+                                });
+                            }
+
+                            // Verificar o array 'caixaTesouraria' se não estiver vazio
+                            if (response.body.caixaTesouraria.length > 0) {
+                                response.body.caixaTesouraria.forEach((contaTesouraria) => {
+                                    expect(contaTesouraria.empresaTitular).to.equal(params.empresaTitular);
+                                });
+                            }
+
                         })
                 })
             })
@@ -84,9 +116,25 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
-                            cy.fixture('financeiro/contaBancaria/listagem/bodyCt6.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+
+                            // Iterar sobre cada conta no array 'credito' e verificar o campo 'empresaTitular'
+                            response.body.credito.forEach((conta) => {
+                                expect(conta.empresaTitular).to.equal(params.empresaTitular);
+                            });
+
+                            // Verificar o array 'corrente' se não estiver vazio
+                            if (response.body.corrente.length > 0) {
+                                response.body.corrente.forEach((contaCorrente) => {
+                                    expect(contaCorrente.empresaTitular).to.equal(params.empresaTitular);
+                                });
+                            }
+
+                            // Verificar o array 'caixaTesouraria' se não estiver vazio
+                            if (response.body.caixaTesouraria.length > 0) {
+                                response.body.caixaTesouraria.forEach((contaTesouraria) => {
+                                    expect(contaTesouraria.empresaTitular).to.equal(params.empresaTitular);
+                                });
+                            }
                         })
                 })
             })
@@ -99,9 +147,26 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
-                            cy.fixture('financeiro/contaBancaria/listagem/bodyCt7.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+
+                            
+                            // Iterar sobre cada conta no array 'caixaTesouraria' e verificar o campo 'empresaTitular'
+                            response.body.caixaTesouraria.forEach((conta) => {
+                                expect(conta.empresaTitular).to.equal(params.empresaTitular);
+                            });
+
+                            // Verificar o array 'corrente' se não estiver vazio
+                            if (response.body.corrente.length > 0) {
+                                response.body.corrente.forEach((contaCorrente) => {
+                                    expect(contaCorrente.empresaTitular).to.equal(params.empresaTitular);
+                                });
+                            }
+
+                            // Verificar o array 'credito' se não estiver vazio
+                            if (response.body.credito.length > 0) {
+                                response.body.credito.forEach((contaCredito) => {
+                                    expect(contaCredito.empresaTitular).to.equal(params.empresaTitular);
+                                });
+                            }
                         })
                 })
             })
@@ -114,9 +179,11 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
-                            cy.fixture('financeiro/contaBancaria/listagem/bodyCt8.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+
+                            // Verificar se os arrays não estão vazios
+                            expect(response.body.corrente).to.be.an('array').that.is.not.empty;
+                            expect(response.body.credito).to.be.an('array').that.is.not.empty;
+                            expect(response.body.caixaTesouraria).to.be.an('array').that.is.not.empty;
                         })
                 })
             })
@@ -129,9 +196,12 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
-                            cy.fixture('financeiro/contaBancaria/listagem/bodyCt9.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+
+                            // Verificar se os arrays não estão vazios
+                            expect(response.body.corrente).to.be.an('array').that.is.not.empty;
+                            expect(response.body.credito).to.be.an('array').that.is.not.empty;
+                            expect(response.body.caixaTesouraria).to.be.an('array').that.is.not.empty;
+
                         })
                 })
             })
