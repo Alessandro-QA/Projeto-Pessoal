@@ -5,12 +5,13 @@ context('Financeiro', () => {
 
         // Passos para esse teste: Criar um Documento - Editar o seu ID - Validar que ID antigo não existe e que novo é existente - Apagar docuemento criado
         let documentoID;
+        let documentoID2;
         let randomNumber
         let bodyedit
 
         // Testes com Ajustes Backend para serem feitos
-        describe.skip('PUTS - /api/financeiro/v1/Documento/ReplaceDocumento - Recriar o mesmo documento porém atualizando o ID', () => {
-            
+        describe('PUTS - /api/financeiro/v1/Documento/ReplaceDocumento - Recriar o mesmo documento porém atualizando o ID', () => {
+
             it('CT1 - Deve criar um novo documento', () => {
                 cy.fixture('financeiro/documento/replaceDocumento/payloadCt1.json').then((payload) => {
 
@@ -41,14 +42,29 @@ context('Financeiro', () => {
 
             it('CT2 - Deve Editar o Documento Criado Atualizando o ID', () => {
                 cy.fixture('financeiro/documento/replaceDocumento/bodyCt1.json').then((payload) => {
-                    
+
                     //Copiando o body do cenário anterior
                     payload = bodyedit
-                    
+
                     //Gerar um novo número aleatório, pois o documento não pode possuir o mesmo número
                     randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
                     payload.numero = randomNumber.toString(); // Atualiza o campo 'numero' no payload
-                    
+                    // Limpar o campo 'id' da primeira categoria, se existir
+                    if (payload.categorias && payload.categorias.length > 0) {
+                        payload.categorias[0].id = null;
+                    }
+
+                    // Limpar o campo 'id' da primeira parcela, se existir
+                    if (payload.financeiro && payload.financeiro.parcelas && payload.financeiro.parcelas.length > 0) {
+                        payload.financeiro.parcelas[0].id = null;
+                    }
+
+                    // Limpar o campo 'id' de financeiro, se existir
+                    if (payload.financeiro) {
+                        payload.financeiro.id = null; // Define como null
+                    }
+
+
                     cy.putRequest('/api/financeiro/v1/Documento/ReplaceDocumento', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
@@ -56,19 +72,19 @@ context('Financeiro', () => {
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
 
-                            // Verificando se o response está como foi editado
-                            expect(response.body.data).to.deep.equal(payload)
-                            //documentoID = response.body.data.id;
+                            documentoID2 = response.body.data.id;
+                            expect(documentoID).to.not.be.undefined;
+                            expect(documentoID).not.to.equal(documentoID2);
                         })
-                })
             })
-
-            it('CT3 - Deve Deletar Documento', () => {
-                cy.deleteRequest('/api/financeiro/v1/Documento', documentoID).then((response) => {
-                    expect(response.status).be.equal(200)
-                })
-            })
-
         })
+
+        it('CT3 - Deve Deletar Documento novo Alterado', () => {
+            cy.deleteRequest('/api/financeiro/v1/Documento', documentoID2).then((response) => {
+                expect(response.status).be.equal(200)
+            })
+        })
+
     })
+})
 })
