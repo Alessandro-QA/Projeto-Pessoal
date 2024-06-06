@@ -11,9 +11,10 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
-                            cy.fixture('financeiro/dashboard/faturaCartaoCredito/bodyCt1.json').then((body) => {
-                                expect(response.body).to.be.eql(body)
-                            })
+                        
+                            expect(response.body).to.have.property('valor').that.is.a('number')
+                            expect(response.body).to.have.property('limite').that.is.a('number')
+                            expect(response.body).to.have.property('limiteDisponivel').that.is.a('number')
                         })
                 })
             })

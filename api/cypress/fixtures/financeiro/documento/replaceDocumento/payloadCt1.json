@@ -1,0 +1,118 @@
+{
+  "categorias": [
+    {
+      "valor": 40,
+      "contaContabil": {
+        "dedutivel": true,
+        "codigo": "4.02.03.09",
+        "nome": "Água e Esgoto",
+        "descricao": "Água e Esgoto"
+      }
+    }
+  ],
+  "tributacoesTotais": {
+    "serie": 0,
+    "cfop": {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "descricao": "string",
+      "codigo": "string"
+    },
+    "baseCalculoICMS": "0",
+    "valorTotalICMS": "0",
+    "isentasNaoTributadas": "0",
+    "outrosICMS": "0",
+    "baseCalculoSubst": "0",
+    "valorICMSRetido": "0",
+    "valorIPI": "0",
+    "isentas": "0",
+    "outrosIPI": "0",
+    "frete": "0"
+  },
+  "outrosValores": {
+    "frete": 0,
+    "seguro": 0,
+    "despesas": "0",
+    "descontos": 0
+  },
+  "dataRecebimento": "2024-06-06T14:13:53-03:00",
+  "operacao": {
+    "id": "333aab40-3979-9b1a-526b-b725254c6100",
+    "descricao": "Água e Esgoto"
+  },
+  "safra": {
+    "id": "ce8fb4ce-729a-4ee8-b952-508bfd54a75b",
+    "descricao": "2025 / 2026"
+  },
+  "data": "2024-06-06T14:13:53-03:00",
+  "fazenda": {
+    "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+    "descricao": "Fazenda Teste API"
+  },
+  "tags": [
+    {
+      "id": "a587a3c1-a33d-4241-b8a1-7647001bf6c2",
+      "descricao": "TAG 03"
+    }
+  ],
+  "pessoa": {
+    "pessoaTipo": "Fornecedor",
+    "numeroDocumento": "80010705000129",
+    "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+    "descricao": "Empresa 2"
+  },
+  "numero": "123987",
+  "empresa": {
+    "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+    "descricao": "Empresa Teste API",
+    "empresaDeSaoPaulo": false,
+    "documentoPrincipal": "68104971026",
+    "inscricaoEstadual": {
+      "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+      "descricao": "IE",
+      "valor": "ISENTO"
+    }
+  },
+  "ieDaEmpresa": {
+    "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+    "descricao": "IE",
+    "estadoSigla": "AC",
+    "ativo": true,
+    "valor": "ISENTO",
+    "label": "ISENTO - IE"
+  },
+  "tipoDocumento": 2,
+  "observacao": "Teste ReplaceDocumento",
+  "conferido": false,
+  "skipLimpeza": false,
+  "financeiro": {
+    "total": 40,
+    "pago": false,
+    "rateioEntreCiclos": false,
+    "formaPagamento": {
+      "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+      "descricao": "Boleto"
+    },
+    "condicaoPagamento": "Avista",
+    "quantidadeParcelas": 1,
+    "valorFixo": false,
+    "parcelas": [
+      {
+        "vencimento": "2024-07-06T14:13:53-03:00",
+        "moeda": {
+          "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+          "descricao": "Real",
+          "codigo": 986,
+          "sigla": "BRL",
+          "simbolo": "R$",
+          "ativo": true
+        },
+        "valor": 40,
+        "numeroBoleto": "78999998521477545454544844845456656251515848485"
+      }
+    ],
+    "cotacao": 0,
+    "totalAlternativo": 0
+  },
+  "dedutivel": true,
+  "manual": true
+}

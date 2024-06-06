@@ -64,8 +64,6 @@ context('Produção Agrícola', () => {
                             expect(response.body.data.valorTotal).to.equal(25000.0)
                             expect(response.body.data.despesas).to.be.not.null
 
-                            cy.section('Deletar Acerto Criado Para não conflitar com outros testes')
-
                             const id = response.body.data.id
 
                             cy.deleteRequest('/api/producao-agricola/v1/AcertoFretes', id).then((response) => {

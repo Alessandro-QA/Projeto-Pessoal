@@ -1,0 +1,127 @@
+{
+"id": "1024179b-b810-48d2-bb5f-83a15e1e3de3",
+"numero": "1122",
+"codigo": 0,
+"operacao": {
+    "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
+    "descricao": "13º Salário"
+},
+"safra": {
+    "id": "998718c2-8e3f-49f5-9434-ed0d86b97b20",
+    "descricao": "2023/2023"
+},
+"dataRecebimento": "2023-03-07T12:27:06-03:00",
+"data": "2023-03-07T12:27:06-03:00",
+"pessoa": {
+    "pessoaTipo": 1,
+    "numeroDocumento": "51634860047",
+    "id": "de869555-55dd-4930-803d-e043c250b970",
+    "descricao": "Cliente Teste API"
+},
+"fazenda": {
+    "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+    "descricao": "Fazenda Teste API"
+},
+"empresa": {
+    "inscricaoEstadual": {
+        "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+        "descricao": "IE",
+        "valor": "ISENTO",
+        "isento": false
+    },
+    "empresaDeSaoPaulo": false,
+    "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+    "descricao": "Empresa Teste API"
+},
+"manual": false,
+"dedutivel": true,
+"isMoedaAlternativa": false,
+"origem": {
+    "tipo": 1
+},
+"materiais": [],
+"financeiro": {
+    "id": "4be10d08-fd76-47df-89e4-2d146d1a3cbb",
+    "total": 5000.0,
+    "totalAlternativo": 0.0,
+    "cotacao": 0.0,
+    "pago": true,
+    "dataPagamento": "2023-03-07T00:00:00-03:00",
+    "formaPagamento": {
+        "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+        "descricao": "Boleto"
+    },
+    "quantidadeParcelas": 1,
+    "condicaoPagamento": 1,
+    "contaId": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+    "valorFixo": false,
+    "contaFornecedor": {
+        "id": "745a3fa9-87f5-4dce-9732-966c30d44186"
+    },
+    "parcelas": [
+        {
+            "id": "8c626db9-5e83-415d-930f-5cf193406a05",
+            "vencimento": "2023-04-07T12:27:06-03:00",
+            "moeda": {
+                "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+                "descricao": "Real",
+                "codigo": "986"
+            },
+            "valor": 5000.0,
+            "saldo": 0.0,
+            "status": 0,
+            "numeroParcela": 1
+        }
+    ]
+},
+"tipoDocumento": 5,
+"conferido": false,
+"tags": [],
+"ciclos": [
+    {
+        "id": "be5c335f-e4a2-4d5d-a1bb-a0b912bde741",
+        "ciclo": {
+            "id": "896c758f-2e4a-4d44-a314-e3e1e313caaf",
+            "descricao": "Soja - 2023/2023"
+        },
+        "valor": 5000.0
+    }
+],
+"categorias": [
+    {
+        "id": "fe7cabfe-6038-4299-84eb-8011101bd3cf",
+        "contaContabil": {
+            "codigo": "4.02.01.03",
+            "descricao": "13º Salário",
+            "dedutivel": true,
+            "adiantamento": false
+        },
+        "porcentagem": 100.0000,
+        "valor": 5000.0
+    }
+],
+"documentoMaterialImpostos": [],
+"categoriasDescricao": "13º Salário",
+"anexos": [],
+"tributacoesTotais": {
+    "modelo": 0,
+    "serie": 0,
+    "baseCalculoICMS": 0.0,
+    "valorTotalICMS": 0.0,
+    "isentasNaoTributadas": 0.0,
+    "outrosICMS": 0.0,
+    "baseCalculoSubst": 0.0,
+    "valorICMSRetido": 0.0,
+    "valorIPI": 0.0,
+    "isentas": 0.0,
+    "outrosIPI": 0.0
+},
+"outrosValores": {
+    "frete": 0.0,
+    "seguro": 0.0,
+    "despesas": 0.0,
+    "descontos": 0.0,
+    "total": 0.0
+},
+"adiantamentoDocumento": false
+}

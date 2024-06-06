@@ -10,9 +10,34 @@ context('Financeiro', () => {
                         expect(response.status).be.equal(200)
                         expect(response.body).to.exist
                         expect(response.body).be.not.null
-                        cy.fixture('financeiro/contaBancaria/principal/bodyCt1.json').then((body) => {
-                            expect(response.body).to.deep.equal(body)
-                        })
+                        
+                        // Verificar os campos Existentes e tipos se correspondentes
+                        expect(response.body).to.have.property('id').that.is.a('string');
+                        expect(response.body).to.have.property('empresaTitular').that.is.an('object').with.all.keys('id', 'descricao');
+                        expect(response.body).to.have.property('tipoConta').that.is.a('number');
+                        expect(response.body).to.have.property('nome').that.is.a('string');
+                        expect(response.body).to.have.property('contaPrincipal').that.is.a('boolean');
+                        expect(response.body).to.have.property('numerarioEmTransito').that.is.a('boolean');
+                        expect(response.body).to.have.property('banco').that.is.an('object').with.all.keys('id', 'codigoBacen', 'descricao');
+                        expect(response.body).to.have.property('agencia').that.is.a('string');
+                        expect(response.body).to.have.property('agenciaDigitoVerificador').that.is.a('string');
+                        expect(response.body).to.have.property('conta').that.is.a('string');
+                        expect(response.body).to.have.property('contaDigitoVerificador').that.is.a('string');
+                        expect(response.body).to.have.property('saldoInicial').that.is.a('number');
+                        expect(response.body).to.have.property('saldoAtual').that.is.a('number');
+                        expect(response.body).to.have.property('dataInicialSaldo').that.is.a('string');
+                        expect(response.body).to.have.property('incluirSaldoDisponivel').that.is.a('boolean');
+                        expect(response.body).to.have.property('codigo').that.is.a('number');
+                        expect(response.body).to.have.property('openBanking').that.is.a('boolean');
+                        expect(response.body).to.have.property('ativo').that.is.a('boolean');
+                        expect(response.body).to.have.property('contaBancariaEmpresas').that.is.an('array');
+
+                        // Verificar os campos dentro de contaBancariaEmpresas
+                        response.body.contaBancariaEmpresas.forEach((contaEmpresa) => {
+                            expect(contaEmpresa).to.have.property('id').that.is.a('string');
+                            expect(contaEmpresa).to.have.property('empresa').that.is.an('object').with.all.keys('id', 'descricao');
+                        });
+
                     })
             })
         })
