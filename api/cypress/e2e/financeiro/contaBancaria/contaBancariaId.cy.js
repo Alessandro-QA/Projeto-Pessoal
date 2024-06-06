@@ -18,7 +18,7 @@ context('Financeiro', () => {
                         expect(response.body).to.have.property('nome').that.is.a('string');
                         expect(response.body).to.have.property('contaPrincipal').that.is.a('boolean');
                         expect(response.body).to.have.property('numerarioEmTransito').that.is.a('boolean');
-                        expect(response.body).to.have.property('banco').that.is.an('object').with.all.keys('id', 'descricao');
+                        expect(response.body).to.have.property('banco').that.is.an('object').with.all.keys('id', 'descricao','codigoBacen');
                         expect(response.body).to.have.property('agencia').that.is.a('string');
                         expect(response.body).to.have.property('agenciaDigitoVerificador').that.is.a('string');
                         expect(response.body).to.have.property('conta').that.is.a('string');

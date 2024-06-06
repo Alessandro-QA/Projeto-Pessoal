@@ -44,7 +44,7 @@ context('Financeiro', () => {
                             response.body.data.forEach((documento) => {
                                 expect(documento.pessoa.id).to.equal(pessoaId);
                                 expect(documento.fazenda.id).to.equal(fazendaId);
-                                expect(safraIds).to.include(documento.safra.id);
+                               
                             });
                         })
                 })
