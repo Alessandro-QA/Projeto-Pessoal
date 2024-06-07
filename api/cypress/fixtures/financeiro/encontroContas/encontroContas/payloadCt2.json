@@ -1,0 +1,24 @@
+{
+  "dataInicial": "2024-06-07T00:00:00-03:00",
+  "dataFinal": "2024-07-07T23:59:59-03:00",
+  "empresaIds": [
+    "44e2d617-2d9d-4b4f-8138-7d1f1739a599"
+  ],
+  "fazendaIds": [
+    "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b"
+  ],
+  "filter": {
+    "fields": [
+      "NumeroDocumento",
+      "ValorTitulo",
+      "Pessoa"
+    ]
+  },
+  "filterAgendamento": 0,
+  "statusTitulos": [
+    3,
+    4
+  ],
+  "page": 1,
+  "size": 20
+}

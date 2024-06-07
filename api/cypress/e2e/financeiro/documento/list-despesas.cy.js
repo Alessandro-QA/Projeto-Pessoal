@@ -31,7 +31,6 @@ context('Financeiro', () => {
                     // Extrair PessoaId, FazendaId e SafraIds do payload
                     const pessoaId = payload.PessoaId;
                     const fazendaId = payload.FazendaId;
-                    const safraIds = payload.SafraIds;
 
                     cy.postRequest('/api/financeiro/v1/Documento/List/Despesas', payload)
                         .then((response) => {
