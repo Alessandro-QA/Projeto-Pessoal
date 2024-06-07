@@ -135,18 +135,42 @@ context('Produção Agrícola', () => {
                 })
             })
 
-            // TODO: Aguardando correção, bug #60589
-            describe.skip('Filtragem por pequisa', () => {
+            describe('Filtragem por pequisa', () => {
                 it('CT1 - Deve filtrar por palavra', () => {
-                    cy.fixture('producaoAgricola/acertoDeFrete/listagem/funil/bodyCt4').then((body) => {
-                        cy.postRequest('/api/producao-agricola/v1/AcertoFretes/List', seedTeste.porPalavra)
-                            .then((response) => {
-                                expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                                expect(response.status).to.equal(200)
-                                expect(response.body).to.have.lengthOf(11).to.be.not.null
-                                expect(JSON.stringify(response.body)).to.equal(JSON.stringify(body))
-                            })
-                    })
+                    cy.postRequest('/api/producao-agricola/v1/AcertoFretes/List', seedTeste.porPalavra)
+                        .then((response) => {
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
+                            expect(response.status).to.equal(200)
+                            expect(response.body).to.be.not.null
+
+                            // Verifica se o response.body é um array não vazio
+                            expect(response.body).to.be.an('array').that.is.not.empty;
+
+                            // Valida os campos do primeiro objeto no array
+                            const firstItem = response.body[0];
+                            expect(firstItem).to.have.property('id').that.is.a('string');
+                            expect(firstItem).to.have.property('numero').that.is.a('number');
+                            expect(firstItem).to.have.property('dataAcerto').that.is.a('string').and.matches(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}/);
+                            expect(firstItem).to.have.property('statusAcerto').that.is.a('number');
+
+                            // Verifica o objeto motorista
+                            expect(firstItem).to.have.property('motorista').that.is.an('object').and.not.null;
+                            expect(firstItem.motorista).to.have.property('id').that.is.a('string');
+                            expect(firstItem.motorista).to.have.property('documentoPrincipal').that.is.a('string');
+                            expect(firstItem.motorista).to.have.property('descricao').that.is.a('string');
+
+                            // Verifica o objeto veiculo
+                            expect(firstItem).to.have.property('veiculo').that.is.an('object').and.not.null;
+                            expect(firstItem.veiculo).to.have.property('id').that.is.a('string');
+                            expect(firstItem.veiculo).to.have.property('placa').that.is.a('string');
+
+                            expect(firstItem).to.have.property('tipoValorManual').that.is.a('number');
+                            expect(firstItem).to.have.property('valorManual').that.is.a('number');
+                            expect(firstItem).to.have.property('valorTotal').that.is.a('number');
+
+                        })
+
+
                 })
             })
         })

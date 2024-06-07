@@ -1,0 +1,15 @@
+{
+  "FazendaId": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+  "PessoaId": "de869555-55dd-4930-803d-e043c250b970",
+  "SafraIds": [
+    "9e18aa78-692d-4244-9db4-97cf8967000e",
+    "998718c2-8e3f-49f5-9434-ed0d86b97b20"
+  ],
+  "filter": {
+    "fields": [
+      "NumeroDocumento"
+    ]
+  },
+  "page": 1,
+  "size": 20
+}

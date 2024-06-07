@@ -25,7 +25,7 @@ context('Financeiro', () => {
             })
 
             it('CT2 - Obtém um Registro de Moeda específico pelo ID', () => {
-                cy.getRequest(`/api/financeiro/v1/Moeda/f7869132-3eb0-4bfc-b416-754b040c98ff`)
+                cy.getRequest('/api/financeiro/v1/Moeda/f7869132-3eb0-4bfc-b416-754b040c98ff')
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                         expect(response.status).be.equal(200)

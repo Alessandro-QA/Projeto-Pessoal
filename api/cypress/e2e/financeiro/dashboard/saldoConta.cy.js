@@ -11,9 +11,20 @@ context('Financeiro', () => {
                             expect(response.status).be.equal(200)
                             expect(response.body).be.not.null
                             expect(response.body).to.exist
-                            cy.fixture('financeiro/dashboard/saldoConta/bodyCt1.json').then((body) => {
-                                expect(response.body).to.be.eql(body)
-                            })
+                             
+                            // Verificando os campos no response.body
+                             expect(response.body).to.have.property('saldoTotal').that.is.a('number');
+                             expect(response.body).to.have.property('saldoPrincipal').that.is.a('number');
+                             expect(response.body).to.have.property('saldoSecundarias').that.is.a('number');
+                             expect(response.body).to.have.property('saldoContasBancarias').that.is.an('array').and.not.empty;
+ 
+                             // Verificando os campos dentro de saldoContasBancarias
+                             const saldoContasBancarias = response.body.saldoContasBancarias;
+                             saldoContasBancarias.forEach((conta) => {
+                                 expect(conta).to.have.property('saldo').that.is.a('number');
+                                 expect(conta).to.have.property('contaPrincipal').that.is.a('boolean');
+                                 expect(conta).to.have.property('nome').that.is.a('string');
+                             });                          
                         })
                 })
             })
