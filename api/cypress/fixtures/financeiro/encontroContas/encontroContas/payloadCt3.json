@@ -1,0 +1,12 @@
+{
+    "contaBancariaId": "745a3fa9-87f5-4dce-9732-966c30d44186",
+    "dataTransacao": "2024-06-07T13:46:00.912Z",
+    "cotacao": 0,
+    "listaContasAPagarId": [
+      "5c70c435-278b-4610-9980-4771cdcd5b76"
+    ],
+    "listaContaAReceberId": [
+      "7ddf21e0-246d-4bd3-9bfe-6d8ed4405e45"
+    ]
+}
+

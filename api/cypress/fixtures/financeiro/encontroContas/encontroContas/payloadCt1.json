@@ -1,0 +1,110 @@
+{
+    "categorias": [
+      {
+        "valor": 70,
+        "contaContabil": {
+          "dedutivel": true,
+          "codigo": "1.01.07.11",
+          "nome": "Adiantamento a Fornecedores",
+          "descricao": "Adiantamento a Fornecedores"
+        }
+      }
+    ],
+    "tributacoesTotais": {
+      "serie": 0,
+      "cfop": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "descricao": "string",
+        "codigo": "string"
+      },
+      "baseCalculoICMS": 0,
+      "valorTotalICMS": 0,
+      "isentasNaoTributadas": 0,
+      "outrosICMS": 0,
+      "baseCalculoSubst": 0,
+      "valorICMSRetido": 0,
+      "valorIPI": "0",
+      "isentas": "0",
+      "outrosIPI": "0",
+      "frete": "0"
+    },
+    "outrosValores": {
+      "frete": 0,
+      "seguro": 0,
+      "despesas": "0",
+      "descontos": 0
+    },
+    "dataRecebimento": "2024-06-07T11:02:37-03:00",
+    "operacao": {
+      "id": "944cfd19-9961-4bd4-8cd2-a6f031c374dc",
+      "descricao": "Adiantamento a Pagar"
+    },
+    "safra": {
+      "id": "f2eb8ded-a463-47fd-a81d-1a78b5b11166",
+      "descricao": "2022 / 2023"
+    },
+    "data": "2024-06-07T11:02:37-03:00",
+    "fazenda": {
+      "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+      "descricao": "Fazenda Teste API"
+    },
+    "pessoa": {
+      "pessoaTipo": "Fornecedor",
+      "numeroDocumento": "51634860047",
+      "id": "de869555-55dd-4930-803d-e043c250b970",
+      "descricao": "Cliente Teste API"
+    },
+    "numero": "85484848",
+    "empresa": {
+      "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+      "descricao": "Empresa Teste API",
+      "empresaDeSaoPaulo": false,
+      "documentoPrincipal": "68104971026",
+      "inscricaoEstadual": {
+        "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+        "descricao": "IE",
+        "valor": "ISENTO"
+      }
+    },
+    "ieDaEmpresa": {
+      "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+      "descricao": "IE",
+      "estadoSigla": "AC",
+      "ativo": true,
+      "valor": "ISENTO",
+      "label": "ISENTO - IE"
+    },
+    "tipoDocumento": 6,
+    "conferido": false,
+    "skipLimpeza": false,
+    "financeiro": {
+      "total": 70,
+      "pago": false,
+      "rateioEntreCiclos": false,
+      "formaPagamento": {
+        "id": "8d5b14ec-b6f4-44b8-acf0-bd128fb39a7d",
+        "descricao": "Cartão de Débito"
+      },
+      "condicaoPagamento": "Avista",
+      "quantidadeParcelas": 1,
+      "valorFixo": false,
+      "parcelas": [
+        {
+          "vencimento": "2024-07-07T11:02:37-03:00",
+          "moeda": {
+            "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+            "descricao": "Real",
+            "codigo": 986,
+            "sigla": "BRL",
+            "simbolo": "R$",
+            "ativo": true
+          },
+          "valor": 70
+        }
+      ],
+      "cotacao": 0,
+      "totalAlternativo": 0
+    },
+    "dedutivel": true,
+    "manual": true
+  }
