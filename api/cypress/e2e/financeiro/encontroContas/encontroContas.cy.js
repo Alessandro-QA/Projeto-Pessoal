@@ -24,6 +24,7 @@ context('Financeiro', () => {
                     const currentDate = dayjs().format('YYYY-MM-DDTHH:mm:ssZ');
                     payload.financeiro.parcelas[0].vencimento = currentDate;
                     payload.dataRecebimento = currentDate;
+                    payload.data = currentDate;
 
                     cy.postRequest('/api/financeiro/v1/Documento', payload)
                         .then((response) => {
@@ -45,7 +46,8 @@ context('Financeiro', () => {
 
                     // Definir a data inicial e final no formato desejado (YYYY-MM-DDTHH:mm:ssZ)
                     const dataInicial = dayjs().startOf('day').format('YYYY-MM-DDTHH:mm:ssZ');
-                    const dataFinal = dayjs().endOf('day').format('YYYY-MM-DDTHH:mm:ssZ');
+                    // Para data final adicionamos um mês, vito que o A Receber gerado é automaticamente adicionando com vencimento de um mês após data do documento
+                    const dataFinal = dayjs().add(1, 'month').endOf('day').format('YYYY-MM-DDTHH:mm:ssZ');
 
                     // Atualizar as datas no payload
                     payload.dataInicial = dataInicial;

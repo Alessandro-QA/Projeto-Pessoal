@@ -1,0 +1,17 @@
+[
+  {
+    "value": 1,
+    "enumValue": "Movimentacao",
+    "enumDescription": "Movimentação"
+  },
+  {
+    "value": 2,
+    "enumValue": "Manual",
+    "enumDescription": "Manual"
+  },
+  {
+    "value": 3,
+    "enumValue": "Todas",
+    "enumDescription": "Todas"
+  }
+]
