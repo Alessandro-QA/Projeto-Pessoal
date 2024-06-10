@@ -1,0 +1,17 @@
+[
+  {
+    "value": 1,
+    "enumValue": "Entrada",
+    "enumDescription": "Entrada"
+  },
+  {
+    "value": 2,
+    "enumValue": "Saida",
+    "enumDescription": "Saída"
+  },
+  {
+    "value": 3,
+    "enumValue": "Todas",
+    "enumDescription": "Todas"
+  }
+]
