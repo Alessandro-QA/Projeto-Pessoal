@@ -6,52 +6,52 @@ context('Financeiro', () => {
         describe('POST - api/financeiro/v1/Agenda/Relatorio - Relatorio', () => {
             it('CT1 Deve Haver relatorio com todos os Titulos', () => {
                 cy.fixture('financeiro/agenda/relatorio/payloadCT1.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/Agenda/ListTitulos', payload)
+                    cy.postRequest('/api/financeiro/v1/Agenda/relatorio', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'));
                             expect(response.status).to.equal(200);
                             expect(response.body).to.exist;
                             expect(response.body).to.have.property('success', true);
-                            expect(response.body.data).to.be.an('array').that.is.not.empty;
+
                         })
                 })
             })
 
             it('CT2 Deve Haver relatorio de Titulos a pagar', () => {
                 cy.fixture('financeiro/agenda/relatorio/payloadCT1.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/Agenda/ListTitulos', payload)
+                    cy.postRequest('/api/financeiro/v1/Agenda/relatorio', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'));
                             expect(response.status).to.equal(200);
                             expect(response.body).to.exist;
                             expect(response.body).to.have.property('success', true);
-                            expect(response.body.data).to.be.an('array').that.is.not.empty;
+
                         })
                 })
             })
 
             it('CT3 Deve Haver relatorio de Titulos recebidos', () => {
                 cy.fixture('financeiro/agenda/relatorio/payloadCT1.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/Agenda/ListTitulos', payload)
+                    cy.postRequest('/api/financeiro/v1/Agenda/relatorio', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'));
                             expect(response.status).to.equal(200);
                             expect(response.body).to.exist;
                             expect(response.body).to.have.property('success', true);
-                            expect(response.body.data).to.be.an('array').that.is.not.empty;
+
                         })
                 })
             })
 
             it('CT4 Deve Haver relatorio de Titulos Parcialmente Recebido', () => {
                 cy.fixture('financeiro/agenda/relatorio/payloadCT1.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/Agenda/ListTitulos', payload)
+                    cy.postRequest('/api/financeiro/v1/Agenda/relatorio', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'));
                             expect(response.status).to.equal(200);
                             expect(response.body).to.exist;
                             expect(response.body).to.have.property('success', true);
-                            expect(response.body.data).to.be.an('array').that.is.not.empty;
+
                         })
                 })
             })

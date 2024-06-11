@@ -1,26 +1,109 @@
 {
-    "observacao": "",
-    "baixas": [
+  "categorias": [
+    {
+      "valor": 30,
+      "contaContabil": {
+        "codigo": "1.01.01.01",
+        "descricao": "Caixa Geral",
+        "dedutivel": true
+      }
+    }
+  ],
+  "tributacoesTotais": {
+    "serie": 0,
+    "cfop": {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "descricao": "string",
+      "codigo": "string"
+    },
+    "baseCalculoICMS": "0",
+    "valorTotalICMS": "0",
+    "isentasNaoTributadas": "0",
+    "outrosICMS": "0",
+    "baseCalculoSubst": "0",
+    "valorICMSRetido": "0",
+    "valorIPI": "0",
+    "isentas": "0",
+    "outrosIPI": "0",
+    "frete": "0"
+  },
+  "outrosValores": {
+    "frete": 0,
+    "seguro": 0,
+    "despesas": "0",
+    "descontos": 0
+  },
+  "dataRecebimento": "2024-06-07T12:51:35-03:00",
+  "operacao": {
+    "id": "cc7d0f82-b3c0-46d1-b4f7-debec06efdfa",
+    "descricao": "Compensação a Receber"
+  },
+  "safra": {
+    "id": "f2eb8ded-a463-47fd-a81d-1a78b5b11166",
+    "descricao": "2022 / 2023"
+  },
+  "data": "2024-06-07T12:51:35-03:00",
+  "fazenda": {
+    "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+    "descricao": "Fazenda Teste API"
+  },
+  "pessoa": {
+    "pessoaTipo": "Cliente",
+    "numeroDocumento": "51634860047",
+    "id": "de869555-55dd-4930-803d-e043c250b970",
+    "descricao": "Cliente Teste API"
+  },
+  "numero": "8800",
+  "empresa": {
+    "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+    "descricao": "Empresa Teste API",
+    "empresaDeSaoPaulo": false,
+    "documentoPrincipal": "68104971026",
+    "inscricaoEstadual": {
+      "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+      "descricao": "IE",
+      "valor": "ISENTO"
+    }
+  },
+  "ieDaEmpresa": {
+    "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+    "descricao": "IE",
+    "estadoSigla": "AC",
+    "ativo": true,
+    "valor": "ISENTO",
+    "label": "ISENTO - IE"
+  },
+  "tipoDocumento": 6,
+  "conferido": false,
+  "skipLimpeza": false,
+  "financeiro": {
+    "total": 30,
+    "pago": false,
+    "rateioEntreCiclos": false,
+    "formaPagamento": {
+      "id": "fe298c32-17c7-4b76-a7c4-d730fdae16b8",
+      "descricao": "PIX"
+    },
+    "condicaoPagamento": "Avista",
+    "quantidadeParcelas": 1,
+    "valorFixo": false,
+    "parcelas": [
       {
-        "contaBancariaId": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
-        "dataPagamento": "2024-06-06T10:19:04-03:00",
-        "desconto": 0,
-        "empresa": {
-          "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
-          "descricao": "Empresa Teste API"
+        "vencimento": "2024-07-07T12:51:35-03:00",
+        "moeda": {
+          "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+          "descricao": "Real",
+          "codigo": 986,
+          "sigla": "BRL",
+          "simbolo": "R$",
+          "ativo": true
         },
-        "formaPagamento": {
-          "id": "fe298c32-17c7-4b76-a7c4-d730fdae16b8",
-          "descricao": "PIX",
-          "referenciaXML": 17
-        },
-        "juros": 0,
-        "multa": 0,
-        "tituloId": "45d41fa1-3592-4294-a6c9-db33b113e802",
-        "valor": 50,
-        "valorTotal": 50
+        "valor": 30
       }
     ],
-    "anexos": []
-  }
-  
+    "cotacao": 0,
+    "totalAlternativo": 0
+  },
+  "dedutivel": true,
+  "manual": true
+}

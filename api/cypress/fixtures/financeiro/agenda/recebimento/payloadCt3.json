@@ -1,0 +1,20 @@
+{
+    "tituloId": "0b7bc7ad-6285-4350-a3b3-cdb23b63bb2b",
+    "contaBancariaId": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+    "formaPagamento": {
+      "id": "fe298c32-17c7-4b76-a7c4-d730fdae16b8",
+      "descricao": "PIX"
+    },
+    "juros": 0,
+    "multa": 0,
+    "desconto": 0,
+    "dataPagamento": "2024-06-07T14:47:15-03:00",
+    "valor": 30,
+    "valorTotal": 30,
+    "pagamentoUmClick": true,
+    "empresa": {
+      "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+      "descricao": "Empresa Teste API"
+    }
+  }
+  

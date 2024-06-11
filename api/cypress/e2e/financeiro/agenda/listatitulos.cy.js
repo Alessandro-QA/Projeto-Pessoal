@@ -5,7 +5,7 @@ context('Financeiro', () => {
 
         describe('POST - / api/financeiro/v1/Agenda/ListTitulos - Listagem da agenda Financeira', () => {
             it('CT1 Deve Obter Listagem de Titulos', () => {
-                cy.fixture('financeiro/agenda/listatitulos/payloadCT1.json').then((payload) => {
+                cy.fixture('financeiro/agenda/listatitulos/payloadCt1.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Agenda/ListTitulos', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'))
@@ -18,7 +18,7 @@ context('Financeiro', () => {
                 })
             })
             it('CT2 Deve Obter Listagem de Titulos a Pagar', () => {
-                cy.fixture('financeiro/agenda/listatitulos/payloadCT1.json').then((payload) => {
+                cy.fixture('financeiro/agenda/listatitulos/payloadCt2.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Agenda/ListTitulos', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'))
@@ -31,7 +31,7 @@ context('Financeiro', () => {
                 })
             })
             it('CT3 Deve Obter Listagem de Titulos Pagos', () => {
-                cy.fixture('financeiro/agenda/listatitulos/payloadCT1.json').then((payload) => {
+                cy.fixture('financeiro/agenda/listatitulos/payloadCt3.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Agenda/ListTitulos', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'))
@@ -44,7 +44,7 @@ context('Financeiro', () => {
                 })
             })
             it('CT4 Deve Obter Listagem de Titulos Recebidos', () => {
-                cy.fixture('financeiro/agenda/listatitulos/payloadCT1.json').then((payload) => {
+                cy.fixture('financeiro/agenda/listatitulos/payloadCt4.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Agenda/ListTitulos', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'))
@@ -57,7 +57,7 @@ context('Financeiro', () => {
                 })
             })
             it('CT5 Deve Obter Listagem de Titulos por Pessoas', () => {
-                cy.fixture('financeiro/agenda/listatitulos/payloadCT1.json').then((payload) => {
+                cy.fixture('financeiro/agenda/listatitulos/payloadCt5.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Agenda/ListTitulos', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'))
