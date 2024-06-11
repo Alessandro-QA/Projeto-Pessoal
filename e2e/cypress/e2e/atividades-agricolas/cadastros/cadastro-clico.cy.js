@@ -1,19 +1,20 @@
 /// <reference types="cypress" />
 
-import seedTestCiclo from '../../../fixtures/atividades-agricolas/cadastros/fixture-ciclo.json'
-import Ciclo from '../../../support/commands/atividades-agricolas/cadastros/ciclo/ciclo.js'
-import Authenticate from '../../../support/commands/login/login-logout.js'
-import testDescription from './bdd-description/ciclo.description.js'
+const seedTestCiclo = require('../../../fixtures/atividades-agricolas/cadastros/fixture-ciclo.json');
+const Ciclo = require('../../../support/commands/atividades-agricolas/cadastros/ciclo/ciclo.js');
+const Authenticate = require('../../../support/commands/login/login-logout.js');
+const testDescription = require('./bdd-description/ciclo.description.js');
+
 
 describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
-  before(function () {
+  /*before(function () {
     const credenciais = Cypress.env('login_cadastro')
     Authenticate.login(credenciais)
   })
 
   after(() => {
     Authenticate.logout()
-  })
+  }) */
 
   describe('Cadastros', { tags: '@cadastro' }, () => {
     context('Ciclo', () => {
@@ -31,6 +32,12 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
 
         Ciclo.validarDashboard(seedTestCiclo)
       })
+
+      it.only('Teste',() => {
+       cy.visit('https://www.google.com/')
+       cy.wait(10000)
+      })
     })
   })
 })
+

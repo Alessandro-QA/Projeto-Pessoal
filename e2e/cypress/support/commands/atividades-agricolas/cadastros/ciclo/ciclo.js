@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import locCiclo from '../../../../locators/atividades-agricolas/cadastros/locators-cadastro-ciclo.js'
+const locCiclo = require('../../../../locators/atividades-agricolas/cadastros/locators-cadastro-ciclo.js');
 
 class Ciclo {
   /**
@@ -59,4 +59,4 @@ class Ciclo {
   }
 }
 
-export default new Ciclo()
+//export default new Ciclo()

@@ -18,4 +18,4 @@ const locators = {
   }
 }
 
-export default locators
+//export default locators

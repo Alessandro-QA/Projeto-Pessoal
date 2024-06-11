@@ -1,5 +1,5 @@
 {
-  "baseUrl": "__Env.MyFarm.BaseAddress__",
+  "baseUrl": "https://myfarm.dev.conexa.com.br/",
   "env": {
     "authUrl": "__Env.MyFarm.AuthUrl__",
     "returnURL": "__Env.MyFarm.ReturnURL__",

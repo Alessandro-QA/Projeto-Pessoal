@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import locLogin from '../../locators/login/locators-login.js'
+const locLogin = require('../../locators/login/locators-login.js');
 
 class Authenticate {
   /**
@@ -84,4 +84,4 @@ class Authenticate {
   }
 }
 
-export default new Authenticate()
+//export default new Authenticate()
