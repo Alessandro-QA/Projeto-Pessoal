@@ -89,6 +89,7 @@ context('Financeiro', () => {
                             expect(response.body.data).to.have.property('valorBaixa').that.equals(30);
                             expect(response.body.data).to.have.property('valorBaixaAlternativa').that.equals(0);
                             expect(response.body.data).to.have.property('valorTotal').that.equals(30);
+
                         });
 
                         });
@@ -98,4 +99,4 @@ context('Financeiro', () => {
 
         })
     })
-
+    

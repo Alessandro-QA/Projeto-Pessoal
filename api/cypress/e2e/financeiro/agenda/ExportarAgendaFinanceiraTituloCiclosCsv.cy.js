@@ -12,7 +12,6 @@ context('Financeiro', () => {
                             expect(response.status).to.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).to.not.be.null
-                            //expect(response.body.data).to.exist
                             expect(response.body.data).to.not.be.null
                         })
                 })

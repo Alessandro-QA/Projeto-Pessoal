@@ -95,7 +95,7 @@ context('Financeiro', () => {
 
                     payload.baixas[0].tituloId = idDocumentoReceber1;
                     payload.baixas[1].tituloId = idDocumentoReceber2;
-                   
+
 
                     cy.postRequest('/api/financeiro/v1/Agenda/RecebimentoLote', payload)
                         .then((response) => {
@@ -114,4 +114,3 @@ context('Financeiro', () => {
 
     });
 });
-

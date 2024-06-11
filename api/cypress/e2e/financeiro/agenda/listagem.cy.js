@@ -14,7 +14,6 @@ context('Financeiro', () => {
                             expect(response.body).to.not.be.null
                             expect(response.body.data).to.exist
                             expect(response.body.data).to.not.be.null
-                            // expect(response.body.totalItems).to.equal(response.body.data.length)
                         })
                 })
             })
@@ -29,7 +28,6 @@ context('Financeiro', () => {
                             expect(response.body).to.not.be.null
                             expect(response.body.data).to.exist
                             expect(response.body.data).to.not.be.null
-                            // expect(response.body.totalItems).to.equal(response.body.data.length)
                         })
                 });
             })
@@ -45,7 +43,6 @@ context('Financeiro', () => {
                         expect(response.body).to.not.be.null
                         expect(response.body.data).to.exist
                         expect(response.body.data).to.not.be.null
-                        //expect(response.body.totalItems).to.equal(response.body.data.length)
                     })
             })
         })
@@ -61,7 +58,6 @@ context('Financeiro', () => {
                     expect(response.body).to.not.be.null
                     expect(response.body.data).to.exist
                     expect(response.body.data).to.not.be.null
-                    //expect(response.body.totalItems).to.equal(response.body.data.length)
                 })
         })
     })

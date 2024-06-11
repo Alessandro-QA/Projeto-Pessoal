@@ -5,7 +5,7 @@ context('Financeiro', () => {
 
         describe('POST - api/financeiro/v1/Agenda/Relatorio - Relatorio', () => {
             it('CT1 Deve Haver relatorio com todos os Titulos', () => {
-                cy.fixture('financeiro/agenda/relatorio/payloadCT1.json').then((payload) => {
+                cy.fixture('financeiro/agenda/relatorio/payloadCt1.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Agenda/relatorio', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'));
@@ -18,7 +18,7 @@ context('Financeiro', () => {
             })
 
             it('CT2 Deve Haver relatorio de Titulos a pagar', () => {
-                cy.fixture('financeiro/agenda/relatorio/payloadCT1.json').then((payload) => {
+                cy.fixture('financeiro/agenda/relatorio/payloadCt2.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Agenda/relatorio', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'));
@@ -31,7 +31,7 @@ context('Financeiro', () => {
             })
 
             it('CT3 Deve Haver relatorio de Titulos recebidos', () => {
-                cy.fixture('financeiro/agenda/relatorio/payloadCT1.json').then((payload) => {
+                cy.fixture('financeiro/agenda/relatorio/payloadCt3.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Agenda/relatorio', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'));
@@ -44,7 +44,7 @@ context('Financeiro', () => {
             })
 
             it('CT4 Deve Haver relatorio de Titulos Parcialmente Recebido', () => {
-                cy.fixture('financeiro/agenda/relatorio/payloadCT1.json').then((payload) => {
+                cy.fixture('financeiro/agenda/relatorio/payloadCt4.json').then((payload) => {
                     cy.postRequest('/api/financeiro/v1/Agenda/relatorio', payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'));
