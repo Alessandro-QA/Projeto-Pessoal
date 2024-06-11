@@ -84,4 +84,4 @@ class Authenticate {
   }
 }
 
-//export default new Authenticate()
+export default new Authenticate()

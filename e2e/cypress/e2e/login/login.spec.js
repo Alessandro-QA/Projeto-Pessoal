@@ -18,8 +18,7 @@ describe('Login', { tags: '@login' }, () => {
 
   describe('Login', () => {
     it('Deve realizar login', function () {
-      cy.allure().severity('blocker').startStep('test content')
-        .descriptionHtml(testDescription.realizarLogin)
+      cy.descriptionHtml(testDescription.realizarLogin)
 
       Authenticate.loginInterface(credenciais)
 
@@ -32,8 +31,7 @@ describe('Login', { tags: '@login' }, () => {
 
   describe('Logout', () => {
     it('Deve realizar logout', function () {
-      cy.allure().severity('normal').startStep('test content')
-        .descriptionHtml(testDescription.realizarLogout)
+      cy.descriptionHtml(testDescription.realizarLogout)
 
       Authenticate.logout()
 

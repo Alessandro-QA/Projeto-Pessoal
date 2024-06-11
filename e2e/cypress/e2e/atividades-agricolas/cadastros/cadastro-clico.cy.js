@@ -7,35 +7,40 @@ const testDescription = require('./bdd-description/ciclo.description.js');
 
 
 describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
-  /*before(function () {
+  before(function () {
     const credenciais = Cypress.env('login_cadastro')
     Authenticate.login(credenciais)
   })
 
   after(() => {
     Authenticate.logout()
-  }) */
+  }) 
 
   describe('Cadastros', { tags: '@cadastro' }, () => {
     context('Ciclo', () => {
       // Teste de cadastro de um novo ciclo de milho
-      it('Deve cadastrar um ciclo de milho', { retries: { runMode: 1, openMode: 1, }, }, function () {
-        cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.ciclo)
+      it.only('Deve cadastrar um ciclo de milho', { retries: { runMode: 1, openMode: 1, }, }, function () {
+        //cy.descriptionHtml(testDescription.ciclo)
 
         Ciclo.cadastrar(seedTestCiclo)
       })
 
       // Validação da Dashboard de ciclo
       it('Deve validar a Dashboard de ciclo', { retries: { runMode: 1, openMode: 1, }, }, function () {
-        cy.allure().severity('minor').startStep('test content')
+        //cy.allure().severity('minor').startStep('test content')
 
         Ciclo.validarDashboard(seedTestCiclo)
       })
 
-      it.only('Teste',() => {
-       cy.visit('https://www.google.com/')
+      it('Teste',() => {
+       cy.visit('https://myfarm.dev.conexa.com.br/')
        cy.wait(10000)
+      })
+
+      it('Deve validar a Dashboard de ciclo', { retries: { runMode: 1, openMode: 1, }, }, function () {
+        cy.descriptionHtml(testDescription.ciclo)
+        cy.visit('https://myfarm.dev.conexa.com.br/')
+        cy.wait(10000)
       })
     })
   })

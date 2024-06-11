@@ -45,8 +45,8 @@ Cypress.Commands.add('getVisible', (locator) => {
  *    .tms('test case', 'tmsUrl')
  *    .tag('customTag', 'customTag2');
  */
-Cypress.Commands.add('allure', () => {
+/*Cypress.Commands.add('allure', () => {
   cy.wrap(Cypress.Allure.reporter.getInterface(), {
     log: false
   })
-})
+}) */

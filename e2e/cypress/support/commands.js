@@ -22,3 +22,5 @@ Cypress.Commands.add('getToken', (email, password) => {
         cy.step(`Access Token do usuário ${email} definido nas variaveis de ambiente do Cypress com sucesso!`)
     })
 })
+
+

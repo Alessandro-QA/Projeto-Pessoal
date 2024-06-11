@@ -23,7 +23,6 @@
     "@cypress/skip-test": "^2.6.1",
     "@cypress/webpack-preprocessor": "^6.0.2",
     "@testing-library/cypress": "^10.0.2",
-    "allure-cypress": "^2.15.1",
     "cypress": "^13.11.0",
     "cypress-eslint-preprocessor": "^1.2.2",
     "cypress-grep": "^2.14.0",
@@ -41,6 +40,7 @@
     "webpack-merge": "^5.10.0"
   },
   "dependencies": {
+    "allure-cypress": "^2.15.1",
     "cypress-plugin-steps": "^1.1.1"
   }
 }

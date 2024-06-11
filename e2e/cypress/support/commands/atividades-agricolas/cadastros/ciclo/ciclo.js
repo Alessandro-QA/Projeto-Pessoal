@@ -59,4 +59,4 @@ class Ciclo {
   }
 }
 
-//export default new Ciclo()
+export default new Ciclo()
