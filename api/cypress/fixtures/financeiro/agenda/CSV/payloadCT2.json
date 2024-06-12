@@ -1,0 +1,26 @@
+{
+    "empresaIds": [
+      "a22784bb-3f5b-430a-823f-151fc7626b72",
+      "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+      "c79da4b4-fb34-417c-9ab8-8c943c91c032",
+      "880459f3-42fe-48df-935a-591e7fa61419",
+      "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
+      "3812aaa0-9cee-4a21-b22d-d2205df2fc97",
+      "577f4472-fa74-463f-8503-5a77658e5e2c",
+      "92c2d495-e66d-433d-a2aa-5957d09e809e"
+    ],
+    "fazendaIds": [
+      "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b"
+    ],
+    "filter": {
+      "fields": [
+        "NumeroDocumento",
+        "ValorTitulo",
+        "Pessoa"
+      ]
+    },
+    "filterAgendamento": 0,
+    "statusTitulos": [
+      5
+    ]
+  }
