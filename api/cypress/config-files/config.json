@@ -1,0 +1,10 @@
+{
+    "email": "apiTest_myfarm@hubconexa.com",
+    "password": "teste@123",
+    "tenant": "273276e0-7cc1-4891-94de-55e9ced2aad2",
+
+    "baseUrl": "https://myfarm.dev.conexa.com.br",
+
+    "financeiro": "/api/financeiro/v1",
+    "producaoAgricola": "/api/producao-agricola/v1"
+}

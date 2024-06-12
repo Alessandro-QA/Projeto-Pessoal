@@ -2,11 +2,10 @@
 
 context('Financeiro', () => {
     context('Contabilidade', () => {
-        describe('GET - /api/financeiro/v1/Contabilidade/Origem/{idOrigem}/Tipo/{tipoOrigem} - Obtém registros contábeis pelo ID e tipo da Origem', () => {
-
+        describe(`GET - ${Cypress.env('financeiro')}/Contabilidade/Origem/{idOrigem}/Tipo/{tipoOrigem} - Obtém registros contábeis pelo ID e tipo da Origem`, () => {
             it('CT1 - Obtém registros contábeis pelo ID e tipo da Origem', () => {
                 cy.fixture('financeiro/contabilidade/origem-tipo/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`/api/financeiro/v1/Contabilidade/Origem/${params.idOrigem}/Tipo/${params.tipoOrigem}`, params)
+                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Contabilidade/Origem/${params.idOrigem}/Tipo/${params.tipoOrigem}`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)

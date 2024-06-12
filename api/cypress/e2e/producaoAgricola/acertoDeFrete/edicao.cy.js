@@ -2,11 +2,11 @@
 
 context('Produção Agrícola', () => {
     context('Acerto de Frete', () => {
-        context('PUT - /api/producao-agricola/v1/AcertoFretes - Edição', () => {
+        context(`PUT - ${Cypress.env('baseUrl')}${Cypress.env('producaoAgricola')}/AcertoFretes - Edição`, () => {
             describe('Pendente', () => {
                 it('CT1 - Deve editar Acerto Com Despesas vinculadas', () => {
                     cy.fixture('producaoAgricola/acertoDeFrete/edicao/pendente/payloadCt1.json').then((payload) => {
-                        cy.putRequest('/api/producao-agricola/v1/AcertoFretes', payload)
+                        cy.putRequest(`${Cypress.env('baseUrl')}${Cypress.env('producaoAgricola')}/AcertoFretes`, payload)
                             .then((response) => {
                                 expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                                 expect(response.status).to.equal(200)
@@ -22,7 +22,7 @@ context('Produção Agrícola', () => {
 
                 it('CT2 - Deve editar Acerto Sem Despesas vinculadas', () => {
                     cy.fixture('producaoAgricola/acertoDeFrete/edicao/pendente/payloadCt2.json').then((payload) => {
-                        cy.putRequest('/api/producao-agricola/v1/AcertoFretes', payload)
+                        cy.putRequest(`${Cypress.env('baseUrl')}${Cypress.env('producaoAgricola')}/AcertoFretes`, payload)
                             .then((response) => {
                                 expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                                 expect(response.status).to.equal(200)

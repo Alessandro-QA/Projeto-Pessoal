@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Documento', () => {
-        describe('POST - /api/financeiro/v1/Documento/List/Despesas - Obtém registros de Despesas', () => {
+        describe(`POST - ${Cypress.env('financeiro')}/Documento/List/Despesas - Obtém registros de Despesas`, () => {
 
             it('CT1 - Obter Listagem de Despesas dos Documentos', () => {
                 cy.fixture('financeiro/documento/list-despesa/payloadCt1.json').then((payload) => {
@@ -10,7 +10,7 @@ context('Financeiro', () => {
                     // Extrair PessoaId do payload
                     const pessoaId = payload.PessoaId;
 
-                    cy.postRequest('/api/financeiro/v1/Documento/List/Despesas', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/List/Despesas`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -32,7 +32,7 @@ context('Financeiro', () => {
                     const pessoaId = payload.PessoaId;
                     const fazendaId = payload.FazendaId;
 
-                    cy.postRequest('/api/financeiro/v1/Documento/List/Despesas', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/List/Despesas`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -43,7 +43,6 @@ context('Financeiro', () => {
                             response.body.data.forEach((documento) => {
                                 expect(documento.pessoa.id).to.equal(pessoaId);
                                 expect(documento.fazenda.id).to.equal(fazendaId);
-                               
                             });
                         })
                 })

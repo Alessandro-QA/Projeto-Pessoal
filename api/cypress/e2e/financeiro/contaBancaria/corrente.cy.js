@@ -36,9 +36,9 @@ function validarContaBancariaCorrente(response) {
 
 context('Financeiro', () => {
     context('Conta Bancaria', () => {
-        describe('GET - /api/financeiro/v1/ContaBancaria/Corrente - Obtém Contas Bancárias Correntes', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/ContaBancaria/Corrente - Obtém Contas Bancárias Correntes`, () => {
             it('CT1 - Deve obter todas as contas correntes', () => {
-                cy.getRequest('/api/financeiro/v1/ContaBancaria/Corrente')
+                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Corrente`)
                     .then((response) => {
                         validarContaBancariaCorrente(response);
                     });
@@ -46,7 +46,7 @@ context('Financeiro', () => {
 
             it('CT2 - Deve obter conta corrente por ContaBancariaId', () => {
                 cy.fixture('financeiro/contaBancaria/corrente/paramsCt2.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Corrente', params)
+                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Corrente`, params)
                         .then((response) => {
                             validarContaBancariaCorrente(response);
                         });
@@ -55,7 +55,7 @@ context('Financeiro', () => {
 
             it('CT3 - Deve obter conta corrente por EmpresaId', () => {
                 cy.fixture('financeiro/contaBancaria/corrente/paramsCt3.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Corrente', params)
+                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Corrente`, params)
                         .then((response) => {
                             validarContaBancariaCorrente(response);
                         });
@@ -64,7 +64,7 @@ context('Financeiro', () => {
 
             it('CT4 - Deve obter contas correntes ativas', () => {
                 cy.fixture('financeiro/contaBancaria/corrente/paramsCt4.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Corrente', params)
+                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Corrente`, params)
                         .then((response) => {
                             validarContaBancariaCorrente(response);
                         });
@@ -73,7 +73,7 @@ context('Financeiro', () => {
 
             it('CT5 - Deve obter contas correntes inativas', () => {
                 cy.fixture('financeiro/contaBancaria/corrente/paramsCt5.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Corrente', params)
+                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Corrente`, params)
                         .then((response) => {
                             validarContaBancariaCorrente(response);
                         });

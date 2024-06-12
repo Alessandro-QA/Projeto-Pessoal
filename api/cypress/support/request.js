@@ -6,7 +6,7 @@ Cypress.Commands.add('getRequest', (url) => {
 
     return cy.api({
         "method": 'GET',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
@@ -20,7 +20,7 @@ Cypress.Commands.add('getRequestWhitParams', (url, params) => {
 
     return cy.api({
         "method": 'GET',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
@@ -35,7 +35,7 @@ Cypress.Commands.add('postRequestWhitParams', (url, params) => {
 
     return cy.api({
         "method": 'POST',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
@@ -50,7 +50,7 @@ Cypress.Commands.add('postRequest', (url, payload) => {
 
     return cy.api({
         "method": 'POST',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
@@ -66,7 +66,7 @@ Cypress.Commands.add('deleteRequest', (url, id) => {
 
     return cy.api({
         "method": 'DELETE',
-        "url": `${baseUrl + url}/${id}`,
+        "url": `${url}/${id}`,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
@@ -81,7 +81,7 @@ Cypress.Commands.add('putRequest', (url, payload) => {
 
     return cy.api({
         "method": 'PUT',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
@@ -96,7 +96,7 @@ Cypress.Commands.add('putRequestWhitParams', (url, params) => {
 
     return cy.api({
         "method": 'PUT',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
@@ -112,7 +112,7 @@ Cypress.Commands.add('patchRequest', (url, payload) => {
   
     return cy.api({
       "method": 'PATCH',
-      "url": `${baseUrl + url}`,
+      "url": url,
       "headers": {
         'x-tenant': tenant,
         'content-type': 'application/json',

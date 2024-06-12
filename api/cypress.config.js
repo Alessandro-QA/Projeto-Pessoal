@@ -1,5 +1,10 @@
 const { defineConfig } = require("cypress");
 const { allureCypress } = require("allure-cypress/reporter");
+const path = require('path');
+
+// Resolvendo o caminho absoluto para config.json - Passando a pasta diretamente não estava aceitando
+const configPath = path.resolve(__dirname, 'cypress', 'config-files', 'config.json');
+const config = require(configPath);
 
 module.exports = defineConfig({
   e2e: {
@@ -10,14 +15,11 @@ module.exports = defineConfig({
       });
       return config;
     },
-    baseUrl: 'https://myfarm.dev.conexa.com.br',
     trashAssetsBeforeRuns: true,
     experimentalSessionAndOrigin: true
   },
   env: {
-    email: 'apiTest_myfarm@hubconexa.com',
-    password: 'teste@123',
-    tenant: '273276e0-7cc1-4891-94de-55e9ced2aad2',
+    ...config // Adiciona todas as variáveis do config.json ao objeto env
   },
   video: false,
   watchForFileChanges: false,

@@ -2,15 +2,15 @@
 
 context('Financeiro', () => {
     context('Moeda', () => {
-        describe('GET - /api/financeiro/v1/Moeda - Obtém todos os registros de Moeda sem filtro', () => {
+        describe(`GET - ${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Moeda - Obtém todos os registros de Moeda sem filtro`, () => {
 
             it('CT1 - Obtém Todos os Registros de Moeda sem filtro', () => {
-                cy.getRequest('/api/financeiro/v1/Moeda')
+                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Moeda`)
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                        expect(response.status).be.equal(200)
+                        expect(response.status).to.be.equal(200)
                         expect(response.body).to.exist
-                        expect(response.body).be.not.null
+                        expect(response.body).to.not.be.null
                         expect(response.body.data).to.be.an('array').that.is.not.empty
 
                         response.body.data.forEach((moeda) => {
@@ -25,12 +25,12 @@ context('Financeiro', () => {
             })
 
             it('CT2 - Obtém um Registro de Moeda específico pelo ID', () => {
-                cy.getRequest('/api/financeiro/v1/Moeda/f7869132-3eb0-4bfc-b416-754b040c98ff')
+                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Moeda/f7869132-3eb0-4bfc-b416-754b040c98ff`)
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                        expect(response.status).be.equal(200)
+                        expect(response.status).to.be.equal(200)
                         expect(response.body).to.exist
-                        expect(response.body).be.not.null
+                        expect(response.body).to.not.be.null
                         expect(response.body.data.id).to.equal('f7869132-3eb0-4bfc-b416-754b040c98ff');
                         expect(response.body.data.descricao).to.be.a('string');
                         expect(response.body.data.codigo).to.be.a('number');
