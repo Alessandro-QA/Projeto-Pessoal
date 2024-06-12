@@ -23,20 +23,20 @@ describe('Produção', { tags: '@producao' }, () => {
 
       context('Colheita interna', () => {
         it('Deve cadastrar colheita interna', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescription.interna)
 
           cadastrarEditar(seedTestCadastro)
         })
 
         it('Deve validar listagem de Colheita', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           validarListagem(seedTestDashboardColheita)
         })
 
         it('Deve validar dashboard de Produção', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           validarDashboard(seedTestDashboardProducao)
         })

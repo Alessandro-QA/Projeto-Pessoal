@@ -34,14 +34,14 @@ describe.skip('Financeiro', { tags: '@financeiro' }, () => {
       })
 
       it('Deve validar lançamentos no cartão - Sem filtro', function () {
-        cy.allure().severity('normal').startStep('test content')
+        // cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.semFiltro)
 
         ContasBancarias.validarListagem(seedTestLancamentoCartao.semFiltro)
       })
 
       it('Deve validar lançamentos no cartão - Filtrando por período', function () {
-        cy.allure().severity('normal').startStep('test content')
+        // cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.filtrarPeriodo)
 
         ContasBancarias.validarListagem(seedTestLancamentoCartao.filtrarPeriodo)

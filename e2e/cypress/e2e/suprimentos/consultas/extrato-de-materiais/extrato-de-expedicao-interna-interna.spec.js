@@ -29,32 +29,32 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
 
       context('Consultar extrato de materiais após expedição Interna x Interna', () => {
         it('Deve cadastrar colheita por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Utils.requestApi('POST', '/api/producao-agricola/v1/colheitas', bodyColheita, 'login_cenarios')
         })
 
         it('Deve validar extrato de materiais da UA de ORIGEM após cadastro de colheita', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.description)
 
           ExtratoMateriais.validarExtratoMateriais(seedTest.UaOrigemColheita)
         })
 
         it('Deve cadastrar expedição por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Utils.requestApi('POST', '/api/producao-agricola/v1/expedicoes', bodyExpedicao, 'login_cenarios')
         })
 
         it('Deve validar extrato de materiais da UA de ORIGEM após expedição para UA de DESTINO', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           ExtratoMateriais.validarExtratoMateriais(seedTest.UaOrigemExpedicao)
         })
 
         it('Deve validar extrato de materiais da UA de DESTINO após expedição da UA de ORIGEM', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           ExtratoMateriais.validarExtratoMateriais(seedTest.UaDestinoExpedicao)
         })

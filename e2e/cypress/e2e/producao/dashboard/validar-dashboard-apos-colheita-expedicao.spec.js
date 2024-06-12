@@ -43,7 +43,7 @@ describe('Produção', { tags: '@producao' }, () => {
 
       context('Validar dashboard de colheita após expedição', () => {
         it('Deve cadastrar contratos por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           requestApi('POST', '/api/producao-agricola/v1/contratos', bodyContrato1, 'login_cenarios')
           requestApi('POST', '/api/producao-agricola/v1/contratos', bodyContrato2, 'login_cenarios')
@@ -51,19 +51,19 @@ describe('Produção', { tags: '@producao' }, () => {
         })
 
         it('Deve cadastrar colheita por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           requestApi('POST', '/api/producao-agricola/v1/colheitas', bodyColheita, 'login_cenarios')
         })
 
         it('Deve validar tabela entregas e fixações após colheita sem contrato vinculado', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Producao.validarDashboard(seedTestDashboard)
         })
 
         it('Deve cadastrar expedições por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           requestApi('POST', '/api/producao-agricola/v1/expedicoes', bodyExpedicaoInternaInterna, 'login_cenarios')
           requestApi('POST', '/api/producao-agricola/v1/expedicoes', bodyExpedicaoInternaExterna, 'login_cenarios')
@@ -72,7 +72,7 @@ describe('Produção', { tags: '@producao' }, () => {
         })
 
         it('Deve validar os cards de cultura, armazenagens e entregas e fixações', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Producao.validarDashboard(seedTestDashboardAposExpedicao)
         })

@@ -18,13 +18,13 @@ describe('NF-e', { tags: '@nfe' }, () => {
     describe('Emissão', () => {
       context('Com imposto, sem retenção, sem financeiro', () => {
         it('Deve cadastrar uma nfe', function () {
-          cy.allure().severity('blocker').startStep('test content')
+          // cy.allure().severity('blocker').startStep('test content')
 
           Nfe.cadastrar(seedTestNfe)
         })
 
         it('Deve validar detalhes da nfe cadastrada', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.validarDetalhes(seedTestNfe)
         })

@@ -25,13 +25,13 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Cadastro', () => {
       context('De entrada com estimativa de IRRF', () => {
         it('Cadastrar documento de entrada já pago por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento, 'login_cenarios')
         })
 
         it('Confirmar se gerou Livro Caixa com estimativa IRRF', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           LivroCaixa.validarLancamentos(seedTest.lancamentoLivroCaixa)
         })

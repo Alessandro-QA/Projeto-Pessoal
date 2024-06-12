@@ -27,31 +27,31 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Cadastro', () => {
       context('Pago pela Agenda Financeira', () => {
         it('Cadastrar documento por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento, 'login_cenarios')
         })
 
         it('Validar documento na Agenda Financeira', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           AgendaFinanceira.validarDashboard(seedTest.agendaFinanceira)
         })
 
         it('Pagar documento pela Agenda Financeira', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           AgendaFinanceira.pagarPelaAgenda(seedTest.agendaFinanceira)
         })
 
         it('Confirmar se gerou Movimentação Bancária', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Movimentacao.validarListagem(seedTest.movimentacaoBancaria)
         })
 
         it('Confirmar se gerou Livro Caixa', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           LivroCaixa.validarLancamentos(seedTest.lancamentoLivroCaixa)
         })

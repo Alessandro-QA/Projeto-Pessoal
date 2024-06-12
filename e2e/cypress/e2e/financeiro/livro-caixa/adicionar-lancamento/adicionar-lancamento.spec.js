@@ -21,14 +21,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Adição de Lançamento', () => {
       context('Do tipo Entrada', () => {
         it('Adicionar lançamento Dedutível', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescription.entradaDedutivel)
 
           LivroCaixa.adicionarEditarLancamento(seedTestLancamento.entradaDedutivel)
         })
 
         it('Validar detalhes do Lançamento - Dedutível', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.entradaDedutivel)
 
           LivroCaixa.validarDetalhes(seedTestLancamento.entradaDedutivel)
@@ -36,14 +36,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       })
       context('Do tipo Entrada', () => {
         it('Adicionar lançamento Não dedutível', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescription.entradaNaoDedutivel)
 
           LivroCaixa.adicionarEditarLancamento(seedTestLancamento.entradaNaoDedutivel)
         })
 
         it('Validar detalhes do Lançamento - Não dedutível', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.entradaDedutivel)
 
           LivroCaixa.validarDetalhes(seedTestLancamento.entradaNaoDedutivel)
@@ -52,14 +52,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       context('Do tipo Saída', () => {
         it('Adicionar lançamento Dedutível', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescription.saidaDedutivel)
 
           LivroCaixa.adicionarEditarLancamento(seedTestLancamento.saidaDedutivel)
         })
 
         it('Validar detalhes do Lançamento - Dedutível', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.entradaDedutivel)
 
           LivroCaixa.validarDetalhes(seedTestLancamento.saidaDedutivel)
@@ -67,14 +67,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       })
       context('Do tipo Saída', () => {
         it('Adicionar lançamento Não dedutível', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescription.saidaNaoDedutivel)
 
           LivroCaixa.adicionarEditarLancamento(seedTestLancamento.saidaNaoDedutivel)
         })
 
         it('Validar detalhes do Lançamento - Não dedutível', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.entradaDedutivel)
 
           LivroCaixa.validarDetalhes(seedTestLancamento.saidaNaoDedutivel)

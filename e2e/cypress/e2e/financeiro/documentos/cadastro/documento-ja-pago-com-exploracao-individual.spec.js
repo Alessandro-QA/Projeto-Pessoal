@@ -27,31 +27,31 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Cadastro', () => {
       context('Já Pago - Empresa com Exploração Individual', () => {
         it('Definir a matricula como Exploração Individual', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Fazenda.matricula(seedTest.matriculaFazenda)
         })
 
         it('Cadastrar documento já pago por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento, 'login_cenarios')
         })
 
         it('Confirmar se gerou Movimentação Bancária', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Movimentacao.validarListagem(seedTest.movimentacaoBancaria)
         })
 
         it('Confirmar se gerou Livro Caixa', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           LivroCaixa.validarLancamentos(seedTest.lancamentoLivroCaixa)
         })
 
         it('Remover matricula de exploração individual', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Fazenda.deletarMatricula(seedTest.matriculaFazenda)
         })

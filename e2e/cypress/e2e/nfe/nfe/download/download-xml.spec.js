@@ -30,67 +30,67 @@ describe('NF-e', { tags: '@nfe' }, () => {
     describe('Download', () => {
       context('XML', () => {
         it('NFe Autorizada', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.downloadXml(nfe.autorizada)
         })
 
         it('NFe com Uso Denegado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.downloadXml(nfe.usoDenegado)
         })
 
         it('NFe Cancelada', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.downloadXml(nfe.cancelada)
         })
 
         it('NFe Em Contingência', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.downloadXml(nfe.contingencia)
         })
 
         it('NFe Pendente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.downloadXml(nfe.pendente)
         })
 
         it('NFe Rejeitada', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.downloadXml(nfe.rejeitada)
         })
 
         it('NFe Com Lote Processando', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.downloadXml(nfe.processando)
         })
 
         it('NFe com Lote Recebido', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.downloadXml(nfe.loteRecebido)
         })
 
         it('NFe com Lote Processado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.downloadXml(nfe.loteProcessado)
         })
 
         it('NFe com Lote em Processamento', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.downloadXml(nfe.loteEmProcessamento)
         })
 
         it('NFe Rascunho', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Nfe.downloadXml(nfe.rascunho)
         })

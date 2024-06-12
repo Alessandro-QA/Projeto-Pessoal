@@ -26,19 +26,19 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Cadastro', () => {
       context('Já Pago', () => {
         it('Cadastrar documento já pago por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento, 'login_cenarios')
         })
 
         it('Confirmar se gerou Movimentação Bancária', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Movimentacao.validarListagem(seedTest.movimentacaoBancaria)
         })
 
         it('Confirmar se gerou Livro Caixa', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           LivroCaixa.validarLancamentos(seedTest.lancamentoLivroCaixa)
         })

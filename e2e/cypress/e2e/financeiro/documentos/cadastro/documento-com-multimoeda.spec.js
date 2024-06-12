@@ -20,31 +20,31 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Cadastro', () => {
       context('Multimoeda - Guarani', () => {
         it('CT1 - Deve cadastrar documento a pagar, a vista, com boleto, sem rateio', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(documentoGuarani.ct1)
         })
 
         it('CT2 - Deve cadastrar documento a pagar, a vista, com boleto, com rateio', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(documentoGuarani.ct2)
         })
 
         it('CT3 - Deve cadastrar documento a pagar, parcelado, com boleto, sem rateio', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(documentoGuarani.ct3)
         })
 
         it('CT4 - Deve cadastrar documento ja pago, a vista, com boleto, sem rateio', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(documentoGuarani.ct4)
         })
 
         it('CT5 - Deve cadastrar documento ja pago, a vista, com boleto, com rateio', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(documentoGuarani.ct5)
         })
@@ -52,31 +52,31 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       context('Multimoeda - Dolar', () => {
         it('CT1 - Deve cadastrar documento a pagar, a vista, com boleto, sem rateio', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(documentoDolar.ct1)
         })
 
         it('CT2 - Deve cadastrar documento a pagar, a vista, com boleto, com rateio', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(documentoDolar.ct2)
         })
 
         it('CT3 - Deve cadastrar documento a pagar, parcelado, com boleto, sem rateio', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(documentoDolar.ct3)
         })
 
         it('CT4 - Deve cadastrar documento ja pago, a vista, com boleto, sem rateio', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(documentoDolar.ct4)
         })
 
         it('CT5 - Deve cadastrar documento ja pago, a vista, com boleto, com rateio', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(documentoDolar.ct5)
         })

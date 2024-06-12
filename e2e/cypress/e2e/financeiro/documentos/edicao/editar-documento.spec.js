@@ -38,14 +38,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 				})
 
 				it('Editar Documento', function () {
-					cy.allure().severity('critical').startStep('test content')
+					// cy.allure().severity('critical').startStep('test content')
 						.descriptionHtml(testDescritpion.editarComRateio)
 
 					editar(seedTestDocumento.documento789456.filtro, seedTestDocumento.documento789456.editar)
 				})
 
 				it('Validar documento editado na tela de listagem de Documentos', function () {
-					cy.allure().severity('normal').startStep('test content')
+					// cy.allure().severity('normal').startStep('test content')
 						.descriptionHtml(testDescritpion.editarComRateio)
 
 					listagem(seedTestDocumento.documento789456.detalhes)
@@ -58,14 +58,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 				})
 
 				it('Editar Documento', function () {
-					cy.allure().severity('critical').startStep('test content')
+					// cy.allure().severity('critical').startStep('test content')
 						.descriptionHtml(testDescritpion.editarSemRateio)
 
 					editar(seedTestDocumento.documento357357.filtro, seedTestDocumento.documento357357.editar)
 				})
 
 				it('Validar documento editado na tela de listagem de Documentos', function () {
-					cy.allure().severity('normal').startStep('test content')
+					// cy.allure().severity('normal').startStep('test content')
 						.descriptionHtml(testDescritpion.editarSemRateio)
 					listagem(seedTestDocumento.documento357357.detalhes)
 				})
@@ -81,7 +81,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 				})
 
 				it('Editar documento (campos de edição não devem estar disponíveis)', function () {
-					cy.allure().severity('normal').startStep('test content')
+					// cy.allure().severity('normal').startStep('test content')
 						.descriptionHtml(testDescritpion.jaPago)
 
 					editar(seedTestDocumento.documentoPago8765432.filtro, seedTestDocumento.documentoPago8765432.editar)
@@ -98,14 +98,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 				})
 
 				it('Editar documento (campos de edição não devem estar dispovíveis)', function () {
-					cy.allure().severity('critical').startStep('test content')
+					// cy.allure().severity('critical').startStep('test content')
 						.descriptionHtml(testDescritpion.parcialmentePago)
 
 					editar(seedTestDocumento.documento741852.filtro, seedTestDocumento.documento741852.editarPosPagamento)
 				})
 
 				it('Validar status de parcialmente pago', function () {
-					cy.allure().severity('normal').startStep('test content')
+					// cy.allure().severity('normal').startStep('test content')
 						.descriptionHtml(testDescritpion.parcialmentePago)
 
 					validarDetalhes(seedTestDocumento.documento741852.detalhesPosPagamento)
@@ -122,14 +122,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 				})
 
 				it('Editar documento (campos de edição não devem estar dispovíveis)', function () {
-					cy.allure().severity('critical').startStep('test content')
+					// cy.allure().severity('critical').startStep('test content')
 						.descriptionHtml(testDescritpion.parcialmenteRecebido)
 
 					editar(seedTestDocumento.documento369852.filtro, seedTestDocumento.documento369852.editarPosRecebimento)
 				})
 
 				it('Validar status parcialmente recebido', function () {
-					cy.allure().severity('normal').startStep('test content')
+					// cy.allure().severity('normal').startStep('test content')
 						.descriptionHtml(testDescritpion.parcialmenteRecebido)
 
 					validarDetalhes(seedTestDocumento.documento369852.detalhesPosRecebimentoParcial)
@@ -146,14 +146,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 				})
 
 				it('Editar documento (campos de edição não devem estar dispovíveis)', function () {
-					cy.allure().severity('normal').startStep('test content')
+					// cy.allure().severity('normal').startStep('test content')
 						.descriptionHtml(testDescritpion.recebido)
 
 					editar(seedTestDocumento.documento564321.filtro, seedTestDocumento.documento564321.editarPosRecebimento)
 				})
 
 				it('Validar status de Recebido', function () {
-					cy.allure().severity('normal').startStep('test content')
+					// cy.allure().severity('normal').startStep('test content')
 						.descriptionHtml(testDescritpion.recebido)
 
 					validarDetalhes(seedTestDocumento.documento564321.detalhesPosRecebimento)
@@ -166,7 +166,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 				})
 
 				it('Editar documento, excluir anexo', function () {
-					cy.allure().severity('normal').startStep('test content')
+					// cy.allure().severity('normal').startStep('test content')
 						.descriptionHtml(testDescritpion.excluirAnexo)
 
 					editar(seedTestDocumento.documento789.filtro, seedTestDocumento.documento789.editar)

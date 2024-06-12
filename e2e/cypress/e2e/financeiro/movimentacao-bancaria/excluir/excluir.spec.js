@@ -28,7 +28,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Deve excluir Movimentação Bancária', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescription.excluir)
 
           excluir(seedTestExcluir.excluirPagamento)
@@ -45,7 +45,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Deve excluir Movimentação Bancária', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescription.excluir)
 
           excluir(seedTestExcluir.excluirRecebimento)

@@ -26,38 +26,38 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Cadastro', () => {
       context('DIEF 000', () => {
         it('Deve cadastrar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief000.mesmoEstado.cadastro)
         })
 
         it('Deve editar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief000.mesmoEstado.edicao)
         })
 
         it('Deve cadastrar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief000.estadoDiferente.cadastro)
         })
 
         it('Deve editar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief000.estadoDiferente.edicao)
         })
 
 
         it('Deve cadastrar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief000.todosTodos.cadastro)
         })
 
         it('Deve editar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief000.todosTodos.edicao)
         })
@@ -65,37 +65,37 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       context('DIEF 010', () => {
         it('Deve cadastrar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief010.mesmoEstado.cadastro)
         })
 
         it('Deve editar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief010.mesmoEstado.edicao)
         })
 
         it('Deve cadastrar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief010.estadoDiferente.cadastro)
         })
 
         it('Deve editar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief010.estadoDiferente.edicao)
         })
 
         it('Deve cadastrar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief010.todosTodos.cadastro)
         })
 
         it('Deve editar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief010.todosTodos.edicao)
         })
@@ -103,37 +103,37 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       context('DIEF 020', () => {
         it('Deve cadastrar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief020.mesmoEstado.cadastro)
         })
 
         it('Deve editar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief020.mesmoEstado.edicao)
         })
 
         it('Deve cadastrar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief020.estadoDiferente.cadastro)
         })
 
         it('Deve editar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief020.estadoDiferente.edicao)
         })
 
         it('Deve cadastrar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief020.todosTodos.cadastro)
         })
 
         it('Deve editar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief020.todosTodos.edicao)
         })
@@ -141,37 +141,37 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       context('DIEF 040', () => {
         it('Deve cadastrar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief040.mesmoEstado.cadastro)
         })
 
         it('Deve editar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief040.mesmoEstado.edicao)
         })
 
         it('Deve cadastrar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief040.estadoDiferente.cadastro)
         })
 
         it('Deve editar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief040.estadoDiferente.edicao)
         })
 
         it('Deve cadastrar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief040.todosTodos.cadastro)
         })
 
         it('Deve editar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief040.todosTodos.edicao)
         })
@@ -179,37 +179,37 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       context('DIEF 041', () => {
         it('Deve cadastrar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief041.mesmoEstado.cadastro)
         })
 
         it('Deve editar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief041.mesmoEstado.edicao)
         })
 
         it('Deve cadastrar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief041.estadoDiferente.cadastro)
         })
 
         it('Deve editar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief041.estadoDiferente.edicao)
         })
 
         it('Deve cadastrar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief041.todosTodos.cadastro)
         })
 
         it('Deve editar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief041.todosTodos.edicao)
         })
@@ -217,37 +217,37 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       context('DIEF 070', () => {
         it('Deve cadastrar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief070.mesmoEstado.cadastro)
         })
 
         it('Deve editar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief070.mesmoEstado.edicao)
         })
 
         it('Deve cadastrar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief070.estadoDiferente.cadastro)
         })
 
         it('Deve editar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief070.estadoDiferente.edicao)
         })
 
         it('Deve cadastrar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief070.todosTodos.cadastro)
         })
 
         it('Deve editar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief070.todosTodos.edicao)
         })
@@ -255,37 +255,37 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       context('DIEF 090', () => {
         it('Deve cadastrar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief090.mesmoEstado.cadastro)
         })
 
         it('Deve editar documento - Mesmo Estado', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief090.mesmoEstado.edicao)
         })
 
         it('Deve cadastrar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief090.estadoDiferente.cadastro)
         })
 
         it('Deve editar documento - Estado Diferente', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief090.estadoDiferente.edicao)
         })
 
         it('Deve cadastrar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.cadastrar(seedTestDief090.todosTodos.cadastro)
         })
 
         it('Deve editar documento - Todos/Todos Estados', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Documentos.validarCamposEdicao(seedTestDief090.todosTodos.edicao)
         })

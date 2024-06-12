@@ -29,7 +29,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Listagem', () => {
       context('Filtragem de Documentos', () => {
         it('Cadastrar documentos via API', function () {
-          cy.allure().severity('Critical').startStep('test content')
+          // cy.allure().severity('Critical').startStep('test content')
 
           Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento789456, 'login_cenarios')
           Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento987456, 'login_cenarios')
@@ -38,28 +38,28 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Sem preenchimento de filtro', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.semFiltro)
 
           listagem(seedTestDocumento.semFiltro)
         })
 
         it('Filtrar por Pessoa', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtrarPessoa)
 
           listagem(seedTestDocumento.filtroPessoa)
         })
 
         it('Filtrar por Tag', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtrarTag)
 
           listagem(seedTestDocumento.filtroTag)
         })
 
         it('Filtrar por Conferido', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtrarConferido)
 
           conferir(seedTestDocumento.filtroConferido.conferir)
@@ -68,35 +68,35 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Filtrar por Não Conferido', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtrarConferido)
 
           listagem(seedTestDocumento.filtroNaoConferido)
         })
 
         it('Filtrar por Safra e Ciclo', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtrarSafraCiclo)
 
           listagem(seedTestDocumento.filtroSafraCiclo)
         })
 
         it('Filtrar por Fazenda', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtrarFazenda)
 
           listagem(seedTestDocumento.filtroFazenda)
         })
 
         it('Filtrar por Data', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtrarData)
 
           listagem(seedTestDocumento.filtroData)
         })
 
         it('Filtrar por Safra', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtrarSafra)
 
           listagem(seedTestDocumento.filtroSafra)

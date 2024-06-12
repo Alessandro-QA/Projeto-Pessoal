@@ -20,25 +20,25 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         context('Adicionar Conciliação Bancária', () => {
             describe('Lançamento Indevido - Pagamento', () => {
                 it('Deve adicionar pagamento indevido', function () {
-                    cy.allure().severity('normal').startStep('test content').descriptionHtml(testDescription.pagamento)
+                    // cy.allure().severity('normal').startStep('test content').descriptionHtml(testDescription.pagamento)
 
                     Movimentacao.adicionarPagamentoRecebimento(seedTestConciliacao.pagamento)
                 })
 
                 it('Deve validar card no Extrato Bancário', function () {
-                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoIndevido)
+                    // cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoIndevido)
 
                     ConciliacaoBancaria.validarLancamentoIndevidoExtratoBancario(seedTestConciliacao.lancamentoIndevidoPagamento)
                 })
 
                 it('Deve validar card no Extrato do MyFarm', function () {
-                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoIndevido)
+                    // cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoIndevido)
 
                     ConciliacaoBancaria.validarLancamentoPresenteMyFarm(seedTestConciliacao.lancamentoIndevidoPagamento)
                 })
 
                 it('Deve finalizar a Conciliação Bancária', function () {
-                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.finalizarConciliacao)
+                    // cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.finalizarConciliacao)
 
                     ConciliacaoBancaria.finalizarConciliacao(seedTestConciliacao.lancamentoIndevidoPagamento)
                 })
@@ -46,25 +46,25 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
             describe('Lançamento Indevido - Recebimento', { tags: '@movimentacaoBancaria' }, () => {
                 it('Deve adicionar recebimento indevido', function () {
-                    cy.allure().severity('normal').startStep('test content').descriptionHtml(testDescription.recebimento)
+                    // cy.allure().severity('normal').startStep('test content').descriptionHtml(testDescription.recebimento)
 
                     Movimentacao.adicionarPagamentoRecebimento(seedTestConciliacao.recebimento)
                 })
 
                 it('Deve validar card no Extrato Bancário', function () {
-                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoIndevido)
+                    // cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoIndevido)
 
                     ConciliacaoBancaria.validarLancamentoIndevidoExtratoBancario(seedTestConciliacao.lancamentoIndevidoRecebimento)
                 })
 
                 it('Deve validar card no Extrato do MyFarm', function () {
-                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoIndevido)
+                    // cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.lancamentoIndevido)
 
                     ConciliacaoBancaria.validarLancamentoPresenteMyFarm(seedTestConciliacao.lancamentoIndevidoRecebimento)
                 })
 
                 it('Deve finalizar a Conciliação Bancária', function () {
-                    cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.finalizarConciliacao)
+                    // cy.allure().severity('critical').startStep('test content').descriptionHtml(testDescription.finalizarConciliacao)
 
                     ConciliacaoBancaria.finalizarConciliacao(seedTestConciliacao.lancamentoIndevidoRecebimento)
                 })

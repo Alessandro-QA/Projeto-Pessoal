@@ -32,7 +32,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       })
 
       it('Deve registrar Pagamento', function () {
-        cy.allure().severity('critical').startStep('test content')
+        // cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.pagamento)
 
         AgendaFinanceira.pagarPelaAgenda(seedTestAgendaFinanceira.pagamento)
@@ -44,7 +44,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       })
 
       it('Deve registrar Recebimento', function () {
-        cy.allure().severity('critical').startStep('test content')
+        // cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.recebimento)
 
         AgendaFinanceira.pagarPelaAgenda(seedTestAgendaFinanceira.recebimento)

@@ -6,6 +6,7 @@ const { merge } = require('webpack-merge');
 const { rmdir } = require('fs');
 const cypressGrep = require('cypress-grep/src/plugin');
 const { allureCypress } = require("allure-cypress/reporter");
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 // Função para encontrar qual arquivo de configuração de ambiente será carregado pelo Cypress,
 // esses arquivos são obtidos do diretório 'cypress/config-files' de acordo
@@ -25,8 +26,13 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // Allure Report
-      allureCypress(on, {
-        resultsDir: "cypress/allure-results",
+      /*allureCypress(on, {
+        ...config,
+        resultsDir: "cypress/allure-results"
+      });*/
+
+      allureWriter(on, config, {
+        outputDir: 'cypress/allure-results', // Pasta onde os resultados Allure serão escritos
       });
  
       // plugin de filtragem de testes usando uma substring (tags)
@@ -61,6 +67,14 @@ module.exports = defineConfig({
             });
           });
         },
+      });
+
+      on('task', {
+        allureReportTest() {
+          // Implemente a lógica para gerar o relatório do Allure ou qualquer operação desejada
+          // Exemplo simples de retorno
+          return { stage: 'dev' };
+        }
       });
  
       const allConfig = merge({}, config, envConfig);

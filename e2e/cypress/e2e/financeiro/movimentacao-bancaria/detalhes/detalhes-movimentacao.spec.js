@@ -29,14 +29,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Deve validar os detalhes da Movimentação Bancária - Pagamento', function () {
-          cy.allure().severity('normal').startStep('test contet')
+          // cy.allure().severity('normal').startStep('test contet')
             .descriptionHtml(testDescription.detalhes)
 
           detalhes(seedTestDetalhes.detalhesPagamento)
         })
 
         it('Deve validar os detalhes da Movimentação Bancária - Recebimento', function () {
-          cy.allure().severity('normal').startStep('test contet')
+          // cy.allure().severity('normal').startStep('test contet')
             .descriptionHtml(testDescription.detalhes)
 
           detalhes(seedTestDetalhes.detalhesRecebimento)

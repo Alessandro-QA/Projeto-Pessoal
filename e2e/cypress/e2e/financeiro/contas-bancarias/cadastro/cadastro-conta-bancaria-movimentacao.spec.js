@@ -19,14 +19,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
   describe('Contas Bancárias', { tags: '@contasBancarias' }, () => {
     context('Cadastro de Conta - Sem inclusão de saldo disponível', () => {
       it('Deve cadastrar conta Bancária sem marcar o checkbox "Incluir no saldo disponível"', function () {
-        cy.allure().severity('normal').startStep('test content')
+        // cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.contaCorrenteMovimentacao)
 
         ContaBancaria.cadastroEditar(seedTestContaBancaria.contaBancaria)
       })
 
       it('Deve validar movimentação financeira e validar lançamento de movimentação inicial', function () {
-        cy.allure().severity('minor').startStep('test content')
+        // // cy.allure().severity('minor').startStep('test content')
 
         MovimentacaoBancaria.validarListagem(seedTestContaBancaria.listagemMovimentacao)
       })

@@ -25,13 +25,13 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
 
       context('Consultar Extrato de Materiais após cadastro de Colheita Interna', () => {
         it('Deve cadastrar colheita por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Utils.requestApi('POST', '/api/producao-agricola/v1/colheitas', bodyColheita, 'login_cenarios')
         })
 
         it('Deve validar colheita no Extrato de Materiais', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.description)
 
           ExtratoMateriais.validarExtratoMateriais(seedTest)

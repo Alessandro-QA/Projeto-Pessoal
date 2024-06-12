@@ -28,37 +28,37 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Cadastro', () => {
       context('Com 2 categorias pago pela Agenda Financeira', () => {
         it('Cadastrar documento por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento, 'login_cenarios')
         })
 
         it('Validar o documento na Agenda Financeira', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           AgendaFinanceira.validarDashboard(seedTest.agendaFinanceira)
         })
 
         it('Pagar o documento pela Agenda Financeira', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           AgendaFinanceira.pagarPelaAgenda(seedTest.agendaFinanceira)
         })
 
         it('Confirmar se gerou Movimentação Bancária', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           Movimentacao.validarListagem(seedTest.movimentacaoBancaria)
         })
 
         it('Confirmar se gerou Livro Caixa', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           LivroCaixa.validarLancamentos(seedTest.lancamentoLivroCaixa)
         })
 
         it('Exportar o CSV do Livro Caixa', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.livroCaixa)
 
           LivroCaixa.exportar(seedTest.lancamentoLivroCaixa)

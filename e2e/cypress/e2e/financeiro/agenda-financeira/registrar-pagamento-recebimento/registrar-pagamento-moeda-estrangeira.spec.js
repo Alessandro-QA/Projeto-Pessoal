@@ -22,31 +22,31 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     describe('Pagamento em moeda estrangeira', () => {
       context('Guarani', () => {
         it('CT1 - Deve cadastrar documento para pagamento', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Documentos.cadastrar(pagamentoGuarani.ct1)
         })
 
         it('CT2 - Não deve registrar pagamento rápido', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           AgendaFinanceira.pagarPelaAgenda(pagamentoGuarani.ct2)
         })
 
         it('CT3 - Não deve registrar pagamento em lote', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           AgendaFinanceira.pagarReceberLote(pagamentoGuarani.ct3)
         })
 
         it('CT4 - Deve registrar pagamento', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           AgendaFinanceira.pagarReceberTitulo(pagamentoGuarani.ct4)
         })
 
         it('CT5 - Deve validar pagamento', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           AgendaFinanceira.validarPagosRecebidos(pagamentoGuarani.ct5)
         })
@@ -54,31 +54,31 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       context('Dólar', () => {
         it('CT1 - Deve cadastrar documento para pagamento', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Documentos.cadastrar(pagamentoDolar.ct1)
         })
 
         it('CT2 - Não deve registrar pagamento rápido', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           AgendaFinanceira.pagarPelaAgenda(pagamentoDolar.ct2)
         })
 
         it('CT3 - Não deve registrar pagamento em lote', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           AgendaFinanceira.pagarReceberLote(pagamentoDolar.ct3)
         })
 
         it('CT4 - Deve registrar pagamento', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           AgendaFinanceira.pagarReceberTitulo(pagamentoDolar.ct4)
         })
 
         it('CT5 - Deve validar pagamento', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           AgendaFinanceira.validarPagosRecebidos(pagamentoDolar.ct5)
         })

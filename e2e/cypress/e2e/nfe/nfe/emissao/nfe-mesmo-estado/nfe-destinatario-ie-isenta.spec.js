@@ -26,25 +26,25 @@ describe('NF-e', { tags: '@nfe' }, () => {
 
       context('Destinatário com IE isenta', () => {
         it('Deve definir destinatário como IE isenta - API', function () {
-          cy.allure().severity('minor').startStep('test content')
+          // // cy.allure().severity('minor').startStep('test content')
 
           Utils.requestApi('PUT', '/api/pessoa/v1/Pessoa', payloadDestinatarioIsento, 'login_nfe')
         })
 
         it('Deve cadastrar NF-e', function () {
-          cy.allure().severity('blocker').startStep('test content')
+          // cy.allure().severity('blocker').startStep('test content')
 
           Nfe.cadastrar(seedTestNfe)
         })
 
         it('Deve validar detalhes da NF-e cadastrada', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Nfe.validarDetalhes(seedTestNfe)
         })
 
         it('Deve reinserir IE do destinatário - API', function () {
-          cy.allure().severity('minor').startStep('test content')
+          // // cy.allure().severity('minor').startStep('test content')
 
           Utils.requestApi('PUT', '/api/pessoa/v1/Pessoa', payloadDestinatarioNaoIsento, 'login_nfe')
         })

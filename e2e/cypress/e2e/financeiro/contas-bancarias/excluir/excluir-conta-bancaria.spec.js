@@ -26,14 +26,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       })
 
       it('Deve excluir conta bancária - Conta Corrente', function () {
-        cy.allure().severity('normal').startStep('test content')
+        // cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.excluir)
 
         ContaBancaria.excluir(seedTestExcluirConta.contaCorrente)
       })
 
       it('Deve validar exclusão na listagem - Conta Corrente', function () {
-        cy.allure().severity('minor').startStep('test content')
+        // // cy.allure().severity('minor').startStep('test content')
 
         ContaBancaria.validarListagem(seedTestExcluirConta.contaCorrente)
       })
@@ -45,14 +45,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       })
 
       it('Deve excluir conta bancária - Cartão de Crédito', function () {
-        cy.allure().severity('normal').startStep('test content')
+        // cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.excluir)
 
         ContaBancaria.excluir(seedTestExcluirConta.cartaoCredito)
       })
 
       it('Deve validar exclusão na listagem - Cartão de Crédito', function () {
-        cy.allure().severity('minor').startStep('test content')
+        // // cy.allure().severity('minor').startStep('test content')
 
         ContaBancaria.validarListagem(seedTestExcluirConta.cartaoCredito)
       })
@@ -63,14 +63,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       })
 
       it('Deve excluir conta bancária - Conta Tesouraria', function () {
-        cy.allure().severity('normal').startStep('test content')
+        // cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.excluir)
 
         ContaBancaria.excluir(seedTestExcluirConta.contaTesouraria)
       })
 
       it('Deve validar exclusão na listagem - Conta Tesouraria', function () {
-        cy.allure().severity('minor').startStep('test content')
+        // // cy.allure().severity('minor').startStep('test content')
 
         ContaBancaria.validarListagem(seedTestExcluirConta.contaTesouraria)
       })

@@ -19,7 +19,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
     context('Pessoa', () => {
       // Teste para cadastro de uma nova pessoa
       it('Deve cadastrar uma pessoa', function () {
-        cy.allure().severity('critical').startStep('test content')
+        // cy.allure().severity('critical').startStep('test content')
           .descriptionHtml(testDescription.pessoa)
 
         Pessoa.cadastro(seedTestPessoa)
@@ -27,7 +27,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
 
       // Validação da Dashboard de pessoa
       it('Deve validar a Dashboard de Cadastro de pessoas', function () {
-        cy.allure().severity('minor').startStep('test content')
+        // // cy.allure().severity('minor').startStep('test content')
 
         Pessoa.validarDashboard(seedTestPessoa)
       })

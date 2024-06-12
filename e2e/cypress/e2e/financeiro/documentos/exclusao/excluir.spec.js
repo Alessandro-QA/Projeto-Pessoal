@@ -29,21 +29,21 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Exclusão', () => {
       context('Documento conferido e não conferido', () => {
         it('Cadastrar documentos por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento789456, 'login_cenarios')
           Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento987456, 'login_cenarios')
         })
 
         it('Não conferido', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescription.naoConferido)
 
           excluir(seedTestExcluir.documento789456)
         })
 
         it('Conferido', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescription.conferido)
 
           conferir(seedTestExcluir.documento987456)

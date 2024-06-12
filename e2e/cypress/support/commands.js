@@ -1,5 +1,6 @@
 import './request.js'
 
+
 Cypress.Commands.add('getToken', (email, password) => {
     cy.section(`Gerando Access Token para o usuário "${email}"`)
 
@@ -22,5 +23,35 @@ Cypress.Commands.add('getToken', (email, password) => {
         cy.step(`Access Token do usuário ${email} definido nas variaveis de ambiente do Cypress com sucesso!`)
     })
 })
+
+// Command para navegar entre as páginas
+Cypress.Commands.add('navegarPara', (url, locator, tituloPagina) => {
+    cy.visit(url, { timeout: 30000 })
+  
+    cy.get(locator, { timeout: 30000 })
+      .should('exist').and('be.visible')
+      .and('contain', tituloPagina)
+  })
+
+  
+Cypress.Commands.add('getVisible', (locator) => {
+    return cy.get(locator).scrollIntoView().should('exist').and('be.visible')
+  })
+
+  // Command Cypress para desabilitar a popup de notificação do MyFarm,
+// setando um item no localStorage. 
+Cypress.Commands.add('desabilitarPopUpNotificacao', () => {
+    window.localStorage.setItem('notification-permission-myfarm', 'denied')
+  })
+  
+  // Command Cypress para executar uma query, utilizando a task cypress preparedStatement
+  // que faz preparação da instrução que será enviada ao banco de dados.
+  Cypress.Commands.add('executarQuery', (query) => {
+    const dbConfig = Cypress.env('db')
+    return cy.task('preparedStatement', { query, dbConfig }, { timeout: 60000 })
+  })
+  
+  
+  
 
 

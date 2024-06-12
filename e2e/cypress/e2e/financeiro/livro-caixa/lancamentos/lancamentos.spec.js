@@ -43,63 +43,63 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Deve trazer livro caixa ao selecionar Produtor', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.lancamentoProdutor)
 
           LivroCaixa.validarLancamentos(seedTestLivroCaixa.produtor)
         })
 
         it('Deve filtrar pelo Produtor', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtroProdutor)
 
           LivroCaixa.validarLancamentos(seedTestLivroCaixa.filtroProdutor)
         })
 
         it('Deve filtrar pela Data', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtroData)
 
           LivroCaixa.validarLancamentos(seedTestLivroCaixa.filtroData)
         })
 
         it('Deve filtrar pela Conta', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtroConta)
 
           LivroCaixa.validarLancamentos(seedTestLivroCaixa.filtroConta)
         })
 
         it('Deve filtrar pela Fazenda', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtroFazenda)
 
           LivroCaixa.validarLancamentos(seedTestLivroCaixa.filtroFazenda)
         })
 
         it('Deve filtrar por Pessoa', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtroPessoa)
 
           LivroCaixa.validarLancamentos(seedTestLivroCaixa.filtroPessoa)
         })
 
         it('Deve filtrar pelo tipo Saída', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtroEntradaSaida)
 
           LivroCaixa.validarLancamentos(seedTestLivroCaixa.filtroDedutivelSaida)
         })
 
         it('Deve filtrar pelo tipo Entrada', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtroEntradaSaida)
 
           LivroCaixa.validarLancamentos(seedTestLivroCaixa.filtroDedutivelEntrada)
         })
 
         it('Deve filtrar por Origem', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtrarOrigem)
 
           LivroCaixa.validarLancamentos(seedTestLivroCaixa.filtroOrigem)
@@ -107,7 +107,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
         // Filtrar por não dedutível e clica no card lateral "Não Dedutivel", para tornar o lançamento visivel
         it('Deve filtrar por Não Dedutivel e tornar os lançamentos visíveis', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtrarDedutiveisNaoDedutiveis)
 
           LivroCaixa.validarLancamentos(seedTestLivroCaixa.filtroDedutivel)
@@ -116,7 +116,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       context('Exportação', () => {
         it('Deve exportar livro caixa do produtor selecionado', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.exportarLivroCaixa)
 
           LivroCaixa.exportar(seedTestLivroCaixa.exportar)

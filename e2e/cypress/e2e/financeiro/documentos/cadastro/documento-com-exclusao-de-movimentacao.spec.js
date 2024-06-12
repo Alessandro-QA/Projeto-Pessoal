@@ -37,7 +37,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Cadastro', () => {
       context('Com exclusão de Movimentação Bancária', () => {
         it('Cadastrar documentos por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento2000, 'login_cenarios')
           Utils.requestApi('POST', '/api/financeiro/v1/Documento', bodyDocumento2001, 'login_cenarios')
@@ -45,7 +45,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Validar titulos na Agenda Financeira (A Pagar)', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           AgendaFinanceira.validarDashboard(seedTestAgenda.aPagar.agendaFinanceira2000)
           AgendaFinanceira.validarDashboard(seedTestAgenda.aPagar.agendaFinanceira2001)
@@ -53,7 +53,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Pagar título na Agenda Financeira', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           AgendaFinanceira.pagarPelaAgenda(seedTestAgenda.aPagar.agendaFinanceira2000)
           AgendaFinanceira.pagarPelaAgenda(seedTestAgenda.aPagar.agendaFinanceira2001)
@@ -61,7 +61,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Validar títulos pagos', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           AgendaFinanceira.validarDashboard(seedTestAgenda.pago.agendaFinanceira2000)
           AgendaFinanceira.validarDashboard(seedTestAgenda.pago.agendaFinanceira2001)
@@ -69,7 +69,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Validar movimentação bancária', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Movimentacao.validarListagem(seedTestMovimentacao.movimentacaoBancaria2000)
           Movimentacao.validarListagem(seedTestMovimentacao.movimentacaoBancaria2001)
@@ -77,54 +77,54 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Validar lançamentos no Livro Caixa', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           LivroCaixa.validarLancamentos(seedTestLivroCaixa.lancamentoLivroCaixa)
         })
 
         it('Validar resultado da safra - Dashboard', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           ResultadoSafra.resultadoSintetico(seedTestResultadoSafra.resultadoDaSafraDashboard)
         })
 
         it('Validar resultado da safra - Analítica', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           ResultadoSafra.resultadoAnalitico(seedTestResultadoSafra.resultadoDaSafraAnalitica)
         })
 
         it('Excluir movimentação bancária - 2000', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Movimentacao.excluir(seedTestMovimentacao.movimentacaoBancaria2000)
         })
         it('Excluir movimentação bancária - 2001', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Movimentacao.excluir(seedTestMovimentacao.movimentacaoBancaria2001)
         })
 
         it('Excluir movimentação bancária - 2002', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Movimentacao.excluir(seedTestMovimentacao.movimentacaoBancaria2002)
         })
 
         it('Validar exclusão da movimentação bancária', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Movimentacao.validarExclusao(seedTestMovimentacao.movimentacaoBancaria2000)
         })
 
         it('Validar exclusão no livro caixa', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           LivroCaixa.validarExclusao(seedTestLivroCaixa.exclusaoLivroCaixa)
         })
 
         it('Validar status dos títulos na Agenda Financeira (A Pagar)', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           AgendaFinanceira.validarDashboard(seedTestAgenda.aPagar.agendaFinanceira2000)
           AgendaFinanceira.validarDashboard(seedTestAgenda.aPagar.agendaFinanceira2001)
@@ -132,41 +132,41 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Validar se exclusão refletiu no resultado da safra - Dashboard', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           ResultadoSafra.resultadoSintetico(seedTestResultadoSafra.resultadoDaSafraDashboard)
         })
 
         it('Validar se exclusão refletiu no resultado da safra - Analítica', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           ResultadoSafra.resultadoAnalitico(seedTestResultadoSafra.resultadoDaSafraAnalitica)
         })
 
         it('Excluir documento 2000', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           excluir(seedExcluirDocumento.documento2000)
         })
         it('Excluir documento 2001', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           excluir(seedExcluirDocumento.documento2001)
         })
         it('Excluir documento 2002', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
 
           excluir(seedExcluirDocumento.documento2002)
         })
 
         it('Validar se exclusão refletiu no resultado da safra - Dashboard', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           ResultadoSafra.resultadoSintetico(seedTestResultadoSafra.exclusaoResultadoDaSafraDashboard)
         })
 
         it('Validar se exclusão refletiu no resultado da safra - Analítica', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           ResultadoSafra.resultadoAnalitico(seedTestResultadoSafra.exclusaoResultadoDaSafraAnalitica)
         })

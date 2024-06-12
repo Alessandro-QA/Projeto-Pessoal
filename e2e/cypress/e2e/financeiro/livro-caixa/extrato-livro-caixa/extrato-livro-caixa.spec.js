@@ -37,21 +37,21 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Deve Filtrar por produtor', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtroProdutor)
 
           LivroCaixa.validarExtrato(seedTestLivroCaixa.filtroProdutor)
         })
 
         it('Deve filtrar por ano', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtroAno)
 
           LivroCaixa.validarExtrato(seedTestLivroCaixa.filtroAno)
         })
 
         it('Deve filtrar por todos (Ativo e Inativo)', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescription.filtroTodos)
 
           cy.log('Inativar lancamento no livro caixa')
@@ -65,7 +65,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       context('Exportação do Livro Caixa', () => {
         it('Deve exportar extrato do Livro Caixa', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescription.exportar)
 
           LivroCaixa.validarExtrato(seedTestLivroCaixa.exportar)

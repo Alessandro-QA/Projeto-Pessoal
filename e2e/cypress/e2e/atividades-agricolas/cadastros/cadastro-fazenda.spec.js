@@ -19,7 +19,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
     context('Fazenda', () => {
       // Teste de cadastro de uma nova fazenda
       it('Deve cadastrar uma fazenda', function () {
-        cy.allure().severity('normal').startStep('test content')
+        // cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.fazenda)
 
         Fazenda.cadastro(seedTestFazenda)
@@ -27,7 +27,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
 
       // Validação da Dashboard de fazenda
       it('Deve validar a Dashboard de fazenda', function () {
-        cy.allure().severity('minor').startStep('test content')
+        // // cy.allure().severity('minor').startStep('test content')
 
         Fazenda.validarDashboard(seedTestFazenda)
       })

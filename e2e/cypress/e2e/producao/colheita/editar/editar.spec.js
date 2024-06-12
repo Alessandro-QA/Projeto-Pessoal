@@ -26,20 +26,20 @@ describe('Produção', { tags: '@producao' }, () => {
 
       context('Edição de colheita externa', () => {
         it('Deve cadastrar colheita por API', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           requestApi('POST', '/api/producao-agricola/v1/colheitas', bodyColheita, 'login_cenarios')
         })
 
         it('Deve editar colheita', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescription.editar)
 
           cadastrarEditar(seedTestEditar)
         })
 
         it('Deve validar listagem de colheita após edição', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           validarListagem(seedTestDashboard)
         })

@@ -19,7 +19,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
     context('Safra', () => {
       // Teste de cadastro de uma nova safra
       it('Deve cadastrar uma safra', function () {
-        cy.allure().severity('normal').startStep('test content')
+        // cy.allure().severity('normal').startStep('test content')
           .descriptionHtml(testDescription.safra)
 
         Safra.cadastro(seedTestSafra)
@@ -27,7 +27,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
 
       // Validação da dashboard de safra
       it('Deve validar a Dashboard de safra', function () {
-        cy.allure().severity('minor').startStep('test content')
+        // // cy.allure().severity('minor').startStep('test content')
 
         Safra.validarDashboard(seedTestSafra)
       })

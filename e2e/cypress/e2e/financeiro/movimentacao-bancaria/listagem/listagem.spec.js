@@ -42,21 +42,21 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Deve filtrar por Empresa/Pessoa', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescritpion.filtroEmpresa)
 
           validarListagem(seedTestListagemMovimentacao.movimentacaoEmpresa)
         })
 
         it('Deve filtrar por Conta', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescritpion.filtroConta)
 
           validarListagem(seedTestListagemMovimentacao.movimentacaoContaBancaria)
         })
 
         it('Deve filtrar por Data', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescritpion.filtroData)
 
           validarListagem(seedTestListagemMovimentacao.movimentacaoData)

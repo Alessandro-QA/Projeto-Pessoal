@@ -20,14 +20,14 @@ describe('NF-e', { tags: '@nfe' }, () => {
 
       context('Emitente MT para Destinatário GO', () => {
         it('Deve cadastrar NF-e', function () {
-          cy.allure().severity('blocker').startStep('test content')
+          // cy.allure().severity('blocker').startStep('test content')
             .tag('nfe').description(testDescription.cadastrarNfe)
 
           Nfe.cadastrar(seedTestNfe)
         })
 
         it('Deve validar detalhes da NF-e cadastrada', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .tag('nfe').description(testDescription.validarDetalhes)
 
           Nfe.validarDetalhes(seedTestNfe)

@@ -21,14 +21,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Adicionar Pagamento', () => {
       context('Adição de pagamento e validação da listagem', () => {
         it('Deve adicionar pagamento', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescritpion.pagamento)
 
           Movimentacao.adicionarPagamentoRecebimento(seedTestPagamento.pagamento)
         })
 
         it('Deve validar movimentação do tipo Pagamento', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
             .descriptionHtml(testDescritpion.recebimento)
 
           Movimentacao.validarListagem(seedTestPagamento.pagamento)
@@ -39,14 +39,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Adicionar Recebimento', () => {
       context('Adição de recebimento e validação da listagem', () => {
         it('Deve adicionar recebimento', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescritpion.transferencia)
 
           Movimentacao.adicionarPagamentoRecebimento(seedTestPagamento.recebimento)
         })
 
         it('Deve validar movimentação do tipo Recebimento', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Movimentacao.validarListagem(seedTestPagamento.recebimento)
         })
@@ -56,14 +56,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Adicionar Transferência', () => {
       context('Adição de transferência e validação da listagem', () => {
         it('Deve adicionar transferência', function () {
-          cy.allure().severity('critical').startStep('test content')
+          // cy.allure().severity('critical').startStep('test content')
             .descriptionHtml(testDescritpion.transferencia)
 
           Movimentacao.adicionarPagamentoRecebimento(seedTestPagamento.transferencia)
         })
 
         it('Deve validar movimentação do tipo Transferência', function () {
-          cy.allure().severity('normal').startStep('test content')
+          // cy.allure().severity('normal').startStep('test content')
 
           Movimentacao.validarListagem(seedTestPagamento.transferencia)
         })
