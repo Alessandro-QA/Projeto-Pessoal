@@ -15,7 +15,7 @@ Cypress.Commands.add('getRequest', (url) => {
     })
 })
 
-Cypress.Commands.add('getRequestWhitParams', (url, params) => {
+Cypress.Commands.add('getRequestWithParams', (url, params) => {
     cy.section(`Executando request do tipo "GET" no endpoint "${url}"`)
 
     return cy.api({
@@ -30,7 +30,7 @@ Cypress.Commands.add('getRequestWhitParams', (url, params) => {
     })
 })
 
-Cypress.Commands.add('postRequestWhitParams', (url, params) => {
+Cypress.Commands.add('postRequestWithParams', (url, params) => {
     cy.section(`Executando request do tipo "POST" no endpoint "${url}"`)
 
     return cy.api({
@@ -91,7 +91,7 @@ Cypress.Commands.add('putRequest', (url, payload) => {
     })
 })
 
-Cypress.Commands.add('putRequestWhitParams', (url, params) => {
+Cypress.Commands.add('putRequestWithParams', (url, params) => {
     cy.section(`Executando request do tipo "POST" no endpoint "${url}"`)
 
     return cy.api({

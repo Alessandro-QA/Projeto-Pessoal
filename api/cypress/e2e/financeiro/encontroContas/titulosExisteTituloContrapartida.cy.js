@@ -6,7 +6,7 @@ context('Financeiro', () => {
             
             it('CT1 - Deve verificar se existe título contrapartida', () => {
                 cy.fixture('financeiro/encontroContas/titulosExisteTituloContrapartida/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/EncontroContas/Titulos/ExisteTituloContrapartida`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/EncontroContas/Titulos/ExisteTituloContrapartida`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).be.equal(200);

@@ -5,7 +5,7 @@ context('Financeiro', () => {
         describe(`GET - ${Cypress.env('financeiro')}/Dashboard/RecebimentosCategoria{params} - Recebimentos por Categoria`, () => {
             it('CT1 - Deve buscar dados de Recebimentos por Categoria', () => {
                 cy.fixture('financeiro/dashboard/recebimentosCategoria/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/RecebimentosCategoria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/RecebimentosCategoria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.be.equal(200)
@@ -21,7 +21,7 @@ context('Financeiro', () => {
 
             it('CT2 - Deve buscar dados de Recebimentos por Categoria - Por Tag', () => {
                 cy.fixture('financeiro/dashboard/recebimentosCategoria/paramsCt2.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/RecebimentosCategoria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/RecebimentosCategoria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.be.equal(200)
@@ -37,7 +37,7 @@ context('Financeiro', () => {
 
             it('CT3 - Deve buscar dados de Recebimentos por Categoria - Por Pesquisa', () => {
                 cy.fixture('financeiro/dashboard/recebimentosCategoria/paramsCt3.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/RecebimentosCategoria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/RecebimentosCategoria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.be.equal(200)

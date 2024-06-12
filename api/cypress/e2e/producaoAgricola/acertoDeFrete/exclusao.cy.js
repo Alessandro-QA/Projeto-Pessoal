@@ -2,7 +2,7 @@
 
 context('Produção Agrícola', () => {
     context('Acerto de Frete', () => {
-        context(`DELETE - ${Cypress.env('baseUrl')}${Cypress.env('producaoAgricola')}/AcertoFretes - Exclusão`, () => {
+        context(`DELETE - ${Cypress.env('producaoAgricola')}/AcertoFretes - Exclusão`, () => {
             describe('Pendente', () => {
                 it('CT1 - Deve deletar acerto pendente', () => {
                     cy.fixture('producaoAgricola/acertoDeFrete/exclusao/payloadCt1.json').then((payload) => {

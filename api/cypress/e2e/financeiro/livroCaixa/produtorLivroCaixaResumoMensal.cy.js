@@ -2,10 +2,10 @@
 
 context('Financeiro', () => {
     context('Livro Caixa', () => {
-        describe(`GET - \${Cypress.env('financeiro')}/LivroCaixa/ProdutorLivroCaixaResumoMensal - Obtém todos os registros do Livro Caixa agrupados por mês com filtro`, () => {
+        describe(`GET - ${Cypress.env('financeiro')}/LivroCaixa/ProdutorLivroCaixaResumoMensal - Obtém todos os registros do Livro Caixa agrupados por mês com filtro`, () => {
             it('CT1 - Deve obter registro do Livro Caixa agrupados por Mês', () => {
                 cy.fixture('financeiro/livroCaixa/produtorLivroCaixaResumoMensal/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/LivroCaixa/ProdutorLivroCaixaResumoMensal`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/LivroCaixa/ProdutorLivroCaixaResumoMensal`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).be.equal(200);

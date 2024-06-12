@@ -5,7 +5,7 @@ context('Financeiro', () => {
         describe(`GET - ${Cypress.env('financeiro')}/Dashboard/ProdutoresLivroCaixa{params} - Produtores Livro Caixa`, () => {
             it('CT1 - Deve buscar Livro Caixa por Ano', () => {
                 cy.fixture('financeiro/dashboard/produtoresLivroCaixa/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/produtoresLivroCaixa`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/produtoresLivroCaixa`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.be.equal(200)
@@ -21,7 +21,7 @@ context('Financeiro', () => {
 
             it('CT2 - Deve buscar Livro Caixa por Produtor', () => {
                 cy.fixture('financeiro/dashboard/produtoresLivroCaixa/paramsCt2.json').then((payload) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/produtoresLivroCaixa`, payload)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/produtoresLivroCaixa`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.be.equal(200)
@@ -37,7 +37,7 @@ context('Financeiro', () => {
 
             it('CT3 - Deve buscar Livro Caixa por Produtor e Ano', () => {
                 cy.fixture('financeiro/dashboard/produtoresLivroCaixa/paramsCt3.json').then((payload) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/produtoresLivroCaixa`, payload)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/produtoresLivroCaixa`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.be.equal(200)

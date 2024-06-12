@@ -4,7 +4,7 @@ const assertResponse = { "success": true, "data": true }
 
 context('Produção Agrícola', () => {
     context('Acerto de Frete', () => {
-        describe(`POST - ${Cypress.env('baseUrl')}${Cypress.env('producaoAgricola')}/AcertoFretes - Cadastro`, () => {
+        describe(`POST - ${Cypress.env('producaoAgricola')}/AcertoFretes - Cadastro`, () => {
             it.skip('CT1 - Deve cadastrar Acerto de Frete', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/cadastro/payloadCt1.json').then((payload) => {
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('producaoAgricola')}/AcertoFretes`, payload)

@@ -5,7 +5,7 @@ context('Financeiro', () => {
         describe(`GET - ${Cypress.env('financeiro')}/Documento/ConvertXML - Converte o XML`, () => {
             it('CT1 - Converter XML', () => {
                 cy.fixture('financeiro/documento/convertXML/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/ConvertXML`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/ConvertXML`, params)
                         .then((response) => {
                             expect(response.status).to.be.equal(200);
                             expect(response.body).to.exist;

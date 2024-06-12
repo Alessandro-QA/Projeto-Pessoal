@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Moeda', () => {
-        describe(`POST - ${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Moeda/List - Obtém moedas ativas`, () => {
+        describe(`POST - ${Cypress.env('financeiro')}/Moeda/List - Obtém moedas ativas`, () => {
 
             it('CT1 - Obter todas as moedas ativas', () => {
                 cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Moeda/List`, {})

@@ -2,10 +2,10 @@
 
 context('Financeiro', () => {
     context('Livro Caixa', () => {
-        describe(`GET - \${Cypress.env('financeiro')}/LivroCaixa/ExportarLivroCaixaCSV - Exporta arquivo do Livro Caixa em CSV`, () => {
+        describe(`GET - ${Cypress.env('financeiro')}/LivroCaixa/ExportarLivroCaixaCSV - Exporta arquivo do Livro Caixa em CSV`, () => {
             it('CT1 - Deve exportar registro do Livro Caixa em CSV e verificar a primeira linha', () => {
                 cy.fixture('financeiro/livroCaixa/exportarLivroCaixaCSV/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/LivroCaixa/ExportarLivroCaixaCSV`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/LivroCaixa/ExportarLivroCaixaCSV`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).be.equal(200);

@@ -5,7 +5,7 @@ context('Financeiro', () => {
         describe(`GET - ${Cypress.env('financeiro')}/Dashboard/FluxoCaixa{params} - Fluxo de Caixa`, () => {
             it('CT1 - Deve buscar dados do gráfico de Fluxo de Caixa', () => {
                 cy.fixture('financeiro/dashboard/fluxoCaixa/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/FluxoCaixa`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/FluxoCaixa`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.equal(200)

@@ -2,7 +2,7 @@
 
 context('Produção Agrícola', () => {
     context('Acerto de Frete', () => {
-        context(`PUT - ${Cypress.env('baseUrl')}${Cypress.env('producaoAgricola')}/AcertoFretes - Edição`, () => {
+        context(`PUT - ${Cypress.env('producaoAgricola')}/AcertoFretes - Edição`, () => {
             describe('Pendente', () => {
                 it('CT1 - Deve editar Acerto Com Despesas vinculadas', () => {
                     cy.fixture('producaoAgricola/acertoDeFrete/edicao/pendente/payloadCt1.json').then((payload) => {

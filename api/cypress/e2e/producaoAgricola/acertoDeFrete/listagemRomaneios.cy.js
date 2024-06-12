@@ -2,10 +2,10 @@
 
 context('Produção Agrícola', () => {
     context('Acerto de Frete', () => {
-        describe('GET - Listagem de Romaneios', () => {
+        describe(`GET - ${Cypress.env('producaoAgricola')}/AcertoFretes/ListRomaneios - Listagem de Romaneios`, () => {
             it('CT1 - Deve listar romaneios por motorista', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/listagemRomaneio/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('producaoAgricola')}/AcertoFretes/ListRomaneios`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('producaoAgricola')}/AcertoFretes/ListRomaneios`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.equal(200)
@@ -17,7 +17,7 @@ context('Produção Agrícola', () => {
 
             it('CT2 - Deve listar romaneios por motorista e placa', () => {
                 cy.fixture('producaoAgricola/acertoDeFrete/listagemRomaneio/paramsCt2.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('producaoAgricola')}/AcertoFretes/ListRomaneios`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('producaoAgricola')}/AcertoFretes/ListRomaneios`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.equal(200)

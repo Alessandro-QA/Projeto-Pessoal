@@ -6,7 +6,7 @@ context('Financeiro', () => {
 
             it('CT1 - Obtém Valores Recebidos ou a Receber por filtro', () => {
                 cy.fixture('financeiro/documento/valoresReceberRecebido/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/ValoresReceberRecebido`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/ValoresReceberRecebido`, params)
                         .then((response) => {
                             expect(response.status).be.equal(200);
                             expect(response.body).to.exist;

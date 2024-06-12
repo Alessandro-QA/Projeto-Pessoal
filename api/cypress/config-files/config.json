@@ -4,7 +4,9 @@
     "tenant": "273276e0-7cc1-4891-94de-55e9ced2aad2",
 
     "baseUrl": "https://myfarm.dev.conexa.com.br",
+    "baseUrlBackoffice": "https://gke-apigateway.aliare.digital/dev/myfarm/backoffice/",
 
     "financeiro": "/api/financeiro/v1",
+    "financeiroBackoffice": "/v1/api/Financeiro",
     "producaoAgricola": "/api/producao-agricola/v1"
 }

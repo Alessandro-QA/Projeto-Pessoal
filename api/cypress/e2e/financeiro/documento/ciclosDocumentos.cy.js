@@ -5,7 +5,7 @@ context('Financeiro', () => {
         describe(`GET - ${Cypress.env('financeiro')}/v1/Documento/CiclosDocumentos - Obtém Ciclos Utilizados nos Documentos`, () => {
             it('CT1 - Obtém Ciclos Utilizados nos Documentos', () => {
                 cy.fixture('financeiro/documento/ciclosDocumentos/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/CiclosDocumentos`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/CiclosDocumentos`, params)
                         .then((response) => {
                             expect(response.status).to.be.equal(200);
                             expect(response.body).to.exist;

@@ -5,7 +5,7 @@ context('Financeiro', () => {
         describe(`GET - ${Cypress.env('financeiro')}/Dashboard/DetalhesCategoria{params} - Detalhes por Categoria`, () => {
             it('CT1 - Deve buscar dados dos Detalhes por Categoria - Pagamento', () => {
                 cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/DetalhesCategoria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/DetalhesCategoria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -21,7 +21,7 @@ context('Financeiro', () => {
 
             it('CT2 - Deve buscar dados dos Detalhes por Categoria - Recebimento', () => {
                 cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt2.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/DetalhesCategoria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/DetalhesCategoria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -37,7 +37,7 @@ context('Financeiro', () => {
 
             it('CT3 - Deve buscar dados dos Detalhes por Categoria - Transferência', () => {
                 cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt3.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/DetalhesCategoria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/DetalhesCategoria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -53,7 +53,7 @@ context('Financeiro', () => {
 
             it('CT4 - Deve buscar dados dos Detalhes por Categoria - Por Tag', () => {
                 cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt4.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/DetalhesCategoria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/DetalhesCategoria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -69,7 +69,7 @@ context('Financeiro', () => {
 
             it('CT5 - Deve buscar dados dos Detalhes por Categoria - Por Pesquisa', () => {
                 cy.fixture('financeiro/dashboard/detalhesCategoria/paramsCt5.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/DetalhesCategoria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/DetalhesCategoria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)

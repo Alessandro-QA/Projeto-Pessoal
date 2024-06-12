@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Moeda', () => {
-        describe(`GET - ${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Moeda - Obtém todos os registros de Moeda sem filtro`, () => {
+        describe(`GET - ${Cypress.env('financeiro')}/Moeda - Obtém todos os registros de Moeda sem filtro`, () => {
 
             it('CT1 - Obtém Todos os Registros de Moeda sem filtro', () => {
                 cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Moeda`)

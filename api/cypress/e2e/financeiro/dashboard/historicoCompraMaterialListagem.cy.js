@@ -5,7 +5,7 @@ context('Financeiro', () => {
         describe(`GET - ${Cypress.env('financeiro')}/Dashboard/HistoricoCompraMaterialListagem{params} - Historico de Compra Material Listagem`, () => {
             it('CT1 - Deve buscar Historico de Compra de Material - Listagem', () => {
                 cy.fixture('financeiro/dashboard/historicoCompraMaterialListagem/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/HistoricoCompraMaterialListagem`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/HistoricoCompraMaterialListagem`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.equal(200)

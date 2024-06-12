@@ -2,10 +2,10 @@
 
 context('Financeiro', () => {
     context('Livro Caixa', () => {
-        describe(`GET - \${Cypress.env('financeiro')}/LivroCaixa/Simulador - Obtém simulação anual de Registro do Livro Caixa`, () => {
+        describe(`GET - ${Cypress.env('financeiro')}/LivroCaixa/Simulador - Obtém simulação anual de Registro do Livro Caixa`, () => {
             it('CT1 - Deve simular registro do Livro Caixa', () => {
                 cy.fixture('financeiro/livroCaixa/simulador/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/LivroCaixa/Simulador`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/LivroCaixa/Simulador`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).be.equal(200);

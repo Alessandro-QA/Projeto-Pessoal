@@ -19,7 +19,7 @@ context('Financeiro', () => {
 
             it('CT2 - Deve obter conta de tesouraria por ContaBancariaId', () => {
                 cy.fixture('financeiro/contaBancaria/tesouraria/paramsCt2.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/CaixaTesouraria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/CaixaTesouraria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -35,7 +35,7 @@ context('Financeiro', () => {
 
             it('CT3 - Deve obter conta de tesouraria por EmpresaId', () => {
                 cy.fixture('financeiro/contaBancaria/tesouraria/paramsCt3.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/CaixaTesouraria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/CaixaTesouraria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -51,7 +51,7 @@ context('Financeiro', () => {
 
             it('CT4 - Deve obter contas de tesouraria ativas', () => {
                 cy.fixture('financeiro/contaBancaria/tesouraria/paramsCt4.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/CaixaTesouraria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/CaixaTesouraria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -67,7 +67,7 @@ context('Financeiro', () => {
 
             it('CT5 - Deve obter contas de tesouraria inativas', () => {
                 cy.fixture('financeiro/contaBancaria/tesouraria/paramsCt5.json').then((params) => {
-                    cy.getRequestWhitParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/CaixaTesouraria`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/CaixaTesouraria`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
