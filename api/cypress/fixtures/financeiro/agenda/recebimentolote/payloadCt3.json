@@ -1,0 +1,18 @@
+{
+  "dataInicial": "2024-06-07T00:00:00-03:00",
+  "dataFinal": "2024-07-07T23:59:59-03:00",
+  "filter": {
+    "fields": [
+      "NumeroDocumento",
+      "ValorTitulo",
+      "Pessoa"
+    ]
+  },
+  "filterAgendamento": 0,
+  "page": 1,
+  "size": 20,
+  "statusTitulos": [
+    3
+    
+  ]
+}
