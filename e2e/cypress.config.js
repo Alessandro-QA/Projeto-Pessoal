@@ -17,7 +17,7 @@ function getConfigurationFileFor(env) {
     throw new Error(`Não foi possível encontrar as configurações necessárias no arquivo: ${pathToConfigFile}`);
   }
   console.log('Arquivo de configuração carregado: %o', pathToConfigFile);
- 
+
   return config;
 }
 
@@ -27,9 +27,9 @@ module.exports = defineConfig({
     video: false,
     watchForFileChanges: false,
     chromeWebSecurity: false,
-    
+
     setupNodeEvents(on, config) {
-      
+
       // Allure Report
       allureCypress(on, {
         resultsDir: "cypress/allure-results"
@@ -37,15 +37,16 @@ module.exports = defineConfig({
 
       // plugin de filtragem de testes usando uma substring (tags)
       cypressGrep(config);
- 
+
       // função para leitura das variáveis de ambiente, assume 'dev' como default.
       const env = config.env.ambiente || 'dev';
       const envConfig = getConfigurationFileFor(env);
- 
+
       // plugin para 'linting' dos arquivos de teste
       //on('file:preprocessor', cypressEslint());
- 
+
       // task que executa instrução parametrizada utilizando a lib mssql.
+      /*
       on('task', {
         preparedStatement({ query, dbConfig }) {
           const utilsDatabase = new UtilsDatabase();
@@ -53,10 +54,11 @@ module.exports = defineConfig({
         },
       });
  
+        */
       on('task', {
         deleteDownloadsFolder(folderName) {
           console.log('Deletando diretório %s', folderName);
- 
+
           return new Promise((resolve, reject) => {
             rmdir(folderName, { maxRetries: 5, recursive: true }, (err) => {
               if (err) {
@@ -68,7 +70,7 @@ module.exports = defineConfig({
           });
         },
       });
-      
+
       const allConfig = merge({}, config, envConfig);
       return allConfig;
     },
