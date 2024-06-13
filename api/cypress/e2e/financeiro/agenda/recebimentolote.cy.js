@@ -5,7 +5,7 @@ const dayjs = require('dayjs'); // Importando a biblioteca dayjs
 context('Financeiro', () => {
     context('Agenda', () => {
 
-        describe('POST - /api/financeiro/v1/Agenda/Recebimento - Recebimento', () => {
+        describe(`POST - ${Cypress.env('financeiro')}/Agenda/Recebimento - Recebimento`, () => {
 
             let numeroDocumento1;
             let numeroDocumento2;
@@ -27,7 +27,7 @@ context('Financeiro', () => {
                     payload.financeiro.parcelas[0].vencimento = currentDate;
                     payload.dataRecebimento = currentDate;
 
-                    cy.postRequest('/api/financeiro/v1/Documento', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).to.equal(200);
@@ -50,7 +50,7 @@ context('Financeiro', () => {
                     payload.financeiro.parcelas[0].vencimento = currentDate;
                     payload.dataRecebimento = currentDate;
 
-                    cy.postRequest('/api/financeiro/v1/Documento', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).to.equal(200);
@@ -72,7 +72,7 @@ context('Financeiro', () => {
                     payload.dataInicial = dataInicial;
                     payload.dataFinal = dataFinal;
 
-                    cy.postRequest('/api/financeiro/v1/Agenda/Listagem', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agenda/Listagem`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).to.equal(200);
@@ -96,8 +96,7 @@ context('Financeiro', () => {
                     payload.baixas[0].tituloId = idDocumentoReceber1;
                     payload.baixas[1].tituloId = idDocumentoReceber2;
 
-
-                    cy.postRequest('/api/financeiro/v1/Agenda/RecebimentoLote', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agenda/RecebimentoLote`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'));
                             expect(response.status).to.equal(200);

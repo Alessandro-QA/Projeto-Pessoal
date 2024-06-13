@@ -2,18 +2,18 @@
 
 context('Financeiro', () => {
     context('Agenda', () => {
-        describe('POST - /api/financeiro/v1/Agenda/CSV - CSV', () => {
+        describe(`${Cypress.env('financeiro')}/Agenda/CSV - CSV`, () => {
 
             it('CT1 Deve haver CSV de Todas as Empresas', () => {
                 cy.fixture('financeiro/agenda/CSV/payloadCt1.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/Agenda/CSV', payload).then((response) => {
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agenda/CSV`, payload).then((response) => {
                         // Verifica se a solicitação foi bem-sucedida e se os dados estão presentes
                         expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'))
                         expect(response.status).to.equal(200)
                         expect(response.body).to.exist
                         expect(response.body).to.not.be.null
 
-                        //Obter CSV e dividir em linhas
+                        // Obter CSV e dividir em linhas
                         const csv = response.body;
                         const lines = csv.split('\n');
 
@@ -28,7 +28,7 @@ context('Financeiro', () => {
                             'Pessoa', 'Data de Emissão', 'CPF/CNPJ Pessoa', 'Safra', 'Empresa', 'Número',
                             'Fazenda', 'Categorias', 'Data de Vencimento', 'Forma de Pagamento', 'Parcelas',
                             'Status', 'Tipo', 'Valor', 'Saldo'
-                        ])
+                        ]);
 
                         // Se houver mais de uma linha, verificar apenas a primeira linha de dados
                         if (lines.length > 1) {
@@ -38,13 +38,13 @@ context('Financeiro', () => {
                             expect(firstDataLine.length).to.equal(headers.length);
                         }
 
-                    })
-                })
-            })
+                    });
+                });
+            });
 
             it('CT2 Deve haver CSV de Todos os Títulos Pagos', () => {
                 cy.fixture('financeiro/agenda/CSV/payloadCt2.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/Agenda/CSV', payload).then((response) => {
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agenda/CSV`, payload).then((response) => {
                         // Verifica se a solicitação foi bem-sucedida e se os dados estão presentes
                         expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'))
                         expect(response.status).to.equal(200)
@@ -80,6 +80,6 @@ context('Financeiro', () => {
                     });
                 });
             });
-        })
-    })
-})   
+        });
+    });
+});

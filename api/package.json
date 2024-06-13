@@ -15,7 +15,7 @@
   "devDependencies": {
     "@testing-library/cypress": "^9.0.0",
     "allure-cypress": "^2.15.1",
-    "cypress": "^12.17.4",
+    "cypress": "^13.11.0",
     "cypress-eslint-preprocessor": "^1.2.2",
     "cypress-msteams-reporter": "^1.0.4",
     "cypress-plugin-api": "^2.11.0",
