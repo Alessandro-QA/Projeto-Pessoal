@@ -2,15 +2,14 @@
 
 context('Financeiro', () => {
     context('Documento', () => {
-        describe('GET - /api/financeiro/v1/Documento/ConvertXML - Converte o XML', () => {
-
+        describe(`GET - ${Cypress.env('financeiro')}/Documento/ConvertXML - Converte o XML`, () => {
             it('CT1 - Converter XML', () => {
                 cy.fixture('financeiro/documento/convertXML/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/Documento/ConvertXML', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/ConvertXML`, params)
                         .then((response) => {
-                            expect(response.status).be.equal(200);
+                            expect(response.status).to.be.equal(200);
                             expect(response.body).to.exist;
-                            expect(response.body).be.not.null;
+                            expect(response.body).to.not.be.null;
 
                             // Verifica todas as propriedades do corpo da resposta
                             const body = response.body;
@@ -59,7 +58,6 @@ context('Financeiro', () => {
                             expect(data.ciclos).to.be.an('array');
                             expect(data.categorias).to.be.an('array');
                             expect(data.categoriasDescricao).to.be.a('string');
-
                         });
                 });
             });

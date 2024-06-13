@@ -2,11 +2,11 @@
 
 context('Financeiro', () => {
     context('Encontro Contas', () => {
-        describe('POST - /api/financeiro/v1/EncontroContas/ContasBancarias/Empresas - Valida se Empresa possui conta Tesouraria', () => {
+        describe(`POST - ${Cypress.env('financeiro')}/EncontroContas/ContasBancarias/Empresas - Valida se Empresa possui conta Tesouraria`, () => {
 
             it('CT1 - Deve validar se Conta Empresa possui Tesouraria por ID da Empresa', () => {
                 cy.fixture('financeiro/encontroContas/contasBancariaEmpresa/payloadCt1.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/EncontroContas/ContasBancarias/Empresas', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/EncontroContas/ContasBancarias/Empresas`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -53,7 +53,7 @@ context('Financeiro', () => {
 
             it('CT2 - Deve validar se Conta Empresa não possui Tesouraria por ID da Empresa', () => {
                 cy.fixture('financeiro/encontroContas/contasBancariaEmpresa/payloadCt2.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/EncontroContas/ContasBancarias/Empresas', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/EncontroContas/ContasBancarias/Empresas`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -62,7 +62,7 @@ context('Financeiro', () => {
 
                             // Verifica se `tenantPossuiContaTesourariaCadastrada` é `true`
                             expect(response.body.data).to.have.property('tenantPossuiContaTesourariaCadastrada', true)
-                            // Verifica se `contasTesouraria` não está vazio
+                            // Verifica se `contasTesouraria` está vazio
                             expect(response.body.data.contasTesouraria).to.be.an('array').that.is.empty
                         })
                 })
@@ -70,7 +70,7 @@ context('Financeiro', () => {
 
             it('CT3 - Deve listar todas as Contas Tesourarias', () => {
                 cy.fixture('financeiro/encontroContas/contasBancariaEmpresa/payloadCt3.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/EncontroContas/ContasBancarias/Empresas', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/EncontroContas/ContasBancarias/Empresas`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)

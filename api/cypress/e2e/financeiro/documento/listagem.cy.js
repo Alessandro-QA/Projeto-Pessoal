@@ -2,11 +2,11 @@
 
 context('Financeiro', () => {
     context('Documento', () => {
-        describe('POST - /api/financeiro/v1/Documento/Listagem - Obtém registros de Documentos', () => {
+        describe(`POST - ${Cypress.env('financeiro')}/Documento/Listagem - Obtém registros de Documentos`, () => {
 
             it('CT1 - Obter Registros de Documentos', () => {
                 cy.fixture('financeiro/documento/listagem/payloadCt1.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/Documento/Listagem', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/Listagem`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -49,7 +49,7 @@ context('Financeiro', () => {
                     // Extrair PessoaId do payload
                     const pessoaId = payload.PessoaId;
 
-                    cy.postRequest('/api/financeiro/v1/Documento/Listagem', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/Listagem`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)

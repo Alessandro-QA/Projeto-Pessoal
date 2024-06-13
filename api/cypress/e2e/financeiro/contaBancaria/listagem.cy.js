@@ -2,14 +2,14 @@
 
 context('Financeiro', () => {
     context('Conta Bancaria', () => {
-        describe('GET - /api/financeiro/v1/ContaBancaria/Listagem - Obtém a Listagem de Contas Bancárias', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/ContaBancaria/Listagem - Obtém a Listagem de Contas Bancárias`, () => {
             it('CT1 - Deve obter uma listagem com todas as contas', () => {
-                cy.getRequest('/api/financeiro/v1/ContaBancaria/Listagem')
+                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Listagem`)
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                        expect(response.status).be.equal(200)
+                        expect(response.status).to.be.equal(200)
                         expect(response.body).to.exist
-                        expect(response.body).be.not.null
+                        expect(response.body).to.not.be.null
 
                         // Verificar se os arrays não estão vazios
                         expect(response.body.corrente).to.be.an('array').that.is.not.empty;
@@ -21,12 +21,12 @@ context('Financeiro', () => {
 
             it('CT2 - Deve listar as contas por ContaBancariaId - Corrente', () => {
                 cy.fixture('financeiro/contaBancaria/listagem/paramsCt2.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Listagem', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Listagem`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                            expect(response.status).be.equal(200)
+                            expect(response.status).to.be.equal(200)
                             expect(response.body).to.exist
-                            expect(response.body).be.not.null
+                            expect(response.body).to.not.be.null
 
                             // Verificar se o array 'corrente' não está vazio
                             expect(response.body.corrente).to.be.an('array').that.is.not.empty;
@@ -40,12 +40,12 @@ context('Financeiro', () => {
 
             it('CT3 - Deve listar as contas por ContaBancariaId - Crédito', () => {
                 cy.fixture('financeiro/contaBancaria/listagem/paramsCt3.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Listagem', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Listagem`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                            expect(response.status).be.equal(200)
+                            expect(response.status).to.be.equal(200)
                             expect(response.body).to.exist
-                            expect(response.body).be.not.null
+                            expect(response.body).to.not.be.null
 
                             // Verificar se o array 'credito' não está vazio
                             expect(response.body.credito).to.be.an('array').that.is.not.empty;
@@ -59,12 +59,12 @@ context('Financeiro', () => {
 
             it('CT4 - Deve listar as contas por ContaBancariaId - Tesouraria', () => {
                 cy.fixture('financeiro/contaBancaria/listagem/paramsCt4.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Listagem', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Listagem`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                            expect(response.status).be.equal(200)
+                            expect(response.status).to.be.equal(200)
                             expect(response.body).to.exist
-                            expect(response.body).be.not.null
+                            expect(response.body).to.not.be.null
 
                             // Verificar se o array 'caixaTesouraria' não está vazio
                             expect(response.body.caixaTesouraria).to.be.an('array').that.is.not.empty;
@@ -78,12 +78,12 @@ context('Financeiro', () => {
 
             it('CT5 - Deve listar as contas por EmpresaId - Corrente', () => {
                 cy.fixture('financeiro/contaBancaria/listagem/paramsCt5.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Listagem', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Listagem`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                            expect(response.status).be.equal(200)
+                            expect(response.status).to.be.equal(200)
                             expect(response.body).to.exist
-                            expect(response.body).be.not.null
+                            expect(response.body).to.not.be.null
 
                             // Iterar sobre cada conta no array 'corrente' e verificar o campo 'empresaTitular'
                             response.body.corrente.forEach((conta) => {
@@ -110,12 +110,12 @@ context('Financeiro', () => {
 
             it('CT6 - Deve listar as contas por EmpresaId - Crédito', () => {
                 cy.fixture('financeiro/contaBancaria/listagem/paramsCt6.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Listagem', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Listagem`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                            expect(response.status).be.equal(200)
+                            expect(response.status).to.be.equal(200)
                             expect(response.body).to.exist
-                            expect(response.body).be.not.null
+                            expect(response.body).to.not.be.null
 
                             // Iterar sobre cada conta no array 'credito' e verificar o campo 'empresaTitular'
                             response.body.credito.forEach((conta) => {
@@ -141,14 +141,13 @@ context('Financeiro', () => {
 
             it('CT7 - Deve listar as contas por EmpresaId - Tesouraria', () => {
                 cy.fixture('financeiro/contaBancaria/listagem/paramsCt7.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Listagem', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Listagem`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                            expect(response.status).be.equal(200)
+                            expect(response.status).to.be.equal(200)
                             expect(response.body).to.exist
-                            expect(response.body).be.not.null
+                            expect(response.body).to.not.be.null
 
-                            
                             // Iterar sobre cada conta no array 'caixaTesouraria' e verificar o campo 'empresaTitular'
                             response.body.caixaTesouraria.forEach((conta) => {
                                 expect(conta.empresaTitular).to.equal(params.empresaTitular);
@@ -173,7 +172,7 @@ context('Financeiro', () => {
 
             it('CT8 - Deve listar as contas correntes ativas', () => {
                 cy.fixture('financeiro/contaBancaria/listagem/paramsCt8.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Listagem', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Listagem`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -190,7 +189,7 @@ context('Financeiro', () => {
 
             it('CT9 - Deve listar as contas correntes inativas', () => {
                 cy.fixture('financeiro/contaBancaria/listagem/paramsCt9.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/ContaBancaria/Listagem', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Listagem`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)

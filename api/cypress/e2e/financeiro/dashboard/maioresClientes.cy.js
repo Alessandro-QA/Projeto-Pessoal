@@ -2,15 +2,15 @@
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('GET - /api/financeiro/v1/Dashboard/MaioresClientes{params} - Maiores Clientes', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/Dashboard/MaioresClientes{params} - Maiores Clientes`, () => {
             it('CT1 - Deve buscar dados dos Maiores Clientes', () => {
                 cy.fixture('financeiro/dashboard/maioresClientes/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/MaioresClientes', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/MaioresClientes`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                            expect(response.status).be.equal(200)
-                            expect(response.body).be.not.null
+                            expect(response.status).to.equal(200)
                             expect(response.body).to.exist
+                            expect(response.body).to.not.be.null
 
                             // Validar campo 'total'
                             expect(response.body).to.have.property('total').that.is.a('number');
