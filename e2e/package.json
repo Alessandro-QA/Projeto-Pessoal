@@ -4,8 +4,8 @@
   "private": true,
   "description": "Testes E2E do projeto MyFarm",
   "scripts": {
-    "test:dev": "cypress run --env ambiente=dev",
-    "test:qa": "cypress run --env ambiente=qa",
+    "test:dev": "cypress run --env ambiente=dev --browser chrome",
+    "test:qa": "cypress run --env ambiente=qa --browser chrome",
     "allure:open": "npm run allure:generate && allure open cypress/allure-report",
     "allure:generate": "allure generate cypress/allure-results --clean -o cypress/allure-report",
     "cypress:open:dev": "cypress open --env ambiente=dev",
@@ -19,22 +19,29 @@
     "teamsReport": "cypress-msteams-reporter --verbose --report-path cypress/allure-report/widgets/status-chart.json --testEnv-path cypress/allure-report/widgets/environment.json --report-url __EndToEndTest.AllureUrl__"
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^3.9.11",
+    "@cypress/code-coverage": "^3.12.39",
     "@cypress/skip-test": "^2.6.1",
-    "@shelex/cypress-allure-plugin": "^2.26.5",
-    "@testing-library/cypress": "^7.0.6",
-    "cypress": "^9.6.0",
+    "@cypress/webpack-preprocessor": "^6.0.2",
+    "@testing-library/cypress": "^10.0.2",
+    "allure-commandline": "^2.29.0",
+    "cypress": "^13.11.0",
     "cypress-eslint-preprocessor": "^1.2.2",
     "cypress-grep": "^2.14.0",
-    "cypress-localstorage-commands": "^2.1.0",
+    "cypress-localstorage-commands": "^2.2.6",
     "cypress-msteams-reporter": "^1.0.4",
-    "cypress-multi-reporters": "^1.5.0",
-    "cypress-real-events": "^1.7.4",
-    "dotenv": "^16.0.1",
-    "eslint-plugin-cypress": "^2.12.1",
-    "eslint-plugin-json": "^3.1.0",
-    "mocha-junit-reporter": "^2.0.2",
-    "mssql": "^9.1.1",
-    "webpack-merge": "^5.8.0"
+    "cypress-multi-reporters": "^1.6.4",
+    "cypress-plugin-api": "^2.11.1",
+    "cypress-real-events": "^1.12.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.4.0",
+    "eslint-plugin-cypress": "^3.3.0",
+    "eslint-plugin-json": "^4.0.0",
+    "mocha-junit-reporter": "^2.2.1",
+    "mssql": "^10.0.2",
+    "webpack-merge": "^5.10.0"
+  },
+  "dependencies": {
+    "allure-cypress": "^2.15.1",
+    "cypress-plugin-steps": "^1.1.1"
   }
 }

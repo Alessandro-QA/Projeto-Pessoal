@@ -5,7 +5,6 @@ import 'cypress-real-events'
 import './commands/commands'
 import deletarRegistroTabelasDev from './utils/queries/update-por-tabela-dev.js'
 import deletarRegistroTabelasQa from './utils/queries/update-por-tabela-qa.js'
-import '@shelex/cypress-allure-plugin'
 import registerCypressGrep from 'cypress-grep'
 registerCypressGrep()
 require('@cypress/skip-test/support')

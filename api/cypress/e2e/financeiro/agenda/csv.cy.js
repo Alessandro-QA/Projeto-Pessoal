@@ -2,7 +2,7 @@
 
 context('Financeiro', () => {
     context('Agenda', () => {
-        describe(`${Cypress.env('financeiro')}/Agenda/CSV - CSV`, () => {
+        describe(`POST - ${Cypress.env('financeiro')}/Agenda/CSV - CSV`, () => {
 
             it('CT1 Deve haver CSV de Todas as Empresas', () => {
                 cy.fixture('financeiro/agenda/CSV/payloadCt1.json').then((payload) => {

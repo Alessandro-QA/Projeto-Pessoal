@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import locLogin from '../../locators/login/locators-login.js'
+const locLogin = require('../../locators/login/locators-login.js');
 
 class Authenticate {
   /**
@@ -8,8 +8,6 @@ class Authenticate {
    * @param {*} credenciais
   */
   login(credenciais) {
-    cy.clearCookies()
-    cy.clearLocalStorage()
 
     const loginUrl = `${Cypress.env('authUrl')}/Account/Login?ReturnUrl=`
     const returnUrl = Cypress.env('returnURL')
@@ -22,23 +20,21 @@ class Authenticate {
 
       cy.request({
         method: 'POST',
-        url: `${Cypress.env('authUrl')}/Account/Login?client_id=my-farm-clientapp`,
+        url: 'https://api.uat.aliare.digital/aliare-auth/connect/token',
         headers: {
-          'authority': 'auth.dev.conexa.com.br',
-          'content-type': 'application/x-www-form-urlencoded',
-          'origin': Cypress.env('authUrl'),
-          'referer': `${loginUrl + returnUrl}`
+          // 'authorization': 'Basic Y2NkZXZjbGllbnQ6MTdjNGZkYTUtYzUxOC00OTg1LTgzMmQtYmY4NWQxZmYxNGQ1',
+          'content-type': 'application/x-www-form-urlencoded'
         },
         body: {
-          ReturnUrl: returnUrl,
-          client_id: 'my-farm-clientapp',
-          Email: credenciais.email,
-          Password: credenciais.senha,
-          __RequestVerificationToken: requestVerificationToken,
-          RememberMe: false
+          // scope: "tenant i18n fazenda bemocorrencia atividade atividadeagricola bem cicloproducao controleclimatico cultura estoque formapagamento material notafiscal operacao pedidocompra pessoa planejamentosafra planocontas safra unidadearmazenamento unidademedida eexport subscription parametrotributario permission product webhookvindi contabancaria financeiro instituicaofinanceira localidade producaoagricola notification assinei webhook marketingcampaign nfedistribuicao aliare agriq onboarding profile openid indexadormoeda agriq openbanking",
+          grant_type: "password",
+          username: credenciais.email,
+          password: credenciais.senha,
+          client_id: 'my-farm-clientapp-dev'
         }
       })
     })
+
   }
 
   /**
