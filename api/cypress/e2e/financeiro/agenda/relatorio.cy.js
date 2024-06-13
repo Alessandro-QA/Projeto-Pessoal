@@ -140,7 +140,7 @@ context('Financeiro', () => {
                 });
             });
 
-            it.only('CT4 Deve Haver relatorio de Titulos Parcialmente Recebido', () => {
+            it('CT4 Deve Haver relatorio de Titulos Parcialmente Recebido', () => {
                 cy.fixture('financeiro/agenda/relatorio/payloadCt4.json').then((payload) => {
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agenda/relatorio`, payload)
                         .then((response) => {

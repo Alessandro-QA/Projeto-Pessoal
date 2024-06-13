@@ -22,6 +22,5 @@ module.exports = defineConfig({
     ...config // Adiciona todas as variáveis do config.json ao objeto env
   },
   video: false,
-  watchForFileChanges: false,
-  chromeWebSecurity: false
+  watchForFileChanges: false
 })
