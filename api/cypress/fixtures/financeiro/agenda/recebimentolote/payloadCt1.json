@@ -1,0 +1,44 @@
+{
+  "observacao": "",
+  "baixas": [
+    {
+      "contaBancariaId": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+      "formaPagamento": {
+        "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+        "descricao": "Boleto",
+        "referenciaXML": 15
+      },
+      "dataPagamento": "2024-06-07T14:50:26-03:00",
+      "tituloId": "0dba32b6-4f32-478f-8751-5f7c190d633b",
+      "juros": 0,
+      "multa": 0,
+      "desconto": 0,
+      "valor": 200,
+      "valorTotal": 200,
+      "empresa": {
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API"
+      }
+    },
+    {
+      "contaBancariaId": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+      "formaPagamento": {
+        "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+        "descricao": "Boleto",
+        "referenciaXML": 15
+      },
+      "dataPagamento": "2024-06-07T14:50:26-03:00",
+      "tituloId": "b9bb54b2-e492-450b-adc4-7f0970a828c7",
+      "juros": 0,
+      "multa": 0,
+      "desconto": 0,
+      "valor": 70,
+      "valorTotal": 70,
+      "empresa": {
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API"
+      }
+    }
+  ],
+  "anexos": []
+}

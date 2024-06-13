@@ -2,15 +2,15 @@
 
 context('Financeiro', () => {
     context('Livro Caixa', () => {
-        describe('GET - /api/financeiro/v1/LivroCaixa/obterValoresTotaisDosLancamentos - Obtém Valores Totais dos Lançamentos', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/LivroCaixa/obterValoresTotaisDosLancamentos - Obtém Valores Totais dos Lançamentos`, () => {
             it('CT1 - Deve obter Valores totais de Resposta dos Lançamentos', () => {
                 cy.fixture('financeiro/livroCaixa/obterValoresTotaisDosLancamentos/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/LivroCaixa/ObterValoresTotaisDosLancamentos', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/LivroCaixa/ObterValoresTotaisDosLancamentos`, params)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                            expect(response.status).be.equal(200)
-                            expect(response.body).to.exist
-                            expect(response.body).be.not.null  
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
+                            expect(response.status).be.equal(200);
+                            expect(response.body).to.exist;
+                            expect(response.body).be.not.null;
 
                             const data = response.body.data;
                             const campos = [
@@ -28,9 +28,9 @@ context('Financeiro', () => {
                                 expect(data[campo]).to.be.a('number');
                             });
                             
-                        })
-                })
-            })
-        })
-    })
-})
+                        });
+                });
+            });
+        });
+    });
+});

@@ -2,9 +2,9 @@
 
 context('Financeiro', () => {
     context('Conta Bancaria', () => {
-        describe('GET - /api/financeiro/v1/ContaBancaria/Principal - Obtém a Conta Bancária Principal', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/ContaBancaria/Principal - Obtém a Conta Bancária Principal`, () => {
             it('CT1 - Deve obter a conta principal', () => {
-                cy.getRequest('/api/financeiro/v1/ContaBancaria/Principal')
+                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/Principal`)
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                         expect(response.status).be.equal(200)

@@ -2,9 +2,9 @@
 
 context('Financeiro', () => {
     context('Conta Bancaria', () => {
-        describe('GET - /api/financeiro/v1/ContaBancaria/{id} - Obtém uma conta bancária por ID', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/ContaBancaria/{id} - Obtém uma conta bancária por ID`, () => {
             it('CT1 - Deve obter contas bancária por ID', () => {
-                cy.getRequest('/api/financeiro/v1/ContaBancaria/745a3fa9-87f5-4dce-9732-966c30d44186')
+                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria/745a3fa9-87f5-4dce-9732-966c30d44186`)
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                         expect(response.status).be.equal(200)
@@ -41,11 +41,11 @@ context('Financeiro', () => {
             })
         })
 
-        describe('DELETE - /api/financeiro/v1/ContaBancaria/{id} - Exclui uma conta bancária por ID', () => {
+        describe(`DELETE - ${Cypress.env('financeiro')}/ContaBancaria/{id} - Exclui uma conta bancária por ID`, () => {
             it('CT1 - Deve excluir Conta Bancária', () => {
                 cy.fixture('financeiro/contaBancaria/contaBancariaId/payloadCt2.json').then((payload) => {
                     cy.section('Cadastrar conta bancária para exclusão')
-                    cy.postRequest('/api/financeiro/v1/ContaBancaria', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
@@ -59,7 +59,7 @@ context('Financeiro', () => {
                             const id = response.body.data.id
                             const assertResponse = { "success": true, "data": true }
 
-                            cy.deleteRequest('/api/financeiro/v1/ContaBancaria', id).then((response) => {
+                            cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`, id).then((response) => {
                                 expect(response.body).to.deep.equal(assertResponse)
                             })
                         })

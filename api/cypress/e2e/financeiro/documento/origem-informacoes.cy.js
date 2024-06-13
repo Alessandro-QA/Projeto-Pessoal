@@ -2,10 +2,10 @@
 
 context('Financeiro', () => {
     context('Documento', () => {
-        describe('GET - /api/financeiro/v1/Documento/Origem/{origemId}/Infomacoes - Obtém modelo com informações básicas do OrigemID', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/Documento/Origem/{origemId}/Infomacoes - Obtém modelo com informações básicas do OrigemID`, () => {
 
             it('CT1 - Obtém modelo com informações básicas do OrigemID', () => {
-                cy.getRequest('/api/financeiro/v1/Documento/Origem/c8166fe7-a9a1-47ea-a387-734297f67429/Informacoes')
+                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/Origem/c8166fe7-a9a1-47ea-a387-734297f67429/Informacoes`)
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                         expect(response.status).be.equal(200)
@@ -19,4 +19,3 @@ context('Financeiro', () => {
         })
     })
 })
-

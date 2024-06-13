@@ -2,10 +2,10 @@
 
 context('Financeiro', () => {
     context('Cotacao', () => {
-        describe('POST - /api/financeiro/v1/Cotacao/Refresh - Atualiza Cotações', () => {
+        describe(`POST - ${Cypress.env('financeiro')}/Cotacao/Refresh - Atualiza Cotações`, () => {
 
             it('CT1 - Atualiza Cotações', () => {
-                cy.postRequest('/api/financeiro/v1/Cotacao/Refresh', {})
+                cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Cotacao/Refresh`, {})
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                         expect(response.status).be.equal(200)

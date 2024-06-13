@@ -18,10 +18,10 @@ function verificarCamposRecebimentosPagamentos(response) {
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('GET - /api/financeiro/v1/Dashboard/Pendentes - Recebimentos ou Pagamentos Pendentes', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/Dashboard/Pendentes - Recebimentos ou Pagamentos Pendentes`, () => {
             it('CT1 - Deve buscar recebimentos ou pagamentos pendentes por empresa e data', () => {
                 cy.fixture('financeiro/dashboard/pendentes/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/Pedentes', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/Pedentes`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).to.be.equal(200);
@@ -36,7 +36,7 @@ context('Financeiro', () => {
 
             it('CT2 - Deve buscar recebimentos ou pagamentos pendentes por data', () => {
                 cy.fixture('financeiro/dashboard/pendentes/paramsCt2.json').then((payload) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/Pedentes', payload)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/Pedentes`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).to.be.equal(200);
@@ -51,7 +51,7 @@ context('Financeiro', () => {
 
             it('CT3 - Deve buscar recebimentos ou pagamentos pendentes por empresa', () => {
                 cy.fixture('financeiro/dashboard/pendentes/paramsCt3.json').then((payload) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/Pedentes', payload)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/Pedentes`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).to.be.equal(200);

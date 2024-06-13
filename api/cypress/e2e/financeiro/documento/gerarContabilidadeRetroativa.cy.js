@@ -2,10 +2,10 @@
 
 context('Financeiro', () => {
     context('Documento', () => {
-        describe('POST - /api/financeiro/v1/Documento/GerarContabilidadeRetroativa - Gerar contabilidade dos documentos sem contabil', () => {
+        describe(`POST - ${Cypress.env('financeiro')}/Documento/GerarContabilidadeRetroativa - Gerar contabilidade dos documentos sem contabil`, () => {
 
             it('CT1 - Gera contabilidade dos documentos sem contabil', () => {
-                cy.postRequest('/api/financeiro/v1/Documento/GerarContabilidadeRetroativa')
+                cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/GerarContabilidadeRetroativa`)
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                         expect(response.status).be.equal(200)

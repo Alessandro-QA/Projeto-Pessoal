@@ -2,11 +2,11 @@
 
 context('Financeiro', () => {
     context('Documento', () => {
-        describe('GET - /api/financeiro/v1/Documento/Origem/{acao}/{id} - Obtém Documento pela ação e ID', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/Documento/Origem/{acao}/{id} - Obtém Documento pela ação e ID`, () => {
 
             it('CT1 - Obtém Documento pela ação e ID', () => {
                 cy.fixture('financeiro/documento/origem/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams(`/api/financeiro/v1/Documento/Origem/${params.acao}/${params.id}`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/Origem/${params.acao}/${params.id}`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)

@@ -32,10 +32,10 @@ function validarResultadoSafraAnaliticoContas(responseBody) {
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('POST - /api/financeiro/v1/Dashboard/ResultadoSafraAnaliticoContas - Resultado da Safra Analítico Contas', () => {
+        describe(`POST - ${Cypress.env('financeiro')}/v1/Dashboard/ResultadoSafraAnaliticoContas - Resultado da Safra Analítico Contas`, () => {
             it('CT1 - Deve buscar Resultado da Safra Analítico Contas - Com saldo a Fixar de Colheitas', () => {
                 cy.fixture('financeiro/dashboard/resultadoSafraAnaliticoContas/payloadCt1.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/Dashboard/ResultadoSafraAnaliticoContas', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}//Dashboard/ResultadoSafraAnaliticoContas`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).to.be.equal(200);
@@ -46,7 +46,7 @@ context('Financeiro', () => {
 
             it('CT2 - Deve buscar Resultado da Safra Analítico Contas - Sem saldo a Fixar de Colheitas', () => {
                 cy.fixture('financeiro/dashboard/resultadoSafraAnaliticoContas/payloadCt2.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/Dashboard/ResultadoSafraAnaliticoContas', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}//Dashboard/ResultadoSafraAnaliticoContas`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).to.be.equal(200);
@@ -57,7 +57,7 @@ context('Financeiro', () => {
 
             it('CT3 - Deve buscar Resultado da Safra Analítico Contas - Com documentos Não Pagos e Recebidos', () => {
                 cy.fixture('financeiro/dashboard/resultadoSafraAnaliticoContas/payloadCt3.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/Dashboard/ResultadoSafraAnaliticoContas', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}//Dashboard/ResultadoSafraAnaliticoContas`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).to.be.equal(200);
@@ -68,7 +68,7 @@ context('Financeiro', () => {
 
             it('CT4 - Deve buscar Resultado da Safra Analítico Contas - Sem documentos Não Pagos e Recebidos', () => {
                 cy.fixture('financeiro/dashboard/resultadoSafraAnaliticoContas/payloadCt4.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/Dashboard/ResultadoSafraAnaliticoContas', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}//Dashboard/ResultadoSafraAnaliticoContas`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
                             expect(response.status).to.be.equal(200);

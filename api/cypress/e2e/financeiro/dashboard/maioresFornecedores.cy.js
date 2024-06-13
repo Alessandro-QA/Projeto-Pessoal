@@ -2,15 +2,15 @@
 
 context('Financeiro', () => {
     context('Dashboard', () => {
-        describe('GET - /api/financeiro/v1/Dashboard/MaioresFornecedores{params} - Maiores Fornecedores', () => {
-            it('CT1 - Deve buscar dados dos Maiores Forncedores', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/Dashboard/MaioresFornecedores{params} - Maiores Fornecedores`, () => {
+            it('CT1 - Deve buscar dados dos Maiores Fornecedores', () => {
                 cy.fixture('financeiro/dashboard/maioresFornecedores/paramsCt1.json').then((params) => {
-                    cy.getRequestWhitParams('/api/financeiro/v1/Dashboard/MaioresFornecedores', params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Dashboard/MaioresFornecedores`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                            expect(response.status).be.equal(200)
-                            expect(response.body).be.not.null
+                            expect(response.status).to.equal(200)
                             expect(response.body).to.exist
+                            expect(response.body).to.not.be.null
 
                             // Validar campo 'total'
                             expect(response.body).to.have.property('total').that.is.a('number');
@@ -32,7 +32,6 @@ context('Financeiro', () => {
                                 expect(pessoa.pessoa).to.have.property('id').that.is.a('string');
                                 expect(pessoa.pessoa).to.have.property('descricao').that.is.a('string');
                             });
-
 
                         })
                 })

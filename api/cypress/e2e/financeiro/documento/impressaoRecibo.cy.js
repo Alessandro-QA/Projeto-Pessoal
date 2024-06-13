@@ -2,10 +2,10 @@
 
 context('Financeiro', () => {
     context('Documento', () => {
-        describe('GET - /api/financeiro/v1/Documento/ImpressaoRecibo/{id} - Obtém a Impressão do Recibo do Documento pelo ID', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/Documento/ImpressaoRecibo/{id} - Obtém a Impressão do Recibo do Documento pelo ID`, () => {
 
             it('CT1 - Obtém a Impressão do Recibo do Documento pelo ID', () => {
-                cy.getRequest('/api/financeiro/v1/Documento/ImpressaoRecibo/f5fc2007-04de-4d7a-9c27-5a7988cbc886')
+                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento/ImpressaoRecibo/f5fc2007-04de-4d7a-9c27-5a7988cbc886`)
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                         expect(response.status).be.equal(200)

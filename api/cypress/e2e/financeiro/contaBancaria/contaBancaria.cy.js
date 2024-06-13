@@ -2,9 +2,9 @@
 
 context('Financeiro', () => {
     context('Conta Bancaria', () => {
-        describe('GET - /api/financeiro/v1/ContaBancaria - Obtém todas as Contas Bancárias', () => {
+        describe(`GET - ${Cypress.env('financeiro')}/ContaBancaria - Obtém todas as Contas Bancárias`, () => {
             it('CT1 - Deve obter todas as Contas Bancárias', () => {
-                cy.getRequest('/api/financeiro/v1/ContaBancaria')
+                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`)
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                         expect(response.status).be.equal(200)
@@ -15,12 +15,12 @@ context('Financeiro', () => {
             })
         })
 
-        describe('PUT - /api/financeiro/v1/ContaBancaria - Realiza updade de Conta Bancária', () => {
+        describe(`PUT - ${Cypress.env('financeiro')}/ContaBancaria - Realiza updade de Conta Bancária`, () => {
             it('CT1 - Deve editar Conta Bancária', () => {
                 cy.fixture('financeiro/contaBancaria/contaBancaria/payloadCt1-PUT.json').then((payload) => {
-                    cy.putRequest('/api/financeiro/v1/ContaBancaria', payload)
+                    cy.putRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`, payload)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body.data.id).be.equal('55764151-a910-4050-bd36-ca18a3f2bd8c')
@@ -36,9 +36,9 @@ context('Financeiro', () => {
 
             it('CT2 - Deve desfazer edição da Conta Bancária', () => {
                 cy.fixture('financeiro/contaBancaria/contaBancaria/payloadCt2-PUT.json').then((payload) => {
-                    cy.putRequest('/api/financeiro/v1/ContaBancaria', payload)
+                    cy.putRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`, payload)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body.data.id).be.equal('55764151-a910-4050-bd36-ca18a3f2bd8c')
@@ -53,13 +53,12 @@ context('Financeiro', () => {
             })
         })
 
-
-        describe('POST - /api/financeiro/v1/ContaBancaria - Realiza adição de Conta Bancária', () => {
+        describe(`POST - ${Cypress.env('financeiro')}/ContaBancaria - Realiza adição de Conta Bancária`, () => {
             it('CT1 - Deve adicionar nova Conta Bancária', () => {
                 cy.fixture('financeiro/contaBancaria/contaBancaria/payloadCt1-POST.json').then((payload) => {
-                    cy.postRequest('/api/financeiro/v1/ContaBancaria', payload)
+                    cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`, payload)
                         .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal('273276e0-7cc1-4891-94de-55e9ced2aad2')
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).be.equal(200)
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
@@ -77,7 +76,7 @@ context('Financeiro', () => {
                             const id = response.body.data.id
                             const assertResponse = { "success": true, "data": true }
 
-                            cy.deleteRequest('/api/financeiro/v1/ContaBancaria', id).then((response) => {
+                            cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`, id).then((response) => {
                                 expect(response.body).to.deep.equal(assertResponse)
                             })
                         })
