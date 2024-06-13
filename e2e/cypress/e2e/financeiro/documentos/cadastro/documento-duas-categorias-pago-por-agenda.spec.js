@@ -59,7 +59,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
         it('Exportar o CSV do Livro Caixa', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.livroCaixa)
+            //.descriptionHtml(testDescription.livroCaixa)
 
           LivroCaixa.exportar(seedTest.lancamentoLivroCaixa)
         })

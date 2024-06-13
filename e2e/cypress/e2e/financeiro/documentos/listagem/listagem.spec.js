@@ -39,28 +39,28 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
         it('Sem preenchimento de filtro', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.semFiltro)
+            //.descriptionHtml(testDescription.semFiltro)
 
           listagem(seedTestDocumento.semFiltro)
         })
 
         it('Filtrar por Pessoa', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.filtrarPessoa)
+            //.descriptionHtml(testDescription.filtrarPessoa)
 
           listagem(seedTestDocumento.filtroPessoa)
         })
 
         it('Filtrar por Tag', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.filtrarTag)
+            //.descriptionHtml(testDescription.filtrarTag)
 
           listagem(seedTestDocumento.filtroTag)
         })
 
         it('Filtrar por Conferido', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.filtrarConferido)
+            //.descriptionHtml(testDescription.filtrarConferido)
 
           conferir(seedTestDocumento.filtroConferido.conferir)
 
@@ -69,35 +69,35 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
         it('Filtrar por Não Conferido', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.filtrarConferido)
+            //.descriptionHtml(testDescription.filtrarConferido)
 
           listagem(seedTestDocumento.filtroNaoConferido)
         })
 
         it('Filtrar por Safra e Ciclo', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.filtrarSafraCiclo)
+            //.descriptionHtml(testDescription.filtrarSafraCiclo)
 
           listagem(seedTestDocumento.filtroSafraCiclo)
         })
 
         it('Filtrar por Fazenda', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.filtrarFazenda)
+            //.descriptionHtml(testDescription.filtrarFazenda)
 
           listagem(seedTestDocumento.filtroFazenda)
         })
 
         it('Filtrar por Data', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.filtrarData)
+            //.descriptionHtml(testDescription.filtrarData)
 
           listagem(seedTestDocumento.filtroData)
         })
 
         it('Filtrar por Safra', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.filtrarSafra)
+            //.descriptionHtml(testDescription.filtrarSafra)
 
           listagem(seedTestDocumento.filtroSafra)
         })

@@ -6,6 +6,9 @@ import 'cypress-plugin-steps'
 const email = Cypress.env('email')
 const password = Cypress.env('password')
 
-beforeEach(() => {
-    cy.getToken(email, password)
-})
+// Logar somente uma vez em cada Teste e manter a Session ativada
+before(() => {  
+    cy.session(email, () => {
+        cy.getToken(email, password)
+    });
+  });

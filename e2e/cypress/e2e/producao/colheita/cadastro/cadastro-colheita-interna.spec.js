@@ -24,7 +24,7 @@ describe('Produção', { tags: '@producao' }, () => {
       context('Colheita interna', () => {
         it('Deve cadastrar colheita interna', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescription.interna)
+            //.descriptionHtml(testDescription.interna)
 
           cadastrarEditar(seedTestCadastro)
         })

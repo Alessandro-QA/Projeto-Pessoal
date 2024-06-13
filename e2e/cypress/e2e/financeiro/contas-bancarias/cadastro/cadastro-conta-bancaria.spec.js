@@ -19,7 +19,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Cadastro de Conta - Corrente', () => {
       it('Deve cadastrar conta bancária - Conta Corrente', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.contaCorrente)
+          //.descriptionHtml(testDescription.contaCorrente)
 
         ContaBancaria.cadastroEditar(seedTestContaBancaria.contaCorrente)
       })
@@ -34,7 +34,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       it('Deve cadastrar conta bancária - Cartão de Crédito', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.cartaoCredito)
+          //.descriptionHtml(testDescription.cartaoCredito)
 
         ContaBancaria.cadastroEditar(seedTestContaBancaria.cartaoCredito)
       })
@@ -48,7 +48,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Cadastro de Conta - Tesouraria', () => {
       it('Deve cadastrar conta bancária - Conta Tesouraria', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.contaTesouraria)
+          //.descriptionHtml(testDescription.contaTesouraria)
 
         ContaBancaria.cadastroEditar(seedTestContaBancaria.contaTesouraria)
       })

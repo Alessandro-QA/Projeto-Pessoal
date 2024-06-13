@@ -44,21 +44,21 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
         it('Deve validar listagem sem aplicar filtros', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.semFiltro)
+            //.descriptionHtml(testDescription.semFiltro)
 
           LivroCaixa.validarListagem(seedTestLivroCaixa.semFiltro)
         })
 
         it('Deve validar listagem após selecionar um produtor', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.filtroProdutor)
+            //.descriptionHtml(testDescription.filtroProdutor)
 
           LivroCaixa.validarListagem(seedTestLivroCaixa.filtrarProdutor)
         })
 
         it('Deve validar listagem apos selecionar um período', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.fitlroPeriodo)
+            //.descriptionHtml(testDescription.fitlroPeriodo)
 
           LivroCaixa.validarListagem(seedTestLivroCaixa.filtrarAno)
         })

@@ -34,7 +34,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       it('Deve realizar pagamento em lote', { retries: { runMode: 1, openMode: 1, }, }, function () {
         // cy.allure().severity('critical').startStep('test content')
-          .descriptionHtml(testDescription.pagamentoLote)
+          //.descriptionHtml(testDescription.pagamentoLote)
 
         AgendaFinanceira.pagarReceberLote(seedTestAgendaFinanceira.pagamentoLote)
       })
@@ -53,7 +53,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       it('Deve realizar recebimento em lote', { retries: { runMode: 1, openMode: 1, }, }, function () {
         // cy.allure().severity('critical').startStep('test content')
-          .descriptionHtml(testDescription.recebimentoLote)
+          //.descriptionHtml(testDescription.recebimentoLote)
 
         AgendaFinanceira.pagarReceberLote(seedTestAgendaFinanceira.recebimentoLote)
       })

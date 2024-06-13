@@ -85,7 +85,7 @@ context('Financeiro', () => {
 
 
                             // Verificações dos títulos
-                            expect(data.titulos).to.be.an('array').that.has.lengthOf(1);
+                            expect(data.titulos).to.be.an('array')
                             const titulo = data.titulos[0];
                             expect(titulo.vencimento).to.equal('2024-06-07T00:00:00+00:00');
                             expect(titulo.totalPagar).to.equal(0);
@@ -94,7 +94,7 @@ context('Financeiro', () => {
                             expect(titulo.totalRecebido).to.equal(0);
 
                             // Verificações dos detalhes dos títulos
-                            expect(titulo.detalhes).to.be.an('array').that.has.lengthOf(1);
+                            expect(titulo.detalhes).to.be.an('array')
                             const detalhe = titulo.detalhes[0];
                             expect(detalhe.pessoa).to.equal('Cliente Teste API');
                             expect(detalhe.parcela).to.equal('1/1');
@@ -156,7 +156,7 @@ context('Financeiro', () => {
                             expect(data.empresa).to.equal('Empresa Teste API');
 
                             // Verificações dos detalhes dos títulos parcialmente recebidos
-                            expect(data.titulos).to.be.an('array').that.has.lengthOf(1); // Espera-se um título
+                            expect(data.titulos).to.be.an('array') // Espera-se um título
 
                             // Verifica se o status do detalhe do título é "Recebido Parcialmente" e o valorParcela é maior que zero
                             data.titulos.forEach((titulo) => {

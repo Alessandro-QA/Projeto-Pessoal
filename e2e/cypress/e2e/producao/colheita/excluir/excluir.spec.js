@@ -31,7 +31,7 @@ describe('Produção', { tags: '@producao' }, () => {
 
         it('Deve excluir colheita', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescription.excluir)
+            //.descriptionHtml(testDescription.excluir)
 
           excluir(seedTestDashboard.dashboard)
         })

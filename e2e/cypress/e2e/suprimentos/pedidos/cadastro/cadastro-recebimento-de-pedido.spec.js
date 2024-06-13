@@ -27,21 +27,21 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
       context('Cadastro, Edição e Exclusão de Pedido com Recebimento Parcial', () => {
         it('Deve cadastrar pedido', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescription.pedido)
+            //.descriptionHtml(testDescription.pedido)
 
           Pedidos.cadastrar(seeds.seedCadastroPedido)
         })
 
         it('Deve validar na listagem os dados do pedido cadastrado', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.dashboardPedidos)
+            //.descriptionHtml(testDescription.dashboardPedidos)
 
           Pedidos.validarListagem(seeds.seedDetalhesPedidoCadastro)
         })
 
         it('Deve validar detalhes do pedido cadastrado', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.detalhesPedido)
+            //.descriptionHtml(testDescription.detalhesPedido)
 
           Pedidos.validarDetalhes(seeds.seedDetalhesPedidoCadastro)
         })
@@ -54,14 +54,14 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
 
         it('Deve validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.pesquisarAgendaFinanceira)
+            //.descriptionHtml(testDescription.pesquisarAgendaFinanceira)
 
           AgendaFinanceira.validarDashboard(seeds.seedAgendaFinanceiraCadastro)
         })
 
         it('Deve realizar o recebimento parcial (50%) do pedido', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescription.recebimento)
+            //.descriptionHtml(testDescription.recebimento)
 
           Recebimento.cadastrar(seeds.seedCadastroRecebimentoParcial)
         })
@@ -212,7 +212,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
 
         it('Deve excluir o pedido', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescription.excluirPedido)
+            //.descriptionHtml(testDescription.excluirPedido)
 
           Pedidos.excluir(seeds.seedDetalhesPedidoCadastro)
         })

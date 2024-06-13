@@ -22,14 +22,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       context('Adição de pagamento e validação da listagem', () => {
         it('Deve adicionar pagamento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescritpion.pagamento)
+            //.descriptionHtml(testDescritpion.pagamento)
 
           Movimentacao.adicionarPagamentoRecebimento(seedTestPagamento.pagamento)
         })
 
         it('Deve validar movimentação do tipo Pagamento', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescritpion.recebimento)
+            //.descriptionHtml(testDescritpion.recebimento)
 
           Movimentacao.validarListagem(seedTestPagamento.pagamento)
         })
@@ -40,7 +40,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       context('Adição de recebimento e validação da listagem', () => {
         it('Deve adicionar recebimento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescritpion.transferencia)
+            //.descriptionHtml(testDescritpion.transferencia)
 
           Movimentacao.adicionarPagamentoRecebimento(seedTestPagamento.recebimento)
         })
@@ -57,7 +57,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       context('Adição de transferência e validação da listagem', () => {
         it('Deve adicionar transferência', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescritpion.transferencia)
+            //.descriptionHtml(testDescritpion.transferencia)
 
           Movimentacao.adicionarPagamentoRecebimento(seedTestPagamento.transferencia)
         })

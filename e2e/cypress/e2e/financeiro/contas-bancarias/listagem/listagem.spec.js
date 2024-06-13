@@ -35,35 +35,35 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       it('Deve listar contas bancárias - Pesquisando por Nome', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.pesquisar)
+          //.descriptionHtml(testDescription.pesquisar)
 
         ContasBancaria.validarListagem(seedTestListagem.filtroPesquisar)
       })
 
       it('Deve listar contas bancárias - Sem aplicar Filtros', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.semFiltro)
+          //.descriptionHtml(testDescription.semFiltro)
 
         ContasBancaria.validarListagem(seedTestListagem.semFiltro)
       })
 
       it('Deve listar contas bancárias - Filtrando por Tipo de Conta', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.filtrarTipo)
+          //.descriptionHtml(testDescription.filtrarTipo)
 
         ContasBancaria.validarListagem(seedTestListagem.filtroConta)
       })
 
       it('Deve listar contas bancárias - Filtrando por Empresa', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.filtrarEmpresa)
+          //.descriptionHtml(testDescription.filtrarEmpresa)
 
         ContasBancaria.validarListagem(seedTestListagem.filtroEmpresa)
       })
 
       it('Deve listar contas bancárias - Filtrar por Status inativo', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.filtrarSituacao)
+          //.descriptionHtml(testDescription.filtrarSituacao)
 
         cy.log('Inativando Conta Corrente')
         ContasBancaria.inativar(seedTestListagem.filtroStatus.inativarConta)

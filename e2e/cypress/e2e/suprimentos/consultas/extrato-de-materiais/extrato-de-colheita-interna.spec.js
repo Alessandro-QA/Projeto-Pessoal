@@ -32,7 +32,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
 
         it('Deve validar colheita no Extrato de Materiais', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.description)
+            //.descriptionHtml(testDescription.description)
 
           ExtratoMateriais.validarExtratoMateriais(seedTest)
         })

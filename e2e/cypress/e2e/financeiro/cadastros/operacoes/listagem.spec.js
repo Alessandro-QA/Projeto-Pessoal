@@ -22,21 +22,21 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Operações', { tags: '@operacoes' }, () => {
       it('Deve filtrar por caixa de Pesquisa - Palavra chave"', { retries: { runMode: 1, openMode: 1, }, }, function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.pesquisa)
+          //.descriptionHtml(testDescription.pesquisa)
 
         Operacoes.validarListagem(seedOperacao.campoPesquisar)
       })
 
       it('Deve filtrar por Tipo de Operação - Entrada', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.tipoOperacao)
+          //.descriptionHtml(testDescription.tipoOperacao)
 
         Operacoes.validarListagem(seedOperacao.tipoDaOperacao.entrada)
       })
 
       it('Deve filtrar por Tipo de Operação - Saída', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.tipoOperacao)
+          //.descriptionHtml(testDescription.tipoOperacao)
 
         Operacoes.validarListagem(seedOperacao.tipoDaOperacao.saida)
       })
@@ -44,28 +44,28 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       it('Deve filtrar por Finalidade da Operação - Normal', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.finalidadeOperacao)
+          //.descriptionHtml(testDescription.finalidadeOperacao)
 
         Operacoes.validarListagem(seedOperacao.finalidadeDaOperacao.normal)
       })
 
       it('Deve filtrar por Finalidade da Operação - Complementar', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.finalidadeOperacao)
+          //.descriptionHtml(testDescription.finalidadeOperacao)
 
         Operacoes.validarListagem(seedOperacao.finalidadeDaOperacao.complementar)
       })
 
       it('Deve filtrar por Finalidade da Operação - Ajuste', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.finalidadeOperacao)
+          //.descriptionHtml(testDescription.finalidadeOperacao)
 
         Operacoes.validarListagem(seedOperacao.finalidadeDaOperacao.ajuste)
       })
 
       it('Deve filtrar por Finalidade da Operação - Devolução', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.finalidadeOperacao)
+          //.descriptionHtml(testDescription.finalidadeOperacao)
 
         Operacoes.validarListagem(seedOperacao.finalidadeDaOperacao.devolucao)
       })

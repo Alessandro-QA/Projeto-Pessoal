@@ -27,7 +27,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       it('Deve excluir conta bancária - Conta Corrente', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.excluir)
+          //.descriptionHtml(testDescription.excluir)
 
         ContaBancaria.excluir(seedTestExcluirConta.contaCorrente)
       })
@@ -46,7 +46,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       it('Deve excluir conta bancária - Cartão de Crédito', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.excluir)
+          //.descriptionHtml(testDescription.excluir)
 
         ContaBancaria.excluir(seedTestExcluirConta.cartaoCredito)
       })
@@ -64,7 +64,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
       it('Deve excluir conta bancária - Conta Tesouraria', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.excluir)
+          //.descriptionHtml(testDescription.excluir)
 
         ContaBancaria.excluir(seedTestExcluirConta.contaTesouraria)
       })

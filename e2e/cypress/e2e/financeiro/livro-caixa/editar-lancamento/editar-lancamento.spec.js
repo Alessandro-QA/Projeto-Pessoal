@@ -33,7 +33,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
         it('Deve editar o lançamento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescription.editar)
+            //.descriptionHtml(testDescription.editar)
 
           LivroCaixa.adicionarEditarLancamento(seedTestLivroCaixa.entrada)
         })
@@ -45,7 +45,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
         it('Deve editar o lançamento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescription.editar)
+            //.descriptionHtml(testDescription.editar)
 
           LivroCaixa.adicionarEditarLancamento(seedTestLivroCaixa.saida)
         })

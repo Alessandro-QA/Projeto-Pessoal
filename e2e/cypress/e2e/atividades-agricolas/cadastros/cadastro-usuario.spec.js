@@ -20,7 +20,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
       // Teste para cadastro de um novo usuario
       it('Deve cadastrar um usuario', function () {
         // cy.allure().severity('critical').startStep('test content')
-          .descriptionHtml(testDescription.usuario)
+          //.descriptionHtml(testDescription.usuario)
 
         Usuario.cadastro(seedTestUsuario)
       })

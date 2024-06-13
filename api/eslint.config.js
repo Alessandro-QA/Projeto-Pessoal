@@ -23,13 +23,13 @@ module.exports = {
     }],
   },
   ignores: [
-    'node_modules/*',
+    'node_modules/**',
     '**/*.sql',
-    '.nyc_output/*',
+    '.nyc_output/**',
     'coverage/*',
     'cypress/allure-report/**',
     'cypress/allure-results/**',
-    'cypress/results/*',
+    'cypress/results/**',
     '**/*.png',
     '**/*.ofx',
     // Outras exclusões que você tinha no .eslintignore

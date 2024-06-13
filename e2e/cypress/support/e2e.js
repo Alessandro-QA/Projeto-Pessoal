@@ -1,12 +1,23 @@
 import './commands'
 import 'cypress-plugin-api'
-import "allure-cypress/commands";
+import "allure-cypress/commands"
 import 'cypress-plugin-steps'
-import '@shelex/cypress-allure-plugin';
+import "cypress-localstorage-commands"
 
-const email = Cypress.env('email')
-const password = Cypress.env('password')
+const Authenticate = require('./commands/login/login-logout.js');
 
-/*beforeEach(() => {
-    cy.getToken(email, password)
-}) */
+// Logar somente uma vez em cada Teste e manter a Session ativada
+beforeEach(() => {
+    const credenciais = Cypress.env('login_cadastro');
+    cy.restoreLocalStorage();  // Restaura o estado do localStorage antes de cada teste
+    cy.session(credenciais, () => {
+      Authenticate.login(credenciais);
+    });
+    
+});
+
+afterEach(() => {
+  // Salva o estado do localStorage após cada teste
+  cy.saveLocalStorage();
+});
+

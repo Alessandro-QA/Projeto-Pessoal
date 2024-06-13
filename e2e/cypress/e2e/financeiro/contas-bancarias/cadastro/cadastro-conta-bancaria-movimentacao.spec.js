@@ -20,7 +20,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Cadastro de Conta - Sem inclusão de saldo disponível', () => {
       it('Deve cadastrar conta Bancária sem marcar o checkbox "Incluir no saldo disponível"', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.contaCorrenteMovimentacao)
+          //.descriptionHtml(testDescription.contaCorrenteMovimentacao)
 
         ContaBancaria.cadastroEditar(seedTestContaBancaria.contaBancaria)
       })

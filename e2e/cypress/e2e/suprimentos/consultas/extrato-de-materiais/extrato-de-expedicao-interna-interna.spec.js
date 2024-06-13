@@ -36,7 +36,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
 
         it('Deve validar extrato de materiais da UA de ORIGEM após cadastro de colheita', function () {
           // cy.allure().severity('normal').startStep('test content')
-            .descriptionHtml(testDescription.description)
+            //.descriptionHtml(testDescription.description)
 
           ExtratoMateriais.validarExtratoMateriais(seedTest.UaOrigemColheita)
         })

@@ -8,8 +8,6 @@ class Authenticate {
    * @param {*} credenciais
   */
   login(credenciais) {
-    cy.clearCookies()
-    cy.clearLocalStorage()
 
     const loginUrl = `${Cypress.env('authUrl')}/Account/Login?ReturnUrl=`
     const returnUrl = Cypress.env('returnURL')

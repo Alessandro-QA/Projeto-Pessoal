@@ -38,7 +38,7 @@ describe('Produção', { tags: '@producao' }, () => {
 
         it('Deve cadastrar colheita externa', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescription.externaExcedente)
+            //.descriptionHtml(testDescription.externaExcedente)
 
           cadastrarEditar(seedTestCadastro)
         })

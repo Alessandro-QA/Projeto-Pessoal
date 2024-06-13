@@ -20,7 +20,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
       // Teste de cadastro de uma nova safra
       it('Deve cadastrar uma safra', function () {
         // cy.allure().severity('normal').startStep('test content')
-          .descriptionHtml(testDescription.safra)
+          //.descriptionHtml(testDescription.safra)
 
         Safra.cadastro(seedTestSafra)
       })

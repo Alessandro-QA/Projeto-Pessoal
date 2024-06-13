@@ -1,38 +1,37 @@
 {
-  "baseUrl": "__Env.MyFarm.BaseAddress__",
+  "baseUrl": "https://myfarm.qa.conexa.com.br/",
   "env": {
-    "authUrl": "__Env.MyFarm.AuthUrl__",
-    "returnURL": "__Env.MyFarm.ReturnURL__",
-    "daasUrl": "__Env.MyFarm.DassURL__",
-    "scope": "__Env.MyFarm.Scope__",
-    "authorization": "__Env.MyFarm.Authorization__",
+    "authUrl": "https://auth.dev.conexa.com.br",
+    "returnURL": "/connect/authorize/callback?client_id=my-farm-clientapp&redirect_uri=https%3A%2F%2Fmyfarm.dev.conexa.com.br%2Fauth&response_type=code&scope=openid%20email%20cultura%20cicloproducao%20fazenda%20safra%20material%20pessoa%20atividade%20planocontas%20unidademedida%20tenant%20atividadeagricola%20controleclimatico%20bem%20bemocorrencia%20estoque%20formapagamento%20pedidocompra%20instituicaofinanceira%20contabancaria%20notafiscal%20operacao%20financeiro%20localidade%20producaoagricola%20subscription%20permission%20parametrotributario%20product%20notification%20onboarding%20nfedistribuicao%20profile-management&state=5f219307cc3a4bffaba7116ef0122b06&code_challenge=UD1QjS0oSu2YXEmHjoDkEHi6rFSMOo23cAwf54bPpUA&code_challenge_method=S256",
+    "daasUrl": "https://daas.dev.conexa.com.br",
+    "scope": "tenant i18n fazenda bemocorrencia atividade atividadeagricola bem cicloproducao controleclimatico cultura estoque formapagamento material notafiscal operacao pedidocompra pessoa planejamentosafra planocontas safra unidadearmazenamento unidademedida eexport subscription parametrotributario permission product webhookvindi contabancaria financeiro instituicaofinanceira localidade producaoagricola notification assinei webhook marketingcampaign nfedistribuicao aliare agriq onboarding profile openid indexadormoeda agriq openbanking",
+    "authorization": "********",
     "login_cenarios": {
-      "email": "__EndToEndTest.LoginCenarios.Email__",
-      "senha": "__EndToEndTest.LoginCenarios.Password__",
-      "tenant": "__EndToEndTest.LoginCenarios.tenant__",
-      "usernameDevClient": "__EndToEndTest.usernameDevClient__",
-      "passwordDevClient": "__EndToEndTest.passwordDevClient__"
+      "email": "e2e@hubconexa.com",
+      "senha": "********",
+      "tenant": "df7a1cc8-f259-404f-aadc-0f1b2a7f5d96",
+      "usernameDevClient": "ccdevclient",
+      "passwordDevClient": "********"
     },
     "login_cadastro": {
-      "email": "__EndToEndTest.LoginCadastro.Email__",
-      "senha": "__EndToEndTest.LoginCadastro.Password__",
-      "tenant": "__EndToEndTest.LoginCadastro.tenant__",
-      "usernameDevClient": "__EndToEndTest.usernameDevClient__",
-      "passwordDevClient": "__EndToEndTest.passwordDevClient__"
+      "email": "apiTest_myfarm@hubconexa.com",
+      "senha": "teste@123",
+      "tenant": "273276e0-7cc1-4891-94de-55e9ced2aad2",
+      "usernameDevClient": "ccdevclient",
+      "passwordDevClient": "********"
     },
     "login_nfe": {
-      "email": "__EndToEndTest.LoginNFe.Email__",
-      "senha": "__EndToEndTest.LoginNFe.Password__",
-      "tenant": "__EndToEndTest.LoginNFe.tenant__",
-      "usernameDevClient": "__EndToEndTest.usernameDevClient__",
-      "passwordDevClient": "__EndToEndTest.passwordDevClient__"
+      "email": "e2e_nfe@hubconexa.com",
+      "senha": "********",
+      "tenant": "f2c7ce34-9f68-435c-b436-e0a86e8b89ff",
+      "usernameDevClient": "ccdevclient",
+      "passwordDevClient": "********"
     },
     "db": {
-      "server": "__EndToEndTest.Db.Server__",
-      "database": "__EndToEndTest.Db.Database__",
-      "user": "__EndToEndTest.Db.UserName__",
-      "password": "__EndToEndTest.Db.UserPassword__",
-      "port": 1433,
+      "server": "projetox-mssqlserver-dev.database.windows.net",
+      "database": "projetoXDevDb",
+      "user": "adminProjetoX",
+      "password": "********",
       "connectionTimeout": 60000,
       "requestTimeout": 60000,
       "options": {

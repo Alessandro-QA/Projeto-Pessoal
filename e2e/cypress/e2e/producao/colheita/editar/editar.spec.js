@@ -33,7 +33,7 @@ describe('Produção', { tags: '@producao' }, () => {
 
         it('Deve editar colheita', { retries: { runMode: 1, openMode: 1, }, }, function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescription.editar)
+            //.descriptionHtml(testDescription.editar)
 
           cadastrarEditar(seedTestEditar)
         })

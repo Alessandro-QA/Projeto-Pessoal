@@ -4,8 +4,8 @@
   "private": true,
   "description": "Testes E2E do projeto MyFarm",
   "scripts": {
-    "test:dev": "cypress run --env ambiente=dev",
-    "test:qa": "cypress run --env ambiente=qa",
+    "test:dev": "cypress run --env ambiente=dev --browser chrome",
+    "test:qa": "cypress run --env ambiente=qa --browser chrome",
     "allure:open": "npm run allure:generate && allure open cypress/allure-report",
     "allure:generate": "allure generate cypress/allure-results --clean -o cypress/allure-report",
     "cypress:open:dev": "cypress open --env ambiente=dev",
@@ -22,7 +22,6 @@
     "@cypress/code-coverage": "^3.12.39",
     "@cypress/skip-test": "^2.6.1",
     "@cypress/webpack-preprocessor": "^6.0.2",
-    "@shelex/cypress-allure-plugin": "^2.40.2",
     "@testing-library/cypress": "^10.0.2",
     "allure-commandline": "^2.29.0",
     "cypress": "^13.11.0",

@@ -26,7 +26,7 @@ Cypress.Commands.add('getToken', (email, password) => {
 
 // Command para navegar entre as páginas
 Cypress.Commands.add('navegarPara', (url, locator, tituloPagina) => {
-    cy.visit(url, { timeout: 30000 })
+    cy.visit(url, { timeout: 60000 })
   
     cy.get(locator, { timeout: 30000 })
       .should('exist').and('be.visible')

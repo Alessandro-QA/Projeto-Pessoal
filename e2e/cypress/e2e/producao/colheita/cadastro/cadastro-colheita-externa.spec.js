@@ -24,7 +24,7 @@ describe('Produção', { tags: '@producao' }, () => {
       context('Colheita externa sem contrato', () => {
         it('Deve cadastrar colheita externa', function () {
           // cy.allure().severity('critical').startStep('test content')
-            .descriptionHtml(testDescription.externa)
+            //.descriptionHtml(testDescription.externa)
 
           cadastrarEditar(seedTestCadastro)
         })
