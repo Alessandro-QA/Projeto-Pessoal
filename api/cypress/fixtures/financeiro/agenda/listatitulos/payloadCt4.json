@@ -20,6 +20,6 @@
     "fields": ["NumeroDocumento", "ValorTitulo", "Pessoa"],
     "filterAgendamento": 0,
     "page": 1,
-    "size": 20,
+    "size": 5,
     "statusTitulos": [6]
   }

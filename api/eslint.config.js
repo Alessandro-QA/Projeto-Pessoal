@@ -23,11 +23,11 @@ module.exports = {
     }],
   },
   ignores: [
-    'node_modules/*',
+    'node_modules/**',
     '**/*.sql',
     '.nyc_output/*',
     'coverage/*',
-    'cypress/allure-report/*',
+    'cypress/allure-report/**',
     'cypress/allure-results/*',
     'cypress/results/*',
     '**/*.png',
