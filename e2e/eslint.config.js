@@ -23,7 +23,7 @@ module.exports = {
     }],
   },
   ignores: [
-    'node_modules/*',
+    'node_modules/**',
     '**/*.sql',
     '.nyc_output/*',
     'coverage/*',

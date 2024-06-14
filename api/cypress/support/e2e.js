@@ -8,7 +8,5 @@ const password = Cypress.env('password')
 
 // Logar somente uma vez em cada Teste e manter a Session ativada
 before(() => {  
-    cy.session(email, () => {
         cy.getToken(email, password)
-    });
-  });
+});
