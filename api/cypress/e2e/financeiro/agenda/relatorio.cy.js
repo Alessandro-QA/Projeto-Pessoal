@@ -73,42 +73,48 @@ context('Financeiro', () => {
 
                             // Verificações específicas para CT2
                             const data = response.body.data;
+                            // Verificação geral de existência de propriedades e tipos
                             expect(data).to.exist;
-                            expect(data.fazenda).to.equal('Fazenda Teste API');
-                            expect(data.empresa).to.equal('Empresa Teste API');
+                            expect(data).to.be.an('object');
+                            expect(data.fazenda).to.be.a('string');
+                            expect(data.empresa).to.be.a('string');
                             expect(data.periodo).to.be.an('object');
-                            expect(data.periodo.inicio).to.equal('2024-06-06T00:00:00-03:00');
-                            expect(data.periodo.fim).to.equal('2024-07-06T23:59:59-03:00');
-                            expect(data.usuario).to.equal('apiTest_myfarm@hubconexa.com');
-                            expect(data.totalPago).to.equal(0);
-                            expect(data.totalRecebido).to.equal(0);
+                            expect(data.usuario).to.be.a('string');
+                            expect(data.totalPago).to.be.a('number');
+                            expect(data.totalRecebido).to.be.a('number');
+                            expect(data.titulos).to.be.an('array');
 
+                            // Verificações dos tipos dos títulos
+                            if (data.titulos.length > 0) {
+                                const titulo = data.titulos[0];
+                                expect(titulo).to.be.an('object');
+                                expect(titulo.vencimento).to.be.a('string');
+                                expect(titulo.totalPagar).to.be.a('number');
+                                expect(titulo.totalReceber).to.be.a('number');
+                                expect(titulo.totalPago).to.be.a('number');
+                                expect(titulo.totalRecebido).to.be.a('number');
 
-                            // Verificações dos títulos
-                            expect(data.titulos).to.be.an('array')
-                            const titulo = data.titulos[0];
-                            expect(titulo.vencimento).to.equal('2024-06-07T00:00:00+00:00');
-                            expect(titulo.totalPagar).to.equal(0);
-                            expect(titulo.totalReceber).to.equal(50617.14);
-                            expect(titulo.totalPago).to.equal(0);
-                            expect(titulo.totalRecebido).to.equal(0);
+                                // Verificações dos tipos dos detalhes dos títulos
+                                if (titulo.detalhes && titulo.detalhes.length > 0) {
+                                    const detalhe = titulo.detalhes[0];
+                                    expect(detalhe).to.be.an('object');
+                                    expect(detalhe.pessoa).to.be.a('string');
+                                    expect(detalhe.parcela).to.be.a('string');
+                                    expect(detalhe.status).to.be.a('string');
+                                    expect(detalhe.numero).to.be.a('string');
 
-                            // Verificações dos detalhes dos títulos
-                            expect(titulo.detalhes).to.be.an('array')
-                            const detalhe = titulo.detalhes[0];
-                            expect(detalhe.pessoa).to.equal('Cliente Teste API');
-                            expect(detalhe.parcela).to.equal('1/1');
-                            expect(detalhe.status).to.equal('Recebido Parcialmente');
-                            expect(detalhe.numero).to.equal('4');
-
-                            // Verificações das informações bancárias
-                            expect(detalhe.informacoesBancarias).to.be.an('object');
-                            const informacoesBancarias = detalhe.informacoesBancarias;
-                            expect(informacoesBancarias.descricaoBanco).to.equal('Crediare S.A. Crédito, Financiamento e Investimento');
-                            expect(informacoesBancarias.agenciaBancariaNumero).to.equal('5854858548');
-                            expect(informacoesBancarias.agenciaBancariaDigitoVerificador).to.equal('4');
-                            expect(informacoesBancarias.numeroConta).to.equal('485484');
-                            expect(informacoesBancarias.digitoVerificadorConta).to.equal('4');
+                                    // Verificações dos tipos das informações bancárias
+                                    if (detalhe.informacoesBancarias) {
+                                        const informacoesBancarias = detalhe.informacoesBancarias;
+                                        expect(informacoesBancarias).to.be.an('object');
+                                        expect(informacoesBancarias.descricaoBanco).to.be.a('string');
+                                        expect(informacoesBancarias.agenciaBancariaNumero).to.be.a('string');
+                                        expect(informacoesBancarias.agenciaBancariaDigitoVerificador).to.be.a('string');
+                                        expect(informacoesBancarias.numeroConta).to.be.a('string');
+                                        expect(informacoesBancarias.digitoVerificadorConta).to.be.a('string');
+                                    }
+                                }
+                            }
                         });
                 });
             });

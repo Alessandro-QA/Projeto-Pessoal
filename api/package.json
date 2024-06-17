@@ -13,17 +13,17 @@
     "teamsReport": "cypress-msteams-reporter --verbose --report-path cypress/allure-report/__Env.buildNumber__/widgets/status-chart.json --testEnv-path cypress/allure-report/__Env.buildNumber__/widgets/environment.json --report-url __EndToEndTest.AllureUrl__"
   },
   "devDependencies": {
-    "@testing-library/cypress": "^9.0.0",
-    "allure-cypress": "^2.15.1",
+    "@testing-library/cypress": "^10.0.2",
     "cypress": "^13.11.0",
     "cypress-eslint-preprocessor": "^1.2.2",
     "cypress-msteams-reporter": "^1.0.4",
-    "cypress-plugin-api": "^2.11.0",
+    "cypress-plugin-api": "^2.11.1",
     "cypress-plugin-steps": "^1.1.1",
-    "eslint": "^9.4.0"
+    "eslint": "^9.5.0"
   },
   "dependencies": {
     "dayjs": "^1.11.11",
+    "allure-cypress": "^2.15.1",
     "ms-teams-webhook": "^2.1.0",
     "save-dev": "^0.0.1-security"
   }

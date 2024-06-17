@@ -3,6 +3,7 @@ import 'cypress-plugin-api'
 import "allure-cypress/commands"
 import 'cypress-plugin-steps'
 import "cypress-localstorage-commands"
+import './allure'
 
 const Authenticate = require('./commands/login/login-logout.js');
 
