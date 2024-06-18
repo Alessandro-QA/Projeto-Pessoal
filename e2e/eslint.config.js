@@ -27,7 +27,7 @@ module.exports = {
     '**/*.sql',
     '.nyc_output/*',
     'coverage/*',
-    'cypress/allure-report/**',
+    'cypress/allure-results/**',
     '**/*.png',
     '**/*.ofx',
     // Outras exclusões que você tinha no .eslintignore
