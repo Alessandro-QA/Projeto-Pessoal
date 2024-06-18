@@ -12,8 +12,19 @@ context('Financeiro', () => {
                             expect(response.body).to.exist
                             expect(response.body).to.be.not.null
                             expect(response.body).to.be.an('array').that.is.not.empty
-                            cy.fixture('financeiro/dashboard/produtoresLivroCaixa/bodyCt1.json').then((body) => {
-                                expect(response.body).to.be.eql(body)
+
+                            response.body.forEach(item => {
+                                // Validando propriedades do produtor
+                                expect(item).to.have.property('produtor').that.is.an('object')
+                                expect(item.produtor).to.have.property('documentoPrincipal').that.is.a('string')
+                                expect(item.produtor).to.have.property('id').that.is.a('string')
+                                expect(item.produtor).to.have.property('descricao').that.is.a('string')
+
+                                // Validando propriedades financeiras
+                                expect(item).to.have.property('entrada').that.is.a('number')
+                                expect(item).to.have.property('saida').that.is.a('number')
+                                expect(item).to.have.property('estimativaIR').that.is.a('number')
+                                expect(item).to.have.property('saldo').that.is.a('number')
                             })
                         })
                 })

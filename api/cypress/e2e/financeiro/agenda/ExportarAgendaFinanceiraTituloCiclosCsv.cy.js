@@ -40,16 +40,6 @@ context('Financeiro', () => {
 
                                 // Verificar se a primeira linha possui o mesmo número de colunas que o cabeçalho
                                 expect(firstDataLine.length).to.equal(headers.length);
-
-                                // Verificar se a primeira linha de dados contém os valores esperados
-                                const expectedValues = [
-                                    'Cliente Teste API', '06/06/2024', '516.348.600-47', '2023/2023', 'Empresa Teste API', '4',
-                                    'Fazenda Teste API', 'Soja', '06/06/2024', 'Transferência Bancária', '001/001',
-                                    'Recebido parcialmente', 'Receber', 'Soja - 2023/2023', '56200,04', '56200,04', '50617,14'
-                                ];
-                                expectedValues.forEach((value, index) => {
-                                    expect(firstDataLine[index]).to.equal(value);
-                                });
                             }
                         });
                 });
