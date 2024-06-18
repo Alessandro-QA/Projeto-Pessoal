@@ -1,6 +1,6 @@
 /// <reference types='Cypress' />
 
-const description = require('../../../fixtures/agendarJob/agendarJobReprocessarLivroCaixa/agendarJobReprocessarLivroCaixa.description');
+const description = require('../../../fixtures/financeiro/agendarJob/agendarJobReprocessarLivroCaixa/agendarJobReprocessarLivroCaixa.description');
 
 context('Financeiro', () => {
     context('AgendarJob', () => {

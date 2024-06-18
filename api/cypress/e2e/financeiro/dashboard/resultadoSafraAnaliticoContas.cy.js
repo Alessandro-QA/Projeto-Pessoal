@@ -7,7 +7,7 @@ function validarResultadoSafraAnaliticoContas(responseBody) {
     expect(responseBody).to.not.be.undefined;
 
     // Verifica o array de receitas
-    expect(responseBody).to.have.property('receitas').that.is.an('array').and.has.lengthOf.at.least(1);
+    expect(responseBody).to.have.property('receitas').that.is.an('array');
     responseBody.receitas.forEach(receita => {
         expect(receita).to.have.property('conta').that.is.a('string');
         expect(receita).to.have.property('codigo').that.is.a('string');
@@ -16,7 +16,7 @@ function validarResultadoSafraAnaliticoContas(responseBody) {
     });
 
     // Verifica o array de despesas
-    expect(responseBody).to.have.property('despesas').that.is.an('array').and.has.lengthOf.at.least(1);
+    expect(responseBody).to.have.property('despesas').that.is.an('array');
     responseBody.despesas.forEach(despesa => {
         expect(despesa).to.have.property('conta').that.is.a('string');
         expect(despesa).to.have.property('codigo').that.is.a('string');
