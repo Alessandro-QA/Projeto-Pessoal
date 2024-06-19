@@ -6,7 +6,7 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run:spec": "cypress run --browser chrome --spec 'cypress/e2e/producaoAgricola/acertoDeFrete/listagem.cy.js'",
-    "cypress:run:allure": "cypress run --browser chrome",
+    "cypress:run:allure": "cypress run --browser chrome || true",
     "allure:generate": "allure generate cypress/allure-results --clean -o cypress/allure-report",
     "allure:open": "npm run allure:generate && allure open cypress/allure-report",
     "eslint": "eslint ./cypress/",

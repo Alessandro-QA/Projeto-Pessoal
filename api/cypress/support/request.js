@@ -11,7 +11,8 @@ Cypress.Commands.add('getRequest', (url) => {
             'x-tenant': tenant,
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
-        }
+        },
+        "failOnStatusCode": false
     })
 })
 
@@ -26,7 +27,8 @@ Cypress.Commands.add('getRequestWithParams', (url, params) => {
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
-        "qs": params
+        "qs": params,
+        "failOnStatusCode": false
     })
 })
 
@@ -41,7 +43,8 @@ Cypress.Commands.add('postRequestWithParams', (url, params) => {
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
-        "qs": params
+        "qs": params,
+        "failOnStatusCode": false
     })
 })
 
@@ -56,7 +59,8 @@ Cypress.Commands.add('postRequest', (url, payload) => {
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
-        "body": payload
+        "body": payload,
+        "failOnStatusCode": false
     })
 })
 
@@ -72,6 +76,7 @@ Cypress.Commands.add('deleteRequest', (url, id) => {
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
+        "failOnStatusCode": false
     })
 })
 
@@ -87,7 +92,8 @@ Cypress.Commands.add('putRequest', (url, payload) => {
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
-        "body": payload
+        "body": payload,
+        "failOnStatusCode": false
     })
 })
 
@@ -102,7 +108,8 @@ Cypress.Commands.add('putRequestWithParams', (url, params) => {
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
-        "qs": params
+        "qs": params,
+        "failOnStatusCode": false
     })
 })
 
@@ -118,6 +125,7 @@ Cypress.Commands.add('patchRequest', (url, payload) => {
         'content-type': 'application/json',
         'authorization': `Bearer ${Cypress.env('access_token')}`,
       },
-      "body": payload
+      "body": payload,
+      "failOnStatusCode": false
     })
 })

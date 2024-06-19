@@ -1,0 +1,75 @@
+{
+    "id": "f615a67b-205e-4abf-b607-304157e56203",
+    "tipoDocumentoParametrizacao": 1,
+    "origemParametrizacao": 1,
+    "fornecedor": {
+        "id": "e19eee46-8ac3-4bdf-a27b-021e34c67a42",
+        "nome": "Fornecedor 2",
+        "documentoPrincipal": "39672767000100",
+        "tipo": 1
+    },
+    "operacao": {
+        "id": "944cfd19-9961-4bd4-8cd2-a6f031c374dc",
+        "codigo": 0,
+        "nome": "Adiantamento a Pagar",
+        "movimentaEstoque": false,
+        "contabilizaEstoque": false,
+        "tipoEstoque": 0,
+        "valorizacaoEstoque": 0,
+        "destino": 0,
+        "movimentaDocumento": true,
+        "tipoDocumento": 6,
+        "contabilizaDocumento": true,
+        "movimentaFinanceiro": 3,
+        "emissaoPropria": false,
+        "geraTributos": false,
+        "modeloDocumento": 0,
+        "tipoOperacao": 2,
+        "finalidadeOperacao": 0,
+        "jornadaPropria": false,
+        "adiantamentoDocumento": true,
+        "adiantamentoTipoOperacao": 3,
+        "adiantamentoOperacaoId": "cc7d0f82-b3c0-46d1-b4f7-debec06efdfa",
+        "operacaoMatrizContabeis": [
+            {
+                "id": "50f2ddf6-28d9-4a38-a115-7df25d79014c",
+                "ativo": true,
+                "operacaoId": "944cfd19-9961-4bd4-8cd2-a6f031c374dc",
+                "contabilizar": 2,
+                "recurso": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "tipo": 3
+                },
+                "contaDebito": {
+                    "dedutivel": true,
+                    "codigo": "1.01.07.11",
+                    "nome": "Adiantamento a Fornecedores"
+                },
+                "contaCredito": {
+                    "dedutivel": true,
+                    "codigo": "1.01.07.11",
+                    "nome": "Adiantamento a Fornecedores"
+                },
+                "debitoCaixa": {
+                    "dedutivel": true,
+                    "codigo": "1.01.07.11",
+                    "nome": "Adiantamento a Fornecedores"
+                },
+                "creditoCaixa": {
+                    "dedutivel": false
+                },
+                "historico": "Valor Doc. ${Documento:Numero} de ${Documento:Pessoa.Descricao}",
+                "historicoCaixa": "Valor Doc. ${Documento:Numero} de ${Documento:Pessoa.Descricao}",
+                "tipoContaContabil": 1
+            }
+        ]
+    },
+    "dedutivel": true,
+    "formaPagamento": {
+        "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+        "descricao": "Boleto"
+    },
+    "tipoRateioCiclo": 2,
+    "tags": [],
+    "ativo": true
+}

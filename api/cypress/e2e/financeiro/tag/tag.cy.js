@@ -4,7 +4,7 @@ const description = require('../../../fixtures/financeiro/tag/tag/tag.descriptio
 
 context('Financeiro', () => {
     context('TAG', () => {
-        describe(`GET - ${Cypress.env('financeiroBackoffice')}/Tag - Recupera Lista Geral de Tags`, () => {
+        describe(`GET/POST/PUT - ${Cypress.env('financeiroBackoffice')}/Tag - Recupera Lista Geral de Tags`, () => {
            
             let randomNumber
             let tagID
