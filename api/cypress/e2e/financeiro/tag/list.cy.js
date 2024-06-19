@@ -2,10 +2,9 @@
 
 const description = require('../../../fixtures/financeiro/tag/list/list.description');
 
-
 context('Financeiro', () => {
     context('TAG', () => {
-        describe(`GET - ${Cypress.env('financeiroBackoffice')}/Tag/List - Recupera Lista Geral de Tags`, () => {
+        describe(`POST - ${Cypress.env('financeiroBackoffice')}/Tag/List - Recupera Lista Geral de Tags`, () => {
 
             it('CT1 - Recupera Todas as Tags', () => {
 

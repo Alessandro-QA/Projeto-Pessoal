@@ -15,8 +15,7 @@ module.exports = defineConfig({
       });
       return config;
     },
-    trashAssetsBeforeRuns: true,
-    experimentalSessionAndOrigin: true
+    trashAssetsBeforeRuns: true
   },
   env: {
     ...config // Adiciona todas as variáveis do config.json ao objeto env

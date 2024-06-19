@@ -1,0 +1,88 @@
+{
+    "id": "54d06200-646e-4f0d-889e-09f290e56528",
+    "tipoDocumentoParametrizacao": "BaixarMultiplasNotas",
+    "origemParametrizacao": "XML",
+    "fornecedor": {
+      "id": "b0100efa-54cd-44bb-bba0-0b251952ee4a",
+      "nome": "UPL do Brasil Industria e Comercio De Insumos Agropecuarios",
+      "ativo": true,
+      "documentoPrincipal": "02974733000233",
+      "telefone": "1937945600",
+      "inscricaoEstadual": {
+        "id": "46c913af-008c-4343-a059-76f9b7df9a67",
+        "valor": "133413551",
+        "isento": false,
+        "ativo": false
+      },
+      "uf": "MT",
+      "isento": false,
+      "tipo": 1,
+      "tiposClassificacao": [2],
+      "56f49db0-2d75-11ef-bb27-737f8e179ea9": false
+    },
+    "operacao": {
+      "id": "9251e5ec-ab00-48ee-a96f-4394a030f334",
+      "codigo": 92,
+      "nome": "Aquisição de Gado",
+      "ativo": true,
+      "movimentaEstoque": false,
+      "tipoEstoque": 0,
+      "valorizacaoEstoque": 0,
+      "destino": 0,
+      "movimentaDocumento": true,
+      "contabilizaDocumento": true,
+      "movimentaFinanceiro": 3,
+      "emissaoPropria": false,
+      "geraTributos": false,
+      "modeloDocumento": 0,
+      "tipoOperacao": 0,
+      "finalidadeOperacao": 0,
+      "jornadaPropria": false,
+      "habilitarContasAnaliticas": false,
+      "tipoDocumento": 1,
+      "adiantamentoDocumento": false,
+      "operacaoMatrizContabeis": [
+        {
+          "id": "08859a2c-2c9d-47c0-aa88-2a0f1a3e48b2",
+          "operacao": "Aquisição de Gado",
+          "ativo": true,
+          "operacaoId": "9251e5ec-ab00-48ee-a96f-4394a030f334",
+          "contabilizar": 2,
+          "recurso": {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "tipo": 3
+          },
+          "contaDebito": {
+            "dedutivel": true,
+            "codigo": "4.02.09.04",
+            "nome": "Aquisição de Gado"
+          },
+          "contaCredito": {
+            "dedutivel": true,
+            "codigo": "2.01.02.01",
+            "nome": "Fornecedores"
+          },
+          "debitoCaixa": {
+            "dedutivel": true,
+            "codigo": "4.02.09.04",
+            "nome": "Aquisição de Gado"
+          },
+          "creditoCaixa": {
+            "dedutivel": false
+          },
+          "historico": "Valor Doc. ${Documento:Numero} de ${Documento:Pessoa.Descricao}",
+          "historicoCaixa": "Valor Doc. ${Documento:Numero} de ${Documento:Pessoa.Descricao}",
+          "tipoContaContabil": 1
+        }
+      ],
+      "56f4ebd0-2d75-11ef-bb27-737f8e179ea9": false
+    },
+    "dedutivel": false,
+    "ativo": false,
+    "formaPagamento": {
+      "id": "9968ef7b-06cd-41ce-b12d-e4fce7b55462",
+      "descricao": "Cartão de Crédito"
+    },
+    "tipoRateioCiclo": 3,
+    "tags": []
+  }
