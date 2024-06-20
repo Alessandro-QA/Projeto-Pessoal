@@ -10,7 +10,7 @@ context('Financeiro', () => {
 
             it('CT1 - Cria Agendamentos Agrupados em Lote', () => {
 
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal');
+                cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical');
                 
                 cy.fixture('financeiro/agendamento/agendamentoLote/payloadCt1.json').then((payload) => {
 

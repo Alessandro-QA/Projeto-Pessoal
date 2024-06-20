@@ -13,7 +13,7 @@ context('Financeiro', () => {
 
             it('CT1 - Criar Agendamento ', () => {
 
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal');
+                cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical');
 
                 cy.fixture('financeiro/agendamento/criaAgendamento/payloadCt1.json').then((payload) => {
 
@@ -73,7 +73,7 @@ context('Financeiro', () => {
 
             it('CT2 - Editar Agendamento existente', () => {
 
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal');
+                cy.allureDescriptionHtml(description.Ct2).allureSeverity('critical');
 
                 cy.fixture('financeiro/agendamento/criaAgendamento/bodyCt1.json').then((payload) => {
 
@@ -99,7 +99,7 @@ context('Financeiro', () => {
 
             it('CT3 - Obter os Agendamentos existentes', () => {
 
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal');
+                cy.allureDescriptionHtml(description.Ct3).allureSeverity('normal');
 
                 cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agendamento`)
                     .then((response) => {
@@ -129,7 +129,7 @@ context('Financeiro', () => {
 
             it('CT4 - Deve Deletar Agendamento pelo ID', () => {
 
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal');
+                cy.allureDescriptionHtml(description.Ct4).allureSeverity('critical');
                 
                 cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agendamento`, idAgendamento).then((response) => {
                     expect(response.status).to.be.equal(200);

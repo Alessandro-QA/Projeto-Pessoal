@@ -28,7 +28,7 @@ context('Financeiro', () => {
 
             it('CT2 - Obtém todos os tenants que estão para reprocessamento', () => {
 
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
+                cy.allureDescriptionHtml(description.Ct2).allureSeverity('normal')
 
                 cy.fixture('financeiro/agendarJob/agendarJobReprocessarLivroCaixaFazendaMatricula/paramsCt2.json').then((params) => {
                     cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/AgendarJob/ObterTenantsParaReprocessamento`, params)
