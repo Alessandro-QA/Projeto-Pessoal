@@ -1,0 +1,18 @@
+{
+    "tipo": "Transferencia",
+    "data": "2024-06-20T10:19:34-03:00",
+    "valor": 45,
+    "__valid": true,
+    "empresa": {
+        "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+        "descricao": "Empresa 2"
+    },
+    "historico": "Teste",
+    "empresaDestino": {
+        "id": "c79da4b4-fb34-417c-9ab8-8c943c91c032",
+        "descricao": "Empresa Teste Edição"
+    },
+    "anexos": [],
+    "contaBancariaOrigemId": "6211d3da-95d7-45e5-940a-8ca7224d1c9f",
+    "contaBancariaDestinoId": "55764151-a910-4050-bd36-ca18a3f2bd8c"
+}

@@ -97,7 +97,7 @@ context('Financeiro', () => {
                 });
             });
 
-            it.only('CT4 - Obter os Registros de Movimentação filtrados por Pessoa', () => {
+            it('CT4 - Obter os Registros de Movimentação filtrados por Pessoa', () => {
 
                 cy.allureDescriptionHtml(description.Ct4).allureSeverity('normal')
 

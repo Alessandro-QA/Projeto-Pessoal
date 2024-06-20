@@ -1,0 +1,19 @@
+ {
+    "EmpresaIds": [
+        "44e2d617-2d9d-4b4f-8138-7d1f1739a599"
+    ],
+    "DataInicial": "2024-06-01T00:00:00-03:00",
+    "DataFinal": "2024-06-06T23:59:59-03:00",
+    "Page": 1,
+    "Size": 5,
+    "filter": {
+        "fields": [
+            "NumeroDocumento",
+            "Categoria",
+            "ContaBancaria",
+            "TipoMovimentacao",
+            "Valor",
+            "Conferido"
+        ]
+    }
+}
