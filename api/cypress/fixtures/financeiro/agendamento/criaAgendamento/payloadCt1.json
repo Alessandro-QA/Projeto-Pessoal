@@ -1,0 +1,29 @@
+{
+    "id": null,
+    "dataAgendamento": "2024-06-20T17:26:46-03:00",
+    "tituloId": "b5a30ba7-a4e8-4816-8436-efc8596265f6",
+    "contaBancariaId": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+    "formaPagamento": {
+        "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
+        "descricao": "Boleto",
+        "referenciaXML": 15
+    },
+    "juros": 0,
+    "multa": 0,
+    "desconto": 0,
+    "dataPagamento": "2024-06-20T10:15:22-03:00",
+    "valor": 70,
+    "valorTotal": 70,
+    "empresa": {
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API"
+    },
+    "observacao": "",
+    "anexos": [],
+    "tags": [
+        {
+            "id": "8976a6dd-2f2b-4736-bdcf-f5c4ce8b6be0",
+            "descricao": "TAG 012"
+        }
+    ]
+} 
