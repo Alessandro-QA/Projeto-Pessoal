@@ -1,7 +1,9 @@
 /// <reference types="Cypress" />
 
 //const description = require('../../../fixtures/financeiro/titulo/alterarvencimento/alterarvencimento.description');
+
 const dayjs = require('dayjs'); // Importando a biblioteca dayjs
+
 context('Financeiro', () => {
     context('Titulo', () => {
         describe(`POST - ${Cypress.env('financeiro')}Titulo/EfetuarBaixaTitulosAgendados - alterar o Vencimento`, () => {
@@ -9,58 +11,92 @@ context('Financeiro', () => {
             it('CT1 - Alterar o Vencimento', () => {
 
                 // Obter a data de amanhã no formato desejado (YYYY-MM-DDTHH:mm:ssZ)
+                const today = dayjs().format('YYYY-MM-DDTHH:mm:ssZ');
                 const tomorrowDate = dayjs().add(1, 'day').format('YYYY-MM-DDTHH:mm:ssZ');
-            
+                const aftertomorrowDate = dayjs().add(2, 'day').format('YYYY-MM-DDTHH:mm:ssZ');
 
                 cy.fixture('financeiro/titulo/efetuarbaixatitulosagendados/payloaddoc.json').then((payloaddoc) => {
-                payloaddoc.dataRecebimento = tomorrowDate
+
+                    // Coloca o documento para amanhã
+                    payloaddoc.dataRecebimento = tomorrowDate
+                    payloaddoc.dataPagamento = tomorrowDate
+                    payloaddoc.financeiro.parcelas[0].vencimento = tomorrowDate
 
                     // Gerar um novo número aleatório, pois o documento não pode possuir o mesmo número
-                    randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
-                    payload.numero = randomNumber.toString(); // Atualiza o campo 'numero' no payload
+                    const randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
+                    payloaddoc.numero = randomNumber.toString(); // Atualiza o campo 'numero' no payload
 
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento`, payloaddoc)
-                        .then((response) => {
-                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
-                            expect(response.status).to.be.equal(200);
-                            expect(response.body).to.not.be.null;
-                            expect(response.body).to.exist;
+                        .then((responsedoc) => {
 
-                            
-                        });
-                });
-            });
+                            expect(responsedoc.status).to.be.equal(200);
 
+                            cy.fixture('financeiro/titulo/efetuarbaixatitulosagendados/payloadlist.json').then((payloadlist) => {
 
-                cy.fixture('financeiro/titulo/efetuarbaixatitulosagendados/payloadCt1.json').then((payload) => {
+                                // Determina data do filtro de agenda para pegar o documento criado
+                                payloadlist.dataInicial = today
+                                payloadlist.dataFinal = aftertomorrowDate
 
-                    //cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agendamento/AgendamentoLote`, payload)
-                       // .then((response) => {
-                           // expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
-                           // expect(response.status).to.be.equal(200);
-                           cy.fixture('financeiro/titulo/efetuarbaixatitulosagendados/payload2Ct1.json').then((payload2) => {
+                                // Lista os títulos que estão pendentes para amanhã
+                                cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agenda/Listagem`, payloadlist)
+                                    .then((responselist) => {
+                                        expect(responselist.status).to.be.equal(200);
 
-                            cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Titulo/EfetuarBaixaTitulosAgendados`, payload2)
-                                .then((response) => {
-                                    expect(response.status).to.be.equal(200);
+                                        cy.log(randomNumber)
+                                        let idTitulo
+                                        // Procurar o titulo do documento que acabei de criar
+                                        responselist.body.data.titulos.forEach((titulo) => {
+                                            if (titulo.numero === randomNumber.toString()) {
+                                                idTitulo = titulo.id;
+                                            }
+                                        })
 
-
-                                })
-
-
-                            // Obter a data de amanhã no formato desejado (YYYY-MM-DDTHH:mm:ssZ)
-                            const tomorrowDate = dayjs().add(1, 'day').format('YYYY-MM-DDTHH:mm:ssZ');
-
-                            // Passando sempre a data de amanhã pra cada dataAgendamento do payload pois não podemos agendar um recebimento para data menor que a atual.
-                            // payload.agendamentos.forEach((agendamento) => {
-                            //agendamento.dataAgendamento = tomorrowDate;
-                            // });
+                                        cy.log(idTitulo)
 
 
+                                        cy.fixture('financeiro/titulo/efetuarbaixatitulosagendados/payloadagendamento.json').then((payloadagendamento) => {
 
+                                            // Ao fazer um agendamento  o horário é sempre 00:00
+                                            const tomorrowAtMidnight = dayjs().add(1, 'day').startOf('day').format('YYYY-MM-DDTHH:mm:ssZ');
+
+                                            // Determina a Data para qual será Agendada - Armazena o ID do titulo que será agendado
+                                            payloadagendamento.dataAgendamento = tomorrowAtMidnight
+                                            payloadagendamento.dataPagamentp = tomorrowDate
+                                            payloadagendamento.tituloId = idTitulo
+
+                                            // Agendando para o dia de amanhã o título criado
+                                            cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agendamento`, payloadagendamento)
+                                                .then((responseagendamento) => {
+                                                    expect(responseagendamento.status).to.be.equal(200);
+
+                                                    cy.fixture('financeiro/titulo/efetuarbaixatitulosagendados/payloadCt1.json').then((payload) => {
+
+                                                        payload.dataAgendamento = tomorrowDate
+
+                                                        cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Titulo/EfetuarBaixaTitulosAgendados`, payload)
+                                                            .then((response) => {
+                                                                expect(response.status).to.be.equal(200);
+
+                                                                let resultado = 0
+                                                                // Procurar o titulo do documento criado se foi pago ao pagar os agendados
+                                                                response.body.data.forEach((data) => {
+                                                                    if (data.tituloId === idTitulo) {
+                                                                        resultado = 1;
+                                                                    }
+                                                                })
+                                                                expect(resultado).to.be.equal(1)
+
+                                                            })
+
+                                                    });
+                                                });
+                                        });
+                                    });
+                            });
                         })
                 })
             })
+
         })
     })
 })
