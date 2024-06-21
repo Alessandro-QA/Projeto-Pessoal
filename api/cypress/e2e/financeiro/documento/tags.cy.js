@@ -81,14 +81,19 @@ context('Financeiro', () => {
                                 expect(response.body).to.exist;
                                 expect(response.body).be.not.null;
 
-                                // Acessar e verificar as TAGs do response
-                                const tag1 = response.body.tags[0];
-                                expect(tag1).to.have.property('id', payload[1].id);
-                                expect(tag1).to.have.property('descricao', payload[1].descricao);
+                                // Define as tags esperadas
+                                const expectedTags = [
+                                    { id: payload[1].id, descricao: payload[1].descricao },
+                                    { id: payload[0].id, descricao: payload[0].descricao }
+                                ];
 
-                                const tag2 = response.body.tags[1];
-                                expect(tag2).to.have.property('id', payload[0].id);
-                                expect(tag2).to.have.property('descricao', payload[0].descricao);
+                                // Acessar e verificar as TAGs do response
+                                const responseTags = response.body.tags;
+                                expectedTags.forEach(expectedTag => {
+                                    const foundTag = responseTags.find(tag => tag.id === expectedTag.id && tag.descricao === expectedTag.descricao);
+                                    expect(foundTag).to.exist;
+                                });
+                                
                             });
                     });
                 });

@@ -4,9 +4,9 @@
 
 context('Financeiro', () => {
     context('Movimentacao', () => {
-        describe(`GET - ${Cypress.env('financeiro')}/Movimentacao/AdiantamentosPedido - Obtém as movimentações do Cartão Informado`, () => {
+        describe(`GET - ${Cypress.env('financeiro')}/Movimentacao/AdiantamentosPedido - Traz as Movimentações de Origem daquele Pedido`, () => {
 
-            it('CT1 - Obtém as Movimentações do Cartão pelo período de Data Filtrado', () => {
+            it('CT1 - Obtém as Movimentações do Pedido Informado', () => {
 
                // cy.allureDescriptionHtml(description.Ct1).allureSeverity('minor')
 

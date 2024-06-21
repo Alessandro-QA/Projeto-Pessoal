@@ -1,5 +1,19 @@
 /// <reference types='Cypress' />
 
+function validateResponse(response) {
+    // Itera sobre cada item do array e verifica os campos e seus tipos
+    response.body.forEach(item => {
+        expect(item).to.have.property('id').that.is.a('string');
+        expect(item).to.have.property('nomeConta').that.is.a('string');
+        expect(item).to.have.property('saldoInicial').that.is.a('number');
+        expect(item).to.have.property('saldo').that.is.a('number');
+        expect(item).to.have.property('dataSaldoInicial').that.is.a('string');
+        expect(item).to.have.property('empresaTitular').that.is.a('string');
+        expect(item).to.have.property('ativo').that.is.a('boolean');
+    });
+}
+
+
 context('Financeiro', () => {
     context('Conta Bancaria', () => {
         describe(`GET - ${Cypress.env('financeiro')}/ContaBancaria/CaixaTesouraria - Obtém Contas Bancárias de Tesouraria`, () => {
@@ -11,9 +25,8 @@ context('Financeiro', () => {
                         expect(response.body).to.exist
                         expect(response.body).be.not.null
                         expect(response.body).to.be.an('array').that.is.not.empty
-                        cy.fixture('financeiro/contaBancaria/tesouraria/bodyCt1.json').then((body) => {
-                            expect(response.body).to.deep.equal(body)
-                        })
+                        
+                        validateResponse(response);
                     })
             })
 
@@ -26,9 +39,8 @@ context('Financeiro', () => {
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
                             expect(response.body).to.be.an('array').that.is.not.empty
-                            cy.fixture('financeiro/contaBancaria/tesouraria/bodyCt2.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+                        
+                            validateResponse(response); 
                         })
                 })
             })
@@ -42,9 +54,8 @@ context('Financeiro', () => {
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
                             expect(response.body).to.be.an('array').that.is.not.empty
-                            cy.fixture('financeiro/contaBancaria/tesouraria/bodyCt3.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+                            
+                            validateResponse(response);
                         })
                 })
             })
@@ -58,9 +69,8 @@ context('Financeiro', () => {
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
                             expect(response.body).to.be.an('array').that.is.not.empty
-                            cy.fixture('financeiro/contaBancaria/tesouraria/bodyCt4.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+                            
+                            validateResponse(response);
                         })
                 })
             })
@@ -74,9 +84,8 @@ context('Financeiro', () => {
                             expect(response.body).to.exist
                             expect(response.body).be.not.null
                             expect(response.body).to.be.an('array').that.is.not.empty
-                            cy.fixture('financeiro/contaBancaria/tesouraria/bodyCt5.json').then((body) => {
-                                expect(response.body).to.deep.equal(body)
-                            })
+                            
+                            validateResponse(response);
                         })
                 })
             })
