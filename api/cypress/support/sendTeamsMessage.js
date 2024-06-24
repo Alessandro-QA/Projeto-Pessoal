@@ -20,11 +20,12 @@ function getConfig() {
   }
 }
 
-function formatSummaryMessage(tests, reportUrl) {
+function formatSummaryMessage(tests, reportUrl, appName) {
   const totalTests = tests.length;
   const passedTests = tests.filter(test => test.status === 'passed').length;
   const failedTests = tests.filter(test => test.status === 'failed').length;
   const skippedTests = tests.filter(test => test.status === 'skipped').length;
+  const brokenTests = tests.filter(test => test.status === 'broken').length;
 
   // Função para retornar o ícone baseado no status
   function getIcon(status) {
@@ -35,6 +36,8 @@ function formatSummaryMessage(tests, reportUrl) {
         return '❌'; // Cross mark emoji
       case 'skipped':
         return '➖'; // Minus sign emoji
+      case 'broken':
+        return '🔨'; // Hammer emoji for broken tests
       default:
         return '';
     }
@@ -68,6 +71,10 @@ function formatSummaryMessage(tests, reportUrl) {
             "value": `${skippedTests} ${getIcon('skipped')}`
           },
           {
+            "name": "Broken:",
+            "value": `${brokenTests} ${getIcon('broken')}`
+          },
+          {
             "name": "Allure Report:",
             "value": `[View Allure Report](${reportUrl})`
           }
@@ -85,7 +92,7 @@ if (config && fs.existsSync(statusChartPath)) {
     const tests = JSON.parse(fs.readFileSync(statusChartPath));
     console.log('Tests:', tests);  // Log do conteúdo dos testes
 
-    const summaryMessage = formatSummaryMessage(tests, config.reportUrl);
+    const summaryMessage = formatSummaryMessage(tests, config.reportUrl, config.appName);
 
     axios.post(config.teamsWebhookUrl, summaryMessage)
       .then(response => {
