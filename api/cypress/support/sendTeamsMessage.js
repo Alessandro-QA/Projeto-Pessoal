@@ -3,7 +3,8 @@ const axios = require('axios');
 
 // Caminho para o arquivo de configuração JSON
 const configFilePath = 'cypress/config-files/config.json';
-const statusChartPath = 'cypress/allure-report/widgets/status-chart.json';
+const summaryFilePath = 'cypress/allure-report/widgets/summary.json'; // Caminho para o summary.json do Allure Report
+const suitesFilePath = 'cypress/allure-report/widgets/suites.json'; // Caminho para o suites.json do Allure Report
 
 function getConfig() {
   if (fs.existsSync(configFilePath)) {
@@ -20,12 +21,37 @@ function getConfig() {
   }
 }
 
-function formatSummaryMessage(tests, reportUrl, appName) {
-  const totalTests = tests.length;
-  const passedTests = tests.filter(test => test.status === 'passed').length;
-  const failedTests = tests.filter(test => test.status === 'failed').length;
-  const skippedTests = tests.filter(test => test.status === 'skipped').length;
-  const brokenTests = tests.filter(test => test.status === 'broken').length;
+// Função para formatar o tempo total de duração dos testes em um formato legível
+function formatDuration(duration) {
+  const seconds = Math.floor((duration / 1000) % 60);
+  const minutes = Math.floor((duration / (1000 * 60)) % 60);
+  const hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+  
+  const hoursDisplay = (hours < 10) ? "0" + hours : hours;
+  const minutesDisplay = (minutes < 10) ? "0" + minutes : minutes;
+  const secondsDisplay = (seconds < 10) ? "0" + seconds : seconds;
+  
+  return `${hoursDisplay}:${minutesDisplay}:${secondsDisplay}`;
+}
+
+function formatSummaryMessage(summaryData, suitesData, reportUrl, appName) {
+  const totalTests = summaryData.statistic.total;
+  const passedTests = summaryData.statistic.passed;
+  const failedTests = summaryData.statistic.failed;
+  const skippedTests = summaryData.statistic.skipped;
+  const brokenTests = summaryData.statistic.broken;
+  const totalDuration = summaryData.time.sumDuration; // Tempo total de duração dos testes
+
+  // Lista dinâmica de tipos de teste do suites.json
+  const testTypes = suitesData.items.map(item => {
+    return {
+      name: item.name,
+      passed: item.statistic.passed,
+      failed: item.statistic.failed,
+      skipped: item.statistic.skipped,
+      broken: item.statistic.broken
+    };
+  });
 
   // Função para retornar o ícone baseado no status
   function getIcon(status) {
@@ -38,11 +64,38 @@ function formatSummaryMessage(tests, reportUrl, appName) {
         return '➖'; // Minus sign emoji
       case 'broken':
         return '🔨'; // Hammer emoji for broken tests
+      case 'time':
+        return '⏱️'; // Stopwatch emoji for time
       default:
         return '';
     }
   }
   
+  // Construção dos fatos para cada tipo de teste dinamicamente
+  const facts = [
+    {
+      "name": "Total Duration:",
+      "value": `${getIcon('time')} ${formatDuration(totalDuration)}`
+    },
+    {
+      "name": "Total Tests Executed:",
+      "value": `${totalTests} | ${passedTests} ${getIcon('passed')} | ${failedTests} ${getIcon('failed')} | ${skippedTests} ${getIcon('skipped')} | ${brokenTests} ${getIcon('broken')}`
+    },
+  ];
+
+  // Adiciona fatos para cada tipo de teste
+  testTypes.forEach(type => {
+    facts.push({
+      "name": `${type.name} Tests:`,
+      "value": `${type.passed} ${getIcon('passed')} | ${type.failed} ${getIcon('failed')} | ${type.skipped} ${getIcon('skipped')} | ${type.broken} ${getIcon('broken')}`
+    });
+  });
+
+  facts.push({
+    "name": `Allure Report:`,
+    "value": `[View Allure Report](${reportUrl})`
+  });
+
   return {
     "@type": "MessageCard",
     "@context": "http://schema.org/extensions",
@@ -53,32 +106,7 @@ function formatSummaryMessage(tests, reportUrl, appName) {
       {
         "activityTitle": "Test Summary",
         "markdown": true,
-        "facts": [
-          {
-            "name": "Total Tests Executed:",
-            "value": `${totalTests}`
-          },
-          {
-            "name": "Passed:",
-            "value": `${passedTests} ${getIcon('passed')}`
-          },
-          {
-            "name": "Failed:",
-            "value": `${failedTests} ${getIcon('failed')}`
-          },
-          {
-            "name": "Skipped:",
-            "value": `${skippedTests} ${getIcon('skipped')}`
-          },
-          {
-            "name": "Broken:",
-            "value": `${brokenTests} ${getIcon('broken')}`
-          },
-          {
-            "name": "Allure Report:",
-            "value": `[View Allure Report](${reportUrl})`
-          }
-        ]
+        "facts": facts
       }
     ]
   };
@@ -87,12 +115,12 @@ function formatSummaryMessage(tests, reportUrl, appName) {
 // Obtém as configurações do arquivo JSON
 const config = getConfig();
 
-if (config && fs.existsSync(statusChartPath)) {
+if (config && fs.existsSync(summaryFilePath) && fs.existsSync(suitesFilePath)) {
   try {
-    const tests = JSON.parse(fs.readFileSync(statusChartPath));
-    console.log('Tests:', tests);  // Log do conteúdo dos testes
+    const summaryData = JSON.parse(fs.readFileSync(summaryFilePath));
+    const suitesData = JSON.parse(fs.readFileSync(suitesFilePath));
 
-    const summaryMessage = formatSummaryMessage(tests, config.reportUrl, config.appName);
+    const summaryMessage = formatSummaryMessage(summaryData, suitesData, config.reportUrl, 'Test Results - API-DEV');
 
     axios.post(config.teamsWebhookUrl, summaryMessage)
       .then(response => {
@@ -106,8 +134,8 @@ if (config && fs.existsSync(statusChartPath)) {
         }
       });
   } catch (error) {
-    console.error('Error reading or parsing status-chart.json:', error.message);
+    console.error('Error reading or parsing summary or suites json:', error.message);
   }
 } else {
-  console.error('Configuration or status-chart.json does not exist. Cannot send summary message to MS Teams.');
+  console.error('Configuration or summary.json or suites.json does not exist. Cannot send summary message to MS Teams.');
 }
