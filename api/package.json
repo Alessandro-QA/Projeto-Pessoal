@@ -10,7 +10,7 @@
     "allure:generate": "allure generate cypress/allure-results --clean -o cypress/allure-report",
     "allure:open": "npm run allure:generate && allure open cypress/allure-report",
     "eslint": "eslint ./cypress/",
-    "teamsReport": "cypress-msteams-reporter --verbose --report-path cypress/allure-report/__Env.buildNumber__/widgets/status-chart.json --testEnv-path cypress/allure-report/__Env.buildNumber__/widgets/environment.json --report-url __EndToEndTest.AllureUrl__"
+    "teamsReport": "node cypress/support/sendTeamsMessage.js"
   },
   "devDependencies": {
     "@testing-library/cypress": "^10.0.2",
@@ -22,8 +22,9 @@
     "eslint": "^9.5.0"
   },
   "dependencies": {
-    "dayjs": "^1.11.11",
     "allure-cypress": "^2.15.1",
+    "axios": "^1.7.2",
+    "dayjs": "^1.11.11",
     "ms-teams-webhook": "^2.1.0",
     "save-dev": "^0.0.1-security"
   }
