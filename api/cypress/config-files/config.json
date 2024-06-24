@@ -8,5 +8,9 @@
 
     "financeiro": "/api/financeiro/v1",
     "financeiroBackoffice": "/v1/api/Financeiro",
-    "producaoAgricola": "/api/producao-agricola/v1"
+    "producaoAgricola": "/api/producao-agricola/v1",
+    
+    "teamsWebhookUrl" : "__ApiTest.MyFarm.webhookReportUrl__",
+    "reportUrl" : "__EndToEndTest.AllureUrl__",
+    "appName": "__Deployment.App.Name__"
 }
