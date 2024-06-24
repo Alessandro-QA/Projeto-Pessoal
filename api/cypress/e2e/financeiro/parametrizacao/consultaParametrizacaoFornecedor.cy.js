@@ -5,10 +5,10 @@ const description = require('../../../fixtures/financeiro/parametrizacao/consult
 context('Financeiro', () => {
     context('Parametrizacao', () => {
         describe(`POST - ${Cypress.env('financeiro')}/Parametrizacao/ConsultaParametrizacaoFornecedor - Obtém Parametrizacao por Consulta de Fornecedor`, () => {
-
-            cy.allureDescriptionHtml(description.Ct1).allureSeverity('minor')
-
             it('CT1 - Consulta as Parametrizaçoes Pelos Fornecedores enviados', () => {
+
+                cy.allureDescriptionHtml(description.Ct1).allureSeverity('minor')
+                
                 cy.fixture('financeiro/parametrizacao/consultaParametrizacaoFornecedor/payloadCt1.json').then((payload) => {
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Parametrizacao/ConsultaParametrizacaoFornecedor`, payload)
                         .then((response) => {

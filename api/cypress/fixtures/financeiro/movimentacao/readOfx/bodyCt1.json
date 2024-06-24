@@ -1,0 +1,53 @@
+{
+    "success": true,
+    "data": {
+        "quantidadeDivergencias": 3,
+        "arquivoConciliado": false,
+        "dataInicio": "2022-02-05T00:00:00",
+        "dataFim": "2022-03-07T00:00:00",
+        "movimentacoesOFX": {
+            "contaId": "00000000-0000-0000-0000-000000000000",
+            "nomeConta": "SANTANDER - 10101",
+            "dias": [
+                {
+                    "dataDia": "2022-02-08T00:00:00",
+                    "movimentacoesDias": [
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "dataMovimentacao": "2022-02-08T00:00:00",
+                            "valor": 4334.34,
+                            "descricao": "Boleto ",
+                            "verificado": false
+                        }
+                    ],
+                    "conciliadosDias": []
+                },
+                {
+                    "dataDia": "2022-02-10T00:00:00",
+                    "movimentacoesDias": [
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "dataMovimentacao": "2022-02-10T00:00:00",
+                            "valor": -4333.34,
+                            "descricao": "PIX ENVIADO",
+                            "verificado": false
+                        },
+                        {
+                            "id": "00000000-0000-0000-0000-000000000000",
+                            "dataMovimentacao": "2022-02-10T00:00:00",
+                            "valor": 0.34,
+                            "descricao": "REMUNERACAO CONTAMAX CDB DI",
+                            "verificado": false
+                        }
+                    ],
+                    "conciliadosDias": []
+                }
+            ]
+        },
+        "movimentacoesFinanceiras": {
+            "contaId": "2b18d550-0683-48eb-ab15-9f44cd23dbae",
+            "nomeConta": "Banco Santander (Brasil) S.A. - Teste OFX",
+            "dias": []
+        }
+    }
+}

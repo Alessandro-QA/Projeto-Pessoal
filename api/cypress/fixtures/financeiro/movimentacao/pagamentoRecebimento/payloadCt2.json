@@ -1,0 +1,18 @@
+{
+    "data": "2024-06-20T10:12:40-03:00",
+    "valor": 60,
+    "tipoMovimentacao": "recebimento",
+    "dedutivel": true,
+    "empresa": {
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API"
+    },
+    "historico": "Teste",
+    "anexos": [],
+    "__valid": true,
+    "contaBancariaId": "1693c399-a49c-4924-9bf0-7949cbc5d5a3",
+    "categoria": {
+        "codigo": "3.01.01.02",
+        "descricao": "Soja"
+    }
+}
