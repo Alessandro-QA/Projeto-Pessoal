@@ -34,13 +34,23 @@ function formatDuration(duration) {
   return `${hoursDisplay}:${minutesDisplay}:${secondsDisplay}`;
 }
 
+// Função para formatar data e hora legíveis
+function formatDateTime(timestamp) {
+  const date = new Date(timestamp);
+  return date.toISOString().replace('T', ' ').replace(/\..+/, '');
+}
+
 function formatSummaryMessage(summaryData, suitesData, reportUrl, appName) {
   const totalTests = summaryData.statistic.total;
   const passedTests = summaryData.statistic.passed;
   const failedTests = summaryData.statistic.failed;
   const skippedTests = summaryData.statistic.skipped;
   const brokenTests = summaryData.statistic.broken;
-  const totalDuration = summaryData.time.sumDuration; // Tempo total de duração dos testes
+  
+  // Ajuste do fuso horário (-3 horas)
+  const startTime = summaryData.time.start - 3 * 60 * 60 * 1000;
+  const stopTime = summaryData.time.stop - 3 * 60 * 60 * 1000;
+  const totalDuration = summaryData.time.duration;
 
   // Lista dinâmica de tipos de teste do suites.json
   const testTypes = suitesData.items.map(item => {
@@ -66,6 +76,10 @@ function formatSummaryMessage(summaryData, suitesData, reportUrl, appName) {
         return '🔨'; // Hammer emoji for broken tests
       case 'time':
         return '⏱️'; // Stopwatch emoji for time
+      case 'start':
+        return '🟢'; // Green circle emoji for start time
+      case 'stop':
+        return '🔴'; // Red circle emoji for stop time
       default:
         return '';
     }
@@ -73,6 +87,14 @@ function formatSummaryMessage(summaryData, suitesData, reportUrl, appName) {
   
   // Construção dos fatos para cada tipo de teste dinamicamente
   const facts = [
+    {
+      "name": "Start Time:",
+      "value": `${getIcon('start')} ${formatDateTime(startTime)}`
+    },
+    {
+      "name": "End Time:",
+      "value": `${getIcon('stop')} ${formatDateTime(stopTime)}`
+    },
     {
       "name": "Total Duration:",
       "value": `${getIcon('time')} ${formatDuration(totalDuration)}`
@@ -120,7 +142,7 @@ if (config && fs.existsSync(summaryFilePath) && fs.existsSync(suitesFilePath)) {
     const summaryData = JSON.parse(fs.readFileSync(summaryFilePath));
     const suitesData = JSON.parse(fs.readFileSync(suitesFilePath));
 
-    const summaryMessage = formatSummaryMessage(summaryData, suitesData, config.reportUrl, 'Test Results - API-DEV');
+    const summaryMessage = formatSummaryMessage(summaryData, suitesData, config.reportUrl, config.appName);
 
     axios.post(config.teamsWebhookUrl, summaryMessage)
       .then(response => {
