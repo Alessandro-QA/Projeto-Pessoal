@@ -3,7 +3,7 @@
 const description = require('../../../fixtures/financeiro/movimentacao/atualizaAnexos/atualizaAnexos.description');
 
 context('Financeiro', () => {
-    context('Movimentacao', () => {
+    context('Movimentação', () => {
         describe(`PUT - ${Cypress.env('financeiro')}/Movimentacao/{id}/AtualizaAnexos - Atualiza os Anexos da Movimentação`, () => {
 
             it('CT1 - Adicionar um Anexo a Movimentação Bancária', () => {

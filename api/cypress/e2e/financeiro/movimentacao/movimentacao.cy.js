@@ -81,7 +81,7 @@ function validateMovimentacaoResponse(response) {
 }
 
 context('Financeiro', () => {
-    context('Movimentacao', () => {
+    context('Movimentação', () => {
         describe(`GET - ${Cypress.env('financeiro')}/Movimentacao/{id} - Obtém dados de somente uma movimentação específica`, () => {
 
             it('CT1 - Obtém as Movimentações de um Pagamento', () => {

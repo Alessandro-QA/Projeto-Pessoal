@@ -3,7 +3,7 @@
 const description = require('../../../fixtures/financeiro/movimentacao/verificarMovimentacoesDocumento/verificarMovimentacoesDocumento.description');
 
 context('Financeiro', () => {
-    context('Movimentacao', () => {
+    context('Movimentação', () => {
         describe(`GET - ${Cypress.env('financeiro')}/Movimentacao/VerificarMovimentacoesDocumento - Retorna true or False para consulta de Movimentações`, () => {
 
             it('CT1 - Obtém resposta se Documento possui movimentações', () => {

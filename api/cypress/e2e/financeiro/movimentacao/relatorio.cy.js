@@ -3,7 +3,7 @@
 const description = require('../../../fixtures/financeiro/movimentacao/relatorio/relatorio.description');
 
 context('Financeiro', () => {
-    context('Movimentacao', () => {
+    context('Movimentação', () => {
         describe(`GET - ${Cypress.env('financeiro')}//Movimentacao/Relatorio - Obtém Relatório detalhado de Pagamentos/Recebimentos trazend o Saldo pelo Filtro desejado`, () => {
 
             it('CT1 - Obtém o Relatório de todas Movimentações do Período', () => {

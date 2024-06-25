@@ -4,7 +4,7 @@ const description = require('../../../fixtures/financeiro/movimentacao/setMovime
 import dayjs from 'dayjs';
 
 context('Financeiro', () => {
-    context('Movimentacao', () => {
+    context('Movimentação', () => {
         describe(`PUT - ${Cypress.env('financeiro')}/Movimentacao/SetMovimentacaoConciliada - Define a Movimentação como Conciliada e Adiciona uma Data Conciliação`, () => {
 
             it('CT1 - Adiciona data conciliação para uma única movimentação', () => {

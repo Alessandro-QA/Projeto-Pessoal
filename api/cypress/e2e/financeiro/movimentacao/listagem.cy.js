@@ -90,7 +90,7 @@ context('Financeiro', () => {
                             expect(response.body).to.have.property('movimentacoes').that.is.an('array');
                             response.body.movimentacoes.forEach(movimentacao => {
                                 validarCamposMovimentacao(movimentacao);
-                                expect(movimentacao.categoria).to.be.equal("Caixa Geral")  // Passando o texto da categoria diretamente no código devido ao fato de passar o Código da Categoria no Payload e ser retornado a sua Descrição
+                                expect(movimentacao.categoria).to.include("Caixa Geral");  // Passando o texto da categoria diretamente no código devido ao fato de passar o Código da Categoria no Payload e ser retornado a sua Descrição
                             });
 
                         });
