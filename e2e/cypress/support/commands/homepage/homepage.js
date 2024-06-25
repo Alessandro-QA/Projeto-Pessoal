@@ -3,10 +3,7 @@
 const locDashboard = require('../../locators/homepage/locators-homepage.js');
 
 class Homepage {
-  /**
-   * Método para cadastrar um novo ciclo
-   * @param {} seedTestHomepage
-   */
+
   validarDashboard() {
     const url = '/home'
     const locatorTituloPagina = locDashboard.titulos.titulo
