@@ -8,7 +8,7 @@ context('Financeiro', () => {
 
             it('CT1 - Deve ver detalhes do Titulo', () => {
 
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('minor');
+                cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal');
 
                 cy.fixture('financeiro/titulo/details/payloadCt1.json').then((payload) => {
                   
