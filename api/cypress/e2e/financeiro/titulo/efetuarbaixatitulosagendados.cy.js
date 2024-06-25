@@ -1,14 +1,16 @@
 /// <reference types="Cypress" />
 
-//const description = require('../../../fixtures/financeiro/titulo/alterarvencimento/alterarvencimento.description');
+const description = require('../../../fixtures/financeiro/titulo/efetuarbaixatitulosagendados/efetuarbaixatitulosagendados.description');
 
 const dayjs = require('dayjs'); // Importando a biblioteca dayjs
 
 context('Financeiro', () => {
     context('Titulo', () => {
-        describe(`POST - ${Cypress.env('financeiro')}Titulo/EfetuarBaixaTitulosAgendados - alterar o Vencimento`, () => {
+        describe(`POST - ${Cypress.env('financeiro')}Titulo/EfetuarBaixaTitulosAgendados - Baixa no pedido finalizado`, () => {
 
             it('CT1 - Alterar o Vencimento', () => {
+
+                cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical');
 
                 // Obter a data de amanhã no formato desejado (YYYY-MM-DDTHH:mm:ssZ)
                 const today = dayjs().format('YYYY-MM-DDTHH:mm:ssZ');

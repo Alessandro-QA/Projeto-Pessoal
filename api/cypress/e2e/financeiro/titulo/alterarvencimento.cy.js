@@ -1,14 +1,14 @@
 /// <reference types="Cypress" />
 
-//const description = require('../../../fixtures/financeiro/titulo/alterarvencimento/alterarvencimento.description');
+const description = require('../../../fixtures/financeiro/titulo/alterarvencimento/alterarvencimento.description');
 
 context('Financeiro', () => {
     context('Titulo', () => {
         describe(`PUT - ${Cypress.env('financeiro')}Titulo/AlterarVencimento - alterar o Vencimento`, () => {
 
-            it('CT1 - Alterar o Vencimento', () => {
+            it('CT1 - Alterar o Vencimento do Titulo', () => {
 
-                //cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal');
+                cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal');
 
                 cy.fixture('financeiro/titulo/alterarvencimento/payloadCt1.json').then((payload) => {
                     cy.putRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Titulo/AlterarVencimento`, payload)
