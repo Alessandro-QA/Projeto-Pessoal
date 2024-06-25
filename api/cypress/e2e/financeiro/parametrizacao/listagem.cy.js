@@ -84,7 +84,7 @@ function verificarTiposCampos(registro) {
 }
 
 context('Financeiro', () => {
-    context('Parametrizacao', () => {
+    context('Parametrização', () => {
         describe(`POST - ${Cypress.env('financeiro')}/Parametrizacao/Listagem - Obtém registros de Parametrização`, () => {
 
             it('CT1 - Obter Todos Registros de Parametrização', () => {

@@ -3,7 +3,7 @@
 const description = require('../../../fixtures/financeiro/movimentacao/setConferido/setConferido.description');
 
 context('Financeiro', () => {
-    context('Movimentacao', () => {
+    context('Movimentação', () => {
         describe(`PUT - ${Cypress.env('financeiro')}/Movimentacao/{id}/setConferido/{conferido} - Atualiza movimentação para Status de Conferido`, () => {
 
             it('CT1 - Marcar uma Movimentação como Conferida', () => {

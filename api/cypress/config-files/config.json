@@ -8,6 +8,7 @@
 
     "financeiro": "/api/financeiro/v1",
     "financeiroBackoffice": "/v1/api/Financeiro",
+    "localidadeBackoffice": "/v1/api/localidade",
     "producaoAgricola": "/api/producao-agricola/v1",
     
     "teamsWebhookUrl" : "__ApiTest.MyFarm.webhookReportUrl__",
