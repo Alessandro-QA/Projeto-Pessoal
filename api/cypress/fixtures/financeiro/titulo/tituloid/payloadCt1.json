@@ -1,0 +1,25 @@
+{
+    "id": "d9f5bb64-5851-4c05-a81e-ca14c679df6f",
+    "valor": 20,
+    "saldo": 20,
+    "formaPagamento": "PIX",
+    "cnpj": "51634860047",
+    "condicaoRecebimento": "A vista",
+    "documentoId": "b6fb4b61-1611-490c-94cb-bb4dc1d8f6e9",
+    "empresa": {
+      "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+      "descricao": "Empresa Teste API"
+    },
+    "fornecedor": "Cliente Teste API",
+    "historicoRecebimento": [],
+    "numero": "525",
+    "operacao": {
+      "id": "b66ad789-c185-4837-9647-2b01e13654de",
+      "descricao": "Compensação a Pagar"
+    },
+    "parcela": "1/1",
+    "statusTitulo": 4,
+    "tags": [],
+    "vencimento": "2024-07-06T10:29:10-03:00"
+  }
+  

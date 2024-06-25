@@ -3,7 +3,7 @@
 const description = require('../../../fixtures/financeiro/parametrizacao/consultaParametrizacaoFornecedor/consultaParametrizacaoFornecedor.description');
 
 context('Financeiro', () => {
-    context('Parametrizacao', () => {
+    context('Parametrização', () => {
         describe(`POST - ${Cypress.env('financeiro')}/Parametrizacao/ConsultaParametrizacaoFornecedor - Obtém Parametrizacao por Consulta de Fornecedor`, () => {
             it('CT1 - Consulta as Parametrizaçoes Pelos Fornecedores enviados', () => {
 

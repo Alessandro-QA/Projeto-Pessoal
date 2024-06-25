@@ -3,7 +3,7 @@
 //const description = require('../../../fixtures/financeiro/movimentacao/cartao/cartao.description');
 
 context('Financeiro', () => {
-    context('Movimentacao', () => {
+    context('Movimentação', () => {
         describe(`GET - ${Cypress.env('financeiro')}/Movimentacao/AdiantamentosPedido - Traz as Movimentações de Origem daquele Pedido`, () => {
 
             it('CT1 - Obtém as Movimentações do Pedido Informado', () => {
