@@ -20,7 +20,7 @@ const locators = {
       paineis:'.is-active.navmenu > .hold-children > .swiper-container > .swiper-wrapper > :nth-child(6)',
       cadastros:'.is-active.navmenu > .hold-children > .swiper-container > .swiper-wrapper > :nth-child(7)',
     },
-
+    
     menu:{
       menuAtivo: '.is-active.navmenu'
     }

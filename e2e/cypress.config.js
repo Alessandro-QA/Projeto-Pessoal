@@ -74,11 +74,6 @@ module.exports = defineConfig({
         },
       });
 
-      on('uncaught:exception',(err, runnable) => {
-            // Retorne false para evitar falha do teste por exceção não capturada
-            return false;
-          });
-
       const allConfig = merge({}, config, envConfig);
       return allConfig;
     },

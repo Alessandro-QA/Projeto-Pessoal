@@ -7,10 +7,10 @@ const testDescription = require('./bdd-description/ciclo.description.js');
 
 describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
 
-  describe.skip('Cadastros', { tags: '@cadastro' }, () => {
+  describe('Cadastros', { tags: '@cadastro' }, () => {
     context('Ciclo', () => {
       // Teste de cadastro de um novo ciclo de milho
-      it('Deve cadastrar um ciclo de milho', function () {
+      it.only('Deve cadastrar um ciclo de milho', function () {
         //cy.allure().severity('normal').startStep('test content').descriptionHtml(testDescription.ciclo)
 
         Ciclo.cadastrar(seedTestCiclo)

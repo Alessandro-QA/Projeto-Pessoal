@@ -1,7 +1,7 @@
 const locators = {
   dashboard: {
     titulo: '[data-cy=header-ciclo-producao] > h1',
-    adicionarCiclo: '[data-cy=header-ciclo-producao] > button',
+    adicionarCiclo: '#root-ciclo-listagem-cnx-header-title-el-button-adicionar-novo-ciclo',
     titleCardCiclo: '[data-cy=descricao-safra]',
     pesquisarCiclo: '[data-cy=page-filter-ciclo] input'
   },

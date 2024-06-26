@@ -14,6 +14,9 @@ class Ciclo {
 
     // Navegar para cadastro de Ciclos
     cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    
+    cy.desabilitarPopUpNotificacao()
+
     cy.getVisible(locCiclo.dashboard.adicionarCiclo).click()
 
     // Selecionar safra
@@ -37,6 +40,7 @@ class Ciclo {
       .should('not.exist')
 
     cy.get(locCiclo.dashboard.titleCardCiclo).contains(seedTestCiclo.nomeSafra)
+    
   }
 
   /**

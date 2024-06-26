@@ -24,7 +24,6 @@ class Menus {
   validarAtividadesAgricolas() {
     // Clicar no botão de Atividades Agrícolas para abrir o sub-menu
     cy.get(locMenus.botoes.atividadeAgricola).click()
-    cy.wait(1500)
 
     // Iterar sobre cada chave (botão) dentro de locators.botoesAtividadesAgricolas
     Object.keys(locMenus.botoesAtividadesAgricolas).forEach((buttonKey) => {
@@ -34,23 +33,44 @@ class Menus {
       cy.get(buttonSelector).should('be.visible');
     });
 
+    cy.desabilitarPopUpNotificacao()
+
     // Simula o hover ao passar sobre o botão "Painéis" e aguarda até que o menu de opções esteja visível 
-    cy.get(locMenus.menu.menuAtivo).contains('Painéis')
-    .trigger('mouseover')
-    .should('be.visible')
-    .within(() => {
-      // Validar as opções dentro do menu
-      cy.get('.submenu-holder a').contains('Atividades do Campo').should('be.visible')
+    cy.get(locMenus.menu.menuAtivo).contains('Cadastro')
+      .should('be.visible')
+      .trigger('mouseenter')
+
+    // Aguarde até que o elemento <a> dentro do div submenu-holder esteja visível
+    //cy.get('div.submenu-holder a')
+     // .should('be.visible'); // Verifica se o link <a> dentro do div submenu-holder está visível na tela
+
+    // Localize o elemento pai que contém todos os elementos <a> do submenu
+    cy.get('div.submenu-holder').within(() => {
+      // Lista dos valores esperados dentro dos elementos <a>
+      const valoresEsperados = [
+        'Ciclo', 'Conta Contábil', 'Conversões de unidade', 'Cultura', 'Detentora',
+        'Empresas', 'Fazendas', 'Material', 'Perfis', 'Pessoas', 'Safra', 'Talhão',
+        'Und. de Armazenamento', 'Und. de Medida', 'Usuários', 'Variedade'
+      ];
+
+      // Itera sobre cada elemento <a> dentro do submenu e verifica se contém o texto esperado
+      valoresEsperados.forEach(valor => {
+        cy.contains('a', valor).should('be.visible'); // Verifica se o valor está presente e visível
+      });
     });
 
-    /*// Simula o hover ao passar sobre o botão "Cadastros"
-    cy.get('div.el-tooltip:contains("Cadastros")').trigger('mouseover');
+      cy.get(locMenus.menu.menuAtivo).within(() => {
+        // Lista dos valores esperados dentro dos elementos <a>
+        const valoresEsperados = [
+          'Dashboard ', 'Planejamento'
+        ];
+  
+        // Itera sobre cada elemento <a> dentro do submenu e verifica se contém o texto esperado
+        valoresEsperados.forEach(valor => {
+          cy.contains(valor).should('be.visible').should('have.text', valor); // Verifica se o valor está presente e visível
+        });
+    });
 
-    // Aguarda até que o menu de opções esteja visível
-    cy.get('div.el-tooltip__popper').should('be.visible').within(() => {
-      // Validar as opções dentro do menu
-      
-    }); */
   }
 }
 
