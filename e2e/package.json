@@ -43,6 +43,8 @@
   },
   "dependencies": {
     "allure-cypress": "^2.15.1",
-    "cypress-plugin-steps": "^1.1.1"
+    "cypress-plugin-steps": "^1.1.1",
+    "axios": "^1.7.2",
+    "ms-teams-webhook": "^2.1.0"
   }
 }

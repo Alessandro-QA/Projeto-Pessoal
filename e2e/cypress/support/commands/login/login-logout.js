@@ -9,7 +9,7 @@ class Authenticate {
   */
   login(credenciais) {
 
-    const loginUrl = `${Cypress.env('authUrl')}/Account/Login?ReturnUrl=`
+    const loginUrl = `https://api.uat.aliare.digital/aliare-auth/Account/Login?ReturnUrl=`
     const returnUrl = Cypress.env('returnURL')
 
     cy.request('GET', `${loginUrl + returnUrl}`).then(response => {
@@ -30,7 +30,9 @@ class Authenticate {
           grant_type: "password",
           username: credenciais.email,
           password: credenciais.senha,
-          client_id: 'my-farm-clientapp-dev'
+          client_id: 'my-farm-clientapp-dev',
+          __RequestVerificationToken: requestVerificationToken,
+          ReturnUrl: returnUrl
         }
       })
     })
