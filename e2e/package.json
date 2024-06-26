@@ -16,8 +16,7 @@
     "cypress:record:video": "cypress run --env ambiente=dev --config video=true",
     "cypress:dashboard": "cypress run --record --key be93c1be-6ff1-440a-8fc4-656daac9b59c",
     "eslint": "eslint ./cypress/**",
-    "teamsReport:dev": "node cypress/support/sendTeamsMessage.js",
-    "teamsReport:qa": "node -e process.env.ambiente='dev' cypress/support/sendTeamsMessage.js"
+    "teamsReport": "node cypress/support/sendTeamsMessage.js"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.12.39",

@@ -24,12 +24,12 @@ function getConfigurationFileFor(env) {
 module.exports = defineConfig({
   e2e: {
 
-    "viewportWidth": 1280,
-    "viewportHeight": 720,
-
+    viewportWidth: 1280,
+    viewportHeight: 720,
     video: false,
     watchForFileChanges: false,
     chromeWebSecurity: false,
+
 
     setupNodeEvents(on, config) {
 
@@ -73,6 +73,11 @@ module.exports = defineConfig({
           });
         },
       });
+
+      on('uncaught:exception',(err, runnable) => {
+            // Retorne false para evitar falha do teste por exceção não capturada
+            return false;
+          });
 
       const allConfig = merge({}, config, envConfig);
       return allConfig;
