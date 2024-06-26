@@ -10,11 +10,37 @@ const locators = {
       financeiro: '.siagri-icon-financeiro',
       resultados: '.siagri-icon-resultados',
       nfe: '.siagri-icon-nfe'
-    }
+    },
+    botoesAtividadesAgricolas: {
+      dashboard: '.is-active.navmenu > .hold-children > .swiper-container > .swiper-wrapper > .swiper-slide-active',
+      planejamento: '.is-active.navmenu > .hold-children > .swiper-container > .swiper-wrapper > .swiper-slide-next',
+      execucao: '.is-active.navmenu > .hold-children > .swiper-container > .swiper-wrapper > :nth-child(3)',
+      clima: '.is-active.navmenu > .hold-children > .swiper-container > .swiper-wrapper > :nth-child(4)',
+      históricoTalhoes:'.is-active.navmenu > .hold-children > .swiper-container > .swiper-wrapper > :nth-child(5)',
+      paineis:'.is-active.navmenu > .hold-children > .swiper-container > .swiper-wrapper > :nth-child(6)',
+      cadastros:'.is-active.navmenu > .hold-children > .swiper-container > .swiper-wrapper > :nth-child(7)',
+    },
+    /*botoesMaquinarios: {
+
+    },
+    botoesSuprimentos: {
+
+    },
+    botoesProducao: {
+
+    },
+    botoesFinanceiro: {
+
+    },
+    botoesResultados: {
+
+    },
+    bototesNFE: {
+      
+    } */
   }
   
   export default locators
   
-  // incluir cada botão/opção listada em cada menu.
-
+  
   

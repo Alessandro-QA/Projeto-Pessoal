@@ -24,6 +24,9 @@ function getConfigurationFileFor(env) {
 module.exports = defineConfig({
   e2e: {
 
+    "viewportWidth": 1280,
+    "viewportHeight": 720,
+
     video: false,
     watchForFileChanges: false,
     chromeWebSecurity: false,
