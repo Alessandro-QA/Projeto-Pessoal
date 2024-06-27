@@ -5,11 +5,13 @@
 
     "baseUrl": "https://myfarm.dev.conexa.com.br",
     "baseUrlBackoffice": "https://gke-apigateway.aliare.digital/dev/myfarm/backoffice/",
+    "baseUrlDaas": "https://daas.dev.conexa.com.br",
 
     "financeiro": "/api/financeiro/v1",
     "financeiroBackoffice": "/v1/api/Financeiro",
     "localidadeBackoffice": "/v1/api/localidade",
     "producaoAgricola": "/api/producao-agricola/v1",
+    "controleClimatico": "/api/controle-climatico/v1",
     
     "teamsWebhookUrl" : "__ApiTest.MyFarm.webhookReportUrl__",
     "reportUrl" : "__EndToEndTest.AllureUrl__",
