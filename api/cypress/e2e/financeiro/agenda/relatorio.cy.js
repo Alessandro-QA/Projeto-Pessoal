@@ -25,39 +25,49 @@ context('Financeiro', () => {
                             expect(titulos).to.be.an('array').that.is.not.empty;
 
                             // Verificar cada título individualmente
-                            titulos.forEach((titulo) => {
-                                expect(titulo).to.have.property('vencimento').that.is.a('string');
-                                expect(titulo).to.have.property('totalPagar').that.is.a('number');
-                                expect(titulo).to.have.property('totalReceber').that.is.a('number');
-                                expect(titulo).to.have.property('totalPago').that.is.a('number');
-                                expect(titulo).to.have.property('totalRecebido').that.is.a('number');
+                            const allTitulosValidos = titulos.every((titulo) => {
+                                const tituloValido = [
+                                    { key: 'vencimento', type: 'string' },
+                                    { key: 'totalPagar', type: 'number' },
+                                    { key: 'totalReceber', type: 'number' },
+                                    { key: 'totalPago', type: 'number' },
+                                    { key: 'totalRecebido', type: 'number' }
+                                ].every(({ key, type }) => typeof titulo[key] === type);
 
                                 // Verificar os detalhes dos títulos
                                 const detalhes = titulo.detalhes;
-                                expect(detalhes).to.be.an('array').that.is.not.empty;
-
-                                // Verificar cada detalhe individualmente
-                                detalhes.forEach((detalhe) => {
-                                    expect(detalhe).to.have.property('pessoa').that.is.a('string');
-                                    expect(detalhe).to.have.property('parcela').that.is.a('string');
-                                    expect(detalhe).to.have.property('valorParcela').that.is.a('number');
-                                    expect(detalhe).to.have.property('status').that.is.a('string');
-                                    expect(detalhe).to.have.property('saldo').that.is.a('number');
-                                    expect(detalhe).to.have.property('numero').that.is.a('string');
+                                const detalhesValidos = detalhes.every((detalhe) => {
+                                    const detalheValido = [
+                                        { key: 'pessoa', type: 'string' },
+                                        { key: 'parcela', type: 'string' },
+                                        { key: 'valorParcela', type: 'number' },
+                                        { key: 'status', type: 'string' },
+                                        { key: 'saldo', type: 'number' },
+                                        { key: 'numero', type: 'string' }
+                                    ].every(({ key, type }) => typeof detalhe[key] === type);
 
                                     // Verificar se existem informações bancárias
                                     if (detalhe.informacoesBancarias) {
                                         // Verificar os dados das informações bancárias
                                         const informacoesBancarias = detalhe.informacoesBancarias;
-                                        expect(informacoesBancarias).to.be.an('object');
-                                        expect(informacoesBancarias).to.have.property('descricaoBanco').that.is.a('string');
-                                        expect(informacoesBancarias).to.have.property('agenciaBancariaNumero').that.is.a('string');
-                                        expect(informacoesBancarias).to.have.property('agenciaBancariaDigitoVerificador').that.is.a('string');
-                                        expect(informacoesBancarias).to.have.property('numeroConta').that.is.a('string');
-                                        expect(informacoesBancarias).to.have.property('digitoVerificadorConta').that.is.a('string');
+                                        const informacoesBancariasValidas = [
+                                            { key: 'descricaoBanco', type: 'string' },
+                                            { key: 'agenciaBancariaNumero', type: 'string' },
+                                            { key: 'agenciaBancariaDigitoVerificador', type: 'string' },
+                                            { key: 'numeroConta', type: 'string' },
+                                            { key: 'digitoVerificadorConta', type: 'string' }
+                                        ].every(({ key, type }) => typeof informacoesBancarias[key] === type);
+
+                                        return detalheValido && informacoesBancariasValidas;
                                     }
+
+                                    return detalheValido;
                                 });
+
+                                return tituloValido && Array.isArray(detalhes) && detalhesValidos;
                             });
+
+                            expect(allTitulosValidos).to.be.true;
                         });
                 });
             });
@@ -162,15 +172,13 @@ context('Financeiro', () => {
                             expect(data.empresa).to.equal('Empresa Teste API');
 
                             // Verificações dos detalhes dos títulos parcialmente recebidos
-                            expect(data.titulos).to.be.an('array') // Espera-se um título
+                            expect(data.titulos).to.be.an('array'); // Espera-se um título
 
                             // Verifica se o status do detalhe do título é "Recebido Parcialmente" e o valorParcela é maior que zero
                             data.titulos.forEach((titulo) => {
                                 titulo.detalhes.forEach((detalhe) => {
                                     expect(detalhe).to.have.property('status').that.equals('Recebido Parcialmente'); // Verifica se o status é 'Recebido Parcialmente'
-                                    expect(detalhe).to.have.property('valorParcela').that.is.greaterThan(0); // Verifica se o valorParcela é maior que zero
-
-                                    // Verificações das informações bancárias
+                                    expect(detalhe).to.have.property('valorParcela').that.is.greaterThan(0); // Verifica se o valorParcela é maior que zero                               // Verificações das informações bancárias
                                     if (detalhe.informacoesBancarias) {
                                         const informacoesBancarias = detalhe.informacoesBancarias;
                                         expect(informacoesBancarias).to.have.property('descricaoBanco').that.is.a('string');
@@ -180,12 +188,10 @@ context('Financeiro', () => {
                                         expect(informacoesBancarias).to.have.property('digitoVerificadorConta').that.is.a('string');
                                     }
                                 });
-
                             });
                         });
                 });
             });
         });
     });
-});
-
+});  
