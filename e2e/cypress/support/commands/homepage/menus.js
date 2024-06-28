@@ -105,7 +105,7 @@ class Menus {
     cy.get(locMenus.botoes.maquinarios).click()
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.menuAtivo).within(() => {
+    cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
 
       // Pega os textos esperados do arquivo de locators
       const valoresEsperados = locMenus.textosEsperadosMaq.botoesMaquinarios
@@ -120,13 +120,12 @@ class Menus {
     })
 
     // Simula o hover ao passar sobre o botão "Painéis" e aguarda até que o menu de opções esteja visível 
-    cy.get(locMenus.menu.menuAtivo).contains('Painéis')
-      .should('be.visible')
+    cy.get(locMenus.menu.menuAtivo).should('be.visible')
+      .contains('Painéis')
       .trigger('mouseenter')
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.subMenu).should('be.visible')
-      .last()
+    cy.contains(locMenus.menu.subMenu, locMenus.textosEsperadosMaq.listaPaineis[0]).should('be.visible')
       .within(() => {
 
         // Pega os textos esperados do arquivo de locators
@@ -150,8 +149,7 @@ class Menus {
 
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.subMenu).should('be.visible')
-      .last()
+    cy.contains(locMenus.menu.subMenu, locMenus.textosEsperadosMaq.listaCadastros[0]).should('be.visible')
       .within(() => {
 
         // Pega os textos esperados do arquivo de locators
@@ -175,7 +173,7 @@ class Menus {
     cy.get(locMenus.botoes.suprimentos).click()
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.menuAtivo).within(() => {
+    cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
 
       // Pega os textos esperados do arquivo de locators
       const valoresEsperados = locMenus.textosEsperadosSup.botoesSuprimentos
@@ -195,8 +193,8 @@ class Menus {
       .trigger('mouseenter')
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.subMenu).should('be.visible')
-      .last()
+    cy.contains(locMenus.menu.subMenu, locMenus.textosEsperadosSup.listaConsultas[0])
+      .should('be.visible')
       .within(() => {
 
         // Pega os textos esperados do arquivo de locators
@@ -220,8 +218,7 @@ class Menus {
 
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.subMenu).should('be.visible')
-      .last()
+    cy.contains(locMenus.menu.subMenu, locMenus.textosEsperadosSup.listaCadastros[0]).should('be.visible')
       .within(() => {
 
         // Pega os textos esperados do arquivo de locators
@@ -245,7 +242,7 @@ class Menus {
     cy.get(locMenus.botoes.producao).click()
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.menuAtivo).within(() => {
+    cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
 
       // Pega os textos esperados do arquivo de locators
       const valoresEsperados = locMenus.textosEsperadosProd.botoesProducao
@@ -263,13 +260,13 @@ class Menus {
     cy.get(locMenus.menu.menuAtivo).contains('Cadastros')
       .should('be.visible')
       .trigger('mouseenter')
-
+      .wait(300)
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.subMenu).should('be.visible')
-      .last()
+    cy.contains(locMenus.menu.subMenu, locMenus.textosEsperadosProd.listaCadastros[3])
+      .should('be.visible')
       .within(() => {
-
+        
         // Pega os textos esperados do arquivo de locators
         const valoresEsperados = locMenus.textosEsperadosProd.listaCadastros
 
@@ -291,7 +288,7 @@ class Menus {
     cy.get(locMenus.botoes.financeiro).click()
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.menuAtivo).within(() => {
+    cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
 
       // Pega os textos esperados do arquivo de locators
       const valoresEsperados = locMenus.textosEsperadosFin.botoesFinanceiro
@@ -312,8 +309,9 @@ class Menus {
 
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.subMenu).should('be.visible')
-      .last()
+    cy.contains(locMenus.menu.subMenu, locMenus.textosEsperadosFin.listaPaineis[0])
+    .filter(':visible')
+      .should('be.visible')
       .within(() => {
 
         // Pega os textos esperados do arquivo de locators
@@ -337,8 +335,8 @@ class Menus {
 
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.subMenu).should('be.visible')
-      .last()
+    cy.contains(locMenus.menu.subMenu, locMenus.textosEsperadosFin.listaCadastros[3])
+      .should('be.visible')
       .within(() => {
 
         // Pega os textos esperados do arquivo de locators
@@ -362,7 +360,7 @@ class Menus {
     cy.get(locMenus.botoes.resultados).click()
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.menuAtivo).within(() => {
+    cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
 
       // Pega os textos esperados do arquivo de locators
       const valoresEsperados = locMenus.textosEsperadosResult.botoesResultados
@@ -383,7 +381,7 @@ class Menus {
     cy.get(locMenus.botoes.nfe).click()
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.menuAtivo).within(() => {
+    cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
 
       // Pega os textos esperados do arquivo de locators
       const valoresEsperados = locMenus.textosEsperadosNfe.botoesNfe
@@ -404,8 +402,8 @@ class Menus {
 
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
-    cy.get(locMenus.menu.subMenu).should('be.visible')
-      .last()
+    cy.contains(locMenus.menu.subMenu, locMenus.textosEsperadosNfe.listaCadastros[1])
+      .should('be.visible')
       .within(() => {
 
         // Pega os textos esperados do arquivo de locators

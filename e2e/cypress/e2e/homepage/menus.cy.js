@@ -18,49 +18,55 @@ context('Homepage', () => {
 
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
                 Menus.validarAtividadesAgricolas()
-                Menus.voltarHome()
+                
             })
 
             it('CT3 - Menu Maquinários', () => {
 
+                Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
                 Menus.validarMaquinarios()
-                Menus.voltarHome()
+               
             })
 
             it('CT4 - Menu Suprimentos', () => {
 
+                Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
                 Menus.validarSuprimentos()
-                Menus.voltarHome()
+               
             })
 
             it('CT5 - Menu Produção', () => {
 
+                Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
                 Menus.validarProducao()
-                Menus.voltarHome()
+                
             })
 
             it('CT6 - Menu Financeiro', () => {
 
+                Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
                 Menus.validarFinanceiro()
-                Menus.voltarHome()
+             
             })
 
             it('CT7 - Menu Resultados', () => {
 
+                Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
                 Menus.validarResultados()
-                Menus.voltarHome()
+                
             })
 
             it('CT8 - Menu NF-e', () => {
 
+                Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
                 Menus.validarNfe()
-                Menus.voltarHome()
+            
             })
         })
     })

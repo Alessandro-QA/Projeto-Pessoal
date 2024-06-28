@@ -15,7 +15,7 @@
     "cypress:run:tag": "cypress run --env grepTags=@NOME_DA_TAG,ambiente=dev",
     "cypress:record:video": "cypress run --env ambiente=dev --config video=true",
     "cypress:dashboard": "cypress run --record --key be93c1be-6ff1-440a-8fc4-656daac9b59c",
-    "eslint": "eslint ./cypress/**",
+    "eslint": "eslint ./cypress/",
     "teamsReport": "node cypress/support/sendTeamsMessage.js"
   },
   "devDependencies": {
