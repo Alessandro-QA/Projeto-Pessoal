@@ -1,6 +1,6 @@
 {
   "baseUrl": "__Env.MyFarm.BaseAddress__",
-  "teamsWebhookUrl" : "__ApiTest.MyFarm.webhookReportUrl__",
+  "teamsWebhookUrl" : "__EndToEndTest.MyFarm.webhookReportUrl__",
   "reportUrl" : "__EndToEndTest.AllureUrl__",
   "appName": "__Deployment.App.Name__",
   "env": {
