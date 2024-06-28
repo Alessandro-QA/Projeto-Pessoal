@@ -11,9 +11,8 @@ e2e/node_modules
 e2e/cypress/results/*
 e2e/cypress/allure-report/*
 e2e/cypress/allure-results/*
-e2e/cypress/config-files/*
-e2e/cypress/config-files/qa.json
-e2e/cypress/config-files/dev.json
+e2e/cypress/screenshots/*
+e2e/cypress/downloads
 
 # Ignores
 .vscode/*

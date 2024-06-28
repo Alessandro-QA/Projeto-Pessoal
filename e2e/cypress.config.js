@@ -24,9 +24,13 @@ function getConfigurationFileFor(env) {
 module.exports = defineConfig({
   e2e: {
 
+    viewportWidth: 1920,
+    viewportHeight: 1080,
     video: false,
     watchForFileChanges: false,
     chromeWebSecurity: false,
+    testIsolation: false,
+
 
     setupNodeEvents(on, config) {
 

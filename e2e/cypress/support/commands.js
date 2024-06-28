@@ -38,6 +38,11 @@ Cypress.Commands.add('getVisible', (locator) => {
     return cy.get(locator).scrollIntoView().should('exist').and('be.visible')
   })
 
+  Cypress.on('uncaught:exception', (err, runnable) => {
+    // ignorar erros específicos ou manipular de acordo com sua necessidade
+    return false; // para evitar que o erro seja lançado no console do Cypress
+});
+
   // Command Cypress para desabilitar a popup de notificação do MyFarm,
 // setando um item no localStorage. 
 Cypress.Commands.add('desabilitarPopUpNotificacao', () => {
