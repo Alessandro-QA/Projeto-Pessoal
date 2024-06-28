@@ -16,7 +16,7 @@ context('Homepage', () => {
 
             it('CT2 - Menu Atividades Agrícolas', () => {
 
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
+                cy.allureDescriptionHtml(description.Ct2).allureSeverity('critical')
                 Menus.validarAtividadesAgricolas()
                 
             })
@@ -24,7 +24,7 @@ context('Homepage', () => {
             it('CT3 - Menu Maquinários', () => {
 
                 Menus.voltarHome()
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
+                cy.allureDescriptionHtml(description.Ct3).allureSeverity('critical')
                 Menus.validarMaquinarios()
                
             })
@@ -32,7 +32,7 @@ context('Homepage', () => {
             it('CT4 - Menu Suprimentos', () => {
 
                 Menus.voltarHome()
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
+                cy.allureDescriptionHtml(description.Ct4).allureSeverity('critical')
                 Menus.validarSuprimentos()
                
             })
@@ -40,7 +40,7 @@ context('Homepage', () => {
             it('CT5 - Menu Produção', () => {
 
                 Menus.voltarHome()
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
+                cy.allureDescriptionHtml(description.Ct5).allureSeverity('critical')
                 Menus.validarProducao()
                 
             })
@@ -48,7 +48,7 @@ context('Homepage', () => {
             it('CT6 - Menu Financeiro', () => {
 
                 Menus.voltarHome()
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
+                cy.allureDescriptionHtml(description.Ct6).allureSeverity('critical')
                 Menus.validarFinanceiro()
              
             })
@@ -56,7 +56,7 @@ context('Homepage', () => {
             it('CT7 - Menu Resultados', () => {
 
                 Menus.voltarHome()
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
+                cy.allureDescriptionHtml(description.Ct7).allureSeverity('critical')
                 Menus.validarResultados()
                 
             })
@@ -64,7 +64,7 @@ context('Homepage', () => {
             it('CT8 - Menu NF-e', () => {
 
                 Menus.voltarHome()
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
+                cy.allureDescriptionHtml(description.Ct8).allureSeverity('critical')
                 Menus.validarNfe()
             
             })

@@ -30,6 +30,7 @@ module.exports = defineConfig({
     watchForFileChanges: false,
     chromeWebSecurity: false,
     testIsolation: false,
+    defaultCommandTimeout: 8000,
 
 
     setupNodeEvents(on, config) {
