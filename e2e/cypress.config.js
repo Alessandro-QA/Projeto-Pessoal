@@ -32,7 +32,6 @@ module.exports = defineConfig({
     testIsolation: false,
     defaultCommandTimeout: 8000,
 
-
     setupNodeEvents(on, config) {
 
       // Allure Report
@@ -46,7 +45,10 @@ module.exports = defineConfig({
       // função para leitura das variáveis de ambiente, assume 'dev' como default.
       const env = config.env.ambiente || 'dev';
       const envConfig = getConfigurationFileFor(env);
-
+      const configPath = path.resolve('cypress/config-files/ambiente.json');
+      const envAmbiente = require(configPath);
+      
+     
       // plugin para 'linting' dos arquivos de teste
       //on('file:preprocessor', cypressEslint());
 
@@ -76,8 +78,15 @@ module.exports = defineConfig({
         },
       });
 
-      const allConfig = merge({}, config, envConfig);
+      const allConfig = merge({}, config, envAmbiente, envConfig );
+
+      // Atualize as variáveis de ambiente
+      config.env = { ...config.env, ...allConfig.env };
+
       return allConfig;
     },
+
+
   },
+
 });

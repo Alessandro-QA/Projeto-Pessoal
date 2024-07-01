@@ -89,7 +89,7 @@ Cypress.Commands.add('allureFileAttachment', (name, path, type) => {
 });
 
 Cypress.Commands.add('allureStartStep', (name) => {
-  allure.startStep(name);
+  allure.step(name);
 });
 
 Cypress.Commands.add('allureEndStep', () => {
