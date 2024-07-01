@@ -1,47 +1,49 @@
-const baseUrl = Cypress.config('baseUrl')
-const tenant = Cypress.env('tenant')
+const tenant = Cypress.env('login_cadastro').tenant
 
 Cypress.Commands.add('getRequest', (url) => {
     cy.section(`Executando request do tipo "GET" no endpoint "${url}"`)
 
     return cy.api({
         "method": 'GET',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
-        }
+        },
+        "failOnStatusCode": false
     })
 })
 
-Cypress.Commands.add('getRequestWhitParams', (url, params) => {
+Cypress.Commands.add('getRequestWithParams', (url, params) => {
     cy.section(`Executando request do tipo "GET" no endpoint "${url}"`)
 
     return cy.api({
         "method": 'GET',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
-        "qs": params
+        "qs": params,
+        "failOnStatusCode": false
     })
 })
 
-Cypress.Commands.add('postRequestWhitParams', (url, params) => {
+Cypress.Commands.add('postRequestWithParams', (url, params) => {
     cy.section(`Executando request do tipo "POST" no endpoint "${url}"`)
 
     return cy.api({
         "method": 'POST',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
-        "qs": params
+        "qs": params,
+        "failOnStatusCode": false
     })
 })
 
@@ -50,13 +52,14 @@ Cypress.Commands.add('postRequest', (url, payload) => {
 
     return cy.api({
         "method": 'POST',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
-        "body": payload
+        "body": payload,
+        "failOnStatusCode": false
     })
 })
 
@@ -66,12 +69,13 @@ Cypress.Commands.add('deleteRequest', (url, id) => {
 
     return cy.api({
         "method": 'DELETE',
-        "url": `${baseUrl + url}/${id}`,
+        "url": `${url}/${id}`,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
+        "failOnStatusCode": false
     })
 })
 
@@ -81,28 +85,30 @@ Cypress.Commands.add('putRequest', (url, payload) => {
 
     return cy.api({
         "method": 'PUT',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
-        "body": payload
+        "body": payload,
+        "failOnStatusCode": false
     })
 })
 
-Cypress.Commands.add('putRequestWhitParams', (url, params) => {
+Cypress.Commands.add('putRequestWithParams', (url, params) => {
     cy.section(`Executando request do tipo "POST" no endpoint "${url}"`)
 
     return cy.api({
         "method": 'PUT',
-        "url": `${baseUrl + url}`,
+        "url": url,
         "headers": {
             'x-tenant': tenant,
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,
         },
-        "qs": params
+        "qs": params,
+        "failOnStatusCode": false
     })
 })
 
@@ -112,12 +118,13 @@ Cypress.Commands.add('patchRequest', (url, payload) => {
   
     return cy.api({
       "method": 'PATCH',
-      "url": `${baseUrl + url}`,
+      "url": url,
       "headers": {
         'x-tenant': tenant,
         'content-type': 'application/json',
         'authorization': `Bearer ${Cypress.env('access_token')}`,
       },
-      "body": payload
+      "body": payload,
+      "failOnStatusCode": false
     })
 })
