@@ -11,7 +11,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
       // Teste de cadastro de um novo ciclo de milho
       it('CT1 - Deve cadastrar um ciclo de milho', function () {
 
-        cy.allureDescriptionHtml(testDescription.ciclo).allureSeverity('normal')
+        cy.allureDescriptionHtml(testDescription.Ct1).allureSeverity('normal')
 
         Ciclo.cadastrar(seedTestCiclo)
       })
@@ -19,7 +19,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
       // Validação da Pesquisade ciclo
       it('CT2 - Deve pesquisar o ciclo de milho cadastrado', function () {
 
-        cy.allureDescriptionHtml(testDescription.ciclo).allureSeverity('normal')
+        cy.allureDescriptionHtml(testDescription.Ct2).allureSeverity('normal')
 
         Ciclo.validarBusca(seedTestCiclo)
       })
@@ -27,7 +27,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
       // Validação de Filtragem
       it('CT3 - Deve validar a filtragem de ciclo pela Safra', function () {
 
-        cy.allureDescriptionHtml(testDescription.ciclo).allureSeverity('normal')
+        cy.allureDescriptionHtml(testDescription.Ct3).allureSeverity('normal')
 
         Ciclo.validarFiltroSafra(seedTestCiclo)
       })
@@ -35,7 +35,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
       // Validação de Filtragem
       it('CT4 - Deve validar a filtragem de ciclo pela Data', function () {
 
-        cy.allureDescriptionHtml(testDescription.ciclo).allureSeverity('normal')
+        cy.allureDescriptionHtml(testDescription.Ct4).allureSeverity('normal')
 
         Ciclo.validarFiltroData(seedTestCiclo)
       })
@@ -43,7 +43,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
       // Validação de Inativos
       it('CT5 - Deve validar a filtragem de Situação', function () {
 
-        cy.allureDescriptionHtml(testDescription.ciclo).allureSeverity('normal')
+        cy.allureDescriptionHtml(testDescription.Ct5).allureSeverity('normal')
 
         Ciclo.validarInativos(seedTestCiclo)
       })
@@ -51,15 +51,15 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
       // Editar Ciclo
       it('CT6 - Deve editar um Ciclo Criado', function () {
 
-        cy.allureDescriptionHtml(testDescription.ciclo).allureSeverity('normal')
+        cy.allureDescriptionHtml(testDescription.Ct6).allureSeverity('normal')
 
         Ciclo.editarCiclo(seedTestCiclo)
       })
 
       // Editar Ciclo
-      it.only('CT7 - Deve Validar Campos Obrigatórios', function () {
+      it('CT7 - Deve Validar Campos Obrigatórios', function () {
 
-        cy.allureDescriptionHtml(testDescription.ciclo).allureSeverity('normal')
+        cy.allureDescriptionHtml(testDescription.Ct7).allureSeverity('normal')
 
         Ciclo.camposObrigatoriosCiclo(seedTestCiclo)
       })
