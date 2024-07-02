@@ -1,0 +1,190 @@
+{
+    "success": true,
+    "data": {
+        "numero": "0212429",
+        "serie": "004",
+        "dataEmissao": "2024-01-28 00:00:00",
+        "dataRecebimento": "2024-07-02T13:22:58.1807478+00:00",
+        "fornecedor": {
+            "id": null,
+            "nome": "Fornecedor Teste S.A.",
+            "nomeFantasia": "TUPI S.A",
+            "documentoPrincipal": "123456245234j2",
+            "inscricaoEstadual": null,
+            "email": "tupi.sa@tupisa.com.py",
+            "endereco": {
+                "logradouro": "AVDA. BOGGIANI 7385 Y MUSICOS DEL CHACO",
+                "numero": "7385",
+                "complemento": "",
+                "bairro": "",
+                "municipio": {
+                    "codigo": "",
+                    "nome": ""
+                },
+                "uf": "",
+                "codigoPostal": "",
+                "pais": {
+                    "codigo": "5860",
+                    "nome": "Paraguai"
+                },
+                "telefone": "021515941"
+            }
+        },
+        "empresa": {
+            "descricao": "Teste Dev Anderson Paraguai",
+            "inscricaoEstadual": null,
+            "cidade": "ASUNCION (DISTRITO)",
+            "uf": "ASUNCION (DISTRITO)",
+            "id": "d0a6d700-dc2c-4c2f-93cc-8a2de3362f1e"
+        },
+        "materiais": [
+            {
+                "materialNota": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "codigo": "93534",
+                    "descricao": "ASPIRADORA KARCHER WD1 CLASSIC 1.200W 1.098.322",
+                    "gtin": null,
+                    "ncm": null,
+                    "cfop": "",
+                    "unidadeMedida": {
+                        "codigo": null,
+                        "id": "00000000-0000-0000-0000-000000000000",
+                        "descricao": null
+                    },
+                    "situacao": 0
+                },
+                "quantidadeNf": 1,
+                "precoNf": 744000,
+                "mesmoValor": false,
+                "total": 744000,
+                "totalLiquido": 744000,
+                "saldoPedido": null,
+                "valorPedido": null,
+                "desconto": 0,
+                "pedidos": []
+            },
+            {
+                "materialNota": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "codigo": "35989",
+                    "descricao": "HIDROLAVADORA KARCHER K2 UE -UNIVERSAL EDITION 1400W",
+                    "gtin": null,
+                    "ncm": null,
+                    "cfop": "",
+                    "unidadeMedida": {
+                        "codigo": null,
+                        "id": "00000000-0000-0000-0000-000000000000",
+                        "descricao": null
+                    },
+                    "situacao": 0
+                },
+                "quantidadeNf": 1,
+                "precoNf": 780000,
+                "mesmoValor": false,
+                "total": 780000,
+                "totalLiquido": 780000,
+                "saldoPedido": null,
+                "valorPedido": null,
+                "desconto": 0,
+                "pedidos": []
+            }
+        ],
+        "urlArquivo": "https://projetoxdevstorage.blob.core.windows.net:443/recebimento/tmp/1766f4eb-7fd9-454b-9123-86ef4f9bcd11/00000000-0000-0000-0000-000000000000/50565240-f6d0-40e5-94de-ed13a79d44a0_xml_pr.xml",
+        "fileName": "XML_PR.xml",
+        "financeiro": {
+            "id": "06449b3d-527c-458a-98af-e7ebd0059def",
+            "quantidadeParcelas": 6,
+            "valorFixo": false,
+            "formaPagamento": null,
+            "pedidoPagamentoParcelas": [
+                {
+                    "id": "1a06148a-129d-4b36-8be2-c093313b6ff5",
+                    "numeroParcela": 1,
+                    "dataVencimento": "2024-03-01T23:59:59+00:00",
+                    "valorParcela": 254000,
+                    "valorParcelaAlternativa": 0,
+                    "moeda": {
+                        "id": "d8e9c4a2-b3c3-4c08-9928-567a8686c562",
+                        "descricao": "Guarani",
+                        "codigo": "600"
+                    },
+                    "moedaAlternativa": null
+                },
+                {
+                    "id": "136344ce-7dc8-4564-ba7a-e4a60a073e5f",
+                    "numeroParcela": 2,
+                    "dataVencimento": "2024-03-01T23:59:59+00:00",
+                    "valorParcela": 254000,
+                    "valorParcelaAlternativa": 0,
+                    "moeda": {
+                        "id": "d8e9c4a2-b3c3-4c08-9928-567a8686c562",
+                        "descricao": "Guarani",
+                        "codigo": "600"
+                    },
+                    "moedaAlternativa": null
+                },
+                {
+                    "id": "bb92eb84-9a4a-4e49-9746-0c3a04f2cf90",
+                    "numeroParcela": 3,
+                    "dataVencimento": "2024-03-01T23:59:59+00:00",
+                    "valorParcela": 254000,
+                    "valorParcelaAlternativa": 0,
+                    "moeda": {
+                        "id": "d8e9c4a2-b3c3-4c08-9928-567a8686c562",
+                        "descricao": "Guarani",
+                        "codigo": "600"
+                    },
+                    "moedaAlternativa": null
+                },
+                {
+                    "id": "3a6a2c6d-9a04-4918-a09d-e140ed80adff",
+                    "numeroParcela": 4,
+                    "dataVencimento": "2024-03-01T23:59:59+00:00",
+                    "valorParcela": 254000,
+                    "valorParcelaAlternativa": 0,
+                    "moeda": {
+                        "id": "d8e9c4a2-b3c3-4c08-9928-567a8686c562",
+                        "descricao": "Guarani",
+                        "codigo": "600"
+                    },
+                    "moedaAlternativa": null
+                },
+                {
+                    "id": "ce3b825c-2c70-4508-95fc-fdc845f5437c",
+                    "numeroParcela": 5,
+                    "dataVencimento": "2024-03-01T23:59:59+00:00",
+                    "valorParcela": 254000,
+                    "valorParcelaAlternativa": 0,
+                    "moeda": {
+                        "id": "d8e9c4a2-b3c3-4c08-9928-567a8686c562",
+                        "descricao": "Guarani",
+                        "codigo": "600"
+                    },
+                    "moedaAlternativa": null
+                },
+                {
+                    "id": "323ab3a5-e7dd-4374-b558-218e268f5c2f",
+                    "numeroParcela": 6,
+                    "dataVencimento": "2024-03-01T23:59:59+00:00",
+                    "valorParcela": 254000,
+                    "valorParcelaAlternativa": 0,
+                    "moeda": {
+                        "id": "d8e9c4a2-b3c3-4c08-9928-567a8686c562",
+                        "descricao": "Guarani",
+                        "codigo": "600"
+                    },
+                    "moedaAlternativa": null
+                }
+            ]
+        },
+        "outrosValores": null,
+        "moedaXML": {
+            "id": "29cc9fb1-a5d3-4e2e-be9d-ab7492b4e06b",
+            "descricao": "Guarani",
+            "codigo": 600,
+            "sigla": "PYG",
+            "simbolo": "₲",
+            "ativo": true
+        }
+    }
+}

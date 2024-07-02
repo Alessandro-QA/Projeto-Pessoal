@@ -1,0 +1,274 @@
+<rDE xmlns="http://ekuatia.set.gov.py/sifen/xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://ekuatia.set.gov.py/sifen/xsd siRecepDE_v150.xsd">
+    <dVerFor>150</dVerFor>
+    <DE Id="01800319702001004021242922024012818217348668">
+        <dDVId>8</dDVId>
+        <dFecFirma>2024-01-29T08:13:00</dFecFirma>
+        <dSisFact>1</dSisFact>
+        <gOpeDE>
+            <iTipEmi>1</iTipEmi>
+            <dDesTipEmi>Normal</dDesTipEmi>
+            <dCodSeg>821734866</dCodSeg>
+        </gOpeDE>
+        <gTimb>
+            <iTiDE>1</iTiDE>
+            <dDesTiDE>Factura electrónica</dDesTiDE>
+            <dNumTim>16012519</dNumTim>
+            <dEst>001</dEst>
+            <dPunExp>004</dPunExp>
+            <dNumDoc>0212429</dNumDoc>
+            <dFeIniT>2022-11-10</dFeIniT>
+        </gTimb>
+        <gDatGralOpe>
+            <dFeEmiDE>2024-01-28T00:00:00</dFeEmiDE>
+            <gOpeCom>
+                <iTipTra>1</iTipTra>
+                <dDesTipTra>Venta de mercadería</dDesTipTra>
+                <iTImp>1</iTImp>
+                <dDesTImp>IVA</dDesTImp>
+                <cMoneOpe>PYG</cMoneOpe>
+                <dDesMoneOpe>Guarani</dDesMoneOpe>
+            </gOpeCom>
+            <gEmis>
+                <dRucEm>123456245234j</dRucEm>
+                <dDVEmi>2</dDVEmi>
+                <TipCont>1</TipCont>
+                <dNomEmi>Fornecedor Teste S.A.</dNomEmi>
+                <dNomFanEmi>TUPI S.A</dNomFanEmi>
+                <dDirEmi>AVDA. BOGGIANI 7385 Y MUSICOS DEL CHACO</dDirEmi>
+                <dNumCas>7385</dNumCas>
+                <cDepEmi>1</cDepEmi>
+                <dDesDepEmi>CAPITAL</dDesDepEmi>
+                <cDisEmi>1</cDisEmi>
+                <dDesDisEmi>ASUNCION (DISTRITO)</dDesDisEmi>
+                <cCiuEmi>1</cCiuEmi>
+                <dDesCiuEmi>ASUNCION (DISTRITO)</dDesCiuEmi>
+                <dTelEmi>021515941</dTelEmi>
+                <dEmailE>tupi.sa@tupisa.com.py</dEmailE>
+                <gActEco>
+                    <cActEco>47190</cActEco>
+                    <dDesActEco>COMERCIO AL POR MENOR DE OTROS PRODUCTOS EN COMERCIOS NO
+                        ESPECIALIZADOS</dDesActEco>
+                </gActEco>
+                <gActEco>
+                    <cActEco>68201</cActEco>
+                    <dDesActEco>INTERMEDIACIÓN EN LA COMPRA, VENTA Y ARRENDAMIENTO DE INMUEBLES</dDesActEco>
+                </gActEco>
+                <gActEco>
+                    <cActEco>47412</cActEco>
+                    <dDesActEco>COMERCIO AL POR MENOR DE EQUIPOS DE TELECOMUNICACIONES</dDesActEco>
+                </gActEco>
+                <gActEco>
+                    <cActEco>47592</cActEco>
+                    <dDesActEco>COMERCIO AL POR MENOR DE MUEBLES Y ACCESORIOS PARA EL HOGAR</dDesActEco>
+                </gActEco>
+                <gActEco>
+                    <cActEco>47599</cActEco>
+                    <dDesActEco>COMERCIO AL POR MENOR DE OTROS ARTÍCULOS Y EQUIPOS DE USO DOMÉSTICO
+                        N.C.P.</dDesActEco>
+                </gActEco>
+                <gActEco>
+                    <cActEco>47631</cActEco>
+                    <dDesActEco>COMERCIO AL POR MENOR DE BICICLETAS</dDesActEco>
+                </gActEco>
+                <gActEco>
+                    <cActEco>95299</cActEco>
+                    <dDesActEco>REPARACIÓN DE OTROS BIENES PERSONALES Y DOMÉSTICOS N.C.P.</dDesActEco>
+                </gActEco>
+                <gActEco>
+                    <cActEco>45401</cActEco>
+                    <dDesActEco>COMERCIO DE MOTOCICLETAS Y DE SUS PIEZAS Y ACCESORIOS</dDesActEco>
+                </gActEco>
+                <gActEco>
+                    <cActEco>47591</cActEco>
+                    <dDesActEco>COMERCIO AL POR MENOR DE ELECTRODOMÉSTICOS Y ACCESORIOS</dDesActEco>
+                </gActEco>
+                <gRespDE>
+                    <iTipIDRespDE>1</iTipIDRespDE>
+                    <dDTipIDRespDE>Cédula paraguaya</dDTipIDRespDE>
+                    <dNumIDRespDE>6371740</dNumIDRespDE>
+                    <dNomRespDE>MARTINEZ PICCO, MILAGROS MONSERRAT</dNomRespDE>
+                    <dCarRespDE>FACTURACION</dCarRespDE>
+                </gRespDE>
+            </gEmis>
+            <gDatRec>
+                <iNatRec>1</iNatRec>
+                <iTiOpe>2</iTiOpe>
+                <cPaisRec>PRY</cPaisRec>
+                <dDesPaisRe>Paraguay</dDesPaisRe>
+                <iTiContRec>1</iTiContRec>
+                <dRucRec>4286245</dRucRec>
+                <dDVRec>0</dDVRec>
+                <dNomRec>SALCEDO VERA MIRIAN ELIZABETH</dNomRec>
+                <dDirRec>A 300metros de la ruta Py06, camino a Tavapy 2, casa 4</dDirRec>
+                <dNumCasRec>0</dNumCasRec>
+                <cDepRec>1</cDepRec>
+                <dDesDepRec>CAPITAL</dDesDepRec>
+                <cDisRec>1</cDisRec>
+                <dDesDisRec>ASUNCION (DISTRITO)</dDesDisRec>
+                <cCiuRec>1</cCiuRec>
+                <dDesCiuRec>ASUNCION (DISTRITO)</dDesCiuRec>
+                <dEmailRec>ely.salcedo10@gmail.com</dEmailRec>
+                <dCodCliente>4286245</dCodCliente>
+            </gDatRec>
+        </gDatGralOpe>
+        <gDtipDE>
+            <gCamFE>
+                <iIndPres>2</iIndPres>
+                <dDesIndPres>Operación electrónica</dDesIndPres>
+            </gCamFE>
+            <gCamCond>
+                <iCondOpe>2</iCondOpe>
+                <dDCondOpe>Crédito</dDCondOpe>
+                <gPagCred>
+                    <iCondCred>2</iCondCred>
+                    <dDCondCred>Cuota</dDCondCred>
+                    <dCuotas>6</dCuotas>
+                    <gCuotas>
+                        <cMoneCuo>PYG</cMoneCuo>
+                        <dDMoneCuo>Guarani</dDMoneCuo>
+                        <dMonCuota>254000</dMonCuota>
+                        <dVencCuo>2024-03-01</dVencCuo>
+                    </gCuotas>
+                    <gCuotas>
+                        <cMoneCuo>PYG</cMoneCuo>
+                        <dDMoneCuo>Guarani</dDMoneCuo>
+                        <dMonCuota>254000</dMonCuota>
+                        <dVencCuo>2024-03-01</dVencCuo>
+                    </gCuotas>
+                    <gCuotas>
+                        <cMoneCuo>PYG</cMoneCuo>
+                        <dDMoneCuo>Guarani</dDMoneCuo>
+                        <dMonCuota>254000</dMonCuota>
+                        <dVencCuo>2024-03-01</dVencCuo>
+                    </gCuotas>
+                    <gCuotas>
+                        <cMoneCuo>PYG</cMoneCuo>
+                        <dDMoneCuo>Guarani</dDMoneCuo>
+                        <dMonCuota>254000</dMonCuota>
+                        <dVencCuo>2024-03-01</dVencCuo>
+                    </gCuotas>
+                    <gCuotas>
+                        <cMoneCuo>PYG</cMoneCuo>
+                        <dDMoneCuo>Guarani</dDMoneCuo>
+                        <dMonCuota>254000</dMonCuota>
+                        <dVencCuo>2024-03-01</dVencCuo>
+                    </gCuotas>
+                    <gCuotas>
+                        <cMoneCuo>PYG</cMoneCuo>
+                        <dDMoneCuo>Guarani</dDMoneCuo>
+                        <dMonCuota>254000</dMonCuota>
+                        <dVencCuo>2024-03-01</dVencCuo>
+                    </gCuotas>
+                </gPagCred>
+            </gCamCond>
+            <gCamItem>
+                <dCodInt>93534</dCodInt>
+                <dDesProSer>ASPIRADORA KARCHER WD1 CLASSIC 1.200W 1.098.322</dDesProSer>
+                <cUniMed>77</cUniMed>
+                <dDesUniMed>UNI</dDesUniMed>
+                <dCantProSer>1</dCantProSer>
+                <gValorItem>
+                    <dPUniProSer>744000</dPUniProSer>
+                    <dTotBruOpeItem>744000</dTotBruOpeItem>
+                    <gValorRestaItem>
+                        <dDescItem>0</dDescItem>
+                        <dPorcDesIt>0</dPorcDesIt>
+                        <dDescGloItem>0.00000000</dDescGloItem>
+                        <dAntPreUniIt>0</dAntPreUniIt>
+                        <dAntGloPreUniIt>0</dAntGloPreUniIt>
+                        <dTotOpeItem>744000</dTotOpeItem>
+                    </gValorRestaItem>
+                </gValorItem>
+                <gCamIVA>
+                    <iAfecIVA>1</iAfecIVA>
+                    <dDesAfecIVA>Gravado IVA</dDesAfecIVA>
+                    <dPropIVA>100</dPropIVA>
+                    <dTasaIVA>10</dTasaIVA>
+                    <dBasGravIVA>676364</dBasGravIVA>
+                    <dLiqIVAItem>67636</dLiqIVAItem>
+                    <dBasExe>0</dBasExe>
+                </gCamIVA>
+            </gCamItem>
+            <gCamItem>
+                <dCodInt>35989</dCodInt>
+                <dDesProSer>HIDROLAVADORA KARCHER K2 UE -UNIVERSAL EDITION 1400W</dDesProSer>
+                <cUniMed>77</cUniMed>
+                <dDesUniMed>UNI</dDesUniMed>
+                <dCantProSer>1</dCantProSer>
+                <gValorItem>
+                    <dPUniProSer>780000</dPUniProSer>
+                    <dTotBruOpeItem>780000</dTotBruOpeItem>
+                    <gValorRestaItem>
+                        <dDescItem>0</dDescItem>
+                        <dPorcDesIt>0</dPorcDesIt>
+                        <dDescGloItem>0.00000000</dDescGloItem>
+                        <dAntPreUniIt>0</dAntPreUniIt>
+                        <dAntGloPreUniIt>0</dAntGloPreUniIt>
+                        <dTotOpeItem>780000</dTotOpeItem>
+                    </gValorRestaItem>
+                </gValorItem>
+                <gCamIVA>
+                    <iAfecIVA>1</iAfecIVA>
+                    <dDesAfecIVA>Gravado IVA</dDesAfecIVA>
+                    <dPropIVA>100</dPropIVA>
+                    <dTasaIVA>10</dTasaIVA>
+                    <dBasGravIVA>709091</dBasGravIVA>
+                    <dLiqIVAItem>70909</dLiqIVAItem>
+                    <dBasExe>0</dBasExe>
+                </gCamIVA>
+            </gCamItem>
+        </gDtipDE>
+        <gTotSub>
+            <dSubExe>0</dSubExe>
+            <dSubExo>0</dSubExo>
+            <dSub5>0</dSub5>
+            <dSub10>1524000</dSub10>
+            <dTotOpe>1524000</dTotOpe>
+            <dTotDesc>0</dTotDesc>
+            <dTotDescGlotem>0</dTotDescGlotem>
+            <dTotAntItem>0</dTotAntItem>
+            <dTotAnt>0</dTotAnt>
+            <dPorcDescTotal>0</dPorcDescTotal>
+            <dDescTotal>0</dDescTotal>
+            <dAnticipo>0</dAnticipo>
+            <dRedon>0</dRedon>
+            <dTotGralOpe>1524000</dTotGralOpe>
+            <dIVA5>0</dIVA5>
+            <dIVA10>138545</dIVA10>
+            <dLiqTotIVA5>0</dLiqTotIVA5>
+            <dLiqTotIVA10>0</dLiqTotIVA10>
+            <dTotIVA>138545</dTotIVA>
+            <dBaseGrav5>0</dBaseGrav5>
+            <dBaseGrav10>1385455</dBaseGrav10>
+            <dTBasGraIVA>1385455</dTBasGraIVA>
+        </gTotSub>
+    </DE>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+            <Reference URI="#01800319702001004021242922024012818217348668">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>3BzmL7OgcuL1EI2lXV6lHmQRA35CIO67BDgaDXuJpgE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>
+            J2GAQ2/V+YiBeoGTmq7IK+cjaxvixBCfpr90jv7VZOpBcqpJoKBQt/l/AtoXfskxR7NONFEenxKmfDj+ww3Ds5unXG/mD5mpa6mgjEHontcJNGK4cJs54NkVFBNa2XNqi+LJL/COA5OovKVkNkplXKHr1XMoVxYh6qlm7QlJ1p/fiadT5LK4trm8VUzcOOhrcId/IAjAVfN5JJDyN7vo/YFKLXY2luisFMXdSVax0IpCc56TjbAQZKzwJEvE4QEFVHZ8v3YiJzWqc7IxjxDS7YxBU0NRaCmUKGxXeAbHD2GvE7XwdhbWlNaS5ob96AXJzbJZ37hvcyJ8GFo34SY6Uw==</SignatureValue>
+        <KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+            <X509Data>
+                <X509Certificate>
+                    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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+    <gCamFuFD>
+        <dCarQR>
+            https://ekuatia.set.gov.py/consultas/qr?nVersion=150&amp;Id=01800319702001004021242922024012818217348668&amp;dFeEmiDE=323032342d30312d32385430303a30303a3030&amp;dRucRec=4286245&amp;dTotGralOpe=1524000&amp;dTotIVA=138545&amp;cItems=2&amp;DigestValue=33427a6d4c374f6763754c314549326c5856366c486d515241333543494f3637424467614458754a7067453d&amp;IdCSC=1&amp;cHashQR=40222ac29e6bf32b45323bb7220f5810e793feeef5341550a22f834934b25305</dCarQR>
+    </gCamFuFD>
+</rDE>

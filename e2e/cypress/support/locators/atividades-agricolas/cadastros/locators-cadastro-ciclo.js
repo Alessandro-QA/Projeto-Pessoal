@@ -25,7 +25,7 @@ const locators = {
     btnCancelar: '[data-cy=button-submit] > .el-button--secondary',
     btnAdicionar: '[data-cy=button-submit] > .el-button--primary',
     situacao: '[data-cy="radio-situacao"]',
-    apagarData: '.el-range__close-icon',
+    apagarData: '[data-cy=date-picker-periodo] .el-range__close-icon',
   
   }
 }

@@ -1,0 +1,200 @@
+{
+    "success": true,
+    "data": {
+        "numero": "1012212",
+        "serie": "1",
+        "dataEmissao": "2021-12-10T10:40:56-03:00",
+        "dataRecebimento": "2024-07-02T11:44:45.4953681+00:00",
+        "fornecedor": {
+            "id": null,
+            "nome": "TESTE DO CONTROLE",
+            "nomeFantasia": null,
+            "documentoPrincipal": "94813102000170",
+            "inscricaoEstadual": "1070014211",
+            "email": null,
+            "endereco": {
+                "logradouro": "AV PRINCIPAL",
+                "numero": "187",
+                "complemento": null,
+                "bairro": "DISTRITO INDUSTRIAL",
+                "municipio": {
+                    "codigo": "4316709",
+                    "nome": "SANTA BARBARA DO SUL"
+                },
+                "uf": "RS",
+                "codigoPostal": "98240000",
+                "pais": {
+                    "codigo": "1058",
+                    "nome": "BRASIL"
+                },
+                "telefone": null
+            }
+        },
+        "empresa": {
+            "descricao": "Teste Dev Anderson",
+            "inscricaoEstadual": {
+                "id": "51890861-df7e-4b1a-8ec1-f4d6a0c63219",
+                "descricao": "IE 01",
+                "valor": "158881818",
+                "isento": false,
+                "ativo": false
+            },
+            "cidade": "GOIANIA",
+            "uf": "GO",
+            "id": "92c2d495-e66d-433d-a2aa-5957d09e809e"
+        },
+        "materiais": [
+            {
+                "materialNota": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "codigo": "155",
+                    "descricao": "SOJA EM GRAOS",
+                    "gtin": "7896063244481",
+                    "ncm": "12081000",
+                    "cfop": "6101",
+                    "unidadeMedida": {
+                        "codigo": null,
+                        "id": "00000000-0000-0000-0000-000000000000",
+                        "descricao": null
+                    },
+                    "situacao": 0
+                },
+                "quantidadeNf": 1,
+                "precoNf": 1000,
+                "mesmoValor": false,
+                "total": 1000,
+                "totalLiquido": 1000,
+                "saldoPedido": null,
+                "valorPedido": null,
+                "desconto": 0,
+                "pedidos": []
+            },
+            {
+                "materialNota": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "codigo": "188",
+                    "descricao": "SOJA/SBL POTENCIA RR/S-2/5,6/60",
+                    "gtin": "SEM GTIN",
+                    "ncm": "12081000",
+                    "cfop": "6101",
+                    "unidadeMedida": {
+                        "codigo": null,
+                        "id": "00000000-0000-0000-0000-000000000000",
+                        "descricao": null
+                    },
+                    "situacao": 0
+                },
+                "quantidadeNf": 1,
+                "precoNf": 1000,
+                "mesmoValor": false,
+                "total": 1000,
+                "totalLiquido": 1000,
+                "saldoPedido": null,
+                "valorPedido": null,
+                "desconto": 0,
+                "pedidos": []
+            },
+            {
+                "materialNota": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "codigo": "210",
+                    "descricao": "SEMENTES CONTROLADORIA",
+                    "gtin": "SEM GTIN",
+                    "ncm": "12081000",
+                    "cfop": "6101",
+                    "unidadeMedida": {
+                        "codigo": null,
+                        "id": "00000000-0000-0000-0000-000000000000",
+                        "descricao": null
+                    },
+                    "situacao": 0
+                },
+                "quantidadeNf": 1,
+                "precoNf": 1000,
+                "mesmoValor": false,
+                "total": 1000,
+                "totalLiquido": 1000,
+                "saldoPedido": null,
+                "valorPedido": null,
+                "desconto": 0,
+                "pedidos": []
+            },
+            {
+                "materialNota": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "codigo": "225",
+                    "descricao": "FARINHA DE SOJA",
+                    "gtin": "SEM GTIN",
+                    "ncm": "12081000",
+                    "cfop": "6101",
+                    "unidadeMedida": {
+                        "codigo": null,
+                        "id": "00000000-0000-0000-0000-000000000000",
+                        "descricao": null
+                    },
+                    "situacao": 0
+                },
+                "quantidadeNf": 1,
+                "precoNf": 1000,
+                "mesmoValor": false,
+                "total": 1000,
+                "totalLiquido": 1000,
+                "saldoPedido": null,
+                "valorPedido": null,
+                "desconto": 0,
+                "pedidos": []
+            },
+            {
+                "materialNota": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "codigo": "231",
+                    "descricao": "SEMENTE DE SOJA PR PAUTA",
+                    "gtin": "SEM GTIN",
+                    "ncm": "99999999",
+                    "cfop": "6101",
+                    "unidadeMedida": {
+                        "codigo": null,
+                        "id": "00000000-0000-0000-0000-000000000000",
+                        "descricao": null
+                    },
+                    "situacao": 0
+                },
+                "quantidadeNf": 1,
+                "precoNf": 1000,
+                "mesmoValor": false,
+                "total": 1000,
+                "totalLiquido": 1000,
+                "saldoPedido": null,
+                "valorPedido": null,
+                "desconto": 0,
+                "pedidos": []
+            }
+        ],
+        "urlArquivo": "https://projetoxdevstorage.blob.core.windows.net:443/recebimento/tmp/273276e0-7cc1-4891-94de-55e9ced2aad2/00000000-0000-0000-0000-000000000000/2fa8f572-753a-43f8-bfd3-cf05872cf65b_proc_xml_ceee6580-eab9-4216-b46e-0b73251aaf39.xml",
+        "fileName": "proc_xml_ceee6580-eab9-4216-b46e-0b73251aaf39.xml",
+        "financeiro": {
+            "id": "da645f89-e4d8-4a02-a438-d07f9527ce28",
+            "quantidadeParcelas": 1,
+            "valorFixo": false,
+            "formaPagamento": null,
+            "pedidoPagamentoParcelas": [
+                {
+                    "id": "89de5e14-8704-42cc-80cc-6b7268872c0c",
+                    "numeroParcela": 1,
+                    "dataVencimento": "2024-07-02T00:00:00+00:00",
+                    "valorParcela": 5000,
+                    "valorParcelaAlternativa": null,
+                    "moeda": null,
+                    "moedaAlternativa": null
+                }
+            ]
+        },
+        "outrosValores": {
+            "frete": 0,
+            "seguro": 0,
+            "despesas": 0,
+            "descontos": 0
+        },
+        "moedaXML": null
+    }
+}
