@@ -1,0 +1,24 @@
+{
+    "success": true,
+    "data": {
+        "id": "1e641ddc-4524-4a11-ad70-ce7e15dcc989",
+        "descricao": "CULTURA 02",
+        "nomeCientifico": "Nome Cientifico Cultura 02",
+        "unidadeMedida": {
+            "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+            "descricao": "Quilograma"
+        },
+        "imageClass": "sunhigh-medium",
+        "materialColheita": {
+            "id": "cf545213-6b50-4e37-8511-aa57f067e77a",
+            "descricao": "MATERIAL COLHEITA P/ NOVA CULTURA",
+            "unidadeMedida": {
+                "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+                "sigla": "kg"
+            },
+            "tipoMaterial": 4
+        },
+        "fasesFenologicas": [],
+        "qtdEstadiosFenologicos": 0
+    }
+}
