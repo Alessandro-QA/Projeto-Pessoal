@@ -12,6 +12,7 @@
     "localidadeBackoffice": "/v1/api/localidade",
     "producaoAgricola": "/api/producao-agricola/v1",
     "controleClimatico": "/api/controle-climatico/v1",
+    "cultura": "/api/cultura/v1",
     
     "teamsWebhookUrl" : "__ApiTest.MyFarm.webhookReportUrl__",
     "reportUrl" : "__EndToEndTest.AllureUrl__",
