@@ -171,11 +171,8 @@ class Ciclo {
 
     cy.getVisible(locCiclo.dashboard.adicionarCiclo).click()
 
-    //cy.get(locCiclo.ciclo.dataInicio).clear()
-    //cy.get(locCiclo.ciclo.dataFim).clear()
-
     cy.get(locCiclo.ciclo.apagarData).click()
-
+    
     // botao salvar
     cy.get(locCiclo.ciclo.btnAdicionar).click()
 

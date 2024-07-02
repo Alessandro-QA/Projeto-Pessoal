@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe43211294813102000170550010010122121089331998">
+        <ide>
+            <cUF>43</cUF>
+            <cNF>08933199</cNF>
+            <natOp>VENDA PRODUCAO DO ESTABELECIMENTO</natOp>
+            <mod>55</mod>
+            <serie>1</serie>
+            <nNF>1012212</nNF>
+            <dhEmi>2021-12-10T10:40:56-03:00</dhEmi>
+            <dhSaiEnt>2021-12-10T10:40:56-03:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+            <idDest>2</idDest>
+            <cMunFG>4316709</cMunFG>
+            <tpImp>1</tpImp>
+            <tpEmis>1</tpEmis>
+            <cDV>8</cDV>
+            <tpAmb>2</tpAmb>
+            <finNFe>1</finNFe>
+            <indFinal>1</indFinal>
+            <indPres>9</indPres>
+            <indIntermed>0</indIntermed>
+            <procEmi>0</procEmi>
+            <verProc>1.0</verProc>
+        </ide>
+        <emit>
+            <CNPJ>94813102000170</CNPJ>
+            <xNome>TESTE DO CONTROLE</xNome>
+            <enderEmit>
+                <xLgr>AV PRINCIPAL</xLgr>
+                <nro>187</nro>
+                <xBairro>DISTRITO INDUSTRIAL</xBairro>
+                <cMun>4316709</cMun>
+                <xMun>SANTA BARBARA DO SUL</xMun>
+                <UF>RS</UF>
+                <CEP>98240000</CEP>
+                <cPais>1058</cPais>
+                <xPais>BRASIL</xPais>
+            </enderEmit>
+            <IE>1070014211</IE>
+            <CRT>3</CRT>
+        </emit>
+        <dest>
+            <CNPJ>55881699483</CNPJ>
+            <xNome>Teste Dev Anderson</xNome>
+            <enderDest>
+                <xLgr>Rua Holywood</xLgr>
+                <nro>240</nro>
+                <xBairro>ESPLANADA ANICUNS</xBairro>
+                <cMun>5208707</cMun>
+                <xMun>GOIANIA</xMun>
+                <UF>GO</UF>
+                <CEP>74703140</CEP>
+                <cPais>1058</cPais>
+                <xPais>BRASIL</xPais>
+                <fone>6299286-0124</fone>
+            </enderDest>
+            <indIEDest>1</indIEDest>
+            <IE>158881818</IE>
+            <email>suporte@siagri.com.br</email>
+        </dest>
+        <autXML>
+            <CNPJ>15469381000120</CNPJ>
+        </autXML>
+        <det nItem="1">
+            <prod>
+                <cProd>155</cProd>
+                <cEAN>7896063244481</cEAN>
+                <xProd>SOJA EM GRAOS</xProd>
+                <NCM>12081000</NCM>
+                <cBenef>RS051001</cBenef>
+                <CFOP>6101</CFOP>
+                <uCom>KG</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>1000.0000000000</vUnCom>
+                <vProd>1000.00</vProd>
+                <cEANTrib>7896063244481</cEANTrib>
+                <uTrib>KG</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>1000.0000000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>1004</xPed>
+                <nItemPed>2058</nItemPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>40</CST>
+                        <vICMSDeson>70.00</vICMSDeson>
+                        <motDesICMS>9</motDesICMS>
+                    </ICMS40>
+                </ICMS>
+                <PIS>
+                    <PISNT>
+                        <CST>08</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>08</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+        </det>
+        <det nItem="2">
+            <prod>
+                <cProd>188</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>SOJA/SBL POTENCIA RR/S-2/5,6/60</xProd>
+                <NCM>12081000</NCM>
+                <CFOP>6101</CFOP>
+                <uCom>SC 60</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>1000.0000000000</vUnCom>
+                <vProd>1000.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>SC 60</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>1000.0000000000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>41</CST>
+                        <vICMSDeson>70.00</vICMSDeson>
+                        <motDesICMS>9</motDesICMS>
+                    </ICMS40>
+                </ICMS>
+                <PIS>
+                    <PISNT>
+                        <CST>08</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>08</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+        </det>
+        <det nItem="3">
+            <prod>
+                <cProd>210</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>SEMENTES CONTROLADORIA</xProd>
+                <NCM>12081000</NCM>
+                <CFOP>6101</CFOP>
+                <uCom>SC 25</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>1000.0000000000</vUnCom>
+                <vProd>1000.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>TON</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>1000.0000000000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+                        <vICMSDeson>70.00</vICMSDeson>
+                        <motDesICMS>9</motDesICMS>
+                    </ICMS40>
+                </ICMS>
+                <PIS>
+                    <PISNT>
+                        <CST>08</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>08</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+        </det>
+        <det nItem="4">
+            <prod>
+                <cProd>225</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>FARINHA DE SOJA</xProd>
+                <NCM>12081000</NCM>
+                <CFOP>6101</CFOP>
+                <uCom>SC 25</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>1000.0000000000</vUnCom>
+                <vProd>1000.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>SC 25</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>1000.0000000000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS20>
+                        <orig>0</orig>
+                        <CST>20</CST>
+                        <modBC>3</modBC>
+                        <pRedBC>0.0000</pRedBC>
+                        <vBC>0.00</vBC>
+                        <pICMS>0.0000</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS20>
+                </ICMS>
+                <PIS>
+                    <PISNT>
+                        <CST>08</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>08</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+        </det>
+        <det nItem="5">
+            <prod>
+                <cProd>231</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>SEMENTE DE SOJA PR PAUTA</xProd>
+                <NCM>99999999</NCM>
+                <CFOP>6101</CFOP>
+                <uCom>SC 60</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>1000.0000000000</vUnCom>
+                <vProd>1000.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>SC 60</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>1000.0000000000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS20>
+                        <orig>0</orig>
+                        <CST>20</CST>
+                        <modBC>3</modBC>
+                        <pRedBC>0.0000</pRedBC>
+                        <vBC>0.00</vBC>
+                        <pICMS>0.0000</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS20>
+                </ICMS>
+                <PIS>
+                    <PISNT>
+                        <CST>08</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>08</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+        </det>
+        <total>
+            <ICMSTot>
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
+                <vICMSDeson>210.00</vICMSDeson>
+                <vFCP>0.00</vFCP>
+                <vBCST>0.00</vBCST>
+                <vST>0.00</vST>
+                <vFCPST>0.00</vFCPST>
+                <vFCPSTRet>0.00</vFCPSTRet>
+                <vProd>5000.00</vProd>
+                <vFrete>0.00</vFrete>
+                <vSeg>0.00</vSeg>
+                <vDesc>0.00</vDesc>
+                <vII>0.00</vII>
+                <vIPI>0.00</vIPI>
+                <vIPIDevol>0.00</vIPIDevol>
+                <vPIS>0.00</vPIS>
+                <vCOFINS>0.00</vCOFINS>
+                <vOutro>0.00</vOutro>
+                <vNF>4790.00</vNF>
+            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>9</modFrete>
+            <vol>
+                <qVol>0</qVol>
+            </vol>
+        </transp>
+        <pag>
+            <detPag>
+                <indPag>0</indPag>
+                <tPag>01</tPag>
+                <vPag>4790.00</vPag>
+            </detPag>
+        </pag>
+        <infAdic>
+            <infAdFisco>Aliq. do FCP: &lt;aliquotaFCP&gt;, Valor do FCP: &lt;valorFCP&gt;, Valor
+                Deson: 210,00 e Mot. da Deson. 9 - Outros, Produto</infAdFisco>
+            <infCpl>Aliq. do FCP: &lt;aliquotaFCP&gt;, Valor do FCP: &lt;valorFCP&gt;, Valor Deson:
+                210,00 e Mot. da Deson. 9 - Outros, Produto</infCpl>
+        </infAdic>
+        <infRespTec>
+            <CNPJ>02435301000416</CNPJ>
+            <xContato>Douglas Pereira Bernardo</xContato>
+            <email>douglas.bernardo@siagri.com.br</email>
+            <fone>6232671500</fone>
+        </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></CanonicalizationMethod>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></SignatureMethod>
+            <Reference URI="#NFe43211294813102000170550010010122121089331998">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></Transform>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></Transform>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod>
+                <DigestValue>MRP6HAh4V0CsQowTDk6F8axBESc=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>
+            SmfR9d92yInb9k+RUI5sJJPLej9dxBXR42M6kMaNwbLXzlFCsY1xXH5spHhZ1D7dRu1mDkSWpLrXKsE3ibz+YqRWOw0KWAlGbJe+zEJg5DO0Wye3nY9mxSMcTOcgiEXtbtd+uofcNn0NUZrWYd+/1qxFYr1YYBype6nJ/bJg8h37iJMDCtgSWGBZYivdUlObmfrxmqsARVVRxjmO2WmGPCv9a9hCZRJgWNUJSczXNBBZSet2uCIyet/W238TRJwkZTNA9Pqx9fpHB5iGeLP1GDScgkDgrUyHfkV3u4VHyfvdjJTU2ntQpj/nYLyPiTlABQeB0Xf2u7nqBQ3bZBHSkg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>
+                    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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFe>

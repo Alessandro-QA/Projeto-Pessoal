@@ -56,7 +56,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
         Ciclo.editarCiclo(seedTestCiclo)
       })
 
-      // Editar Ciclo
+      // Criar novo ciclo sem preencher campos
       it('CT7 - Deve Validar Campos Obrigatórios', function () {
 
         cy.allureDescriptionHtml(testDescription.Ct7).allureSeverity('normal')
