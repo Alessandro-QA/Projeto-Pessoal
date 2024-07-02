@@ -1,3 +1,11 @@
 {
-    "ambiente":"__Env.MyFarm.Ambiente__"
+    "ambiente": "__Env.MyFarm.Ambiente__",
+    "env": {
+        "financeiro": "/api/financeiro/v1",
+        "financeiroBackoffice": "/v1/api/Financeiro",
+        "localidadeBackoffice": "/v1/api/localidade",
+        "producaoAgricola": "/api/producao-agricola/v1",
+        "controleClimatico": "/api/controle-climatico/v1",
+        "cicloProducao": "/api/ciclo-producao/v1"
+    }
 }

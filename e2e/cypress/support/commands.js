@@ -56,6 +56,14 @@ Cypress.Commands.add('desabilitarPopUpNotificacao', () => {
     return cy.task('preparedStatement', { query, dbConfig }, { timeout: 60000 })
   })
   
+  // Esconde a tela de API view para seguir na página principal sem visualizar cada requisição
+  Cypress.Commands.add('hideApiView', () => {
+    cy.document().then((doc) => {
+      const style = doc.createElement('style');
+      style.textContent = '#api-view { display: none !important; }';
+      doc.head.appendChild(style);
+    });
+  });
   
   
 

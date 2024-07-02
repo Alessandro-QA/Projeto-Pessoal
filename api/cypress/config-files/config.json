@@ -3,6 +3,10 @@
     "password": "teste@123",
     "tenant": "273276e0-7cc1-4891-94de-55e9ced2aad2",
 
+    "emailParaguai": "teste-dev-anderson-paraguai@uorak.com",
+    "passwordParaguai": "myFarm2023@",
+    "tenantParaguai": "1766f4eb-7fd9-454b-9123-86ef4f9bcd11",
+
     "baseUrl": "https://myfarm.dev.conexa.com.br",
     "baseUrlBackoffice": "https://gke-apigateway.aliare.digital/dev/myfarm/backoffice/",
     "baseUrlDaas": "https://daas.dev.conexa.com.br",
@@ -13,6 +17,7 @@
     "producaoAgricola": "/api/producao-agricola/v1",
     "controleClimatico": "/api/controle-climatico/v1",
     "cultura": "/api/cultura/v1",
+    "pedidoCompra": "/api/pedido-compra/v1",
     
     "teamsWebhookUrl" : "__ApiTest.MyFarm.webhookReportUrl__",
     "reportUrl" : "__EndToEndTest.AllureUrl__",
