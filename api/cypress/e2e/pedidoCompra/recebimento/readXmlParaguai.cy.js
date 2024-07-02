@@ -1,6 +1,6 @@
 /// <reference types='Cypress' />
 
-const description = require('../../../fixtures/pedidoCompra/recebimento/readXmlParaguai/bodyCt1.json');
+const description = require('../../../fixtures/pedidoCompra/recebimento/readXmlParaguai/readXmlParaguai.description');
 
 context('Pedido Compra', () => {
     context('Recebimento', () => {
