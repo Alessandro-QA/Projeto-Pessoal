@@ -1,9 +1,9 @@
 /// <reference types='Cypress' />
 
-const description = require('../../../fixtures/pedidoCompra/recebimento/readXmlParaguai/readXmlParaguai.description');
+const description = require('../../../fixtures/pedidoCompra/recebimentos/readXmlParaguai/readXmlParaguai.description');
 
 context('Pedido Compra', () => {
-    context('Recebimento', () => {
+    context('Recebimentos', () => {
         describe(`POST - ${Cypress.env('pedidoCompra')}/Recebimentos/ReadXmlParaguai - Realiza o Recebimento Automático via Importação de Arquivo XML`, () => {
 
             it('CT1 - Carregar XML Paraguaio para validação dos dados carregados automaticamente', () => {
@@ -13,7 +13,7 @@ context('Pedido Compra', () => {
                 // Loga em uma conta do Paraguai
                 cy.getToken(`${Cypress.env('emailParaguai')}`, `${Cypress.env('passwordParaguai')}`)
                                      
-                cy.readFile('cypress/fixtures/pedidoCompra/recebimento/readXmlParaguai/XML_PR.xml', 'utf8').then(xmlContent => {
+                cy.readFile('cypress/fixtures/pedidoCompra/recebimentos/readXmlParaguai/XML_PR.xml', 'utf8').then(xmlContent => {
                     const boundary = '----WebKitFormBoundary7MA4YWxkTrZu0gW';
                     let formData = `--${boundary}\r\n`;
                     formData += 'Content-Disposition: form-data; name="file"; filename="XML_PR.xml"\r\n';
@@ -37,7 +37,7 @@ context('Pedido Compra', () => {
                         expect(response.body).to.exist;
                         expect(response.body).to.not.be.null;
 
-                        cy.readFile('cypress/fixtures/pedidoCompra/recebimento/readXmlParaguai/bodyCt1.json').then((body) => {
+                        cy.readFile('cypress/fixtures/pedidoCompra/recebimentos/readXmlParaguai/bodyCt1.json').then((body) => {
                             
                             // Esses campos são diferentes para cada importação 
                             body.data.urlArquivo = response.body.data.urlArquivo
@@ -47,6 +47,9 @@ context('Pedido Compra', () => {
                                 parcela.id = response.body.data.financeiro.pedidoPagamentoParcelas[index].id;
                             });
                            expect(response.body).to.deep.equal(body)
+
+                           // Anexar arquivo XML ao relatório Allure
+                           cy.allureAttachment('XML PR', xmlContent, 'text/xml');
                         })
                     });
                 });

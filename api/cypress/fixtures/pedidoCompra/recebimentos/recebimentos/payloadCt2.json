@@ -1,0 +1,133 @@
+{
+    "materiais": [
+        {
+            "id": "cf224297-fc89-4688-88bd-2e05030e583d",
+            "material": {
+                "id": "6e812abe-3a7f-42d1-9711-a9c579c6a6ef",
+                "descricao": "Soja"
+            },
+            "unidadeMedida": {
+                "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+                "descricao": "kg"
+            },
+            "quantidade": 10,
+            "valor": 58.5,
+            "total": 585
+        }
+    ],
+    "categorias": [
+        {
+            "id": "ba33d7af-4a84-4733-b609-193cb155615e",
+            "valor": 585,
+            "contaContabil": {
+                "codigo": "4.01.01.01",
+                "descricao": "Sementes",
+                "dedutivel": true,
+                "adiantamento": false
+            }
+        }
+    ],
+    "tributacoesTotais": {
+        "modelo": 0,
+        "serie": 0,
+        "baseCalculoICMS": 0,
+        "valorTotalICMS": 0,
+        "isentasNaoTributadas": 0,
+        "outrosICMS": 0,
+        "baseCalculoSubst": 0,
+        "valorICMSRetido": 0,
+        "valorIPI": "0",
+        "isentas": "0",
+        "outrosIPI": "0",
+        "frete": "0"
+    },
+    "outrosValores": {
+        "frete": 0,
+        "seguro": 0,
+        "despesas": "0",
+        "descontos": 0
+    },
+    "dataRecebimento": "2024-07-02T16:24:05-03:00",
+    "operacao": {
+        "id": "4e8eb19d-66b0-8c06-3212-7063364e9e8c",
+        "descricao": "Compra de Mercadoria"
+    },
+    "safra": {
+        "id": "9e18aa78-692d-4244-9db4-97cf8967000e",
+        "descricao": "2023 / 2024"
+    },
+    "data": "2024-07-02T16:24:05-03:00",
+    "fazenda": {
+        "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+        "descricao": "Fazenda Teste API"
+    },
+    "tags": [
+        {
+            "id": "a1a1cf46-1b23-4cb4-b8cf-0c08b4568d03",
+            "descricao": "TAG"
+        }
+    ],
+    "pessoa": {
+        "pessoaTipo": "Fornecedor",
+        "numeroDocumento": "39672767000100",
+        "id": "e19eee46-8ac3-4bdf-a27b-021e34c67a42",
+        "descricao": "Fornecedor 2"
+    },
+    "numero": "747079",
+    "empresa": {
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API",
+        "empresaDeSaoPaulo": false,
+        "inscricaoEstadual": {
+            "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+            "descricao": "IE",
+            "valor": "ISENTO"
+        }
+    },
+    "ieDaEmpresa": {
+        "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+        "descricao": "IE",
+        "estadoSigla": "AC",
+        "ativo": true,
+        "valor": "ISENTO",
+        "label": "ISENTO - IE"
+    },
+    "tipoDocumento": 1,
+    "observacao": "Teste API Recebimentos",
+    "conferido": false,
+    "skipLimpeza": false,
+    "origem": {
+        "id": "b00ed51d-ce34-47a0-a597-2b61a23c3012",
+        "tipo": 2
+    },
+    "financeiro": {
+        "total": 585,
+        "pago": false,
+        "rateioEntreCiclos": false,
+        "formaPagamento": {
+            "id": "fe298c32-17c7-4b76-a7c4-d730fdae16b8",
+            "descricao": "PIX"
+        },
+        "condicaoPagamento": "Avista",
+        "quantidadeParcelas": 1,
+        "valorFixo": true,
+        "parcelas": [
+            {
+                "vencimento": "2024-08-02T16:24:05-03:00",
+                "moeda": {
+                    "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+                    "descricao": "Real",
+                    "codigo": 986,
+                    "sigla": "BRL",
+                    "simbolo": "R$",
+                    "ativo": true
+                },
+                "valor": 585
+            }
+        ],
+        "cotacao": 0,
+        "totalAlternativo": 0
+    },
+    "dedutivel": true,
+    "id": "b00ed51d-ce34-47a0-a597-2b61a23c3012"
+}

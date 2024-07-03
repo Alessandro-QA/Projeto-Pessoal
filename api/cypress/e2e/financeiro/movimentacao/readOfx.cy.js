@@ -10,7 +10,7 @@ context('Financeiro', () => {
 
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
-                cy.readFile('cypress/fixtures/financeiro/movimentacao/ReadOfx/Santander.ofx', 'binary').then((fileContent) => {
+                cy.readFile('cypress/fixtures/financeiro/movimentacao/ReadOfx/Santander.ofx', 'utf8').then((fileContent) => {
                     // Cria o FormData manualmente - Converte o arquivo OFX para o formato aceitável pela rota
                     const boundary = '----WebKitFormBoundary7MA4YWxkTrZu0gW';
                     let formData = `--${boundary}\r\n`;
