@@ -1,0 +1,16 @@
+{
+  "empresa": {
+    "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+    "descricao": "Empresa 2"
+  },
+  "tipo": 2,
+  "data": "2024-07-01T00:00:00-03:00",
+  "excecoes": [
+    {
+      "perfil": {
+        "id": "81721e57-32bc-46f5-a54a-a7ca5de792bb",
+        "descricao": "Administrador"
+      }
+    }
+  ]
+}

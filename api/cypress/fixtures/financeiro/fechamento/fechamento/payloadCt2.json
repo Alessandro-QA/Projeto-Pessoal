@@ -1,0 +1,18 @@
+{
+  "id": "1bc9c6c5-573b-4db8-9023-a63eef6b6984",
+  "empresa": {
+    "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+    "descricao": "Empresa 2"
+  },
+  "tipo": 2,
+  "data": "2024-07-03T00:00:00-03:00",
+  "excecoes": [
+    {
+      "id": "27964d86-f141-402e-887d-26383efc972e",
+      "perfil": {
+        "id": "81721e57-32bc-46f5-a54a-a7ca5de792bb",
+        "descricao": "Administrador"
+      }
+    }
+  ]
+}
