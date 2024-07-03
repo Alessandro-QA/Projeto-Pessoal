@@ -1,11 +1,6 @@
-[
-    {
-        "ids": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
-        "descricoes": "siagri-icon-soja"
-    },
-    
-    {
-        "ids": "842c660c-a54c-4864-a6a3-bd3c6a6725f1",
-        "descricoes": "milho-xlarge"
-    }
-]
+{
+    "ids": [
+        "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+        "0dcf7dd1-bcef-44e9-88a2-45c09e9c433c"
+    ]
+}

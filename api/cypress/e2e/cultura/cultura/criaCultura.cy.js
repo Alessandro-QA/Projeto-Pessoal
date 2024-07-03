@@ -5,16 +5,22 @@ const description = require('../../../fixtures/cultura/cultura/criaCultura/cultu
 context('Cultura', () => {
     context('Cultura', () => {
 
-        let bodyedit
         let idCultura
+        let randomNumber
 
         describe(`POST/PUT/GET/DELETE - ${Cypress.env('cultura')}/Cultura - Cria, Edita e Obtém Culturas`, () => {
 
-            it('CT1 - Criar Cultura ', () => {
+            it('CT1 - Criar Cultura', () => {
 
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
 
                 cy.fixture('cultura/cultura/criaCultura/payloadCt1.json').then((payload) => {
+
+                    // Gerar um novo número aleatório, para não ter o risco de criar Cultura com mesmo nome
+                    randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
+                    payload.descricao = `${payload.descricao} ${randomNumber}`; // Atualiza o campo 'descricao' no payload
+                    payload.nomeCientifico = `${payload.nomeCientifico} ${randomNumber}`; // Atualiza o campo 'nomeCientifico' no payload
+
 
                     cy.postRequest(`${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/Cultura`, payload)
                         .then((response) => {
@@ -23,18 +29,12 @@ context('Cultura', () => {
                             expect(response.body).to.exist
                             expect(response.body).to.not.be.null
 
-                            cy.fixture('cultura/cultura/criaCultura/bodyCt1.json').then((body) => {
-                                // Passando o Response do que foi retornado para o Body, pois precisará ser usado na edição
-                                body = response.body.data
-                                // Passando o mesmo response para uma variável global para teste em novo cenário
-                                bodyedit = response.body.data
-                                // Verificando se o response foi copiado corretamente
-                                expect(response.body.data).to.deep.equal(body)
-                            })
+                            validaCultura(response.body.data)
 
                             // Salvar o ID da cultura criada para uso futuro
                             idCultura = response.body.data.id
 
+                            cy.log('ID da Cultura Criada: ', idCultura)
                         })
                 })
             })
@@ -43,14 +43,15 @@ context('Cultura', () => {
 
                 cy.allureDescriptionHtml(description.Ct2).allureSeverity('critical')
 
-                cy.fixture('cultura/cultura/criaCultura/payloadCt1.json').then((payload) => {
+                cy.fixture('cultura/cultura/criaCultura/payloadCt2.json').then((payload) => {
 
                     // Copiando o body do cenário anterior
-                    payload = bodyedit
+                    payload.id = idCultura
 
-                    // Alterando um valor daquele que foi criado para ter alguma troca na edição
-                    payload.descricao = 'TESTE EDIÇÃO 01'
-                    payload.nomeCientifico = 'TESTE EDIÇÃO 01 CIENTIFICO'
+                    // Gerar um novo número aleatório, para não ter o risco de editar Cultura com nome existente
+                    randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
+                    payload.descricao = `${payload.descricao} ${randomNumber}`; // Atualiza o campo 'descricao' no payload
+                    payload.nomeCientifico = `${payload.nomeCientifico} ${randomNumber}`; // Atualiza o campo 'nomeCientifico' no payload
 
                     cy.putRequest(`${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/Cultura`, payload)
                         .then((response) => {
@@ -61,6 +62,8 @@ context('Cultura', () => {
 
                             // Verificando se o response está como foi editado
                             expect(response.body.data).to.deep.equal(payload)
+
+                            validaCultura(response.body.data)
                         })
                 })
             })
@@ -72,40 +75,16 @@ context('Cultura', () => {
                 cy.getRequest(`${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/Cultura`)
                     .then((response) => {
                         expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                        expect(response.status).be.equal(200)
+                        expect(response.status).to.be.equal(200)
                         expect(response.body).to.exist
-                        expect(response.body).be.not.null
+                        expect(response.body).to.not.be.null
 
-                        response.body.forEach(cultura => {
-                            // Validando os tipos dos atributos no objeto cultura
-                            expect(cultura.id).to.be.a('string');
-                            expect(cultura.descricao).to.be.a('string');
+                        // Verifica se a estrutura da resposta está correta
+                        expect(response.body).to.be.an('array')
 
-                            // Validando o tipo de unidadeMedida
-                            expect(cultura.unidadeMedida).to.be.an('object');
-                            expect(cultura.unidadeMedida.id).to.be.a('string');
-                            expect(cultura.unidadeMedida.descricao).to.be.a('string');
-
-                            // Validando o tipo de materialColheita
-                            expect(cultura.materialColheita).to.be.an('object');
-                            expect(cultura.materialColheita.id).to.be.a('string');
-                            expect(cultura.materialColheita.descricao).to.be.a('string');
-                            expect(cultura.materialColheita.unidadeMedida).to.be.an('object');
-                            expect(cultura.materialColheita.unidadeMedida.id).to.be.a('string');
-                            expect(cultura.materialColheita.unidadeMedida.sigla).to.be.a('string');
-                            expect(cultura.materialColheita.tipoMaterial).to.be.a('number');
-
-                            // Validando o tipo de fasesFenologicas (um array)
-                            expect(cultura.fasesFenologicas).to.be.an('array');
-
-                            // Validando o tipo de qtdEstadiosFenologicos
-                            expect(cultura.qtdEstadiosFenologicos).to.be.a('number');
-                        });
-
+                        validaResponseCulturas(response.body)
                     })
             })
-
-
 
             it('CT4 - Obter uma Cultura existente pelo ID', () => {
 
@@ -118,33 +97,10 @@ context('Cultura', () => {
                         expect(response.body).to.exist
                         expect(response.body).be.not.null
 
-                        // Validando os tipos dos atributos no objeto cultura
-                        expect(response.body.id).to.be.a('string');
-                        expect(response.body.descricao).to.be.a('string');
-
-                        // Validando o tipo de unidadeMedida
-                        expect(response.body.unidadeMedida).to.be.an('object');
-                        expect(response.body.unidadeMedida.id).to.be.a('string');
-                        expect(response.body.unidadeMedida.descricao).to.be.a('string');
-
-                        // Validando o tipo de materialColheita
-                        expect(response.body.materialColheita).to.be.an('object');
-                        expect(response.body.materialColheita.id).to.be.a('string');
-                        expect(response.body.materialColheita.descricao).to.be.a('string');
-                        expect(response.body.materialColheita.unidadeMedida).to.be.an('object');
-                        expect(response.body.materialColheita.unidadeMedida.id).to.be.a('string');
-                        expect(response.body.materialColheita.unidadeMedida.sigla).to.be.a('string');
-                        expect(response.body.materialColheita.tipoMaterial).to.be.a('number');
-
-                        // Validando o tipo de fasesFenologicas (um array)
-                        expect(response.body.fasesFenologicas).to.be.an('array');
-
-                        // Validando o tipo de qtdEstadiosFenologicos
-                        expect(response.body.qtdEstadiosFenologicos).to.be.a('number');
-
+                        // Chama a função de validação passando a cultura diretamente
+                        validaCultura(response.body)
                     })
             })
-
 
             it('CT5 - Deve Deletar Cultura pelo ID', () => {
 
@@ -154,8 +110,40 @@ context('Cultura', () => {
                     expect(response.status).to.be.equal(200)
                 })
             })
-
         })
-
     })
 })
+
+function validaCultura(cultura) {
+    // Validar o tipo dos campos principais
+    expect(cultura).to.have.property('id').that.is.a('string')
+    expect(cultura).to.have.property('descricao').that.is.a('string')
+    expect(cultura).to.have.property('unidadeMedida').that.is.an('object')
+    expect(cultura).to.have.property('imageClass').that.is.a('string')
+    expect(cultura).to.have.property('materialColheita').that.is.an('object')
+    expect(cultura).to.have.property('fasesFenologicas').that.is.an('array')
+    expect(cultura).to.have.property('qtdEstadiosFenologicos').that.is.a('number')
+
+    // Validar o tipo dos campos dentro de "unidadeMedida"
+    expect(cultura.unidadeMedida).to.have.property('id').that.is.a('string')
+    expect(cultura.unidadeMedida).to.have.property('descricao').that.is.a('string')
+
+    // Validar o tipo dos campos dentro de "materialColheita"
+    const materialColheita = cultura.materialColheita
+    expect(materialColheita).to.have.property('id').that.is.a('string')
+    expect(materialColheita).to.have.property('descricao').that.is.a('string')
+    expect(materialColheita).to.have.property('unidadeMedida').that.is.an('object')
+    expect(materialColheita).to.have.property('tipoMaterial').that.is.a('number')
+
+    // Validar o tipo dos campos dentro de "unidadeMedida" de "materialColheita"
+    const materialColheitaUnidadeMedida = materialColheita.unidadeMedida
+    expect(materialColheitaUnidadeMedida).to.have.property('id').that.is.a('string')
+    expect(materialColheitaUnidadeMedida).to.have.property('sigla').that.is.a('string')
+}
+
+function validaResponseCulturas(culturas) {
+    // Iterar sobre cada cultura no array e validar seus campos
+    culturas.forEach(cultura => {
+        validaCultura(cultura)
+    })
+}

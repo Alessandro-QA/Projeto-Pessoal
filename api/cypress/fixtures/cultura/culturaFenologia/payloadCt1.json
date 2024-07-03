@@ -1,0 +1,17 @@
+[
+    {
+        "culturaId": "9d1c470e-b658-4954-80ce-0c43121a0437",
+        "ordem": 1,
+        "descricao": "FASE C1",
+        "imageClass": "vegetativa-medium",
+        "editando": false,
+        "estadiosFenologicos": [
+            {
+                "codigo": "C11",
+                "descricao": "DESC 1",
+                "ordem": 1
+            }
+        ],
+        "QtdeEstadios": 1
+    }
+]

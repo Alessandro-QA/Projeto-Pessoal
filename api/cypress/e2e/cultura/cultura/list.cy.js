@@ -7,42 +7,21 @@ context('Cultura', () => {
         describe(`GET - ${Cypress.env('cultura')}/Cultura/List - Obtém a Listagem de Culturas`, () => {
             it('CT1 - Deve obter uma listagem com todas as culturas', () => {
 
-                cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
+                cy.fixture('cultura/cultura/list/paramsCt1.json').then((params) => {
 
-                cy.getRequest(`${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/Cultura/List`)
-                    .then((response) => {
-                        expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
-                        expect(response.status).to.be.equal(200)
-                        expect(response.body).to.exist
-                        expect(response.body).to.not.be.null
+                    cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
-                        response.body.forEach(cultura => {
-                            // Validando os tipos dos atributos no objeto cultura
-                            expect(cultura.id).to.be.a('string');
-                            expect(cultura.descricao).to.be.a('string');
+                    cy.getRequestWithParams(`${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/Cultura/List`, params)
+                        .then((response) => {
+                            expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
+                            expect(response.status).to.be.equal(200)
+                            expect(response.body).to.exist
+                            expect(response.body).to.not.be.null
 
-                            // Validando o tipo de unidadeMedida
-                            expect(cultura.unidadeMedida).to.be.an('object');
-                            expect(cultura.unidadeMedida.id).to.be.a('string');
-                            expect(cultura.unidadeMedida.descricao).to.be.a('string');
 
-                            // Validando o tipo de materialColheita
-                            expect(cultura.materialColheita).to.be.an('object');
-                            expect(cultura.materialColheita.id).to.be.a('string');
-                            expect(cultura.materialColheita.descricao).to.be.a('string');
-                            expect(cultura.materialColheita.unidadeMedida).to.be.an('object');
-                            expect(cultura.materialColheita.unidadeMedida.id).to.be.a('string');
-                            expect(cultura.materialColheita.unidadeMedida.sigla).to.be.a('string');
-                            expect(cultura.materialColheita.tipoMaterial).to.be.a('number');
 
-                            // Validando o tipo de fasesFenologicas (um array)
-                            expect(cultura.fasesFenologicas).to.be.an('array');
-
-                            // Validando o tipo de qtdEstadiosFenologicos
-                            expect(cultura.qtdEstadiosFenologicos).to.be.a('number');
-                        });
-
-                    })
+                        })
+                })
             })
 
             it('CT2 - Deve listar as culturas pela descrição', () => {
@@ -50,7 +29,7 @@ context('Cultura', () => {
 
                     cy.allureDescriptionHtml(description.Ct2).allureSeverity('normal')
 
-                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('cultura')}/Cultura/List`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/Cultura/List`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.be.equal(200)
@@ -66,7 +45,7 @@ context('Cultura', () => {
 
                     cy.allureDescriptionHtml(description.Ct3).allureSeverity('normal')
 
-                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('cultura')}/Cultura/List`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/Cultura/List`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.be.equal(200)
@@ -83,7 +62,7 @@ context('Cultura', () => {
 
                     cy.allureDescriptionHtml(description.Ct4).allureSeverity('normal')
 
-                    cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('cultura')}/Cultura/List`, params)
+                    cy.getRequestWithParams(`${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/Cultura/List`, params)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                             expect(response.status).to.be.equal(200)
@@ -91,9 +70,37 @@ context('Cultura', () => {
                             expect(response.body).to.not.be.null
 
                         })
-
                 })
             })
         })
     })
 })
+
+
+function validaResponseCultura(response) {
+    response.body.forEach(cultura => {
+        // Validando os tipos dos atributos no objeto cultura
+        expect(cultura.id).to.be.a('string');
+        expect(cultura.descricao).to.be.a('string');
+
+        // Validando o tipo de unidadeMedida
+        expect(cultura.unidadeMedida).to.be.an('object');
+        expect(cultura.unidadeMedida.id).to.be.a('string');
+        expect(cultura.unidadeMedida.descricao).to.be.a('string');
+
+        // Validando o tipo de materialColheita
+        expect(cultura.materialColheita).to.be.an('object');
+        expect(cultura.materialColheita.id).to.be.a('string');
+        expect(cultura.materialColheita.descricao).to.be.a('string');
+        expect(cultura.materialColheita.unidadeMedida).to.be.an('object');
+        expect(cultura.materialColheita.unidadeMedida.id).to.be.a('string');
+        expect(cultura.materialColheita.unidadeMedida.sigla).to.be.a('string');
+        expect(cultura.materialColheita.tipoMaterial).to.be.a('number');
+
+        // Validando o tipo de fasesFenologicas (um array)
+        expect(cultura.fasesFenologicas).to.be.an('array');
+
+        // Validando o tipo de qtdEstadiosFenologicos
+        expect(cultura.qtdEstadiosFenologicos).to.be.a('number');
+    });
+}
