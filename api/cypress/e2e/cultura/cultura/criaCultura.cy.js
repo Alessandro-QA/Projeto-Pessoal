@@ -1,6 +1,6 @@
 /// <reference types='Cypress' />
 
-const description = require('../../../fixtures/cultura/cultura/criaCultura/cultura.description')
+const description = require('../../../fixtures/cultura/cultura/criaCultura/criaCultura.description')
 
 context('Cultura', () => {
     context('Cultura', () => {
@@ -21,7 +21,6 @@ context('Cultura', () => {
                     payload.descricao = `${payload.descricao} ${randomNumber}`; // Atualiza o campo 'descricao' no payload
                     payload.nomeCientifico = `${payload.nomeCientifico} ${randomNumber}`; // Atualiza o campo 'nomeCientifico' no payload
 
-
                     cy.postRequest(`${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/Cultura`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
@@ -33,8 +32,6 @@ context('Cultura', () => {
 
                             // Salvar o ID da cultura criada para uso futuro
                             idCultura = response.body.data.id
-
-                            cy.log('ID da Cultura Criada: ', idCultura)
                         })
                 })
             })
