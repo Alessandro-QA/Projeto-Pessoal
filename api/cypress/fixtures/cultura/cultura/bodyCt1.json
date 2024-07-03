@@ -1,0 +1,21 @@
+{
+    "id": "7076f9c5-1358-4c41-9908-0ac7f4c402ac",
+    "descricao": "cultura123",
+    "nomeCientifico": "cientifico cultura123",
+    "unidadeMedida": {
+        "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+        "descricao": "Quilograma"
+    },
+    "imageClass": "carrot-medium",
+    "materialColheita": {
+        "id": "cf545213-6b50-4e37-8511-aa57f067e77a",
+        "descricao": "MATERIAL COLHEITA P/ NOVA CULTURA",
+        "unidadeMedida": {
+            "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+            "sigla": "kg"
+        },
+        "tipoMaterial": 4
+    },
+    "fasesFenologicas": [],
+    "qtdEstadiosFenologicos": 0
+}

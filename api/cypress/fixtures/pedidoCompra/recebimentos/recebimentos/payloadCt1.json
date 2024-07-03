@@ -1,0 +1,147 @@
+{
+    "tributacoesTotais": {
+        "cfop": null
+    },
+    "outrosValores": {
+        "frete": 150,
+        "seguro": 10,
+        "despesas": 25,
+        "descontos": 100
+    },
+    "dedutivel": true,
+    "rateioCategorias": [
+        {
+            "contaContabil": {
+                "codigo": "4.01.01.01",
+                "descricao": "Sementes",
+                "dedutivel": true
+            },
+            "percentual": 100,
+            "valor": 585
+        }
+    ],
+    "moedaAlternativa": null,
+    "cotacao": null,
+    "pedidoMoedaEstrangeira": false,
+    "numeroNotaFiscal": 99888898,
+    "serieNotaFiscal": 4988485,
+    "dataEmissaoNotaFiscal": "2024-07-02T03:00:00.000Z",
+    "fornecedor": {
+        "id": "e19eee46-8ac3-4bdf-a27b-021e34c67a42",
+        "descricao": "Fornecedor 2",
+        "cnpj": "39672767000100",
+        "documentoPrincipal": "39672767000100",
+        "tipo": 1,
+        "uf": "AC"
+    },
+    "empresa": {
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API",
+        "inscricaoEstadual": {
+            "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+            "descricao": "IE",
+            "valor": "ISENTO",
+            "uf": "AC"
+        }
+    },
+    "documentoPrincipal": "68104971026",
+    "safra": {
+        "id": "9e18aa78-692d-4244-9db4-97cf8967000e",
+        "descricao": "2023 / 2024"
+    },
+    "fazenda": {
+        "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+        "descricao": "Fazenda Teste API"
+    },
+    "tags": [
+        {
+            "id": "a1a1cf46-1b23-4cb4-b8cf-0c08b4568d03",
+            "descricao": "TAG"
+        }
+    ],
+    "data": "2024-07-02T15:05:02-03:00",
+    "rateioCiclos": [],
+    "financeiro": {
+        "quantidadeParcelas": 1,
+        "valorFixo": true,
+        "formaPagamento": {
+            "id": "fe298c32-17c7-4b76-a7c4-d730fdae16b8",
+            "descricao": "PIX",
+            "referenciaXML": 17
+        },
+        "pedidoPagamentoParcelas": [
+            {
+                "valorParcela": 585,
+                "key": "17199435816350",
+                "numeroParcela": 1,
+                "dataVencimento": "2024-08-02T03:00:00.000Z",
+                "valorParcelaAlternativa": 0,
+                "moedaAlternativa": {},
+                "moeda": {
+                    "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+                    "descricao": "Real",
+                    "codigo": 986,
+                    "sigla": "BRL",
+                    "simbolo": "R$",
+                    "ativo": true
+                },
+                "valor": 585,
+                "vencimento": "2024-08-02T00:00:00-03:00",
+                "valorAlternativo": null,
+                "cotacao": null
+            }
+        ],
+        "parcelas": [
+            {
+                "valor": 585,
+                "vencimento": "2024-08-02T00:00:00-03:00",
+                "moeda": {
+                    "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+                    "descricao": "Real",
+                    "codigo": 986,
+                    "sigla": "BRL",
+                    "simbolo": "R$",
+                    "ativo": true
+                },
+                "valorAlternativo": null,
+                "moedaAlternativa": {},
+                "cotacao": null
+            }
+        ]
+    },
+    "recebimentoMateriais": [
+        {
+            "id": "6e812abe-3a7f-42d1-9711-a9c579c6a6ef",
+            "unidadeMedida": {
+                "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+                "descricao": "kg",
+                "sigla": "kg"
+            },
+            "material": {
+                "id": "6e812abe-3a7f-42d1-9711-a9c579c6a6ef",
+                "descricao": "Soja",
+                "gtin": "",
+                "tipoMaterial": ""
+            },
+            "recebimentoMaterialPedidos": [
+                {
+                    "pedidoId": "00000000-0000-0000-0000-000000000000",
+                    "pedidoCodigo": null,
+                    "quantidade": 10,
+                    "preco": 50,
+                    "precoAlternativo": 0,
+                    "unidadeArmazenamento": {
+                        "id": "c07d84ef-487e-4fe6-81dd-0d263cc5b353",
+                        "descricao": "U.A. Peças e Uso consumo"
+                    }
+                }
+            ],
+            "recebimentoMaterialImpostos": [],
+            "cfopRecebimentoMaterial": {}
+        }
+    ],
+    "total": 500,
+    "totalAlternativo": null,
+    "observacao": "Teste API Recebimentos",
+    "recebimentoMaterialAplicacaoImediatas": []
+}

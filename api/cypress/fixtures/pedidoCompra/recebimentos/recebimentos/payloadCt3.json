@@ -1,0 +1,14 @@
+[
+    {
+      "value": 334,
+      "path": "numeroNotaFiscal",
+      "op": "replace",
+      "from": ""
+    },
+    {
+      "value": 334,
+      "path": "serieNotaFiscal",
+      "op": "replace",
+      "from": ""
+    }
+]
