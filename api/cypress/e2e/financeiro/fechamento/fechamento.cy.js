@@ -9,7 +9,6 @@ context('Financeiro', () => {
             let fechamentoid
 
             it('CT1 - Criação de Fechamento e Validação da Resposta', () => {
-
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal');
 
                 cy.fixture('financeiro/fechamento/fechamento/payloadCt1.json').then((payload) => {
@@ -28,6 +27,8 @@ context('Financeiro', () => {
             });
 
             it('CT2 - Atualizar Dados do Fechamento', () => {
+                cy.allureDescriptionHtml(description.Ct2).allureSeverity('normal');
+
                 cy.fixture('financeiro/fechamento/fechamento/payloadCt2.json').then((payload) => {
 
                     payload.id = fechamentoid
@@ -54,6 +55,8 @@ context('Financeiro', () => {
             });
 
             it('CT3 - Atualizar dados de um fechamento existente', () => {
+                cy.allureDescriptionHtml(description.Ct3).allureSeverity('normal');
+
                 cy.fixture('financeiro/fechamento/fechamento/payloadCt3.json').then((payload) => {
                     cy.patchRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Fechamento/${fechamentoid}`, payload)
                         .then((response) => {
@@ -67,6 +70,8 @@ context('Financeiro', () => {
             });
 
             it('CT4 - Obter Dados do Fechamento por ID', () => {
+                cy.allureDescriptionHtml(description.Ct4).allureSeverity('normal');
+
                 cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Fechamento/${fechamentoid}`)
                     .then((response) => {
                         expect(response.status).to.equal(200);
@@ -80,6 +85,8 @@ context('Financeiro', () => {
             });
 
             it('CT5 - Deletar Fechamento', () => {
+                cy.allureDescriptionHtml(description.Ct5).allureSeverity('normal');
+
                 cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Fechamento`, fechamentoid)
                     .then((response) => {
                         expect(response.status).to.equal(200);

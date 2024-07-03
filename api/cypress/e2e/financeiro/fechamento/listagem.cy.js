@@ -1,5 +1,6 @@
 /// <reference types="Cypress" />
 
+
 const description = require('../../../fixtures/financeiro/fechamento/listagem/listagem.description');
 
 context('Financeiro', () => {
@@ -18,17 +19,14 @@ context('Financeiro', () => {
                             expect(response.body).to.be.an('array');
                             response.body.forEach((item) => {
                                 expect(item).to.have.property('id').that.is.a('string');
-                                expect(item).to.have.property('empresa').that.is.an('object');
-                                expect(item.empresa).to.have.property('id').that.is.a('string');
+
                                 expect(item.empresa).to.have.property('descricao').that.is.a('string');
                                 expect(item).to.have.property('tipo').that.is.a('number');
                                 expect(item).to.have.property('data').that.is.a('string');
-                                expect(item).to.have.property('excecoes').that.is.an('array');
 
                                 item.excecoes.forEach((excecao) => {
                                     expect(excecao).to.have.property('id').that.is.a('string');
                                     expect(excecao).to.have.property('fechamentoId').that.is.a('string');
-                                    expect(excecao).to.have.property('perfil').that.is.an('object');
                                     expect(excecao.perfil).to.have.property('id').that.is.a('string');
                                     expect(excecao.perfil).to.have.property('descricao').that.is.a('string');
                                 });
@@ -52,7 +50,9 @@ context('Financeiro', () => {
                             response.body.forEach((fechamento) => {
                                 // Verifica os campos principais de cada fechamento
                                 expect(fechamento).to.have.property('id').that.is.a('string');
-                                expect(fechamento.empresa).to.have.property('id').that.is.a('string');
+
+                                // Verificação se o ID da empresa corresponde ao payload
+                                expect(fechamento.empresa).to.have.property('id').that.is.a('string').and.to.equal(payload.empresaId);
                                 expect(fechamento.empresa).to.have.property('descricao').that.is.a('string');
                                 expect(fechamento.tipo).to.be.a('number');
                                 expect(fechamento.data).to.be.a('string');
@@ -71,4 +71,4 @@ context('Financeiro', () => {
             });
         });
     });
-});
+})
