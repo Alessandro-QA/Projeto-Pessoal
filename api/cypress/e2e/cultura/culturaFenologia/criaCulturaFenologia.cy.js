@@ -1,6 +1,6 @@
 /// <reference types='Cypress' />
 
-const description = require('../../../fixtures/cultura/cultura/criaCultura/criaCultura.description')
+const description = require('../../../fixtures/cultura/culturaFenologia/criaCulturaFenologia.description')
 
 context('Cultura', () => {
     context('CulturaFenologia', () => {
