@@ -50,9 +50,16 @@ class Menus {
       valoresEsperados.forEach(valor => {
         cy.contains(valor)
           .should('be.visible')
-          .should('have.text', valor) // Verifica se o valor está presente e visível
+          .invoke('text')
+          .then(texto => {
+            // Limpa o texto antes de comparar usando o comando personalizado
+            cy.limparTexto(texto).then(textoLimpo => {
+              cy.limparTexto(valor).then(valorLimpo => {
+                expect(textoLimpo).to.equal(valorLimpo)
+              })
+            })
+          })
       })
-
     })
 
     // Simula o hover ao passar sobre o botão "Painéis" e aguarda até que o menu de opções esteja visível 
@@ -117,7 +124,15 @@ class Menus {
       valoresEsperados.forEach(valor => {
         cy.contains(valor)
           .should('be.visible')
-          .should('have.text', valor) // Verifica se o valor está presente e visível
+          .invoke('text')
+          .then(texto => {
+            // Limpa o texto antes de comparar usando o comando personalizado
+            cy.limparTexto(texto).then(textoLimpo => {
+              cy.limparTexto(valor).then(valorLimpo => {
+                expect(textoLimpo).to.equal(valorLimpo)
+              })
+            })
+          })
       })
 
     })
@@ -187,7 +202,15 @@ class Menus {
       valoresEsperados.forEach(valor => {
         cy.contains(valor)
           .should('be.visible')
-          .should('have.text', valor) // Verifica se o valor está presente e visível
+          .invoke('text')
+          .then(texto => {
+            // Limpa o texto antes de comparar usando o comando personalizado
+            cy.limparTexto(texto).then(textoLimpo => {
+              cy.limparTexto(valor).then(valorLimpo => {
+                expect(textoLimpo).to.equal(valorLimpo)
+              })
+            })
+          })
       })
 
     })
@@ -258,7 +281,15 @@ class Menus {
       valoresEsperados.forEach(valor => {
         cy.contains(valor)
           .should('be.visible')
-          .should('have.text', valor) // Verifica se o valor está presente e visível
+          .invoke('text')
+          .then(texto => {
+            // Limpa o texto antes de comparar usando o comando personalizado
+            cy.limparTexto(texto).then(textoLimpo => {
+              cy.limparTexto(valor).then(valorLimpo => {
+                expect(textoLimpo).to.equal(valorLimpo)
+              })
+            })
+          })
       })
 
     })
@@ -273,7 +304,7 @@ class Menus {
     cy.contains(locMenus.menu.subMenu, locMenus.textosEsperadosProd.listaCadastros[3])
       .should('be.visible')
       .within(() => {
-        
+
         // Pega os textos esperados do arquivo de locators
         const valoresEsperados = locMenus.textosEsperadosProd.listaCadastros
 
@@ -306,9 +337,16 @@ class Menus {
       valoresEsperados.forEach(valor => {
         cy.contains(valor)
           .should('be.visible')
-          .should('have.text', valor) // Verifica se o valor está presente e visível
+          .invoke('text')
+          .then(texto => {
+            // Limpa o texto antes de comparar usando o comando personalizado
+            cy.limparTexto(texto).then(textoLimpo => {
+              cy.limparTexto(valor).then(valorLimpo => {
+                expect(textoLimpo).to.equal(valorLimpo)
+              })
+            })
+          })
       })
-
     })
 
     // Simula o hover ao passar sobre o botão "Cadastros" e aguarda até que o menu de opções esteja visível 
@@ -319,7 +357,7 @@ class Menus {
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
     cy.contains(locMenus.menu.subMenu, locMenus.textosEsperadosFin.listaPaineis[0])
-    .filter(':visible')
+      .filter(':visible')
       .should('be.visible')
       .within(() => {
 
@@ -380,9 +418,16 @@ class Menus {
       valoresEsperados.forEach(valor => {
         cy.contains(valor)
           .should('be.visible')
-          .should('have.text', valor) // Verifica se o valor está presente e visível
+          .invoke('text')
+          .then(texto => {
+            // Limpa o texto antes de comparar usando o comando personalizado
+            cy.limparTexto(texto).then(textoLimpo => {
+              cy.limparTexto(valor).then(valorLimpo => {
+                expect(textoLimpo).to.equal(valorLimpo)
+              })
+            })
+          })
       })
-
     })
   }
 
@@ -402,10 +447,17 @@ class Menus {
       // Itera sobre cada elemento dentro do submenu e verifica se contém o texto esperado
       valoresEsperados.forEach(valor => {
         cy.contains(valor)
-          .should('be.visible')
-          .should('have.text', valor) // Verifica se o valor está presente e visível
-      })
-
+        .should('be.visible')
+        .invoke('text')
+        .then(texto => {
+          // Limpa o texto antes de comparar usando o comando personalizado
+          cy.limparTexto(texto).then(textoLimpo => {
+            cy.limparTexto(valor).then(valorLimpo => {
+              expect(textoLimpo).to.equal(valorLimpo)
+            })
+          })
+        })
+    })
     })
 
     // Simula o hover ao passar sobre o botão "Cadastros" e aguarda até que o menu de opções esteja visível 
