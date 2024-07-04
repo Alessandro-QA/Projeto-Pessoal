@@ -64,7 +64,17 @@ Cypress.Commands.add('desabilitarPopUpNotificacao', () => {
       doc.head.appendChild(style);
     });
   });
+
+  Cypress.Commands.add('findAllByText', { prevSubject: 'element' }, (subject, text) => {
+    return cy.wrap(subject).contains(text);
+  });
   
-  
+  Cypress.Commands.add('fecharMensagem', () => {
+    cy.get('.el-message').then($el => {
+      if ($el.is(':visible')) {
+        cy.wrap($el).find('.siagri-icon-close').click();
+      }
+    });
+  });
 
 

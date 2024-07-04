@@ -12,9 +12,19 @@ class Empresa {
     const url = '/atividade-agricola/empresa/listagem'
     const locatorTituloPagina = locEmpresa.dashboard.titulo
     const tituloPagina = 'Empresas'
+    let idEmpresa
 
-    cy.log('Navegar para cadastro de Empresas')
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    
+    // Intercepta a requisição POST para a criação de empresa
+    cy.intercept('POST', `${Cypress.env('baseUrl')}${Cypress.env('pessoa')}/Empresas`).as('postEmpresa');
+
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para cadastro de Empresas')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+      }
+      cy.log(currentPath)
+    });
 
     cy.log('Clicar no botao adicionar empresa')
     cy.getVisible(locEmpresa.dashboard.adicionarEmpresa)
@@ -157,6 +167,26 @@ class Empresa {
     cy.getVisible(locEmpresa.cadastroEmpresa.adicionar)
       .click()
 
+    // Aguarda até que a requisição POST seja completada
+    cy.wait('@postEmpresa').then(interception => {
+      // Verifica se a requisição retornou com sucesso (status 200)
+      expect(interception.response.statusCode).to.eq(200);
+
+      // Captura o response da requisição POST
+      const responseBody = interception.response.body;
+      cy.log(responseBody)
+      cy.log(responseBody.data.id)
+      idEmpresa = responseBody.data.id
+
+      // Usa `cy.wrap` para armazenar o valor da variável fora do wait
+      cy.wrap(idEmpresa).as('idEmpresa');
+      
+      // Oculta o #api-view para continuar na página Atual
+      cy.hideApiView();
+
+    });
+
+    cy.log(idEmpresa)
     cy.log('Mensagem de sucesso')
     cy.get(locEmpresa.cadastroEmpresa.msgSucesso, { timeout: 30000 }).should(($el) => {
       expect($el).to.have.text('Empresa salva com sucesso')
@@ -183,6 +213,14 @@ class Empresa {
         cy.getVisible(locEmpresa.dashboard.emailEmpresa)
           .and('contain', seedTestEmpresa.email)
       })
+
+    // Deleta Registro Criado Para Evitar Acumulo de Registro
+    cy.get('@idEmpresa').then((idEmpresa) => {
+      cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('pessoa')}/Pessoa/`, idEmpresa).then((responseDelete) => {
+        expect(responseDelete.status).to.be.equal(200);
+      });
+    });
+
   }
 }
 

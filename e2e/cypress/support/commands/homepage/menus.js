@@ -38,6 +38,7 @@ class Menus {
     // Clica no botão de Atividades Agrícolas para abrir o sub-menu
     cy.get(locMenus.botoes.atividadeAgricola).click()
 
+    cy.fecharMensagem()
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
     cy.get(locMenus.menu.menuAtivo).within(() => {
@@ -103,6 +104,8 @@ class Menus {
 
     // Clica no botão de Atividades Agrícolas para abrir o sub-menu
     cy.get(locMenus.botoes.maquinarios).click()
+
+    cy.fecharMensagem()
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
     cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
@@ -171,6 +174,8 @@ class Menus {
 
     // Clica no botão de Atividades Agrícolas para abrir o sub-menu
     cy.get(locMenus.botoes.suprimentos).click()
+
+    cy.fecharMensagem()
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
     cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
@@ -241,6 +246,8 @@ class Menus {
     // Clica no botão de Atividades Agrícolas para abrir o sub-menu
     cy.get(locMenus.botoes.producao).click()
 
+    cy.fecharMensagem()
+
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
     cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
 
@@ -286,6 +293,8 @@ class Menus {
 
     // Clica no botão de Atividades Agrícolas para abrir o sub-menu
     cy.get(locMenus.botoes.financeiro).click()
+
+    cy.fecharMensagem()
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
     cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
@@ -359,6 +368,8 @@ class Menus {
     // Clica no botão de Atividades Agrícolas para abrir o sub-menu
     cy.get(locMenus.botoes.resultados).click()
 
+    cy.fecharMensagem()
+
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
     cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
 
@@ -379,6 +390,8 @@ class Menus {
 
     // Clica no botão de Atividades Agrícolas para abrir o sub-menu
     cy.get(locMenus.botoes.nfe).click()
+
+    cy.fecharMensagem()
 
     // Localiza o elemento pai que contém todos os elementos <a> do submenu
     cy.get(locMenus.menu.menuAtivo).should('be.visible').within(() => {
