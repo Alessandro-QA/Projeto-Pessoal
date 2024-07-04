@@ -1,0 +1,23 @@
+{
+    "search": {
+        "search": "nomeSemResultado",
+        "propertiesName": [
+            "cultura",
+            "variedade",
+            "nomeCientifico"
+        ]
+    },
+    "page": 1,
+    "size": 10,
+    "orderBy": [
+        {
+            "direction": "Ascending",
+            "propertyName": "cultura"
+        },
+        {
+            "direction": "Ascending",
+            "propertyName": "nomeCientifico"
+        }
+    ],
+    "count": true
+}
