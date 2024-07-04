@@ -1,0 +1,21 @@
+{
+    "id": "2cd25b4b-586c-4ef1-8a74-e40b5187469e",
+    "descricao": "CULTURA  ",
+    "nomeCientifico": "NOME CIENTIFICO ",
+    "unidadeMedida": {
+      "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+      "descricao": "Quilograma"
+    },
+    "imageClass": "cactus-medium",
+    "materialColheita": {
+      "id": "cf545213-6b50-4e37-8511-aa57f067e77a",
+      "descricao": "MATERIAL COLHEITA P/ NOVA CULTURA",
+      "unidadeMedida": {
+        "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+        "sigla": "kg"
+      },
+      "tipoMaterial": 4
+    },
+    "fasesFenologicas": [],
+    "qtdEstadiosFenologicos": 0
+  }
