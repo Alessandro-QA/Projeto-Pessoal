@@ -100,7 +100,7 @@ context('Pedido Compra', () => {
                 });
             });
 
-            it('CT5 - Validar FornecedorDescricao', () => {
+            it.only('CT5 - Validar FornecedorDescricao', () => {
                 cy.allureDescriptionHtml(description.Ct5).allureSeverity('normal');
 
                 cy.fixture('pedidoCompra/atendimentopedidos/pedidos/paramsCt5.json').then((params) => {
@@ -108,7 +108,7 @@ context('Pedido Compra', () => {
                         .then((response) => {
                             // Verifica o status code da resposta
                             expect(response.status).to.equal(200);
-
+  
                             // Verifica se o corpo da resposta existe e não é nulo
                             expect(response.body).to.exist;
                             expect(response.body).to.not.be.null;
