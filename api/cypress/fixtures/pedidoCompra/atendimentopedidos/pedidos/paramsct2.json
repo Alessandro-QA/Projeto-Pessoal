@@ -1,4 +1,7 @@
 {
     "page": 1,
-    "size": 20
+    "size": 20,
+    "filter": {
+        "materialDescricao": "Soja"
+    }
 }
