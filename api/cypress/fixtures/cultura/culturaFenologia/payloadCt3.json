@@ -1,47 +1,53 @@
 [
     {
+        "id": "8953696e-ce9c-4bb3-b166-09d704f23b8d",
         "culturaId": "dbe7d887-67fa-4ce0-a980-f04e829870f9",
         "ordem": 1,
-        "descricao": "FASE X",
+        "descricao": "FASE X 8731",
         "imageClass": "reprodutiva-medium",
-        "editando": false,
+        "qtdEstadios": 1,
         "estadiosFenologicos": [
             {
+                "id": "7571bf7c-0641-485a-9354-0f2cec2784ef",
+                "culturaFaseFenologicaId": "8953696e-ce9c-4bb3-b166-09d704f23b8d",
                 "codigo": "COD X",
                 "descricao": "DESCRICAO ESTADIO X",
                 "ordem": 1
             }
-        ],
-        "QtdeEstadios": 1
+        ]
     },
     {
+        "id": "112a26e1-d8db-4960-810d-e486b9fffe07",
         "culturaId": "dbe7d887-67fa-4ce0-a980-f04e829870f9",
         "ordem": 2,
-        "descricao": "FASE Y",
+        "descricao": "FASE Y 884552",
         "imageClass": "enchimento-Graos-medium",
-        "editando": false,
+        "qtdEstadios": 1,
         "estadiosFenologicos": [
             {
+                "id": "127a70cf-2a0f-4579-93fe-9724b3287fc5",
+                "culturaFaseFenologicaId": "112a26e1-d8db-4960-810d-e486b9fffe07",
                 "codigo": "COD Y",
                 "descricao": "DESCRICAO ESTADIO Y",
                 "ordem": 1
             }
-        ],
-        "QtdeEstadios": 1
+        ]
     },
     {
+        "id": "21ecb158-2931-4b87-889a-89e1d328d7e0",
         "culturaId": "dbe7d887-67fa-4ce0-a980-f04e829870f9",
         "ordem": 3,
-        "descricao": "FASE Z",
+        "descricao": "FASE Z 275964",
         "imageClass": "vegetativa-medium",
-        "editando": false,
+        "qtdEstadios": 1,
         "estadiosFenologicos": [
             {
+                "id": "822bcd2f-0bcf-4e70-8dc5-ad49c2f201da",
+                "culturaFaseFenologicaId": "21ecb158-2931-4b87-889a-89e1d328d7e0",
                 "codigo": "COD Z",
                 "descricao": "DESCRICAO ESTADIO Z",
                 "ordem": 1
             }
-        ],
-        "QtdeEstadios": 1
+        ]
     }
 ]

@@ -94,7 +94,6 @@ context('Cultura', () => {
                         expect(response.body).to.exist
                         expect(response.body).be.not.null
 
-                        // Chama a função de validação passando a cultura diretamente
                         validaCultura(response.body)
                     })
             })
