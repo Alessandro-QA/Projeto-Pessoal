@@ -1,6 +1,6 @@
 /// <reference types='Cypress' />
 
-const description = require('../../../fixtures/pedidoCompra/atendimentopedidos/pedidos.description.js');
+const description = require('../../../fixtures/pedidoCompra/atendimentopedidos/atendimentopedidos/atendimentopedidos.description.js');
 
 context('Pedido Compra', () => {
     context('Atendimentos Pedidos', () => {
@@ -8,7 +8,7 @@ context('Pedido Compra', () => {
             it('CT1 - Atendimento Pedidos', () => {
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
-                cy.fixture('pedidoCompra/atendimentopedidos/pedidos/paramsCt1.json').then((params) => {
+                cy.fixture('pedidoCompra/atendimentopedidos/atendimentopedidos/paramsCt1.json').then((params) => {
                     cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/AtendimentoPedidos`, params)
                         .then((response) => {
                             // Verifica o status code da resposta
@@ -25,7 +25,7 @@ context('Pedido Compra', () => {
             it('CT2 - Validar Descrição', () => {
                 cy.allureDescriptionHtml(description.Ct2).allureSeverity('normal')
 
-                cy.fixture('pedidoCompra/atendimentopedidos/pedidos/paramsCt2.json').then((params) => {
+                cy.fixture('pedidoCompra/atendimentopedidos/atendimentopedidos/paramsCt2.json').then((params) => {
                     cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/AtendimentoPedidos`, params)
                         .then((response) => {
                             // Verifica o status code da resposta
@@ -48,7 +48,7 @@ context('Pedido Compra', () => {
             it('CT3 - Validar MaterialId', () => {
                 cy.allureDescriptionHtml(description.Ct3).allureSeverity('normal')
 
-                cy.fixture('pedidoCompra/atendimentopedidos/pedidos/paramsCt3.json').then((params) => {
+                cy.fixture('pedidoCompra/atendimentopedidos/atendimentopedidos/paramsCt3.json').then((params) => {
                     cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/AtendimentoPedidos`, params)
                         .then((response) => {
 
@@ -74,7 +74,7 @@ context('Pedido Compra', () => {
             it('CT4 - Validar MaterialId e PrincipioAtivoId', () => {
                 cy.allureDescriptionHtml(description.Ct4).allureSeverity('normal')
 
-                cy.fixture('pedidoCompra/atendimentopedidos/pedidos/paramsCt4.json').then((params) => {
+                cy.fixture('pedidoCompra/atendimentopedidos/atendimentopedidos/paramsCt4.json').then((params) => {
                     cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/AtendimentoPedidos`, params)
                         .then((response) => {
 
@@ -100,10 +100,10 @@ context('Pedido Compra', () => {
                 });
             });
 
-            it.only('CT5 - Validar FornecedorDescricao', () => {
+            it('CT5 - Validar FornecedorDescricao', () => {
                 cy.allureDescriptionHtml(description.Ct5).allureSeverity('normal');
 
-                cy.fixture('pedidoCompra/atendimentopedidos/pedidos/paramsCt5.json').then((params) => {
+                cy.fixture('pedidoCompra/atendimentopedidos/atendimentopedidos/paramsCt5.json').then((params) => {
                     cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/AtendimentoPedidos`, params)
                         .then((response) => {
                             // Verifica o status code da resposta
