@@ -15,6 +15,10 @@ module.exports = defineConfig({
       });
       return config;
     },
+    retries: {
+      runMode: 1, // Número de retries no modo de execução normal
+      openMode: 1 // Número de retries no modo aberto (Cypress GUI)
+    },
     trashAssetsBeforeRuns: true
   },
   env: {

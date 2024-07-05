@@ -4,6 +4,7 @@
   "reportUrl" : "__EndToEndTest.AllureUrl__",
   "appName": "__Deployment.App.Name__",
   "env": {
+    "baseUrl": "__Env.MyFarm.BaseAddress__",
     "authUrl": "__Env.MyFarm.AuthUrl__",
     "returnURL": "__Env.MyFarm.ReturnURL__",
     "daasUrl": "__Env.MyFarm.DassURL__",

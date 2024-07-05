@@ -52,6 +52,7 @@ context('Financeiro', () => {
                     // Atualizar as datas no payload
                     payload.dataInicial = dataInicial;
                     payload.dataFinal = dataFinal;
+                    payload.filter.search = numeroDocumento
 
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agenda/Listagem`, payload)
                         .then((response) => {

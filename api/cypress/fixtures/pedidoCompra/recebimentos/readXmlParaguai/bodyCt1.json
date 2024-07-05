@@ -1,6 +1,7 @@
 {
     "success": true,
     "data": {
+        "chaveNFe": null,
         "numero": "0212429",
         "serie": "004",
         "dataEmissao": "2024-01-28 00:00:00",
