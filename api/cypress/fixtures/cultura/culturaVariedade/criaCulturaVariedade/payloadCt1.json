@@ -1,0 +1,22 @@
+{
+    "descricao": "VARIEDADE TESTE",
+    "nomeCientifico": "NOME CIENTIFICO TESTE",
+    "rnc": "123456",
+    "diasParaColheita": "90",
+    "producaoEstimada": 1000,
+    "ativo": true,
+    "culturaId": "dbe7d887-67fa-4ce0-a980-f04e829870f9",
+    "culturaDescricao": "TESTES FASE 2",
+    "material": {
+        "id": "e235b613-a38b-4fc1-bc25-da014e2e3b30",
+        "descricao": "73170 RSF IPRO - POWER"
+    },
+    "detentoras": [
+        {
+            "detentora": {
+                "id": "3eb45c95-4b32-480a-aadb-8f9ba394adda",
+                "descricao": "Agrale"
+            }
+        }
+    ]
+}
