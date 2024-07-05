@@ -1,0 +1,47 @@
+[
+    {
+        "culturaId": "dbe7d887-67fa-4ce0-a980-f04e829870f9",
+        "ordem": 1,
+        "descricao": "FASE X",
+        "imageClass": "reprodutiva-medium",
+        "editando": false,
+        "estadiosFenologicos": [
+            {
+                "codigo": "COD X",
+                "descricao": "DESCRICAO ESTADIO X",
+                "ordem": 1
+            }
+        ],
+        "QtdeEstadios": 1
+    },
+    {
+        "culturaId": "dbe7d887-67fa-4ce0-a980-f04e829870f9",
+        "ordem": 2,
+        "descricao": "FASE Y",
+        "imageClass": "enchimento-Graos-medium",
+        "editando": false,
+        "estadiosFenologicos": [
+            {
+                "codigo": "COD Y",
+                "descricao": "DESCRICAO ESTADIO Y",
+                "ordem": 1
+            }
+        ],
+        "QtdeEstadios": 1
+    },
+    {
+        "culturaId": "dbe7d887-67fa-4ce0-a980-f04e829870f9",
+        "ordem": 3,
+        "descricao": "FASE Z",
+        "imageClass": "vegetativa-medium",
+        "editando": false,
+        "estadiosFenologicos": [
+            {
+                "codigo": "COD Z",
+                "descricao": "DESCRICAO ESTADIO Z",
+                "ordem": 1
+            }
+        ],
+        "QtdeEstadios": 1
+    }
+]

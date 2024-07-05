@@ -32,6 +32,31 @@ Cypress.Commands.add('getRequestWithParams', (url, params) => {
     })
 })
 
+//Criado para o teste icone.cy.js dentro de culturas
+//Situação onde temos um só parâmetro que recebe vários valores,
+//e a API espera os parâmetros ids como múltiplos parâmetros de consulta individuais, e não como um array de strings em um único parâmetro.
+Cypress.Commands.add('getRequestWithMoreParams', (url, params) => {
+    cy.section(`Executando request do tipo "GET" no endpoint "${url}"`);
+
+    // Construindo a query string a partir dos parâmetros fornecidos
+    const queryParams = Object.entries(params).flatMap(([key, values]) => {
+        return values.map(value => `${key}=${value}`);
+    }).join('&');
+
+    const fullUrl = `${url}?${queryParams}`;
+
+    return cy.api({
+        "method": 'GET',
+        "url": fullUrl,
+        "headers": {
+            'x-tenant': tenant,
+            'content-type': 'application/json',
+            'authorization': `Bearer ${Cypress.env('access_token')}`,
+        },
+        failOnStatusCode: false
+    });
+});
+
 Cypress.Commands.add('postRequestWithParams', (url, params) => {
     cy.section(`Executando request do tipo "POST" no endpoint "${url}"`)
 
@@ -116,16 +141,16 @@ Cypress.Commands.add('putRequestWithParams', (url, params) => {
 
 Cypress.Commands.add('patchRequest', (url, payload) => {
     cy.section(`Executando request do tipo "PATCH" no endpoint "${url}"`)
-  
+
     return cy.api({
-      "method": 'PATCH',
-      "url": url,
-      "headers": {
-        'x-tenant': tenant,
-        'content-type': 'application/json',
-        'authorization': `Bearer ${Cypress.env('access_token')}`,
-      },
-      "body": payload,
-      "failOnStatusCode": false
+        "method": 'PATCH',
+        "url": url,
+        "headers": {
+            'x-tenant': tenant,
+            'content-type': 'application/json',
+            'authorization': `Bearer ${Cypress.env('access_token')}`,
+        },
+        "body": payload,
+        "failOnStatusCode": false
     })
 })
