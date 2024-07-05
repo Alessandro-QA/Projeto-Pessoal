@@ -8,7 +8,7 @@
     "tenantParaguai": "1766f4eb-7fd9-454b-9123-86ef4f9bcd11",
 
     "baseUrl": "https://myfarm.dev.conexa.com.br",
-    "baseUrlBackoffice": "https://gke-apigateway.aliare.digital/dev/myfarm/backoffice/",
+    "baseUrlBackoffice": "https://gke-apigateway.aliare.digital/dev/myfarm/backoffice",
     "baseUrlDaas": "https://daas.dev.conexa.com.br",
 
     "financeiro": "/api/financeiro/v1",

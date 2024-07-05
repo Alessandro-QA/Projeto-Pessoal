@@ -25,7 +25,8 @@ context('Pedido Compra', () => {
                                 body.data.financeiro.id = response.body.data.financeiro.id
                                 body.data.financeiro.pedidoPagamentoParcelas[0].id = response.body.data.financeiro.pedidoPagamentoParcelas[0].id
                                 body.data.financeiro.pedidoPagamentoParcelas[0].dataVencimento = response.body.data.financeiro.pedidoPagamentoParcelas[0].dataVencimento
-                                
+                                body.data.chaveNFe =response.body.data.chaveNFe
+
                                 expect(response.body).to.deep.equal(body)
                             })
                         });
