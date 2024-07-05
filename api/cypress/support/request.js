@@ -37,18 +37,24 @@ Cypress.Commands.add('getRequestWithParams', (url, params) => {
 //e a API espera os parâmetros ids como múltiplos parâmetros de consulta individuais, e não como um array de strings em um único parâmetro.
 Cypress.Commands.add('getRequestWithMoreParams', (url, params) => {
     cy.section(`Executando request do tipo "GET" no endpoint "${url}"`);
-
+ 
     // Construindo a query string a partir dos parâmetros fornecidos
     const queryParams = Object.entries(params).flatMap(([key, values]) => {
-        return values.map(value => `${key}=${value}`);
+        // Verifica se values é um array antes de mapeá-lo
+        if (Array.isArray(values)) {
+            return values.map(value => `${key}=${value}`);
+        } else {
+            // Trata caso values não seja um array (por exemplo, apenas um valor único)
+            return `${key}=${values}`;
+        }
     }).join('&');
-
+ 
     const fullUrl = `${url}?${queryParams}`;
-
+ 
     return cy.api({
-        "method": 'GET',
-        "url": fullUrl,
-        "headers": {
+        method: 'GET',
+        url: fullUrl,
+        headers: {
             'x-tenant': tenant,
             'content-type': 'application/json',
             'authorization': `Bearer ${Cypress.env('access_token')}`,

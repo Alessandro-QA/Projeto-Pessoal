@@ -4,7 +4,7 @@ const description = require('../../../fixtures/cultura/culturaVariedade/listView
 
 context('Cultura', () => {
     context('CulturaVariedade', () => {
-        describe(`POST - ${Cypress.env('cultura')}/CulturaVariedade/ListView - Faz a requisição para listar as variedades a partir de um payload.`, () => {
+        describe(`POST - ${Cypress.env('cultura')}/CulturaVariedade/ListView - Lista as variedades resultantes da busca a partir de um payload.`, () => {
 
             it('CT1 - Listar Variedades conforme tamanho especificado no payload', () => {
 
