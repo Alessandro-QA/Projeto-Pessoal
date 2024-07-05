@@ -18,6 +18,7 @@
     "controleClimatico": "/api/controle-climatico/v1",
     "cultura": "/api/cultura/v1",
     "pedidoCompra": "/api/pedido-compra/v1",
+    "unidadeMedida": "/v1/api/UnidadeMedida",
     
     "teamsWebhookUrl" : "__ApiTest.MyFarm.webhookReportUrl__",
     "reportUrl" : "__EndToEndTest.AllureUrl__",
