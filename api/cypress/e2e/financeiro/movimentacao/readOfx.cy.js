@@ -10,7 +10,7 @@ context('Financeiro', () => {
 
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
-                cy.readFile('cypress/fixtures/financeiro/movimentacao/ReadOfx/Santander.ofx', 'utf8').then((fileContent) => {
+                cy.readFile('cypress/fixtures/financeiro/movimentacao/ReadOfx/Santander.ofx', { timeout: 15000 }, 'utf8').then((fileContent) => {
                     // Cria o FormData manualmente - Converte o arquivo OFX para o formato aceitável pela rota
                     const boundary = '----WebKitFormBoundary7MA4YWxkTrZu0gW';
                     let formData = `--${boundary}\r\n`;
@@ -35,7 +35,7 @@ context('Financeiro', () => {
                         expect(response.status).to.be.equal(200);
                         expect(response.body).to.not.be.null;
                         // Validando se o Response trouxe os dados que contém o arquivo OFX importado
-                        cy.readFile('cypress/fixtures/financeiro/movimentacao/ReadOfx/bodyCt1.json').then((body) => {
+                        cy.readFile('cypress/fixtures/financeiro/movimentacao/ReadOfx/bodyCt1.json',{ timeout: 15000 }).then((body) => {
                             expect(response.body).to.deep.equal(body)
                         })
                     });
