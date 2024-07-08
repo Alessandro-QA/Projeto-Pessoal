@@ -1,5 +1,7 @@
 /// <reference types='Cypress' />
 
+const dayjs = require('dayjs');
+
 context('Financeiro', () => {
     context('Agenda', () => {
 
@@ -7,6 +9,15 @@ context('Financeiro', () => {
 
             it('CT1 Deve Haver relatorio com todos os Titulos', () => {
                 cy.fixture('financeiro/agenda/relatorio/payloadCt1.json').then((payload) => {
+
+                    // Pegar últimos 7 dias
+                    const dataInicial = dayjs().subtract(7, 'day').startOf('day').format();
+                    const dataFinal = dayjs().endOf('day').format();
+
+                    // Atualiza o payload com as datas dinâmicas
+                    payload.dataInicial = dataInicial;
+                    payload.dataFinal = dataFinal;
+
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agenda/relatorio`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'));
@@ -131,6 +142,15 @@ context('Financeiro', () => {
 
             it('CT3 Deve Haver relatorio de Titulos recebidos', () => {
                 cy.fixture('financeiro/agenda/relatorio/payloadCt3.json').then((payload) => {
+
+                    // Pegar últimos 7 dias
+                    const dataInicial = dayjs().subtract(7, 'day').startOf('day').format();
+                    const dataFinal = dayjs().endOf('day').format();
+
+                    // Atualiza o payload com as datas dinâmicas
+                    payload.dataInicial = dataInicial;
+                    payload.dataFinal = dataFinal;
+
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Agenda/relatorio`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant', Cypress.env('tenant'));

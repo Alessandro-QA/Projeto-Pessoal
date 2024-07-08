@@ -2,7 +2,7 @@
   "pagamento": {
     "empresaDocumento": "Empresa Fornecedor - CNPJ",
     "fazendaDocumento": "Fazenda Teste Producao",
-    "numeroDocumento": "3000",
+    "numeroDocumento": "numero",
     "pagamento": true
   },
   "recebimento": {

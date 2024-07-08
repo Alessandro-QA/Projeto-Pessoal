@@ -15,20 +15,19 @@ class AgendaFinanceira {
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Recebimento').as('apiRecebimento')
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem').as('listagemAgenda')
 
-    cy.log('Navegar para Agenda Financeira')
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Agenda Financeira')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    cy.log('Selecionar Empresa')
-    cy.getVisible(locAgendaFinanceira.dashboard.filtroEmpresa)
-      .contains(seedTestAgendaFinanceira.empresaDocumento).click()
-
-    cy.log('Selecionar Fazenda')
-    cy.getVisible(locAgendaFinanceira.dashboard.filtroFazenda)
-      .contains(seedTestAgendaFinanceira.fazendaDocumento).click()
+        cy.wait('@listagemAgenda')
+      }
+      cy.log(currentPath)
+    });
 
     cy.log('Pesquisar por numero do documento')
     cy.getVisible(locAgendaFinanceira.dashboard.pesquisarDocumento)
-      .clear().type(`${seedTestAgendaFinanceira.numeroDocumento}{enter}`)
+      .clear().type(`${seedTestAgendaFinanceira.numeroDocumento}`)
 
     cy.get(locAgendaFinanceira.dashboard.cardAgenda)
       .contains(seedTestAgendaFinanceira.numeroDocumento)
