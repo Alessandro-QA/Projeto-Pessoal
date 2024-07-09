@@ -10,11 +10,13 @@ context('Pedido Compra', () => {
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
                 cy.fixture('pedidoCompra/dashboard/evolucaogastos/paramsCt1.json').then((params) => {
-                    // Obter a data de amanhã no formato desejado (YYYY-MM-DDTHH:mm:ssZ)
-                    const tomorrowDate = dayjs().add(1, 'day').format('YYYY-MM-DDTHH:mm:ssZ');
+                    // Obter a data de um ano atrás para DataInicio
+                    const dataInicio = dayjs().subtract(1, 'year').format('YYYY-MM-DDTHH:mm:ssZ');
+                    // Obter a data de hoje para DataFim
+                    const dataFim = dayjs().format('YYYY-MM-DDTHH:mm:ssZ');
 
-                    // Ajustar o campo DataFim para a data de amanhã
-                    params.DataFim = tomorrowDate;
+                    params.DataInicio = dataInicio;
+                    params.DataFim = dataFim;
 
                     cy.getRequestWithParams(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/Dashboard/EvolucaoGastos`, params)
                         .then((response) => {
@@ -45,3 +47,4 @@ context('Pedido Compra', () => {
         })
     })
 });
+
