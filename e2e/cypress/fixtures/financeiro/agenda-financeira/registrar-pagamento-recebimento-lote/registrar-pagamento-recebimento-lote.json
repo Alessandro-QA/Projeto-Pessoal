@@ -3,10 +3,16 @@
     "tipoDocumento": "A pagar",
     "cardsAgenda": [
       {
-        "cardNumeroDocumento": "100"
+        "cardNumeroDocumento": "numero100",
+        "cardPessoa": "Empresa 2 (1/1)",
+        "cardValor": "R$ 0,00",
+        "cardSaldo":"R$ 100,00"
       },
       {
-        "cardNumeroDocumento": "101"
+        "cardNumeroDocumento": "numero101",
+        "cardPessoa": "Empresa 2 (1/1)",
+        "cardValor": "R$ 0,00",
+        "cardSaldo":"R$ 100,00"
       }
     ],
     "pagamentoTitulo": true,
@@ -60,10 +66,16 @@
     "tipoDocumento": "A receber",
     "cardsAgenda": [
       {
-        "cardNumeroDocumento": "102"
+        "cardNumeroDocumento": "numero102",
+        "cardPessoa": "Empresa 2 (1/1)",
+        "cardValor": "R$ 0,00",
+        "cardSaldo":"R$ 20,00"
       },
       {
-        "cardNumeroDocumento": "103"
+        "cardNumeroDocumento": "numero103",
+        "cardPessoa": "Empresa 2 (1/1)",
+        "cardValor": "R$ 0,00",
+        "cardSaldo":"R$ 20,00"
       }
     ],
     "formaPagamento": "Cartão de Crédito",

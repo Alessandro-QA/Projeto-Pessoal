@@ -1,12 +1,17 @@
 {
     "ambiente": "__Env.MyFarm.Ambiente__",
     "env": {
+
+        "baseUrlBackoffice": "https://gke-apigateway.aliare.digital/dev/myfarm/backoffice",
+        "baseUrlDaas": "https://daas.dev.conexa.com.br",
+
         "financeiro": "/api/financeiro/v1",
         "financeiroBackoffice": "/v1/api/Financeiro",
         "localidadeBackoffice": "/v1/api/localidade",
         "producaoAgricola": "/api/producao-agricola/v1",
         "controleClimatico": "/api/controle-climatico/v1",
         "cicloProducao": "/api/ciclo-producao/v1",
-        "pessoa": "/api/pessoa/v1"
+        "pessoa": "/api/pessoa/v1",
+        "operacao": "/api/operacao/v1"
     }
 }

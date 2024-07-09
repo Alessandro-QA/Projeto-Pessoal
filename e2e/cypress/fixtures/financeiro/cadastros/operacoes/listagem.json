@@ -5,9 +5,9 @@
       "filtro": "Entrada Estoque",
       "operacoes": [
         {
-          "codigo": "459",
+          "codigo": "36",
           "nome": "Entrada Estoque",
-          "tipoOperacao": "Entrada",
+          "tipoOperacao": "–",
           "finalidadeOperacao": "–",
           "movimentacaoFinanceira": "Não aplica"
         },
@@ -24,40 +24,68 @@
       "entrada": {
         "tipoFiltro": "tipoDaOperacao",
         "filtro": "Entrada",
-        "operacoes": [
+        "operacoes":[
           {
-            "codigo": "459",
-            "nome": "Entrada Estoque",
+            "codigo": 620,
+            "nome": "Teste E2E Busca",
             "tipoOperacao": "Entrada",
-            "finalidadeOperacao": "–",
-            "movimentacaoFinanceira": "Não aplica"
-          },
-          {
-            "codigo": "461",
-            "nome": "Juros s/ Tributos e Contribuições",
-            "tipoOperacao": "Entrada",
-            "finalidadeOperacao": "Normal",
+            "finalidadeOperacao": "Devolução",
             "movimentacaoFinanceira": "Pagar"
           },
           {
-            "codigo": "462",
-            "nome": "Juros Empréstimo/Financiamento",
-            "tipoOperacao": "Entrada",
-            "finalidadeOperacao": "Complementar",
-            "movimentacaoFinanceira": "Pagar"
-          },
-          {
-            "codigo": "463",
-            "nome": "Juros Passivos",
+            "codigo": 619,
+            "nome": "Teste E2E Busca",
             "tipoOperacao": "Entrada",
             "finalidadeOperacao": "Ajuste",
             "movimentacaoFinanceira": "Pagar"
           },
           {
-            "codigo": "464",
-            "nome": "Contribuição Sindical",
+            "codigo": 618,
+            "nome": "Teste E2E Busca",
             "tipoOperacao": "Entrada",
-            "finalidadeOperacao": "Devolução",
+            "finalidadeOperacao": "Complementar",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": 617,
+            "nome": "Operação Nova",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Normal",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": 614,
+            "nome": "Operação Nova",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Normal",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": 559,
+            "nome": "Adiantamento a Receber",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Receber"
+          },
+          {
+            "codigo": 557,
+            "nome": "Compensação a Receber",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Receber"
+          },
+          {
+            "codigo": 512,
+            "nome": "Compra de Mercadoria",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": 70,
+            "nome": "Compra de Outros Insumos",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "–",
             "movimentacaoFinanceira": "Pagar"
           }
         ]
@@ -65,30 +93,44 @@
       "saida": {
         "tipoFiltro": "tipoDaOperacao",
         "filtro": "Saída",
-        "operacoes": [
+        "operacoes":[
           {
-            "codigo": "271",
+            "codigo": 558,
+            "nome": "Adiantamento a Pagar",
+            "tipoOperacao": "Saída",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": 556,
+            "nome": "Compensação a Pagar",
+            "tipoOperacao": "Saída",
+            "finalidadeOperacao": "–",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": 271,
             "nome": "Devolução de Compra de Mercadorias",
             "tipoOperacao": "Saída",
             "finalidadeOperacao": "–",
             "movimentacaoFinanceira": "Pagar"
           },
           {
-            "codigo": "88",
+            "codigo": 88,
             "nome": "Outras Vendas Agropecuárias",
             "tipoOperacao": "Saída",
             "finalidadeOperacao": "–",
             "movimentacaoFinanceira": "Receber"
           },
           {
-            "codigo": "87",
+            "codigo": 87,
             "nome": "Venda de Gado",
             "tipoOperacao": "Saída",
             "finalidadeOperacao": "–",
             "movimentacaoFinanceira": "Receber"
           },
           {
-            "codigo": "77",
+            "codigo": 77,
             "nome": "Venda de Mercadoria",
             "tipoOperacao": "Saída",
             "finalidadeOperacao": "–",
@@ -103,8 +145,15 @@
         "filtro": "Normal",
         "operacoes": [
           {
-            "codigo": "461",
-            "nome": "Juros s/ Tributos e Contribuições",
+            "codigo": "617",
+            "nome": "Operação Nova",
+            "tipoOperacao": "Entrada",
+            "finalidadeOperacao": "Normal",
+            "movimentacaoFinanceira": "Pagar"
+          },
+          {
+            "codigo": "614",
+            "nome": "Operação Nova",
             "tipoOperacao": "Entrada",
             "finalidadeOperacao": "Normal",
             "movimentacaoFinanceira": "Pagar"
@@ -116,8 +165,8 @@
         "filtro": "Complementar",
         "operacoes": [
           {
-            "codigo": "462",
-            "nome": "Juros Empréstimo/Financiamento",
+            "codigo": "618",
+            "nome": "Teste E2E Busca",
             "tipoOperacao": "Entrada",
             "finalidadeOperacao": "Complementar",
             "movimentacaoFinanceira": "Pagar"
@@ -129,8 +178,8 @@
         "filtro": "Ajuste",
         "operacoes": [
           {
-            "codigo": "463",
-            "nome": "Juros Passivos",
+            "codigo": "619",
+            "nome": "Teste E2E Busca",
             "tipoOperacao": "Entrada",
             "finalidadeOperacao": "Ajuste",
             "movimentacaoFinanceira": "Pagar"
@@ -142,8 +191,8 @@
         "filtro": "Devolução",
         "operacoes": [
           {
-            "codigo": "464",
-            "nome": "Contribuição Sindical",
+            "codigo": "620",
+            "nome": "Teste E2E Busca",
             "tipoOperacao": "Entrada",
             "finalidadeOperacao": "Devolução",
             "movimentacaoFinanceira": "Pagar"

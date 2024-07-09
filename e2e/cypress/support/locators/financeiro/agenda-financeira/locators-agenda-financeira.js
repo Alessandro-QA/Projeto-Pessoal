@@ -10,7 +10,8 @@ const locators = {
     checkBoxTipoPagamentoNome: '[data-cy=checkbox-tipo]',
     cardAgenda: '[data-cy=card-agenda]',
     cardBoard: '.el-card__body',
-    marcarCard: '.siagri-icon-circle-check',
+    marcarCard: 'em',
+    status: '.status-badge',
     statusPago: '.pago li',
     statusRecebido: '.recebido li',
     cardNomePessoa: '[data-cy=card-pessoa]',
@@ -27,6 +28,7 @@ const locators = {
   pagamentoRecebimentoLote: {
     titulo: '[data-cy=header-title]',
     retornarModal: '[data-cy=header-title] .siagri-icon-arrow-left',
+    dadosRecimento: '.dados-recebimento',
     formaPagamento: '[data-cy=select-forma-pagamento]',
     selectFormaPagamento: '[data-cy=select-forma-pagamento] .list__items',
     dataPagamento: '[data-cy=date-picker-data] input',

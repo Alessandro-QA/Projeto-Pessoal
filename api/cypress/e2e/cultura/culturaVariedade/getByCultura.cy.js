@@ -5,7 +5,7 @@ const description = require('../../../fixtures/cultura/culturaVariedade/getByCul
 context('Cultura', () => {
     context('CulturaVariedade', () => {
         describe(`GET - ${Cypress.env('cultura')}/CulturaVariedade/List - Obtém a Listagem de Variedades`, () => {
-            it.only('CT1 - Deve obter uma listagem com todas as variedades a partir do ID da Cultura', () => {
+            it('CT1 - Deve obter uma listagem com todas as variedades a partir do ID da Cultura', () => {
 
                 cy.fixture('cultura/culturaVariedade/getByCultura/paramsCt1.json').then((params) => {
 
