@@ -3,60 +3,85 @@
     "documento100": {
       "categorias": [
         {
-          "valor": 500,
+          "valor": 100,
           "contaContabil": {
             "dedutivel": true,
-            "codigo": "4.02.01.03",
-            "nome": "13º Salário",
-            "descricao": "13º Salário"
+            "codigo": "4.02.03.02",
+            "nome": "Aluguéis",
+            "descricao": "Aluguéis"
           }
         }
       ],
-      "dataRecebimento": "dataSubstituicaoT17:40:00-03:00",
+      "tributacoesTotais": {
+        "serie": 0,
+        "cfop": {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "descricao": "string",
+          "codigo": "string"
+        },
+        "baseCalculoICMS": "0",
+        "valorTotalICMS": "0",
+        "isentasNaoTributadas": "0",
+        "outrosICMS": "0",
+        "baseCalculoSubst": "0",
+        "valorICMSRetido": "0",
+        "valorIPI": "0",
+        "isentas": "0",
+        "outrosIPI": "0",
+        "frete": "0"
+      },
+      "outrosValores": {
+        "frete": 0,
+        "seguro": 0,
+        "despesas": "0",
+        "descontos": 0
+      },
+      "dataRecebimento": "2024-07-08T08:55:40-03:00",
       "operacao": {
-        "id": "775e9d79-747f-47a5-7444-2aca1f2e5971",
-        "descricao": "13º Salário"
+        "id": "7a5cd835-23e0-a6e0-5984-d98ff148537e",
+        "descricao": "Aluguéis"
       },
       "safra": {
-        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
-        "descricao": "2021/2021"
+        "id": "f2eb8ded-a463-47fd-a81d-1a78b5b11166",
+        "descricao": "2022 / 2023"
       },
-      "data": "dataSubstituicaoT17:40:00-03:00",
+      "data": "2024-07-08T08:55:40-03:00",
       "fazenda": {
-        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-        "descricao": "Fazenda Teste Producao"
+        "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+        "descricao": "Fazenda Teste API"
       },
-      "tags": [
-        "documentoEditado"
-      ],
       "pessoa": {
         "pessoaTipo": "Fornecedor",
-        "numeroDocumento": "67824142000144",
-        "id": "ef402791-c035-46cf-96c6-a2494042b237",
-        "descricao": "Cliente Teste Produção"
+        "numeroDocumento": "80010705000129",
+        "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+        "descricao": "Empresa 2"
       },
-      "numero": "100",
+      "numero": "numero1233123",
       "empresa": {
-        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
-        "descricao": "Empresa Fornecedor - CNPJ",
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API",
         "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "37062568000147",
+        "documentoPrincipal": "68104971026",
         "inscricaoEstadual": {
-          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-          "descricao": "110137116",
-          "valor": "110137116"
+          "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+          "descricao": "IE",
+          "valor": "ISENTO"
         }
       },
       "ieDaEmpresa": {
-        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-        "descricao": "110137116",
-        "valor": "110137116",
-        "label": "110137116"
+        "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+        "descricao": "IE",
+        "estadoSigla": "AC",
+        "ativo": true,
+        "valor": "ISENTO",
+        "label": "ISENTO - IE"
       },
-      "tipoDocumento": 5,
+      "tipoDocumento": 6,
+      "observacao": "Teste E2E",
       "conferido": false,
+      "skipLimpeza": false,
       "financeiro": {
-        "total": 500,
+        "total": 100,
         "pago": false,
         "rateioEntreCiclos": false,
         "formaPagamento": {
@@ -68,10 +93,20 @@
         "valorFixo": false,
         "parcelas": [
           {
-            "vencimento": "dataSubstituicaoT17:40:00-03:00",
-            "valor": 500
+            "vencimento": "2024-08-08T08:55:40-03:00",
+            "moeda": {
+              "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+              "descricao": "Real",
+              "codigo": 986,
+              "sigla": "BRL",
+              "simbolo": "R$",
+              "ativo": true
+            },
+            "valor": 100
           }
-        ]
+        ],
+        "cotacao": 0,
+        "totalAlternativo": 0
       },
       "dedutivel": true,
       "manual": true
@@ -79,95 +114,133 @@
     "documento101": {
       "categorias": [
         {
-          "valor": 1862,
+          "valor": 100,
           "contaContabil": {
             "dedutivel": true,
-            "codigo": "4.02.09.04",
-            "nome": "Aquisição de Gado",
-            "descricao": "Aquisição de Gado"
+            "codigo": "4.02.03.02",
+            "nome": "Aluguéis",
+            "descricao": "Aluguéis"
           }
         }
       ],
-      "dataRecebimento": "dataSubstituicaoT17:48:24-03:00",
+      "tributacoesTotais": {
+        "serie": 0,
+        "cfop": {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "descricao": "string",
+          "codigo": "string"
+        },
+        "baseCalculoICMS": "0",
+        "valorTotalICMS": "0",
+        "isentasNaoTributadas": "0",
+        "outrosICMS": "0",
+        "baseCalculoSubst": "0",
+        "valorICMSRetido": "0",
+        "valorIPI": "0",
+        "isentas": "0",
+        "outrosIPI": "0",
+        "frete": "0"
+      },
+      "outrosValores": {
+        "frete": 0,
+        "seguro": 0,
+        "despesas": "0",
+        "descontos": 0
+      },
+      "dataRecebimento": "2024-07-08T08:55:40-03:00",
       "operacao": {
-        "id": "9251e5ec-ab00-48ee-a96f-4394a030f334",
-        "descricao": "Aquisição de Gado"
+        "id": "7a5cd835-23e0-a6e0-5984-d98ff148537e",
+        "descricao": "Aluguéis"
       },
       "safra": {
-        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
-        "descricao": "2021/2021"
+        "id": "f2eb8ded-a463-47fd-a81d-1a78b5b11166",
+        "descricao": "2022 / 2023"
       },
-      "data": "dataSubstituicaoT17:48:24-03:00",
+      "data": "2024-07-08T08:55:40-03:00",
       "fazenda": {
-        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-        "descricao": "Fazenda Teste Producao"
+        "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+        "descricao": "Fazenda Teste API"
       },
       "pessoa": {
         "pessoaTipo": "Fornecedor",
-        "numeroDocumento": "67824142000144",
-        "id": "ef402791-c035-46cf-96c6-a2494042b237",
-        "descricao": "Cliente Teste Produção"
+        "numeroDocumento": "80010705000129",
+        "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+        "descricao": "Empresa 2"
       },
-      "numero": "101",
+      "numero": "numero1233123",
       "empresa": {
-        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
-        "descricao": "Empresa Fornecedor - CNPJ",
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API",
         "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "37062568000147",
+        "documentoPrincipal": "68104971026",
         "inscricaoEstadual": {
-          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-          "descricao": "110137116",
-          "valor": "110137116"
+          "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+          "descricao": "IE",
+          "valor": "ISENTO"
         }
       },
       "ieDaEmpresa": {
-        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-        "descricao": "110137116",
-        "valor": "110137116",
-        "label": "110137116"
+        "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+        "descricao": "IE",
+        "estadoSigla": "AC",
+        "ativo": true,
+        "valor": "ISENTO",
+        "label": "ISENTO - IE"
       },
-      "tipoDocumento": 1,
+      "tipoDocumento": 6,
+      "observacao": "Teste E2E",
       "conferido": false,
+      "skipLimpeza": false,
       "financeiro": {
-        "total": 1862,
+        "total": 100,
         "pago": false,
         "rateioEntreCiclos": false,
         "formaPagamento": {
-          "id": "03fe3620-3d75-4d51-a209-844f9dd83122",
-          "descricao": "Boleto"
+          "id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
+          "descricao": "Dinheiro"
         },
         "condicaoPagamento": "Avista",
         "quantidadeParcelas": 1,
         "valorFixo": false,
         "parcelas": [
           {
-            "vencimento": "dataSubstituicaoT17:48:24-03:00",
-            "valor": 1862
+            "vencimento": "2024-08-08T08:55:40-03:00",
+            "moeda": {
+              "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+              "descricao": "Real",
+              "codigo": 986,
+              "sigla": "BRL",
+              "simbolo": "R$",
+              "ativo": true
+            },
+            "valor": 100
           }
-        ]
+        ],
+        "cotacao": 0,
+        "totalAlternativo": 0
       },
       "dedutivel": true,
       "manual": true
     },
-    "documento102": {
+    "documento102":{
       "materiais": [
         {
           "material": {
-            "id": "f161f128-aa68-4763-95d5-1e6b48ca2724",
-            "descricao": "2,4-D (240) + PICLORAM (64) SL"
+            "id": "6e812abe-3a7f-42d1-9711-a9c579c6a6ef",
+            "descricao": "Soja"
           },
           "unidadeMedida": {
-            "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
-            "descricao": "L"
+            "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+            "descricao": "kg"
           },
-          "quantidade": 1,
-          "valor": 25,
-          "total": 25
+          "quantidade": 10,
+          "valor": 2,
+          "total": 20
         }
       ],
       "categorias": [
         {
-          "valor": 25,
+          "valor": 20,
           "contaContabil": {
             "dedutivel": true,
             "codigo": "3.02.01.03",
@@ -176,48 +249,76 @@
           }
         }
       ],
-      "dataRecebimento": "dataSubstituicaoT08:21:25-03:00",
+      "tributacoesTotais": {
+        "serie": 0,
+        "cfop": {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "descricao": "string",
+          "codigo": "string"
+        },
+        "baseCalculoICMS": "0",
+        "valorTotalICMS": "0",
+        "isentasNaoTributadas": "0",
+        "outrosICMS": "0",
+        "baseCalculoSubst": "0",
+        "valorICMSRetido": "0",
+        "valorIPI": "0",
+        "isentas": "0",
+        "outrosIPI": "0",
+        "frete": "0"
+      },
+      "outrosValores": {
+        "frete": 0,
+        "seguro": 0,
+        "despesas": "0",
+        "descontos": 0
+      },
+      "dataRecebimento": "2024-07-08T09:01:20-03:00",
       "operacao": {
         "id": "af2790f9-869b-4292-a981-eb98140badfa",
         "descricao": "Outras Vendas Agropecuárias"
       },
       "safra": {
-        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
-        "descricao": "2021/2021"
+        "id": "ebdf0aa6-8f1e-45f6-93fb-4cbcb49f43bb",
+        "descricao": "2024 / 2025"
       },
-      "data": "dataSubstituicaoT08:21:25-03:00",
+      "data": "2024-07-08T09:01:20-03:00",
       "fazenda": {
-        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-        "descricao": "Fazenda Teste Producao"
+        "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+        "descricao": "Fazenda Teste API"
       },
       "pessoa": {
         "pessoaTipo": "Cliente",
-        "numeroDocumento": "67824142000144",
-        "id": "ef402791-c035-46cf-96c6-a2494042b237",
-        "descricao": "Cliente Teste Produção"
+        "numeroDocumento": "80010705000129",
+        "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+        "descricao": "Empresa 2"
       },
-      "numero": "102",
+      "numero": "numero123213",
       "empresa": {
-        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
-        "descricao": "Empresa Fornecedor - CNPJ",
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API",
         "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "37062568000147",
+        "documentoPrincipal": "68104971026",
         "inscricaoEstadual": {
-          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-          "descricao": "110137116",
-          "valor": "110137116"
+          "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+          "descricao": "IE",
+          "valor": "ISENTO"
         }
       },
       "ieDaEmpresa": {
-        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-        "descricao": "110137116",
-        "valor": "110137116",
-        "label": "110137116"
+        "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+        "descricao": "IE",
+        "estadoSigla": "AC",
+        "ativo": true,
+        "valor": "ISENTO",
+        "label": "ISENTO - IE"
       },
-      "tipoDocumento": 1,
+      "tipoDocumento": 6,
+      "observacao": "Teste E2E",
       "conferido": false,
+      "skipLimpeza": false,
       "financeiro": {
-        "total": 25,
+        "total": 20,
         "pago": false,
         "rateioEntreCiclos": false,
         "formaPagamento": {
@@ -229,10 +330,20 @@
         "valorFixo": false,
         "parcelas": [
           {
-            "vencimento": "dataSubstituicaoT08:21:25-03:00",
-            "valor": 25
+            "vencimento": "2024-08-08T09:01:20-03:00",
+            "moeda": {
+              "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+              "descricao": "Real",
+              "codigo": 986,
+              "sigla": "BRL",
+              "simbolo": "R$",
+              "ativo": true
+            },
+            "valor": 20
           }
-        ]
+        ],
+        "cotacao": 0,
+        "totalAlternativo": 0
       },
       "dedutivel": true,
       "manual": true
@@ -241,21 +352,21 @@
       "materiais": [
         {
           "material": {
-            "id": "274e3abb-296d-4a6f-a355-c74fdfee3f52",
-            "descricao": "64161RSF IPRO - FIBRA"
+            "id": "6e812abe-3a7f-42d1-9711-a9c579c6a6ef",
+            "descricao": "Soja"
           },
           "unidadeMedida": {
             "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
             "descricao": "kg"
           },
           "quantidade": 10,
-          "valor": 20.3,
-          "total": 203
+          "valor": 2,
+          "total": 20
         }
       ],
       "categorias": [
         {
-          "valor": 203,
+          "valor": 20,
           "contaContabil": {
             "dedutivel": true,
             "codigo": "3.02.01.03",
@@ -264,66 +375,101 @@
           }
         }
       ],
-      "dataRecebimento": "dataSubstituicaoT08:23:26-03:00",
+      "tributacoesTotais": {
+        "serie": 0,
+        "cfop": {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "descricao": "string",
+          "codigo": "string"
+        },
+        "baseCalculoICMS": "0",
+        "valorTotalICMS": "0",
+        "isentasNaoTributadas": "0",
+        "outrosICMS": "0",
+        "baseCalculoSubst": "0",
+        "valorICMSRetido": "0",
+        "valorIPI": "0",
+        "isentas": "0",
+        "outrosIPI": "0",
+        "frete": "0"
+      },
+      "outrosValores": {
+        "frete": 0,
+        "seguro": 0,
+        "despesas": "0",
+        "descontos": 0
+      },
+      "dataRecebimento": "2024-07-08T09:01:20-03:00",
       "operacao": {
         "id": "af2790f9-869b-4292-a981-eb98140badfa",
         "descricao": "Outras Vendas Agropecuárias"
       },
       "safra": {
-        "id": "3ea751bf-ee9c-47b5-9aad-9c5aee8eef2a",
-        "descricao": "2021/2021"
+        "id": "ebdf0aa6-8f1e-45f6-93fb-4cbcb49f43bb",
+        "descricao": "2024 / 2025"
       },
-      "data": "dataSubstituicaoT08:23:26-03:00",
+      "data": "2024-07-08T09:01:20-03:00",
       "fazenda": {
-        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-        "descricao": "Fazenda Teste Producao"
+        "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+        "descricao": "Fazenda Teste API"
       },
-      "tags": [
-        "documentoE2E"
-      ],
       "pessoa": {
         "pessoaTipo": "Cliente",
-        "numeroDocumento": "67824142000144",
-        "id": "ef402791-c035-46cf-96c6-a2494042b237",
-        "descricao": "Cliente Teste Produção"
+        "numeroDocumento": "80010705000129",
+        "id": "a22784bb-3f5b-430a-823f-151fc7626b72",
+        "descricao": "Empresa 2"
       },
-      "numero": "103",
+      "numero": "numero123213",
       "empresa": {
-        "id": "24af13c7-7cf9-4b69-851c-6040d5ae2c16",
-        "descricao": "Empresa Fornecedor - CNPJ",
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API",
         "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "37062568000147",
+        "documentoPrincipal": "68104971026",
         "inscricaoEstadual": {
-          "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-          "descricao": "110137116",
-          "valor": "110137116"
+          "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+          "descricao": "IE",
+          "valor": "ISENTO"
         }
       },
       "ieDaEmpresa": {
-        "id": "23a5fc27-1527-4e0c-86a9-6c2bda95c456",
-        "descricao": "110137116",
-        "valor": "110137116",
-        "label": "110137116"
+        "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+        "descricao": "IE",
+        "estadoSigla": "AC",
+        "ativo": true,
+        "valor": "ISENTO",
+        "label": "ISENTO - IE"
       },
-      "tipoDocumento": 1,
+      "tipoDocumento": 6,
+      "observacao": "Teste E2E",
       "conferido": false,
+      "skipLimpeza": false,
       "financeiro": {
-        "total": 203,
+        "total": 20,
         "pago": false,
         "rateioEntreCiclos": false,
         "formaPagamento": {
-          "id": "9968ef7b-06cd-41ce-b12d-e4fce7b55462",
-          "descricao": "Cartão de Crédito"
+          "id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
+          "descricao": "Dinheiro"
         },
         "condicaoPagamento": "Avista",
         "quantidadeParcelas": 1,
         "valorFixo": false,
         "parcelas": [
           {
-            "vencimento": "dataSubstituicaoT08:23:26-03:00",
-            "valor": 203
+            "vencimento": "2024-08-08T09:01:20-03:00",
+            "moeda": {
+              "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+              "descricao": "Real",
+              "codigo": 986,
+              "sigla": "BRL",
+              "simbolo": "R$",
+              "ativo": true
+            },
+            "valor": 20
           }
-        ]
+        ],
+        "cotacao": 0,
+        "totalAlternativo": 0
       },
       "dedutivel": true,
       "manual": true

@@ -13,6 +13,20 @@ class Utils {
   }
 
   /**
+   * Função para gerar uma string alfanumérica aleatória
+   * @param {number} length - Comprimento da string gerada
+   * @returns {string} String alfanumérica aleatória
+   */
+  getAlphaNumeric(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+  }
+
+  /**
    * Substitui uma string (chave e valor) em arquivo
    * @param  {string} searchValue - String de pesquisa
    * @param  {string} replaceValue - String de substituição
@@ -102,9 +116,9 @@ class Utils {
   }
 
   /**
- * Busca o payload/body de acordo com o ambiente em que o teste é executado (Dev ou QA)
- * @param {*} payload 
- */
+  * Busca o payload/body de acordo com o ambiente em que o teste é executado (Dev ou QA)
+  * @param {*} payload 
+  */
   getPayloadPorAmbiente(payload) {
     var payloadReturn = []
 

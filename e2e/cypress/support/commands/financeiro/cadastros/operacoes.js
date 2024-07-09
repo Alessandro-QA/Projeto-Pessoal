@@ -12,11 +12,22 @@ class Operacoes {
     const locatorTituloPagina = locatorsOperacoes.listagem.titulo
     const tituloPagina = 'Operações'
 
-    cy.log('Navegar para Operações')
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    cy.intercept('GET', `${Cypress.env('baseUrlDaas')}${Cypress.env('operacao')}/MatrizOperacao/List?situacao=Todas`).as('listOperacao');
+
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Agenda Financeira')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+        cy.wait('@listOperacao')
+
+      }
+      cy.log(currentPath)
+    });
 
     cy.log('Filtrar Operação')
     Operacoes.filtrar(seedTestOperacoes)
+
 
     const tabelaOperacoes = seedTestOperacoes.operacoes
     tabelaOperacoes.forEach((operacao) => {
@@ -47,6 +58,9 @@ class Operacoes {
           })
         })
     })
+
+    Operacoes.limparFiltros()
+
   }
 
   /**
@@ -54,10 +68,29 @@ class Operacoes {
     * @param {*} seedTestOperacoes 
   */
   static filtrar(seedTestOperacoes) {
-    cy.log('Abrir filtros')
-    cy.getVisible(locatorsOperacoes.listagem.buttonAbrirFiltros).click()
+
+    // Verificar se o elemento de filtros existe e está visível
+    cy.document().then((doc) => {
+      const filtersElement = doc.querySelector('#root-cnx-page-filter-cnx-container-filters-div-cnx-container-filters');
+
+      if (filtersElement && !filtersElement.hidden && filtersElement.offsetHeight > 0) {
+        // Elemento de filtros existe e está visível
+        cy.log('Os filtros já estão visíveis');
+      } else {
+        // Elemento de filtros não existe ou não está visível, clicar para abrir os filtros
+        cy.log('Abrir filtros porque não estão visíveis');
+        cy.get(locatorsOperacoes.listagem.buttonAbrirFiltros).click();
+      }
+    });
+
+    cy.get(locatorsOperacoes.listagem.inputPesquisar)
+      .clear()
+    // Limpar filtros antes
+    //cy.get('#root-cnx-page-filter-cnx-container-filters-div-cnx-container-filters > .el-button').click()
 
     if (seedTestOperacoes.tipoFiltro === 'pesquisa') {
+
+
       cy.log('Validar tipo de operação selecionada')
       cy.getVisible(locatorsOperacoes.listagem.tipoOperacaoSelecionado).should(($el) => {
         expect($el).to.contain.text('Todos')
@@ -79,7 +112,10 @@ class Operacoes {
       })
 
       cy.log('Digitar busca no campo de pesquisa')
-      cy.get(locatorsOperacoes.listagem.inputPesquisar).type(seedTestOperacoes.filtro)
+      cy.get(locatorsOperacoes.listagem.inputPesquisar)
+        .clear().type(seedTestOperacoes.filtro)
+
+      cy.getVisible(locatorsOperacoes.listagem.titulo).click()
     }
     else if (seedTestOperacoes.tipoFiltro === 'tipoDaOperacao') {
 
@@ -125,6 +161,45 @@ class Operacoes {
     else {
       cy.log('Não foi encontrado nenhum filtro para ser aplicado!')
     }
+  }
+
+
+  /**
+    * Limpa todos os filtros aplicados
+  */
+  static limparFiltros() {
+    // Verificar se o elemento de filtros existe e está visível
+    cy.document().then((doc) => {
+      const filtersElement = doc.querySelector('#root-cnx-page-filter-cnx-container-filters-div-cnx-container-filters');
+
+      if (filtersElement && !filtersElement.hidden && filtersElement.offsetHeight > 0) {
+        // Elemento de filtros existe e está visível
+        cy.log('Os filtros já estão visíveis');
+      } else {
+        // Elemento de filtros não existe ou não está visível, clicar para abrir os filtros
+        cy.log('Abrir filtros porque não estão visíveis');
+        cy.get(locatorsOperacoes.listagem.buttonAbrirFiltros).click();
+      }
+    });
+
+    cy.scrollTo('top', { ensureScrollable: false });
+    cy.get(locatorsOperacoes.listagem.inputPesquisar).clear();
+    
+    cy.log('Limpar tipo de operação selecionada');
+    cy.get(locatorsOperacoes.listagem.selectTipoOperacao).click()
+    cy.get(locatorsOperacoes.listagem.listTipoOperacao).contains(/^\s*Todos\s*$/i).click()
+
+    cy.log('Limpar finalidade da operação selecionada');
+    cy.get(locatorsOperacoes.listagem.selectFinalidadeOperacao).click()
+    cy.get(locatorsOperacoes.listagem.listFinalidadeOperacao).contains(/^\s*Todos\s*$/i).click()
+
+    cy.log('Limpar Movimenta Financeiro selecionado');
+    cy.get(locatorsOperacoes.listagem.selectMovimentaFinanceiro).click();
+    cy.get(locatorsOperacoes.listagem.listMovimentaFinanceiro).contains(/^\s*Todos\s*$/i).click()
+
+    cy.log('Limpar status selecionado');
+    cy.get(locatorsOperacoes.listagem.selectStatus).click()
+    cy.get(locatorsOperacoes.listagem.listStatus).contains(/^\s*Ativo\s*$/i).click()
   }
 }
 
