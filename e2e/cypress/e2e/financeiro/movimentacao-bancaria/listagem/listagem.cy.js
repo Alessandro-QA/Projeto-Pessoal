@@ -18,15 +18,15 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       context('Validar filtros da listagem', () => {
 
         it('Deve filtrar por Empresa/Pessoa', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          // cy.allure().severity('normal').startStep('test content')
-          //.descriptionHtml(testDescritpion.filtroEmpresa)
-
+         
+          cy.allureDescriptionHtml(testDescritpion.filtroEmpresa).allureSeverity('normal')
+                                    
           validarListagem(seedTestListagemMovimentacao.movimentacaoEmpresa)
         })
 
         it('Deve filtrar por Conta', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          // cy.allure().severity('normal').startStep('test content')
-          //.descriptionHtml(testDescritpion.filtroConta)
+  
+          cy.allureDescriptionHtml(testDescritpion.filtroConta).allureSeverity('normal')
 
           seedTestListagemMovimentacao.movimentacaoContaBancaria.filtroDataInicio = oneMonthAgo
           seedTestListagemMovimentacao.movimentacaoContaBancaria.filtroDataFim = today
@@ -34,8 +34,8 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         })
 
         it('Deve filtrar por Data', { retries: { runMode: 1, openMode: 1, }, }, function () {
-          // cy.allure().severity('normal').startStep('test content')
-          //.descriptionHtml(testDescritpion.filtroData)
+          
+          cy.allureDescriptionHtml(testDescritpion.filtroData).allureSeverity('normal')
 
           seedTestListagemMovimentacao.movimentacaoData.filtroDataInicio = fiveMonthAgo
           seedTestListagemMovimentacao.movimentacaoData.filtroDataFim = today
