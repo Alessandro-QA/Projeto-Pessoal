@@ -10,14 +10,9 @@ context('Financeiro', () => {
             it('CT1 - Alterar o Vencimento do Titulo', () => {
 
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal');
-                cy.fixture('financeiro/titulo/alterarvencimento/payloadCt1.json').then((data) => {
-                    const tituloId = data.id;
+                cy.fixture('financeiro/titulo/alterarvencimento/payloadCt1.json').then((payload) => {
 
-                    // Definir o payload com a data de vencimento dinâmica
-                    const payload = {
-                        id: tituloId,
-                        dataVencimento: dayjs().add(30, 'day').format('YYYY-MM-DDTHH:mm:ssZ') // Nova data de vencimento
-                    };
+                    payload.dataVencimento =  dayjs().add(6, 'month').format('YYYY-MM-DDTHH:mm:ssZ') // Nova data de vencimento
 
                     cy.putRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Titulo/AlterarVencimento`, payload)
                         .then((response) => {
