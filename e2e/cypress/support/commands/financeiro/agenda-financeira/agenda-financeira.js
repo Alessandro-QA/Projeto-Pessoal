@@ -23,6 +23,7 @@ class AgendaFinanceira {
         cy.wait('@listagemAgenda')
       }
       cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
     });
 
     cy.log('Pesquisar por numero do documento')
@@ -85,6 +86,7 @@ class AgendaFinanceira {
         cy.wait('@listagemAgenda')
       }
       cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
     });
 
     const cards = seedTestAgendaFinanceira.cardsAgenda

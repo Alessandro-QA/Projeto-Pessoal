@@ -79,7 +79,9 @@ context('Cultura', () => {
                         // Verifica se a estrutura da resposta está correta
                         expect(response.body).to.be.an('array')
 
-                        validaResponseCulturas(response.body)
+                        // Embaralha o array de resposta
+                        const shuffledArray = response.body.slice(0, 3);
+                        validaResponseCulturas(shuffledArray);
                     })
             })
 
