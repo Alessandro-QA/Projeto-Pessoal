@@ -16,7 +16,7 @@ class Cultura {
         let randomNumber
 
         // Intercepta a requisição POST para a criação de culturas
-        cy.intercept('POST', `${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/cultura`).as('postCultura');
+        cy.intercept('POST', `${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/cultura`).as('postCultura')
 
         cy.location('pathname').then((currentPath) => {
             if (currentPath !== url) {
@@ -25,7 +25,7 @@ class Cultura {
             }
             cy.log(currentPath)
             cy.desabilitarPopUpNotificacao()
-        });
+        })
 
         cy.desabilitarPopUpNotificacao()
 
@@ -33,8 +33,8 @@ class Cultura {
         cy.getVisible(locCultura.dashboard.adicionarCultura).click()
 
         // Gerar um novo número aleatório para variar o nome das culturas
-        randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
-        seedTestCultura.nomeCultura = seedTestCultura.nomeCultura + randomNumber.toString();
+        randomNumber = Math.floor(Math.random() * 1000000) // Gera um número aleatório entre 0 e 999999
+        seedTestCultura.nomeCultura = seedTestCultura.nomeCultura + randomNumber.toString()
 
         cy.log('Preencher Nome da Cultura')
         cy.getVisible(locCultura.cadastroCultura.nomeCultura).type(seedTestCultura.nomeCultura)
@@ -56,7 +56,8 @@ class Cultura {
         cy.getVisible(locCultura.cadastroCultura.buscaMaterialColheita).click().type(seedTestCultura.materialColheita)
         cy.contains(seedTestCultura.materialColheita).click()
 
-        cy.wait(2000)
+        //cy.get(locCultura.cadastroCultura.carregarMaterial).should('not.exist', { timeout: 8000 })
+        cy.wait(3000)
 
         cy.log('Clicar em Avançar')
         cy.getVisible(locCultura.cadastroCultura.botaoAvancar).should('be.visible').contains('Avançar').click()
@@ -107,7 +108,7 @@ class Cultura {
 
             // Oculta o #api-view para continuar na página Atual
             cy.hideApiView()
-        });
+        })
 
 
         cy.get(locCultura.dashboard.pesquisar).click()
@@ -131,7 +132,7 @@ class Cultura {
         // Deleta Registro Criado Para Evitar Acumulo de Registro
         cy.get('@idCultura').then((idCultura) => {
             cy.deleteRequest(`${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/cultura`, idCultura).then((responseDelete) => {
-                expect(responseDelete.status).to.be.equal(200);
+                expect(responseDelete.status).to.be.equal(200)
             })
         })
 

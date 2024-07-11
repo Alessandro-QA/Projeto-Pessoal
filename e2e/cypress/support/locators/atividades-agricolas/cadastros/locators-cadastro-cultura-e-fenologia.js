@@ -17,8 +17,8 @@ const locators = {
         materialColheita:'[data-v-b64b91a0=""] > .select > .selected',
         buscaMaterialColheita: '[data-v-b64b91a0=""] > .select > .list > .filter > input',
         botaoAvancar:'[data-cy="footer-cultura"] > .el-button--primary > span',
-        botaoCancelar:'[data-cy="footer-cultura"] > .el-button--secondary > span'
-      
+        botaoCancelar:'[data-cy="footer-cultura"] > .el-button--secondary > span',
+        carregarMaterial:'.select > .el-loading-mask > .el-loading-spinner'
     },
 
     cadastroFenologia:{
