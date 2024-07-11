@@ -13,10 +13,12 @@ class Cultura {
         const locatorTituloPagina = locCultura.dashboard.titulo
         const tituloPagina = 'Culturas e Fenologia'
         let idCultura
-        let randomNumber
 
         // Intercepta a requisição POST para a criação de culturas
         cy.intercept('POST', `${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/cultura`).as('postCultura')
+
+        // Intercepta a requisição POST para a criação de culturas
+        cy.intercept('POST', `${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/CulturaFenologia`).as('postCulturaFenologia')
 
         cy.location('pathname').then((currentPath) => {
             if (currentPath !== url) {
@@ -27,14 +29,12 @@ class Cultura {
             cy.desabilitarPopUpNotificacao()
         })
 
+        cy.log(seedTestCultura) 
+        cy.log(seedTestCultura.nomeCultura) 
         cy.desabilitarPopUpNotificacao()
 
         cy.log('Clicar no botao "Adicionar Cultura"')
         cy.getVisible(locCultura.dashboard.adicionarCultura).click()
-
-        // Gerar um novo número aleatório para variar o nome das culturas
-        randomNumber = Math.floor(Math.random() * 1000000) // Gera um número aleatório entre 0 e 999999
-        seedTestCultura.nomeCultura = seedTestCultura.nomeCultura + randomNumber.toString()
 
         cy.log('Preencher Nome da Cultura')
         cy.getVisible(locCultura.cadastroCultura.nomeCultura).type(seedTestCultura.nomeCultura)
@@ -56,8 +56,7 @@ class Cultura {
         cy.getVisible(locCultura.cadastroCultura.buscaMaterialColheita).click().type(seedTestCultura.materialColheita)
         cy.contains(seedTestCultura.materialColheita).click()
 
-        //cy.get(locCultura.cadastroCultura.carregarMaterial).should('not.exist', { timeout: 8000 })
-        cy.wait(3000)
+        cy.get(locCultura.cadastroCultura.carregarMaterial).should('not.be.visible', { timeout: 9000 })
 
         cy.log('Clicar em Avançar')
         cy.getVisible(locCultura.cadastroCultura.botaoAvancar).should('be.visible').contains('Avançar').click()
@@ -77,7 +76,7 @@ class Cultura {
 
             cy.log('Selecionar Ícone da Fase')
             cy.get(locCultura.cadastroFenologia.iconeFase).click()
-            cy.get(locCultura.cadastroFenologia.listaIconesFase).should('be.visible').first().click()
+            cy.get(locCultura.cadastroFenologia.listaIconesFase).filter(':visible').should('be.visible').first().click()
 
             cy.log('Preencher Código do Estádio')
             cy.get(locCultura.cadastroFenologia.codigoEstadio).should('be.visible').type(seedTestCultura.codigoEstadio)
@@ -110,8 +109,18 @@ class Cultura {
             cy.hideApiView()
         })
 
+        if (seedTestCultura.tipo === 'Com Fenologia') {
 
-        cy.get(locCultura.dashboard.pesquisar).click()
+            cy.wait('@postCulturaFenologia').then(interception => {
+                // Verifica se a requisição retornou com sucesso (status 200)
+                expect(interception.response.statusCode).to.eq(200)
+            })
+        }
+
+        cy.get(locCultura.dashboard.pesquisar, { timeout: 5000 })
+            .should('exist').and('be.visible')
+            .click()
+            .clear()
             .type(seedTestCultura.nomeCultura)
             .type('{enter}')
 

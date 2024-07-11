@@ -27,7 +27,7 @@ const locators = {
         editarFase:'.gruop-button > .btn-secondary > :nth-child(1) > span',
         nomeFase:'div[data-v-05731b59] .el-input input[name="descricao"]',
         iconeFase:'.el-select__caret',
-        listaIconesFase:'.el-select-dropdown__list .el-select-dropdown__item',
+        listaIconesFase:'.el-select-dropdown.el-popper .el-select-dropdown__list .el-select-dropdown__item',
         codigoEstadio:'.el-col-6 > .el-form-item > .el-form-item__content > .el-input > .el-input__inner',
         descricaoEstadio:'.el-col-16 > .el-form-item > .el-form-item__content > .el-input > .el-input__inner',
         adicionarEstadio:'.el-col > .el-card > .el-card__body > .flex-center',
