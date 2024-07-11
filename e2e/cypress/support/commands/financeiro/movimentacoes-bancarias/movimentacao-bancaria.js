@@ -153,7 +153,7 @@ class MovimentacaoBancaria {
     if (seedTestMovimentacaoBancaria.empresa === 'Selecionar Todas') {
 
 
-      cy.get('[data-cy="select-filter-empresa"]').click();
+      cy.get('[data-cy="select-filter-empresa"]', { timeout: 15000 }).click();
 
       // Verificar se o selecionar todas já está marcado, caso não ,ele clicar
       cy.get('button.add-new').then(($button) => {
@@ -197,7 +197,12 @@ class MovimentacaoBancaria {
 
     if (seedTestMovimentacaoBancaria.contaBancaria) {
       cy.get(locMovimentacaoBancaria.dashboard.filtroContaBancaria).click()
-        .contains(seedTestMovimentacaoBancaria.contaBancaria).click({ force: true })
+      cy.get('.list__items li')
+        .filter((index, element) => {
+          return Cypress.$(element).text().trim() === seedTestMovimentacaoBancaria.contaBancaria;
+        })
+        .first() // Seleciona apenas a primeira correspondência, se houver mais de uma
+        .click({ force: true });
     }
 
     // inserir a data de inicio e fim no filtro de período
@@ -228,7 +233,7 @@ class MovimentacaoBancaria {
       // Ordena os grupos por data (decrescente) e cada grupo por hora (crescente)
       const datasOrdenadas = Object.keys(movimentacoesAgrupadas).sort((a, b) => new Date(b) - new Date(a));
       datasOrdenadas.forEach(data => {
-        movimentacoesAgrupadas[data].sort((a, b) => new Date(a.data) - new Date(b.data));
+        movimentacoesAgrupadas[data].sort((a, b) => new Date(b.data) - new Date(a.data));
       });
 
       // Achata as movimentações ordenadas
