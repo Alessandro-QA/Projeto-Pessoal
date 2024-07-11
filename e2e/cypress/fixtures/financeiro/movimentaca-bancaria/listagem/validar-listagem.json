@@ -22,7 +22,7 @@
     "empresa": "Selecionar Todas",
     "filtroDataInicio": "01/06/2023",
     "filtroDataFim": "01/08/2026",
-    "contaBancaria": "Conta Teste API",
+    "contaBancaria": "Teste Dashboard Financeiro",
     "cardMovimentacao": [
       {
         "tipo": "Pagamento",

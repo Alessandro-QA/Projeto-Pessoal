@@ -10,7 +10,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
   describe('Cadastros', () => {
     context('Operações', { tags: '@operacoes' }, () => {
-      it('Deve filtrar por caixa de Pesquisa - Palavra chave"', { retries: { runMode: 1, openMode: 1, }, }, function () {
+      it('Deve filtrar por caixa de Pesquisa - Palavra chave', { retries: { runMode: 1, openMode: 1, }, }, function () {
 
         cy.allureDescriptionHtml(testDescription.pesquisa).allureSeverity('normal')
 
