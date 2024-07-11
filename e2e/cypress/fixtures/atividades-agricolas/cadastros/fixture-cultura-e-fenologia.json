@@ -1,0 +1,22 @@
+{
+    "semFaseFenologica": {
+        "tipo": "Sem Fenologia",
+        "nomeCultura": "Teste E2E ",
+        "iconeCultura": "cactus-medium",
+        "nomeCientifico": "Nome Científico Teste E2E",
+        "unidadeMedida": "Saca 60",
+        "materialColheita": "MATERIAL COLHEITA P/ NOVA CULTURA"
+    },
+    "comFaseFenológica": {
+        "tipo": "Com Fenologia",
+        "nomeCultura": "Teste E2E ",
+        "iconeCultura": "cactus-medium",
+        "nomeCientifico": "Nome Científico Teste E2E",
+        "unidadeMedida": "Saca 60",
+        "materialColheita": "MATERIAL COLHEITA P/ NOVA CULTURA",
+        "nomeFase": "Fase Teste E2E",
+        "iconeFase": "vegetativa-medium",
+        "codigoEstadio":"C001",
+        "descricaoEstadio": "Descrição Estádio Teste E2E"
+    }
+}

@@ -12,6 +12,7 @@
         "controleClimatico": "/api/controle-climatico/v1",
         "cicloProducao": "/api/ciclo-producao/v1",
         "pessoa": "/api/pessoa/v1",
-        "operacao": "/api/operacao/v1"
+        "operacao": "/api/operacao/v1",
+        "cultura": "/api/cultura/v1"
     }
 }
