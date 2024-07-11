@@ -36,11 +36,11 @@ class Utils {
   replacer(searchValue, replaceValue, file) {
     const jsonObject = JSON.stringify(file, (key, val) => {
       if (typeof val === 'string') {
-        return val.replace(searchValue, replaceValue)
+        return val.replace(searchValue, replaceValue);
       }
-      return val
-    })
-    return jsonObject
+      return val;
+    });
+    return JSON.parse(jsonObject);
   }
 
   /**
