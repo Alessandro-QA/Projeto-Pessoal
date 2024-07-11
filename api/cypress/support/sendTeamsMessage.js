@@ -40,6 +40,28 @@ function formatDateTime(timestamp) {
   return date.toISOString().replace('T', ' ').replace(/\..+/, '');
 }
 
+// Função para obter o ícone com base no status
+function getIcon(status) {
+  switch (status) {
+    case 'passed':
+      return '✔️'; // Emoji de marca de verificação
+    case 'failed':
+      return '❌'; // Emoji de marca de cruz
+    case 'skipped':
+      return '➖'; // Emoji de sinal de menos
+    case 'broken':
+      return '🔨'; // Emoji de martelo para testes quebrados
+    case 'time':
+      return '⏱️'; // Emoji de cronômetro para tempo
+    case 'start':
+      return '🟢'; // Emoji de círculo verde para hora de início
+    case 'stop':
+      return '🔴'; // Emoji de círculo vermelho para hora de parada
+    default:
+      return '';
+  }
+}
+
 function formatSummaryMessage(summaryData, suitesData, reportUrl, appName) {
   const totalTests = summaryData.statistic.total;
   const passedTests = summaryData.statistic.passed;
@@ -52,10 +74,10 @@ function formatSummaryMessage(summaryData, suitesData, reportUrl, appName) {
   const stopTime = summaryData.time.stop - 3 * 60 * 60 * 1000;
   const totalDuration = summaryData.time.duration;
 
-  // Lista dinâmica de tipos de teste do suites.json
+  // Lista dinâmica de tipos de teste a partir do suites.json
   const testTypes = suitesData.items.map(item => {
     return {
-      name: item.name,
+      name: item.name.replace(' Tests', ''),
       passed: item.statistic.passed,
       failed: item.statistic.failed,
       skipped: item.statistic.skipped,
@@ -63,78 +85,68 @@ function formatSummaryMessage(summaryData, suitesData, reportUrl, appName) {
     };
   });
 
-  // Função para retornar o ícone baseado no status
-  function getIcon(status) {
-    switch (status) {
-      case 'passed':
-        return '✔️'; // Check mark emoji
-      case 'failed':
-        return '❌'; // Cross mark emoji
-      case 'skipped':
-        return '➖'; // Minus sign emoji
-      case 'broken':
-        return '🔨'; // Hammer emoji for broken tests
-      case 'time':
-        return '⏱️'; // Stopwatch emoji for time
-      case 'start':
-        return '🟢'; // Green circle emoji for start time
-      case 'stop':
-        return '🔴'; // Red circle emoji for stop time
-      default:
-        return '';
-    }
-  }
-  
-  // Construção dos fatos para cada tipo de teste dinamicamente
+  // Construir os fatos para cada tipo de teste dinamicamente
   const facts = [
     {
-      "name": "Start Time:",
-      "value": `${getIcon('start')} ${formatDateTime(startTime)}`
+      title: "Hora de Início",
+      value: `${getIcon('start')} ${formatDateTime(startTime)}`
     },
     {
-      "name": "End Time:",
-      "value": `${getIcon('stop')} ${formatDateTime(stopTime)}`
+      title: "Hora de Término",
+      value: `${getIcon('stop')} ${formatDateTime(stopTime)}`
     },
     {
-      "name": "Total Duration:",
-      "value": `${getIcon('time')} ${formatDuration(totalDuration)}`
+      title: "Duração Total",
+      value: `${getIcon('time')} ${formatDuration(totalDuration)}`
     },
     {
-      "name": "Total Tests Executed:",
-      "value": `${totalTests} | ${passedTests} ${getIcon('passed')} | ${failedTests} ${getIcon('failed')} | ${skippedTests} ${getIcon('skipped')} | ${brokenTests} ${getIcon('broken')}`
+      title: "Total de Testes Executados",
+      value: `${totalTests} | ${passedTests} ${getIcon('passed')} | ${failedTests} ${getIcon('failed')} | ${skippedTests} ${getIcon('skipped')} | ${brokenTests} ${getIcon('broken')}`
     },
   ];
 
-  // Adiciona fatos para cada tipo de teste
+  // Adicionar fatos para cada tipo de teste
   testTypes.forEach(type => {
     facts.push({
-      "name": `${type.name} Tests:`,
-      "value": `${type.passed} ${getIcon('passed')} | ${type.failed} ${getIcon('failed')} | ${type.skipped} ${getIcon('skipped')} | ${type.broken} ${getIcon('broken')}`
+      title: type.name,
+      value: `${type.passed} ${getIcon('passed')} | ${type.failed} ${getIcon('failed')} | ${type.skipped} ${getIcon('skipped')} | ${type.broken} ${getIcon('broken')}`
     });
   });
 
   facts.push({
-    "name": `Allure Report:`,
-    "value": `[View Allure Report](${reportUrl})`
+    title: "Relatório Allure",
+    value: `[Ver Relatório Allure](${reportUrl})`
   });
 
   return {
-    "@type": "MessageCard",
-    "@context": "http://schema.org/extensions",
-    "summary": "Allure Report Summary",
-    "themeColor": "0076D7",
-    "title": `${appName}`,
-    "sections": [
+    text: `Alerta: Um novo evento foi recebido pelo webhook!`,
+    title: appName,
+    themeColor: "0076D7",
+    attachments: [
       {
-        "activityTitle": "Test Summary",
-        "markdown": true,
-        "facts": facts
+        contentType: "application/vnd.microsoft.card.adaptive",
+        content: {
+          type: "AdaptiveCard",
+          version: "1.0",
+          body: [
+            {
+              type: "TextBlock",
+              size: "Medium",
+              weight: "Bolder",
+              text: appName
+            },
+            {
+              type: "FactSet",
+              facts: facts
+            }
+          ]
+        }
       }
     ]
   };
 }
 
-// Obtém as configurações do arquivo JSON
+// Obter a configuração do arquivo JSON
 const config = getConfig();
 
 if (config && fs.existsSync(summaryFilePath) && fs.existsSync(suitesFilePath)) {
@@ -146,18 +158,18 @@ if (config && fs.existsSync(summaryFilePath) && fs.existsSync(suitesFilePath)) {
 
     axios.post(config.teamsWebhookUrl, summaryMessage)
       .then(response => {
-        console.log('Summary message sent to MS Teams successfully:', response.data);
+        console.log('Mensagem de resumo enviada para o MS Teams com sucesso:', response.data);
       })
       .catch(error => {
         if (error.response) {
-          console.error('Webhook summary message delivery failed with error:', error.response.data);
+          console.error('Falha ao entregar a mensagem de resumo do webhook com erro:', error.response.data);
         } else {
-          console.error('Failed to send summary message to MS Teams:', error.message);
+          console.error('Falha ao enviar mensagem de resumo para o MS Teams:', error.message);
         }
       });
   } catch (error) {
-    console.error('Error reading or parsing summary or suites json:', error.message);
+    console.error('Erro ao ler ou analisar summary.json ou suites.json:', error.message);
   }
 } else {
-  console.error('Configuration or summary.json or suites.json does not exist. Cannot send summary message to MS Teams.');
+  console.error('A configuração ou summary.json ou suites.json não existe. Não é possível enviar mensagem de resumo para o MS Teams.');
 }

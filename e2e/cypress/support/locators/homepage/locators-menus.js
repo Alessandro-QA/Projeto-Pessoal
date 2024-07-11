@@ -3,13 +3,13 @@ const locators = {
     titulo: '.cnx-page-header__container--title',
   },
   botoes: {
-    atividadeAgricola: '.siagri-icon-atividades',
-    maquinarios: '.siagri-icon-maquinarios',
-    suprimentos: '[title="Suprimentos"] > .siagri-icon-suprimentos',
-    producao: '.siagri-icon-producao',
-    financeiro: '.siagri-icon-financeiro',
-    resultados: '.siagri-icon-resultados',
-    nfe: '.siagri-icon-nfe',
+    atividadeAgricola: 'a[title="Atividades Agricolas"] sub',
+    maquinarios: 'a[title="Maquinários"] sub',
+    suprimentos: 'a[title="Suprimentos"] sub',
+    producao: 'a[title="Produção"] sub',
+    financeiro: 'a[title="Financeiro"] sub',
+    resultados: 'a[title="Resultados"] sub',
+    nfe: 'a[title="NF-e"] sub',
   },
 
   textosEsperadosAG: {

@@ -23,6 +23,7 @@ class Operacoes {
 
       }
       cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
     });
 
     cy.log('Filtrar Operação')

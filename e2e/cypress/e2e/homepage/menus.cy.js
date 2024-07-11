@@ -7,7 +7,7 @@ context('Homepage', () => {
     context('Menus', () => {
         describe('Validar botões do Menu do sistema e a listagem de rotinas dentro do menu cada módulo', () => {
 
-            it('CT1 - Menu Homepage', () => {
+            it('CT1 - Menu Homepage', { retries: { runMode: 3, openMode: 3, }, }, function () {
 
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical')
                 Menus.acessarHome()

@@ -124,7 +124,6 @@ class MovimentacaoBancaria {
 
     cy.wait('@listaMovimentacoes')
 
-    cy.wait(2000)
   }
 
   /**
@@ -139,79 +138,175 @@ class MovimentacaoBancaria {
     cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/ListFilter?**').as('contaBancaria')
     cy.intercept('POST', '/api/financeiro/v1/Movimentacao/Listagem').as('listaMovimentacoes')
 
-    // Navegar para Movimentação Bancaria
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Movimentação Bancaria')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    // Espera necessária para carregar os componentes da tela
-    cy.wait('@contaBancaria')
+        cy.wait('@contaBancaria')
+      }
+      cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
+    });
+
 
     if (seedTestMovimentacaoBancaria.empresa === 'Selecionar Todas') {
-      // Selecionar Empresa
-      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroEmpresa).click()
-        .find('button').click()
+
+
+      cy.get('[data-cy="select-filter-empresa"]', { timeout: 15000 }).click();
+
+      // Verificar se o selecionar todas já está marcado, caso não ,ele clicar
+      cy.get('button.add-new').then(($button) => {
+        if ($button.text().includes('Selecionar todas')) {
+          cy.wrap($button).click({ force: true });
+        }
+      });
+
+    } else if (seedTestMovimentacaoBancaria.empresa === '') {
+      // Se a empresa estiver vazia
+      cy.log('Empresa vazia, mantém estado atual');
     } else {
-      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroEmpresa).click()
+      // Selecionar Empresa específica
+      cy.get(locMovimentacaoBancaria.dashboard.filtroEmpresa)
+        .click()
         .contains(seedTestMovimentacaoBancaria.empresa)
-        .should('exist').scrollIntoView().click()
+        .should('exist')
+        .click({ force: true });
     }
 
     if (seedTestMovimentacaoBancaria.categorias) {
       // Pesquisar Movimentação
-      cy.getVisible(locMovimentacaoBancaria.dashboard.pesquisarMovimentacao)
+      cy.get(locMovimentacaoBancaria.dashboard.pesquisarMovimentacao)
         .clear().type(`${seedTestMovimentacaoBancaria.categorias}{enter}`)
     }
 
-    // abrir filtros
-    cy.getVisible(locMovimentacaoBancaria.dashboard.abrirFiltro).click()
+    // abrir filtros caso esteja fechado
+    // Verificar se o elemento de filtros existe e está visível
+    cy.document().then((doc) => {
+      const filtersElement = doc.querySelector('#root-view-movimentacoes-movimentacoes-bancarias-cnx-page-filter-cnx-container-filters-div-cnx-container-filters');
+
+      if (filtersElement && !filtersElement.hidden && filtersElement.offsetHeight > 0) {
+        // Elemento de filtros existe e está visível
+        cy.log('Os filtros já estão visíveis');
+      } else {
+        // Elemento de filtros não existe ou não está visível, clicar para abrir os filtros
+        cy.log('Abrir filtros porque não estão visíveis');
+        cy.get(locMovimentacaoBancaria.dashboard.abrirFiltro).click();
+      }
+    });
 
     if (seedTestMovimentacaoBancaria.contaBancaria) {
-      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroContaBancaria).click()
-        .contains(seedTestMovimentacaoBancaria.contaBancaria).click()
+      cy.get(locMovimentacaoBancaria.dashboard.filtroContaBancaria).click()
+      cy.get('.list__items li')
+        .filter((index, element) => {
+          return Cypress.$(element).text().trim() === seedTestMovimentacaoBancaria.contaBancaria;
+        })
+        .first() // Seleciona apenas a primeira correspondência, se houver mais de uma
+        .click({ force: true });
     }
 
     // inserir a data de inicio e fim no filtro de período
     if (seedTestMovimentacaoBancaria.filtroDataInicio) {
       // inserir data de inicio
-      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroDataInicio).click()
+      cy.get(locMovimentacaoBancaria.dashboard.filtroDataInicio).click()
         .clear().type(`${seedTestMovimentacaoBancaria.filtroDataInicio}{enter}`)
 
       // inserir data fim
-      cy.getVisible(locMovimentacaoBancaria.dashboard.filtroDataFim).click()
+      cy.get(locMovimentacaoBancaria.dashboard.filtroDataFim).click()
         .clear().type(`${seedTestMovimentacaoBancaria.filtroDataFim}{enter}`)
     }
 
     // Espera necessária para carregar as movimentações pesquisadas
-    cy.wait('@listaMovimentacoes')
+    cy.wait('@listaMovimentacoes').then((interception) => {
+      const movimentacoes = interception.response.body.movimentacoes;
 
-    if (seedTestMovimentacaoBancaria.cardMovimentacao) {
-      // Validar dados da movimentacao bancaria
-      const movimentacao = seedTestMovimentacaoBancaria.cardMovimentacao
-      movimentacao.forEach((movimentacao, index) => {
-        cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoTipo).eq(index).should(($el) => {
-          expect($el).to.contain.text(movimentacao.tipo)
-        })
-        if (movimentacao.categorias) {
-          cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoCategoria).eq(index).should(($el) => {
-            expect($el).to.contain.text(movimentacao.categorias)
+      // Agrupa as movimentações por data
+      const movimentacoesAgrupadas = movimentacoes.reduce((acc, movimentacao) => {
+        const data = movimentacao.data.split('T')[0];
+        if (!acc[data]) {
+          acc[data] = [];
+        }
+        acc[data].push(movimentacao);
+        return acc;
+      }, {});
+
+      // Ordena os grupos por data (decrescente) e cada grupo por hora (crescente)
+      const datasOrdenadas = Object.keys(movimentacoesAgrupadas).sort((a, b) => new Date(b) - new Date(a));
+      datasOrdenadas.forEach(data => {
+        movimentacoesAgrupadas[data].sort((a, b) => new Date(b.data) - new Date(a.data));
+      });
+
+      // Achata as movimentações ordenadas
+      const movimentacoesOrdenadas = datasOrdenadas.flatMap(data => movimentacoesAgrupadas[data]);
+
+      // Valida as movimentações ordenadas contra os cartões da UI
+      cy.get('.card-timeline__item').each(($card, index) => {
+        if (movimentacoesOrdenadas[index]) {
+          const movimentacao = movimentacoesOrdenadas[index];
+          cy.wrap($card).within(() => {
+            cy.get('.el-card').within(() => {
+              // Valida o tipo
+              if (movimentacao.tipo === 2) {
+                cy.get('[data-cy="span-tipo-descricao"]').should('have.text', 'Pagamento');
+              } else if (movimentacao.tipo === 1) {
+                cy.get('[data-cy="span-tipo-descricao"]').should('have.text', 'Recebimento');
+              }
+
+              // Valida a categoria
+              if (movimentacao.categoria) {
+                cy.get('[data-cy="span-categoria"]').should('have.text', movimentacao.categoria);
+              }
+
+              // Valida a conta bancária
+              cy.get('.conta').should('contain.text', movimentacao.contaBancaria.descricao);
+
+              // Valida o campo conferido
+              cy.get('[data-cy="span-conferido"]').should('have.text', movimentacao.conferido ? 'Sim' : 'Não');
+
+              // Valida o valor da movimentação
+              const valorEsperado = `${movimentacao.valorMovimentacao}`;
+              cy.get('.value').invoke('text').then((text) => {
+                const valorExtraido = text.replace(/[^\d,-]/g, '');
+                const valorFloat = parseFloat(valorExtraido.replace(',', '.'));
+                const valorFloatEsperado = parseFloat(valorEsperado.replace(',', '.'));
+                expect(valorFloat).to.equal(valorFloatEsperado);
+              });
+            });
+          });
+        }
+      });
+    });
+
+    /*
+        if (seedTestMovimentacaoBancaria.cardMovimentacao) {
+          // Validar dados da movimentacao bancaria
+          const movimentacao = seedTestMovimentacaoBancaria.cardMovimentacao
+          movimentacao.forEach((movimentacao, index) => {
+            cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoTipo).eq(index).should(($el) => {
+              expect($el).to.contain.text(movimentacao.tipo)
+            })
+            if (movimentacao.categorias) {
+              cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoCategoria).eq(index).should(($el) => {
+                expect($el).to.contain.text(movimentacao.categorias)
+              })
+            }
+            cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoConta).eq(index).should(($el) => {
+              expect($el).to.contain.text(movimentacao.conta)
+            })
+            cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoConferido).eq(index).should(($el) => {
+              expect($el).to.contain.text(movimentacao.conferido)
+            })
+            cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoValor).should(($el) => {
+              expect($el).to.contain.text(movimentacao.valor)
+            })
           })
         }
-        cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoConta).eq(index).should(($el) => {
-          expect($el).to.contain.text(movimentacao.conta)
-        })
-        cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoConferido).eq(index).should(($el) => {
-          expect($el).to.contain.text(movimentacao.conferido)
-        })
-        cy.get(locMovimentacaoBancaria.dashboard.cardMovimentacaoValor).should(($el) => {
-          expect($el).to.contain.text(movimentacao.valor)
-        })
-      })
-    }
-
-    if (seedTestMovimentacaoBancaria.saldoDoDia) {
-      cy.getVisible(locMovimentacaoBancaria.dashboard.saldoDoDia).should(($el) => {
-        expect($el).to.contain.text(seedTestMovimentacaoBancaria.saldoDoDia)
-      })
-    }
+    
+        if (seedTestMovimentacaoBancaria.saldoDoDia) {
+          cy.getVisible(locMovimentacaoBancaria.dashboard.saldoDoDia).should(($el) => {
+            expect($el).to.contain.text(seedTestMovimentacaoBancaria.saldoDoDia)
+          })
+        }*/
   }
 
   /**

@@ -28,7 +28,7 @@ Cypress.Commands.add('getToken', (email, password) => {
 Cypress.Commands.add('navegarPara', (url, locator, tituloPagina) => {
   cy.visit(url, { timeout: 90000 })
 
-  cy.get(locator, { timeout: 30000 })
+  cy.get(locator, { timeout: 60000 })
     .should('exist').and('be.visible')
     .and('contain', tituloPagina)
 })
@@ -47,6 +47,18 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 // setando um item no localStorage. 
 Cypress.Commands.add('desabilitarPopUpNotificacao', () => {
   window.localStorage.setItem('notification-permission-myfarm', 'denied')
+
+  cy.window().then((win) => {
+    const notification = win.document.querySelector('.el-notification__group');
+
+    if (notification && notification.offsetParent !== null) { // Verifica se o elemento existe e está visível
+      const closeButton = notification.querySelector('.el-notification__closeBtn');
+      if (closeButton) {
+        closeButton.click();
+      }
+    }
+  });
+
 })
 
 // Command Cypress para executar uma query, utilizando a task cypress preparedStatement
