@@ -100,4 +100,3 @@ Cypress.Commands.add('fecharMensagem', () => {
 Cypress.Commands.add('limparTexto', (text) => {
   return text.replace(/\s+/g, ' ').trim();
 });
-
