@@ -1,5 +1,5 @@
 {
-    "ambiente": "dev",
+    "ambiente": "__Env.MyFarm.Ambiente__",
     "env": {
 
         "baseUrlBackoffice": "https://gke-apigateway.aliare.digital/dev/myfarm/backoffice",
