@@ -19,11 +19,11 @@ const locators = {
         buscaMaterialColheita: '[data-v-b64b91a0=""] > .select > .list > .filter > input',
         botaoAvancar:'[data-cy="footer-cultura"] > .el-button--primary',
         botaoCancelar:'[data-cy="footer-cultura"] > .el-button--secondary > span',
-        carregarMaterial:'.select > .el-loading-mask > .el-loading-spinner'
+        carregarMaterial:'.select > .el-loading-mask '
     },
 
     cadastroFenologia:{
-        adicionarFase: '.fase-header-item > .el-button > span',
+        adicionarFase: '.fase-header-item > .el-button',
         excluirFase:'.btn-delete > :nth-child(2) > span',
         editarFase:'.gruop-button > .btn-secondary > :nth-child(1) > span',
         nomeFase:'div[data-v-05731b59] .el-input input[name="descricao"]',

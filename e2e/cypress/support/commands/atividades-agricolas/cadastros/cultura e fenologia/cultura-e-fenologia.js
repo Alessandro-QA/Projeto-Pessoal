@@ -29,12 +29,12 @@ class Cultura {
             cy.desabilitarPopUpNotificacao()
         })
 
-        cy.log(seedTestCultura) 
-        cy.log(seedTestCultura.nomeCultura) 
+        cy.log(seedTestCultura)
+        cy.log(seedTestCultura.nomeCultura)
         cy.desabilitarPopUpNotificacao()
 
         cy.log('Clicar no botao "Adicionar Cultura"')
-        cy.esperarEClicar(locCultura.dashboard.adicionarCultura, {timeout: 5000, interval: 200})
+        cy.get(locCultura.dashboard.adicionarCultura).click()
 
         cy.log('Preencher Nome da Cultura')
         cy.getVisible(locCultura.cadastroCultura.nomeCultura).type(seedTestCultura.nomeCultura)
@@ -56,7 +56,7 @@ class Cultura {
         cy.getVisible(locCultura.cadastroCultura.buscaMaterialColheita).click().type(seedTestCultura.materialColheita)
         cy.contains(seedTestCultura.materialColheita).click()
 
-        cy.get(locCultura.cadastroCultura.carregarMaterial).should('not.be.visible', { timeout: 9000 })
+        cy.get(locCultura.cadastroCultura.carregarMaterial).should('have.css', 'display', 'none')
 
         cy.log('Clicar em Avançar')
         cy.getVisible(locCultura.cadastroCultura.botaoAvancar).should('be.visible').contains('Avançar').click()
