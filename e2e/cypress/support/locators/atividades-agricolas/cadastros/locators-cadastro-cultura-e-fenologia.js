@@ -4,7 +4,8 @@ const locators = {
         adicionarCultura:'.container-card-item > .el-button > span',
         pesquisar:'.el-input__inner',
         editarCultura:':nth-child(1) > .el-card > .el-card__body > .row-button > .footer-card > .el-button > :nth-child(1) > span',
-        conteinerCultura: '.body-container'
+        conteinerCultura: '.body-container',
+        siagriLoader: '.siagri-loader'
     },
 
     cadastroCultura: {
@@ -16,7 +17,7 @@ const locators = {
         buscaUnidadeMedida: '.filter > input',
         materialColheita:'[data-v-b64b91a0=""] > .select > .selected',
         buscaMaterialColheita: '[data-v-b64b91a0=""] > .select > .list > .filter > input',
-        botaoAvancar:'[data-cy="footer-cultura"] > .el-button--primary > span',
+        botaoAvancar:'[data-cy="footer-cultura"] > .el-button--primary',
         botaoCancelar:'[data-cy="footer-cultura"] > .el-button--secondary > span',
         carregarMaterial:'.select > .el-loading-mask > .el-loading-spinner'
     },
@@ -35,7 +36,7 @@ const locators = {
         salvarEstadio:'#myDiv-0 > .footer-button > .el-button--primary > span',
         cancelarFase:'#myDiv-0 > .footer-button > .el-button--secondary > span',
         botaoVoltar:'[data-cy="footer-cultura"] > .el-button--secondary > span',
-        botaoConcluir:'[data-cy="footer-cultura"] > .el-button--primary > span', 
+        botaoConcluir:'[data-cy="footer-cultura"] > .el-button--primary', 
     }
   }
   

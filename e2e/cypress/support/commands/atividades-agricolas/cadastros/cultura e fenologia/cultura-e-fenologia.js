@@ -34,7 +34,7 @@ class Cultura {
         cy.desabilitarPopUpNotificacao()
 
         cy.log('Clicar no botao "Adicionar Cultura"')
-        cy.getVisible(locCultura.dashboard.adicionarCultura).click()
+        cy.esperarEClicar(locCultura.dashboard.adicionarCultura, {timeout: 5000, interval: 200})
 
         cy.log('Preencher Nome da Cultura')
         cy.getVisible(locCultura.cadastroCultura.nomeCultura).type(seedTestCultura.nomeCultura)
@@ -64,7 +64,7 @@ class Cultura {
         if (seedTestCultura.tipo === 'Sem Fenologia') {
 
             cy.log('Clicar em Concluir')
-            cy.get(locCultura.cadastroFenologia.botaoConcluir).should('be.visible').contains('Concluir').click()
+            cy.get(locCultura.cadastroFenologia.botaoConcluir).contains('Concluir').should('be.visible', { timeout: 9000 }).and('not.be.disabled').click()
 
         } else if (seedTestCultura.tipo === 'Com Fenologia') {
 
@@ -88,7 +88,7 @@ class Cultura {
             cy.get(locCultura.cadastroFenologia.salvarEstadio).should('be.visible').click()
 
             cy.log('Clicar em Concluir')
-            cy.get(locCultura.cadastroFenologia.botaoConcluir).should('be.visible').contains('Concluir').click()
+            cy.get(locCultura.cadastroFenologia.botaoConcluir).contains('Concluir').should('be.visible', { timeout: 9000 }).and('not.be.disabled').click()
         }
 
         // Aguarda até que a requisição POST seja completada
