@@ -20,13 +20,13 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
         context('Cultura e Fenologia', () => {
             describe('Cadastro de Cultura', () => {
                 it('Deve cadastrar cultura sem fase fenológica relacionada', function () {
-                    cy.allureSeverity('critical').allureDescriptionHtml(testDescription.Ct1)
+                    cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct1)
 
                     Cultura.cadastro(semFaseFenologica)
                 })
 
                 it('Deve cadastrar cultura com fase fenológica relacionada', function () {
-                    cy.allureSeverity('critical').allureDescriptionHtml(testDescription.Ct2)
+                    cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct2)
 
                     Cultura.cadastro(comFaseFenologica)
                 })
