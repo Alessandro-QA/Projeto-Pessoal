@@ -1,41 +1,42 @@
 {
-  "baseUrl": "https://myfarm.dev.conexa.com.br",
-  "teamsWebhookUrl": "https://siagri365.webhook.office.com/webhookb2/ba48dd77-29a7-4ca2-bd68-a12978b0b007@07b00be1-9dad-4c75-a1e3-df507d802a1e/IncomingWebhook/eebe76ea0a90443f9244af74caa136fc/0ed774b2-14ad-45c1-af1c-91d00a3519cf",
-  "reportUrl": "https://allure.conexa.com.br/projects/myfarm-dev-e2e/reports/latest",
-  "appName": "MyFarm - E2E Tests - Dev",
+  "baseUrl": "__Env.MyFarm.BaseAddress__",
+  "teamsWebhookUrl" : "__EndToEndTest.MyFarm.webhookReportUrl__",
+  "reportUrl" : "__EndToEndTest.AllureUrl__",
+  "appName": "__Deployment.App.Name__",
   "env": {
-    "baseUrl": "https://myfarm.dev.conexa.com.br",
-    "authUrl": "https://auth.dev.conexa.com.br",
-    "returnURL": "%2Faliare-auth%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dmy-farm-clientapp-dev%26redirect_uri%3Dhttps%253A%252F%252Fmyfarm.dev.conexa.com.br%252Fauth%26response_type%3Dcode%26scope%3Dopenid%2520my-farm%2520aliare-backoffice%2520webhook%2520cultura%2520cicloproducao%2520fazenda%2520safra%2520material%2520pessoa%2520atividade%2520planocontas%2520unidademedida%2520atividadeagricola%2520controleclimatico%2520bem%2520bemocorrencia%2520estoque%2520formapagamento%2520pedidocompra%2520instituicaofinanceira%2520contabancaria%2520notafiscal%2520operacao%2520financeiro%2520localidade%2520producaoagricola%2520parametrotributario%2520notification%2520onboarding%2520nfedistribuicao%26state%3Db14763f5235d407193f6c9e01b6868c8%26code_challenge%3DkdkFs3bVrgXjJSSyDqrQCXdXh5Ho8h02z6hyW61aZ_o%26code_challenge_method%3DS256",
-    "daasUrl": "https://daas.dev.conexa.com.br",
-    "scope": "tenant i18n fazenda bemocorrencia atividade atividadeagricola bem cicloproducao controleclimatico cultura estoque formapagamento material notafiscal operacao pedidocompra pessoa planejamentosafra planocontas safra unidadearmazenamento unidademedida eexport subscription parametrotributario permission product webhookvindi contabancaria financeiro instituicaofinanceira localidade producaoagricola notification assinei webhook marketingcampaign nfedistribuicao aliare agriq onboarding profile openid indexadormoeda agriq openbanking",
-    "authorization": "********",
+    "baseUrl": "__Env.MyFarm.BaseAddress__",
+    "authUrl": "__Env.MyFarm.AuthUrl__",
+    "returnURL": "__Env.MyFarm.ReturnURL__",
+    "daasUrl": "__Env.MyFarm.DassURL__",
+    "scope": "__Env.MyFarm.Scope__",
+    "authorization": "__Env.MyFarm.Authorization__",
     "login_cenarios": {
-      "email": "e2e@hubconexa.com",
-      "senha": "********",
-      "tenant": "df7a1cc8-f259-404f-aadc-0f1b2a7f5d96",
-      "usernameDevClient": "ccdevclient",
-      "passwordDevClient": "********"
+      "email": "__EndToEndTest.LoginCenarios.Email__",
+      "senha": "__EndToEndTest.LoginCenarios.Password__",
+      "tenant": "__EndToEndTest.LoginCenarios.tenant__",
+      "usernameDevClient": "__EndToEndTest.usernameDevClient__",
+      "passwordDevClient": "__EndToEndTest.passwordDevClient__"
     },
     "login_cadastro": {
-      "email": "apiTest_myfarm@hubconexa.com",
-      "senha": "teste@123",
-      "tenant": "273276e0-7cc1-4891-94de-55e9ced2aad2",
-      "usernameDevClient": "ccdevclient",
-      "passwordDevClient": "********"
+      "email": "__EndToEndTest.LoginCadastro.Email__",
+      "senha": "__EndToEndTest.LoginCadastro.Password__",
+      "tenant": "__EndToEndTest.LoginCadastro.tenant__",
+      "usernameDevClient": "__EndToEndTest.usernameDevClient__",
+      "passwordDevClient": "__EndToEndTest.passwordDevClient__"
     },
     "login_nfe": {
-      "email": "e2e_nfe@hubconexa.com",
-      "senha": "********",
-      "tenant": "f2c7ce34-9f68-435c-b436-e0a86e8b89ff",
-      "usernameDevClient": "ccdevclient",
-      "passwordDevClient": "********"
+      "email": "__EndToEndTest.LoginNFe.Email__",
+      "senha": "__EndToEndTest.LoginNFe.Password__",
+      "tenant": "__EndToEndTest.LoginNFe.tenant__",
+      "usernameDevClient": "__EndToEndTest.usernameDevClient__",
+      "passwordDevClient": "__EndToEndTest.passwordDevClient__"
     },
     "db": {
-      "server": "projetox-mssqlserver-dev.database.windows.net",
-      "database": "projetoXDevDb",
-      "user": "adminProjetoX",
-      "password": "********",
+      "server": "__EndToEndTest.Db.Server__",
+      "database": "__EndToEndTest.Db.Database__",
+      "user": "__EndToEndTest.Db.UserName__",
+      "password": "__EndToEndTest.Db.UserPassword__",
+      "port": 1433,
       "connectionTimeout": 60000,
       "requestTimeout": 60000,
       "options": {
