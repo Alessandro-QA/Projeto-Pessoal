@@ -26,6 +26,8 @@ class Empresa {
       cy.log(currentPath)
     });
 
+    cy.desabilitarPopUpNotificacao()
+
     cy.log('Clicar no botao adicionar empresa')
     cy.getVisible(locEmpresa.dashboard.adicionarEmpresa)
       .click()
