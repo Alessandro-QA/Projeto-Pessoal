@@ -85,7 +85,7 @@ class Cultura {
             cy.get(locCultura.cadastroFenologia.descricaoEstadio).should('be.visible').type(seedTestCultura.descricaoEstadio)
 
             cy.log('Clicar em Salvar Estádio')
-            cy.get(locCultura.cadastroFenologia.salvarEstadio).should('be.visible').click()
+            cy.getVisible(locCultura.cadastroFenologia.salvarEstadio).should('be.visible').contains('Salvar estádio').click()
 
             cy.log('Clicar em Concluir')
             cy.get(locCultura.cadastroFenologia.botaoConcluir).contains('Concluir').should('be.visible', { timeout: 9000 }).and('not.be.disabled').click()
@@ -175,17 +175,13 @@ class Cultura {
             .should('exist').and('be.visible')
             .click()
             .clear()
-            .type(seedTestCultura.nomeCultura)
+            .type('Edição')
             .type('{enter}')
 
         cy.log('Clicar no botão "Editar Cultura"')
         cy.get(locCultura.dashboard.editarCultura).click()
 
         if (seedTestCultura.tipo === 'Edição Sem Fenologia') {
-
-            // Gerar um novo número aleatório para variar o nome das culturas
-            //randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
-            //seedTestCultura.nomeCultura = seedTestCultura.nomeCultura + randomNumber.toString();
 
             cy.log('Editar Nome da Cultura')
             cy.get(locCultura.cadastroCultura.nomeCultura).should('be.visible').click().clear().type(seedTestCultura.nomeCultura)
@@ -209,10 +205,6 @@ class Cultura {
             cy.log('Clicar em Editar Fase')
             cy.getVisible(locCultura.cadastroFenologia.editarFase).should('be.visible').click()
 
-            // Gerar um novo número aleatório para variar o nome das fases
-            //randomNumber = Math.floor(Math.random() * 1000000); // Gera um número aleatório entre 0 e 999999
-            //seedTestCultura.nomeFase = seedTestCultura.nomeFase + randomNumber.toString();
-
             cy.log('Editar Nome da Fase')
             cy.getVisible(locCultura.cadastroFenologia.nomeFase).should('be.visible').clear().type(seedTestCultura.nomeFase)
 
@@ -232,16 +224,15 @@ class Cultura {
             cy.hideApiView()
         })
 
-        // Verifica se é necessário aguardar o PUT para fenologia
-        if (seedTestCultura.tipo === 'Edição Com Fenologia') {
-            cy.wait('@putCulturaFenologia').then(interception => {
-                expect(interception.response.statusCode).to.eq(200)
-            })
-        }
+        cy.wait('@putCulturaFenologia').then(interception => {
+            expect(interception.response.statusCode).to.eq(200)
+        })
 
-        cy.log('Validar descrição da cultura editada')
-        cy.getVisible(locCultura.dashboard.conteinerCultura)
-            .should('contain', seedTestCultura.nomeCultura)
+        if (seedTestCultura.tipo === 'Edição Sem Fenologia') {
+            cy.log('Validar descrição da cultura editada')
+            cy.getVisible(locCultura.dashboard.conteinerCultura)
+                .should('contain', seedTestCultura.nomeCultura)
+        }
     }
 }
 

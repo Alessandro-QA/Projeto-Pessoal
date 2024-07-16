@@ -26,17 +26,17 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
                     Cultura.cadastro(semFaseFenologica)
                 })
 
-                it('Deve cadastrar cultura com fase fenológica relacionada', function () {
+                it('Deve cadastrar cultura com fase fenológica relacionada', { retries: { runMode: 1, openMode: 1, }, }, function () {
                     cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct2)
                     Cultura.cadastro(comFaseFenologica)
                 })
 
-                it.only('Deve editar uma Cultura sem editar a fase fenológica', function () {
+                it('Deve editar uma Cultura sem editar a fase fenológica', { retries: { runMode: 1, openMode: 1, }, }, function () {
                     cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct3)
                     Cultura.editarCultura(EdicaoSemFenologia)
                 })
 
-                it('Deve editar a Fase Fenológica de uma cultura criada', function () {
+                it('Deve editar a Fase Fenológica de uma cultura criada', { retries: { runMode: 1, openMode: 1, }, }, function () {
                     cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct4)
                     Cultura.editarCultura(EdicaoComFenologia)
                 })

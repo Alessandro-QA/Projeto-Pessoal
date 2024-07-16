@@ -33,9 +33,7 @@ const locators = {
         descricaoEstadio:'.el-col-16 > .el-form-item > .el-form-item__content > .el-input > .el-input__inner',
         adicionarEstadio:'.el-col > .el-card > .el-card__body > .flex-center',
         excluirEstadio:'.el-tooltip > .el-button > .siagri-icon-trash-alt-xsmall',
-        salvarEstadio:'#myDiv-0 > .footer-button > .el-button--primary > span',
-        cancelarFase:'#myDiv-0 > .footer-button > .el-button--secondary > span',
-        botaoVoltar:'[data-cy="footer-cultura"] > .el-button--secondary > span',
+        salvarEstadio:'#myDiv-0 > .footer-button > .el-button--primary',
         botaoConcluir:'[data-cy="footer-cultura"] > .el-button--primary', 
     }
   }
