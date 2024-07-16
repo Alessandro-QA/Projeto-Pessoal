@@ -1,110 +1,16 @@
 {
-  "semFiltro": {
+  "listagem": {
+    "filtros": true,
+    "filtroNome": false,
+    "filtroTipoDeConta": false,
+    "filtroEmpresa": false,
+    "filtroSituacao": "Ativo",
+    "nomePesquisa": false,
     "cardContasBancaria": [
-      {
-        "nomeContaBancaria": "Conta Corrente",
-        "agencia": "3735-1",
-        "conta": "951753-2",
-        "empresaTitular": "Empresa 1"
-      },
-      {
-        "nomeContaBancaria": "Conta Bancaria Teste",
-        "agencia": "1234-2",
-        "conta": "1234567-1",
-        "empresaTitular": "Empresa 1"
-      },
-      {
-        "nomeContaBancaria": "Conta Tesouraria",
-        "dataSaldoInicial": "10/09/2022"
-      }
+      
     ],
     "cardContasCartao": [
-      {
-        "nomeCartaoCredito": "Cartão de Crédito",
-        "empresaTitular": "Empresa 1",
-        "dataVencimento": "10"
-      }
-    ]
-  },
-  "filtroConta": {
-    "filtros": true,
-    "tipoConta": "Conta corrente",
-    "cardContasBancaria": [
-      {
-        "nomeContaBancaria": "Conta Corrente",
-        "agencia": "3735-1",
-        "conta": "951753-2",
-        "empresaTitular": "Empresa 1"
-      },
-      {
-        "nomeContaBancaria": "Conta Bancaria Teste",
-        "agencia": "1234-2",
-        "conta": "1234567-1",
-        "empresaTitular": "Empresa 1"
-      }
-    ]
-  },
-  "filtroEmpresa": {
-    "filtros": true,
-    "selecionarEmpresa": "Empresa 1",
-    "cardContasBancaria": [
-      {
-        "nomeContaBancaria": "Conta Bancaria Teste",
-        "agencia": "1234-2",
-        "conta": "1234567-1",
-        "empresaTitular": "Empresa 1"
-      },
-      {
-        "nomeContaBancaria": "Conta Corrente",
-        "agencia": "3735-1",
-        "conta": "951753-2",
-        "empresaTitular": "Empresa 1"
-      },
-      {
-        "nomeContaBancaria": "Conta Tesouraria",
-        "empresaTitular": "Empresa 1",
-        "dataSaldoInicial": "10/09/2022"
-      }
-    ],
-    "cardContasCartao": [
-      {
-        "nomeCartaoCredito": "Cartão de Crédito",
-        "empresaTitular": "Empresa 1",
-        "dataVencimento": "10"
-      }
-    ]
-  },
-  "filtroStatus": {
-    "inativarConta": {
-      "nomeConta": "Conta Corrente",
-      "tipoConta": "Conta corrente",
-      "empresaTitular": "Empresa 1",
-      "empresasHabilitadas": "Empresa 1",
-      "dataSaldoInicial": "02/02/2022",
-      "saldoInicial": "R$ 1.000,00",
-      "saldoAtual": "R$1.000,00",
-      "ativarInativar": "Inativo"
-    },
-    "filtros": true,
-    "status": "Inativo",
-    "cardContasBancaria": [
-      {
-        "nomeContaBancaria": "Conta Corrente",
-        "agencia": "3735-1",
-        "conta": "951753-2",
-        "empresaTitular": "Empresa 1"
-      }
-    ]
-  },
-  "filtroPesquisar": {
-    "pesquisar": true,
-    "nomeConta": "Cartão de Crédito",
-    "cardContasCartao": [
-      {
-        "nomeCartaoCredito": "Cartão de Crédito",
-        "empresaTitular": "Empresa 1",
-        "dataVencimento": "10"
-      }
+   
     ]
   }
 }

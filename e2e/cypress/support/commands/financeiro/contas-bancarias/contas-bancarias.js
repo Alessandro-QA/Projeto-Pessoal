@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 import locContaBancaria from '../../../locators/financeiro/contas-bancarias/locators-cadastro-conta-bancaria.js'
+const dayjs = require('dayjs')
 
 class ContaBancaria {
   /**
@@ -332,122 +333,338 @@ class ContaBancaria {
     const url = '/financeiro/contas-bancarias'
     const locatorTituloPagina = locContaBancaria.dashboard.titulo
     const tituloPagina = 'Contas bancárias'
+    /*
+        cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/Corrente').as('detalhesContaCorrente')
+        cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/CaixaTesouraria').as('detalhesContaTesouraria')
+        cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/Credito').as('detalhesContaCredito')
+    */
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Contas Bancárias')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        
+        // Realizar requisições para pegar lista de contas
+        const tenant = Cypress.env('login_cadastro').tenant
 
-    cy.log('Navegar para Contas Bancárias')
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.request({
+          method: 'GET',
+          url: '/api/financeiro/v1/ContaBancaria/Corrente',
+          headers: {
+            'authorization': `Bearer ${Cypress.env('access_token')}`,
+            'content-type': 'application/json',
+            'oferta': '38F68463-F895-47CA-BE8B-D296ED2EC0FB',
+            'x-tenant': tenant
+          },
+        }).then((response) => {
+          const responseBody = response.body
+          responseBody.forEach((conta) => {
+            const newConta = {
+              "nomeContaBancaria": conta.nomeConta,
+              "agencia": `${conta.agenciaConta}-${conta.digitoAgencia}`,
+              "conta": `${conta.numeroConta}-${conta.digitoConta}`,
+              "empresaTitular": conta.empresaTitular,
+              "ativo": conta.ativo,
+              "tipoConta": 'Corrente'
+            }
+            cy.log(newConta)
+            seedTestContaBancaria.cardContasBancaria.push(newConta)
+            cy.log(seedTestContaBancaria.cardContasBancaria)
+          })
 
-    cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/**').as('detalhesConta')
+          cy.request({
+            method: 'GET',
+            url: '/api/financeiro/v1/ContaBancaria/CaixaTesouraria',
+            headers: {
+              'authorization': `Bearer ${Cypress.env('access_token')}`,
+              'content-type': 'application/json',
+              'oferta': '38F68463-F895-47CA-BE8B-D296ED2EC0FB',
+              'x-tenant': tenant
+            },
+          }).then((response) => {
+            const responseBody = response.body
+            responseBody.forEach((conta) => {
+              const newConta1 = {
+                "nomeContaBancaria": conta.nomeConta,
+                "dataSaldoInicial": conta.dataSaldoInicial ? dayjs(conta.dataSaldoInicial).format('DD/MM/YYYY') : null,
+                "ativo": conta.ativo,
+                "empresaTitular": conta.empresaTitular,
+                "tipoConta": 'Tesouraria'
+              }
+              cy.log(newConta1)
+              seedTestContaBancaria.cardContasBancaria.push(newConta1)
+              cy.log(seedTestContaBancaria.cardContasBancaria)
+            })
+            cy.request({
+              method: 'GET',
+              url: '/api/financeiro/v1/ContaBancaria/Credito',
+              headers: {
+                'authorization': `Bearer ${Cypress.env('access_token')}`,
+                'content-type': 'application/json',
+                'oferta': '38F68463-F895-47CA-BE8B-D296ED2EC0FB',
+                'x-tenant': tenant
+              },
+            }).then((response) => {
+              const responseBody = response.body
+              responseBody.forEach((conta) => {
+                const newConta2 = {
+                  "nomeCartaoCredito": conta.nomeConta,
+                  "empresaTitular": conta.empresaTitular,
+                  "dataVencimento": conta.diaVencimentoCartao,
+                  "ativo": conta.ativo,
+                  "tipoConta": 'Cartão'
+                }
+                cy.log(newConta2)
+                seedTestContaBancaria.cardContasCartao.push(newConta2)
+                cy.log(seedTestContaBancaria.cardContasCartao)
+              })
+            })
+          })
+        })
 
-    cy.wait('@detalhesConta')
-
-    cy.wait(3000)
-
-    if (seedTestContaBancaria.pesquisar) {
-      cy.log('Pesquisar Conta Bancaria')
-      cy.getVisible(locContaBancaria.dashboard.pesquisarConta).clear()
-        .type(seedTestContaBancaria.nomeConta)
-
-      if (seedTestContaBancaria.validarCartao) {
-        cy.log('Chamada da função para validar os lançamentos do cartão de crédito')
-        ContaBancaria.lancamentosCartaoCredito(seedTestContaBancaria.validarCartao)
-      }
-    }
-
-    if (seedTestContaBancaria.filtros) {
-      cy.log('Abrir filtros')
-      cy.getVisible(locContaBancaria.dashboard.abrirFiltros).click()
-
-      if (seedTestContaBancaria.tipoConta) {
-        cy.log('Selecionar filtro de tipo de conta')
-        cy.getVisible(locContaBancaria.dashboard.selectFiltroTipo).click()
-          .contains(seedTestContaBancaria.tipoConta).click()
-      } else if (seedTestContaBancaria.selecionarEmpresa) {
-        cy.log('Selecionar filtro de Empresa')
-        cy.getVisible(locContaBancaria.dashboard.selectFiltroEmpresa).click()
-          .contains(seedTestContaBancaria.selecionarEmpresa).click()
       } else {
-        cy.log('Selecionar filtro por status (Ativo ou Inativo)')
-        cy.getVisible(locContaBancaria.dashboard.selectFiltroStatus).click()
-          .contains(seedTestContaBancaria.status).click()
-      }
-    }
 
-    if (seedTestContaBancaria.validarContas) {
-      cy.log('Validar Contas Bancárias')
-      if (seedTestContaBancaria.numeroCartao) {
-        cy.log('Validar nomes da conta bancaria no Card')
-        cy.getVisible(locContaBancaria.dashboard.nomeCartaoCredito).should(($el) => {
-          expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
+      }
+      cy.wrap(seedTestContaBancaria).as('updatedSeedTestContaBancaria1')
+      
+      cy.log(currentPath)
+
+    })
+
+    cy.desabilitarPopUpNotificacao()
+
+
+    // Limpar filtros ativos
+    // Abrir filtros caso esteja fechado
+    cy.document().then((doc) => {
+      const filtersElement = doc.querySelector('#root-filtros-cnx-page-filter-cnx-container-filters-div-cnx-container-filters')
+
+      if (filtersElement && window.getComputedStyle(filtersElement).display !== 'none') {
+        // Elemento de filtros existe e está visível
+        cy.log('Os filtros já estão visíveis')
+        cy.get(locContaBancaria.dashboard.limparFiltros).click()
+      } else {
+        // Elemento de filtros não existe ou não está visível, clicar para abrir os filtros
+        cy.log('Abrir filtros porque não estão visíveis')
+        cy.get(locContaBancaria.dashboard.abrirFiltros).click()
+        cy.get(locContaBancaria.dashboard.limparFiltros).click()
+      }
+    })
+
+    // Filtrando baseado na Situação
+    cy.get('@updatedSeedTestContaBancaria1').then((updatedSeedTestContaBancaria) => {
+      const filtroSituacao = updatedSeedTestContaBancaria.filtroSituacao
+
+      if (filtroSituacao !== false) {
+        let tipoConta, tipoContaCartao
+
+        if (filtroSituacao === 'Ativo') {
+          cy.log('Filtrando contas ativas')
+          tipoConta = updatedSeedTestContaBancaria.cardContasBancaria.filter(conta => conta.ativo === true)
+          tipoContaCartao = updatedSeedTestContaBancaria.cardContasCartao.filter(cartao => cartao.ativo === true)
+        } else if (filtroSituacao === 'Inativo') {
+          cy.log('Filtrando contas inativas')
+          tipoConta = updatedSeedTestContaBancaria.cardContasBancaria.filter(conta => conta.ativo === false)
+          tipoContaCartao = updatedSeedTestContaBancaria.cardContasCartao.filter(cartao => cartao.ativo === false)
+        } else {
+          cy.log('Valor inválido para filtro de tipo de conta')
+          // Trate aqui o caso em que filtroSituacao não é 'Ativo' nem 'Inativo'
+        }
+
+        updatedSeedTestContaBancaria.cardContasBancaria = tipoConta
+        updatedSeedTestContaBancaria.cardContasCartao = tipoContaCartao
+      } else {
+        cy.log('Filtro de tipo de conta não definido')
+        // Trate aqui o caso em que filtroSituacao é undefined
+      }
+
+      cy.wrap(updatedSeedTestContaBancaria).as('updatedSeedTestContaBancaria2')
+    })
+
+    // Filtrando baseado no filtroTipoEmpresa
+    cy.get('@updatedSeedTestContaBancaria2').then((updatedSeedTestContaBancaria) => {
+      const filtroTipoEmpresa = updatedSeedTestContaBancaria.filtroEmpresa
+
+      if (filtroTipoEmpresa !== false) {
+        cy.log(`Filtrando Tipo de Conta pelo valor: ${filtroTipoEmpresa}`)
+
+        // Filtra o array cardContasBancaria pelo campo tipoConta igual a filtroTipoDeConta
+        const tipoConta = updatedSeedTestContaBancaria.cardContasBancaria.filter(conta => conta.empresaTitular === filtroTipoEmpresa)
+
+        // Filtra o array cardContasCartao pelo campo tipoConta igual a filtroTipoDeConta
+        const tipoContaCartao = updatedSeedTestContaBancaria.cardContasCartao.filter(cartao => cartao.empresaTitular === filtroTipoEmpresa)
+
+        // Atualiza o objeto com os arrays filtrados
+        updatedSeedTestContaBancaria.cardContasBancaria = tipoConta
+        updatedSeedTestContaBancaria.cardContasCartao = tipoContaCartao
+      } else {
+        cy.log('Filtro de tipo de conta desativado')
+      }
+
+      cy.wrap(updatedSeedTestContaBancaria).as('updatedSeedTestContaBancaria3')
+    })
+
+    // Filtrando baseado no filtroTipoDeConta
+    cy.get('@updatedSeedTestContaBancaria3').then((updatedSeedTestContaBancaria) => {
+      const filtroTipoDeConta = updatedSeedTestContaBancaria.filtroTipoDeConta
+
+      if (filtroTipoDeConta !== false) {
+        cy.log(`Filtrando Tipo de Conta pelo valor: ${filtroTipoDeConta}`)
+
+        // Filtra o array cardContasBancaria pelo campo tipoConta igual a filtroTipoDeConta
+        const tipoConta = updatedSeedTestContaBancaria.cardContasBancaria.filter(conta => conta.tipoConta === filtroTipoDeConta)
+
+        // Filtra o array cardContasCartao pelo campo tipoConta igual a filtroTipoDeConta
+        const tipoContaCartao = updatedSeedTestContaBancaria.cardContasCartao.filter(cartao => cartao.tipoConta === filtroTipoDeConta)
+
+        // Atualiza o objeto com os arrays filtrados
+        updatedSeedTestContaBancaria.cardContasBancaria = tipoConta
+        updatedSeedTestContaBancaria.cardContasCartao = tipoContaCartao
+      } else {
+        cy.log('Filtro de tipo de conta desativado')
+      }
+
+      cy.wrap(updatedSeedTestContaBancaria).as('updatedSeedTestContaBancaria4')
+    })
+
+    cy.get('@updatedSeedTestContaBancaria4').then((updatedSeedTestContaBancaria) => {
+      const filtroNome = updatedSeedTestContaBancaria.filtroNome
+
+      if (filtroNome) {
+        cy.log(`Filtrando pelo nome da conta: ${filtroNome}`)
+
+        // Filtra o array cardContasBancaria pelo campo nomeContaBancaria contendo filtroNome
+        const contasFiltradas = updatedSeedTestContaBancaria.cardContasBancaria.filter(conta =>
+          conta.nomeContaBancaria.includes(filtroNome)
+        )
+
+        // Atualiza o objeto com o array filtrado
+        updatedSeedTestContaBancaria.cardContasBancaria = contasFiltradas
+
+        // Filtra o array cardContasCartao pelo campo nomeCartaoCredito contendo filtroNome
+        const cartoesFiltrados = updatedSeedTestContaBancaria.cardContasCartao.filter(cartao =>
+          cartao.nomeCartaoCredito.includes(filtroNome)
+        )
+
+        // Atualiza o objeto com o array filtrado
+        updatedSeedTestContaBancaria.cardContasCartao = cartoesFiltrados
+      } else {
+        cy.log('Filtro de nome de conta desativado')
+      }
+
+      cy.wrap(updatedSeedTestContaBancaria).as('updatedSeedTestContaBancaria5')
+    })
+
+    cy.scrollTo(0, 0, { ensureScrollable: false })
+    cy.get('@updatedSeedTestContaBancaria5').then((updatedSeedTestContaBancaria) => {
+      if (updatedSeedTestContaBancaria.filtroNome !== false) {
+        cy.log('Pesquisar Conta Bancaria')
+        cy.get(locContaBancaria.dashboard.pesquisarConta).clear()
+          .type(updatedSeedTestContaBancaria.filtroNome)
+
+        if (updatedSeedTestContaBancaria.validarCartao) {
+          cy.log('Chamada da função para validar os lançamentos do cartão de crédito')
+          ContaBancaria.lancamentosCartaoCredito(updatedSeedTestContaBancaria.validarCartao)
+        }
+      }
+
+      if (updatedSeedTestContaBancaria.filtros !== false) {
+
+        if (updatedSeedTestContaBancaria.filtroTipoDeConta !== false) {
+          cy.log('Selecionar filtro de tipo de conta')
+          cy.get(locContaBancaria.dashboard.selectFiltroTipo).click()
+          cy.get('.list__items')
+            .contains('corrente').click({ force: true })
+        } else if (updatedSeedTestContaBancaria.filtroEmpresa !== false) {
+          cy.log('Selecionar filtro de Empresa')
+          cy.get(locContaBancaria.dashboard.selectFiltroEmpresa).click()
+          cy.get('.list__items')
+            .contains(updatedSeedTestContaBancaria.filtroEmpresa).click({ force: true })
+        } else {
+          cy.log('Selecionar filtro por status (Ativo ou Inativo)')
+          cy.get(locContaBancaria.dashboard.selectFiltroStatus).click()
+          cy.get('.list__items')
+            .contains(updatedSeedTestContaBancaria.filtroSituacao).click({ force: true })
+        }
+      }
+
+      if (updatedSeedTestContaBancaria.validarContas) {
+        cy.log('Validar Contas Bancárias')
+        if (updatedSeedTestContaBancaria.numeroCartao) {
+          cy.log('Validar nomes da conta bancaria no Card')
+          cy.getVisible(locContaBancaria.dashboard.nomeCartaoCredito).should(($el) => {
+            expect($el).to.contain.text(updatedSeedTestContaBancaria.nomeConta)
+          })
+        }
+        if (updatedSeedTestContaBancaria.contaBancaria) {
+          cy.log('Validar nomes dos cartão de crédido no Card')
+          cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria).should(($el) => {
+            expect($el).to.contain.text(updatedSeedTestContaBancaria.nomeConta)
+          })
+        }
+      } else if (updatedSeedTestContaBancaria.naoExiste) {
+        cy.log('Validar que não exista contas bancarias, tesouraria e cartão de crédito')
+        if (updatedSeedTestContaBancaria.numeroCartao) {
+          cy.log('Validar que não existe Conta Bancaria/Tesouraria')
+          cy.get(locContaBancaria.dashboard.nomeCartaoCredito).should('not.exist')
+        } else {
+          cy.log('Validar que não existe Cartão de Crédito')
+          cy.get(locContaBancaria.dashboard.nomeContaBancaria).should('not.exist')
+        }
+      }
+
+      if (updatedSeedTestContaBancaria.cardContasBancaria) {
+        cy.log('Validar contas bancarias e seus respectivos dados')
+        const cardsContas = updatedSeedTestContaBancaria.cardContasBancaria
+        cy.log(updatedSeedTestContaBancaria)
+        cardsContas.forEach((cards) => {
+          cy.get(locContaBancaria.dashboard.nomeContaBancaria).should('have.length', cardsContas.length)
+            .contains(cards.nomeContaBancaria)
+            .parents(locContaBancaria.dashboard.cardConta).within(() => {
+              if (cards.agencia) {
+                cy.log('Validar Agencia da conta bancaria')
+                cy.get(locContaBancaria.dashboard.agencia).should(($el) => {
+                  expect($el).to.contain.text(cards.agencia)
+                })
+
+                cy.log('Validar a numeração da conta')
+                cy.get(locContaBancaria.dashboard.conta).should(($el) => {
+                  expect($el).to.contain.text(cards.conta)
+                })
+
+                cy.log('Validar a empresa titular da conta')
+                cy.get(locContaBancaria.dashboard.empresaTitular).should(($el) => {
+                  expect($el).to.contain.text(cards.empresaTitular)
+                })
+              } else {
+                cy.log('Validar conta bancaria do tipo Tesouraria')
+                cy.get(locContaBancaria.dashboard.dataSaldoInicial).should(($el) => {
+                  expect($el).to.contain.text(cards.dataSaldoInicial)
+                })
+              }
+            })
         })
       }
-      if (seedTestContaBancaria.contaBancaria) {
-        cy.log('Validar nomes dos cartão de crédido no Card')
-        cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria).should(($el) => {
-          expect($el).to.contain.text(seedTestContaBancaria.nomeConta)
-        })
-      }
-    } else if (seedTestContaBancaria.naoExiste) {
-      cy.log('Validar que não exista contas bancarias, tesouraria e cartão de crédito')
-      if (seedTestContaBancaria.numeroCartao) {
-        cy.log('Validar que não existe Conta Bancaria/Tesouraria')
-        cy.get(locContaBancaria.dashboard.nomeCartaoCredito).should('not.exist')
-      } else {
-        cy.log('Validar que não existe Cartão de Crédito')
-        cy.get(locContaBancaria.dashboard.nomeContaBancaria).should('not.exist')
-      }
-    }
 
-    if (seedTestContaBancaria.cardContasBancaria) {
-      cy.log('Validar contas bancarias e seus respectivos dados')
-      const cardsContas = seedTestContaBancaria.cardContasBancaria
-      cardsContas.forEach((cards) => {
-        cy.get(locContaBancaria.dashboard.nomeContaBancaria).should('have.length', cardsContas.length)
-          .contains(cards.nomeContaBancaria)
-          .parents(locContaBancaria.dashboard.cardConta).within(() => {
-            if (cards.agencia) {
-              cy.log('Validar Agencia da conta bancaria')
-              cy.get(locContaBancaria.dashboard.agencia).should(($el) => {
-                expect($el).to.contain.text(cards.agencia)
-              })
-
-              cy.log('Validar a numeração da conta')
-              cy.get(locContaBancaria.dashboard.conta).should(($el) => {
-                expect($el).to.contain.text(cards.conta)
-              })
-
-              cy.log('Validar a empresa titular da conta')
+      if (updatedSeedTestContaBancaria.cardContasCartao) {
+        cy.log('Validar cartões de créditos e seus respectivos dados')
+        const cardsContas = updatedSeedTestContaBancaria.cardContasCartao
+        cardsContas.forEach((cards) => {
+          cy.get(locContaBancaria.dashboard.nomeCartaoCredito).should('have.length', cardsContas.length)
+            .contains(cards.nomeCartaoCredito)
+            .parents(locContaBancaria.dashboard.cardCartao).within(() => {
+              cy.log('Validar empresa titular do cartão de crédito')
               cy.get(locContaBancaria.dashboard.empresaTitular).should(($el) => {
                 expect($el).to.contain.text(cards.empresaTitular)
               })
-            } else {
-              cy.log('Validar conta bancaria do tipo Tesouraria')
-              cy.get(locContaBancaria.dashboard.dataSaldoInicial).should(($el) => {
-                expect($el).to.contain.text(cards.dataSaldoInicial)
+
+              cy.log('Validar a data de vencimento do cartão de crédito')
+              cy.get(locContaBancaria.dashboard.dataVencimentoCartao).should(($el) => {
+                expect($el).to.contain.text(cards.dataVencimento)
               })
-            }
-          })
-      })
-    }
-
-    if (seedTestContaBancaria.cardContasCartao) {
-      cy.log('Validar cartões de créditos e seus respectivos dados')
-      const cardsContas = seedTestContaBancaria.cardContasCartao
-      cardsContas.forEach((cards) => {
-        cy.get(locContaBancaria.dashboard.nomeCartaoCredito).should('have.length', cardsContas.length)
-          .contains(cards.nomeCartaoCredito)
-          .parents(locContaBancaria.dashboard.cardCartao).within(() => {
-            cy.log('Validar empresa titular do cartão de crédito')
-            cy.get(locContaBancaria.dashboard.empresaTitular).should(($el) => {
-              expect($el).to.contain.text(cards.empresaTitular)
             })
-
-            cy.log('Validar a data de vencimento do cartão de crédito')
-            cy.get(locContaBancaria.dashboard.dataVencimentoCartao).should(($el) => {
-              expect($el).to.contain.text(cards.dataVencimento)
-            })
-          })
-      })
-    }
+        })
+      }
+    })
   }
 
   /**

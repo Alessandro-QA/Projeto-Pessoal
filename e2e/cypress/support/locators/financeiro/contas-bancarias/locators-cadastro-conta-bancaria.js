@@ -4,6 +4,7 @@ const locators = {
     novaConta: '[data-cy=header-contas-bancarias] button',
     abrirFiltros: '[data-cy=page-filter-contas-bancarias] .el-button--medium',
     fecharFiltro: '[data-cy=page-filter-contas-bancarias] .el-button--secondary',
+    limparFiltros: '#root-filtros-cnx-page-filter-cnx-container-filters-div-cnx-container-filters > .el-button',
     selectFiltroTipo: '[data-cy=select-filter-tipo-conta]',
     selectFiltroEmpresa: '[data-cy=select-filter-empresas]',
     selectFiltroStatus: '[data-cy=select-filter-situacao]',
