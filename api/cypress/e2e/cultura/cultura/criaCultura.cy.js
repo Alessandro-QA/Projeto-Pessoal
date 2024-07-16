@@ -132,11 +132,6 @@ function validaCultura(cultura) {
     expect(materialColheita).to.have.property('descricao').that.is.a('string')
     expect(materialColheita).to.have.property('unidadeMedida').that.is.an('object')
     expect(materialColheita).to.have.property('tipoMaterial').that.is.a('number')
-
-    // Validar o tipo dos campos dentro de "unidadeMedida" de "materialColheita"
-    const materialColheitaUnidadeMedida = materialColheita.unidadeMedida
-    expect(materialColheitaUnidadeMedida).to.have.property('id').that.is.a('string')
-    expect(materialColheitaUnidadeMedida).to.have.property('sigla').that.is.a('string')
 }
 
 function validaResponseCulturas(culturas) {

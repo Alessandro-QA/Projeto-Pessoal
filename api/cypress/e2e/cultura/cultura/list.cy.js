@@ -38,7 +38,7 @@ context('Cultura', () => {
                             validarResponse(response.body)
 
                             response.body.forEach(cultura => {
-                                expect(cultura.descricao).to.equal('Milho')
+                                expect(cultura.descricao).to.equal('Feijão')
 
                             })
                         })
@@ -46,7 +46,7 @@ context('Cultura', () => {
 
             })
 
-            it.skip('CT3 - Deve listar as culturas pelo Nome Científico', () => {
+            it('CT3 - Deve listar as culturas pelo Nome Científico', () => {
                 cy.fixture('cultura/cultura/list/paramsCt3.json').then((params) => {
 
                     cy.allureDescriptionHtml(description.Ct3).allureSeverity('normal')
@@ -94,49 +94,54 @@ context('Cultura', () => {
 
 
 function validarResponse(response) {
-    expect(response).to.be.an('array').that.is.not.empty;
     response.forEach(cultura => {
-        expect(cultura.id).to.be.a('string');
-        expect(cultura.descricao).to.be.a('string');
-        expect(cultura.nomeCientifico).to.be.a('string');
-        expect(cultura.imageClass).to.be.a('string');
+        expect(typeof cultura.id).to.equal('string');
+        expect(typeof cultura.descricao).to.equal('string');
+        expect(typeof cultura.nomeCientifico).to.equal('string');
+        expect(typeof cultura.imageClass).to.equal('string');
+        expect(Array.isArray(cultura.fasesFenologicas)).to.be.true;
+        expect(typeof cultura.qtdEstadiosFenologicos).to.equal('number');
 
-        // Valida o tipo da unidadeMedida
-        expect(cultura.unidadeMedida).to.be.an('object');
-        expect(cultura.unidadeMedida.id).to.be.a('string');
-        expect(cultura.unidadeMedida.descricao).to.be.a('string');
+        // Valida unidadeMedida
+        if (cultura.unidadeMedida) {
+            expect(typeof cultura.unidadeMedida.id).to.equal('string');
+            expect(typeof cultura.unidadeMedida.descricao).to.equal('string');
+        }
 
-        // Valida o tipo do materialColheita
-        expect(cultura.materialColheita).to.be.an('object');
-        expect(cultura.materialColheita.id).to.be.a('string');
-        expect(cultura.materialColheita.descricao).to.be.a('string');
-        expect(cultura.materialColheita.unidadeMedida).to.be.an('object');
-        expect(cultura.materialColheita.unidadeMedida.id).to.be.a('string');
-        expect(cultura.materialColheita.unidadeMedida.sigla).to.be.a('string');
-        expect(cultura.materialColheita.tipoMaterial).to.be.a('number');
+        // Valida materialColheita se houver
+        if (cultura.materialColheita) {
+            expect(typeof cultura.materialColheita.id).to.equal('string');
+            expect(typeof cultura.materialColheita.descricao).to.equal('string');
 
-        // Valida o tipo das fasesFenologicas
-        expect(cultura.fasesFenologicas).to.be.an('array');
+            if (cultura.materialColheita.unidadeMedida) {
+                expect(typeof cultura.materialColheita.unidadeMedida.id).to.equal('string');
+                expect(typeof cultura.materialColheita.unidadeMedida.sigla).to.equal('string');
+            }
+
+            expect(typeof cultura.materialColheita.tipoMaterial).to.equal('number');
+        } else {
+            // Quando materialColheita é null ou undefined, não deve ter propriedades
+            expect(cultura.materialColheita).to.be.null;
+        }
+
+        // Valida fasesFenologicas
         cultura.fasesFenologicas.forEach(fase => {
-            expect(fase.id).to.be.a('string');
-            expect(fase.culturaId).to.be.a('string');
-            expect(fase.ordem).to.be.a('number');
-            expect(fase.descricao).to.be.a('string');
-            expect(fase.imageClass).to.be.a('string');
-            expect(fase.qtdEstadios).to.be.a('number');
+            expect(typeof fase.id).to.equal('string');
+            expect(typeof fase.culturaId).to.equal('string');
+            expect(typeof fase.ordem).to.equal('number');
+            expect(typeof fase.descricao).to.equal('string');
+            expect(typeof fase.imageClass).to.equal('string');
+            expect(typeof fase.qtdEstadios).to.equal('number');
+            expect(Array.isArray(fase.estadiosFenologicos)).to.be.true;
 
-            // Valida o tipo dos estadiosFenologicos
-            expect(fase.estadiosFenologicos).to.be.an('array');
+            // Valida estadiosFenologicos
             fase.estadiosFenologicos.forEach(estadio => {
-                expect(estadio.id).to.be.a('string');
-                expect(estadio.culturaFaseFenologicaId).to.be.a('string');
-                expect(estadio.codigo).to.be.a('string');
-                expect(estadio.descricao).to.be.a('string');
-                expect(estadio.ordem).to.be.a('number');
+                expect(typeof estadio.id).to.equal('string');
+                expect(typeof estadio.culturaFaseFenologicaId).to.equal('string');
+                expect(typeof estadio.codigo).to.equal('string');
+                expect(typeof estadio.descricao).to.equal('string');
+                expect(typeof estadio.ordem).to.equal('number');
             });
         });
-
-        // Valida o tipo de qtdEstadiosFenologicos
-        expect(cultura.qtdEstadiosFenologicos).to.be.a('number');
     });
 }

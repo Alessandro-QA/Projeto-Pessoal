@@ -5,7 +5,7 @@ const description = require('../../../fixtures/cultura/culturaVariedade/list/lis
 context('Cultura', () => {
     context('CulturaVariedade', () => {
         describe(`GET - ${Cypress.env('cultura')}/CulturaVariedade/List - Obtém a Listagem de Variedades`, () => {
-            it.skip('CT1 - Deve obter uma listagem com todas as variedades na primeira página, tamanho 10', () => {
+            it('CT1 - Deve obter uma listagem com todas as variedades na primeira página, tamanho 10', () => {
 
                 cy.fixture('cultura/culturaVariedade/list/paramsCt1.json').then((params) => {
 
@@ -23,7 +23,7 @@ context('Cultura', () => {
                 })
             })
 
-            it.skip('CT2 - Deve listar as variedades pelo ID da Cultura', () => {
+            it('CT2 - Deve listar as variedades pelo ID da Cultura', () => {
                 cy.fixture('cultura/culturaVariedade/list/paramsCt2.json').then((params) => {
 
                     cy.allureDescriptionHtml(description.Ct2).allureSeverity('normal')
@@ -39,14 +39,14 @@ context('Cultura', () => {
 
                             response.body.forEach(item => {
                                 expect(item).to.have.property('descricao').that.is.a('string');
-                                expect(item.descricao).to.equal(params.CulturaId);
+                                expect(item.culturaId).to.equal(params.CulturaId);
                             });
                         })
                 })
 
             })
 
-            it.skip('CT3 - Deve listar as variedades pela descrição', () => {
+            it('CT3 - Deve listar as variedades pela descrição', () => {
                 cy.fixture('cultura/culturaVariedade/list/paramsCt3.json').then((params) => {
 
                     cy.allureDescriptionHtml(description.Ct3).allureSeverity('normal')
@@ -70,7 +70,7 @@ context('Cultura', () => {
 
             })
 
-            it.skip('CT4 - Deve listar as variedades pelo Nome Científico', () => {
+            it('CT4 - Deve listar as variedades pelo Nome Científico', () => {
                 cy.fixture('cultura/culturaVariedade/list/paramsCt4.json').then((params) => {
 
                     cy.allureDescriptionHtml(description.Ct4).allureSeverity('normal')
@@ -86,7 +86,7 @@ context('Cultura', () => {
 
                             response.body.forEach(item => {
                                 expect(item).to.have.property('nomeCientifico').that.is.a('string');
-                                expect(item.descricao).to.equal(params.NomeCientifico);
+                                expect(item.nomeCientifico).to.equal(params.NomeCientifico);
                             });
 
                         })
@@ -94,7 +94,7 @@ context('Cultura', () => {
 
             })
 
-            it.skip('CT5 - Deve listar as variedades pela Detentora', () => {
+            it('CT5 - Deve listar as variedades pela Detentora', () => {
                 cy.fixture('cultura/culturaVariedade/list/paramsCt5.json').then((params) => {
 
                     cy.allureDescriptionHtml(description.Ct5).allureSeverity('normal')
@@ -109,8 +109,10 @@ context('Cultura', () => {
                             validarResponse(response.body)
 
                             response.body.forEach(item => {
-                                expect(item).to.have.property('nomeCientifico').that.is.a('string');
-                                expect(item.descricao).to.equal(params.Detentora);
+                                expect(item).to.have.property('detentoras').that.is.an('array');
+                                item.detentoras.forEach(detentora => {
+                                    expect(detentora.detentora).to.have.property('descricao').that.equals(params.Detentora);
+                                });
                             });
 
                         })
