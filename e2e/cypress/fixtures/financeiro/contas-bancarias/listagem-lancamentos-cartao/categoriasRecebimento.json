@@ -1,0 +1,82 @@
+[
+    {
+        "codigo": "3.01.01.01",
+        "descricao": "Arroz"
+    },
+    {
+        "codigo": "3.01.01.02",
+        "descricao": "Soja"
+    },
+    {
+        "codigo": "3.01.01.03",
+        "descricao": "Milho"
+    },
+    {
+        "codigo": "3.01.01.04",
+        "descricao": "Trigo"
+    },
+    {
+        "codigo": "3.01.01.05",
+        "descricao": "Algodão"
+    },
+    {
+        "codigo": "3.01.01.06",
+        "descricao": "Café"
+    },
+    {
+        "codigo": "3.01.01.07",
+        "descricao": "Feijão"
+    },
+    {
+        "codigo": "3.01.01.08",
+        "descricao": "Milheto"
+    },
+    {
+        "codigo": "3.01.01.09",
+        "descricao": "Sorgo"
+    },
+    {
+        "codigo": "3.01.01.10",
+        "descricao": "Outras Culturas"
+    },
+    {
+        "codigo": "3.01.01.11",
+        "descricao": "ICMS Credito Presumido"
+    },
+    {
+        "codigo": "3.01.01.12",
+        "descricao": "Incentivo PRODER"
+    },
+    {
+        "codigo": "3.01.01.13",
+        "descricao": "Incentivo PROALMAT"
+    },
+    {
+        "codigo": "3.01.01.14",
+        "descricao": "Venda de Serviços"
+    },
+    {
+        "codigo": "3.01.02.01",
+        "descricao": "(-) Vendas Canceladas"
+    },
+    {
+        "codigo": "3.01.02.02",
+        "descricao": "(-) Devoluções de Venda"
+    },
+    {
+        "codigo": "3.01.03.01",
+        "descricao": "ICMS"
+    },
+    {
+        "codigo": "3.01.03.02",
+        "descricao": "ISS"
+    },
+    {
+        "codigo": "3.01.03.03",
+        "descricao": "COFINS"
+    },
+    {
+        "codigo": "3.01.03.04",
+        "descricao": "PIS"
+    }
+]

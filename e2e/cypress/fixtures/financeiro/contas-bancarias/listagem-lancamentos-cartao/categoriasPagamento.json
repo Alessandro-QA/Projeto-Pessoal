@@ -1,0 +1,126 @@
+[
+    {
+        "codigo": "4.01.01.01",
+        "descricao": "Sementes"
+    },
+    {
+        "codigo": "4.01.01.02",
+        "descricao": "Adubos e Fertilizantes"
+    },
+    {
+        "codigo": "4.01.01.03",
+        "descricao": "Defensivos"
+    },
+    {
+        "codigo": "4.01.01.04",
+        "descricao": "Transporte Plantio e Colheita"
+    },
+    {
+        "codigo": "4.01.01.05",
+        "descricao": "Mão de Obra"
+    },
+    {
+        "codigo": "4.01.01.06",
+        "descricao": "Irrigação"
+    },
+    {
+        "codigo": "4.01.01.07",
+        "descricao": "Variações por Perdas"
+    },
+    {
+        "codigo": "4.01.01.08",
+        "descricao": "Máquinas e Equipamentos"
+    },
+    {
+        "codigo": "4.01.01.09",
+        "descricao": "Peças e Acessórios de Reposição"
+    },
+    {
+        "codigo": "4.01.01.10",
+        "descricao": "Lubrificantes"
+    },
+    {
+        "codigo": "4.01.01.11",
+        "descricao": "Óleo Diesel"
+    },
+    {
+        "codigo": "4.01.01.12",
+        "descricao": "Custos Financeiros"
+    },
+    {
+        "codigo": "4.01.01.13",
+        "descricao": "Encargos Sociais"
+    },
+    {
+        "codigo": "4.01.01.14",
+        "descricao": "Outros Custos"
+    },
+    {
+        "codigo": "4.01.02.01",
+        "descricao": "Perdas na Cultura"
+    },
+    {
+        "codigo": "4.01.03.01",
+        "descricao": "Depreciações"
+    },
+    {
+        "codigo": "4.01.03.02",
+        "descricao": "Manutenção de Máquinas e Equipamentos"
+    },
+    {
+        "codigo": "4.02.01.01",
+        "descricao": "Ordenados e Salários"
+    },
+    {
+        "codigo": "4.02.01.02",
+        "descricao": "Férias"
+    },
+    {
+        "codigo": "4.02.01.03",
+        "descricao": "13º Salário"
+    },
+    {
+        "codigo": "4.02.01.04",
+        "descricao": "Gratificações"
+    },
+    {
+        "codigo": "4.02.01.05",
+        "descricao": "Comissões"
+    },
+    {
+        "codigo": "4.02.01.06",
+        "descricao": "Horas Extras"
+    },
+    {
+        "codigo": "4.02.01.07",
+        "descricao": "Outros Proventos"
+    },
+    {
+        "codigo": "4.02.02.01",
+        "descricao": "Benefícios"
+    },
+    {
+        "codigo": "4.02.02.02",
+        "descricao": "Encargos Sociais"
+    },
+    {
+        "codigo": "4.02.02.03",
+        "descricao": "Plano de Saúde"
+    },
+    {
+        "codigo": "4.02.02.04",
+        "descricao": "Seguro de Vida"
+    },
+    {
+        "codigo": "4.02.02.05",
+        "descricao": "Outros Encargos"
+    },
+    {
+        "codigo": "4.02.03.01",
+        "descricao": "Treinamentos"
+    },
+    {
+        "codigo": "4.02.03.02",
+        "descricao": "Uniformes"
+    }
+]

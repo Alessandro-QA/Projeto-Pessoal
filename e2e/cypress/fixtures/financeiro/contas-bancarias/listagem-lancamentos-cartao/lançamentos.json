@@ -1,42 +1,18 @@
 {
   "semFiltro": {
+    "filtros": false,
     "pesquisar": true,
-    "nomeConta": "OFX - Cartao de Credito",
-    "validarCartao": [
-      {
-        "nomeCartaoCredito": "OFX - Cartao de Credito",
-        "card": [
-          {
-            "spanCategoria": "Outras Vendas Agropecuárias",
-            "operacao": "Recebimento",
-            "valor": "R$ 300,23"
-          },
-          {
-            "spanCategoria": "Combustíveis",
-            "operacao": "Pagamento",
-            "valor": "R$ - 200,00"
-          }
-        ]
-      }
-    ]
+    "nomeConta": "Cartão Teste",
+    "validarCartao": []
   },
   "filtrarPeriodo": {
     "pesquisar": true,
-    "nomeConta": "OFX - Cartao de Credito",
+    "filtros": true,
+    "dataInicio": "09/09/2022",
+    "dataFim": "11/09/2022",
+    "nomeConta": "Cartão Teste",
     "validarCartao": [
-      {
-        "nomeCartaoCredito": "OFX - Cartao de Credito",
-        "filtros": true,
-        "dataInicio": "09/09/2022",
-        "dataFim": "11/09/2022",
-        "card": [
-          {
-            "spanCategoria": "Combustíveis",
-            "operacao": "Pagamento",
-            "valor": "R$ - 200,00"
-          }
-        ]
-      }
+      
     ]
   }
 }
