@@ -5,7 +5,7 @@
 
 context('Pedido Compra', () => {
     context('Pedidos', () => {
-        describe(`GET - ${Cypress.env('atendimentopedidos')}/Pedidos/Listagem - Listagem de Pedidos`, () => {
+        describe(`GET - ${Cypress.env('pedidoCompra')}/Pedidos/Listagem - Listagem de Pedidos`, () => {
             it('CT1 - Listagem de pedidos', () => {
                  cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
@@ -76,14 +76,15 @@ context('Pedido Compra', () => {
                             response.body.forEach(pedido => {
                                 validatePedidos(pedido)
 
-                                // Validar que o FornecedorId no payload está presente na resposta
-                                expect(pedido.fornecedorDocumentoPrincipal).to.exist
+                                // Validar que a fornecedorDescricao está presente e corresponde a FornecedorNome no payload
+                                expect(pedido.fornecedorDescricao).to.equal(payload.FornecedorNome)
                             })
                         })
                 })
             })
+        
             it('CT4 - Listagem de Pedidos por Safra', () => {
-                 cy.allureDescriptionHtml(description.Ct4).allureSeverity('normal')
+                // cy.allureDescriptionHtml(description.Ct4).allureSeverity('normal')
 
                 cy.fixture('pedidoCompra/pedidos/listagem/payloadCt4.json').then((payload) => {
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/Pedidos/Listagem`, payload)
@@ -103,12 +104,13 @@ context('Pedido Compra', () => {
                             response.body.forEach(pedido => {
                                 validatePedidos(pedido)
 
-                                // Validar que a safraDescricao está presente e é uma string
-                                expect(pedido.safraDescricao).to.be.a('string')
-                            })
-                        })
-                })
-            })
-        })
-    })
-})
+                                // Validar que a safraDescricao está presente e corresponde a SafraNome no payload
+                                expect(pedido.safraDescricao).to.equal(payload.SafraNome)
+                            });
+                        });
+                });
+            });
+        });
+    });
+});
+    

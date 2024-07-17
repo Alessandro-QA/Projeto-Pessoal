@@ -4,7 +4,7 @@
 
 context('Pedido Compra', () => {
     context('Atendimentos Pedidos', () => {
-        describe(`GET - ${Cypress.env('atendimentopedidos')}/Dashboard/GastoClassificacao - Dashboard Gastos por Classificação`, () => {
+        describe(`GET - ${Cypress.env('pedidoCompra')}/Dashboard/GastoClassificacao - Dashboard Gastos por Classificação`, () => {
             it('CT1 - Gastos por Categoria com parâmetros padrão', () => {
                  cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
