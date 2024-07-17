@@ -1,504 +1,291 @@
 {
   "dev": {
-    "documentoPago":{
-      "categorias": [
-        {
-          "valor": 200,
-          "contaContabil": {
-            "dedutivel": true,
-            "codigo": "4.02.02.01",
-            "nome": "Combustíveis",
-            "descricao": "Combustíveis"
-          }
-        }
-      ],
-      "dataRecebimento": "dataSubstituicaoT10:23:51-03:00",
-      "operacao": {
-        "id": "3484bacd-25eb-980e-48a3-44e473135ed7",
-        "descricao": "Combustíveis"
-      },
-      "safra": {
-        "id": "5af65cab-4f60-469f-84c5-69ae105828b9",
-        "descricao": "2019 / 2020"
-      },
-      "data": "dataSubstituicaoT10:23:51-03:00",
-      "fazenda": {
-        "id": "de0319ec-35b3-42a6-9237-f8959c6764ef",
-        "descricao": "Fazenda Teste Producao"
-      },
-      "tags": [
-        "documentoEditado"
-      ],
-      "pessoa": {
-        "pessoaTipo": "Fornecedor",
-        "numeroDocumento": "67824142000144",
-        "id": "ef402791-c035-46cf-96c6-a2494042b237",
-        "descricao": "Cliente Teste Produção"
-      },
-      "numero": "789",
-      "empresa": {
-        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
-        "descricao": "Empresa Fornecedor - CPF",
-        "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "91535740019",
-        "inscricaoEstadual": {
-          "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
-          "descricao": "IE Estadual",
-          "valor": "32165465622"
-        }
-      },
-      "ieDaEmpresa": {
-        "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
-        "descricao": "IE Estadual",
-        "ativo": true,
-        "valor": "32165465622",
-        "label": "32165465622"
-      },
-      "tipoDocumento": 6,
-      "conferido": false,
-      "financeiro": {
-        "total": 200,
-        "pago": true,
-        "rateioEntreCiclos": false,
-        "formaPagamento": {
-          "id": "9968ef7b-06cd-41ce-b12d-e4fce7b55462",
-          "descricao": "Cartão de Crédito"
-        },
-        "contaBancaria": {
-          "id": "5cff22e4-9a88-4a47-9e71-e88b47cdd0d7",
-          "tipoConta": 2,
-          "nome": "OFX - Cartao de Credito",
-          "contaPrincipal": false,
-          "numerarioEmTransito": false,
-          "saldoInicial": 1000,
-          "saldoAtual": 1000,
-          "incluirSaldoDisponivel": false,
-          "numeroCartao": 4984000000002962,
-          "limiteCartao": 1000,
-          "bandeiraCartao": 2,
-          "fechamentoFatura": 1,
-          "vencimentoFatura": 10,
-          "contaCorrenteId": "26be8f49-b543-4878-91c9-039b32be2d51",
-          "codigo": 9,
-          "openBanking": false,
-          "ativo": true,
-          "empresaTitular": {
-            "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
-            "descricao": "Empresa Produtor - CPF"
-          },
-          "banco": {
-            "id": "00000000-0000-0000-0000-000000000000"
-          },
-          "contaBancariaEmpresas": [
-            {
-              "id": "6bc6e066-dd6a-4795-8239-d2d09c26d145",
-              "empresa": {
-                "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
-                "descricao": "Empresa Produtor - CPF"
-              }
-            }
-          ]
-        },
-        "contaFornecedor": {
-          "id": "9cd7e883-e179-4e41-b3f3-1bb4955cfeca"
-        },
-        "condicaoPagamento": "Avista",
-        "quantidadeParcelas": 1,
-        "valorFixo": false,
-        "parcelas": [
-          {
-            "vencimento": "dataSubstituicaoT10:23:51-03:00",
-            "valor": 200
-          }
-        ],
-        "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
-        "contaId": "5cff22e4-9a88-4a47-9e71-e88b47cdd0d7"
-      },
+    "Pagamento": {
+      "data": "dataSubstituicao",
+      "valor": "valorSubstituicao",
+      "tipoMovimentacao": "pagamento",
       "dedutivel": true,
-      "manual": true
+      "empresa": {
+        "id": "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
+        "descricao": "Empresa Teste Financeiro - Dashboard"
+      },
+      "historico": "Teste API",
+      "anexos": [],
+      "__valid": true,
+      "contaBancariaId": "4d488389-8197-4e2d-af23-8d4ed17a847b",
+      "categoria": {
+        "codigo": "4.01.01.02",
+        "descricao": "Adubos e Fertilizantes"
+      }
     },
-    "documentoRecebido": {
-      "materiais": [
-        {
-          "material": {
-            "id": "f161f128-aa68-4763-95d5-1e6b48ca2724",
-            "descricao": "2,4-D (240) + PICLORAM (64) SL"
-          },
-          "unidadeMedida": {
-            "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
-            "descricao": "L"
-          },
-          "quantidade": 89.3215,
-          "valor": 3.3612,
-          "total": 300.2274258
-        }
-      ],
-      "categorias": [
-        {
-          "valor": 300.23,
-          "contaContabil": {
-            "dedutivel": true,
-            "codigo": "3.02.01.03",
-            "nome": "Outras Vendas Agropecuárias",
-            "descricao": "Outras Vendas Agropecuárias"
-          }
-        }
-      ],
-      "dataRecebimento": "dataSubstituicaoT10:39:23-03:00",
-      "operacao": {
-        "id": "af2790f9-869b-4292-a981-eb98140badfa",
-        "descricao": "Outras Vendas Agropecuárias"
-      },
-      "safra": {
-        "id": "5af65cab-4f60-469f-84c5-69ae105828b9",
-        "descricao": "2019 / 2020"
-      },
-      "data": "dataSubstituicaoT10:39:23-03:00",
-      "fazenda": {
-        "id": "668bf778-ab9b-4f91-ab09-62ecdd4e5938",
-        "descricao": "Fazenda Reserva"
-      },
-      "tags": [
-        "documentoE2E"
-      ],
-      "pessoa": {
-        "pessoaTipo": "Cliente",
-        "numeroDocumento": "67824142000144",
-        "id": "ef402791-c035-46cf-96c6-a2494042b237",
-        "descricao": "Cliente Teste Produção"
-      },
-      "numero": "6974",
-      "empresa": {
-        "id": "73c7c2de-7fbe-4e85-8c28-c01e3b865e02",
-        "descricao": "Empresa Fornecedor - CPF",
-        "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "91535740019",
-        "inscricaoEstadual": {
-          "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
-          "descricao": "IE Estadual",
-          "valor": "32165465622"
-        }
-      },
-      "ieDaEmpresa": {
-        "id": "60e75594-d4d3-4eaa-b5c2-78803418562a",
-        "descricao": "IE Estadual",
-        "ativo": true,
-        "valor": "32165465622",
-        "label": "32165465622"
-      },
-      "tipoDocumento": 1,
-      "conferido": false,
-      "financeiro": {
-        "total": 300.23,
-        "pago": true,
-        "rateioEntreCiclos": false,
-        "formaPagamento": {
-          "id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
-          "descricao": "Dinheiro"
-        },
-        "contaBancaria": {
-          "id": "5cff22e4-9a88-4a47-9e71-e88b47cdd0d7",
-          "tipoConta": 2,
-          "nome": "OFX - Cartao de Credito",
-          "contaPrincipal": false,
-          "numerarioEmTransito": false,
-          "saldoInicial": 1000,
-          "saldoAtual": 600,
-          "incluirSaldoDisponivel": false,
-          "numeroCartao": 4984000000002962,
-          "limiteCartao": 1000,
-          "bandeiraCartao": 2,
-          "fechamentoFatura": 1,
-          "vencimentoFatura": 10,
-          "contaCorrenteId": "26be8f49-b543-4878-91c9-039b32be2d51",
-          "codigo": 9,
-          "openBanking": false,
-          "ativo": true,
-          "empresaTitular": {
-            "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
-            "descricao": "Empresa Produtor - CPF"
-          },
-          "banco": {
-            "id": "00000000-0000-0000-0000-000000000000"
-          },
-          "contaBancariaEmpresas": [
-            {
-              "id": "6bc6e066-dd6a-4795-8239-d2d09c26d145",
-              "empresa": {
-                "id": "a4cba7fc-9989-41ab-9536-f70cc87dfa12",
-                "descricao": "Empresa Produtor - CPF"
-              }
-            }
-          ]
-        },
-        "contaFornecedor": {
-          "id": "9cd7e883-e179-4e41-b3f3-1bb4955cfeca"
-        },
-        "condicaoPagamento": "Avista",
-        "quantidadeParcelas": 1,
-        "valorFixo": false,
-        "parcelas": [
-          {
-            "vencimento": "dataSubstituicaoT10:39:23-03:00",
-            "valor": 300.23
-          }
-        ],
-        "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
-        "contaId": "5cff22e4-9a88-4a47-9e71-e88b47cdd0d7"
-      },
+    "Recebimento": {
+      "data": "dataSubstituicao",
+      "valor": "valorSubstituicao",
+      "tipoMovimentacao": "recebimento",
       "dedutivel": true,
-      "manual": true
-    }    
+      "empresa": {
+        "id": "e6b80cac-9af1-473a-81ad-6dbec66df3b0",
+        "descricao": "Empresa Teste Financeiro - Dashboard"
+      },
+      "historico": "Teste API",
+      "anexos": [],
+      "__valid": true,
+      "contaBancariaId": "4d488389-8197-4e2d-af23-8d4ed17a847b",
+      "categoria": {
+        "codigo": "3.01.01.01",
+        "descricao": "Arroz"
+      }
+    }
   },
-  "qa": {
-    "documentoPago":{
-      "categorias": [
-        {
-          "valor": 200,
-          "contaContabil": {
-            "dedutivel": true,
-            "codigo": "4.02.02.01",
-            "nome": "Combustíveis",
-            "descricao": "Combustíveis"
-          }
-        }
-      ],
-      "dataRecebimento": "dataSubstituicaoT10:28:25-03:00",
-      "operacao": {
-        "id": "3484bacd-25eb-980e-48a3-44e473135ed7",
-        "descricao": "Combustíveis"
-      },
-      "safra": {
-        "id": "c76f0dbd-eb17-4fe5-9413-1be7a7f9a591",
-        "descricao": "2019 / 2020"
-      },
-      "data": "dataSubstituicaoT10:28:25-03:00",
-      "fazenda": {
-        "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
-        "descricao": "Fazenda Teste Producao"
-      },
-      "tags": [
-        "documentoEditado"
-      ],
-      "pessoa": {
-        "pessoaTipo": "Fornecedor",
-        "numeroDocumento": "67824142000144",
-        "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
-        "descricao": "Cliente Teste Produção"
-      },
-      "numero": "789",
-      "empresa": {
-        "id": "f03b1276-c276-4980-bccd-87dc29317818",
-        "descricao": "Empresa Fornecedor - CPF",
-        "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "91535740019",
-        "inscricaoEstadual": {
-          "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
-          "descricao": "IE Estadual",
-          "valor": "32165465622"
-        }
-      },
-      "ieDaEmpresa": {
-        "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
-        "descricao": "IE Estadual",
-        "ativo": true,
-        "valor": "32165465622",
-        "label": "32165465622"
-      },
-      "tipoDocumento": 6,
-      "conferido": false,
-      "financeiro": {
-        "total": 200,
-        "pago": true,
-        "rateioEntreCiclos": false,
-        "formaPagamento": {
-          "id": "d92c6c10-73dd-4118-9910-5850c4b7317e",
-          "descricao": "Cartão de Crédito"
-        },
-        "contaBancaria": {
-          "id": "9d2fa680-9367-4ccd-8c52-add526b0692d",
-          "tipoConta": 2,
-          "nome": "OFX - Cartao de Credito",
-          "contaPrincipal": false,
-          "numerarioEmTransito": false,
-          "saldoInicial": 1000,
-          "saldoAtual": 1000,
-          "incluirSaldoDisponivel": false,
-          "numeroCartao": 4984000000002962,
-          "limiteCartao": 1000,
-          "bandeiraCartao": 2,
-          "fechamentoFatura": 1,
-          "vencimentoFatura": 10,
-          "contaCorrenteId": "f12b2bb5-a945-4898-9402-fcc4a4c51bee",
-          "codigo": 10,
-          "openBanking": false,
-          "ativo": true,
-          "empresaTitular": {
-            "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
-            "descricao": "Empresa Produtor - CPF"
-          },
-          "banco": {
-            "id": "00000000-0000-0000-0000-000000000000"
-          },
-          "contaBancariaEmpresas": [
-            {
-              "id": "95871187-ca6f-4f8d-a13e-5b4ad2c06db9",
-              "empresa": {
-                "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
-                "descricao": "Empresa Produtor - CPF"
-              }
-            }
-          ]
-        },
-        "contaFornecedor": {
-          "id": "036fcac3-70bd-461d-944e-8591871597b4"
-        },
-        "condicaoPagamento": "Avista",
-        "quantidadeParcelas": 1,
-        "valorFixo": false,
-        "parcelas": [
+    "qa": {
+      "documentoPago": {
+        "categorias": [
           {
-            "vencimento": "dataSubstituicaoT10:28:25-03:00",
-            "valor": 200
+            "valor": 200,
+            "contaContabil": {
+              "dedutivel": true,
+              "codigo": "4.02.02.01",
+              "nome": "Combustíveis",
+              "descricao": "Combustíveis"
+            }
           }
         ],
-        "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
-        "contaId": "9d2fa680-9367-4ccd-8c52-add526b0692d"
-      },
-      "dedutivel": true,
-      "manual": true
-    },
-    "documentoRecebido": {
-      "materiais": [
-        {
-          "material": {
-            "id": "c4043fb3-e13c-4215-917f-840740181d56",
-            "descricao": "2,4-D (240) + PICLORAM (64) SL"
-          },
-          "unidadeMedida": {
-            "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
-            "descricao": "L"
-          },
-          "quantidade": 89.3215,
-          "valor": 3.3612,
-          "total": 300.2274258
-        }
-      ],
-      "categorias": [
-        {
-          "valor": 300.23,
-          "contaContabil": {
-            "dedutivel": true,
-            "codigo": "3.02.01.03",
-            "nome": "Outras Vendas Agropecuárias",
-            "descricao": "Outras Vendas Agropecuárias"
+        "dataRecebimento": "dataSubstituicaoT10:28:25-03:00",
+        "operacao": {
+          "id": "3484bacd-25eb-980e-48a3-44e473135ed7",
+          "descricao": "Combustíveis"
+        },
+        "safra": {
+          "id": "c76f0dbd-eb17-4fe5-9413-1be7a7f9a591",
+          "descricao": "2019 / 2020"
+        },
+        "data": "dataSubstituicaoT10:28:25-03:00",
+        "fazenda": {
+          "id": "9673f606-3666-4bde-81e9-7c4983f6111b",
+          "descricao": "Fazenda Teste Producao"
+        },
+        "tags": [
+          "documentoEditado"
+        ],
+        "pessoa": {
+          "pessoaTipo": "Fornecedor",
+          "numeroDocumento": "67824142000144",
+          "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+          "descricao": "Cliente Teste Produção"
+        },
+        "numero": "789",
+        "empresa": {
+          "id": "f03b1276-c276-4980-bccd-87dc29317818",
+          "descricao": "Empresa Fornecedor - CPF",
+          "empresaDeSaoPaulo": false,
+          "documentoPrincipal": "91535740019",
+          "inscricaoEstadual": {
+            "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+            "descricao": "IE Estadual",
+            "valor": "32165465622"
           }
-        }
-      ],
-      "dataRecebimento": "dataSubstituicaoT10:42:28-03:00",
-      "operacao": {
-        "id": "af2790f9-869b-4292-a981-eb98140badfa",
-        "descricao": "Outras Vendas Agropecuárias"
-      },
-      "safra": {
-        "id": "c76f0dbd-eb17-4fe5-9413-1be7a7f9a591",
-        "descricao": "2019 / 2020"
-      },
-      "data": "dataSubstituicaoT10:42:28-03:00",
-      "fazenda": {
-        "id": "f79f4f5e-9ba4-4892-9e9c-3064d214507f",
-        "descricao": "Fazenda Reserva"
-      },
-      "tags": [
-        "documentoE2E"
-      ],
-      "pessoa": {
-        "pessoaTipo": "Cliente",
-        "numeroDocumento": "67824142000144",
-        "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
-        "descricao": "Cliente Teste Produção"
-      },
-      "numero": "6974",
-      "empresa": {
-        "id": "f03b1276-c276-4980-bccd-87dc29317818",
-        "descricao": "Empresa Fornecedor - CPF",
-        "empresaDeSaoPaulo": false,
-        "documentoPrincipal": "91535740019",
-        "inscricaoEstadual": {
+        },
+        "ieDaEmpresa": {
           "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
           "descricao": "IE Estadual",
-          "valor": "32165465622"
-        }
-      },
-      "ieDaEmpresa": {
-        "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
-        "descricao": "IE Estadual",
-        "ativo": true,
-        "valor": "32165465622",
-        "label": "32165465622"
-      },
-      "tipoDocumento": 1,
-      "conferido": false,
-      "financeiro": {
-        "total": 300.23,
-        "pago": true,
-        "rateioEntreCiclos": false,
-        "formaPagamento": {
-          "id": "3716190d-a329-42c1-a311-b32977cd1965",
-          "descricao": "Dinheiro"
-        },
-        "contaBancaria": {
-          "id": "9d2fa680-9367-4ccd-8c52-add526b0692d",
-          "tipoConta": 2,
-          "nome": "OFX - Cartao de Credito",
-          "contaPrincipal": false,
-          "numerarioEmTransito": false,
-          "saldoInicial": 1000,
-          "saldoAtual": 800,
-          "incluirSaldoDisponivel": false,
-          "numeroCartao": 4984000000002962,
-          "limiteCartao": 1000,
-          "bandeiraCartao": 2,
-          "fechamentoFatura": 1,
-          "vencimentoFatura": 10,
-          "contaCorrenteId": "f12b2bb5-a945-4898-9402-fcc4a4c51bee",
-          "codigo": 10,
-          "openBanking": false,
           "ativo": true,
-          "empresaTitular": {
-            "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
-            "descricao": "Empresa Produtor - CPF"
+          "valor": "32165465622",
+          "label": "32165465622"
+        },
+        "tipoDocumento": 6,
+        "conferido": false,
+        "financeiro": {
+          "total": 200,
+          "pago": true,
+          "rateioEntreCiclos": false,
+          "formaPagamento": {
+            "id": "d92c6c10-73dd-4118-9910-5850c4b7317e",
+            "descricao": "Cartão de Crédito"
           },
-          "banco": {
-            "id": "00000000-0000-0000-0000-000000000000"
-          },
-          "contaBancariaEmpresas": [
-            {
-              "id": "95871187-ca6f-4f8d-a13e-5b4ad2c06db9",
-              "empresa": {
-                "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
-                "descricao": "Empresa Produtor - CPF"
+          "contaBancaria": {
+            "id": "9d2fa680-9367-4ccd-8c52-add526b0692d",
+            "tipoConta": 2,
+            "nome": "OFX - Cartao de Credito",
+            "contaPrincipal": false,
+            "numerarioEmTransito": false,
+            "saldoInicial": 1000,
+            "saldoAtual": 1000,
+            "incluirSaldoDisponivel": false,
+            "numeroCartao": 4984000000002962,
+            "limiteCartao": 1000,
+            "bandeiraCartao": 2,
+            "fechamentoFatura": 1,
+            "vencimentoFatura": 10,
+            "contaCorrenteId": "f12b2bb5-a945-4898-9402-fcc4a4c51bee",
+            "codigo": 10,
+            "openBanking": false,
+            "ativo": true,
+            "empresaTitular": {
+              "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+              "descricao": "Empresa Produtor - CPF"
+            },
+            "banco": {
+              "id": "00000000-0000-0000-0000-000000000000"
+            },
+            "contaBancariaEmpresas": [
+              {
+                "id": "95871187-ca6f-4f8d-a13e-5b4ad2c06db9",
+                "empresa": {
+                  "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+                  "descricao": "Empresa Produtor - CPF"
+                }
               }
+            ]
+          },
+          "contaFornecedor": {
+            "id": "036fcac3-70bd-461d-944e-8591871597b4"
+          },
+          "condicaoPagamento": "Avista",
+          "quantidadeParcelas": 1,
+          "valorFixo": false,
+          "parcelas": [
+            {
+              "vencimento": "dataSubstituicaoT10:28:25-03:00",
+              "valor": 200
             }
-          ]
+          ],
+          "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
+          "contaId": "9d2fa680-9367-4ccd-8c52-add526b0692d"
         },
-        "contaFornecedor": {
-          "id": "036fcac3-70bd-461d-944e-8591871597b4"
-        },
-        "condicaoPagamento": "Avista",
-        "quantidadeParcelas": 1,
-        "valorFixo": false,
-        "parcelas": [
+        "dedutivel": true,
+        "manual": true
+      },
+      "documentoRecebido": {
+        "materiais": [
           {
-            "vencimento": "dataSubstituicaoT10:42:28-03:00",
-            "valor": 300.23
+            "material": {
+              "id": "c4043fb3-e13c-4215-917f-840740181d56",
+              "descricao": "2,4-D (240) + PICLORAM (64) SL"
+            },
+            "unidadeMedida": {
+              "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
+              "descricao": "L"
+            },
+            "quantidade": 89.3215,
+            "valor": 3.3612,
+            "total": 300.2274258
           }
         ],
-        "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
-        "contaId": "9d2fa680-9367-4ccd-8c52-add526b0692d"
-      },
-      "dedutivel": true,
-      "manual": true
-    } 
+        "categorias": [
+          {
+            "valor": 300.23,
+            "contaContabil": {
+              "dedutivel": true,
+              "codigo": "3.02.01.03",
+              "nome": "Outras Vendas Agropecuárias",
+              "descricao": "Outras Vendas Agropecuárias"
+            }
+          }
+        ],
+        "dataRecebimento": "dataSubstituicaoT10:42:28-03:00",
+        "operacao": {
+          "id": "af2790f9-869b-4292-a981-eb98140badfa",
+          "descricao": "Outras Vendas Agropecuárias"
+        },
+        "safra": {
+          "id": "c76f0dbd-eb17-4fe5-9413-1be7a7f9a591",
+          "descricao": "2019 / 2020"
+        },
+        "data": "dataSubstituicaoT10:42:28-03:00",
+        "fazenda": {
+          "id": "f79f4f5e-9ba4-4892-9e9c-3064d214507f",
+          "descricao": "Fazenda Reserva"
+        },
+        "tags": [
+          "documentoE2E"
+        ],
+        "pessoa": {
+          "pessoaTipo": "Cliente",
+          "numeroDocumento": "67824142000144",
+          "id": "ee695b01-069d-4685-b2cf-96e9bceeba65",
+          "descricao": "Cliente Teste Produção"
+        },
+        "numero": "6974",
+        "empresa": {
+          "id": "f03b1276-c276-4980-bccd-87dc29317818",
+          "descricao": "Empresa Fornecedor - CPF",
+          "empresaDeSaoPaulo": false,
+          "documentoPrincipal": "91535740019",
+          "inscricaoEstadual": {
+            "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+            "descricao": "IE Estadual",
+            "valor": "32165465622"
+          }
+        },
+        "ieDaEmpresa": {
+          "id": "57552506-637b-4df9-8b1e-bc7a74550d9b",
+          "descricao": "IE Estadual",
+          "ativo": true,
+          "valor": "32165465622",
+          "label": "32165465622"
+        },
+        "tipoDocumento": 1,
+        "conferido": false,
+        "financeiro": {
+          "total": 300.23,
+          "pago": true,
+          "rateioEntreCiclos": false,
+          "formaPagamento": {
+            "id": "3716190d-a329-42c1-a311-b32977cd1965",
+            "descricao": "Dinheiro"
+          },
+          "contaBancaria": {
+            "id": "9d2fa680-9367-4ccd-8c52-add526b0692d",
+            "tipoConta": 2,
+            "nome": "OFX - Cartao de Credito",
+            "contaPrincipal": false,
+            "numerarioEmTransito": false,
+            "saldoInicial": 1000,
+            "saldoAtual": 800,
+            "incluirSaldoDisponivel": false,
+            "numeroCartao": 4984000000002962,
+            "limiteCartao": 1000,
+            "bandeiraCartao": 2,
+            "fechamentoFatura": 1,
+            "vencimentoFatura": 10,
+            "contaCorrenteId": "f12b2bb5-a945-4898-9402-fcc4a4c51bee",
+            "codigo": 10,
+            "openBanking": false,
+            "ativo": true,
+            "empresaTitular": {
+              "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+              "descricao": "Empresa Produtor - CPF"
+            },
+            "banco": {
+              "id": "00000000-0000-0000-0000-000000000000"
+            },
+            "contaBancariaEmpresas": [
+              {
+                "id": "95871187-ca6f-4f8d-a13e-5b4ad2c06db9",
+                "empresa": {
+                  "id": "df28b1fb-b733-43fd-9b66-acb2d56252a2",
+                  "descricao": "Empresa Produtor - CPF"
+                }
+              }
+            ]
+          },
+          "contaFornecedor": {
+            "id": "036fcac3-70bd-461d-944e-8591871597b4"
+          },
+          "condicaoPagamento": "Avista",
+          "quantidadeParcelas": 1,
+          "valorFixo": false,
+          "parcelas": [
+            {
+              "vencimento": "dataSubstituicaoT10:42:28-03:00",
+              "valor": 300.23
+            }
+          ],
+          "dataPagamento": "dataSubstituicaoT00:00:00-03:00",
+          "contaId": "9d2fa680-9367-4ccd-8c52-add526b0692d"
+        },
+        "dedutivel": true,
+        "manual": true
+      }
+    }
   }
-}

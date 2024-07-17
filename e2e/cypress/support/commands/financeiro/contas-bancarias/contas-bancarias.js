@@ -333,16 +333,12 @@ class ContaBancaria {
     const url = '/financeiro/contas-bancarias'
     const locatorTituloPagina = locContaBancaria.dashboard.titulo
     const tituloPagina = 'Contas bancárias'
-    /*
-        cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/Corrente').as('detalhesContaCorrente')
-        cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/CaixaTesouraria').as('detalhesContaTesouraria')
-        cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/Credito').as('detalhesContaCredito')
-    */
+
     cy.location('pathname').then((currentPath) => {
       if (currentPath !== url) {
         cy.log('Navegar para Contas Bancárias')
         cy.navegarPara(url, locatorTituloPagina, tituloPagina)
-        
+
         // Realizar requisições para pegar lista de contas
         const tenant = Cypress.env('login_cadastro').tenant
 
@@ -425,7 +421,7 @@ class ContaBancaria {
 
       }
       cy.wrap(seedTestContaBancaria).as('updatedSeedTestContaBancaria1')
-      
+
       cy.log(currentPath)
 
     })
@@ -560,11 +556,6 @@ class ContaBancaria {
         cy.log('Pesquisar Conta Bancaria')
         cy.get(locContaBancaria.dashboard.pesquisarConta).clear()
           .type(updatedSeedTestContaBancaria.filtroNome)
-
-        if (updatedSeedTestContaBancaria.validarCartao) {
-          cy.log('Chamada da função para validar os lançamentos do cartão de crédito')
-          ContaBancaria.lancamentosCartaoCredito(updatedSeedTestContaBancaria.validarCartao)
-        }
       }
 
       if (updatedSeedTestContaBancaria.filtros !== false) {
@@ -665,6 +656,114 @@ class ContaBancaria {
         })
       }
     })
+  }
+
+  /**
+  * Metodo para o cadastro e edição de uma conta Bancaria
+  * @param {*} seedTestLancamentoCartao
+  */
+  validarCartao(seedTestLancamentoCartao) {
+    const url = '/financeiro/contas-bancarias'
+    const locatorTituloPagina = locContaBancaria.dashboard.titulo
+    const tituloPagina = 'Contas bancárias'
+
+    cy.intercept('GET', '/api/financeiro/v1/Movimentacao/**').as('listagemCartao')
+
+    cy.location('pathname').then((currentPath) => {
+
+      // Expressão regular para verificar o caminho ( Mesmo que esteja já dentro dos lançamentos )
+      const pathPattern = /^\/financeiro\/contas-bancarias\/cartoes\/lancamento\/[^\/]+$/;
+
+      if (!pathPattern.test(currentPath)) {
+        cy.log('Navegar para Contas Bancárias')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+
+        cy.desabilitarPopUpNotificacao()
+
+        cy.scrollTo(0, 0, { ensureScrollable: false })
+
+        if (seedTestLancamentoCartao.filtroNome !== false) {
+          cy.log('Pesquisar Conta Bancaria')
+          cy.get(locContaBancaria.dashboard.pesquisarConta).clear()
+            .type(seedTestLancamentoCartao.nomeConta)
+        }
+
+        cy.get(locContaBancaria.dashboard.verLancamentos).click()
+
+
+      } else {
+        cy.log(currentPath)
+      }
+    })
+
+
+    // Validar se Filtra por Data ou não
+    if (seedTestLancamentoCartao.filtros) {
+
+      // Abrir filtros caso esteja fechado
+      cy.document().then((doc) => {
+        const filtersElement = doc.querySelector('.selects')
+
+        if (filtersElement && window.getComputedStyle(filtersElement).display !== 'none') {
+          // Elemento de filtros existe e está visível
+          cy.log('Os filtros já estão visíveis')
+          cy.get(locContaBancaria.lancamentosCartao.limparFiltros).click()
+        } else {
+          // Elemento de filtros não existe ou não está visível, clicar para abrir os filtros
+          cy.log('Abrir filtros porque não estão visíveis')
+          cy.get(locContaBancaria.lancamentosCartao.abrirFiltros).click()
+          cy.get(locContaBancaria.lancamentosCartao.limparFiltros).click()
+        }
+      })
+
+      cy.log('Pesquisar Data')
+      cy.get(locContaBancaria.lancamentosCartao.dataInicio)
+        .clear()
+        .type(seedTestLancamentoCartao.dataInicio)
+
+      cy.get(locContaBancaria.lancamentosCartao.dataFim)
+        .clear()
+        .type(seedTestLancamentoCartao.dataFim)
+        .type('{enter}');
+
+    }
+
+    cy.wait('@listagemCartao').then(interception => {
+      // Aqui você pode acessar a resposta da interceptação
+      const response = interception.response;
+
+      // Exemplo de como acessar dados da resposta
+      cy.log(response.body); // Exibe o corpo da resposta no console
+      seedTestLancamentoCartao.validarCartao = response.body.movimentacoesDiarias
+      // Você pode continuar seus testes ou asserções aqui dentro
+    });
+
+
+
+    cy.log(seedTestLancamentoCartao)
+
+    // Capturar todos os cards da timeline
+    cy.get('.card-timeline .card-lancamento-wrapper').each(($card, index, $list) => {
+      // Dentro de cada card, validar os detalhes da transação
+      cy.wrap($card).within(() => {
+        cy.get('[data-cy="span-categoria-lancamento"]').should('contain.text', seedTestLancamentoCartao.validarCartao[index].categoria);
+        // Validar operação, ignorando acentos 
+        cy.get('[data-cy="span-operacao-lancamento"]').invoke('text').then((text) => {
+          const operacaoTexto = text.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos e converte para minúsculas
+          const operacaoEsperada = seedTestLancamentoCartao.validarCartao[index].operacao.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos e converte para minúsculas
+
+          expect(operacaoTexto).to.contain(operacaoEsperada); // Verifica se o texto contém a operação esperada
+        });
+        cy.get('[data-cy="span-valor-lancamento"]').invoke('text').then((text) => {
+          // Extrair o valor numérico do texto e converter para float
+          const valorTexto = parseFloat(text.trim().replace(/[^\d.,-]/g, '').replace(',', '.'));
+
+          // Comparar com o valor esperado convertido para float
+          expect(valorTexto).to.equal(seedTestLancamentoCartao.validarCartao[index].valor);
+        });
+      });
+    });
+
   }
 
   /**

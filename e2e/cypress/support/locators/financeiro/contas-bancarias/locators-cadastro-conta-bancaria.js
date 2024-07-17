@@ -64,6 +64,7 @@ const locators = {
     titulo: '.siagri-template__header.el-row',
     buttonVoltar: '[data-cy=button-voltar]',
     abrirFiltros: '[data-cy=button-mostrar-filtros]',
+    limparFiltros: '[data-cy="button-limpar-filtro"]',
     inputPesquisar: '[data-cy=input-pesquisar-lancamento]',
     dataInicio: '[placeholder=Início]',
     dataFim: '[placeholder=Fim]',
