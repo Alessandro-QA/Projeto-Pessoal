@@ -1,6 +1,7 @@
 /// <reference types='Cypress' />
 
- const description = require('../../../fixtures/pedidoCompra/pedidos/listagem/listagem.description');
+ const description = require('../../../fixtures/pedidoCompra/pedidos/listagem/listagem.description')
+ const { validatePedidos } = require('../../../fixtures/pedidoCompra/pedidos/listagem/validate')
 
 context('Pedido Compra', () => {
     context('Pedidos', () => {
@@ -12,31 +13,22 @@ context('Pedido Compra', () => {
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/Pedidos/Listagem`, payload)
                         .then((response) => {
                             // Verifica o status code da resposta
-                            expect(response.status).to.equal(200);
+                            expect(response.status).to.equal(200)
 
                             // Verifica o header x-tenant
-                            expect(response.requestHeaders).to.have.property('x-tenant').that.equals(Cypress.env('tenant'));
-                            expect(response.body).to.exist;
-                            expect(response.body).to.not.be.null;
+                            expect(response.requestHeaders).to.have.property('x-tenant').that.equals(Cypress.env('tenant'))
+                            expect(response.body).to.exist
+                            expect(response.body).to.not.be.null
 
                             // Verifica se a resposta é um array e não está vazia
-                            expect(response.body).to.be.an('array').that.is.not.empty;
+                            expect(response.body).to.be.an('array').that.is.not.empty
 
                             // Valida cada item do array de resposta
                             response.body.forEach(pedido => {
-                                expect(pedido).to.have.property('id').that.is.a('string');
-                                expect(pedido).to.have.property('codigo').that.is.a('number');
-                                expect(pedido).to.have.property('data').that.is.a('string');
-                                expect(pedido).to.have.property('fornecedorDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('fornecedorDocumentoPrincipal').that.is.a('string');
-                                expect(pedido).to.have.property('safraDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('fazendaDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('statusPedido').that.is.a('number');
-                                expect(pedido).to.have.property('empresaDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('numeroPedidoFornecedor').that.is.oneOf([null, pedido.numeroPedidoFornecedor]);
-                            });
-                        });
-                });
+                                validatePedidos(pedido)
+                            })
+                        })
+                })
             })
 
             it('CT2 - Listagem Pedidos com Status Aguardando Entrega', () => {
@@ -46,32 +38,23 @@ context('Pedido Compra', () => {
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/Pedidos/Listagem`, payload)
                         .then((response) => {
                             // Verifica o status code da resposta
-                            expect(response.status).to.equal(200);
+                            expect(response.status).to.equal(200)
 
                             // Verifica o header x-tenant
-                            expect(response.requestHeaders).to.have.property('x-tenant').that.equals(Cypress.env('tenant'));
-                            expect(response.body).to.exist;
-                            expect(response.body).to.not.be.null;
+                            expect(response.requestHeaders).to.have.property('x-tenant').that.equals(Cypress.env('tenant'))
+                            expect(response.body).to.exist
+                            expect(response.body).to.not.be.null
 
                             // Verifica se a resposta é um array e não está vazia
-                            expect(response.body).to.be.an('array').that.is.not.empty;
+                            expect(response.body).to.be.an('array').that.is.not.empty
 
                             // Valida cada item do array de resposta
                             response.body.forEach(pedido => {
-                                expect(pedido).to.have.property('id').that.is.a('string');
-                                expect(pedido).to.have.property('codigo').that.is.a('number');
-                                expect(pedido).to.have.property('data').that.is.a('string');
-                                expect(pedido).to.have.property('fornecedorDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('fornecedorDocumentoPrincipal').that.is.a('string');
-                                expect(pedido).to.have.property('safraDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('fazendaDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('statusPedido').that.is.a('number');
-                                expect(pedido).to.have.property('empresaDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('numeroPedidoFornecedor').that.is.oneOf([null, pedido.numeroPedidoFornecedor]);
-                            });
-                        });
-                });
-            });
+                                validatePedidos(pedido)
+                            })
+                        })
+                })
+            })
             it('CT3 - Listagem Pedidos por Fornecedor', () => {
                  cy.allureDescriptionHtml(description.Ct3).allureSeverity('normal')
 
@@ -79,35 +62,26 @@ context('Pedido Compra', () => {
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/Pedidos/Listagem`, payload)
                         .then((response) => {
                             // Verifica o status code da resposta
-                            expect(response.status).to.equal(200);
+                            expect(response.status).to.equal(200)
 
                             // Verifica o header x-tenant
-                            expect(response.requestHeaders).to.have.property('x-tenant').that.equals(Cypress.env('tenant'));
-                            expect(response.body).to.exist;
-                            expect(response.body).to.not.be.null;
+                            expect(response.requestHeaders).to.have.property('x-tenant').that.equals(Cypress.env('tenant'))
+                            expect(response.body).to.exist
+                            expect(response.body).to.not.be.null
 
                             // Verifica se a resposta é um array e não está vazio
-                            expect(response.body).to.be.an('array').that.is.not.empty;
+                            expect(response.body).to.be.an('array').that.is.not.empty
 
                             // Validar cada item do array de resposta
                             response.body.forEach(pedido => {
-                                expect(pedido).to.have.property('id').that.is.a('string');
-                                expect(pedido).to.have.property('codigo').that.is.a('number');
-                                expect(pedido).to.have.property('data').that.is.a('string');
-                                expect(pedido).to.have.property('fornecedorDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('fornecedorDocumentoPrincipal').that.is.a('string');
-                                expect(pedido).to.have.property('safraDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('fazendaDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('statusPedido').that.is.a('number');
-                                expect(pedido).to.have.property('empresaDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('numeroPedidoFornecedor').that.is.oneOf([null, pedido.numeroPedidoFornecedor]);
+                                validatePedidos(pedido)
 
                                 // Validar que o FornecedorId no payload está presente na resposta
-                                expect(pedido.fornecedorDocumentoPrincipal).to.exist;
-                            });
-                        });
-                });
-            });
+                                expect(pedido.fornecedorDocumentoPrincipal).to.exist
+                            })
+                        })
+                })
+            })
             it('CT4 - Listagem de Pedidos por Safra', () => {
                  cy.allureDescriptionHtml(description.Ct4).allureSeverity('normal')
 
@@ -115,35 +89,26 @@ context('Pedido Compra', () => {
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/Pedidos/Listagem`, payload)
                         .then((response) => {
                             // Verifica o status code da resposta
-                            expect(response.status).to.equal(200);
+                            expect(response.status).to.equal(200)
 
                             // Verifica o header x-tenant
-                            expect(response.requestHeaders).to.have.property('x-tenant').that.equals(Cypress.env('tenant'));
-                            expect(response.body).to.exist;
-                            expect(response.body).to.not.be.null;
+                            expect(response.requestHeaders).to.have.property('x-tenant').that.equals(Cypress.env('tenant'))
+                            expect(response.body).to.exist
+                            expect(response.body).to.not.be.null
 
                             // Verifica se a resposta é um array e não está vazio
-                            expect(response.body).to.be.an('array').that.is.not.empty;
+                            expect(response.body).to.be.an('array').that.is.not.empty
 
                             // Validar cada item do array de resposta
                             response.body.forEach(pedido => {
-                                expect(pedido).to.have.property('id').that.is.a('string');
-                                expect(pedido).to.have.property('codigo').that.is.a('number');
-                                expect(pedido).to.have.property('data').that.is.a('string');
-                                expect(pedido).to.have.property('fornecedorDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('fornecedorDocumentoPrincipal').that.is.a('string');
-                                expect(pedido).to.have.property('safraDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('fazendaDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('statusPedido').that.is.a('number');
-                                expect(pedido).to.have.property('empresaDescricao').that.is.a('string');
-                                expect(pedido).to.have.property('numeroPedidoFornecedor').that.is.oneOf([null, pedido.numeroPedidoFornecedor]);
+                                validatePedidos(pedido)
 
                                 // Validar que a safraDescricao está presente e é uma string
-                                expect(pedido.safraDescricao).to.be.a('string');
-                            });
-                        });
-                });
-            });
-        });
-    });
-});
+                                expect(pedido.safraDescricao).to.be.a('string')
+                            })
+                        })
+                })
+            })
+        })
+    })
+})
