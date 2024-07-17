@@ -5,7 +5,7 @@ const dayjs = require('dayjs');
 
 context('Pedido Compra', () => {
     context('Atendimentos Pedidos', () => {
-        describe(`GET - ${Cypress.env('atendimentopedidos')}/Dashboard/EvolucaoGastos - Evolução de Gastos`, () => {
+        describe(`GET - ${Cypress.env('pedidoCompra')}/Dashboard/EvolucaoGastos - Evolução de Gastos`, () => {
             it('CT1 - Evolução de Gastos', () => {
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 

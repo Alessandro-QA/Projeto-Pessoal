@@ -4,7 +4,7 @@ const description = require('../../../fixtures/pedidoCompra/atendimentopedidos/a
 
 context('Pedido Compra', () => {
     context('Atendimentos Pedidos', () => {
-        describe(`GET - ${Cypress.env('atendimentopedidos')}/AtendimentoPedidos - Atendimento Pedidos`, () => {
+        describe(`GET - ${Cypress.env('pedidoCompra')}/AtendimentoPedidos - Atendimento Pedidos`, () => {
             it('CT1 - Atendimento Pedidos', () => {
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 

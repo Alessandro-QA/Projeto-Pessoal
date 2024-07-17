@@ -4,7 +4,7 @@ const description = require('../../../fixtures/pedidoCompra/dashboard/maioresneg
 
 context('Pedido Compra', () => {
     context('Atendimentos Pedidos', () => {
-        describe(`GET - ${Cypress.env('atendimentopedidos')}/Dashboard/MaioresNegociacoes - Maiores Negociações`, () => {
+        describe(`GET - ${Cypress.env('pedidoCompra')}/Dashboard/MaioresNegociacoes - Maiores Negociações`, () => {
             it('CT1 - Negociações por Fornecedor com parâmetros padrão', () => {
                  cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 

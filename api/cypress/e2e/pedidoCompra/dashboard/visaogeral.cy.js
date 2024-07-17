@@ -4,7 +4,7 @@ const description = require('../../../fixtures/pedidoCompra/dashboard/visaogeral
 
 context('Pedido Compra', () => {
     context('Atendimentos Pedidos', () => {
-        describe(`GET - ${Cypress.env('atendimentopedidos')}/Dashboard/VisaoGeral - Dashboard Visão Geral`, () => {
+        describe(`GET - ${Cypress.env('pedidoCompra')}/Dashboard/VisaoGeral - Dashboard Visão Geral`, () => {
             it('CT1 - Atendimento Pedidos', () => {
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
