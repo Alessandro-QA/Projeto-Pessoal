@@ -670,7 +670,11 @@ class ContaBancaria {
     cy.intercept('GET', '/api/financeiro/v1/Movimentacao/**').as('listagemCartao')
 
     cy.location('pathname').then((currentPath) => {
-      if (currentPath !== '/financeiro/contas-bancarias/cartoes/lancamento/**') {
+
+      // Expressão regular para verificar o caminho ( Mesmo que esteja já dentro dos lançamentos )
+      const pathPattern = /^\/financeiro\/contas-bancarias\/cartoes\/lancamento\/[^\/]+$/;
+
+      if (!pathPattern.test(currentPath)) {
         cy.log('Navegar para Contas Bancárias')
         cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
@@ -691,16 +695,6 @@ class ContaBancaria {
         cy.log(currentPath)
       }
     })
-
-    cy.wait('@listagemCartao').then(interception => {
-      // Aqui você pode acessar a resposta da interceptação
-      const response = interception.response;
-
-      // Exemplo de como acessar dados da resposta
-      cy.log(response.body); // Exibe o corpo da resposta no console
-      seedTestLancamentoCartao.validarCartao = response.body.movimentacoesDiarias
-      // Você pode continuar seus testes ou asserções aqui dentro
-    });
 
 
     // Validar se Filtra por Data ou não
@@ -732,17 +726,18 @@ class ContaBancaria {
         .type(seedTestLancamentoCartao.dataFim)
         .type('{enter}');
 
-      cy.wait('@listagemCartao').then(interception => {
-        // Aqui você pode acessar a resposta da interceptação
-        const response = interception.response;
-
-        // Exemplo de como acessar dados da resposta
-        cy.log(response.body); // Exibe o corpo da resposta no console
-        seedTestLancamentoCartao.validarCartao = response.body.movimentacoesDiarias
-        // Você pode continuar seus testes ou asserções aqui dentro
-      });
-
     }
+
+    cy.wait('@listagemCartao').then(interception => {
+      // Aqui você pode acessar a resposta da interceptação
+      const response = interception.response;
+
+      // Exemplo de como acessar dados da resposta
+      cy.log(response.body); // Exibe o corpo da resposta no console
+      seedTestLancamentoCartao.validarCartao = response.body.movimentacoesDiarias
+      // Você pode continuar seus testes ou asserções aqui dentro
+    });
+
 
 
     cy.log(seedTestLancamentoCartao)

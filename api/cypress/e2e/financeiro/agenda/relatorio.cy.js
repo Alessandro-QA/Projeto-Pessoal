@@ -121,7 +121,7 @@ context('Financeiro', () => {
                                     expect(detalhe).to.be.an('object');
                                     expect(detalhe.pessoa).to.be.a('string');
                                     expect(detalhe.parcela).to.be.a('string');
-                                    expect(detalhe.status).to.be.a('string');
+                                    expect(detalhe.status).to.be.a('string').to.be.equal('A Pagar');
                                     expect(detalhe.numero).to.be.a('string');
 
                                     // Verificações dos tipos das informações bancárias
@@ -168,10 +168,13 @@ context('Financeiro', () => {
                             // Verificações dos títulos recebidos
                             data.titulos.forEach((titulo) => {
                                 expect(titulo).to.have.property('vencimento');
-                                expect(titulo).to.have.property('totalPagar');
-                                expect(titulo).to.have.property('totalReceber');
-                                expect(titulo).to.have.property('totalPago');
+                                expect(titulo).to.have.property('totalPagar').to.be.equal(0);
+                                expect(titulo).to.have.property('totalRecebido').not.to.be.equal(0);
+                                expect(titulo).to.have.property('totalReceber').to.be.equal(0);
+                                expect(titulo).to.have.property('totalPago').to.be.equal(0);
                             });
+
+                            
                         });
                 });
             });

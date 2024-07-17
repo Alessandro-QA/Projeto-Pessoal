@@ -6,7 +6,6 @@ import categoriasRecebimento from '../../../../fixtures/financeiro/contas-bancar
 import seedTestLancamentoCartao from '../../../../fixtures/financeiro/contas-bancarias/listagem-lancamentos-cartao/lançamentos.json'
 import testDescription from './bdd-description/lancamentos-cartao.description.js'
 import ContasBancarias from '../../../../support/commands/financeiro/contas-bancarias/contas-bancarias.js'
-import Authenticate from '../../../../support/commands/login/login-logout.js'
 import Utils from '../../../../support/utils/utils.js'
 
 const dayjs = require('dayjs');
@@ -52,6 +51,8 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
     context('Listagem de Cartão de Crédito', () => {
       it('Deve registrar novos valores pro Cartão via API', function () {
 
+        cy.allureDescriptionHtml(testDescription.gerarViaAPi).allureSeverity('normal')
+
         cy.log(documentoPago)
         cy.log(documentoRecebido)
         Utils.requestApi('POST', `${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Movimentacao/Pagamento/Recebimento`, documentoPago, 'login_cadastro')
@@ -59,20 +60,20 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       })
 
       it('Deve validar lançamentos no cartão - Sem filtro', function () {
-        // cy.allure().severity('normal').startStep('test content')
-        //.descriptionHtml(testDescription.semFiltro)
 
+        cy.allureDescriptionHtml(testDescription.semFiltro).allureSeverity('normal')
+       
         ContasBancarias.validarCartao(seedTestLancamentoCartao.semFiltro)
       })
 
-      it.only('Deve validar lançamentos no cartão - Filtrando por período', function () {
-        // cy.allure().severity('normal').startStep('test content')
-        //.descriptionHtml(testDescription.filtrarPeriodo)
+      it('Deve validar lançamentos no cartão - Filtrando por período', function () {
+        
+        cy.allureDescriptionHtml(testDescription.filtrarPeriodo).allureSeverity('normal')
 
+        const doisMesesAnterior = dayjs().subtract(2, 'month').format('DD/MM/YYYY')
         const mesAnterior = dayjs().subtract(1, 'month').format('DD/MM/YYYY')
-        const amanha = dayjs().add(1, 'day').format('DD/MM/YYYY');
-        seedTestLancamentoCartao.filtrarPeriodo.dataInicio = mesAnterior
-        seedTestLancamentoCartao.filtrarPeriodo.dataFim = amanha
+        seedTestLancamentoCartao.filtrarPeriodo.dataInicio = doisMesesAnterior
+        seedTestLancamentoCartao.filtrarPeriodo.dataFim = mesAnterior
         ContasBancarias.validarCartao(seedTestLancamentoCartao.filtrarPeriodo)
       })
     })
