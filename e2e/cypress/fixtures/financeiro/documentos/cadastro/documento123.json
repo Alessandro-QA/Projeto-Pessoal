@@ -6,7 +6,7 @@
   "fazenda": "Fazenda Teste API",
   "safra": "2024 / 2025",
   "empresa": "Empresa Teste API",
-  "tag": false,
+  "tag": "TAG",
   "observacao": "Criação Teste E2E",
   "valorTotal": "100,00",
   "jaPago": true,

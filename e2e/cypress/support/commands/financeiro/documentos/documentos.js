@@ -29,7 +29,7 @@ class Documentos {
     // Ultima rota chamada após clicar em novo pagamento
     cy.intercept('GET', `${Cypress.env('baseUrlDaas')}/api/forma-pagamento/v1/FormaPagamento`).as('formaPagamento')
     cy.intercept('POST', '/api/financeiro/v1/Documento').as('criarDocumento')
-   
+
     cy.location('pathname').then((currentPath) => {
       if (currentPath !== url) {
         cy.log('Navegar para Documentos')
@@ -97,10 +97,8 @@ class Documentos {
     if (seedTestDocumento.tag) {
       cy.log('Digitar tags')
       cy.getVisible(locDocumentos.documento.tags).click()
-      cy.getVisible(locDocumentos.documento.novaTag).click()
-      cy.getVisible(locDocumentos.documento.nomeTag).clear().type(seedTestDocumento.tag)
-      cy.getVisible(locDocumentos.documento.salvarTag).click()
-      cy.getVisible(locDocumentos.documento.bodyModal).click({ force: true })
+        .get(locDocumentos.documento.listTag)
+        .contains(seedTestDocumento.tag).click({ force: true })
     }
 
     if (seedTestDocumento.observacao) {
@@ -209,7 +207,7 @@ class Documentos {
       cy.log('selecionar rateio ciclo')
       cy.getVisible(locDocumentos.documento.rateioEntreCiclos).click()
 
-      cy.wait(2000)
+      //cy.wait(2000)
 
       cy.log('wait para aguardar busca dos ciclos do planejamento')
       cy.wait('@cicloRateio')
@@ -217,7 +215,7 @@ class Documentos {
       cy.log('timeout necessario para carregar os ciclos nos selects')
       cy.wait('@cicloProducao')
 
-      cy.wait(2000)
+      //cy.wait(2000)
 
       if (seedTestDocumento.moedaEstrangeira) {
         const ciclos = seedTestDocumento.ciclos
@@ -229,6 +227,12 @@ class Documentos {
       } else {
         const ciclos = seedTestDocumento.ciclos
         ciclos.forEach((ciclo, index) => {
+
+          if (index >= 1) {
+            cy.log('adicionar outro ciclo')
+            cy.getVisible(locDocumentos.documento.adicionarCiclo).click()
+          }
+
           cy.log('Selecionar nome do ciclo')
           cy.get(locDocumentos.documento.ciclo)
             .eq(index).click().contains(ciclo.nome).click()
@@ -252,13 +256,13 @@ class Documentos {
         cy.log('pesquisar e selecionar categorias')
         cy.get(locDocumentos.documento.selecionarCategoria).eq(index).click()
         cy.get(locDocumentos.documento.pesquisarCategoria)
-          .eq(index).type(categoria.nome)
+          .type(categoria.nome)
         cy.get(locDocumentos.documento.listaCategorias)
-          .eq(index).contains(categoria.nome).click()
+          .contains(categoria.nome).click()
 
         cy.log('valor categoria')
         cy.get(locDocumentos.documento.categoriaValor)
-          .eq(index).clear().type(categoria.valor)
+          .eq(index).clear().type(categoria.valor).type('{enter}');
       })
     }
 
@@ -510,24 +514,24 @@ class Documentos {
    * @param {*} seedTestDocumento
    */
   validarDetalhes(seedTestDocumento) {
-    
+
     cy.intercept('GET', '/api/financeiro/v1/Documento/**')
       .as('detalhesDocumento')
-      cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem').as('listaDocumentos')
+    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem').as('listaDocumentos')
 
-      cy.location('pathname').then((currentPath) => {
-        if (currentPath !== url) {
-          cy.log('Navegar para Documentos')
-          cy.navegarPara(url, locatorTituloPagina, tituloPagina)
-          cy.wait('@listaDocumentos', { timeout: 20000 })
-        }
-        cy.log(currentPath)
-        cy.desabilitarPopUpNotificacao()
-      })
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Documentos')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.wait('@listaDocumentos', { timeout: 20000 })
+      }
+      cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
+    })
 
     //Buscar documento
     cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
-        .type(`${seedTestDocumento.numeroDocumento}{enter}`)
+      .type(`${seedTestDocumento.numeroDocumento}{enter}`)
 
     cy.wait('@listaDocumentos')
 
@@ -535,18 +539,18 @@ class Documentos {
     cy.get(locDocumentos.dashboard.selecionarDocumento)
       .contains(seedTestDocumento.numeroDocumento).click({ force: true })
 
-      cy.wait('@detalhesDocumento').then((interception) => {
-        // Extraindo o ID da URL da requisição
-        const url = interception.request.url;
-        const id = url.split('/').pop(); // Extrai o último segmento da URL, que é o ID
-      
-        // Fazendo log do ID capturado
-        cy.log(`ID capturado: ${id}`);
-      
-        // Aqui você pode usar o ID conforme necessário no seu teste
-        // Por exemplo, armazenando em um alias para reutilizar posteriormente
-        cy.wrap(id).as('documentoID');
-      });
+    cy.wait('@detalhesDocumento').then((interception) => {
+      // Extraindo o ID da URL da requisição
+      const url = interception.request.url;
+      const id = url.split('/').pop(); // Extrai o último segmento da URL, que é o ID
+
+      // Fazendo log do ID capturado
+      cy.log(`ID capturado: ${id}`);
+
+      // Aqui você pode usar o ID conforme necessário no seu teste
+      // Por exemplo, armazenando em um alias para reutilizar posteriormente
+      cy.wrap(id).as('documentoID');
+    });
 
 
     // Validar operacao
@@ -643,8 +647,9 @@ class Documentos {
     // Validar valor total
     if (seedTestDocumento.valorTotal) {
       cy.getVisible(locDocumentos.detalhesDocumento.valorTotal).should(($el) => {
-        expect($el).to.contain.text(seedTestDocumento.valorTotal)
-      })
+        const text = $el.text().replace(/[^\d,]/g, ''); // Remove tudo exceto dígitos e vírgulas
+        expect(text).to.eq(seedTestDocumento.valorTotal.replace('.', ',')); // Compara com o seedTest, ajustando a formatação
+      });
     }
 
     // Validar forma de pagamento
@@ -683,10 +688,11 @@ class Documentos {
         cy.get(locDocumentos.detalhesDocumento.tabelaParcelas).should(($el) => {
           expect($el).to.contain.text(parcela.parcela)
         })
-        // valor da parcela
+        // Valor da parcela
         cy.get(locDocumentos.detalhesDocumento.tabelaParcelas).should(($el) => {
-          expect($el).to.contain.text(parcela.valorParcela)
-        })
+          const text = $el.text().replace(/[^\d,]/g, ''); // Remove tudo exceto dígitos e vírgulas
+          expect(text).to.contain(parcela.valorParcela.replace('.', ',')); // Compara com o valor da parcela, ajustando a formatação
+        });
         // status da parcela
         cy.get(locDocumentos.detalhesDocumento.tabelaParcelas).should(($el) => {
           expect($el).to.contain.text(parcela.statusParcela)
@@ -744,9 +750,9 @@ class Documentos {
     // Deleta Registro Criado Para Evitar Acumulo de Registro
     cy.get('@documentoID').then((documentoID) => {
       cy.deleteRequest(`${Cypress.env('financeiro')}/Documento`, documentoID).then((responseDelete) => {
-          expect(responseDelete.status).to.be.equal(200)
+        expect(responseDelete.status).to.be.equal(200)
       })
-  })
+    })
 
   }
 

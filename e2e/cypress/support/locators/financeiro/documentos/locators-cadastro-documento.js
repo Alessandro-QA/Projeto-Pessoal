@@ -65,6 +65,7 @@ const locators = {
     nomeTag: '[data-cy=select-tag] #newItemInput',
     salvarTag: '[data-cy=select-tag] .siagri-icon-check-xsmall',
     removerTag: '[data-cy=select-tag] .siagri-icon-close',
+    listTag: '[data-cy=select-tag] .list > .list__items',
     observacao: '[data-cy=textarea-observacao]',
     checkMoedaEstrangeira: '.el-col > .el-form-item > .el-form-item__content > .el-checkbox',
     selectMoeda: '.select[name="moedaPgto"]',

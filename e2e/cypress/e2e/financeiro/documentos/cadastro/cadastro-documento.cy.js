@@ -19,14 +19,15 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       context('Dedutivel, com tag, observação, já pago, boleto', () => {
 
         seedTestDocumento1.numeroDocumento = Utils.getAlphaNumeric(10)
+        seedTestDocumento1.valorTotal = (Math.random() * 9999 + 1).toFixed(2);
 
-        it.only('Deve cadastrar documento - ', function () {
+        it('Deve cadastrar documento', function () {
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.testes1)
-          
+
           Documentos.cadastrar(seedTestDocumento1)
         })
-        it.only('Deve validar os detalhes do documento e Apagar o mesmo no final', function () {
+        it('Deve validar os detalhes do documento', function () {
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.testes1)
 
@@ -35,17 +36,46 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       })
 
       context('Dedutivel, já pago, dinheiro, com rateio de ciclos e categoria', () => {
+
+        seedTestDocumento2.numeroDocumento = Utils.getAlphaNumeric(10)
+        // Gerar um valor aleatório para valorTotal
+        seedTestDocumento2.valorTotal = (Math.random() * 9999 + 1).toFixed(2);
+
+        // Converter valorTotal para número
+        const valorTotal = parseFloat(seedTestDocumento2.valorTotal.replace(',', '.'));
+
+        // Dividir o valor total em duas partes para ciclos de forma que os valores estejam corretos
+        const valorCiclo1 = parseFloat((Math.random() * valorTotal).toFixed(2));
+        const valorCiclo2 = parseFloat((valorTotal - valorCiclo1).toFixed(2));
+
+        seedTestDocumento2.ciclos[0].valor = valorCiclo1;
+        seedTestDocumento2.ciclos[1].valor = valorCiclo2;
+
+        // Calcular porcentagens aleatórias para categorias
+        const percentage1 = Math.random() * 100;
+        const percentage2 = 100 - percentage1;
+
+        // Dividir o valor total em duas partes para categorias
+        seedTestDocumento2.categorias[0].porcentagem = percentage1.toFixed(2) + "%",
+          seedTestDocumento2.categorias[1].porcentagem = percentage2.toFixed(2) + "%",
+
+          seedTestDocumento2.categorias[0].valor = ((percentage1 / 100) * valorTotal).toFixed(2)
+        seedTestDocumento2.categorias[1].valor = ((percentage2 / 100) * valorTotal).toFixed(2)
+
+        seedTestDocumento2.parcelas[0].valorParcela = valorTotal
+
         it('Deve cadastrar documento', function () {
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.testes2)
-
-          Documentos.cadastrar(seedTestDocumento2.documento)
+          
+         Documentos.cadastrar(seedTestDocumento2)
         })
-        it('Deve validar os detalhes do documento', function () {
+        it.only('Deve validar os detalhes do documento', function () {
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.testes1)
 
-          Documentos.validarDetalhes(seedTestDocumento2.detalhes)
+          //Validação de valor da parcela travado
+          Documentos.validarDetalhes(seedTestDocumento2)
         })
       })
 
