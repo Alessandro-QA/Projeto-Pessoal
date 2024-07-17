@@ -9,30 +9,26 @@ import seedTestDocumento6 from '../../../../fixtures/financeiro/documentos/cadas
 import Documentos from '../../../../support/commands/financeiro/documentos/documentos.js'
 import testDescription from './bdd-description/cadastro-documento.description.js'
 import Authenticate from '../../../../support/commands/login/login-logout.js'
+import Utils from '../../../../support/utils/utils.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
-  before(function () {
-    const credenciais = Cypress.env('login_cadastro')
-    Authenticate.login(credenciais)
-  })
-
-  after(() => {
-    Authenticate.logout()
-  })
 
   describe('Documentos', { tags: '@documentos' }, () => {
     context('Cadastro', () => {
 
       context('Dedutivel, com tag, observação, já pago, boleto', () => {
-        it('Deve cadastrar documento - ', function () {
-          // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes1)
 
+        seedTestDocumento1.numeroDocumento = Utils.getAlphaNumeric(10)
+
+        it.only('Deve cadastrar documento - ', function () {
+          // cy.allure().severity('critical').startStep('test content')
+          //.descriptionHtml(testDescription.testes1)
+          
           Documentos.cadastrar(seedTestDocumento1)
         })
-        it('Deve validar os detalhes do documento', function () {
+        it.only('Deve validar os detalhes do documento e Apagar o mesmo no final', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes1)
+          //.descriptionHtml(testDescription.testes1)
 
           Documentos.validarDetalhes(seedTestDocumento1)
         })
@@ -41,13 +37,13 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       context('Dedutivel, já pago, dinheiro, com rateio de ciclos e categoria', () => {
         it('Deve cadastrar documento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes2)
+          //.descriptionHtml(testDescription.testes2)
 
           Documentos.cadastrar(seedTestDocumento2.documento)
         })
         it('Deve validar os detalhes do documento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes1)
+          //.descriptionHtml(testDescription.testes1)
 
           Documentos.validarDetalhes(seedTestDocumento2.detalhes)
         })
@@ -56,13 +52,13 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       context('Dedutivel, observação, parcelado, duas parcelas, boleto, com rateio de ciclos', () => {
         it('Deve cadastrar documento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes3)
+          //.descriptionHtml(testDescription.testes3)
 
           Documentos.cadastrar(seedTestDocumento3.documento)
         })
         it('Deve validar os detalhes do documento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes3)
+          //.descriptionHtml(testDescription.testes3)
 
           Documentos.validarDetalhes(seedTestDocumento3.detalhes)
         })
@@ -71,14 +67,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       context('Não dedutivel, com tag, cartão de débito, com rateio de categoria', () => {
         it('Deve cadastrar documento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes4)
+          //.descriptionHtml(testDescription.testes4)
 
           Documentos.cadastrar(seedTestDocumento4.documento)
         })
 
         it('Deve validar os detalhes do documento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes3)
+          //.descriptionHtml(testDescription.testes3)
 
           Documentos.validarDetalhes(seedTestDocumento4.detalhes)
         })
@@ -88,14 +84,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
         it('Deve cadastrar documento - ', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes5)
+          //.descriptionHtml(testDescription.testes5)
 
           Documentos.cadastrar(seedTestDocumento5.documento)
         })
 
         it('Deve validar os detalhes do documento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes3)
+          //.descriptionHtml(testDescription.testes3)
 
           Documentos.validarDetalhes(seedTestDocumento5.detalhes)
         })
@@ -104,14 +100,14 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       context('Não dedutivel, com observação, transferência bancaria, parcelado, com anexo', () => {
         it('Deve cadastrar documento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes6)
+          //.descriptionHtml(testDescription.testes6)
 
           Documentos.cadastrar(seedTestDocumento6.documento)
         })
 
         it('Deve validar os detalhes do documento', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.testes3)
+          //.descriptionHtml(testDescription.testes3)
 
           Documentos.validarDetalhes(seedTestDocumento6.detalhes)
         })

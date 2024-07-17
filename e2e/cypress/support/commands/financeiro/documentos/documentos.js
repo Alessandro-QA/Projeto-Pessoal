@@ -21,24 +21,43 @@ class Documentos {
    * @param {*} seedTestDocumento
    */
   cadastrar(seedTestDocumento) {
-    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?**`).as('cicloProducao')
-    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**`).as('cicloRateio')
+    cy.intercept('GET', `${Cypress.env('baseUrlDaas')}/api/ciclo-producao/v1/Ciclo/List?**`).as('cicloProducao')
+    cy.intercept('GET', `${Cypress.env('baseUrlDaas')}/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**`).as('cicloRateio')
     cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem').as('listaDocumentos')
     cy.intercept('GET', 'https://economia.awesomeapi.com.br/last/**').as('getCotacaoMoeda')
 
-    cy.log('Navegar para Documentos')
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina).then(() => {
-      cy.wait('@listaDocumentos')
+    // Ultima rota chamada após clicar em novo pagamento
+    cy.intercept('GET', `${Cypress.env('baseUrlDaas')}/api/forma-pagamento/v1/FormaPagamento`).as('formaPagamento')
+    cy.intercept('POST', '/api/financeiro/v1/Documento').as('criarDocumento')
+   
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Documentos')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.wait('@listaDocumentos', { timeout: 20000 })
+      }
+      cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
     })
 
     cy.log('Clicar no botao adicionar documento')
-    cy.getVisible(locDocumentos.dashboard.novoDocumento).click()
+    cy.get(locDocumentos.dashboard.novoDocumento).click()
+
+    //Aguarda carregar até a última requisição
+    cy.wait('@formaPagamento', { timeout: 20000 })
+    cy.scrollTo(0, 0, { ensureScrollable: false })
 
     cy.log('Selecionar operacao')
-    cy.getVisible(locDocumentos.documento.operacao).click()
+    cy.get(locDocumentos.documento.operacao)
+      .scrollIntoView()
+      .should('be.visible')
+      .click()
+
     cy.get(locDocumentos.documento.selecionarOperacao)
       .contains(seedTestDocumento.operacao)
-      .click()
+      .should('be.visible')
+      .scrollIntoView()
+      .click({ force: true })
 
     cy.log('Validar tipo documento')
     cy.getVisible(locDocumentos.documento.tipoDocumentoSelecionado).should(
@@ -57,23 +76,23 @@ class Documentos {
       .clear().type(seedTestDocumento.numeroDocumento)
 
     cy.log('Selecionar pessoa')
-    cy.getVisible(locDocumentos.documento.pessoa).click()
-      .get(locDocumentos.documento.selecionarPessoa).contains(seedTestDocumento.pessoa).click()
+    cy.getVisible(locDocumentos.documento.pessoa).click({ force: true })
+      .get(locDocumentos.documento.selecionarPessoa).contains(seedTestDocumento.pessoa).click({ force: true })
 
     cy.log('Selecionar fazenda')
-    cy.getVisible(locDocumentos.documento.fazenda).click()
+    cy.getVisible(locDocumentos.documento.fazenda).click({ force: true })
       .get(locDocumentos.documento.selecionarFazenda)
-      .contains(seedTestDocumento.fazenda).click()
+      .contains(seedTestDocumento.fazenda).click({ force: true })
 
     cy.log('Selecionar safra')
-    cy.getVisible(locDocumentos.documento.safra).click()
+    cy.getVisible(locDocumentos.documento.safra).click({ force: true })
       .get(locDocumentos.documento.selecionarSafra)
-      .contains(seedTestDocumento.safra).click()
+      .contains(seedTestDocumento.safra).click({ force: true })
 
     cy.log('Selecionar empresa')
-    cy.getVisible(locDocumentos.documento.empresa).click()
+    cy.getVisible(locDocumentos.documento.empresa).click({ force: true })
       .get(locDocumentos.documento.selecionarEmpresa)
-      .contains(seedTestDocumento.empresa).click()
+      .contains(seedTestDocumento.empresa).click({ force: true })
 
     if (seedTestDocumento.tag) {
       cy.log('Digitar tags')
@@ -491,17 +510,44 @@ class Documentos {
    * @param {*} seedTestDocumento
    */
   validarDetalhes(seedTestDocumento) {
+    
     cy.intercept('GET', '/api/financeiro/v1/Documento/**')
       .as('detalhesDocumento')
+      cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem').as('listaDocumentos')
 
-    // Pesquisar documento
-    Documentos.pesquisar(seedTestDocumento)
+      cy.location('pathname').then((currentPath) => {
+        if (currentPath !== url) {
+          cy.log('Navegar para Documentos')
+          cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+          cy.wait('@listaDocumentos', { timeout: 20000 })
+        }
+        cy.log(currentPath)
+        cy.desabilitarPopUpNotificacao()
+      })
+
+    //Buscar documento
+    cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
+        .type(`${seedTestDocumento.numeroDocumento}{enter}`)
+
+    cy.wait('@listaDocumentos')
 
     // Abrir documento
     cy.get(locDocumentos.dashboard.selecionarDocumento)
       .contains(seedTestDocumento.numeroDocumento).click({ force: true })
 
-    cy.wait('@detalhesDocumento')
+      cy.wait('@detalhesDocumento').then((interception) => {
+        // Extraindo o ID da URL da requisição
+        const url = interception.request.url;
+        const id = url.split('/').pop(); // Extrai o último segmento da URL, que é o ID
+      
+        // Fazendo log do ID capturado
+        cy.log(`ID capturado: ${id}`);
+      
+        // Aqui você pode usar o ID conforme necessário no seu teste
+        // Por exemplo, armazenando em um alias para reutilizar posteriormente
+        cy.wrap(id).as('documentoID');
+      });
+
 
     // Validar operacao
     if (seedTestDocumento.operacao) {
@@ -694,6 +740,14 @@ class Documentos {
     } else {
       cy.get(locDocumentos.detalhesDocumento.anexos).should('not.exist')
     }
+
+    // Deleta Registro Criado Para Evitar Acumulo de Registro
+    cy.get('@documentoID').then((documentoID) => {
+      cy.deleteRequest(`${Cypress.env('financeiro')}/Documento`, documentoID).then((responseDelete) => {
+          expect(responseDelete.status).to.be.equal(200)
+      })
+  })
+
   }
 
   /**
