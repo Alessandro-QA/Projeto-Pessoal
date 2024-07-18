@@ -151,7 +151,8 @@ const locators = {
     tabelaParcelas: '[data-cy=table-parcelas] .el-table__row',
     tabelaRateioCiclos: '[data-cy=table-rateio-entre-ciclos] .el-table__row',
     tabelaRateioCategorias: '[data-cy=table-rateio-categorias] .el-table__row',
-    anexos: '[data-cy="list-anexos"]'
+    anexos: '[data-cy="list-anexos"]',
+    voltar:'.cnx-page-header__back-button'
   }
 }
 

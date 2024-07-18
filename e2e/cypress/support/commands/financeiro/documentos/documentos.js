@@ -40,6 +40,8 @@ class Documentos {
       cy.desabilitarPopUpNotificacao()
     })
 
+   // cy.clearLocalStorage('formasPagamento')
+
     cy.log('Clicar no botao adicionar documento')
     cy.get(locDocumentos.dashboard.novoDocumento).click()
 
@@ -785,12 +787,19 @@ class Documentos {
       cy.get(locDocumentos.detalhesDocumento.anexos).should('not.exist')
     }
 
+    /*
+    //Voltar para lista de Documentos
+    cy.getVisible(locDocumentos.detalhesDocumento.voltar).click({ force: true })
+    cy.wait('@listaDocumentos', { timeout: 20000 })*/
+    
     // Deleta Registro Criado Para Evitar Acumulo de Registro
     cy.get('@documentoID').then((documentoID) => {
       cy.deleteRequest(`${Cypress.env('financeiro')}/Documento`, documentoID).then((responseDelete) => {
         expect(responseDelete.status).to.be.equal(200)
       })
     })
+
+    cy.hideApiView();
 
   }
 

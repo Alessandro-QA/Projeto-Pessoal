@@ -1,7 +1,7 @@
 module.exports = {
   languageOptions: {
     parserOptions: {
-      ecmaVersion: 6,
+      ecmaVersion: 2023,
     },
     globals: {
       browser: true,
@@ -14,12 +14,12 @@ module.exports = {
     cypress: {}, // Configuração do plugin "cypress"
   },
   rules: {
-    'new-cap': ['error', { newIsCap: true }],
-    'space-before-blocks': 'error',
+    'new-cap': ['error', { newIsCap: true, capIsNew: false }], // Permite uso de funções maiúsculas sem new
+    'space-before-blocks': ['error', 'always'], // Exige espaço antes de chaves
     'space-before-function-paren': ['error', {
-      anonymous: 'always',
-      named: 'never',
-      asyncArrow: 'always',
+      anonymous: 'always', // Exige espaço antes dos parênteses para funções anônimas
+      named: 'never', // Não exige espaço antes dos parênteses para funções nomeadas
+      asyncArrow: 'always', // Exige espaço antes dos parênteses para funções async arrow
     }],
   },
   ignores: [
