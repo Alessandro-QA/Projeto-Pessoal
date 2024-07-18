@@ -65,6 +65,7 @@ const locators = {
     nomeTag: '[data-cy=select-tag] #newItemInput',
     salvarTag: '[data-cy=select-tag] .siagri-icon-check-xsmall',
     removerTag: '[data-cy=select-tag] .siagri-icon-close',
+    listTag: '[data-cy=select-tag] .list > .list__items',
     observacao: '[data-cy=textarea-observacao]',
     checkMoedaEstrangeira: '.el-col > .el-form-item > .el-form-item__content > .el-checkbox',
     selectMoeda: '.select[name="moedaPgto"]',
@@ -147,9 +148,9 @@ const locators = {
     condicaoPagamento: '[data-cy=span-condicao-pagamento]',
     quantidadeParcela: '[data-cy=span-quantidade-parcela]',
     contaBancaria: '[data-cy=span-conta-bancaria]',
-    tabelaParcelas: '[data-cy=table-parcelas] .el-table__row .cell',
-    tabelaRateioCiclos: '[data-cy=table-rateio-entre-ciclos] .el-table__row .cell',
-    tabelaRateioCategorias: '[data-cy=table-rateio-categorias] .el-table__row .cell',
+    tabelaParcelas: '[data-cy=table-parcelas] .el-table__row',
+    tabelaRateioCiclos: '[data-cy=table-rateio-entre-ciclos] .el-table__row',
+    tabelaRateioCategorias: '[data-cy=table-rateio-categorias] .el-table__row',
     anexos: '[data-cy="list-anexos"]'
   }
 }
