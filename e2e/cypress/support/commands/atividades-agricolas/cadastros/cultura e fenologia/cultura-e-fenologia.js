@@ -147,27 +147,12 @@ class Cultura {
     }
 
     editarCultura(seedTestCultura) {
-        const url = '/atividade-agricola/culturas'
-        const locatorTituloPagina = locCultura.dashboard.titulo
-        const tituloPagina = 'Culturas e Fenologia'
 
         // Intercepta a requisição PUT para edição de culturas
         cy.intercept('PUT', `${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/cultura`).as('putCultura')
 
         // Intercepta a requisição PUT para edição de culturas com fenologia
         cy.intercept('PUT', `${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/CulturaFenologia`).as('putCulturaFenologia')
-
-        cy.location('pathname').then((currentPath) => {
-            if (currentPath !== url) {
-                cy.log('Navegar para edição de Culturas')
-                cy.navegarPara(url, locatorTituloPagina, tituloPagina)
-            }
-            cy.log(currentPath)
-            cy.desabilitarPopUpNotificacao()
-        })
-
-        cy.log(seedTestCultura.nomeCultura)
-        cy.desabilitarPopUpNotificacao()
 
         // Pesquisa a Cultura para Edição
         cy.log('Pesquisar a Cultura para Edição')
@@ -234,6 +219,139 @@ class Cultura {
                 .should('contain', seedTestCultura.nomeCultura)
         }
     }
+
+    obrigatoriedadeInclusaoCultura(seedTestCultura) {
+        cy.log('Clicar no botao "Adicionar Cultura"')
+        cy.get(locCultura.dashboard.adicionarCultura).click()
+
+        cy.log('Clicar em Avançar')
+        cy.getVisible(locCultura.cadastroCultura.botaoAvancar).should('be.visible').contains('Avançar').click()
+
+        cy.log('Verifica se apresentou mensagem de erro para os campos')
+        cy.get('.el-form-item__error')
+            .filter(':visible') // Filtra apenas os elementos visíveis
+            .should('have.length', 4); // Verifica se há exatamente 4 elementos visíveis
+
+        cy.log('Clicar em Cancelar')
+        cy.get(locCultura.cadastroCultura.botaoCancelar).click()
+    }
+
+    obrigatoriedadeInclusaoFenologia(seedTestCultura) {
+        cy.log('Clicar no botao "Adicionar Cultura"')
+        cy.get(locCultura.dashboard.adicionarCultura).click()
+
+        cy.log('Preencher Nome da Cultura')
+        cy.getVisible(locCultura.cadastroCultura.nomeCultura).type('Obriga Fenologia')
+
+        cy.log('Selecionar Ícone da Cultura')
+        cy.getVisible(locCultura.cadastroCultura.iconeCultura).click()
+        cy.get(locCultura.cadastroCultura.listaIconesCultura).first().click()
+
+        cy.log('Selecionar Unidade de Medida')
+        cy.getVisible(locCultura.cadastroCultura.unidadeMedida).click()
+        cy.getVisible(locCultura.cadastroCultura.buscaUnidadeMedida).click().type('Saca 60')
+        cy.contains('Saca 60').click()
+
+        cy.log('Selecionar Material da Colheita')
+        cy.getVisible(locCultura.cadastroCultura.materialColheita).click()
+        cy.getVisible(locCultura.cadastroCultura.buscaMaterialColheita).click().type('MATERIAL')
+        cy.contains('MATERIAL').click()
+
+        cy.get(locCultura.cadastroCultura.carregarMaterial).should('have.css', 'display', 'none')
+
+        cy.log('Clicar em Avançar')
+        cy.getVisible(locCultura.cadastroCultura.botaoAvancar).should('be.visible').contains('Avançar').click()
+
+        cy.log('Clicar em Adicionar Fase Fenológica')
+        cy.getVisible(locCultura.cadastroFenologia.adicionarFase).click()
+
+        cy.log('Clicar em Salvar Estádio')
+        cy.getVisible(locCultura.cadastroFenologia.salvarEstadio).should('be.visible').contains('Salvar estádio').click()
+
+        cy.log('Verifica se apresentou mensagem de erro para os campos')
+        cy.get('.el-form-item__error')
+            .filter(':visible') // Filtra apenas os elementos visíveis
+            .should('have.length', 4); // Verifica se há exatamente 4 elementos visíveis
+
+        cy.log('Clicar em Fechar')
+        cy.get(locCultura.cadastroFenologia.botaoFechar).filter(':visible') // Filtra apenas os elementos visíveis
+            .first() // Seleciona o primeiro elemento visível
+            .click()
+    }
+
+    obrigatoriedadeEdicaoCultura(seedTestCultura) {
+        // Pesquisa a Cultura para Edição
+        cy.log('Pesquisar a Cultura para Edição')
+        cy.get(locCultura.dashboard.pesquisar, { timeout: 5000 })
+            .should('exist').and('be.visible')
+            .click()
+            .clear()
+            .type('Obriga')
+            .type('{enter}')
+
+        cy.log('Clicar no botão "Editar Cultura"')
+        cy.get(locCultura.dashboard.editarCultura).click()
+
+        cy.log('Limpar os campos preenchidos')
+        cy.getVisible(locCultura.cadastroCultura.nomeCultura).click().clear()
+        cy.getVisible(locCultura.cadastroCultura.nomeCientifico).click().clear()
+        cy.get(locCultura.cadastroCultura.unidadeMedida).click()
+        cy.get(locCultura.cadastroCultura.limparUnMedida).should('be.visible').click()
+        cy.get(locCultura.cadastroCultura.materialColheita).click()
+        cy.get(locCultura.cadastroCultura.limparMaterial).should('be.visible').click()
+
+
+        cy.log('Clicar em Avançar')
+        cy.getVisible(locCultura.cadastroCultura.botaoAvancar).should('be.visible').contains('Avançar').click()
+
+        cy.log('Verifica se apresentou mensagem de erro para os campos')
+        cy.get('.el-form-item__error')
+            .filter(':visible') // Filtra apenas os elementos visíveis
+            .should('have.length', 3); // Verifica se há exatamente 3 elementos visíveis
+
+        cy.log('Clicar em Cancelar')
+        cy.get(locCultura.cadastroCultura.botaoCancelar).should('be.visible').click()
+    }
+
+    obrigatoriedadeEdicaoFenologia(seedTestCultura) {
+        // Pesquisa a Cultura para Edição
+        cy.log('Pesquisar a Cultura para Edição')
+        cy.get(locCultura.dashboard.pesquisar, { timeout: 5000 })
+            .should('exist').and('be.visible')
+            .click()
+            .clear()
+            .type('Obriga')
+            .type('{enter}')
+
+        cy.log('Clicar no botão "Editar Cultura"')
+        cy.get(locCultura.dashboard.editarCultura).click()
+
+        cy.get(locCultura.cadastroCultura.carregarMaterial).should('have.css', 'display', 'none')
+
+        cy.log('Clicar em Avançar')
+        cy.getVisible(locCultura.cadastroCultura.botaoAvancar).should('be.visible').contains('Avançar').click()
+
+        cy.log('Clicar em Editar Fase')
+        cy.getVisible(locCultura.cadastroFenologia.editarFase).should('be.visible').click()
+
+        cy.log('Limpar os campos preenchidos')
+        cy.getVisible(locCultura.cadastroFenologia.nomeFase).click().clear()
+        cy.getVisible(locCultura.cadastroFenologia.codigoEstadio).click().clear()
+        cy.getVisible(locCultura.cadastroFenologia.descricaoEstadio).click().clear()
+
+        cy.log('Clicar em Salvar Estádio')
+        cy.getVisible(locCultura.cadastroFenologia.salvarEstadio).should('be.visible').contains('Salvar estádio').click()
+
+        cy.log('Verifica se apresentou mensagem de erro para os campos')
+        cy.get('.el-form-item__error')
+            .filter(':visible') // Filtra apenas os elementos visíveis
+            .should('have.length', 3); // Verifica se há exatamente 3 elementos visíveis
+
+        cy.log('Clicar em Fechar')
+        cy.get(locCultura.cadastroFenologia.botaoFechar).filter(':visible') // Filtra apenas os elementos visíveis
+            .first() // Seleciona o primeiro elemento visível
+            .click()
+    }
 }
 
-export default new Cultura()
+export default new Cultura() 

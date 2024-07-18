@@ -40,7 +40,27 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
                     cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct4)
                     Cultura.editarCultura(EdicaoComFenologia)
                 })
+
+                it('Deve Validar Campos Obrigatórios na inclusão de cultura', function () {
+                    cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct5)
+                    Cultura.obrigatoriedadeInclusaoCultura(seedTestCultura)
+                })
+
+                it('Deve Validar Campos Obrigatórios na inclusão da fenologia', function () {
+                    cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct6)
+                    Cultura.obrigatoriedadeInclusaoFenologia(seedTestCultura)
+                })
+
+                it('Deve Validar Campos Obrigatórios na edição de cultura', function () {
+                    cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct7)
+                    Cultura.obrigatoriedadeEdicaoCultura(seedTestCultura)
+                })
+
+                it('Deve Validar Campos Obrigatórios na edição da fenologia', function () {
+                    cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct8)
+                    Cultura.obrigatoriedadeEdicaoFenologia(seedTestCultura)
+                })
             })
         })
     })
-})
+}) 
