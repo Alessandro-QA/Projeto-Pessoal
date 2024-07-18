@@ -148,9 +148,9 @@ const locators = {
     condicaoPagamento: '[data-cy=span-condicao-pagamento]',
     quantidadeParcela: '[data-cy=span-quantidade-parcela]',
     contaBancaria: '[data-cy=span-conta-bancaria]',
-    tabelaParcelas: '[data-cy=table-parcelas] .el-table__row .cell',
-    tabelaRateioCiclos: '[data-cy=table-rateio-entre-ciclos] .el-table__row .cell',
-    tabelaRateioCategorias: '[data-cy=table-rateio-categorias] .el-table__row .cell',
+    tabelaParcelas: '[data-cy=table-parcelas] .el-table__row',
+    tabelaRateioCiclos: '[data-cy=table-rateio-entre-ciclos] .el-table__row',
+    tabelaRateioCategorias: '[data-cy=table-rateio-categorias] .el-table__row',
     anexos: '[data-cy="list-anexos"]'
   }
 }

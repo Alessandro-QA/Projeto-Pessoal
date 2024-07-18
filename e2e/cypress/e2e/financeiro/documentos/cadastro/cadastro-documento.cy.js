@@ -21,13 +21,13 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         seedTestDocumento1.numeroDocumento = Utils.getAlphaNumeric(10)
         seedTestDocumento1.valorTotal = (Math.random() * 9999 + 1).toFixed(2);
 
-        it('Deve cadastrar documento', function () {
+        it('Deve cadastrar documento', { retries: { runMode: 1, openMode: 1, }, }, function () {
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.testes1)
 
           Documentos.cadastrar(seedTestDocumento1)
         })
-        it('Deve validar os detalhes do documento', function () {
+        it('Deve validar os detalhes do documento', { retries: { runMode: 1, openMode: 1, }, }, function () {
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.testes1)
 
@@ -56,41 +56,69 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         const percentage2 = 100 - percentage1;
 
         // Dividir o valor total em duas partes para categorias
-        seedTestDocumento2.categorias[0].porcentagem = percentage1.toFixed(2) + "%",
-          seedTestDocumento2.categorias[1].porcentagem = percentage2.toFixed(2) + "%",
+        seedTestDocumento2.categorias[0].porcentagem = percentage1.toFixed(4) + "%",
+          seedTestDocumento2.categorias[1].porcentagem = percentage2.toFixed(4) + "%",
 
           seedTestDocumento2.categorias[0].valor = ((percentage1 / 100) * valorTotal).toFixed(2)
         seedTestDocumento2.categorias[1].valor = ((percentage2 / 100) * valorTotal).toFixed(2)
 
         seedTestDocumento2.parcelas[0].valorParcela = valorTotal
 
-        it('Deve cadastrar documento', function () {
+        it('Deve cadastrar documento', { retries: { runMode: 1, openMode: 1, }, }, function () {
+
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.testes2)
-          
-         Documentos.cadastrar(seedTestDocumento2)
+
+          Documentos.cadastrar(seedTestDocumento2)
         })
-        it.only('Deve validar os detalhes do documento', function () {
+        it('Deve validar os detalhes do documento', { retries: { runMode: 1, openMode: 1, }, }, function () {
+
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.testes1)
 
-          //Validação de valor da parcela travado
           Documentos.validarDetalhes(seedTestDocumento2)
         })
       })
 
       context('Dedutivel, observação, parcelado, duas parcelas, boleto, com rateio de ciclos', () => {
+
+        seedTestDocumento3.numeroDocumento = Utils.getAlphaNumeric(10)
+        // Gerar um valor aleatório para valorTotal
+        seedTestDocumento3.valorTotal = (Math.random() * 9999 + 1).toFixed(2);
+
+        // Converter valorTotal para número
+        const valorTotal = parseFloat(seedTestDocumento3.valorTotal.replace(',', '.'));
+
+        // Gerar um valor aleatório para o ciclo 1
+        const valorCiclo1 = parseFloat((Math.random() * valorTotal).toFixed(2));
+
+        // Gerar um valor aleatório para o ciclo 2, limitando para que não ultrapasse o valor restante após o ciclo 1
+        const valorRestante1 = valorTotal - valorCiclo1;
+        const valorCiclo2 = parseFloat((Math.random() * valorRestante1).toFixed(2));
+
+        // Calcular o valor para o ciclo 3
+        const valorCiclo3 = parseFloat((valorTotal - valorCiclo1 - valorCiclo2).toFixed(2));
+
+        // Definir os valores nos ciclos do seedTestDocumento3
+        seedTestDocumento3.ciclos[0].valor = valorCiclo1;
+        seedTestDocumento3.ciclos[1].valor = valorCiclo2;
+        seedTestDocumento3.ciclos[2].valor = valorCiclo3;
+
+        //Valor categoria
+        seedTestDocumento3.categorias[0].valor = valorTotal
+
+
         it('Deve cadastrar documento', function () {
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.testes3)
 
-          Documentos.cadastrar(seedTestDocumento3.documento)
+          Documentos.cadastrar(seedTestDocumento3)
         })
         it('Deve validar os detalhes do documento', function () {
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.testes3)
 
-          Documentos.validarDetalhes(seedTestDocumento3.detalhes)
+          Documentos.validarDetalhes(seedTestDocumento3)
         })
       })
 

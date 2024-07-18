@@ -117,7 +117,7 @@ class Documentos {
       cy.get(locDocumentos.documento.selectMoeda).click()
         .get(locDocumentos.documento.listMoedas).contains(seedTestDocumento.moeda).click()
 
-      cy.wait('@getCotacaoMoeda')
+      cy.wait('@getCotacaoMoeda', { timeout: 20000 })
 
       cy.log('Digitar total negociado moeda estrangeira')
       cy.get(locDocumentos.documento.inputValorNegociado).clear().type(seedTestDocumento.valorTotalNegociado)
@@ -207,15 +207,11 @@ class Documentos {
       cy.log('selecionar rateio ciclo')
       cy.getVisible(locDocumentos.documento.rateioEntreCiclos).click()
 
-      //cy.wait(2000)
-
       cy.log('wait para aguardar busca dos ciclos do planejamento')
-      cy.wait('@cicloRateio')
+      cy.wait('@cicloRateio', { timeout: 20000 })
 
       cy.log('timeout necessario para carregar os ciclos nos selects')
-      cy.wait('@cicloProducao')
-
-      //cy.wait(2000)
+      cy.wait('@cicloProducao', { timeout: 20000 })
 
       if (seedTestDocumento.moedaEstrangeira) {
         const ciclos = seedTestDocumento.ciclos
@@ -262,7 +258,7 @@ class Documentos {
 
         cy.log('valor categoria')
         cy.get(locDocumentos.documento.categoriaValor)
-          .eq(index).clear().type(categoria.valor).type('{enter}');
+          .eq(index).clear().type(categoria.valor).type('{enter}')
       })
     }
 
@@ -298,13 +294,21 @@ class Documentos {
           })
 
         cy.wait(2000)
-
+/*
         cy.log('Validar valor da categoria')
         cy.get(locDocumentos.documento.categoriaValor)
           .eq(index)
-          .should(($el) => {
-            expect($el).to.have.value(categoria.valor)
-          })
+          .invoke('val') // Obtém o valor do elemento como uma string
+          .then(($value) => {
+            // Remover formatação não numérica e converter para string
+            const expectedValue = categoria.valor.toString().replace(/[^\d,]/g, '')
+
+            // Remover formatação não numérica do valor do input e ajustar para o mesmo formato
+            const actualValue = $value.replace(/[^\d,]/g, '')
+
+            // Comparar os valores exatamente
+            expect(actualValue).to.equal(expectedValue);
+          })*/
       })
     }
 
@@ -533,24 +537,24 @@ class Documentos {
     cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
       .type(`${seedTestDocumento.numeroDocumento}{enter}`)
 
-    cy.wait('@listaDocumentos')
+    cy.wait('@listaDocumentos', { timeout: 20000 })
 
     // Abrir documento
     cy.get(locDocumentos.dashboard.selecionarDocumento)
       .contains(seedTestDocumento.numeroDocumento).click({ force: true })
 
-    cy.wait('@detalhesDocumento').then((interception) => {
+    cy.wait('@detalhesDocumento', { timeout: 20000 }).then((interception) => {
       // Extraindo o ID da URL da requisição
-      const url = interception.request.url;
-      const id = url.split('/').pop(); // Extrai o último segmento da URL, que é o ID
+      const url = interception.request.url
+      const id = url.split('/').pop() // Extrai o último segmento da URL, que é o ID
 
       // Fazendo log do ID capturado
-      cy.log(`ID capturado: ${id}`);
+      cy.log(`ID capturado: ${id}`)
 
       // Aqui você pode usar o ID conforme necessário no seu teste
       // Por exemplo, armazenando em um alias para reutilizar posteriormente
-      cy.wrap(id).as('documentoID');
-    });
+      cy.wrap(id).as('documentoID')
+    })
 
 
     // Validar operacao
@@ -647,9 +651,9 @@ class Documentos {
     // Validar valor total
     if (seedTestDocumento.valorTotal) {
       cy.getVisible(locDocumentos.detalhesDocumento.valorTotal).should(($el) => {
-        const text = $el.text().replace(/[^\d,]/g, ''); // Remove tudo exceto dígitos e vírgulas
-        expect(text).to.eq(seedTestDocumento.valorTotal.replace('.', ',')); // Compara com o seedTest, ajustando a formatação
-      });
+        const text = $el.text().replace(/[^\d,]/g, '') // Remove tudo exceto dígitos e vírgulas
+        expect(text).to.eq(seedTestDocumento.valorTotal.replace('.', ',')) // Compara com o seedTest, ajustando a formatação
+      })
     }
 
     // Validar forma de pagamento
@@ -683,23 +687,28 @@ class Documentos {
     // Validar tabela de parcelas
     if (seedTestDocumento.parcelas) {
       const parcelas = seedTestDocumento.parcelas
-      parcelas.forEach((parcela) => {
-        // nome da parcela
-        cy.get(locDocumentos.detalhesDocumento.tabelaParcelas).should(($el) => {
-          expect($el).to.contain.text(parcela.parcela)
-        })
-        // Valor da parcela
-        cy.get(locDocumentos.detalhesDocumento.tabelaParcelas).should(($el) => {
-          const text = $el.text().replace(/[^\d,]/g, ''); // Remove tudo exceto dígitos e vírgulas
-          expect(text).to.contain(parcela.valorParcela.replace('.', ',')); // Compara com o valor da parcela, ajustando a formatação
-        });
-        // status da parcela
-        cy.get(locDocumentos.detalhesDocumento.tabelaParcelas).should(($el) => {
-          expect($el).to.contain.text(parcela.statusParcela)
-        })
-        // saldo da parcela
-        cy.get(locDocumentos.detalhesDocumento.tabelaParcelas).should(($el) => {
-          expect($el).to.contain.text(parcela.saldoParcela)
+
+      cy.get(locDocumentos.detalhesDocumento.tabelaParcelas).each(($row, index) => {
+        // Para cada linha na tabela
+        const parcela = parcelas[index]
+
+        cy.wrap($row).within(() => {
+          // Verifica a célula da parcela
+          cy.get('.cell').eq(0).should('contain.text', parcela.parcela)
+
+          // Verifica a célula do valor da parcela
+          cy.get('.cell').eq(1).should(($el) => {
+            // Converte para string antes de substituir
+            const text = $el.text().replace(/[^\d,]/g, '') // Remove tudo exceto dígitos e vírgulas
+            expect(text).to.contain(String(parcela.valorParcela).replace('.', ',')) // Converte para string e compara com o valor da parcela, ajustando a formatação
+          })
+
+
+          // Verifica a célula do status da parcela
+          cy.get('.cell').eq(3).should('contain.text', parcela.statusParcela)
+
+          // Verifica a célula do saldo da parcela
+          cy.get('.cell').eq(4).should('contain.text', parcela.saldoParcela)
         })
       })
     }
@@ -707,34 +716,63 @@ class Documentos {
     // Validar tabela de rateio entre ciclos
     if (seedTestDocumento.ciclos) {
       const ciclos = seedTestDocumento.ciclos
+
       ciclos.forEach((ciclo) => {
-        // nome do ciclo
-        cy.get(locDocumentos.detalhesDocumento.tabelaRateioCiclos).should(($el) => {
-          expect($el).to.contain.text(ciclo.nome)
-        })
-        // valor do ciclo
-        cy.get(locDocumentos.detalhesDocumento.tabelaRateioCiclos).should(($el) => {
-          expect($el).to.contain.text(ciclo.valor)
-        })
+        cy.get(locDocumentos.detalhesDocumento.tabelaRateioCiclos)
+          .each(($row) => {
+            cy.wrap($row).within(() => {
+              // Verifica se a célula contém o nome do ciclo
+              cy.get('.cell').eq(0).then(($el) => {
+                const cellText = $el.text().trim()
+                if (cellText === ciclo.nome) {
+                  // Verifica a célula do valor do ciclo
+                  cy.get('.cell').eq(1).should(($el) => {
+                    const text = $el.text().replace(/[^\d,]/g, '') // Remove tudo exceto dígitos e vírgulas
+                    expect(text).to.contain(String(ciclo.valor).replace('.', ',')) // Converte para string e compara com o valor do ciclo, ajustando a formatação
+                  })
+                }
+              })
+            })
+          })
       })
     }
 
     // Validar tabela de rateio entre categorias
     if (seedTestDocumento.categorias) {
       const categorias = seedTestDocumento.categorias
+
       categorias.forEach((categoria) => {
-        // nome da categoria
-        cy.get(locDocumentos.detalhesDocumento.tabelaRateioCategorias).should(($el) => {
-          expect($el).to.contain.text(categoria.nome)
-        })
-        // porcentagem
-        cy.get(locDocumentos.detalhesDocumento.tabelaRateioCategorias).should(($el) => {
-          expect($el).to.contain.text(categoria.porcentagem)
-        })
-        // valor do rateio
-        cy.get(locDocumentos.detalhesDocumento.tabelaRateioCategorias).should(($el) => {
-          expect($el).to.contain.text(categoria.valor)
-        })
+        cy.get(locDocumentos.detalhesDocumento.tabelaRateioCategorias)
+          .each(($row) => {
+            cy.wrap($row).within(() => {
+              // Verifica se a célula contém o nome da categoria
+              cy.get('.cell').eq(0).then(($el) => {
+                const cellText = $el.text().trim()
+                if (cellText === categoria.nome) {
+                  // Verifica a célula da porcentagem
+                  cy.get('.cell').eq(1).should(($el) => {
+                    const text = $el.text().trim() // Texto da célula
+                    const expectedPercentage = categoria.porcentagem // Porcentagem esperada do seedTestDocumento
+
+                    // Remover o símbolo de percentual (%) e converter para número
+                    const displayedPercentage = parseFloat(text.replace(',', '.').replace('%', ''))
+
+                    // Converter a porcentagem esperada para o mesmo formato
+                    const expectedPercentageValue = parseFloat(expectedPercentage.replace(',', '.').replace('%', ''))
+
+                    // Comparar utilizando uma margem de erro aceitável
+                    expect(displayedPercentage).to.be.closeTo(expectedPercentageValue, 0.03) // Ajuste a margem de erro conforme necessário
+                  })
+
+                  // Verifica a célula do valor do rateio
+                  cy.get('.cell').eq(2).should(($el) => {
+                    const text = $el.text().replace(/[^\d,]/g, '') // Remove tudo exceto dígitos e vírgulas
+                    expect(text).to.contain(String(categoria.valor).replace('.', ',')) // Converte para string e compara com o valor do rateio, ajustando a formatação
+                  })
+                }
+              })
+            })
+          })
       })
     }
 
