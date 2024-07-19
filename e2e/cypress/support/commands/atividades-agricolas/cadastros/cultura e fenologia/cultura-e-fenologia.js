@@ -24,14 +24,17 @@ class Cultura {
             if (currentPath !== url) {
                 cy.log('Navegar para cadastro de Culturas')
                 cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+                cy.desabilitarPopUpNotificacao()
             }
-            cy.log(currentPath)
-            cy.desabilitarPopUpNotificacao()
-        })
 
-        cy.log(seedTestCultura)
-        cy.log(seedTestCultura.nomeCultura)
-        cy.desabilitarPopUpNotificacao()
+            // Verifica se existe janela aberta e fecha se necessário
+            cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
+                if ($janela.is(':visible')) {
+                    cy.log('Fechar a janela');
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                }
+            })
+        })
 
         cy.log('Clicar no botao "Adicionar Cultura"')
         cy.get(locCultura.dashboard.adicionarCultura).click()
@@ -147,12 +150,31 @@ class Cultura {
     }
 
     editarCultura(seedTestCultura) {
+        const url = '/atividade-agricola/culturas'
+        const locatorTituloPagina = locCultura.dashboard.titulo
+        const tituloPagina = 'Culturas e Fenologia'
 
         // Intercepta a requisição PUT para edição de culturas
         cy.intercept('PUT', `${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/cultura`).as('putCultura')
 
         // Intercepta a requisição PUT para edição de culturas com fenologia
         cy.intercept('PUT', `${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/CulturaFenologia`).as('putCulturaFenologia')
+
+        cy.location('pathname').then((currentPath) => {
+            if (currentPath !== url) {
+                cy.log('Navegar para cadastro de Culturas')
+                cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+                cy.desabilitarPopUpNotificacao()
+            }
+
+            // Verificar se existe janela aberta e fechá-la se necessário
+            cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
+                if ($janela.is(':visible')) {
+                    cy.log('Fechar a janela');
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                }
+            })
+        })
 
         // Pesquisa a Cultura para Edição
         cy.log('Pesquisar a Cultura para Edição')
@@ -178,6 +200,10 @@ class Cultura {
 
             cy.log('Clicar em Concluir')
             cy.get(locCultura.cadastroFenologia.botaoConcluir).contains('Concluir').should('be.visible', { timeout: 9000 }).and('not.be.disabled').click()
+                .then(() => {
+                    // Aguarda até que a janela não esteja mais visível
+                    cy.get(locCultura.cadastroFenologia.janela).should('not.be.visible')
+                })
         }
 
         else if (seedTestCultura.tipo === 'Edição Com Fenologia') {
@@ -198,6 +224,10 @@ class Cultura {
 
             cy.log('Clicar em Concluir')
             cy.get(locCultura.cadastroFenologia.botaoConcluir).contains('Concluir').should('be.visible', { timeout: 9000 }).and('not.be.disabled').click()
+                .then(() => {
+                    // Aguarda até que a janela não esteja mais visível
+                    cy.get(locCultura.cadastroFenologia.janela).should('not.be.visible')
+                })
         }
 
         // Aguarda até que a requisição PUT seja completada
@@ -221,6 +251,26 @@ class Cultura {
     }
 
     obrigatoriedadeInclusaoCultura(seedTestCultura) {
+        const url = '/atividade-agricola/culturas'
+        const locatorTituloPagina = locCultura.dashboard.titulo
+        const tituloPagina = 'Culturas e Fenologia'
+
+        cy.location('pathname').then((currentPath) => {
+            if (currentPath !== url) {
+                cy.log('Navegar para cadastro de Culturas')
+                cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+                cy.desabilitarPopUpNotificacao()
+            }
+
+            // Verifica se existe janela aberta e fecha se necessário
+            cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
+                if ($janela.is(':visible')) {
+                    cy.log('Fechar a janela');
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                }
+            })
+        })
+
         cy.log('Clicar no botao "Adicionar Cultura"')
         cy.get(locCultura.dashboard.adicionarCultura).click()
 
@@ -234,9 +284,33 @@ class Cultura {
 
         cy.log('Clicar em Cancelar')
         cy.get(locCultura.cadastroCultura.botaoCancelar).click()
+            .then(() => {
+                // Aguarda até que a janela não esteja mais visível
+                cy.get(locCultura.cadastroCultura.janela).should('not.be.visible')
+            })
     }
 
     obrigatoriedadeInclusaoFenologia(seedTestCultura) {
+        const url = '/atividade-agricola/culturas'
+        const locatorTituloPagina = locCultura.dashboard.titulo
+        const tituloPagina = 'Culturas e Fenologia'
+
+        cy.location('pathname').then((currentPath) => {
+            if (currentPath !== url) {
+                cy.log('Navegar para cadastro de Culturas')
+                cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+                cy.desabilitarPopUpNotificacao()
+            }
+
+            // Verifica se existe janela aberta e fecha se necessário
+            cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
+                if ($janela.is(':visible')) {
+                    cy.log('Fechar a janela');
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                }
+            })
+        })
+
         cy.log('Clicar no botao "Adicionar Cultura"')
         cy.get(locCultura.dashboard.adicionarCultura).click()
 
@@ -276,9 +350,33 @@ class Cultura {
         cy.get(locCultura.cadastroFenologia.botaoFechar).filter(':visible') // Filtra apenas os elementos visíveis
             .first() // Seleciona o primeiro elemento visível
             .click()
+            .then(() => {
+                // Aguarda até que a janela não esteja mais visível
+                cy.get(locCultura.cadastroFenologia.janela).should('not.be.visible')
+            })
     }
 
     obrigatoriedadeEdicaoCultura(seedTestCultura) {
+        const url = '/atividade-agricola/culturas'
+        const locatorTituloPagina = locCultura.dashboard.titulo
+        const tituloPagina = 'Culturas e Fenologia'
+
+        cy.location('pathname').then((currentPath) => {
+            if (currentPath !== url) {
+                cy.log('Navegar para cadastro de Culturas')
+                cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+                cy.desabilitarPopUpNotificacao()
+            }
+
+            // Verifica se existe janela aberta e fecha se necessário
+            cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
+                if ($janela.is(':visible')) {
+                    cy.log('Fechar a janela');
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                }
+            })
+        })
+
         // Pesquisa a Cultura para Edição
         cy.log('Pesquisar a Cultura para Edição')
         cy.get(locCultura.dashboard.pesquisar, { timeout: 5000 })
@@ -308,11 +406,36 @@ class Cultura {
             .should('have.length', 3); // Verifica se há exatamente 3 elementos visíveis
 
         cy.log('Clicar em Cancelar')
-        cy.get(locCultura.cadastroCultura.botaoCancelar).should('be.visible').click()
+        cy.get(locCultura.cadastroCultura.botaoCancelar).should('be.visible')
+            .click()
+            .then(() => {
+                // Aguarda até que a janela não esteja mais visível
+                cy.get(locCultura.cadastroCultura.janela).should('not.be.visible')
+            })
     }
 
 
     obrigatoriedadeEdicaoFenologia(seedTestCultura) {
+        const url = '/atividade-agricola/culturas'
+        const locatorTituloPagina = locCultura.dashboard.titulo
+        const tituloPagina = 'Culturas e Fenologia'
+
+        cy.location('pathname').then((currentPath) => {
+            if (currentPath !== url) {
+                cy.log('Navegar para cadastro de Culturas')
+                cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+                cy.desabilitarPopUpNotificacao()
+            }
+
+            // Verifica se existe janela aberta e fecha se necessário
+            cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
+                if ($janela.is(':visible')) {
+                    cy.log('Fechar a janela');
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                }
+            })
+        })
+
         // Pesquisa a Cultura para Edição
         cy.log('Pesquisar a Cultura para Edição')
         cy.get(locCultura.dashboard.pesquisar, { timeout: 5000 })
@@ -349,6 +472,10 @@ class Cultura {
         cy.get(locCultura.cadastroFenologia.botaoFechar).filter(':visible') // Filtra apenas os elementos visíveis
             .first() // Seleciona o primeiro elemento visível
             .click()
+            .then(() => {
+                // Aguarda até que a janela não esteja mais visível
+                cy.get(locCultura.cadastroFenologia.janela).should('not.be.visible')
+            })
     }
 }
 
