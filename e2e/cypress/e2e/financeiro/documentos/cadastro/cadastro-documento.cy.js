@@ -152,25 +152,26 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
         // Loop até que a soma dos valores corresponda ao valorTotal
         do {
-          // Calcular porcentagens aleatórias para categorias
-          percentage1 = (Math.random() * 100).toFixed(4)
-          percentage2 = (Math.random() * (100 - Number(percentage1))).toFixed(4)
-          percentage3 = (100 - Number(percentage1) - Number(percentage2)).toFixed(4)
+          // Dividir o valor total em três partes aleatórias
+          valor1 = (Math.random() * valorTotal).toFixed(2);
+          valor2 = (Math.random() * (valorTotal - Number(valor1))).toFixed(2);
+          valor3 = (Number(valorTotal) - Number(valor1) - Number(valor2)).toFixed(2);
 
-          // Dividir o valor total em três partes para categorias
-          valor1 = (Number(percentage1) / 100 * Number(valorTotal)).toFixed(2)
-          valor2 = (Number(percentage2) / 100 * Number(valorTotal)).toFixed(2)
-          valor3 = (Number(valorTotal) - Number(valor1) - Number(valor2)).toFixed(2)
-
-          // Garantir que o valor da terceira categoria é positivo
-          if (Number(valor3) < 0) {
-            valor3 = (Number(valorTotal) - Number(valor1) - Number(valor2)).toFixed(2)
+          // Garantir que todos os valores são positivos e que a soma não ultrapasse o valorTotal
+          if (Number(valor1) < 0 || Number(valor2) < 0 || Number(valor3) < 0) {
+            continue;
           }
 
           // Verificar a soma dos valores
-          somaValores = (Number(valor1) + Number(valor2) + Number(valor3)).toFixed(2)
-        } while (somaValores !== valorTotal)
+          somaValores = (Number(valor1) + Number(valor2) + Number(valor3)).toFixed(2);
 
+        } while (somaValores !== valorTotal);
+
+        // Calcular as porcentagens baseadas nos valores
+        percentage1 = ((Number(valor1) / Number(valorTotal)) * 100).toFixed(4);
+        percentage2 = ((Number(valor2) / Number(valorTotal)) * 100).toFixed(4);
+        percentage3 = ((Number(valor3) / Number(valorTotal)) * 100).toFixed(4);
+        
         // Atribuir valores e porcentagens a categorias em seedTestDocumento4
         seedTestDocumento4.categorias[0].porcentagem = percentage1 + "%"
         seedTestDocumento4.categorias[1].porcentagem = percentage2 + "%"
