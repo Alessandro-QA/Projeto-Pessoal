@@ -40,13 +40,11 @@ class Documentos {
       cy.desabilitarPopUpNotificacao()
     })
 
-   // cy.clearLocalStorage('formasPagamento')
-
     cy.log('Clicar no botao adicionar documento')
     cy.get(locDocumentos.dashboard.novoDocumento).click()
 
     //Aguarda carregar até a última requisição
-    cy.wait('@formaPagamento', { timeout: 20000 })
+    //cy.wait('@formaPagamento', { timeout: 20000 })
     cy.scrollTo(0, 0, { ensureScrollable: false })
 
     cy.log('Selecionar operacao')
@@ -74,7 +72,7 @@ class Documentos {
     }
 
     cy.log('Digitar numero do documento')
-    cy.getVisible(locDocumentos.documento.numeroDocumento)
+    cy.get(locDocumentos.documento.numeroDocumento)
       .clear().type(seedTestDocumento.numeroDocumento)
 
     cy.log('Selecionar pessoa')
@@ -167,6 +165,19 @@ class Documentos {
         cy.log('Informar quantidade de parcelas')
         cy.getVisible(locDocumentos.documento.quantidadeParcela)
           .clear().type(seedTestDocumento.quantidadeParcela)
+
+        if (seedTestDocumento.editarParcelas) {
+          const parcelas = seedTestDocumento.parcelas
+          parcelas.forEach((parcelas, index) => {
+            cy.log('Digitar valor da parcela')
+            cy.get(locDocumentos.documento.inputParcelas)
+              .eq(index).clear().type(parcelas.valorParcela).click()
+
+            cy.log('Digitar data de vencimento da parcela')
+            cy.get(locDocumentos.documento.vencimentoParcelas)
+              .eq(index).clear().type(parcelas.vencimentoParcela)
+          })
+        }
       }
 
       if (seedTestDocumento.valorFixo) {
@@ -295,22 +306,7 @@ class Documentos {
             expect($el).to.contain.text(categoria.nome)
           })
 
-        cy.wait(2000)
-/*
-        cy.log('Validar valor da categoria')
-        cy.get(locDocumentos.documento.categoriaValor)
-          .eq(index)
-          .invoke('val') // Obtém o valor do elemento como uma string
-          .then(($value) => {
-            // Remover formatação não numérica e converter para string
-            const expectedValue = categoria.valor.toString().replace(/[^\d,]/g, '')
-
-            // Remover formatação não numérica do valor do input e ajustar para o mesmo formato
-            const actualValue = $value.replace(/[^\d,]/g, '')
-
-            // Comparar os valores exatamente
-            expect(actualValue).to.equal(expectedValue);
-          })*/
+        cy.wait(1000)
       })
     }
 
@@ -394,9 +390,10 @@ class Documentos {
     }
 
     cy.log('salvar documento')
-    cy.getVisible(locDocumentos.documento.adicionar).click({ force: true })
-    cy.wait(2000)
-    cy.get(locDocumentos.documento.adicionar).should('not.exist')
+    cy.get(locDocumentos.documento.adicionar).click({ force: true })
+
+    cy.wait('@criarDocumento')
+    //cy.get(locDocumentos.documento.adicionar).should('not.exist')
 
     cy.getVisible(locatorTituloPagina).should(($el) => {
       expect($el).to.contain.text(tituloPagina)
@@ -688,6 +685,7 @@ class Documentos {
 
     // Validar tabela de parcelas
     if (seedTestDocumento.parcelas) {
+      cy.log("Teste Parcela")
       const parcelas = seedTestDocumento.parcelas
 
       cy.get(locDocumentos.detalhesDocumento.tabelaParcelas).each(($row, index) => {
@@ -698,19 +696,31 @@ class Documentos {
           // Verifica a célula da parcela
           cy.get('.cell').eq(0).should('contain.text', parcela.parcela)
 
+
           // Verifica a célula do valor da parcela
           cy.get('.cell').eq(1).should(($el) => {
-            // Converte para string antes de substituir
-            const text = $el.text().replace(/[^\d,]/g, '') // Remove tudo exceto dígitos e vírgulas
-            expect(text).to.contain(String(parcela.valorParcela).replace('.', ',')) // Converte para string e compara com o valor da parcela, ajustando a formatação
-          })
+            // Remove o símbolo "R$" e espaços do texto da célula, além de qualquer outro caractere que não seja dígito ou vírgula
+            const text = $el.text().replace('R$', '').trim().replace(/[^\d,]/g, '');
+            // Converte o valor da parcela para string e ajusta a formatação para usar vírgula
+            const valorParcelaFormatado = String(parcela.valorParcela).replace('.', ',').trim();
+            // Compara o valor formatado com o texto da célula
+            expect(text).to.equal(valorParcelaFormatado);
+          });
 
-
+          if (seedTestDocumento.vencimentoParcela) {
+            // Verifica a célula do status da parcela
+            cy.get('.cell').eq(2).should('contain.text', parcela.vencimentoParcela)
+          }
           // Verifica a célula do status da parcela
           cy.get('.cell').eq(3).should('contain.text', parcela.statusParcela)
 
           // Verifica a célula do saldo da parcela
-          cy.get('.cell').eq(4).should('contain.text', parcela.saldoParcela)
+          cy.get('.cell').eq(4).should(($el) => {
+            // Converte para string antes de substituir
+            const text = $el.text().replace(/[^\d,]/g, '') // Remove tudo exceto dígitos e vírgulas
+            expect(text).to.contain(String(parcela.saldoParcela).replace('.', ',')) // Converte para string e compara com o valor da parcela, ajustando a formatação
+          })
+
         })
       })
     }
@@ -787,19 +797,19 @@ class Documentos {
       cy.get(locDocumentos.detalhesDocumento.anexos).should('not.exist')
     }
 
-    /*
+
     //Voltar para lista de Documentos
     cy.getVisible(locDocumentos.detalhesDocumento.voltar).click({ force: true })
-    cy.wait('@listaDocumentos', { timeout: 20000 })*/
-    
-    // Deleta Registro Criado Para Evitar Acumulo de Registro
+    cy.wait('@listaDocumentos', { timeout: 20000 })
+
+    /* Deleta Registro Criado Para Evitar Acumulo de Registro
     cy.get('@documentoID').then((documentoID) => {
       cy.deleteRequest(`${Cypress.env('financeiro')}/Documento`, documentoID).then((responseDelete) => {
         expect(responseDelete.status).to.be.equal(200)
       })
     })
 
-    cy.hideApiView();
+    cy.hideApiView();*/
 
   }
 
@@ -1097,7 +1107,7 @@ class Documentos {
       cy.log('Selecionar rateio ciclo')
       cy.getVisible(locDocumentos.documento.rateioEntreCiclos).click()
 
-      cy.wait(2000)
+      cy.wait(1000)
 
       // wait para aguardar busca dos ciclos do planejamento
       cy.wait('@cicloRateio')
@@ -1105,7 +1115,6 @@ class Documentos {
       // timeout necessario para carregar os ciclos nos selects
       cy.wait('@cicloProducao')
 
-      cy.wait(2000)
 
       if (seedTestEdicaoDocumento.ciclos) {
         const ciclos = seedTestEdicaoDocumento.ciclos
@@ -1159,7 +1168,7 @@ class Documentos {
     cy.log('Salvar alterações')
     cy.getVisible(locDocumentos.documento.adicionar).click()
 
-    cy.wait(2000)
+    cy.wait(1000)
 
     cy.get(locDocumentos.documento.adicionar).should('not.exist')
 

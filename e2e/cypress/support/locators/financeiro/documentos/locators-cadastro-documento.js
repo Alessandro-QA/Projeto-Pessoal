@@ -42,7 +42,7 @@ const locators = {
     dataRecebimentoInativa: '[data-cy=datepicker-data-recebimento] .el-input__inner',
     dedutivel: '[data-cy=radio-dedutivel]',
     dedutivelSelecionado: '[data-cy=radio-dedutivel] .el-radio-button__inner',
-    numeroDocumento: '[data-cy=input-numero-documento] input[type=text]',
+    numeroDocumento: '[data-cy=input-numero-documento]',
     dataDocumento: '[data-cy=datepicker-data-documento]',
     dataDocumentoInativa: '[data-cy=datepicker-data-documento] .el-input__inner',
     pessoa: '[data-cy=select-pessoa]',
@@ -121,7 +121,9 @@ const locators = {
     anexo: '.anexos-list .anexos-list__item',
     excluirAnexo: '.siagri-icon-trash-alt',
     cancelar: '[data-cy=button-cancelar-adicionar-documento] .el-button--secondary',
-    adicionar: '[data-cy=button-cancelar-adicionar-documento] .el-button--primary'
+    adicionar: '[data-cy=button-cancelar-adicionar-documento] .el-button--primary',
+    inputParcelas: '[data-cy="input-parcelas"]',
+    vencimentoParcelas: '[data-cy="datepicker-vencimento"]'
   },
 
   detalhesDocumento: {
