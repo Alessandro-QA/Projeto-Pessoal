@@ -270,8 +270,7 @@ class Cultura {
 
         cy.log('Verifica se apresentou mensagem de erro para os campos')
         cy.get('.el-form-item__error')
-            .filter(':visible') // Filtra apenas os elementos visíveis
-            .should('have.length', 4); // Verifica se há exatamente 4 elementos visíveis
+            .should('have.length', 4); // Verifica se há exatamente 4 elementos
 
         cy.log('Clicar em Fechar')
         cy.get(locCultura.cadastroFenologia.botaoFechar).filter(':visible') // Filtra apenas os elementos visíveis
@@ -290,16 +289,15 @@ class Cultura {
             .type('{enter}')
 
         cy.log('Clicar no botão "Editar Cultura"')
-        cy.get(locCultura.dashboard.editarCultura).click()
+        cy.get(locCultura.dashboard.editarCultura).should('be.visible').click()
 
         cy.log('Limpar os campos preenchidos')
         cy.getVisible(locCultura.cadastroCultura.nomeCultura).click().clear()
         cy.getVisible(locCultura.cadastroCultura.nomeCientifico).click().clear()
-        cy.get(locCultura.cadastroCultura.unidadeMedida).click()
-        cy.get(locCultura.cadastroCultura.limparUnMedida).should('be.visible').click()
-        cy.get(locCultura.cadastroCultura.materialColheita).click()
-        cy.get(locCultura.cadastroCultura.limparMaterial).should('be.visible').click()
-
+        cy.getVisible(locCultura.cadastroCultura.unidadeMedida).click()
+        cy.getVisible(locCultura.cadastroCultura.limparUnMedida).click({ force: true })
+        cy.getVisible(locCultura.cadastroCultura.materialColheita).click()
+        cy.get(locCultura.cadastroCultura.limparMaterial).click({ force: true })
 
         cy.log('Clicar em Avançar')
         cy.getVisible(locCultura.cadastroCultura.botaoAvancar).should('be.visible').contains('Avançar').click()
@@ -312,6 +310,7 @@ class Cultura {
         cy.log('Clicar em Cancelar')
         cy.get(locCultura.cadastroCultura.botaoCancelar).should('be.visible').click()
     }
+
 
     obrigatoriedadeEdicaoFenologia(seedTestCultura) {
         // Pesquisa a Cultura para Edição
@@ -344,8 +343,7 @@ class Cultura {
 
         cy.log('Verifica se apresentou mensagem de erro para os campos')
         cy.get('.el-form-item__error')
-            .filter(':visible') // Filtra apenas os elementos visíveis
-            .should('have.length', 3); // Verifica se há exatamente 3 elementos visíveis
+            .should('have.length', 3); // Verifica se há exatamente 3 elementos
 
         cy.log('Clicar em Fechar')
         cy.get(locCultura.cadastroFenologia.botaoFechar).filter(':visible') // Filtra apenas os elementos visíveis

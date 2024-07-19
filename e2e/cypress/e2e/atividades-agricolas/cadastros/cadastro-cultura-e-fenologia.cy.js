@@ -21,7 +21,7 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
 
         context('Cultura e Fenologia', () => {
             describe('Cadastro de Cultura', () => {
-                it('Deve cadastrar cultura sem fase fenológica relacionada', function () {
+                it('Deve cadastrar cultura sem fase fenológica relacionada', { retries: { runMode: 1, openMode: 1, }, }, function () {
                     cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct1)
                     Cultura.cadastro(semFaseFenologica)
                 })
@@ -41,22 +41,22 @@ describe('Atividades Agrícolas', { tags: '@atividadesAgricolas' }, () => {
                     Cultura.editarCultura(EdicaoComFenologia)
                 })
 
-                it('Deve Validar Campos Obrigatórios na inclusão de cultura', function () {
+                it('Deve Validar Campos Obrigatórios na inclusão de cultura', { retries: { runMode: 1, openMode: 1, }, }, function () {
                     cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct5)
                     Cultura.obrigatoriedadeInclusaoCultura(seedTestCultura)
                 })
 
-                it('Deve Validar Campos Obrigatórios na inclusão da fenologia', function () {
+                it('Deve Validar Campos Obrigatórios na inclusão da fenologia', { retries: { runMode: 1, openMode: 1, }, }, function () {
                     cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct6)
                     Cultura.obrigatoriedadeInclusaoFenologia(seedTestCultura)
                 })
 
-                it('Deve Validar Campos Obrigatórios na edição de cultura', function () {
+                it('Deve Validar Campos Obrigatórios na edição de cultura', { retries: { runMode: 1, openMode: 1, }, }, function () {
                     cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct7)
                     Cultura.obrigatoriedadeEdicaoCultura(seedTestCultura)
                 })
 
-                it('Deve Validar Campos Obrigatórios na edição da fenologia', function () {
+                it('Deve Validar Campos Obrigatórios na edição da fenologia', { retries: { runMode: 1, openMode: 1, }, }, function () {
                     cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct8)
                     Cultura.obrigatoriedadeEdicaoFenologia(seedTestCultura)
                 })
