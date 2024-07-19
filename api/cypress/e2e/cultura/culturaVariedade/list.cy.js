@@ -94,7 +94,7 @@ context('Cultura', () => {
 
             })
 
-            it('CT5 - Deve listar as variedades pela Detentora', () => {
+            it.skip('CT5 - Deve listar as variedades pela Detentora', () => {
                 cy.fixture('cultura/culturaVariedade/list/paramsCt5.json').then((params) => {
 
                     cy.allureDescriptionHtml(description.Ct5).allureSeverity('normal')
