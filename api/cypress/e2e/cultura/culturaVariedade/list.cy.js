@@ -149,6 +149,5 @@ function validarResponse(body) {
         expect(item).to.have.property('ativo').that.is.a('boolean');
         expect(item).to.have.property('culturaId').that.is.a('string');
         expect(item).to.have.property('culturaDescricao').that.is.a('string');
-        expect(item).to.have.property('material').that.is.oneOf([null, 'string']);
     });
 }

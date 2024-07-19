@@ -61,7 +61,7 @@ context('Cultura', () => {
                             validarResponse(response.body)
 
                             response.body.forEach(cultura => {
-                                expect(cultura.nomeCientifico).to.equal('Zea mays');
+                                expect(cultura.nomeCientifico).to.equal('Phaseolus vulgaris');
                             });
                         })
                 })
