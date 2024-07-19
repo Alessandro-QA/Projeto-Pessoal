@@ -148,30 +148,16 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
         let valor1, valor2, valor3
         let percentage1, percentage2, percentage3
-        let somaValores
-
-        // Loop até que a soma dos valores corresponda ao valorTotal
-        do {
-          // Dividir o valor total em três partes aleatórias
-          valor1 = (Math.random() * valorTotal).toFixed(2);
-          valor2 = (Math.random() * (valorTotal - Number(valor1))).toFixed(2);
-          valor3 = (Number(valorTotal) - Number(valor1) - Number(valor2)).toFixed(2);
-
-          // Garantir que todos os valores são positivos e que a soma não ultrapasse o valorTotal
-          if (Number(valor1) < 0 || Number(valor2) < 0 || Number(valor3) < 0) {
-            continue;
-          }
-
-          // Verificar a soma dos valores
-          somaValores = (Number(valor1) + Number(valor2) + Number(valor3)).toFixed(2);
-
-        } while (somaValores !== valorTotal);
+        
+        valor1 = (Math.random() * valorTotal).toFixed(2);
+        valor2 = (Math.random() * (valorTotal - Number(valor1))).toFixed(2);
+        valor3 = (Number(valorTotal) - Number(valor1) - Number(valor2)).toFixed(2);
 
         // Calcular as porcentagens baseadas nos valores
         percentage1 = ((Number(valor1) / Number(valorTotal)) * 100).toFixed(4);
         percentage2 = ((Number(valor2) / Number(valorTotal)) * 100).toFixed(4);
         percentage3 = ((Number(valor3) / Number(valorTotal)) * 100).toFixed(4);
-        
+
         // Atribuir valores e porcentagens a categorias em seedTestDocumento4
         seedTestDocumento4.categorias[0].porcentagem = percentage1 + "%"
         seedTestDocumento4.categorias[1].porcentagem = percentage2 + "%"
