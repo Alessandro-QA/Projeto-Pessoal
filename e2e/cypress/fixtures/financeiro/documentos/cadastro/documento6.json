@@ -1,76 +1,60 @@
 {
-    "documento": {
+
       "operacao": "Comissões",
       "tipoDocumento": "Outros",
       "dedutivel": "Não",
-      "numeroDocumento": "5537",
-      "pessoa": "Empresa 1",
-      "fazenda": "Fazenda Onboarding",
-      "safra": "2021/2021",
-      "empresa": "Empresa 1",
+      "numeroDocumento": "IWuKrzC4sc",
+      "pessoa": "Empresa 2",
+      "fazenda": "Fazenda Teste API",
+      "safra": "2024 / 2025",
+      "empresa": "Empresa Teste API",
       "observacao": "Observações do Documento",
       "valorTotal": "200,00",
       "formaPagamento": "Transferência Bancária",
       "condicaoPagamento": "Parcelado",
       "quantidadeParcela": "4",
+      "qtdParcelas": "4 parcelas",
       "rateioCategoriaSelecionar": true,
+      "rateioEntreCategoriasPorOperacao": true,
       "categorias": [
         {
           "nome": "Comissões",
+          "porcentagem": "100.00%",
           "valor": "200,00"
         }
       ],
-      "anexo": true,
-      "anexos": "Exemplo-DANFE.png"
-    },
-    "detalhes": {
-      "operacao": "Comissões",
-      "tipoDocumento": "Outros",
-      "dedutivel": "Não",
-      "numeroDocumento": "5537",
-      "pessoa": "Empresa 1",
-      "fazenda": "Fazenda Onboarding",
-      "safra": "2021/2021",
-      "empresa": "Empresa 1",
-      "observacao": "Observações do Documento",
-      "valorTotal": "R$ 200,00",
-      "formaPagamento": "Transferência Bancária",
-      "condicaoPagamento": "Parcelado",
-      "qtdParcelas": "4 parcelas",
+      "editarParcelas": true,
       "parcelas": [
         {
           "parcela": "1ª Parcela",
+          "vencimentoParcela": "data",
           "valorParcela": "R$ 50,00",
           "statusParcela": "A pagar",
           "saldoParcela": "R$ 50,00"
         },
         {
           "parcela": "2ª Parcela",
+          "vencimentoParcela": "data",
           "valorParcela": "R$ 50,00",
           "statusParcela": "A pagar",
           "saldoParcela": "R$ 50,00"
         },
         {
           "parcela": "3ª Parcela",
+          "vencimentoParcela": "data",
           "valorParcela": "R$ 50,00",
           "statusParcela": "A pagar",
           "saldoParcela": "R$ 50,00"
         },
         {
           "parcela": "4ª Parcela",
+          "vencimentoParcela": "data",
           "valorParcela": "R$ 50,00",
           "statusParcela": "A pagar",
           "saldoParcela": "R$ 50,00"
         }
       ],
-      "categorias": [
-        {
-          "nome": "Comissões",
-          "porcentagem": "100%",
-          "valor": "R$ 200,00"
-        }
-      ],
+      "anexo": true,
       "anexos": "Exemplo-DANFE.png"
-    }
-  }
-  
+}
+    

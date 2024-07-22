@@ -756,8 +756,8 @@ class ContaBancaria {
         });
         cy.get('[data-cy="span-valor-lancamento"]').invoke('text').then((text) => {
           // Extrair o valor numérico do texto e converter para float
-          const valorTexto = parseFloat(text.trim().replace(/[^\d.,-]/g, '').replace(',', '.'));
-
+          const valorTexto = parseFloat(text.trim().replace(/[^\d,-]/g, '').replace(',', '.'));
+        
           // Comparar com o valor esperado convertido para float
           expect(valorTexto).to.equal(seedTestLancamentoCartao.validarCartao[index].valor);
         });

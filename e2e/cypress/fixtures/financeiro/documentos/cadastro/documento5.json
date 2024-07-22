@@ -1,0 +1,41 @@
+{
+    "operacao": "Assistência Médica",
+    "tipoDocumento": "Fatura",
+    "dedutivel": "Não",
+    "numeroDocumento": "3557",
+    "pessoa": "Empresa 2",
+    "fazenda": "Fazenda Teste API",
+    "safra": "2024 / 2025",
+    "empresa": "Empresa Teste API",
+    "valorTotal": "150,00",
+    "jaPago": true,
+    "condicaoPagamento": "À vista",
+    "formaPagamento": "Cartão de Crédito",
+    "contaBancaria": "Cartão Teste Dashboard Financeiro",
+    "contaDestino": "Cartão Teste Dashboard Financeiro",
+    "rateioEntreCiclosPlanejamento": true,
+    "ciclos": [
+      {
+        "nome": "Safra - 737793",
+        "valor": "R$ 85,71"
+      },
+      {
+        "nome": "Safra - 467300",
+        "valor": "R$ 64,29"
+      }
+    ],
+    
+    "rateioCategoriaSelecionar": true,
+    "categorias": [
+      {
+        "nome": "Assistência Médica",
+        "porcentagem": "50%",
+        "valor": "R$ 75,00"
+      },
+      {
+        "nome": "Programa de Alimentação do Trabalhador",
+        "porcentagem": "50%",
+        "valor": "R$ 75,00"
+      }
+    ]
+}

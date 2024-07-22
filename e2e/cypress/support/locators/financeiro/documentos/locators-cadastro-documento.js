@@ -42,7 +42,7 @@ const locators = {
     dataRecebimentoInativa: '[data-cy=datepicker-data-recebimento] .el-input__inner',
     dedutivel: '[data-cy=radio-dedutivel]',
     dedutivelSelecionado: '[data-cy=radio-dedutivel] .el-radio-button__inner',
-    numeroDocumento: '[data-cy=input-numero-documento] input[type=text]',
+    numeroDocumento: '[data-cy=input-numero-documento]',
     dataDocumento: '[data-cy=datepicker-data-documento]',
     dataDocumentoInativa: '[data-cy=datepicker-data-documento] .el-input__inner',
     pessoa: '[data-cy=select-pessoa]',
@@ -65,6 +65,7 @@ const locators = {
     nomeTag: '[data-cy=select-tag] #newItemInput',
     salvarTag: '[data-cy=select-tag] .siagri-icon-check-xsmall',
     removerTag: '[data-cy=select-tag] .siagri-icon-close',
+    listTag: '[data-cy=select-tag] .list > .list__items',
     observacao: '[data-cy=textarea-observacao]',
     checkMoedaEstrangeira: '.el-col > .el-form-item > .el-form-item__content > .el-checkbox',
     selectMoeda: '.select[name="moedaPgto"]',
@@ -120,7 +121,9 @@ const locators = {
     anexo: '.anexos-list .anexos-list__item',
     excluirAnexo: '.siagri-icon-trash-alt',
     cancelar: '[data-cy=button-cancelar-adicionar-documento] .el-button--secondary',
-    adicionar: '[data-cy=button-cancelar-adicionar-documento] .el-button--primary'
+    adicionar: '[data-cy=button-cancelar-adicionar-documento] .el-button--primary',
+    inputParcelas: '[data-cy="input-parcelas"]',
+    vencimentoParcelas: '[data-cy="datepicker-vencimento"]'
   },
 
   detalhesDocumento: {
@@ -147,10 +150,11 @@ const locators = {
     condicaoPagamento: '[data-cy=span-condicao-pagamento]',
     quantidadeParcela: '[data-cy=span-quantidade-parcela]',
     contaBancaria: '[data-cy=span-conta-bancaria]',
-    tabelaParcelas: '[data-cy=table-parcelas] .el-table__row .cell',
-    tabelaRateioCiclos: '[data-cy=table-rateio-entre-ciclos] .el-table__row .cell',
-    tabelaRateioCategorias: '[data-cy=table-rateio-categorias] .el-table__row .cell',
-    anexos: '[data-cy="list-anexos"]'
+    tabelaParcelas: '[data-cy=table-parcelas] .el-table__row',
+    tabelaRateioCiclos: '[data-cy=table-rateio-entre-ciclos] .el-table__row',
+    tabelaRateioCategorias: '[data-cy=table-rateio-categorias] .el-table__row',
+    anexos: '[data-cy="list-anexos"]',
+    voltar:'.cnx-page-header__back-button'
   }
 }
 

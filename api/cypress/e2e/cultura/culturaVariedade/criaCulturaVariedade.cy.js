@@ -32,6 +32,9 @@ context('Cultura', () => {
 
                             // Salvar o ID da variedade criada para uso futuro
                             idVariedade = response.body.data.id;
+
+                            // Adiciona logs para verificação
+                            cy.log('Variedade Criada ID:', idVariedade);
                         });
                 });
             });
@@ -55,6 +58,10 @@ context('Cultura', () => {
                             expect(response.status).to.be.equal(200);
                             expect(response.body).to.not.be.null;
                             expect(response.body).to.exist;
+
+                            // Adiciona logs para comparação
+                            cy.log('Response Body Data:', response.body.data);
+                            cy.log('Expected Payload:', payload);
 
                             // Verificando se o response está como foi editado
                             expect(response.body.data).to.deep.equal(payload);

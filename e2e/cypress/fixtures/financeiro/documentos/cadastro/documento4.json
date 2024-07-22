@@ -1,0 +1,42 @@
+{
+    "operacao": "Combustíveis",
+    "tipoDocumento": "Outros",
+    "dedutivel": "Não",
+    "numeroDocumento": "7553",
+    "pessoa": "Empresa 2",
+    "fazenda": "Fazenda Teste API",
+    "safra": "2024 / 2025",
+    "empresa": "Empresa Teste API",
+    "tag": "TAG",
+    "valorTotal": "R$ 325,00",
+    "formaPagamento": "Cartão de Débito",
+    "condicaoPagamento": "À vista",
+    "qtdParcelas": "Parcela única",
+    "parcelas": [
+      {
+        "parcela": "1ª Parcela",
+        "valorParcela": "R$ 325,00",
+        "statusParcela": "A pagar",
+        "saldoParcela": "R$ 325,00"
+      }
+    ],
+    "rateioEntreCategoriasPorOperacao": true,
+    "rateioCategoriaSelecionar": true,
+    "categorias": [
+      {
+        "nome": "Combustíveis",
+        "porcentagem": "33.3323%",
+        "valor": "R$ 108,33"
+      },
+      {
+        "nome": "Óleo Diesel",
+        "porcentagem": "33.3323%",
+        "valor": "R$ 108,33"
+      },
+      {
+        "nome": "Lubrificantes",
+        "porcentagem": "33.3354%",
+        "valor": "R$ 108,34"
+      }
+    ]
+ }

@@ -19,7 +19,11 @@ const locators = {
         buscaMaterialColheita: 'div.filter[data-v-7f8b08d6] > input[type="text"]',
         botaoAvancar:'[data-cy="footer-cultura"] > .el-button--primary',
         botaoCancelar:'[data-cy="footer-cultura"] > .el-button--secondary > span',
-        carregarMaterial:'.select > .el-loading-mask '
+        carregarMaterial:'.select > .el-loading-mask ',
+        limparUnMedida:'.el-form-item__content > .select > .siagri-icon-close',
+        limparMaterial:'.select > .siagri-icon-close',
+        janela: '.el-dialog__wrapper',
+        botaoFechar:'button[aria-label="Close"].el-dialog__headerbtn'
     },
 
     cadastroFenologia:{
@@ -35,6 +39,8 @@ const locators = {
         excluirEstadio:'.el-tooltip > .el-button > .siagri-icon-trash-alt-xsmall',
         salvarEstadio:'#myDiv-0 > .footer-button > .el-button--primary',
         botaoConcluir:'[data-cy="footer-cultura"] > .el-button--primary', 
+        janela: '.el-dialog__wrapper',
+        botaoFechar:'button[aria-label="Close"].el-dialog__headerbtn'
     }
   }
   
