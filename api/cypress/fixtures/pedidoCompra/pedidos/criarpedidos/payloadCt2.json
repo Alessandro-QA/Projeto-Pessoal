@@ -1,0 +1,138 @@
+{
+    "movimentacoes": [],
+    "pedidoRecebimentos": [],
+    "id": "31a42bb2-f563-4e83-87ae-6d236ea68ccb",
+    "codigo": 119,
+    "data": "2024-07-23T11:47:53.000Z",
+    "dataEntrega": "2024-08-01T03:00:00.000Z",
+    "fornecedor": {
+        "id": "8dfd768b-8eb3-4b17-8ed7-bdaa242b8b94",
+        "descricao": "Fornecedor 4",
+        "documentoPrincipal": "25730627000129"
+    },
+    "safra": {
+        "id": "f2eb8ded-a463-47fd-a81d-1a78b5b11166",
+        "descricao": "2022 / 2023"
+    },
+    "fazenda": {
+        "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+        "descricao": "Fazenda Teste API"
+    },
+    "mesmoLocal": true,
+    "fazendaEntrega": {
+        "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+        "descricao": "Fazenda Teste API"
+    },
+    "empresa": {
+        "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+        "descricao": "Empresa Teste API",
+        "inscricaoEstadual": {
+            "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+            "descricao": "IE",
+            "valor": "ISENTO"
+        }
+    },
+    "statusPedido": 1,
+    "pedidoMateriais": [
+        {
+            "id": "91a4bdea-a6c7-48f6-9afc-ee11ba0d5265",
+            "saldo": 10,
+            "quantidade": 10,
+            "valorUnitario": 16,
+            "valorUnitarioAlternativo": null,
+            "material": {
+                "id": "eed355b8-e749-4e92-93b1-18f1a5df48d7",
+                "descricao": "2,4 - D 98%",
+                "tipoMaterial": "Insumos",
+                "gtin": null
+            },
+            "materialClassificacao": {
+                "id": "d75fe49c-d1dd-45e3-9577-0dbd9ac96c1f",
+                "descricao": "Defensivos"
+            },
+            "unidadeMedida": {
+                "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
+                "descricao": "L"
+            },
+            "ncm": null,
+            "key": "91a4bdea-a6c7-48f6-9afc-ee11ba0d5265"
+        }
+    ],
+    "pedidoPagamento": {
+        "id": "31a42bb2-f563-4e83-87ae-6d236ea68ccb",
+        "quantidadeParcelas": 1,
+        "valorFixo": true,
+        "formaPagamento": {
+            "id": "fe298c32-17c7-4b76-a7c4-d730fdae16b8",
+            "descricao": "PIX"
+        },
+        "pedidoPagamentoParcelas": [
+            {
+                "id": "b6ef7abb-1556-4447-9876-c9371445b5b2",
+                "numeroParcela": 1,
+                "dataVencimento": "2024-08-17T17:45:07+00:00",
+                "valorParcela": 160,
+                "valorParcelaAlternativa": null,
+                "moeda": null,
+                "moedaAlternativa": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "descricao": null
+                }
+            }
+        ]
+    },
+    "operacao": {
+        "id": "7969c7d2-6390-4e7f-891f-875a7cb7affa",
+        "codigo": 0,
+        "nome": "Pedido de Compra",
+        "historico": null,
+        "movimentaEstoque": false,
+        "contabilizaEstoque": null,
+        "tipoEstoque": null,
+        "valorizacaoEstoque": null,
+        "destino": null,
+        "movimentaDocumento": false,
+        "tipoDocumento": 0,
+        "contabilizaDocumento": null,
+        "documentoItem": null,
+        "movimentaFinanceiro": 0,
+        "emissaoPropria": null,
+        "solicitaNotaOrigem": null,
+        "geraTributos": false,
+        "modeloDocumento": null,
+        "tipoOperacao": null,
+        "finalidadeOperacao": null,
+        "jornadaPropria": false,
+        "adiantamentoDocumento": false,
+        "adiantamentoTipoOperacao": null,
+        "adiantamentoOperacaoId": null,
+        "operacaoMatrizContabeis": []
+    },
+    "dedutivel": true,
+    "numeroPedidoFornecedor": 672409,
+    "moedaAlternativa": null,
+    "cotacao": null,
+    "ciclos": [],
+    "categorias": [
+        {
+            "contaContabil": {
+                "codigo": "4.01.01.03",
+                "descricao": "Defensivos",
+                "dedutivel": true
+            },
+            "codigo": "4.01.01.03",
+            "descricao": "Defensivos",
+            "dedutivel": true,
+            "porcentagem": 100,
+            "percentage": 100,
+            "valor": 160,
+            "quantidade": 160
+        }
+    ],
+    "moeda": {
+        "estrangeira": false,
+        "sigla": {},
+        "cotacao": 0
+    },
+    "pedidoMoedaEstrangeira": false
+}
