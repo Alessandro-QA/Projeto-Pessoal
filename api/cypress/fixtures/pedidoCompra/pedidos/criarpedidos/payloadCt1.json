@@ -1,121 +1,106 @@
 {
-    "pedidoMateriais": [
-      {
-        "saldo": 10,
-        "quantidade": 10,
-        "valorUnitario": 16,
-        "valorUnitarioAlternativo": 0,
-        "material": {
-          "id": "eed355b8-e749-4e92-93b1-18f1a5df48d7",
-          "descricao": "2,4 - D 98%",
-          "tipoMaterial": "Insumos",
-          "gtin": null
-        },
-        "materialClassificacao": {
-          "id": "d75fe49c-d1dd-45e3-9577-0dbd9ac96c1f",
-          "descricao": "Defensivos"
-        },
-        "unidadeMedida": {
-          "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
-          "descricao": "L"
-        },
-        "ncm": null,
-        "key": "12312"
-      }
-    ],
-    "anexos": [],
-    "moedaAlternativa": null,
-    "cotacao": null,
-    "pedidoMoedaEstrangeira": false,
-    "categorias": [
-      {
-        "contaContabil": {
-          "ativo": true,
-          "id": "01effa12-6f4b-4b80-805a-671ed18dc3c7",
-          "tipo": 0,
-          "contaSuperior": {
-            "id": "1383fa3d-e53c-4ec3-8292-d365654a239e",
-            "descricao": "Custos de Culturas Agrícolas"
-          },
-          "descricao": "Defensivos",
-          "codigo": "4.01.01.03",
-          "codigoFormatado": "000000004010103",
-          "planoContas": {
-            "id": "3a60b754-7e16-45af-8b04-b8025cd8b3f7",
-            "descricao": "Plano de Contas MyFarm"
-          },
-          "dedutivel": true,
-          "adiantamento": false,
-          "natureza": 1
-        },
+  "pedidoMateriais": [
+    {
+      "saldo": 10,
+      "quantidade": 10,
+      "valorUnitario": 20,
+      "valorUnitarioAlternativo": 0,
+      "material": {
+        "id": "eed355b8-e749-4e92-93b1-18f1a5df48d7",
+        "descricao": "2,4 - D 98%",
+        "tipoMaterial": "Insumos",
+        "gtin": null
+      },
+      "materialClassificacao": {
+        "id": "d75fe49c-d1dd-45e3-9577-0dbd9ac96c1f",
+        "descricao": "Defensivos"
+      },
+      "unidadeMedida": {
+        "id": "c261b9fa-2fb4-3a39-613e-c9c38e656d73",
+        "descricao": "L"
+      },
+      "ncm": null,
+      "key": "12312"
+    }
+  ],
+  "anexos": [],
+  "moedaAlternativa": null,
+  "cotacao": null,
+  "pedidoMoedaEstrangeira": false,
+  "categorias": [
+    {
+      "contaContabil": {
         "codigo": "4.01.01.03",
         "descricao": "Defensivos",
-        "dedutivel": true,
-        "porcentagem": 100,
-        "percentage": 100,
-        "valor": 160,
-        "quantidade": 160
-      }
-    ],
-    "ciclos": [],
-    "pedidoPagamento": {
-      "quantidadeParcelas": 1,
-      "valorFixo": true,
-      "formaPagamento": {
-        "id": "fe298c32-17c7-4b76-a7c4-d730fdae16b8",
-        "descricao": "PIX",
-        "referenciaXML": 17
+        "dedutivel": true
       },
-      "pedidoPagamentoParcelas": [
-        {
-          "valorParcela": 160,
-          "key": "17212385492900",
-          "numeroParcela": 1,
-          "dataVencimento": "2024-08-17T17:45:07.000Z",
-          "moeda": {
-            "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
-            "descricao": "Real",
-            "codigo": 986,
-            "sigla": "BRL",
-            "simbolo": "R$",
-            "ativo": true
-          }
-        }
-      ]
-    },
-    "data": "2024-08-17T17:45:07.000Z",
-    "dataEntrega": "2024-07-31T03:00:00.000Z",
-    "fornecedor": {
-      "id": "8dfd768b-8eb3-4b17-8ed7-bdaa242b8b94",
-      "descricao": "Fornecedor 4",
-      "documentoPrincipal": "25730627000129"
-    },
-    "safra": {
-      "id": "f2eb8ded-a463-47fd-a81d-1a78b5b11166",
-      "descricao": "2022 / 2023"
-    },
-    "fazenda": {
-      "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
-      "descricao": "Fazenda Teste API"
-    },
-    "fazendaEntrega": {
-      "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
-      "descricao": "Fazenda Teste API"
-    },
-    "empresa": {
-      "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
-      "descricao": "Empresa Teste API",
-      "inscricaoEstadual": {
-        "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
-        "descricao": "IE",
-        "valor": "ISENTO"
-      }
-    },
-    "numeroPedidoFornecedor": 506,
-    "moeda": {
-      "estrangeira": false,
-      "sigla": {},
-      "cotacao": 0
+      "codigo": "4.01.01.03",
+      "descricao": "Defensivos",
+      "dedutivel": true,
+      "porcentagem": 100,
+      "percentage": 100,
+      "valor": 200,
+      "quantidade": 200
     }
+  ],
+  "ciclos": [],
+  "pedidoPagamento": {
+    "quantidadeParcelas": 1,
+    "valorFixo": true,
+    "formaPagamento": {
+      "id": "5dbd87e4-6c21-46c5-ba96-bbe6b4ae31c5",
+      "descricao": "Dinheiro",
+      "referenciaXML": 1
+    },
+    "pedidoPagamentoParcelas": [
+      {
+        "valorParcela": 200,
+        "key": "17216552313280",
+        "numeroParcela": 1,
+        "dataVencimento": "2024-08-22T13:18:52.000Z",
+        "moeda": {
+          "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
+          "descricao": "Real",
+          "codigo": 986,
+          "sigla": "BRL",
+          "simbolo": "R$",
+          "ativo": true
+        }
+      }
+    ]
+  },
+  "data": "2024-07-22T13:18:52.000Z",
+  "dataEntrega": "2024-07-23T03:00:00.000Z",
+  "fornecedor": {
+    "id": "e19eee46-8ac3-4bdf-a27b-021e34c67a42",
+    "descricao": "Fornecedor 2",
+    "documentoPrincipal": "39672767000100"
+  },
+  "safra": {
+    "id": "f2eb8ded-a463-47fd-a81d-1a78b5b11166",
+    "descricao": "2022 / 2023"
+  },
+  "fazenda": {
+    "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+    "descricao": "Fazenda Teste API"
+  },
+  "fazendaEntrega": {
+    "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+    "descricao": "Fazenda Teste API"
+  },
+  "empresa": {
+    "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+    "descricao": "Empresa Teste API",
+    "inscricaoEstadual": {
+      "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+      "descricao": "IE",
+      "valor": "ISENTO"
+    }
+  },
+  "numeroPedidoFornecedor": 545841,
+  "moeda": {
+    "estrangeira": false,
+    "sigla": {},
+    "cotacao": 0
   }
-  
+}

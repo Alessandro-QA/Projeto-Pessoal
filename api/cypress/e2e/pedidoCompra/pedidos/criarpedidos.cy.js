@@ -10,6 +10,9 @@ context('Pedido Compra', () => {
         let idpedidos
         let idpedidoPagamentoParcelas
         let idpedidoPagamento
+        let codigoPedido
+        let idPedidosMateriais
+
         describe(`POST/PUT/PATCH/GET/DELETE - ${Cypress.env('pedidoCompra')}/Pedidos - Criar Pedidos`, () => {
             it('CT1 - Criação de Pedidos', () => {
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
@@ -31,6 +34,8 @@ context('Pedido Compra', () => {
                             idpedidos = response.body.data.id
                             idpedidoPagamento = response.body.data.pedidoPagamento.id
                             idpedidoPagamentoParcelas = response.body.data.pedidoPagamento.pedidoPagamentoParcelas[0].id
+                            codigoPedido = response.body.data.codigo
+                            idPedidosMateriais = response.body.data.pedidoMateriais[0].id
 
                             validatePedidos(response.body.data)
                         })
@@ -40,20 +45,21 @@ context('Pedido Compra', () => {
             it('CT2 - Editar de Pedidos', () => {
                 cy.allureDescriptionHtml(description.Ct2).allureSeverity('normal')
 
+                cy.log(idPedidosMateriais)
+
                 cy.fixture('pedidoCompra/pedidos/criarpedidos/payloadCt2.json').then((payload) => {
 
                     payload.pedidoPagamento.pedidoPagamentoParcelas[0].id = idpedidoPagamentoParcelas
                     payload.pedidoPagamento.id = idpedidoPagamento
+                    payload.codigo = codigoPedido
+                    payload.pedidoMateriais[0].id = idPedidosMateriais
 
                     payload.id = idpedidos
                     let randomNumber = Math.floor(Math.random() * 1000000)
                     payload.numeroPedidoFornecedor = randomNumber // Adiciona o número de pedido ao payload
 
-                    // Obter a data de amanhã no formato desejado (YYYY-MM-DDTHH:mm:ssZ)
-                    const tomorrowDate = dayjs().add(1, 'day').format('YYYY-MM-DDTHH:mm:ssZ');
-                    payload.data = tomorrowDate;
-
                     cy.putRequest(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/Pedidos`, payload).then((response) => {
+                        cy.log(payload.pedidoMateriais.id)
                         // Verifica o status code da resposta
                         expect(response.status).to.equal(200)
 
