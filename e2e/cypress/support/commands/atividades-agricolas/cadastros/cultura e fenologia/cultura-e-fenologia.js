@@ -30,8 +30,8 @@ class Cultura {
             // Verifica se existe janela aberta e fecha se necessário
             cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
                 if ($janela.is(':visible')) {
-                    cy.log('Fechar a janela');
-                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                    cy.log('Fechar a janela')
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click()
                 }
             })
         })
@@ -170,8 +170,8 @@ class Cultura {
             // Verificar se existe janela aberta e fechá-la se necessário
             cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
                 if ($janela.is(':visible')) {
-                    cy.log('Fechar a janela');
-                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                    cy.log('Fechar a janela')
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click()
                 }
             })
         })
@@ -265,8 +265,8 @@ class Cultura {
             // Verifica se existe janela aberta e fecha se necessário
             cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
                 if ($janela.is(':visible')) {
-                    cy.log('Fechar a janela');
-                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                    cy.log('Fechar a janela')
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click()
                 }
             })
         })
@@ -280,7 +280,7 @@ class Cultura {
         cy.log('Verifica se apresentou mensagem de erro para os campos')
         cy.get('.el-form-item__error')
             .filter(':visible') // Filtra apenas os elementos visíveis
-            .should('have.length', 4); // Verifica se há exatamente 4 elementos visíveis
+            .should('have.length', 4) // Verifica se há exatamente 4 elementos visíveis
 
         cy.log('Clicar em Cancelar')
         cy.get(locCultura.cadastroCultura.botaoCancelar).click()
@@ -305,8 +305,8 @@ class Cultura {
             // Verifica se existe janela aberta e fecha se necessário
             cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
                 if ($janela.is(':visible')) {
-                    cy.log('Fechar a janela');
-                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                    cy.log('Fechar a janela')
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click()
                 }
             })
         })
@@ -344,7 +344,7 @@ class Cultura {
 
         cy.log('Verifica se apresentou mensagem de erro para os campos')
         cy.get('.el-form-item__error')
-            .should('have.length', 4); // Verifica se há exatamente 4 elementos
+            .should('have.length', 4) // Verifica se há exatamente 4 elementos
 
         cy.log('Clicar em Fechar')
         cy.get(locCultura.cadastroFenologia.botaoFechar).filter(':visible') // Filtra apenas os elementos visíveis
@@ -371,8 +371,8 @@ class Cultura {
             // Verifica se existe janela aberta e fecha se necessário
             cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
                 if ($janela.is(':visible')) {
-                    cy.log('Fechar a janela');
-                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                    cy.log('Fechar a janela')
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click()
                 }
             })
         })
@@ -403,7 +403,7 @@ class Cultura {
         cy.log('Verifica se apresentou mensagem de erro para os campos')
         cy.get('.el-form-item__error')
             .filter(':visible') // Filtra apenas os elementos visíveis
-            .should('have.length', 3); // Verifica se há exatamente 3 elementos visíveis
+            .should('have.length', 3) // Verifica se há exatamente 3 elementos visíveis
 
         cy.log('Clicar em Cancelar')
         cy.get(locCultura.cadastroCultura.botaoCancelar).should('be.visible')
@@ -430,8 +430,8 @@ class Cultura {
             // Verifica se existe janela aberta e fecha se necessário
             cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
                 if ($janela.is(':visible')) {
-                    cy.log('Fechar a janela');
-                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click();
+                    cy.log('Fechar a janela')
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click()
                 }
             })
         })
@@ -466,7 +466,7 @@ class Cultura {
 
         cy.log('Verifica se apresentou mensagem de erro para os campos')
         cy.get('.el-form-item__error')
-            .should('have.length', 3); // Verifica se há exatamente 3 elementos
+            .should('have.length', 3) // Verifica se há exatamente 3 elementos
 
         cy.log('Clicar em Fechar')
         cy.get(locCultura.cadastroFenologia.botaoFechar).filter(':visible') // Filtra apenas os elementos visíveis
@@ -476,6 +476,48 @@ class Cultura {
                 // Aguarda até que a janela não esteja mais visível
                 cy.get(locCultura.cadastroFenologia.janela).should('not.be.visible')
             })
+    }
+
+    validaListagem(seedTestCultura) {
+        const url = '/atividade-agricola/culturas'
+        const locatorTituloPagina = locCultura.dashboard.titulo
+        const tituloPagina = 'Culturas e Fenologia'
+
+        // Intercepta a requisição GET com a lista de todas as culturas existentes
+        cy.intercept('GET', `${Cypress.env('baseUrlDaas')}${Cypress.env('cultura')}/cultura`).as('getCultura')
+
+        cy.location('pathname').then((currentPath) => {
+            if (currentPath !== url) {
+                cy.log('Navegar para cadastro de Culturas')
+                cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+                cy.desabilitarPopUpNotificacao()
+            }
+
+            // Verifica se existe janela aberta e fecha se necessário
+            cy.get(locCultura.cadastroCultura.janela, { timeout: 5000 }).then(($janela) => {
+                if ($janela.is(':visible')) {
+                    cy.log('Fechar a janela')
+                    cy.get(locCultura.cadastroCultura.botaoFechar).filter(':visible').click()
+                }
+            })
+        })
+
+        // Espera pela resposta da requisição interceptada
+        cy.wait('@getCultura').then((interception) => {
+            // Verifica se a requisição retornou com sucesso (status 200)
+            expect(interception.response.statusCode).to.eq(200)
+            // Armazena a resposta da requisição
+            const culturas = interception.response.body
+
+            // Verifica se cada cultura está sendo exibida na tela
+            culturas.forEach(cultura => {
+                cy.get(locCultura.dashboard.cardsCultura).should('contain.text', cultura.descricao)
+            })
+
+            // Oculta o #api-view para continuar na página Atual
+            cy.hideApiView()
+
+        })
     }
 }
 
