@@ -5,7 +5,8 @@ const locators = {
         pesquisar:'input[placeholder="Pesquisar"][name="search"].el-input__inner',
         editarCultura:':nth-child(1) > .el-card > .el-card__body > .row-button > .footer-card > .el-button > :nth-child(1) > span',
         conteinerCultura: '.body-container',
-        siagriLoader: '.siagri-loader'
+        siagriLoader: '.siagri-loader',
+        cardsCultura: '.el-card__body'
     },
 
     cadastroCultura: {
