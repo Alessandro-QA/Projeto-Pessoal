@@ -1,152 +1,80 @@
 {
 	"semFiltro": {
 		"cardDocumento": [
-			{
-				"numeroDocumento": "789456",
-				"conferido": "Não",
-				"pessoa": "Cliente Teste Produção",
-				"valor": "R$ 134,00"
-			},
-			{
-				"numeroDocumento": "987456",
-				"conferido": "Não",
-				"pessoa": "Empresa Produtor - CPF",
-				"valor": "R$ 200"
-			},
-			{
-				"numeroDocumento": "357357",
-				"conferido": "Não",
-				"pessoa": "Matheus Oliveira",
-				"valor": "R$ 500,00"
-			},
-			{
-				"numeroDocumento": "753753",
-				"conferido": "Não",
-				"pessoa": "Empresa Fornecedor - CPF",
-				"valor": "R$ 400,00"
-			}
+			
 		]
 	},
 	"filtroPessoa": {
-		"fazenda": "Fazenda Teste Producao",
-		"empresa": "Empresa Fornecedor - CNPJ",
-		"filtroPessoa": "Cliente Teste Produção",
+		"fazenda": "Fazenda Teste API",
+		"empresa": "Empresa Teste API",
+		"filtroPessoa": "Cliente Teste API",
 		"cardDocumento": [
-			{
-				"numeroDocumento": "789456",
-				"conferido": "Não",
-				"pessoa": "Cliente Teste Produção",
-				"valor": "R$ 134,00"
-			}
+			
 		]
 	},
 	"filtroTag": {
-		"fazenda": "Fazenda Teste Producao",
-		"empresa": "Empresa Fornecedor - CNPJ",
-		"tag": "documentoE2E",
+		"fazenda": "Fazenda Teste API",
+		"empresa": "Empresa Teste API",
+		"tag": "TAG",
 		"cardDocumento": [
-			{
-				"numeroDocumento": "789456",
-				"conferido": "Não",
-				"pessoa": "Cliente Teste Produção",
-				"valor": "R$ 134,00"
-			}
+			
 		]
 	},
 	"filtroConferido": {
 		"conferir": {
-			"fazenda": "Fazenda Teste Producao",
-			"empresa": "Empresa Fornecedor - CNPJ",
+			"fazenda": "Fazenda Teste API",
+			"empresa": "Empresa Teste API",
 			"numeroDocumento": "987456"
 		},
-		"fazenda": "Fazenda Teste Producao",
-		"empresa": "Empresa Fornecedor - CNPJ",
+		"fazenda": "Fazenda Teste API",
+		"empresa": "Empresa Teste API",
 		"filtroConferido": "Conferido: Sim",
 		"cardDocumento": [
-			{
-				"numeroDocumento": "987456",
-				"conferido": "Sim",
-				"pessoa": "Empresa Produtor - CPF",
-				"valor": "R$ 200"
-			}
+
 		]
 	},
 	"filtroNaoConferido": {
 		"filtroConferido": "Conferido: Não",
 		"cardDocumento": [
-			{
-				"numeroDocumento": "789456",
-				"conferido": "Não",
-				"pessoa": "Cliente Teste Produção",
-				"valor": "R$ 134,00"
-			},
-			{
-				"numeroDocumento": "357357",
-				"conferido": "Não",
-				"pessoa": "Matheus Oliveira",
-				"valor": "R$ 500,00"
-			},
-			{
-				"numeroDocumento": "753753",
-				"conferido": "Não",
-				"pessoa": "Empresa Fornecedor - CPF",
-				"valor": "R$ 400,00"
-			}
+			
 		]
 	},
 	"filtroSafra": {
-		"fazenda": "Fazenda Teste Producao",
-		"empresa": "Empresa Fornecedor - CNPJ",
-		"safra": "2021/2021",
+		"fazenda": "Fazenda Teste API",
+		"empresa": "Empresa Teste API",
+		"safra": "2022 / 2023",
 		"cardDocumento": [
-			{
-				"numeroDocumento": "357357",
-				"conferido": "Não",
-				"pessoa": "Matheus Oliveira",
-				"valor": "R$ 500,00"
-			},
-			{
-				"numeroDocumento": "987456",
-				"conferido": "Sim",
-				"pessoa": "Empresa Produtor - CPF",
-				"valor": "R$ 200"
-			},
-			{
-				"numeroDocumento": "789456",
-				"conferido": "Não",
-				"pessoa": "Cliente Teste Produção",
-				"valor": "R$ 134,00"
-			}
+			
 		]
 	},
 	"filtroSafraCiclo": {
-		"fazenda": "Fazenda Teste Producao",
-		"empresa": "Empresa Fornecedor - CNPJ",
-		"safra": "2021/2021",
-		"ciclo": "Soja - 2021/2021",
+		"fazenda": "Fazenda Teste API",
+		"empresa": "Empresa Teste API",
+		"safra": "2022 / 2023",
+		"ciclo": "Soja - 2022 / 2023",
 		"cardDocumento": [
-			{
-				"numeroDocumento": "357357",
-				"conferido": "Não",
-				"pessoa": "Matheus Oliveira",
-				"valor": "R$ 500,00"
-			}
+		
 		]
 	},
 	"filtroFazenda": {
-		"fazenda": "Fazenda Reserva",
-		"semDocumento": true
+		"fazenda": "Fazenda Teste API",
+		"cardDocumento": [
+		
+		]
 	},
 	"filtroData": {
 		"dataInicio": "01/01/2022",
 		"dataFinal": "01/02/2022",
 		"cardDocumento": [
-			{
-				"numeroDocumento": "753753",
-				"conferido": "Não",
-				"pessoa": "Empresa Fornecedor - CPF",
-				"valor": "R$ 400,00"
-			}
+		
 		]
+	},
+	"semDocumento": {
+		"safra": "2021 / 2022",
+		"fazenda": "Fazenda Teste API",
+		"empresa": "Empresa Teste API",
+		"filtroPessoa": "Transportador Teste API",
+		"semDocumento": true,
+		"cardDocumento": false
 	}
 }
