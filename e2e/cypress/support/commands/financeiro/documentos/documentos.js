@@ -43,8 +43,6 @@ class Documentos {
     cy.log('Clicar no botao adicionar documento')
     cy.get(locDocumentos.dashboard.novoDocumento).click()
 
-    //Aguarda carregar até a última requisição
-    //cy.wait('@formaPagamento', { timeout: 20000 })
     cy.scrollTo(0, 0, { ensureScrollable: false })
 
     cy.log('Selecionar operacao')
@@ -153,8 +151,16 @@ class Documentos {
 
     cy.log('Selecionar forma de pagamento')
     cy.getVisible(locDocumentos.documento.formaDePagamento).click()
-      .get(locDocumentos.documento.selecionarFormaPagamento)
-      .contains(seedTestDocumento.formaPagamento).click()
+    cy.get(locDocumentos.documento.selecionarFormaPagamento).then($elementos => {
+      if ($elementos.length === 0) {
+        cy.wait('@formaPagamento', { timeout: 20000 })
+      } else {
+        cy.get(locDocumentos.documento.selecionarFormaPagamento)
+          .contains(seedTestDocumento.formaPagamento).click()
+      }
+    })
+
+
 
     if (seedTestDocumento.condicaoPagamento) {
       cy.log('Selecionar Condicao de pagamento')
@@ -513,7 +519,7 @@ class Documentos {
         // Obtenha todos os documentos exibidos na página
         cy.get(locDocumentos.dashboard.cardDocumento).then((cards) => {
           // Crie um array com os documentos exibidos
-          const documentosExibidos = [];
+          const documentosExibidos = []
           cards.each((index, card) => {
             const documento = {
               numeroDocumento: Cypress.$(card).find(locDocumentos.dashboard.numeroDocumento).text(),
@@ -522,49 +528,49 @@ class Documentos {
               pessoa: Cypress.$(card).find(locDocumentos.dashboard.pessoaDocumento).text(),
               conferido: Cypress.$(card).find(locDocumentos.dashboard.conferido).text(),
               valor: Cypress.$(card).find(locDocumentos.dashboard.valorDocumento).text()
-            };
-            documentosExibidos.push(documento);
-          });
+            }
+            documentosExibidos.push(documento)
+          })
 
           // Verifique se cada documento no JSON está presente na lista de documentos exibidos
           seedTestDocumento.cardDocumento.forEach((documentoEsperado) => {
-            const documentoEncontrado = documentosExibidos.find(doc => doc.numeroDocumento === documentoEsperado.numeroDocumento);
+            const documentoEncontrado = documentosExibidos.find(doc => doc.numeroDocumento === documentoEsperado.numeroDocumento)
 
-            expect(documentoEncontrado).to.not.be.undefined;
+            expect(documentoEncontrado).to.not.be.undefined
             if (documentoEncontrado) {
               // Valide todos os campos do documento
-              expect(documentoEncontrado.numeroDocumento).to.equal(documentoEsperado.numeroDocumento);
-              expect(documentoEncontrado.categoriasDescricao).to.equal(documentoEsperado.categoriasDescricao);
+              expect(documentoEncontrado.numeroDocumento).to.equal(documentoEsperado.numeroDocumento)
+              expect(documentoEncontrado.categoriasDescricao).to.equal(documentoEsperado.categoriasDescricao)
 
               // Validação da operação com condição para equivalência
               if ((documentoEncontrado.operacao === 'Compensação a Receber' && documentoEsperado.operacao.descricao === 'Adiantamento a Pagar') ||
                 (documentoEncontrado.operacao === 'Adiantamento a Pagar' && documentoEsperado.operacao.descricao === 'Compensação a Receber')) {
-                expect(documentoEncontrado.operacao).to.be.oneOf(['Compensação a Receber', 'Adiantamento a Pagar']);
+                expect(documentoEncontrado.operacao).to.be.oneOf(['Compensação a Receber', 'Adiantamento a Pagar'])
               } else {
-                expect(documentoEncontrado.operacao).to.equal(documentoEsperado.operacao.descricao);
+                expect(documentoEncontrado.operacao).to.equal(documentoEsperado.operacao.descricao)
               }
 
               if (seedTestDocumento.filtroPessoa) {
                 expect(documentoEncontrado.pessoa).to.equal(seedTestDocumento.filtroPessoa)
               } else {
-                expect(documentoEncontrado.pessoa).to.equal(documentoEsperado.pessoa.descricao);
+                expect(documentoEncontrado.pessoa).to.equal(documentoEsperado.pessoa.descricao)
               }
 
               if (seedTestDocumento.filtroConferido == "Conferido: Sim") {
-                expect(documentoEncontrado.conferido).to.equal("Sim");
+                expect(documentoEncontrado.conferido).to.equal("Sim")
               } else if (seedTestDocumento.filtroConferido == "Conferido: Não") {
-                expect(documentoEncontrado.conferido).to.equal("Não");
+                expect(documentoEncontrado.conferido).to.equal("Não")
               } else {
                 // Validação do campo conferido com transformação
-                const conferidoEsperado = documentoEsperado.conferido ? 'Sim' : 'Não';
-                expect(documentoEncontrado.conferido).to.equal(conferidoEsperado);
+                const conferidoEsperado = documentoEsperado.conferido ? 'Sim' : 'Não'
+                expect(documentoEncontrado.conferido).to.equal(conferidoEsperado)
               }
 
-              const valorFormatado = formatarValorComoBRL(documentoEsperado.valor);
-              expect(documentoEncontrado.valor).to.equal(valorFormatado);
+              const valorFormatado = formatarValorComoBRL(documentoEsperado.valor)
+              expect(documentoEncontrado.valor).to.equal(valorFormatado)
             }
-          });
-        });
+          })
+        })
       }
 
       if (seedTestDocumento.semDocumento) {

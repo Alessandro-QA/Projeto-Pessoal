@@ -30,7 +30,7 @@ const locators = {
     selectTipoApuracao: '[data-cy=select-apuracao]',
     listItemsTipoApuracao: '[data-cy=select-apuracao] .list__items',
     buttonAddInscricaoEstadual: '[data-cy=button-add-inscricao-estadual]',
-    iconExpandirCadastroIe: '[data-cy=card-inscricao-estadual] .siagri-icon-arrow-right',
+    iconExpandirCadastroIe: '[data-cy="nome-inscricao-estadual"]',
     inputInscricaoEstadual: '[data-cy=card-inscricao-estadual] [data-cy=input-inscricao-estadual] input',
     inputDescricaoIe: '[data-cy=card-inscricao-estadual] [data-cy=input-nome-inscricao-estadual] input',
     inputCepIe: '[data-cy=card-inscricao-estadual] [data-cy="input-cep"] input',
