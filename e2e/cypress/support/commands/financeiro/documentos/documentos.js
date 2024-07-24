@@ -510,10 +510,8 @@ class Documentos {
 
     // Espera pela requisição e armazena o corpo da resposta em seedTestDocumento.cardDocumento
     cy.wait('@listagem', { timeout: 15000 }).then((interception) => {
-
       if (seedTestDocumento.cardDocumento) {
-
-        // Ordenar os documentos por data (dia, mês e ano), e depois por número do documento
+        // Armazena a resposta no seedTestDocumento
         seedTestDocumento.cardDocumento = interception.response.body
 
         // Obtenha todos os documentos exibidos na página
@@ -534,22 +532,19 @@ class Documentos {
 
           // Verifique se cada documento no JSON está presente na lista de documentos exibidos
           seedTestDocumento.cardDocumento.forEach((documentoEsperado) => {
-            const documentoEncontrado = documentosExibidos.find(doc => doc.numeroDocumento === documentoEsperado.numeroDocumento)
+            const documentoEncontrado = documentosExibidos.find(doc =>
+              doc.numeroDocumento === documentoEsperado.numeroDocumento &&
+              doc.operacao === documentoEsperado.operacao.descricao
+            )
 
             expect(documentoEncontrado).to.not.be.undefined
             if (documentoEncontrado) {
               // Valide todos os campos do documento
               expect(documentoEncontrado.numeroDocumento).to.equal(documentoEsperado.numeroDocumento)
               expect(documentoEncontrado.categoriasDescricao).to.equal(documentoEsperado.categoriasDescricao)
-
-              // Validação da operação com condição para equivalência
-              if ((documentoEncontrado.operacao === 'Compensação a Receber' && documentoEsperado.operacao.descricao === 'Adiantamento a Pagar') ||
-                (documentoEncontrado.operacao === 'Adiantamento a Pagar' && documentoEsperado.operacao.descricao === 'Compensação a Receber')) {
-                expect(documentoEncontrado.operacao).to.be.oneOf(['Compensação a Receber', 'Adiantamento a Pagar'])
-              } else {
-                expect(documentoEncontrado.operacao).to.equal(documentoEsperado.operacao.descricao)
-              }
-
+              
+              expect(documentoEncontrado.operacao).to.equal(documentoEsperado.operacao.descricao)
+              
               if (seedTestDocumento.filtroPessoa) {
                 expect(documentoEncontrado.pessoa).to.equal(seedTestDocumento.filtroPessoa)
               } else {
