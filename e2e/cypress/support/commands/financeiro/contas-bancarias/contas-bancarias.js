@@ -4,6 +4,9 @@ import locContaBancaria from '../../../locators/financeiro/contas-bancarias/loca
 const dayjs = require('dayjs')
 
 class ContaBancaria {
+  constructor() {
+    this.idConta = null; // Declaração da variável como propriedade da classe para ser usada em qualquer método
+  }
   /**
    * Metodo para o cadastro e edição de uma conta Bancaria
    * @param {*} seedTestContaBancaria
@@ -13,16 +16,24 @@ class ContaBancaria {
     const locatorTituloPagina = locContaBancaria.dashboard.titulo
     const tituloPagina = 'Contas bancárias'
 
-    cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/**').as('detalhesConta')
 
-    cy.log('Navegar para Contas Bancárias')
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    cy.intercept('POST', `${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`).as('postConta')
+
+    //cy.intercept('PUT', `${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`).as('putConta')
+
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Contas Bancárias')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.desabilitarPopUpNotificacao()
+      }
+      cy.log(currentPath)
+    })
 
     if (seedTestContaBancaria.adicionar) {
       cy.log('Adicionar uma conta nova')
       cy.log('Clicar no botao adicionar conta')
       cy.getVisible(locContaBancaria.dashboard.novaConta).click()
-
       cy.getVisible(locContaBancaria.contaBancaria.titulo).should(($el) => {
         expect($el).to.contain.text('Nova Conta')
       })
@@ -44,7 +55,7 @@ class ContaBancaria {
           .contains(seedTestContaBancaria.nomeConta).click()
       }
 
-      cy.wait('@detalhesConta')
+      cy.wait('@putConta')
 
       cy.log('Validar nome da conta na tela de detalhes')
       cy.getVisible(locContaBancaria.detalhesConta.nomeConta).should(($el) => {
@@ -54,7 +65,7 @@ class ContaBancaria {
       cy.log('Clicar no botão de editar conta bancaria')
       cy.getVisible(locContaBancaria.detalhesConta.buttonEditar).click()
 
-      cy.wait('@detalhesConta')
+      cy.wait('@putConta')
     }
 
     if (seedTestContaBancaria.adicionar) {
@@ -207,15 +218,66 @@ class ContaBancaria {
     cy.getVisible(locContaBancaria.contaBancaria.adicionar)
       .click()
 
-    cy.wait('@detalhesConta')
-
     cy.log('Validar mensagem de sucesso')
     cy.get(locContaBancaria.contaBancaria.mensagemSucesso).should(($el) => {
-      expect($el).exist.and.to.contain.text('Conta salva com sucesso')
+      expect($el).exist.and.to.contain.text('Conta adicionada com sucesso')
     })
 
-    cy.log('Validar que o botão de adicionar não exista mais')
-    cy.get(locContaBancaria.contaBancaria.adicionar).should('not.exist')
+    cy.log('Garantir que a tela foi fechada')
+    cy.get(locContaBancaria.contaBancaria.tipoConta).should('not.exist')
+
+    cy.wait('@postConta').then(interception => {
+      // Verifica se a requisição retornou com sucesso (status 200)
+      expect(interception.response.statusCode).to.eq(200)
+
+      // Captura o response da requisição POST
+      const responseBody = interception.response.body
+      cy.log(responseBody)
+      cy.log(responseBody.data.id)
+      this.idConta = responseBody.data.id
+    })
+  }
+
+  validarCadastro(seedTestContaBancaria) {
+    const url = '/financeiro/contas-bancarias'
+    const locatorTituloPagina = locContaBancaria.dashboard.titulo
+    const tituloPagina = 'Contas bancárias'
+
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Contas Bancárias')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.desabilitarPopUpNotificacao()
+      }
+      cy.log(currentPath)
+    })
+
+    cy.log('Pesquisar a Conta Criada')
+    cy.get(locContaBancaria.dashboard.pesquisarConta, { timeout: 5000 })
+      .should('exist').and('be.visible')
+      .click()
+      .clear()
+      .type(seedTestContaBancaria.nomeConta)
+      .type('{enter}')
+
+    if (seedTestContaBancaria.tipoConta == "Cartão de crédito") {
+      cy.log('Verifica se a conta do tipo Cartão de Crédito criada existe')
+      cy.get(locContaBancaria.dashboard.cardCartao).contains(seedTestContaBancaria.nomeConta).should('exist')
+    }
+    else {
+      cy.log('Verifica se a conta criada existe')
+      cy.get(locContaBancaria.dashboard.cardConta).contains(seedTestContaBancaria.nomeConta).should('exist')
+    }
+
+    cy.log('Deleta Conta Criada Para Evitar Acumulo de Registro')
+    cy.wrap(this.idConta).then((idConta) => {
+      cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`, idConta).then((responseDelete) => {
+        expect(responseDelete.status).to.be.equal(200)
+      })
+    })
+
+    cy.log('Navegar de volta para Contas Bancárias após exclusão')
+    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
   }
 
   /**
@@ -318,11 +380,11 @@ class ContaBancaria {
 
     cy.log('Validar mensagem de sucesso')
     cy.get(locContaBancaria.contaBancaria.mensagemSucesso).should(($el) => {
-      expect($el).exist.and.to.contain.text('Conta salva com sucesso')
+      expect($el).exist.and.to.contain.text('Conta adicionada com sucesso')
     })
 
-    cy.log('Validar que o botão de adicionar não exista mais')
-    cy.get(locContaBancaria.contaBancaria.adicionar).should('not.exist')
+    cy.log('Garantir que a tela foi fechada')
+    cy.get(locContaBancaria.contaBancaria.tipoConta).should('not.exist')
   }
 
   /**
@@ -672,7 +734,7 @@ class ContaBancaria {
     cy.location('pathname').then((currentPath) => {
 
       // Expressão regular para verificar o caminho ( Mesmo que esteja já dentro dos lançamentos )
-      const pathPattern = /^\/financeiro\/contas-bancarias\/cartoes\/lancamento\/[^\/]+$/;
+      const pathPattern = /^\/financeiro\/contas-bancarias\/cartoes\/lancamento\/[^\/]+$/
 
       if (!pathPattern.test(currentPath)) {
         cy.log('Navegar para Contas Bancárias')
@@ -724,19 +786,19 @@ class ContaBancaria {
       cy.get(locContaBancaria.lancamentosCartao.dataFim)
         .clear()
         .type(seedTestLancamentoCartao.dataFim)
-        .type('{enter}');
+        .type('{enter}')
 
     }
 
     cy.wait('@listagemCartao').then(interception => {
       // Aqui você pode acessar a resposta da interceptação
-      const response = interception.response;
+      const response = interception.response
 
       // Exemplo de como acessar dados da resposta
-      cy.log(response.body); // Exibe o corpo da resposta no console
+      cy.log(response.body) // Exibe o corpo da resposta no console
       seedTestLancamentoCartao.validarCartao = response.body.movimentacoesDiarias
       // Você pode continuar seus testes ou asserções aqui dentro
-    });
+    })
 
 
 
@@ -746,25 +808,170 @@ class ContaBancaria {
     cy.get('.card-timeline .card-lancamento-wrapper').each(($card, index, $list) => {
       // Dentro de cada card, validar os detalhes da transação
       cy.wrap($card).within(() => {
-        cy.get('[data-cy="span-categoria-lancamento"]').should('contain.text', seedTestLancamentoCartao.validarCartao[index].categoria);
+        cy.get('[data-cy="span-categoria-lancamento"]').should('contain.text', seedTestLancamentoCartao.validarCartao[index].categoria)
         // Validar operação, ignorando acentos 
         cy.get('[data-cy="span-operacao-lancamento"]').invoke('text').then((text) => {
           const operacaoTexto = text.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos e converte para minúsculas
           const operacaoEsperada = seedTestLancamentoCartao.validarCartao[index].operacao.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos e converte para minúsculas
 
-          expect(operacaoTexto).to.contain(operacaoEsperada); // Verifica se o texto contém a operação esperada
-        });
+          expect(operacaoTexto).to.contain(operacaoEsperada) // Verifica se o texto contém a operação esperada
+        })
         cy.get('[data-cy="span-valor-lancamento"]').invoke('text').then((text) => {
           // Extrair o valor numérico do texto e converter para float
-          const valorTexto = parseFloat(text.trim().replace(/[^\d,-]/g, '').replace(',', '.'));
-        
+          const valorTexto = parseFloat(text.trim().replace(/[^\d,-]/g, '').replace(',', '.'))
+
           // Comparar com o valor esperado convertido para float
-          expect(valorTexto).to.equal(seedTestLancamentoCartao.validarCartao[index].valor);
-        });
-      });
-    });
+          expect(valorTexto).to.equal(seedTestLancamentoCartao.validarCartao[index].valor)
+        })
+      })
+    })
 
   }
+
+  obrigatoriedadeContaCorrente(seedTestContaBancaria) {
+    const url = '/financeiro/contas-bancarias'
+    const locatorTituloPagina = locContaBancaria.dashboard.titulo
+    const tituloPagina = 'Contas bancárias'
+
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Contas Bancárias')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.desabilitarPopUpNotificacao()
+      }
+      cy.log(currentPath)
+    })
+
+    cy.get(locContaBancaria.dashboard.pesquisarConta, { timeout: 5000 }).click().clear()
+
+    cy.log('Clicar no botao adicionar conta')
+    cy.getVisible(locContaBancaria.dashboard.novaConta).click()
+    cy.getVisible(locContaBancaria.contaBancaria.titulo).should(($el) => {
+      expect($el).to.contain.text('Nova Conta')
+    })
+
+    cy.log('Aguardar o loader desaparecer antes de limpar o tipo de conta')
+    cy.get('div.siagri-loader').should('not.be.visible').then(() => {
+      cy.log('Limpar campo "Tipo de Conta"')
+      cy.getVisible(locContaBancaria.contaBancaria.tipoConta).click()
+      cy.getVisible(locContaBancaria.contaBancaria.limparTipoConta).click()
+    })
+
+    cy.log('Clicar no botão Adicionar')
+    cy.getVisible(locContaBancaria.contaBancaria.adicionar).click()
+
+    cy.log('Verifica se apresentou mensagem de erro para os campos')
+    cy.get('.el-form-item__error')
+      .filter(':visible') // Filtra apenas os elementos visíveis
+      .should('have.length', 9) // Verifica se há exatamente 9 elementos visíveis
+
+    cy.log('Verifica se apresentou mensagem de erro suspensa')
+    cy.get('.el-message__content').should('be.visible')
+
+    cy.log('Clicar em Cancelar')
+    cy.get(locContaBancaria.contaBancaria.cancelar).click()
+      .then(() => {
+        // Aguarda até que a janela não esteja mais visível
+        cy.get(locContaBancaria.contaBancaria.titulo).should('not.exist')
+      })
+  }
+
+  obrigatoriedadeContaTesouraria(seedTestContaBancaria) {
+    const url = '/financeiro/contas-bancarias'
+    const locatorTituloPagina = locContaBancaria.dashboard.titulo
+    const tituloPagina = 'Contas bancárias'
+
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Contas Bancárias')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.desabilitarPopUpNotificacao()
+      }
+      cy.log(currentPath)
+    })
+
+    cy.get(locContaBancaria.dashboard.pesquisarConta, { timeout: 5000 }).click().clear()
+
+    cy.log('Clicar no botao adicionar conta')
+    cy.getVisible(locContaBancaria.dashboard.novaConta).click()
+    cy.getVisible(locContaBancaria.contaBancaria.titulo).should(($el) => {
+      expect($el).to.contain.text('Nova Conta')
+    })
+
+    cy.log('Aguardar o loader desaparecer antes de selecionar o tipo de conta')
+    cy.get('div.siagri-loader').should('not.be.visible').then(() => {
+      cy.log('Selecionar Tipo de Conta Tesouraria')
+      cy.get(locContaBancaria.contaBancaria.tipoConta).click()
+        .contains('Conta tesouraria').click()
+    })
+
+    cy.log('Clicar no botão Adicionar')
+    cy.getVisible(locContaBancaria.contaBancaria.adicionar).click()
+
+    cy.log('Verifica se apresentou mensagem de erro para os campos')
+    cy.get('.el-form-item__error')
+      .filter(':visible') // Filtra apenas os elementos visíveis
+      .should('have.length', 4) // Verifica se há exatamente 4 elementos visíveis
+
+    cy.log('Verifica se apresentou mensagem de erro suspensa')
+    cy.get('.el-message__content').should('be.visible')
+
+    cy.log('Clicar em Cancelar')
+    cy.get(locContaBancaria.contaBancaria.cancelar).click()
+      .then(() => {
+        // Aguarda até que a janela não esteja mais visível
+        cy.get(locContaBancaria.contaBancaria.titulo).should('not.exist')
+      })
+  }
+
+  obrigatoriedadeContaCartaoCredito(seedTestContaBancaria) {
+    const url = '/financeiro/contas-bancarias'
+    const locatorTituloPagina = locContaBancaria.dashboard.titulo
+    const tituloPagina = 'Contas bancárias'
+
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Contas Bancárias')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.desabilitarPopUpNotificacao()
+      }
+      cy.log(currentPath)
+    })
+
+    cy.get(locContaBancaria.dashboard.pesquisarConta, { timeout: 5000 }).click().clear()
+
+    cy.log('Clicar no botao adicionar conta')
+    cy.getVisible(locContaBancaria.dashboard.novaConta).click()
+    cy.getVisible(locContaBancaria.contaBancaria.titulo).should(($el) => {
+      expect($el).to.contain.text('Nova Conta')
+    })
+
+    cy.log('Aguardar o loader desaparecer antes de selecionar o tipo de conta')
+    cy.get('div.siagri-loader').should('not.be.visible').then(() => {
+      cy.log('Selecionar Tipo de Conta Cartão de Crédito')
+      cy.get(locContaBancaria.contaBancaria.tipoConta).click()
+        .contains('Cartão de crédito').click()
+    })
+
+    cy.log('Clicar no botão Adicionar')
+    cy.getVisible(locContaBancaria.contaBancaria.adicionar).click()
+
+    cy.log('Verifica se apresentou mensagem de erro para os campos')
+    cy.get('.el-form-item__error')
+      .filter(':visible') // Filtra apenas os elementos visíveis
+      .should('have.length', 7) // Verifica se há exatamente 8 elementos visíveis
+
+    cy.log('Verifica se apresentou mensagem de erro suspensa')
+    cy.get('.el-message__content').should('be.visible')
+
+    cy.log('Clicar em Cancelar')
+    cy.get(locContaBancaria.contaBancaria.cancelar).click()
+      .then(() => {
+        // Aguarda até que a janela não esteja mais visível
+        cy.get(locContaBancaria.contaBancaria.titulo).should('not.exist')
+      })
+  }
+
 
   /**
  * Validar lançamentos dos cartão de crédito via tela de Listagem de Contas Bancárias

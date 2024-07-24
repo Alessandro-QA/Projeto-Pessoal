@@ -1,7 +1,7 @@
 const locators = {
   dashboard: {
     titulo: '[data-cy=header-contas-bancarias] > h1',
-    novaConta: '[data-cy=header-contas-bancarias] button',
+    novaConta: '#root-cnx-header-title-el-button-nova-conta',
     abrirFiltros: '[data-cy=page-filter-contas-bancarias] .el-button--medium',
     fecharFiltro: '[data-cy=page-filter-contas-bancarias] .el-button--secondary',
     limparFiltros: '#root-filtros-cnx-page-filter-cnx-container-filters-div-cnx-container-filters > .el-button',
@@ -33,8 +33,9 @@ const locators = {
   },
 
   contaBancaria: {
-    titulo: '[data-cy=header-cadastro-edicao-conta-bancaria] h1',
+    titulo: '[data-cy="header-cadastro-edicao-conta-bancaria"]',
     tipoConta: '[data-cy=select-tipo-conta]',
+    limparTipoConta: '.siagri-icon-close',
     nomeConta: '[data-cy=input-nome-conta]',
     empresaTitular: '[data-cy=select-empresa-titular]',
     contaPrincipal: '[data-cy=checkbox-conta-principal]',
@@ -49,15 +50,15 @@ const locators = {
     saldoInicial: '[data-cy=input-saldo-inicial] > input',
     saldoAtual: '[data-cy=input-saldo-atual] input',
     banco: '[data-cy=select-banco]',
-    agencia: '[data-cy=input-numero-agencia] input',
-    agenciaDigito: '[data-cy=input-digito-agencia]',
-    numeroConta: '[data-cy=input-numero-conta] input',
-    contaDigito: '[data-cy=input-digito-conta]',
+    agencia: '[data-cy="input-numero-agencia"]',
+    agenciaDigito: '[data-cy="input-digito-agencia"]',
+    numeroConta: '[data-cy="input-numero-conta"]',
+    contaDigito: '[data-cy="input-digito-conta"]',
     incluirSaldo: '[data-cy=checkbox-incluir-saldo-disponivel]',
     ativarInativar: '.situacao.el-col.el-col-5',
-    cancelar: '[data-cy=button-cancelar-salvar] > .el-button--secondary',
-    adicionar: '[data-cy=button-cancelar-salvar] > .el-button--primary',
-    mensagemSucesso: '.el-message__content'
+    cancelar: '.el-button--secondary',
+    adicionar: 'button.el-button.el-button--primary',
+    mensagemSucesso: '.el-message.el-message--success'
   },
 
   lancamentosCartao: {

@@ -1,5 +1,5 @@
 const html = {
-  contaCorrente: `
+Ct1: `
 <div>
     <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
     <span style="color: #b22222;"> Cadastrar Conta Bancaria </span>
@@ -12,18 +12,68 @@ const html = {
 </br>
 <div>
     <span style="color: #800080; font-weight: bold;"> Cenario: </span>
-    <span style="color: #b22222;"> Cadastrar conta bancária </span>
+    <span style="color: #b22222;"> Obrigatoriedade de Campos ao Cadastrar Conta Corrente </span>
 </div>
 <div style="margin-left: 40px;">
     <strong>DADO</strong> que eu queira cadastrar uma nova conta bancária <br/>
     <strong>QUANDO</strong> eu entrar na Dashboard de Contas bancárias <br/>
     <strong>E</strong> clicar em Nova conta <br/>
+    <strong>E</strong> não preencher os campos obrigatórios <br/>
+    <strong>E</strong> clicar em Adicionar <br/>
+    <strong>ENTAO</strong> deverá ser exibida mensagem para cada campo obrigatório não preenchido <br/>
+</div>
+  `,
+Ct2: `
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Cadastrar Conta Bancaria </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente/responsável financeiro da fazenda <br/>
+    <strong>QUERO</strong> cadastrar uma nova conta <br/>
+    <strong>PARA</strong> melhor gestão da fazenda <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Cadastrar Conta Corrente </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira cadastrar uma nova conta bancária do tipo Conta Corrente <br/>
+    <strong>QUANDO</strong> eu entrar na Dashboard de Contas bancárias <br/>
+    <strong>E</strong> clicar em Nova conta <br/>
+    <strong>E</strong> selecionar o tipo de conta 'Conta Corrente' <br/>
     <strong>E</strong> preencher todos os campos obrigatórios <br/>
     <strong>E</strong> clicar em Adicionar <br/>
     <strong>ENTAO</strong> deverá ser salvo e validado na dashboard de Contas bancárias <br/>
 </div>
   `,
-  cartaoCredito: `
+Ct3: `
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Cadastrar Conta Bancaria </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente/responsável financeiro da fazenda <br/>
+    <strong>QUERO</strong> cadastrar uma nova conta <br/>
+    <strong>PARA</strong> melhor gestão da fazenda <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Obrigatoriedade de Campos ao Cadastrar Cartão de Crédito </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira cadastrar uma nova conta bancária <br/>
+    <strong>QUANDO</strong> eu entrar na Dashboard de Contas bancárias <br/>
+    <strong>E</strong> clicar em Nova conta <br/>
+    <strong>E</strong> selecionar o tipo de conta 'Cartão de Crédito' <br/>
+    <strong>E</strong> não preencher os campos obrigatórios <br/>
+    <strong>E</strong> clicar em Adicionar <br/>
+    <strong>ENTAO</strong> deverá ser exibida mensagem para cada campo obrigatório não preenchido <br/>
+</div>
+  `,
+Ct4: `
 <div>
     <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
     <span style="color: #b22222;"> Cadastrar Conta Bancaria </span>
@@ -42,12 +92,38 @@ const html = {
     <strong>DADO</strong> que eu queira cadastrar um novo cartão de crédito <br/>
     <strong>QUANDO</strong> eu entrar na Listagem de Contas bancárias <br/>
     <strong>E</strong> clicar em Nova conta <br/>
+    <strong>E</strong> selecionar o tipo de conta 'Cartão de Crédito' <br/>
     <strong>E</strong> preencher todos os campos obrigatórios <br/>
     <strong>E</strong> clicar em Adicionar <br/>
     <strong>ENTAO</strong> deverá ser salvo e validado na dashboard de Contas bancárias <br/>
 </div>
   `,
-  contaTesouraria: `
+Ct5: `
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Cadastrar Conta Bancaria </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente/responsável financeiro da fazenda <br/>
+    <strong>QUERO</strong> cadastrar uma nova conta <br/>
+    <strong>PARA</strong> melhor gestão da fazenda <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Obrigatoriedade de Campos ao Cadastrar Conta Tesouraria </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira cadastrar uma nova conta bancária <br/>
+    <strong>QUANDO</strong> eu entrar na Dashboard de Contas bancárias <br/>
+    <strong>E</strong> clicar em Nova conta <br/>
+    <strong>E</strong> selecionar o tipo de conta 'Conta Tesouraria' <br/>
+    <strong>E</strong> não preencher os campos obrigatórios <br/>
+    <strong>E</strong> clicar em Adicionar <br/>
+    <strong>ENTAO</strong> deverá ser exibida mensagem para cada campo obrigatório não preenchido <br/>
+</div>
+  `,
+Ct6: `
 <div>
     <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
     <span style="color: #b22222;"> Cadastrar Conta Bancaria </span>
@@ -66,6 +142,7 @@ const html = {
     <strong>DADO</strong> que eu queira cadastrar uma nova conta Tesouraria <br/>
     <strong>QUANDO</strong> eu entrar na Listagem de Contas bancárias <br/>
     <strong>E</strong> clicar em Nova conta <br/>
+    <strong>E</strong> selecionar o tipo de conta 'Conta Tesouraria' <br/>
     <strong>E</strong> preencher todos os campos obrigatórios <br/>
     <strong>E</strong> clicar em Adicionar <br/>
     <strong>ENTAO</strong> deverá ser salvo e validado na dashboard de Contas bancárias <br/>
