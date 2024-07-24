@@ -583,6 +583,39 @@ class Documentos {
   }
 
   /**
+   * Realiza pesquisa de documento na listagem de Documento
+   * @param {*} seedTestDocumento
+   */
+  static buscar(seedTestDocumento) {
+    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem').as('listagem')
+
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Documentos')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        //cy.wait('@listagem', { timeout: 20000 })
+      }
+      cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
+    })
+
+    //cy.wait('@listagem')
+
+    cy.clearLocalStorage('financeiro-documentos-filtros')
+
+
+    if (seedTestDocumento.numero) {
+      // input pesquisar
+      cy.getVisible(locDocumentos.dashboard.pesquisarDocumento).clear()
+        .type(`${seedTestDocumento.numero}{enter}`)
+
+    }
+
+    // Espera pela requisição e armazena o corpo da resposta em seedTestDocumento.cardDocumento
+    cy.wait('@listagem', { timeout: 15000 })
+  }
+
+  /**
    * Valida os detalhes do documento
    * @param {*} seedTestDocumento
    */
@@ -1249,23 +1282,33 @@ class Documentos {
    * Exclui um documento cadastrado
    * @param {*} seedTestDocumento
    */
-  excluir(seedTestDocumento) {
+  excluir(seedTestDocumento, conferido) {
     // Pesquisar documento
-    Documentos.pesquisar(seedTestDocumento)
+
+    cy.log(seedTestDocumento)
+    Documentos.buscar(seedTestDocumento)
 
     cy.intercept('GET', '/api/financeiro/v1/Documento/**').as('detalhesDocumento')
+    cy.intercept('POST', '/api/financeiro/v1/Documento/Listagem').as('listagemDocumentos')
 
     // Abrir documento
-    cy.get(locDocumentos.dashboard.selecionarDocumento)
-      .contains(seedTestDocumento.numeroDocumento)
-      .parents(locDocumentos.dashboard.selecionarDocumento)
-      .click({ force: true })
+    cy.get(locDocumentos.dashboard.cardDocumento)
+      .find(locDocumentos.dashboard.numeroDocumento)
+      .each(($el) => {
+        const text = $el.text()
+        if (text.toLowerCase() === seedTestDocumento.numero.toLowerCase()) {
+          cy.wrap($el).click()
+        }
+      })
 
     cy.wait('@detalhesDocumento')
 
-    if (seedTestDocumento.excluirInvalidado) {
+    if (conferido) {
       cy.getVisible(locDocumentos.detalhesDocumento.botaoRemoverDocumento)
         .find('button').should('have.disabled', 'true')
+
+      //Voltar a listagem 
+      cy.getVisible(locDocumentos.detalhesDocumento.voltar).click()
     }
     else {
       // Excluir documento
@@ -1278,7 +1321,10 @@ class Documentos {
         .contains('Sim').click({ force: true })
 
       cy.get(locDocumentos.detalhesDocumento.mensagemSucesso).contains('Documento excluído com sucesso')
+
     }
+
+    cy.wait('@listagemDocumentos')
   }
 
   /**
@@ -1287,16 +1333,28 @@ class Documentos {
    */
   conferir(seedTestDocumento) {
     // Pesquisar documento
-    Documentos.pesquisar(seedTestDocumento)
+    Documentos.buscar(seedTestDocumento)
+
+    cy.intercept('GET', '/api/financeiro/v1/Documento/**').as('detalhesDocumento')
 
     // Abrir documento
-    cy.get(locDocumentos.dashboard.selecionarDocumento)
-      .contains(seedTestDocumento.numeroDocumento)
-      .parents(locDocumentos.dashboard.selecionarDocumento)
-      .click({ force: true })
+    cy.get(locDocumentos.dashboard.cardDocumento)
+      .find(locDocumentos.dashboard.numeroDocumento)
+      .each(($el) => {
+        const text = $el.text()
+        if (text.toLowerCase() === seedTestDocumento.numero.toLowerCase()) {
+          cy.wrap($el).click()
+        }
+      })
+
+    cy.wait('@detalhesDocumento')
 
     // Conferir Documento
     cy.getVisible(locDocumentos.detalhesDocumento.botaoConferir).click()
+
+    //Voltar a listagem 
+    cy.getVisible(locDocumentos.detalhesDocumento.voltar).click()
+
   }
 
   /**
