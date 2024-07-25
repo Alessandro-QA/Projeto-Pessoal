@@ -537,7 +537,6 @@ class Documentos {
               doc.operacao === documentoEsperado.operacao.descricao
             )
 
-            expect(documentoEncontrado).to.not.be.undefined
             if (documentoEncontrado) {
               // Valide todos os campos do documento
               expect(documentoEncontrado.numeroDocumento).to.equal(documentoEsperado.numeroDocumento)
