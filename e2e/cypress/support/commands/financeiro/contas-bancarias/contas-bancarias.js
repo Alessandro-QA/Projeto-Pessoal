@@ -275,9 +275,9 @@ class ContaBancaria {
         expect(responseDelete.status).to.be.equal(200)
       })
     })
-
-    cy.log('Navegar de volta para Contas Bancárias após exclusão')
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    
+    // Oculta o #api-view para continuar na página Atual
+    cy.hideApiView()
   }
 
   /**

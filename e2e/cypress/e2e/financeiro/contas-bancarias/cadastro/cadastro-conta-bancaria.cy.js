@@ -19,42 +19,48 @@ describe('Contas Bancárias', { tags: '@contasBancarias' }, () => {
     })
 
     it('Deve validar na listagem o cadastro - Conta Corrente', { retries: { runMode: 1, openMode: 1, }, }, function () {
+      cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct3)
+
       ContaBancaria.validarCadastro(seedTestContaBancaria.contaCorrente)
     })
   })
 
   context('Cadastro de Conta - Cartão de Crédito', () => {
     it('Deve validar a obrigatoriedade dos campos ao cadastrar conta bancária - Cartão de Crédito', { retries: { runMode: 1, openMode: 1, }, }, function () {
-      cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct3)
+      cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct4)
 
       ContaBancaria.obrigatoriedadeContaCartaoCredito(seedTestContaBancaria.cartaoCredito)
     })
 
     it('Deve cadastrar conta bancária - Cartão de Crédito', { retries: { runMode: 1, openMode: 1, }, }, function () {
-      cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct4)
+      cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct5)
 
       ContaBancaria.cadastroEditar(seedTestContaBancaria.cartaoCredito)
     })
 
     it('Deve validar na listagem o cadastro - Cartão de Crédito', { retries: { runMode: 1, openMode: 1, }, }, function () {
+      cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct6)
+
       ContaBancaria.validarCadastro(seedTestContaBancaria.cartaoCredito)
     })
   })
 
   context('Cadastro de Conta - Tesouraria', () => {
     it('Deve validar a obrigatoriedade dos campos ao cadastrar conta bancária - Tesouraria', { retries: { runMode: 1, openMode: 1, }, }, function () {
-      cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct5)
+      cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct7)
 
       ContaBancaria.obrigatoriedadeContaTesouraria(seedTestContaBancaria.contaCorrente)
     })
 
     it('Deve cadastrar conta bancária - Conta Tesouraria', { retries: { runMode: 1, openMode: 1, }, }, function () {
-      cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct6)
+      cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct8)
 
       ContaBancaria.cadastroEditar(seedTestContaBancaria.contaTesouraria)
     })
 
     it('Deve validar na listagem o cadastro - Conta Tesouraria', { retries: { runMode: 1, openMode: 1, }, }, function () {
+      cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct9)
+
       ContaBancaria.validarCadastro(seedTestContaBancaria.contaTesouraria)
     })
   })
