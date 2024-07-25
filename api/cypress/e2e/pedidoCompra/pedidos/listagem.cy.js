@@ -84,7 +84,7 @@ context('Pedido Compra', () => {
             })
         
             it('CT4 - Listagem de Pedidos por Safra', () => {
-                // cy.allureDescriptionHtml(description.Ct4).allureSeverity('normal')
+                cy.allureDescriptionHtml(description.Ct4).allureSeverity('normal')
 
                 cy.fixture('pedidoCompra/pedidos/listagem/payloadCt4.json').then((payload) => {
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/Pedidos/Listagem`, payload)

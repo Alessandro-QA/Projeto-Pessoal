@@ -40,7 +40,6 @@ context('Pedido Compra', () => {
                 });
             });
 
-
             it('CT2 - Materiais Mais Pedidos para Fazenda Específica', () => {
                  cy.allureDescriptionHtml(description.Ct2).allureSeverity('normal')
 
