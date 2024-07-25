@@ -94,7 +94,7 @@ context('Cultura', () => {
 
             })
 
-            it.skip('CT5 - Deve listar as variedades pela Detentora', () => {
+            it('CT5 - Deve listar as variedades pela Detentora', () => {
                 cy.fixture('cultura/culturaVariedade/list/paramsCt5.json').then((params) => {
 
                     cy.allureDescriptionHtml(description.Ct5).allureSeverity('normal')
@@ -112,8 +112,8 @@ context('Cultura', () => {
                                 expect(item).to.have.property('detentoras').that.is.an('array');
                                 item.detentoras.forEach(detentora => {
                                     expect(detentora.detentora).to.have.property('descricao').that.equals(params.Detentora);
-                                });
-                            });
+                                })
+                            })
 
                         })
                 })

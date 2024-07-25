@@ -843,4 +843,9 @@ class ContaBancaria {
   }
 }
 
+// Função para formatar o valor como moeda brasileira
+function formatarValorComoBRL(valor) {
+  return `R$${valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
+
 export default new ContaBancaria()
