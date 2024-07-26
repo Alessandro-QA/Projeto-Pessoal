@@ -80,6 +80,9 @@ context('Pedido Compra', () => {
                     payload.data = hoje;
                     payload.financeiro.parcelas[0].vencimento = daquiUmMes;
 
+                    payload.id = recebimentoID
+                    payload.origem.id = recebimentoID
+
                     cy.putRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento`, payload)
                         .then((response) => {
                             expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'));
