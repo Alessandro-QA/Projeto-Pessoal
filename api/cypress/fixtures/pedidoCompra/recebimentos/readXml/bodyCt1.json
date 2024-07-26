@@ -7,7 +7,7 @@
         "dataEmissao": "2021-12-10T10:40:56-03:00",
         "dataRecebimento": "2024-07-02T09:34:22.5565455+00:00",
         "fornecedor": {
-            "id": null,
+            "id": "f0bfd3a8-614d-48c1-8544-4ec8cdac7810",
             "nome": "TESTE DO CONTROLE",
             "nomeFantasia": null,
             "documentoPrincipal": "94813102000170",
