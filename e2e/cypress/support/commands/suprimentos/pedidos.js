@@ -12,11 +12,24 @@ class Pedidos {
    * @param {} seedTest
    * */
   cadastrar(seedTest) {
+
     var listaMateriais = seedTest.listaMateriais
     var ciclos = seedTest.ciclos
 
+    cy.intercept('POST', '/api/pedido-compra/v1/Pedidos/Listagem').as('listaPedidos')
+    cy.intercept('GET', `${Cypress.env('baseUrlDaas')}/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**`).as('ciclosRateio')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?SafraId=**`).as('getSafra')
+
     // Navegar para Pedidos
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Pedidos')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.wait('@listaPedidos', { timeout: 20000 })
+      }
+      cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
+    })
 
     // botao adicionar pedido
     cy.getVisible(locatorPedidos.dashboard.botaoNovoPedido).click()
@@ -37,8 +50,6 @@ class Pedidos {
     // numero pedido fornecedor
     cy.getVisible(locatorPedidos.registrarEditarPedido.inputNumeroPedidoFornecedor)
       .clear().type(seedTest.numeroPedidoFornecedor)
-
-    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?SafraId=**`).as('getSafra')
 
     // safra
     cy.getVisible(locatorPedidos.registrarEditarPedido.selectSafra).click()
@@ -75,6 +86,22 @@ class Pedidos {
     // data da entrega
     cy.getVisible(locatorPedidos.registrarEditarPedido.inputDataEntrega)
       .clear().type(`${seedTest.dataEntrega}{enter}`)
+
+    // Aguardar a chamada à rota ser feita e obter o response
+    cy.wait('@ciclosRateio').then((interception) => {
+      // Extrair o array de ciclos do response
+      const responseCiclos = interception.response.body;
+
+      // Adicionar cada objeto ao array ciclos
+      ciclos = responseCiclos.map(ciclo => ({
+        nomeCiclo: ciclo.descricao,
+        porcentagemCiclo: ciclo.percentual
+      }));
+
+      // Usar cy.wrap() para tornar ciclos disponível para outros comandos
+      cy.wrap(ciclos).as('ciclos');
+    });
+
 
     // material
     listaMateriais.forEach((listaMaterial, index) => {
@@ -144,25 +171,36 @@ class Pedidos {
     })
 
     // rateio entre ciclos
-    cy.getVisible(locatorPedidos.registrarEditarPedido.checkBoxRateioEntreCiclos).should(($el) => {
-      expect($el).to.have.attr('aria-checked')
+    cy.get(locatorPedidos.registrarEditarPedido.checkBoxRateioEntreCiclos).should(($el) => {
+      expect($el).to.have.class('is-checked');
     })
 
-    // validar nome, porcentagem e valor dos ciclos
-    ciclos.forEach((ciclo, index) => {
-      // nome ciclo
-      cy.get(locatorPedidos.registrarEditarPedido.selectCiclo).eq(index).should(($el) => {
-        expect($el).to.contain.text(ciclo.nomeCiclo)
-      })
+    cy.get('@ciclos').then((ciclos) => {
+      seedTest.ciclos = ciclos
+      cy.log(ciclos)
+      // validar nome, porcentagem e valor dos ciclos
 
-      // porcentagem ciclo
-      cy.get(locatorPedidos.registrarEditarPedido.inputPorcentagemCiclo).eq(index).should(($el) => {
-        expect($el).to.have.value(ciclo.porcentagemCiclo)
-      })
+      ciclos.forEach((ciclo, index) => {
+        // nome ciclo
+        cy.get(locatorPedidos.registrarEditarPedido.selectCiclo).eq(index).should(($el) => {
+          expect($el).to.contain.text(ciclo.nomeCiclo)
+        })
 
-      // valor ciclo
-      cy.get(locatorPedidos.registrarEditarPedido.inputValorCiclo).eq(index).should(($el) => {
-        expect($el).to.have.value(ciclo.valorCiclo)
+        // porcentagem ciclo
+        cy.get(locatorPedidos.registrarEditarPedido.inputPorcentagemCiclo).eq(index).should(($el) => {
+          const valorEsperado = `${ciclo.porcentagemCiclo.toFixed(2).replace('.', ',')}%`;
+          expect($el).to.have.value(valorEsperado);
+        });
+
+        
+
+        // valor ciclo calculado com base na porcentagem e valor total
+        const valorEsperado = (seedTest.valorTotalMateriais * ciclo.porcentagemCiclo / 100).toFixed(2);
+
+        // valor ciclo
+        cy.get(locatorPedidos.registrarEditarPedido.inputValorCiclo).eq(index).should(($el) => {
+          expect($el).to.have.value(valorEsperado);
+        });
       })
     })
 
