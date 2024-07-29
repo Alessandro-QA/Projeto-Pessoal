@@ -56,7 +56,10 @@ class Cultura {
 
         cy.log('Selecionar Material da Colheita')
         cy.getVisible(locCultura.cadastroCultura.materialColheita).click()
-        cy.getVisible(locCultura.cadastroCultura.buscaMaterialColheita).click().type(seedTestCultura.materialColheita)
+        cy.get(locCultura.cadastroCultura.buscaMaterialColheita)
+            .filter(':visible')
+            .click()
+            .type(seedTestCultura.materialColheita)
         cy.contains(seedTestCultura.materialColheita).click()
 
         cy.get(locCultura.cadastroCultura.carregarMaterial).should('have.css', 'display', 'none')
@@ -328,7 +331,10 @@ class Cultura {
 
         cy.log('Selecionar Material da Colheita')
         cy.getVisible(locCultura.cadastroCultura.materialColheita).click()
-        cy.getVisible(locCultura.cadastroCultura.buscaMaterialColheita).click().type('MATERIAL')
+        cy.get(locCultura.cadastroCultura.buscaMaterialColheita)
+            .filter(':visible')
+            .click()
+            .type('MATERIAL')
         cy.contains('MATERIAL').click()
 
         cy.get(locCultura.cadastroCultura.carregarMaterial).should('have.css', 'display', 'none')
