@@ -1,46 +1,38 @@
 {
-  "dataPedido": "20/09/2021",
-  "nomeFornecedor": "Empresa Fornecedor - CNPJ",
-  "cnpjFornecedor": "37.062.568/0001-47",
-  "numeroPedidoFornecedor": "100",
-  "safra": "2020/2020",
-  "fazenda": "Fazenda Reserva",
+  "statusPedido": "Aguardando Entrega",
+  "dataPedido": "20/09/2024",
+  "nomeFornecedor": "Fornecedor Teste API",
+  "cnpjFornecedor": "57.046.724/0001-93",
+  "numeroPedidoFornecedor": "78621642",
+  "safra": "2023 / 2024",
+  "fazenda": "Fazenda Teste API",
   "mesmoLocalEntrega": true,
-  "empresa": "Empresa Produtor - CPF",
-  "inscricaoEstadual": "545612",
-  "dataEntrega": "27/09/2021",
-  "localEntrega": "Fazenda Reserva",
+  "empresa": "Empresa Teste API",
+  "inscricaoEstadual": "ISENTO",
+  "dataEntrega": "27/09/2024",
+  "localEntrega": "Teste Fazenda 2",
 
   "listaMateriais": [
     {
-      "material": "M-Soy 8866",
+      "material": "Soja",
       "unidade": "kg",
       "quantidade": "1000",
-      "precoUnitario": "60",
-      "valorTotal": "R$ 60.000,00"
+      "precoUnitario": "10",
+      "valorTotal": 10000
     }
   ],
-  "valorTotalMateriais": "R$ 60.000,00",
+  "valorTotalMateriais": 10000,
 
   "formaPagamento": "Boleto",
-  "valorParcela": "R$ 60.000,00",
+  "valorParcela": 10000,
 
-  "categoriaPorMaterial": true,
+  "categoriaPorMaterial": false,
   "categoria": "Sementes",
   "porcentagemCategoria": "100,00%",
-  "valorCategoria": "R$ 60.000,00",
+  "valorCategoria": 10000,
 
   "rateioEntreCiclos": true,
   "ciclos": [
-    {
-      "nomeCiclo": "Arroz - 2020/2020",
-      "porcentagemCiclo": "61,54%",
-      "valorCiclo": "R$ 36.924,00"
-    },
-    {
-      "nomeCiclo": "Algodão - 2020/2020",
-      "porcentagemCiclo": "38,46%",
-      "valorCiclo": "R$ 23.076,00"
-    }
+   
   ]
 }

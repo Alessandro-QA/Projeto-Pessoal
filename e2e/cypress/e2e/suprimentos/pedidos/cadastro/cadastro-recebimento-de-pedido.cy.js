@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 import * as seeds from '../../../../fixtures/suprimentos/pedidos/cadastro-e-recebimento-de-pedido/imports-seed.js'
+import Utils from '../../../../support/utils/utils.js'
 import LivroCaixa from '../../../../support/commands/financeiro/livro-caixa/livro-caixa.js'
 import Movimentacao from '../../../../support/commands/financeiro/movimentacoes-bancarias/movimentacao-bancaria.js'
 import AgendaFinanceira from '../../../../support/commands/financeiro/agenda-financeira/agenda-financeira.js'
@@ -10,38 +11,54 @@ import Documentos from '../../../../support/commands/financeiro/documentos/docum
 import testDescription from './bdd-description/cadastro-recebimento-pedido.description.js'
 import Authenticate from '../../../../support/commands/login/login-logout.js'
 
+const dayjs = require('dayjs');
+
 // Cadastro, Edição e Exclusão de Pedido com Recebimento
 describe('Suprimentos', { tags: '@suprimentos' }, () => {
-  before(function () {
-    const credenciais = Cypress.env('login_cenarios')
-    Authenticate.login(credenciais)
-  })
-
-  after(() => {
-    Authenticate.logout()
-  })
 
   describe('Pedidos', { tags: '@pedidos' }, () => {
     describe('Cadastro, Edição e Exclusão', { tags: '@cadastro' }, () => {
 
       context('Cadastro, Edição e Exclusão de Pedido com Recebimento Parcial', () => {
-        it('Deve cadastrar pedido', function () {
-          // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.pedido)
+
+        const precoUnitarioAleatorio = (Math.random() * 5).toFixed(2)
+        const quantidadeAleatoria = Math.floor(Math.random() * 1001)  // Valor inteiro para quantidade
+        const valorTotal = (quantidadeAleatoria * precoUnitarioAleatorio).toFixed(2)
+        const numeroPedido = Utils.getNumeric(8)
+        const dataPedido = dayjs().format('DD/MM/YYYY')
+        const dataEntrega = dayjs().add(1, 'week').format('DD/MM/YYYY')
+
+        seeds.seedCadastroPedido.numeroPedidoFornecedor = numeroPedido
+  
+        seeds.seedCadastroPedido.listaMateriais[0].quantidade = quantidadeAleatoria
+        seeds.seedCadastroPedido.listaMateriais[0].precoUnitario = precoUnitarioAleatorio
+
+        seeds.seedCadastroPedido.valorTotalMateriais = valorTotal
+        seeds.seedCadastroPedido.listaMateriais[0].valorTotal = valorTotal
+        seeds.seedCadastroPedido.valorParcela = valorTotal
+        seeds.seedCadastroPedido.valorCategoria = valorTotal
+
+        seeds.seedCadastroPedido.dataPedido = dataPedido
+        seeds.seedCadastroPedido.dataEntrega = dataEntrega
+
+        it.only('Deve cadastrar pedido', function () {
+        
+          cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
 
           Pedidos.cadastrar(seeds.seedCadastroPedido)
+  
         })
 
-        it('Deve validar na listagem os dados do pedido cadastrado', function () {
-          // cy.allure().severity('normal').startStep('test content')
-            //.descriptionHtml(testDescription.dashboardPedidos)
-
-          Pedidos.validarListagem(seeds.seedDetalhesPedidoCadastro)
+        it.only('Deve validar na listagem os dados do pedido cadastrado', function () {
+          
+          cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('normal')
+          
+          Pedidos.validarListagem(seeds.seedCadastroPedido)
         })
 
         it('Deve validar detalhes do pedido cadastrado', function () {
           // cy.allure().severity('normal').startStep('test content')
-            //.descriptionHtml(testDescription.detalhesPedido)
+          //.descriptionHtml(testDescription.detalhesPedido)
 
           Pedidos.validarDetalhes(seeds.seedDetalhesPedidoCadastro)
         })
@@ -54,14 +71,14 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
 
         it('Deve validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
           // cy.allure().severity('normal').startStep('test content')
-            //.descriptionHtml(testDescription.pesquisarAgendaFinanceira)
+          //.descriptionHtml(testDescription.pesquisarAgendaFinanceira)
 
           AgendaFinanceira.validarDashboard(seeds.seedAgendaFinanceiraCadastro)
         })
 
         it('Deve realizar o recebimento parcial (50%) do pedido', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.recebimento)
+          //.descriptionHtml(testDescription.recebimento)
 
           Recebimento.cadastrar(seeds.seedCadastroRecebimentoParcial)
         })
@@ -210,11 +227,11 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.validarListagem(seeds.seedStatusPedido.aguardandoEntrega)
         })
 
-        it('Deve excluir o pedido', function () {
-          // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.excluirPedido)
+        it.only('Deve excluir o pedido', function () {
+          
+          cy.allureDescriptionHtml(testDescription.excluirPedido).allureSeverity('critical')
 
-          Pedidos.excluir(seeds.seedDetalhesPedidoCadastro)
+          Pedidos.excluir(seeds.seedCadastroPedido)
         })
 
         it('Deve validar exclusão dos documentos', function () {

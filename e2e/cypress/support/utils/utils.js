@@ -26,6 +26,20 @@ class Utils {
     return result;
   }
 
+    /**
+   * Função para gerar uma string numérica aleatória
+   * @param {number} length - Comprimento da string gerada
+   * @returns {string} String alfanumérica aleatória
+   */
+    getNumeric(length) {
+      const characters = '0123456789';
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result;
+    }
+
   /**
    * Substitui uma string (chave e valor) em arquivo
    * @param  {string} searchValue - String de pesquisa

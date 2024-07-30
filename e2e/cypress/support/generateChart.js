@@ -64,7 +64,7 @@ async function generateChart(testTypes) {
         },
         tooltip: {
           callbacks: {
-            label: function(context) {
+            label: function (context) {
               const label = context.label || ''
               const value = context.raw || 0
               const percentage = totalTests ? ((value / totalTests) * 100).toFixed(2) + '%' : '0%'
