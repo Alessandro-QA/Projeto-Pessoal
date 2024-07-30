@@ -124,21 +124,21 @@ class Pedidos {
 
       // quantidade
       cy.getVisible(locatorPedidos.registrarEditarPedido.inputQuantidadeMaterial).eq(index)
-        .clear().type(`{movetoend}${listaMaterial.quantidade}`)
+        .clear().type(listaMaterial.quantidade)
 
       // preco unitario
       cy.getVisible(locatorPedidos.registrarEditarPedido.inputPrecoUnitarioMaterial).eq(index)
-        .clear().type(`{movetoend}${listaMaterial.precoUnitario}`)
+        .clear().type(listaMaterial.precoUnitario)
 
       // valor total
       cy.getVisible(locatorPedidos.registrarEditarPedido.valorTotal).click().eq(index).should(($el) => {
-        expect($el).to.contain.text(listaMaterial.valorTotal)
+        expect($el).to.contain.text(`R$ ${Number(listaMaterial.valorTotal).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`)
       })
     })
 
     // valor total materiais
     cy.getVisible(locatorPedidos.registrarEditarPedido.valorTotalMateriais).should(($el) => {
-      expect($el).to.contain.text(seedTest.valorTotalMateriais)
+      expect($el).to.contain.text(`R$ ${Number(seedTest.valorTotalMateriais).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`)
     })
 
     // forma de pagamento
@@ -147,7 +147,7 @@ class Pedidos {
 
     // valor parcela
     cy.getVisible(locatorPedidos.registrarEditarPedido.valorParcela).should(($el) => {
-      expect($el).to.contain.text(seedTest.valorParcela)
+      expect($el).to.contain.text(`R$ ${Number(seedTest.valorParcela).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`)
     })
 
     // categoria
@@ -167,7 +167,7 @@ class Pedidos {
 
     // valor categoria
     cy.getVisible(locatorPedidos.registrarEditarPedido.inputValorCategoria).should(($el) => {
-      expect($el).to.have.value(seedTest.valorCategoria)
+      expect($el).to.have.value(`R$ ${Number(seedTest.valorCategoria).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`)
     })
 
     // rateio entre ciclos
@@ -192,14 +192,17 @@ class Pedidos {
           expect($el).to.have.value(valorEsperado);
         });
 
-        
-
         // valor ciclo calculado com base na porcentagem e valor total
         const valorEsperado = (seedTest.valorTotalMateriais * ciclo.porcentagemCiclo / 100).toFixed(2);
 
         // valor ciclo
         cy.get(locatorPedidos.registrarEditarPedido.inputValorCiclo).eq(index).should(($el) => {
-          expect($el).to.have.value(valorEsperado);
+          // Extrair o valor, remover o símbolo da moeda e substituir a vírgula por ponto
+          const valorTexto = $el.val().replace('R$ ', '').replace(',', '.');
+
+          // Converter para número e garantir duas casas decimais
+          const valorCiclo = parseFloat(valorTexto).toFixed(2);
+          expect(parseFloat(valorCiclo)).to.be.closeTo(parseFloat(valorEsperado), 0.01);
         });
       })
     })
@@ -221,40 +224,61 @@ class Pedidos {
    * @param {} seedTest
    * */
   excluir(seedTest) {
+
+    cy.intercept('POST', '/api/pedido-compra/v1/Pedidos/Listagem').as('listaPedidos')
+    cy.intercept('DELETE', '/api/pedido-compra/v1/Pedidos/**').as('deletePedido');
+
     // Navegar para Pedidos
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Pedidos')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.wait('@listaPedidos', { timeout: 20000 })
+      }
+      cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
+    })
 
-    // selecionar safra
-    cy.getVisible(locatorPedidos.dashboard.selectSafra).click()
-      .contains(seedTest.safra).click()
-
-    // selecionar fazenda
-    cy.getVisible(locatorPedidos.dashboard.selectFazenda).click()
-      .contains(seedTest.fazenda).click()
-
-    // selecionar empresa
-    cy.getVisible(locatorPedidos.dashboard.selectEmpresa).click()
-      .contains(seedTest.empresa).click()
-
-    // gambira pra fechar o select de empresa
-    cy.getVisible(locatorPedidos.dashboard.titulo).click()
-
-    // alterar visualizacao para cards
-    cy.getVisible(locatorPedidos.dashboard.botaoMudarVisualizacao).click()
-
-    // pesquisar por fornecedor
+    // pesquisar por Numero Pedido
     cy.getVisible(locatorPedidos.dashboard.inputPesquisar)
-      .clear().type(seedTest.nomeFornecedor)
+      .clear().type(seedTest.numeroPedidoFornecedor)
+
+    cy.wait('@listaPedidos', { timeout: 20000 })
 
     cy.intercept('GET', '/api/pedido-compra/v1/Pedidos/PedidoExibicao/**').as('getPedido')
 
-    // abrir pedido
-    cy.getVisible(locatorPedidos.dashboard.cardPedidos).click()
+    // Selecionar todos os <div class="line--wrapper"> dentro da <section>
+    cy.get('section.list')
+      .find('div.line--wrapper').each(($wrapper) => {
+        // Verificar se o número do fornecedor está presente dentro do <div class="line--wrapper">
+        cy.wrap($wrapper)
+          .find('div.line--item-provider_number .line--text')
+          .invoke('text')
+          .then((text) => {
+            if (text.trim() === seedTest.numeroPedidoFornecedor) {
+              // Se encontrar o número do fornecedor, clicar no <div class="line--wrapper">
+              cy.wrap($wrapper).click();
+            }
+          });
+      });
+
 
     cy.wait('@getPedido', { timeout: 30000 })
 
     cy.getVisible(locatorPedidos.detalhesPedido.botaoExcluir).click()
     cy.getVisible('button.el-button--primary').click()
+
+    // Esperar a requisição DELETE ser realizada e validar a resposta
+    cy.wait('@deletePedido',{ timeout: 20000 }).then((interception) => {
+      // Verificar o status da resposta
+      expect(interception.response.statusCode).to.eq(200);
+    });
+
+    cy.getVisible(locatorPedidos.dashboard.inputPesquisar)
+      .clear()
+
+    cy.wait('@listaPedidos', { timeout: 20000 })
+
     cy.get(locatorPedidos.detalhesPedido.botaoExcluir)
       .should('not.exist')
   }

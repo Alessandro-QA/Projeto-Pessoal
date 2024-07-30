@@ -13,28 +13,41 @@ import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 // Cadastro, Edição e Exclusão de Pedido com Recebimento
 describe('Suprimentos', { tags: '@suprimentos' }, () => {
-  
+
   describe('Pedidos', { tags: '@pedidos' }, () => {
     describe('Cadastro, Edição e Exclusão', { tags: '@cadastro' }, () => {
 
       context('Cadastro, Edição e Exclusão de Pedido com Recebimento Parcial', () => {
+
+        const precoUnitarioAleatorio = (Math.random() * 5).toFixed(2)
+        const quantidadeAleatoria = Math.floor(Math.random() * 1001)  // Valor inteiro para quantidade
+        const valorTotal = (quantidadeAleatoria * precoUnitarioAleatorio).toFixed(2)
+        const numeroPedido = Utils.getNumeric(8)
+        seeds.seedCadastroPedido.numeroPedidoFornecedor = numeroPedido
+      
+        seeds.seedCadastroPedido.listaMateriais[0].quantidade = quantidadeAleatoria
+        seeds.seedCadastroPedido.listaMateriais[0].precoUnitario = precoUnitarioAleatorio
+
+        seeds.seedCadastroPedido.valorTotalMateriais = valorTotal
+        seeds.seedCadastroPedido.listaMateriais[0].valorTotal = valorTotal
+        seeds.seedCadastroPedido.valorParcela = valorTotal
+        seeds.seedCadastroPedido.valorCategoria = valorTotal
+
         it.only('Deve cadastrar pedido', function () {
-         
-          seeds.seedCadastroPedido.numeroPedidoFornecedor = Utils.getAlphaNumeric(6)
+        
           Pedidos.cadastrar(seeds.seedCadastroPedido)
-          
+  
         })
 
         it('Deve validar na listagem os dados do pedido cadastrado', function () {
           // cy.allure().severity('normal').startStep('test content')
-            //.descriptionHtml(testDescription.dashboardPedidos)
-
+          
           Pedidos.validarListagem(seeds.seedDetalhesPedidoCadastro)
         })
 
         it('Deve validar detalhes do pedido cadastrado', function () {
           // cy.allure().severity('normal').startStep('test content')
-            //.descriptionHtml(testDescription.detalhesPedido)
+          //.descriptionHtml(testDescription.detalhesPedido)
 
           Pedidos.validarDetalhes(seeds.seedDetalhesPedidoCadastro)
         })
@@ -47,14 +60,14 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
 
         it('Deve validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
           // cy.allure().severity('normal').startStep('test content')
-            //.descriptionHtml(testDescription.pesquisarAgendaFinanceira)
+          //.descriptionHtml(testDescription.pesquisarAgendaFinanceira)
 
           AgendaFinanceira.validarDashboard(seeds.seedAgendaFinanceiraCadastro)
         })
 
         it('Deve realizar o recebimento parcial (50%) do pedido', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.recebimento)
+          //.descriptionHtml(testDescription.recebimento)
 
           Recebimento.cadastrar(seeds.seedCadastroRecebimentoParcial)
         })
@@ -203,11 +216,11 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.validarListagem(seeds.seedStatusPedido.aguardandoEntrega)
         })
 
-        it('Deve excluir o pedido', function () {
+        it.only('Deve excluir o pedido', function () {
           // cy.allure().severity('critical').startStep('test content')
-            //.descriptionHtml(testDescription.excluirPedido)
-
-          Pedidos.excluir(seeds.seedDetalhesPedidoCadastro)
+          //.descriptionHtml(testDescription.excluirPedido)
+        
+          Pedidos.excluir(seeds.seedCadastroPedido)
         })
 
         it('Deve validar exclusão dos documentos', function () {
