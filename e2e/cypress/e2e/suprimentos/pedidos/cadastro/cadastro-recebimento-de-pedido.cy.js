@@ -43,12 +43,15 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
 
         it.only('Deve cadastrar pedido', function () {
         
+          cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
+
           Pedidos.cadastrar(seeds.seedCadastroPedido)
   
         })
 
         it.only('Deve validar na listagem os dados do pedido cadastrado', function () {
-          // cy.allure().severity('normal').startStep('test content')
+          
+          cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('normal')
           
           Pedidos.validarListagem(seeds.seedCadastroPedido)
         })
@@ -225,9 +228,9 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         })
 
         it.only('Deve excluir o pedido', function () {
-          // cy.allure().severity('critical').startStep('test content')
-          //.descriptionHtml(testDescription.excluirPedido)
-        
+          
+          cy.allureDescriptionHtml(testDescription.excluirPedido).allureSeverity('critical')
+
           Pedidos.excluir(seeds.seedCadastroPedido)
         })
 
