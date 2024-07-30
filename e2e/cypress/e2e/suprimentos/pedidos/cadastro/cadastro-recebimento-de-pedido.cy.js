@@ -11,6 +11,8 @@ import Documentos from '../../../../support/commands/financeiro/documentos/docum
 import testDescription from './bdd-description/cadastro-recebimento-pedido.description.js'
 import Authenticate from '../../../../support/commands/login/login-logout.js'
 
+const dayjs = require('dayjs');
+
 // Cadastro, Edição e Exclusão de Pedido com Recebimento
 describe('Suprimentos', { tags: '@suprimentos' }, () => {
 
@@ -23,8 +25,11 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         const quantidadeAleatoria = Math.floor(Math.random() * 1001)  // Valor inteiro para quantidade
         const valorTotal = (quantidadeAleatoria * precoUnitarioAleatorio).toFixed(2)
         const numeroPedido = Utils.getNumeric(8)
+        const dataPedido = dayjs().format('DD/MM/YYYY')
+        const dataEntrega = dayjs().add(1, 'week').format('DD/MM/YYYY')
+
         seeds.seedCadastroPedido.numeroPedidoFornecedor = numeroPedido
-      
+  
         seeds.seedCadastroPedido.listaMateriais[0].quantidade = quantidadeAleatoria
         seeds.seedCadastroPedido.listaMateriais[0].precoUnitario = precoUnitarioAleatorio
 
@@ -33,16 +38,19 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         seeds.seedCadastroPedido.valorParcela = valorTotal
         seeds.seedCadastroPedido.valorCategoria = valorTotal
 
+        seeds.seedCadastroPedido.dataPedido = dataPedido
+        seeds.seedCadastroPedido.dataEntrega = dataEntrega
+
         it.only('Deve cadastrar pedido', function () {
         
           Pedidos.cadastrar(seeds.seedCadastroPedido)
   
         })
 
-        it('Deve validar na listagem os dados do pedido cadastrado', function () {
+        it.only('Deve validar na listagem os dados do pedido cadastrado', function () {
           // cy.allure().severity('normal').startStep('test content')
           
-          Pedidos.validarListagem(seeds.seedDetalhesPedidoCadastro)
+          Pedidos.validarListagem(seeds.seedCadastroPedido)
         })
 
         it('Deve validar detalhes do pedido cadastrado', function () {
