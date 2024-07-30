@@ -1,0 +1,10 @@
+{
+    "materialIds": [
+      "98557ad4-929f-4f68-a97c-9a3f32fe1fce"
+    ],
+    "fornecedorId": "8dfd768b-8eb3-4b17-8ed7-bdaa242b8b94",
+    "empresaId": "c79da4b4-fb34-417c-9ab8-8c943c91c032",
+    "raizCnpj": "25730627",
+    "exibeMateriaisSemSaldo": true,
+    "moedaAlternativaId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
