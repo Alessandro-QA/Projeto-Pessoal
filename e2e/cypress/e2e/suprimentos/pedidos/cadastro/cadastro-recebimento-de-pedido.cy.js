@@ -9,7 +9,6 @@ import Pedidos from '../../../../support/commands/suprimentos/pedidos.js'
 import Recebimento from '../../../../support/commands/suprimentos/recebimento.js'
 import Documentos from '../../../../support/commands/financeiro/documentos/documentos.js'
 import testDescription from './bdd-description/cadastro-recebimento-pedido.description.js'
-import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 const dayjs = require('dayjs');
 

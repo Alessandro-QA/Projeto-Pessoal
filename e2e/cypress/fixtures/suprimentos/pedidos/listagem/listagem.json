@@ -1,0 +1,38 @@
+{
+	"semFiltro": {
+		"cardPedidos": [
+			
+		]
+	},
+	"filtroSafra": {
+		"safra": "2023 / 2024",
+		"cardPedidos": [
+			
+		]
+	},
+	"filtroFazenda": {
+		"fazenda": "Fazenda Teste API",
+		"cardDocumento": [
+		
+		]
+	},
+	"filtroEmpresa": {
+		"empresa": "Empresa Teste API",
+		"cardDocumento": [
+		
+		]
+	},
+	"pesquisa": {
+		"pesquisa": "377190",
+		"cardDocumento": [
+			
+		]
+	},
+	"filtroData": {
+		"dataInicio": "30/06/2024",
+		"dataFinal": "31/07/2024",
+		"cardDocumento": [
+		
+		]
+	}
+}
