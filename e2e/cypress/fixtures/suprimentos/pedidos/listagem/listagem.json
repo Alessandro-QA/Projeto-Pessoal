@@ -1,0 +1,70 @@
+{
+	"semFiltro": {
+		"cardPedidos": [
+			
+		]
+	},
+	"filtroSafra": {
+		"safra": "2023 / 2024",
+		"cardPedidos": [
+			
+		]
+	},
+	"filtroFazenda": {
+		"fazenda": "Fazenda Teste API",
+		"cardDocumento": [
+		
+		]
+	},
+	"filtroEmpresa": {
+		"empresa": "Empresa Teste API",
+		"cardDocumento": [
+		
+		]
+	},
+	"filtroFornecedor": {
+		"fornecedor": "Fornecedor Teste API",
+		"cardDocumento": [
+		
+		]
+	},
+	"filtroStatus": {
+		"status": "Entrega Parcial",
+		"cardDocumento": [
+		
+		]
+	},
+	"pesquisa": {
+		"pesquisa": "377190",
+		"cardDocumento": [
+			
+		]
+	},
+	"filtroMultiplos": {
+		"status": "Aguardando Entrega",
+		"safra": "2022 / 2023",
+		"fornecedor": "Fornecedor 2",
+		"empresa": "Empresa Teste API",
+		"fazenda": "Fazenda Teste API",
+		"dataInicio": "30/06/2024",
+		"dataFinal": "31/07/2024",
+		"cardDocumento": [
+		
+		]
+	},
+
+	"filtroData": {
+		"dataInicio": "30/06/2024",
+		"dataFinal": "31/07/2024",
+		"cardDocumento": [
+		
+		]
+	},
+	"buscaInvalida": {
+		"pesquisa": "uwfhufguwhfuh",
+		"nenhumPedidoEncontrado": true,
+		"cardDocumento": [
+			
+		]
+	}
+}
