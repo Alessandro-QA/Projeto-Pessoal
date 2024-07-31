@@ -96,8 +96,26 @@ context('Pedido Compra', () => {
                 })
             })
 
-            it('CT5 - Excluir Pedidos', () => {
+            it('CT5 - Mudar Status do Pedido', () => {
                 cy.allureDescriptionHtml(description.Ct5).allureSeverity('normal')
+
+                cy.fixture('pedidoCompra/pedidos/criarpedidos/paramsCt5.json').then((payload) => {
+                    payload.pedidoId = idpedidos // Usa o ID do pedido criado no CT1
+
+                    cy.putRequest(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/Pedidos/ChangeStatusPedido`, payload)
+                        .then((response) => {
+                            // Verifica o status code da resposta
+                            expect(response.status).to.equal(200)
+                            // Verifica se o corpo da resposta existe e não é nulo
+                            expect(response.body).to.exist
+                            expect(response.body).to.not.be.null
+                            expect(response.body).to.have.property('success', true)
+                        })
+                })
+            })
+                
+            it('CT6 - Excluir Pedidos', () => {
+                cy.allureDescriptionHtml(description.Ct6).allureSeverity('normal')
 
                 cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/Pedidos`, idpedidos).then((response) => {
                     // Verifica o status code da resposta
