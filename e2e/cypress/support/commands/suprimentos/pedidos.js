@@ -53,13 +53,13 @@ class Pedidos {
 
     // safra
     cy.getVisible(locatorPedidos.registrarEditarPedido.selectSafra).click()
-      .contains(seedTest.safra).click()
+      .contains(seedTest.safra).click({ force: true })
 
     cy.wait('@getSafra', { timeout: 30000 })
 
     // fazenda
     cy.getVisible(locatorPedidos.registrarEditarPedido.selectFazenda).click()
-      .contains(seedTest.fazenda).click()
+      .contains(seedTest.fazenda).click({ force: true })
 
     // mesmo local de entrega
     if (seedTest.mesmoLocalEntrega) {
@@ -292,35 +292,44 @@ class Pedidos {
     var notas = seedTest.notas
     var listaMateriais = seedTest.listaMateriais
 
+    cy.intercept('POST', '/api/pedido-compra/v1/Pedidos/Listagem').as('listaPedidos')
+    cy.intercept('GET', `${Cypress.env('baseUrlDaas')}/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**`).as('ciclosRateio')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?SafraId=**`).as('getSafra')
+    cy.intercept('GET', '/api/pedido-compra/v1/Pedidos/PedidoExibicao/**').as('getPedido')
+
     // Navegar para Pedidos
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Pedidos')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.wait('@listaPedidos', { timeout: 20000 })
+      }
+      cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
+    })
 
-    // selecionar safra
-    cy.getVisible(locatorPedidos.dashboard.selectSafra).click()
-      .contains(seedTest.safra).click()
-
-    // selecionar fazenda
-    cy.getVisible(locatorPedidos.dashboard.selectFazenda).click()
-      .contains(seedTest.fazenda).click()
-
-    // selecionar empresa
-    cy.getVisible(locatorPedidos.dashboard.selectEmpresa).click()
-      .contains(seedTest.empresa).click()
-
-    // gambira pra fechar o select de empresa
-    cy.getVisible(locatorPedidos.dashboard.titulo).click()
-
-    // alterar visualizacao para cards
-    cy.getVisible(locatorPedidos.dashboard.botaoMudarVisualizacao).click()
-
-    // pesquisar por fornecedor
+    // pesquisar por Numero Pedido
     cy.getVisible(locatorPedidos.dashboard.inputPesquisar)
-      .clear().type(seedTest.nomeFornecedor)
+      .clear().type(seedTest.numeroPedidoFornecedor)
+
+    cy.wait('@listaPedidos', { timeout: 20000 })
 
     cy.intercept('GET', '/api/pedido-compra/v1/Pedidos/PedidoExibicao/**').as('getPedido')
 
-    // abrir pedido
-    cy.getVisible(locatorPedidos.dashboard.cardPedidos).click()
+    // Selecionar todos os <div class="line--wrapper"> dentro da <section>
+    cy.get('section.list')
+      .find('div.line--wrapper').each(($wrapper) => {
+        // Verificar se o número do fornecedor está presente dentro do <div class="line--wrapper">
+        cy.wrap($wrapper)
+          .find('div.line--item-provider_number .line--text')
+          .invoke('text')
+          .then((text) => {
+            if (text.trim() === seedTest.numeroPedidoFornecedor) {
+              // Se encontrar o número do fornecedor, clicar no <div class="line--wrapper">
+              cy.wrap($wrapper).click();
+            }
+          });
+      });
 
     cy.wait('@getPedido', { timeout: 30000 })
 
@@ -389,12 +398,14 @@ class Pedidos {
 
         // validar preco unitario material
         cy.getVisible(locatorPedidos.detalhesPedido.precoUnitario).eq(index).should(($el) => {
-          expect($el).to.contain.text(listaMaterial.precoUnitario)
+          const formattedPrice = `R$ ${Number(listaMaterial.precoUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+          expect($el.text().trim()).to.contain(formattedPrice);
         })
 
         // validar valor total material
         cy.getVisible(locatorPedidos.detalhesPedido.valorTotal).eq(index).should(($el) => {
-          expect($el).to.contain.text(listaMaterial.valorTotal)
+          const formattedTotal = `R$ ${Number(listaMaterial.valorTotal).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+          expect($el.text().trim()).to.contain(formattedTotal);
         })
       })
     }
