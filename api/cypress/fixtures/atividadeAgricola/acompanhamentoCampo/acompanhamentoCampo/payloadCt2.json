@@ -1,0 +1,11 @@
+{
+    "id": "881c15ed-e323-4e81-9e9a-2d8de55faf01",
+    "dae": 5,
+    "pms": 32,
+    "dataEmergencia": "2024-07-25T03:00:00+00:00",
+    "contagemPrevistaStand": 1,
+    "contagemRealizadaStand": 1,
+    "espacamento": 1,
+    "dataFimPlantio": "2024-08-01T03:00:00+00:00",
+    "estadioFenologicoId": "886b3cd9-1ed1-43df-98b5-c8e840d2e44c"
+}
