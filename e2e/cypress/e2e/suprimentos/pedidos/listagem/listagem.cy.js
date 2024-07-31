@@ -1,14 +1,25 @@
 /// <reference types="cypress" />
 
 import seedTest from '../../../../fixtures/suprimentos/pedidos/listagem/listagem.json'
-import Utils from '../../../../support/utils/utils.js'
 import Pedidos from '../../../../support/commands/suprimentos/listagem.js'
-//import testDescription from './bdd-description/cadastro-recebimento-pedido.description.js'
+import testDescription from './bdd-description/listagem.description.js'
 
-const dayjs = require('dayjs');
+const dayjs = require('dayjs')
 
 // Cadastro, Edição e Exclusão de Pedido com Recebimento
 describe('Suprimentos', { tags: '@suprimentos' }, () => {
+
+    // Gerar a data de hoje e a data de uma semana atrás
+    const today = dayjs().format('DD/MM/YYYY')
+    const oneWeekAgo = dayjs().subtract(7, 'day').format('DD/MM/YYYY')
+    const oneMonth = dayjs().subtract(30, 'day').format('DD/MM/YYYY')
+
+
+    seedTest.filtroData.dataInicio = oneWeekAgo
+    seedTest.filtroData.dataFinal = today
+
+    seedTest.filtroMultiplos.dataInicio =oneMonth
+    seedTest.filtroMultiplos.dataFinal = today
 
     describe('Pedidos', { tags: '@pedidos' }, () => {
         describe('Listagem', { tags: '@listagem' }, () => {
@@ -16,34 +27,54 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
             context('Listagem de Pedidos - Validação dos filtros', () => {
 
                 it('Deve Listar todos os Pedidos Sem Filtro', function () {
-                    //cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
+                    cy.allureDescriptionHtml(testDescription.listagemSemFiltro).allureSeverity('normal')
                     Pedidos.listagem(seedTest.semFiltro)
                 })
 
-                it('Deve Listar todos os Pedidos filtrados por Safra', function () {
-                    //cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
+                it('Deve Listar os Pedidos filtrados por Safra', function () {
+                    cy.allureDescriptionHtml(testDescription.listagemFiltradoPorSafra).allureSeverity('normal')
                     Pedidos.listagem(seedTest.filtroSafra)
                 })
 
-                it('Deve Listar todos os Pedidos filtrados por Fazenda', function () {
-                    //cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
+                it('Deve Listar os Pedidos filtrados por Fazenda', function () {
+                    cy.allureDescriptionHtml(testDescription.listagemFiltradoPorFazenda).allureSeverity('normal')
                     Pedidos.listagem(seedTest.filtroFazenda)
                 })
-                it('Deve Listar todos os Pedidos filtrados por Empresa', function () {
-                    //cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
+                it('Deve Listar os Pedidos filtrados por Empresa', function () {
+                    cy.allureDescriptionHtml(testDescription.listagemFiltradoPorEmpresa).allureSeverity('normal')
                     Pedidos.listagem(seedTest.filtroEmpresa)
                 })
 
                 it('Deve Fazer uma Busca por String Entre os Pedidos', function () {
-                    //cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
+                    cy.allureDescriptionHtml(testDescription.buscaPorString).allureSeverity('normal')
                     Pedidos.listagem(seedTest.pesquisa)
                 })
 
-                it.only('Deve Listar todos os Pedidos filtrados por Data', function () {
-                    //cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
-
+                it('Deve Listar os Pedidos filtrados por Data', function () {
+                    cy.allureDescriptionHtml(testDescription.listagemFiltradoPorData).allureSeverity('normal')
                     Pedidos.listagem(seedTest.filtroData)
                 })
+
+                it('Deve Listar os Pedidos filtrados por Fornecedor', function () {
+                    cy.allureDescriptionHtml(testDescription.listagemFiltradoPorFornecedor).allureSeverity('normal')
+                    Pedidos.listagem(seedTest.filtroFornecedor)
+                })
+
+                it('Deve Listar os Pedidos filtrados por Status', function () {
+                    cy.allureDescriptionHtml(testDescription.listagemFiltradoPorStatus).allureSeverity('normal')
+                    Pedidos.listagem(seedTest.filtroStatus)
+                })
+
+                it('Deve Listar os Pedidos filtrados por Múltiplos Filtros', function () {
+                    cy.allureDescriptionHtml(testDescription.listagemFiltradaPorMultiplosFiltros).allureSeverity('normal')
+                    Pedidos.listagem(seedTest.filtroMultiplos)
+                })
+
+                it('Validar Mensagem de Nenhum Pedido Encontrado', function () {
+                    cy.allureDescriptionHtml(testDescription.validarMensagemNenhumPedidoEncontrado).allureSeverity('normal')
+                    Pedidos.listagem(seedTest.buscaInvalida)
+                })
+
             })
         })
     })
