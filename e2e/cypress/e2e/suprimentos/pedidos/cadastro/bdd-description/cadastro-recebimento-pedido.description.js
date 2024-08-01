@@ -171,6 +171,29 @@ const testDescriptionHtml = {
   </div>
   </div>
   `,
+    detalhesPedidoDocumento: `
+  <div>
+      <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+      <span style="color: #b22222;"> Detalhes do Pedido </span>
+  </div>
+  <div style="margin-left: 40px;">
+      <strong>COMO</strong> gerente/responsável pelas compras da fazenda <br/>
+      <strong>QUERO</strong> visualizar os detalhes dos pedidos de compra da minha fazenda <br/>
+      <strong>PARA</strong> melhor controle de suprimentos da fazenda <br/>
+  </div>
+  </br>
+  <div>
+      <span style="color: #800080; font-weight: bold;"> Cenario : </span>
+      <span style="color: #b22222;"> Visualizar detalhes do Documento </span>
+  </div>
+  <div style="margin-left: 40px;">
+      <strong>DADO</strong> que eu queira visualizar os detalhes de um Documento gerado do Pedido <br/>
+      <strong>QUANDO</strong> eu entrar na listagem de Documentos <br/>
+      <strong>E</strong> clicar no documento do pedido criado <br/>
+      <strong>ENTAO</strong> devera ser apresentado e validado todos os detalhes do pedido <br/>
+  </div>
+  </div>
+  `,
     pesquisarAgendaFinanceira: `
 <div>
     <span style="color: #800080; font-weight: bold;">Funcionalidade: </span>

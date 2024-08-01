@@ -195,6 +195,7 @@ class Pedidos {
 
         // valor ciclo calculado com base na porcentagem e valor total
         const valorEsperado = (seedTest.valorTotalMateriais * ciclo.porcentagemCiclo / 100).toFixed(2)
+        seedTest.ciclos[index].valor
 
         cy.log(valorEsperado)
         cy.log(seedTest.valorTotalMateriais)
@@ -207,11 +208,12 @@ class Pedidos {
 
           // Converter para número e garantir duas casas decimais
           const valorCiclo = parseFloat(valorTexto).toFixed(2)
+          seedTest.ciclos[index].valor = valorCiclo
           expect(parseFloat(valorCiclo)).to.be.closeTo(parseFloat(valorEsperado), 0.01)
         })
       })
     })
-    
+
     // salvar pedido
     cy.getVisible(locatorPedidos.registrarEditarPedido.botaoFinalizarAdicionar).click()
 
@@ -222,7 +224,7 @@ class Pedidos {
     cy.get(locatorPedidos.dashboard.mensagemSucesso).should(($el) => {
       expect($el).to.contain.text('Pedido salvo com sucesso')
     })
-      
+
   }
 
   /**
@@ -404,8 +406,10 @@ class Pedidos {
 
         // validar preco unitario material
         cy.getVisible(locatorPedidos.detalhesPedido.precoUnitario).eq(index).should(($el) => {
-          const formattedPrice = `R$ ${Number(listaMaterial.precoUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-          expect($el.text().trim()).to.contain(formattedPrice)
+          const actualPrice = parseFloat($el.text().trim().replace('R$', '').replace(',', '.'));
+          const expectedPrice = parseFloat(listaMaterial.precoUnitario);
+
+          expect(actualPrice).to.equal(expectedPrice);
         })
 
         // validar valor total material
@@ -506,32 +510,10 @@ class Pedidos {
           expect($el.text().trim()).to.contain(`${ciclo.porcentagemCiclo} %`)
         })
 
-        /*
-        // validar valor ciclo
+        // valor ciclo
         cy.get(locatorPedidos.detalhesPedido.valorCiclo).should(($el) => {
-          const formattedTotal = `R$ ${Number(ciclo.valorCiclo).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-          expect($el.text().trim()).to.contain(formattedTotal)
-          })
-*/
-        // Calcule o valor esperado com formatação de moeda brasileira
-        const valorEsperado = (seedTest.valorTotalMateriais * ciclo.porcentagemCiclo / 100).toFixed(2)
-        const formattedValorEsperado = `R$ ${Number(valorEsperado).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-
-        // Define a tolerância
-        const tolerance = 0.01
-
-        cy.get(locatorPedidos.detalhesPedido.valorCiclo).invoke('text').then((text) => {
-          // Remove espaços extras e divide o texto em valores individuais
-          const valores = text.split(/R\$[\s]?/).filter(Boolean).map(valor => `R$ ${valor.trim()}`)
-
-          // Converte os valores formatados para números e verifica a tolerância
-          const valorEsperadoNumber = parseFloat(valorEsperado.replace(',', '.'))
-          const includesValueWithinTolerance = valores.some(valor => {
-            const valorNumber = parseFloat(valor.replace('R$ ', '').replace(',', '.'))
-            return Math.abs(valorNumber - valorEsperadoNumber) <= tolerance
-          })
-
-          expect(includesValueWithinTolerance, `O valor esperado ${formattedValorEsperado} não foi encontrado dentro da tolerância`).to.be.true
+          const formattedCicloValor = `${ciclo.valor}`.replace('.', ',');
+          expect($el.text().trim()).to.contain(formattedCicloValor);
         })
 
       })

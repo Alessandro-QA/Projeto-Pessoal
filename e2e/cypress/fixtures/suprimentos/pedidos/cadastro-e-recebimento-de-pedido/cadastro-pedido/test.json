@@ -1,49 +1,59 @@
 {
-    "operacao": "Pedido de Compra",
-    "tipoDocumento": "Outros",
-    "dedutivel": "Sim",
-    "numeroDocumento": "62348262",
-    "dataDocumento": "01/08/2024",
-    "pessoa": "Fornecedor Teste API",
-    "cpfCnpjPessoa": "57.046.724/0001-93",
-    "fazenda": "Fazenda Teste API",
+    "statusPedido": "Aguardando Entrega",
+    "dataPedido": "01/08/2024",
+    "nomeFornecedor": "Fornecedor Teste API",
+    "cnpjFornecedor": "57.046.724/0001-93",
+    "numeroPedidoFornecedor": "57564734",
     "safra": "2023 / 2024",
+    "fazenda": "Fazenda Teste API",
+    "mesmoLocalEntrega": true,
     "empresa": "Empresa Teste API",
-    "ieEmpresa": "ISENTO",
-    "conferido": "Não",
-    "valorTotal": "1643.50",
-    "formaPagamento": "Boleto",
-    "condicaoPagamento": "À vista",
-    "qtdParcelas": "Parcela única",
-    "parcelas": [
+    "inscricaoEstadual": "ISENTO",
+    "dataEntrega": "08/08/2024",
+    "localEntrega": "Teste Fazenda 2",
+    "listaMateriais": [
         {
-            "parcela": "1ª Parcela",
-            "valorParcela": "1643.50",
-            "statusParcela": "A pagar",
-            "saldoParcela": "1643.50"
+            "material": "Soja",
+            "unidade": "kg",
+            "quantidade": 602,
+            "precoUnitario": "2.78",
+            "valorTotal": "1673.56"
         }
     ],
+    "valorTotalMateriais": "1673.56",
+    "formaPagamento": "Boleto",
+    "valorParcela": "1673.56",
+    "quantidadeParcelas": "1",
+    "categoriaPorMaterial": false,
+    "categoria": "Sementes",
+    "porcentagemCategoria": 100,
+    "valorCategoria": "1673.56",
+    "rateioEntreCiclos": true,
     "ciclos": [
         {
             "nomeCiclo": "Soja - 2023 / 2024",
-            "porcentagemCiclo": 30.31
+            "porcentagemCiclo": 30.31,
+            "valor": "507.25"
         },
         {
             "nomeCiclo": "Trigo - 2023 / 2024",
-            "porcentagemCiclo": 30.3
+            "porcentagemCiclo": 30.3,
+            "valor": "507.09"
         },
         {
             "nomeCiclo": "Feijão - 2023 / 2024",
-            "porcentagemCiclo": 6.06
+            "porcentagemCiclo": 6.06,
+            "valor": "101.42"
         },
         {
             "nomeCiclo": "Sorgo - 2023 / 2024",
-            "porcentagemCiclo": 30.3
+            "porcentagemCiclo": 30.3,
+            "valor": "507.09"
         },
         {
             "nomeCiclo": "Milho - 2023 / 2024",
-            "porcentagemCiclo": 3.03
+            "porcentagemCiclo": 3.03,
+            "valor": "50.71"
         }
-    ],
-    "categorias": []
+    ]
 }

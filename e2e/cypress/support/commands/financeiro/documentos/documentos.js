@@ -833,7 +833,7 @@ class Documentos {
               // Verifica se a célula contém o nome do ciclo
               cy.get('.cell').eq(0).then(($el) => {
                 const cellText = $el.text().trim()
-                if (cellText === ciclo.nome) {
+                if (cellText === ciclo.nome || cellText === ciclo.nomeCiclo) {
                   // Verifica a célula do valor do ciclo
                   cy.get('.cell').eq(1).should(($el) => {
                     const text = $el.text().replace(/[^\d,]/g, '') // Remove tudo exceto dígitos e vírgulas
