@@ -119,7 +119,8 @@ const locators = {
     valorCategoria: '[data-cy=span-valor]',
     ciclo: '[data-cy=span-ciclo]',
     porcentagemCiclo: '[data-cy=span-porcentagem-ciclo]',
-    valorCiclo: '[data-cy=span-valor-ciclo]'
+    valorCiclo: '[data-cy=span-valor-ciclo]',
+    voltar: '[data-cy="header-cadastro-pedido"] > .dark'
   }
 }
 

@@ -23,9 +23,10 @@
     "valorTotalMateriais": "500.83",
     "formaPagamento": "Boleto",
     "valorParcela": "500.83",
+    "quantidadeParcelas": "1",
     "categoriaPorMaterial": false,
     "categoria": "Sementes",
-    "porcentagemCategoria": "100,00%",
+    "porcentagemCategoria": 100,
     "valorCategoria": "500.83",
     "rateioEntreCiclos": true,
     "ciclos": [
