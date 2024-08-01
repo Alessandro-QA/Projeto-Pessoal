@@ -3,6 +3,7 @@ import seedCadastroPedido from './cadastro-pedido/cadastro-pedido.json'
 import seedDetalhesPedidoCadastro from './cadastro-pedido/detalhes-pedido-cadastro.json'
 import seedDocumentoCadastro from './cadastro-pedido/detalhes-documento.json'
 import seedAgendaFinanceiraCadastro from './cadastro-pedido/detalhes-agenda-financeira-cadastro.json'
+import seedTest from './cadastro-pedido/test.json'
 
 // seed da suite de recebimento parcial
 import seedCadastroRecebimentoParcial from './recebimento-parcial/cadastro-recebimento.json'
@@ -23,6 +24,7 @@ import seedDetalhesFinanceiro from './financeiro/detalhes-financeiro.json'
 import seedStatusPedido from './status-pedido.json'
 
 export {
+  seedTest,
   seedCadastroPedido,
   seedDetalhesPedidoCadastro,
   seedDocumentoCadastro,

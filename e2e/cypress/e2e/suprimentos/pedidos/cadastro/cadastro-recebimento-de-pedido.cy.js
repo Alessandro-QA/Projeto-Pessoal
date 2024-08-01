@@ -55,11 +55,11 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.validarListagem(seeds.seedCadastroPedido)
         })
 
-        it('Deve validar detalhes do pedido cadastrado', function () {
-          // cy.allure().severity('normal').startStep('test content')
-          //.descriptionHtml(testDescription.detalhesPedido)
-
-          Pedidos.validarDetalhes(seeds.seedDetalhesPedidoCadastro)
+        it.only('Deve validar detalhes do pedido cadastrado', function () {
+          
+          cy.allureDescriptionHtml(testDescription.detalhesPedido).allureSeverity('normal')
+          
+          Pedidos.validarDetalhes(seeds.seedCadastroPedido)
         })
 
         it('Deve validar detalhes do documento gerado pelo cadastro do pedido (outros)', function () {

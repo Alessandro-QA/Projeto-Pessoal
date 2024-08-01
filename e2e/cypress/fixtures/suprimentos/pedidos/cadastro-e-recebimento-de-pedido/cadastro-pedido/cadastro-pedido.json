@@ -25,10 +25,11 @@
 
   "formaPagamento": "Boleto",
   "valorParcela": 10000,
+  "quantidadeParcelas": "1",
 
   "categoriaPorMaterial": false,
   "categoria": "Sementes",
-  "porcentagemCategoria": "100,00%",
+  "porcentagemCategoria": 100,
   "valorCategoria": 10000,
 
   "rateioEntreCiclos": true,

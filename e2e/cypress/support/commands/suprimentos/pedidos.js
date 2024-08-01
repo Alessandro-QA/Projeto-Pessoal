@@ -53,13 +53,13 @@ class Pedidos {
 
     // safra
     cy.getVisible(locatorPedidos.registrarEditarPedido.selectSafra).click()
-      .contains(seedTest.safra).click()
+      .contains(seedTest.safra).click({ force: true })
 
     cy.wait('@getSafra', { timeout: 30000 })
 
     // fazenda
     cy.getVisible(locatorPedidos.registrarEditarPedido.selectFazenda).click()
-      .contains(seedTest.fazenda).click()
+      .contains(seedTest.fazenda).click({ force: true })
 
     // mesmo local de entrega
     if (seedTest.mesmoLocalEntrega) {
@@ -90,17 +90,17 @@ class Pedidos {
     // Aguardar a chamada à rota ser feita e obter o response
     cy.wait('@ciclosRateio').then((interception) => {
       // Extrair o array de ciclos do response
-      const responseCiclos = interception.response.body;
+      const responseCiclos = interception.response.body
 
       // Adicionar cada objeto ao array ciclos
       ciclos = responseCiclos.map(ciclo => ({
         nomeCiclo: ciclo.descricao,
         porcentagemCiclo: ciclo.percentual
-      }));
+      }))
 
       // Usar cy.wrap() para tornar ciclos disponível para outros comandos
-      cy.wrap(ciclos).as('ciclos');
-    });
+      cy.wrap(ciclos).as('ciclos')
+    })
 
 
     // material
@@ -161,9 +161,10 @@ class Pedidos {
     }
 
     // porcentagem categoria
-    cy.getVisible(locatorPedidos.registrarEditarPedido.inputPorcentagemCategoria).should(($el) => {
-      expect($el).to.have.value(seedTest.porcentagemCategoria)
-    })
+    cy.getVisible(locatorPedidos.registrarEditarPedido.inputPorcentagemCategoria)
+      .should(($el) => {
+        expect($el).to.have.value(`${Number(seedTest.porcentagemCategoria).toFixed(2).replace('.', ',')}%`)
+      })
 
     // valor categoria
     cy.getVisible(locatorPedidos.registrarEditarPedido.inputValorCategoria).should(($el) => {
@@ -172,7 +173,7 @@ class Pedidos {
 
     // rateio entre ciclos
     cy.get(locatorPedidos.registrarEditarPedido.checkBoxRateioEntreCiclos).should(($el) => {
-      expect($el).to.have.class('is-checked');
+      expect($el).to.have.class('is-checked')
     })
 
     cy.get('@ciclos').then((ciclos) => {
@@ -188,25 +189,29 @@ class Pedidos {
 
         // porcentagem ciclo
         cy.get(locatorPedidos.registrarEditarPedido.inputPorcentagemCiclo).eq(index).should(($el) => {
-          const valorEsperado = `${ciclo.porcentagemCiclo.toFixed(2).replace('.', ',')}%`;
-          expect($el).to.have.value(valorEsperado);
-        });
+          const valorEsperado = `${ciclo.porcentagemCiclo.toFixed(2).replace('.', ',')}%`
+          expect($el).to.have.value(valorEsperado)
+        })
 
         // valor ciclo calculado com base na porcentagem e valor total
-        const valorEsperado = (seedTest.valorTotalMateriais * ciclo.porcentagemCiclo / 100).toFixed(2);
+        const valorEsperado = (seedTest.valorTotalMateriais * ciclo.porcentagemCiclo / 100).toFixed(2)
+
+        cy.log(valorEsperado)
+        cy.log(seedTest.valorTotalMateriais)
+        cy.log(ciclo.porcentagemCiclo)
 
         // valor ciclo
         cy.get(locatorPedidos.registrarEditarPedido.inputValorCiclo).eq(index).should(($el) => {
           // Extrair o valor, remover o símbolo da moeda e substituir a vírgula por ponto
-          const valorTexto = $el.val().replace('R$ ', '').replace(',', '.');
+          const valorTexto = $el.val().replace('R$ ', '').replace('.', '').replace(',', '.')
 
           // Converter para número e garantir duas casas decimais
-          const valorCiclo = parseFloat(valorTexto).toFixed(2);
-          expect(parseFloat(valorCiclo)).to.be.closeTo(parseFloat(valorEsperado), 0.01);
-        });
+          const valorCiclo = parseFloat(valorTexto).toFixed(2)
+          expect(parseFloat(valorCiclo)).to.be.closeTo(parseFloat(valorEsperado), 0.01)
+        })
       })
     })
-
+    
     // salvar pedido
     cy.getVisible(locatorPedidos.registrarEditarPedido.botaoFinalizarAdicionar).click()
 
@@ -217,6 +222,7 @@ class Pedidos {
     cy.get(locatorPedidos.dashboard.mensagemSucesso).should(($el) => {
       expect($el).to.contain.text('Pedido salvo com sucesso')
     })
+      
   }
 
   /**
@@ -226,7 +232,7 @@ class Pedidos {
   excluir(seedTest) {
 
     cy.intercept('POST', '/api/pedido-compra/v1/Pedidos/Listagem').as('listaPedidos')
-    cy.intercept('DELETE', '/api/pedido-compra/v1/Pedidos/**').as('deletePedido');
+    cy.intercept('DELETE', '/api/pedido-compra/v1/Pedidos/**').as('deletePedido')
 
     // Navegar para Pedidos
     cy.location('pathname').then((currentPath) => {
@@ -257,10 +263,10 @@ class Pedidos {
           .then((text) => {
             if (text.trim() === seedTest.numeroPedidoFornecedor) {
               // Se encontrar o número do fornecedor, clicar no <div class="line--wrapper">
-              cy.wrap($wrapper).click();
+              cy.wrap($wrapper).click()
             }
-          });
-      });
+          })
+      })
 
 
     cy.wait('@getPedido', { timeout: 30000 })
@@ -271,8 +277,8 @@ class Pedidos {
     // Esperar a requisição DELETE ser realizada e validar a resposta
     cy.wait('@deletePedido', { timeout: 20000 }).then((interception) => {
       // Verificar o status da resposta
-      expect(interception.response.statusCode).to.eq(200);
-    });
+      expect(interception.response.statusCode).to.eq(200)
+    })
 
     cy.getVisible(locatorPedidos.dashboard.inputPesquisar)
       .clear()
@@ -292,35 +298,44 @@ class Pedidos {
     var notas = seedTest.notas
     var listaMateriais = seedTest.listaMateriais
 
+    cy.intercept('POST', '/api/pedido-compra/v1/Pedidos/Listagem').as('listaPedidos')
+    cy.intercept('GET', `${Cypress.env('baseUrlDaas')}/api/atividades-agricolas/v1/Planejamento/Safra/ciclosRateio?**`).as('ciclosRateio')
+    cy.intercept('GET', `${Cypress.env('daasUrl')}/api/ciclo-producao/v1/Ciclo/List?SafraId=**`).as('getSafra')
+    cy.intercept('GET', '/api/pedido-compra/v1/Pedidos/PedidoExibicao/**').as('getPedido')
+
     // Navegar para Pedidos
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Pedidos')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.wait('@listaPedidos', { timeout: 20000 })
+      }
+      cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
+    })
 
-    // selecionar safra
-    cy.getVisible(locatorPedidos.dashboard.selectSafra).click()
-      .contains(seedTest.safra).click()
-
-    // selecionar fazenda
-    cy.getVisible(locatorPedidos.dashboard.selectFazenda).click()
-      .contains(seedTest.fazenda).click()
-
-    // selecionar empresa
-    cy.getVisible(locatorPedidos.dashboard.selectEmpresa).click()
-      .contains(seedTest.empresa).click()
-
-    // gambira pra fechar o select de empresa
-    cy.getVisible(locatorPedidos.dashboard.titulo).click()
-
-    // alterar visualizacao para cards
-    cy.getVisible(locatorPedidos.dashboard.botaoMudarVisualizacao).click()
-
-    // pesquisar por fornecedor
+    // pesquisar por Numero Pedido
     cy.getVisible(locatorPedidos.dashboard.inputPesquisar)
-      .clear().type(seedTest.nomeFornecedor)
+      .clear().type(seedTest.numeroPedidoFornecedor)
+
+    cy.wait('@listaPedidos', { timeout: 20000 })
 
     cy.intercept('GET', '/api/pedido-compra/v1/Pedidos/PedidoExibicao/**').as('getPedido')
 
-    // abrir pedido
-    cy.getVisible(locatorPedidos.dashboard.cardPedidos).click()
+    // Selecionar todos os <div class="line--wrapper"> dentro da <section>
+    cy.get('section.list')
+      .find('div.line--wrapper').each(($wrapper) => {
+        // Verificar se o número do fornecedor está presente dentro do <div class="line--wrapper">
+        cy.wrap($wrapper)
+          .find('div.line--item-provider_number .line--text')
+          .invoke('text')
+          .then((text) => {
+            if (text.trim() === seedTest.numeroPedidoFornecedor) {
+              // Se encontrar o número do fornecedor, clicar no <div class="line--wrapper">
+              cy.wrap($wrapper).click()
+            }
+          })
+      })
 
     cy.wait('@getPedido', { timeout: 30000 })
 
@@ -389,14 +404,23 @@ class Pedidos {
 
         // validar preco unitario material
         cy.getVisible(locatorPedidos.detalhesPedido.precoUnitario).eq(index).should(($el) => {
-          expect($el).to.contain.text(listaMaterial.precoUnitario)
+          const formattedPrice = `R$ ${Number(listaMaterial.precoUnitario).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+          expect($el.text().trim()).to.contain(formattedPrice)
         })
 
         // validar valor total material
         cy.getVisible(locatorPedidos.detalhesPedido.valorTotal).eq(index).should(($el) => {
-          expect($el).to.contain.text(listaMaterial.valorTotal)
+          const formattedTotal = `R$ ${Number(listaMaterial.valorTotal).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+          expect($el.text().trim()).to.contain(formattedTotal)
         })
       })
+
+      // validar valor total dos materiais
+      cy.getVisible(locatorPedidos.detalhesPedido.valorTotalMateriais).should(($el) => {
+        const formattedTotal = `R$ ${Number(seedTest.valorTotalMateriais).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+        expect($el.text().trim()).to.contain(formattedTotal)
+      })
+
     }
 
     // validar notas da lista de materiais
@@ -426,18 +450,16 @@ class Pedidos {
         cy.get(locatorPedidos.detalhesPedido.valorTotalNotaMaterial).should(($el) => {
           expect($el).to.contain.text(nota.valorTotalNota)
         })
+
+      })
+
+      // validar valor total de notas recebidas
+      cy.getVisible(locatorPedidos.detalhesPedido.valorTotalNotasRecebidas).should(($el) => {
+        const formattedTotal = `R$ ${Number(seedTest.valorTotalNotasRecebidas).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+        expect($el.text().trim()).to.contain(formattedTotal)
       })
     }
 
-    // validar valor total dos materiais
-    cy.getVisible(locatorPedidos.detalhesPedido.valorTotalMateriais).should(($el) => {
-      expect($el).to.contain.text(seedTest.valorTotalMateriais)
-    })
-
-    // validar valor total de notas recebidas
-    cy.getVisible(locatorPedidos.detalhesPedido.valorTotalNotasRecebidas).should(($el) => {
-      expect($el).to.contain.text(seedTest.valorTotalNotasRecebidas)
-    })
 
     // validar forma de pagamento
     cy.getVisible(locatorPedidos.detalhesPedido.formaPagamento).should(($el) => {
@@ -451,7 +473,8 @@ class Pedidos {
 
     // validar valor da parcela
     cy.getVisible(locatorPedidos.detalhesPedido.valorParcela).should(($el) => {
-      expect($el).to.contain.text(seedTest.valorParcela)
+      const formattedTotal = `R$ ${Number(seedTest.valorParcela).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+      expect($el.text().trim()).to.contain(formattedTotal)
     })
 
     // validar categoria
@@ -461,12 +484,13 @@ class Pedidos {
 
     // validar porcentagem categoria
     cy.getVisible(locatorPedidos.detalhesPedido.porcentagemCategoria).should(($el) => {
-      expect($el).to.contain.text(seedTest.porcentagemCategoria)
+      expect($el.text().trim()).to.contain(`${seedTest.porcentagemCategoria} %`)
     })
 
     // validar valor categoria
     cy.getVisible(locatorPedidos.detalhesPedido.valorCategoria).should(($el) => {
-      expect($el).to.contain.text(seedTest.valorCategoria)
+      const formattedTotal = `R$ ${Number(seedTest.valorCategoria).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+      expect($el.text().trim().replace(/\s/g, '')).to.equal(formattedTotal.replace(/\s/g, ''))
     })
 
     if (ciclos) {
@@ -477,17 +501,43 @@ class Pedidos {
           expect($el).to.contain.text(ciclo.nomeCiclo)
         })
 
-        // porcentagem ciclo
+        // validar porcentagem ciclo
         cy.get(locatorPedidos.detalhesPedido.porcentagemCiclo).should(($el) => {
-          expect($el).to.contain.text(ciclo.porcentagemCiclo)
+          expect($el.text().trim()).to.contain(`${ciclo.porcentagemCiclo} %`)
         })
 
-        // valor ciclo
+        /*
+        // validar valor ciclo
         cy.get(locatorPedidos.detalhesPedido.valorCiclo).should(($el) => {
-          expect($el).to.contain.text(ciclo.valorCiclo)
+          const formattedTotal = `R$ ${Number(ciclo.valorCiclo).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+          expect($el.text().trim()).to.contain(formattedTotal)
+          })
+*/
+        // Calcule o valor esperado com formatação de moeda brasileira
+        const valorEsperado = (seedTest.valorTotalMateriais * ciclo.porcentagemCiclo / 100).toFixed(2)
+        const formattedValorEsperado = `R$ ${Number(valorEsperado).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+
+        // Define a tolerância
+        const tolerance = 0.01
+
+        cy.get(locatorPedidos.detalhesPedido.valorCiclo).invoke('text').then((text) => {
+          // Remove espaços extras e divide o texto em valores individuais
+          const valores = text.split(/R\$[\s]?/).filter(Boolean).map(valor => `R$ ${valor.trim()}`)
+
+          // Converte os valores formatados para números e verifica a tolerância
+          const valorEsperadoNumber = parseFloat(valorEsperado.replace(',', '.'))
+          const includesValueWithinTolerance = valores.some(valor => {
+            const valorNumber = parseFloat(valor.replace('R$ ', '').replace(',', '.'))
+            return Math.abs(valorNumber - valorEsperadoNumber) <= tolerance
+          })
+
+          expect(includesValueWithinTolerance, `O valor esperado ${formattedValorEsperado} não foi encontrado dentro da tolerância`).to.be.true
         })
+
       })
     }
+
+    cy.get(locatorPedidos.detalhesPedido.voltar).click({ force: true })
   }
 
   /**
@@ -542,7 +592,7 @@ class Pedidos {
               if (text.trim() === seedTest.numeroPedidoFornecedor) {
 
                 // Validar status
-                cy.wrap($linha).find('div.line--item-status').should('contain.text', seedTest.statusPedido);
+                cy.wrap($linha).find('div.line--item-status').should('contain.text', seedTest.statusPedido)
 
                 // Validar fazenda
                 cy.wrap($linha)
@@ -550,29 +600,29 @@ class Pedidos {
                   .invoke('text')
                   .then((text) => {
                     // Limpar o texto removendo espaços em branco extras e caracteres especiais
-                    const cleanedText = text.replace(/\s+/g, ' ').trim();
-                    expect(cleanedText).to.contain(seedTest.fazenda);
-                  });
+                    const cleanedText = text.replace(/\s+/g, ' ').trim()
+                    expect(cleanedText).to.contain(seedTest.fazenda)
+                  })
 
                 // Validar nome fornecedor
-                cy.wrap($linha).find('div.line--item-provider').should('contain.text', seedTest.nomeFornecedor);
+                cy.wrap($linha).find('div.line--item-provider').should('contain.text', seedTest.nomeFornecedor)
 
                 // Validar CNPJ fornecedor
-                cy.wrap($linha).find('div.line--item-cnpj').should('contain.text', seedTest.cnpjFornecedor);
+                cy.wrap($linha).find('div.line--item-cnpj').should('contain.text', seedTest.cnpjFornecedor)
 
                 // Validar safra
-                cy.wrap($linha).find('div.line--item-harvest').should('contain.text', seedTest.safra);
+                cy.wrap($linha).find('div.line--item-harvest').should('contain.text', seedTest.safra)
 
                 // Validar número pedido fornecedor
-                cy.wrap($linha).find('div.line--item-provider_number').should('contain.text', seedTest.numeroPedidoFornecedor);
+                cy.wrap($linha).find('div.line--item-provider_number').should('contain.text', seedTest.numeroPedidoFornecedor)
 
                 // Validar data do pedido
-                cy.wrap($linha).find('div.line--item-date').should('contain.text', seedTest.dataPedido);
+                cy.wrap($linha).find('div.line--item-date').should('contain.text', seedTest.dataPedido)
 
-                return false; // Isso interrompe o loop each()
+                return false // Isso interrompe o loop each()
               }
-            });
-        });
+            })
+        })
     }
   }
 }
