@@ -14,6 +14,7 @@
     "contaBancaria": "Cartão Teste Dashboard Financeiro",
     "contaDestino": "Cartão Teste Dashboard Financeiro",
     "rateioEntreCiclosPlanejamento": true,
+    "deletar": true,
     "ciclos": [
       {
         "nome": "Safra - 737793",

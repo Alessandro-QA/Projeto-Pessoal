@@ -40,6 +40,12 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         seeds.seedCadastroPedido.dataPedido = dataPedido
         seeds.seedCadastroPedido.dataEntrega = dataEntrega
 
+        seeds.seedDocumentoCadastro.dataDocumento = dataPedido
+        seeds.seedDocumentoCadastro.valorTotal = valorTotal
+        seeds.seedDocumentoCadastro.parcelas[0].valorParcela = valorTotal
+        seeds.seedDocumentoCadastro.parcelas[0].saldoParcela = valorTotal
+        seeds.seedDocumentoCadastro.numeroDocumento = numeroPedido
+
         it.only('Deve cadastrar pedido', function () {
         
           cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
@@ -62,9 +68,10 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.validarDetalhes(seeds.seedCadastroPedido)
         })
 
-        it('Deve validar detalhes do documento gerado pelo cadastro do pedido (outros)', function () {
-          // cy.allure().severity('normal').startStep('test content')
+        it.only('Deve validar detalhes do documento gerado pelo cadastro do pedido (outros)', function () {
+          cy.allureDescriptionHtml(testDescription.detalhesPedidoDocumento).allureSeverity('normal')
 
+          seeds.seedDocumentoCadastro.ciclos = seeds.seedCadastroPedido.ciclos
           Documentos.validarDetalhes(seeds.seedDocumentoCadastro)
         })
 

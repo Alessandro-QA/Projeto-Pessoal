@@ -1,49 +1,49 @@
 {
-    "operacao": "Aluguéis",
-    "tipoDocumento": "Outros",
-    "dedutivel": "Sim",
-    "numeroDocumento": "3315",
-    "pessoa": "Empresa 2",
-    "fazenda": "Fazenda Teste API",
-    "safra": "2024 / 2025",
-    "empresa": "Empresa Teste API",
-    "valorTotal": "500,00",
-    "jaPago": true,
-    "condicaoPagamento": "À vista",
-    "contaBancaria": "Cartão Teste Dashboard Financeiro",
-    "contaDestino": "Cartão Teste Dashboard Financeiro",
-    "formaPagamento": "Dinheiro",
-    "rateioEntreCiclosPlanejamento": true,
-    "parcelas": [
-      {
-        "parcela": "1ª Parcela",
-        "valorParcela": "R$ 500,00",
-        "statusParcela": "Pago",
-        "saldoParcela": "0,00"
-      }
-    ],
-    "ciclos": [
-      {
-        "nome": "Safra - 467300",
-        "valor": "R$ 285,70"
-      },
-      {
-        "nome": "Safra - 737793",
-        "valor": "R$ 214,30"
-      }
-    ],
-    "rateioCategoriaSelecionar": true,
-    "categorias": [
-      {
-        "nome": "Aluguéis",
-        "porcentagem": "50%",
-        "valor": "R$ 250,00"
-      },
-      {
-        "nome": "Máquinas e Equipamentos",
-        "porcentagem": "50%",
-        "valor": "R$ 250,00"
-      }
-    ]
-  }
-
+  "operacao": "Aluguéis",
+  "tipoDocumento": "Outros",
+  "dedutivel": "Sim",
+  "numeroDocumento": "3315",
+  "pessoa": "Empresa 2",
+  "fazenda": "Fazenda Teste API",
+  "safra": "2024 / 2025",
+  "empresa": "Empresa Teste API",
+  "valorTotal": "500,00",
+  "jaPago": true,
+  "condicaoPagamento": "À vista",
+  "contaBancaria": "Cartão Teste Dashboard Financeiro",
+  "contaDestino": "Cartão Teste Dashboard Financeiro",
+  "formaPagamento": "Dinheiro",
+  "rateioEntreCiclosPlanejamento": true,
+  "deletar": true,
+  "parcelas": [
+    {
+      "parcela": "1ª Parcela",
+      "valorParcela": "R$ 500,00",
+      "statusParcela": "Pago",
+      "saldoParcela": "0,00"
+    }
+  ],
+  "ciclos": [
+    {
+      "nome": "Safra - 467300",
+      "valor": "R$ 285,70"
+    },
+    {
+      "nome": "Safra - 737793",
+      "valor": "R$ 214,30"
+    }
+  ],
+  "rateioCategoriaSelecionar": true,
+  "categorias": [
+    {
+      "nome": "Aluguéis",
+      "porcentagem": "50%",
+      "valor": "R$ 250,00"
+    },
+    {
+      "nome": "Máquinas e Equipamentos",
+      "porcentagem": "50%",
+      "valor": "R$ 250,00"
+    }
+  ]
+}
