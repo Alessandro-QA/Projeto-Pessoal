@@ -1,5 +1,5 @@
 const html = {
-    pessoa: `
+    Ct1: `
 <div>
     <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
     <span style="color: #b22222;"> Cadastrar pessoa </span>

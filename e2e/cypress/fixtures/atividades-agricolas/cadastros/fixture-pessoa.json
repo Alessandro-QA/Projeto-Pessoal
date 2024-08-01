@@ -1,10 +1,10 @@
 {
   "tipo": "Produtor",
-  "cnpj": "65.448.001/0001-49",
-  "razaoSocial": "Pessoa 1",
+  "cnpj": "41.313.255/0001-91",
+  "razaoSocial": "Teste Cadastro Pessoas E2E LTDA",
   "inscricaoEstadual": "119200171",
   "email": "pessoa1@mail.com",
-  "nomeFantasia": "Pessoa 1",
+  "nomeFantasia": "Teste Cadastro Pessoas E2E",
   "telefone": "(62) 99999-6666",
   "pais": "Brasil",
   "cep": "74000000",
@@ -13,5 +13,15 @@
   "bairro": "Centro",
   "complemento": "Qd 1 Lt 2",
   "logradouro": "Rua 123",
-  "numero": "123"
+  "numero": "123",
+  "banco": "Itaú Unibanco S.A.",
+  "agencia": "1075",
+  "digito": "1",
+  "conta": "94747",
+  "digitoConta": "2",
+  "chavePix": "K0IyS7bbRbFK]7MHI[U*MZsxs4N[2",
+  "autenticacao": "123456",
+  "numeroCertidao": "789456123",
+  "emissao": "31/07/2024",
+  "validade": "31/07/2025"
 }
