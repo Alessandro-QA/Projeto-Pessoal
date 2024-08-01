@@ -40,7 +40,11 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         seeds.seedCadastroPedido.dataPedido = dataPedido
         seeds.seedCadastroPedido.dataEntrega = dataEntrega
 
-        it.only('Deve cadastrar pedido', function () {
+        seeds.seedDocumentoCadastro.dataDocumento = dataPedido
+        seeds.seedDocumentoCadastro.valorTotal = valorTotal
+        seeds.seedDocumentoCadastro.numeroDocumento = numeroPedido
+
+        it('Deve cadastrar pedido', function () {
         
           cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
 
@@ -48,24 +52,27 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
   
         })
 
-        it.only('Deve validar na listagem os dados do pedido cadastrado', function () {
+        it('Deve validar na listagem os dados do pedido cadastrado', function () {
           
           cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('normal')
           
           Pedidos.validarListagem(seeds.seedCadastroPedido)
         })
 
-        it.only('Deve validar detalhes do pedido cadastrado', function () {
+        it('Deve validar detalhes do pedido cadastrado', function () {
           
           cy.allureDescriptionHtml(testDescription.detalhesPedido).allureSeverity('normal')
           
           Pedidos.validarDetalhes(seeds.seedCadastroPedido)
         })
 
-        it('Deve validar detalhes do documento gerado pelo cadastro do pedido (outros)', function () {
+        it.only('Deve validar detalhes do documento gerado pelo cadastro do pedido (outros)', function () {
           // cy.allure().severity('normal').startStep('test content')
 
-          Documentos.validarDetalhes(seeds.seedDocumentoCadastro)
+          cy.log(seeds.seedCadastroPedido)
+          seeds.seedDocumentoCadastro.ciclos = seeds.seedCadastroPedido.ciclos
+          cy.log(seeds.seedDocumentoCadastro)
+          Documentos.validarDetalhes(seeds.seedTest)
         })
 
         it('Deve validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
@@ -226,7 +233,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.validarListagem(seeds.seedStatusPedido.aguardandoEntrega)
         })
 
-        it.only('Deve excluir o pedido', function () {
+        it('Deve excluir o pedido', function () {
           
           cy.allureDescriptionHtml(testDescription.excluirPedido).allureSeverity('critical')
 
