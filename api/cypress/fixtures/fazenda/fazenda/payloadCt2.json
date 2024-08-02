@@ -1,10 +1,11 @@
 {
     "ativo": true,
-    "id": "5175efe7-1b18-4bcd-9487-1b5bff9f3212",
+    "id": "e3b021cc-9040-4da5-bd9a-f4689d554fe4",
     "nome": "Fazenda Santa Maria1",
     "latitude": 0,
     "longitude": 0,
-    "codigo": 72,
+    "bairro": "novo",
+    "codigo": 104,
     "pais": {
         "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
         "descricao": "Brasil"
@@ -21,7 +22,7 @@
     },
     "fazendaMatriculas": [
         {
-            "id": "e1f03223-a2af-4fee-ae3f-27ef55f0bd4d",
+            "id": "de9e12a1-9181-4277-859c-aaa07775c186",
             "empresa": {
                 "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
                 "nome": "Empresa Teste API",
@@ -32,7 +33,7 @@
                 }
             },
             "tipoExploracao": "ExploracaoIndividual",
-            "codigo": 72,
+            "codigo": 104,
             "cafir": "00000000",
             "caepf": "00000000000",
             "descricao": "Fazenda Santa Maria1",
@@ -43,5 +44,5 @@
             }
         }
     ],
-    "bairro": "novo"
+    "numero": "125"
 }
