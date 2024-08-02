@@ -16,6 +16,7 @@
       "qtdParcelas": "4 parcelas",
       "rateioCategoriaSelecionar": true,
       "rateioEntreCategoriasPorOperacao": true,
+      "deletar": true,
       "categorias": [
         {
           "nome": "Comissões",

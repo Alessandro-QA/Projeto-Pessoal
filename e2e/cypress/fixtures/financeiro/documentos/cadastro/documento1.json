@@ -13,5 +13,6 @@
   "contaBancaria": "Cartão Teste Dashboard Financeiro",
   "contaDestino": "Cartão Teste Dashboard Financeiro",
   "rateioEntreCiclos": false,
-  "formaPagamento": "Boleto"
+  "formaPagamento": "Boleto",
+  "deletar": true
 }

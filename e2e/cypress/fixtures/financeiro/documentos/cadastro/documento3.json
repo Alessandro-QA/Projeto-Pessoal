@@ -13,6 +13,7 @@
   "condicaoPagamento": "Parcelado",
   "quantidadeParcela": "3",
   "valorFixo": true,
+  "deletar": true,
   "numeroBoleto": [
     {
       "numero": "11111111111111111111111111111111111111111111111"

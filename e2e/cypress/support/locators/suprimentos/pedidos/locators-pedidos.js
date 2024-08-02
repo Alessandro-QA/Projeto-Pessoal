@@ -11,11 +11,13 @@ const locators = {
     botaoExpandirFiltros: '[data-cy=page-filter-pedidos] .siagri-icon-filter-xsmall',
     botaoMudarVisualizacao: '[data-cy=icon-visualizacao] .siagri-icon-menu-xsmall',
     inputPesquisar: '.el-input__inner[placeholder="Pesquisar"]',
+    dataInicio: '[placeholder="Início"]',
+    dataFinal: '[placeholder="Fim"]',
     selectStatus: '[data-cy=select-status]',
     selectFornecedor: '[data-cy=select-fornecedor]',
     inputData: '[data-cy=date-picker-periodo]',
     botaoLimparFiltro: '[data-cy=page-filter-pedidos] .btn-secondary',
-    cardPedidos: '[data-cy=card-pedidos]',
+    cardPedidos: '.line--wrapper',
     statusPedido: '[data-cy=label-status-pedido]',
     fazenda: '[data-cy=label-fazenda]',
     nomeFornecedor: '[data-cy=span-nome-fornecedor]',
@@ -25,7 +27,16 @@ const locators = {
     numeroPedidoFornecedor: '[data-cy=numero-pedido-no-fornecedor]',
     dataPedido: '[data-cy=data-do-pedido]',
     mensagemSucesso: '.el-message__content',
-    mensagemNenhumPedido: '[data-cy=msg-empty-state]'
+    mensagemNenhumPedido: '[data-cy=msg-empty-state]',
+    cardPedido:{
+      codigo: '.line--item-id .line--text',
+      data: '.line--item-date .line--text',
+      fazenda: '.line--item-farm .line--text',
+      safra: '.line--item-harvest .line--text',
+      fornecedor: '.line--item-provider .line--text',
+      cnpj: '.line--item-cnpj .line--text',
+      numeroPedidoFornecedor: '.line--item-provider_number .line--text',
+    },
   },
 
   registrarEditarPedido: {
@@ -108,7 +119,8 @@ const locators = {
     valorCategoria: '[data-cy=span-valor]',
     ciclo: '[data-cy=span-ciclo]',
     porcentagemCiclo: '[data-cy=span-porcentagem-ciclo]',
-    valorCiclo: '[data-cy=span-valor-ciclo]'
+    valorCiclo: '[data-cy=span-valor-ciclo]',
+    voltar: '[data-cy="header-cadastro-pedido"] > .dark'
   }
 }
 

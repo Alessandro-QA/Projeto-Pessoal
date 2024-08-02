@@ -9,7 +9,6 @@ import Pedidos from '../../../../support/commands/suprimentos/pedidos.js'
 import Recebimento from '../../../../support/commands/suprimentos/recebimento.js'
 import Documentos from '../../../../support/commands/financeiro/documentos/documentos.js'
 import testDescription from './bdd-description/cadastro-recebimento-pedido.description.js'
-import Authenticate from '../../../../support/commands/login/login-logout.js'
 
 const dayjs = require('dayjs');
 
@@ -41,6 +40,12 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         seeds.seedCadastroPedido.dataPedido = dataPedido
         seeds.seedCadastroPedido.dataEntrega = dataEntrega
 
+        seeds.seedDocumentoCadastro.dataDocumento = dataPedido
+        seeds.seedDocumentoCadastro.valorTotal = valorTotal
+        seeds.seedDocumentoCadastro.parcelas[0].valorParcela = valorTotal
+        seeds.seedDocumentoCadastro.parcelas[0].saldoParcela = valorTotal
+        seeds.seedDocumentoCadastro.numeroDocumento = numeroPedido
+
         it.only('Deve cadastrar pedido', function () {
         
           cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
@@ -56,16 +61,17 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.validarListagem(seeds.seedCadastroPedido)
         })
 
-        it('Deve validar detalhes do pedido cadastrado', function () {
-          // cy.allure().severity('normal').startStep('test content')
-          //.descriptionHtml(testDescription.detalhesPedido)
-
-          Pedidos.validarDetalhes(seeds.seedDetalhesPedidoCadastro)
+        it.only('Deve validar detalhes do pedido cadastrado', function () {
+          
+          cy.allureDescriptionHtml(testDescription.detalhesPedido).allureSeverity('normal')
+          
+          Pedidos.validarDetalhes(seeds.seedCadastroPedido)
         })
 
-        it('Deve validar detalhes do documento gerado pelo cadastro do pedido (outros)', function () {
-          // cy.allure().severity('normal').startStep('test content')
+        it.only('Deve validar detalhes do documento gerado pelo cadastro do pedido (outros)', function () {
+          cy.allureDescriptionHtml(testDescription.detalhesPedidoDocumento).allureSeverity('normal')
 
+          seeds.seedDocumentoCadastro.ciclos = seeds.seedCadastroPedido.ciclos
           Documentos.validarDetalhes(seeds.seedDocumentoCadastro)
         })
 

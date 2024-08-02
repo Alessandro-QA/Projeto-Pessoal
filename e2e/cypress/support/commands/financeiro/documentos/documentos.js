@@ -541,9 +541,9 @@ class Documentos {
               // Valide todos os campos do documento
               expect(documentoEncontrado.numeroDocumento).to.equal(documentoEsperado.numeroDocumento)
               expect(documentoEncontrado.categoriasDescricao).to.equal(documentoEsperado.categoriasDescricao)
-              
+
               expect(documentoEncontrado.operacao).to.equal(documentoEsperado.operacao.descricao)
-              
+
               if (seedTestDocumento.filtroPessoa) {
                 expect(documentoEncontrado.pessoa).to.equal(seedTestDocumento.filtroPessoa)
               } else {
@@ -833,7 +833,7 @@ class Documentos {
               // Verifica se a célula contém o nome do ciclo
               cy.get('.cell').eq(0).then(($el) => {
                 const cellText = $el.text().trim()
-                if (cellText === ciclo.nome) {
+                if (cellText === ciclo.nome || cellText === ciclo.nomeCiclo) {
                   // Verifica a célula do valor do ciclo
                   cy.get('.cell').eq(1).should(($el) => {
                     const text = $el.text().replace(/[^\d,]/g, '') // Remove tudo exceto dígitos e vírgulas
@@ -894,19 +894,21 @@ class Documentos {
       cy.get(locDocumentos.detalhesDocumento.anexos).should('not.exist')
     }
 
-
     //Voltar para lista de Documentos
     cy.getVisible(locDocumentos.detalhesDocumento.voltar).click({ force: true })
     cy.wait('@listaDocumentos', { timeout: 20000 })
 
-    //Deleta Registro Criado Para Evitar Acumulo de Registro
-    cy.get('@documentoID').then((documentoID) => {
-      cy.deleteRequest(`${Cypress.env('financeiro')}/Documento`, documentoID).then((responseDelete) => {
-        expect(responseDelete.status).to.be.equal(200)
+    //Verifica se documento precisa ser deletado
+    if (seedTestDocumento.deletar) {
+      //Deleta Registro Criado Para Evitar Acumulo de Registro
+      cy.get('@documentoID').then((documentoID) => {
+        cy.deleteRequest(`${Cypress.env('financeiro')}/Documento`, documentoID).then((responseDelete) => {
+          expect(responseDelete.status).to.be.equal(200)
+        })
       })
-    })
 
-    cy.hideApiView()
+      cy.hideApiView()
+    }
 
   }
 

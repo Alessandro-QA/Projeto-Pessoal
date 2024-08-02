@@ -12,6 +12,7 @@
     "formaPagamento": "Cartão de Débito",
     "condicaoPagamento": "À vista",
     "qtdParcelas": "Parcela única",
+    "deletar": true,
     "parcelas": [
       {
         "parcela": "1ª Parcela",
