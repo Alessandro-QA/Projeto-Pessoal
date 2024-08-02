@@ -22,6 +22,7 @@
     "conversorUnidadeMedida": "/v1/api/conversorUnidadeMedida",
     "safra": "/api/safra/v1",
     "atividadeAgricola":"/v1/api/AtividadeAgricola",
+    "fazenda": "/api/fazenda/v1",
     
     "teamsWebhookUrl" : "__ApiTest.MyFarm.webhookReportUrl__",
     "reportUrl" : "__EndToEndTest.AllureUrl__",
