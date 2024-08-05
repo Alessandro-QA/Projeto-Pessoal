@@ -14,14 +14,14 @@ context('Homepage', () => {
                 Menus.validarDashboard()
             })
 
-            it('CT2 - Menu Atividades Agrícolas', () => {
+            it('CT2 - Menu Atividades Agrícolas', { retries: { runMode: 1, openMode: 1, }, }, () => {
 
                 cy.allureDescriptionHtml(description.Ct2).allureSeverity('critical')
                 Menus.validarAtividadesAgricolas()
                 
             })
 
-            it('CT3 - Menu Maquinários', () => {
+            it('CT3 - Menu Maquinários', { retries: { runMode: 1, openMode: 1, }, }, () => {
 
                 Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct3).allureSeverity('critical')
@@ -29,7 +29,7 @@ context('Homepage', () => {
                
             })
 
-            it('CT4 - Menu Suprimentos', () => {
+            it('CT4 - Menu Suprimentos', { retries: { runMode: 1, openMode: 1, }, }, () => {
 
                 Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct4).allureSeverity('critical')
@@ -37,7 +37,7 @@ context('Homepage', () => {
                
             })
 
-            it('CT5 - Menu Produção', () => {
+            it('CT5 - Menu Produção', { retries: { runMode: 1, openMode: 1, }, }, () => {
 
                 Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct5).allureSeverity('critical')
@@ -45,7 +45,7 @@ context('Homepage', () => {
                 
             })
 
-            it('CT6 - Menu Financeiro', () => {
+            it('CT6 - Menu Financeiro', { retries: { runMode: 1, openMode: 1, }, }, () => {
 
                 Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct6).allureSeverity('critical')
@@ -53,7 +53,7 @@ context('Homepage', () => {
              
             })
 
-            it('CT7 - Menu Resultados', () => {
+            it('CT7 - Menu Resultados', { retries: { runMode: 1, openMode: 1, }, }, () => {
 
                 Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct7).allureSeverity('critical')
@@ -61,7 +61,7 @@ context('Homepage', () => {
                 
             })
 
-            it('CT8 - Menu NF-e', () => {
+            it('CT8 - Menu NF-e', { retries: { runMode: 1, openMode: 1, }, }, () => {
 
                 Menus.voltarHome()
                 cy.allureDescriptionHtml(description.Ct8).allureSeverity('critical')

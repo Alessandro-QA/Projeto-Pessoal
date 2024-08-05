@@ -63,13 +63,13 @@ class Pedidos {
         }
 
         if (seedTest.status) {
-            // selecionar empresa
+            // selecionar status
             cy.getVisible(locatorPedidos.dashboard.selectStatus).click({ force: true })
                 .contains(seedTest.status).click({ force: true })
         }
 
         if (seedTest.fornecedor) {
-            // selecionar empresa
+            // selecionar fornecedor
             cy.getVisible(locatorPedidos.dashboard.selectFornecedor).click({ force: true })
                 .contains(seedTest.fornecedor).click({ force: true })
         }
@@ -93,8 +93,9 @@ class Pedidos {
             // Verificar o status da resposta
             expect(interception.response.statusCode).to.eq(200)
 
-            // Armazena o response
-            cy.wrap(interception.response.body).as('responsePedido')
+            // Armazena os primeiros 10 objetos do response para evitar erro de memoria ao tentar validar 20 objetos
+            const firstTenItems = interception.response.body.slice(0, 10)
+            cy.wrap(firstTenItems).as('responsePedido')
         })
 
         cy.get('@responsePedido').then((responsePedido) => {
@@ -155,7 +156,7 @@ class Pedidos {
             }
 
         })
-        
+
     }
 }
 
