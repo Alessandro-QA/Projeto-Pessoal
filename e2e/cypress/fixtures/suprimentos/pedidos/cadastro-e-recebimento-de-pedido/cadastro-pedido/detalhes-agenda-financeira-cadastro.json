@@ -1,11 +1,11 @@
 {
-  "fazendaDocumento": "Fazenda Reserva",
-  "empresaDocumento": "Empresa Fornecedor - CNPJ",
-  "numeroDocumento": "100",
+  "fazendaDocumento": "Fazenda Teste API",
+  "empresaDocumento": "Empresa Teste API",
+  "numeroDocumento": "57564734",
 
   "cardStatusDocumento": "A pagar",
-  "cardPessoaDocumento": "Empresa Fornecedor - CNPJ (1/1)",
-  "cardValorDocumento": "R$ 60.000,00",
-  "cardSaldoAPagar": "Saldo a pagar: R$ 60.000,00",
-  "cardNumeroDocumento": "Número: 100"
+  "cardPessoaDocumento": "Fornecedor Teste API (1/1)",
+  "cardValorDocumento": 1673.56,
+  "cardSaldoAPagar": 1673.56,
+  "cardNumeroDocumento": "Número: "
 }

@@ -401,15 +401,16 @@ class Pedidos {
 
         // validar quantidade material
         cy.getVisible(locatorPedidos.detalhesPedido.quantidade).eq(index).should(($el) => {
-          expect($el).to.contain.text(listaMaterial.quantidade)
+          const quantidadeFormatada = Number(listaMaterial.quantidade).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+          expect($el).to.contain.text(quantidadeFormatada)
         })
 
         // validar preco unitario material
         cy.getVisible(locatorPedidos.detalhesPedido.precoUnitario).eq(index).should(($el) => {
-          const actualPrice = parseFloat($el.text().trim().replace('R$', '').replace(',', '.'));
-          const expectedPrice = parseFloat(listaMaterial.precoUnitario);
+          const actualPrice = parseFloat($el.text().trim().replace('R$', '').replace(',', '.'))
+          const expectedPrice = parseFloat(listaMaterial.precoUnitario)
 
-          expect(actualPrice).to.equal(expectedPrice);
+          expect(actualPrice).to.equal(expectedPrice)
         })
 
         // validar valor total material
@@ -511,9 +512,10 @@ class Pedidos {
         })
 
         // valor ciclo
-        cy.get(locatorPedidos.detalhesPedido.valorCiclo).should(($el) => {
-          const formattedCicloValor = `${ciclo.valor}`.replace('.', ',');
-          expect($el.text().trim()).to.contain(formattedCicloValor);
+        cy.get(locatorPedidos.detalhesPedido.valorCiclo).then(($el) => {
+          const textContent = $el.text().trim().replace(/R\$\s*/g, '')
+          const formattedCicloValor = `${Number(ciclo.valor).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+          expect(textContent).to.include(formattedCicloValor)
         })
 
       })
@@ -526,7 +528,7 @@ class Pedidos {
    * Valida a exclusao de um pedido
    * */
   validarExclusao(seedTest) {
-    
+
     cy.intercept('POST', '/api/pedido-compra/v1/Pedidos/Listagem').as('listaPedidos')
 
     // Navegar para Pedidos
