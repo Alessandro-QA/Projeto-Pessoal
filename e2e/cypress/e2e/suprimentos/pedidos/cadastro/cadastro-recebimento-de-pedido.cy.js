@@ -28,6 +28,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         const dataEntrega = dayjs().add(1, 'week').format('DD/MM/YYYY')
 
         seeds.seedCadastroPedido.numeroPedidoFornecedor = numeroPedido
+        seeds.seedCadastroPedido.numero = numeroPedido
   
         seeds.seedCadastroPedido.listaMateriais[0].quantidade = quantidadeAleatoria
         seeds.seedCadastroPedido.listaMateriais[0].precoUnitario = precoUnitarioAleatorio
@@ -240,17 +241,18 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.excluir(seeds.seedCadastroPedido)
         })
 
-        it('Deve validar exclusão dos documentos', function () {
-          // cy.allure().severity('normal').startStep('test content')
+        it.only('Deve validar exclusão do pedido', function () {
+          cy.allureDescriptionHtml(testDescription.validarExclusaoPedido).allureSeverity('critical')
 
-          Documentos.validarExclusao(seedCadastroPedido)
+          Pedidos.validarExclusao(seeds.seedCadastroPedido)
         })
 
-        it('Deve validar exclusão do pedido', function () {
-          // cy.allure().severity('normal').startStep('test content')
+        it.only('Deve validar exclusão dos documentos', function () {
+          cy.allureDescriptionHtml(testDescription.validarExclusaoPedido).allureSeverity('critical')
 
-          Pedidos.validarExclusao(seedCadastroPedido)
+          Documentos.validarExclusao(seeds.seedCadastroPedido)
         })
+
       })
     })
   })

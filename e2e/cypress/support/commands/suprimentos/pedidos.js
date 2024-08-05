@@ -525,9 +525,26 @@ class Pedidos {
   /**
    * Valida a exclusao de um pedido
    * */
-  validarExclusao() {
-    // navegar para Pedidos
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+  validarExclusao(seedTest) {
+    
+    cy.intercept('POST', '/api/pedido-compra/v1/Pedidos/Listagem').as('listaPedidos')
+
+    // Navegar para Pedidos
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Pedidos')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.wait('@listaPedidos', { timeout: 20000 })
+      }
+      cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
+    })
+
+    // pesquisar por Numero Pedido
+    cy.getVisible(locatorPedidos.dashboard.inputPesquisar)
+      .clear().type(seedTest.numeroPedidoFornecedor)
+
+    cy.wait('@listaPedidos', { timeout: 20000 })
 
     // alterar visualizacao para cards
     cy.getVisible(locatorPedidos.dashboard.botaoMudarVisualizacao).click()

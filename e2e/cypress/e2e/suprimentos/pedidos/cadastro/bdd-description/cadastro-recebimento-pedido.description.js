@@ -243,7 +243,7 @@ const testDescriptionHtml = {
   </div>
   </div>
   `,
-    validarExclusãoPedido: `
+    validarExclusaoPedido: `
 <div>
     <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
     <span style="color: #b22222;"> Validar exclusão de pedido </span>
