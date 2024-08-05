@@ -30,7 +30,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
           listagem(seedTestDocumento.filtroPessoa)
         })
 
-        it('Filtrar por Tag', function () {
+        it('Filtrar por Tag', { retries: { runMode: 1, openMode: 1, }, } , function () {
 
           cy.allureDescriptionHtml(testDescription.filtrarTag).allureSeverity('normal')
           

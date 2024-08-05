@@ -25,6 +25,11 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
   var bodyDocumento102 = Utils.replacer('numero', numDoc3, documento.documento102)
   var bodyDocumento103 = Utils.replacer('numero', numDoc4, documento.documento103)
 
+  seedTestAgendaFinanceira.pagamentoLote.cardsAgenda[0].cardNumeroDocumento = numDoc1
+  seedTestAgendaFinanceira.pagamentoLote.cardsAgenda[1].cardNumeroDocumento = numDoc2
+
+  seedTestAgendaFinanceira.recebimentoLote.cardsAgenda[0].cardNumeroDocumento = numDoc3
+  seedTestAgendaFinanceira.recebimentoLote.cardsAgenda[1].cardNumeroDocumento = numDoc4
 
   describe('Agenda Financeira', { tags: '@agendaFinanceira' }, () => {
     context('Pagamento em Lote', () => {
@@ -37,11 +42,9 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       })
 
       it('Deve realizar pagamento em lote', { retries: { runMode: 1, openMode: 1, }, }, function () {
-        
+
         cy.allureDescriptionHtml(testDescription.pagamentoLote).allureSeverity('normal')
 
-        seedTestAgendaFinanceira.pagamentoLote.cardsAgenda[0].cardNumeroDocumento = numDoc1
-        seedTestAgendaFinanceira.pagamentoLote.cardsAgenda[1].cardNumeroDocumento = numDoc2
         AgendaFinanceira.pagarReceberLote(seedTestAgendaFinanceira.pagamentoLote)
       })
 
@@ -49,8 +52,6 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
 
         cy.allureDescriptionHtml(testDescription.pagamentoLote).allureSeverity('normal')
 
-        seedTestAgendaFinanceira.pagamentoLote.cardsAgenda[0].cardNumeroDocumento = numDoc1
-        seedTestAgendaFinanceira.pagamentoLote.cardsAgenda[1].cardNumeroDocumento = numDoc2
         AgendaFinanceira.validarPagosRecebidos(seedTestAgendaFinanceira.pagamentoLote)
       })
 
@@ -66,20 +67,16 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       })
 
       it('Deve realizar recebimento em lote', { retries: { runMode: 1, openMode: 1, }, }, function () {
-        
+
         cy.allureDescriptionHtml(testDescription.recebimentoLote).allureSeverity('normal')
 
-        seedTestAgendaFinanceira.recebimentoLote.cardsAgenda[0].cardNumeroDocumento = numDoc3
-        seedTestAgendaFinanceira.recebimentoLote.cardsAgenda[1].cardNumeroDocumento = numDoc4
         AgendaFinanceira.pagarReceberLote(seedTestAgendaFinanceira.recebimentoLote)
       })
 
       it('Deve validar títulos recebidos', { retries: { runMode: 1, openMode: 1, }, }, function () {
 
         cy.allureDescriptionHtml(testDescription.recebimentoLote).allureSeverity('normal')
-        
-        seedTestAgendaFinanceira.recebimentoLote.cardsAgenda[0].cardNumeroDocumento = numDoc3
-        seedTestAgendaFinanceira.recebimentoLote.cardsAgenda[1].cardNumeroDocumento = numDoc4
+
         AgendaFinanceira.validarPagosRecebidos(seedTestAgendaFinanceira.recebimentoLote)
       })
     })
