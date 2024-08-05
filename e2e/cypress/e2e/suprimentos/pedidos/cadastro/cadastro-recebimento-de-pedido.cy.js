@@ -243,13 +243,13 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         it('Deve validar exclusão dos documentos', function () {
           // cy.allure().severity('normal').startStep('test content')
 
-          Documentos.validarExclusao()
+          Documentos.validarExclusao(seedCadastroPedido)
         })
 
         it('Deve validar exclusão do pedido', function () {
           // cy.allure().severity('normal').startStep('test content')
 
-          Pedidos.validarExclusao()
+          Pedidos.validarExclusao(seedCadastroPedido)
         })
       })
     })
