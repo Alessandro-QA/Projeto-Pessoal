@@ -346,20 +346,6 @@ class AgendaFinanceira {
             cy.get(locAgendaFinanceira.dashboard.cardSaldoAPagar).should('have.text', card.cardSaldo )
         });
 
-      /*
-      cy.get(locAgendaFinanceira.dashboard.cardNomePessoa).should(($el) => {
-        expect($el).to.have.text(card.cardPessoaDocumento)
-      })
-      cy.get(locAgendaFinanceira.dashboard.cardValor).should(($el) => {
-        expect($el).to.have.text(card.cardValorDocumento)
-      })
-      cy.get(locAgendaFinanceira.dashboard.cardSaldoAPagar).should(($el) => {
-        expect($el).to.have.text(card.cardSaldoAPagar)
-      })
-      cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento).should(($el) => {
-        expect($el).to.have.text(card.cardNumeroDocumento)
-      })*/
-
       cy.getVisible(locAgendaFinanceira.dashboard.pesquisarDocumento)
         .clear()
 
@@ -367,49 +353,7 @@ class AgendaFinanceira {
 
     })
 
-    /*
-    cy.get(locAgendaFinanceira.dashboard.checkBoxTipoPagamentoNome)
-      .contains(seedTestAgendaFinanceira.status)
-      .parents(locAgendaFinanceira.dashboard.checkBoxTipoPagamento)
-      .within(($tipoPagamento) => {
-        cy.get($tipoPagamento).should('exist').and('be.visible')
-
-        cy.getVisible($tipoPagamento).click()
-      })
-
-    cy.getVisible(locAgendaFinanceira.dashboard.titulo).click()
-
-    cy.wait('@listagemAgenda')
-
-    const cards = seedTestAgendaFinanceira.cardDocumento
-    cards.forEach((card) => {
-      cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento)
-        .contains(card.cardNumeroDocumento)
-        .parent(locAgendaFinanceira.dashboard.cardAgenda).within(() => {
-          if (card.cardStatusDocumento === 'Recebido') {
-            cy.get(locAgendaFinanceira.dashboard.statusRecebido).should(($el) => {
-              expect($el).to.have.text(card.cardStatusDocumento)
-            })
-          } else {
-            cy.get(locAgendaFinanceira.dashboard.statusPago).should(($el) => {
-              expect($el).to.have.text(card.cardStatusDocumento)
-            })
-          }
-          cy.get(locAgendaFinanceira.dashboard.cardNomePessoa).should(($el) => {
-            expect($el).to.have.text(card.cardPessoaDocumento)
-          })
-          cy.get(locAgendaFinanceira.dashboard.cardValor).should(($el) => {
-            expect($el).to.have.text(card.cardValorDocumento)
-          })
-          cy.get(locAgendaFinanceira.dashboard.cardSaldoAPagar).should(($el) => {
-            expect($el).to.have.text(card.cardSaldoAPagar)
-          })
-          cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento).should(($el) => {
-            expect($el).to.have.text(card.cardNumeroDocumento)
-          })
-        })
-    })
-        */
+    
   }
 
   /**

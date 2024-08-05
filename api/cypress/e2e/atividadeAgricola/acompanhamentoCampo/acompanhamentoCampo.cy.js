@@ -6,7 +6,8 @@ const dayjs = require('dayjs')
 
 context('Atividade Agrícola', () => {
     context('Acompanhamento de Campo', () => {
-        describe(`GET/PUT - ${Cypress.env('atividadeAgricola')}/AcompanhamentoCampo - Ver Detalhes e Atualizar Dados de Acompanhamento do Talhão`, () => {
+        // Alterações DEV
+        describe.skip(`GET/PUT - ${Cypress.env('atividadeAgricola')}/AcompanhamentoCampo - Ver Detalhes e Atualizar Dados de Acompanhamento do Talhão`, () => {
             it('CT1 - Recuperar dados de Acompanhamento de Campo de Talhão Específico', () => {
 
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')

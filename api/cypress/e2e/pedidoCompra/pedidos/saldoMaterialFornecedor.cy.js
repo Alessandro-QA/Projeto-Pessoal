@@ -9,7 +9,7 @@ context('Pedido Compra', () => {
             it('CT1 - Saldo do Material', () => {
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
-                cy.fixture('pedidoCompra/pedidos/SaldoMaterialFornecedor/paramsCt1.json').then((params) => {
+                cy.fixture('pedidoCompra/pedidos/saldoMaterialFornecedor/paramsCt1.json').then((params) => {
                     cy.postRequest(`${Cypress.env('baseUrl')}${Cypress.env('pedidoCompra')}/Pedidos/SaldoMaterialFornecedor`, params)
                         .then((response) => {
                          
