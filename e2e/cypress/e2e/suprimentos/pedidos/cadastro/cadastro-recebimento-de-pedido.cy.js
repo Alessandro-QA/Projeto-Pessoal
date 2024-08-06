@@ -28,6 +28,9 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         const dataEntrega = dayjs().add(1, 'week').format('DD/MM/YYYY')
 
         seeds.seedCadastroPedido.numeroPedidoFornecedor = numeroPedido
+        seeds.seedCadastroPedido.numero = numeroPedido
+        seeds.seedAgendaFinanceiraCadastro.numeroDocumento = numeroPedido
+        seeds.seedAgendaFinanceiraCadastro.cardNumeroDocumento = "Número: " + numeroPedido
   
         seeds.seedCadastroPedido.listaMateriais[0].quantidade = quantidadeAleatoria
         seeds.seedCadastroPedido.listaMateriais[0].precoUnitario = precoUnitarioAleatorio
@@ -45,6 +48,9 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         seeds.seedDocumentoCadastro.parcelas[0].valorParcela = valorTotal
         seeds.seedDocumentoCadastro.parcelas[0].saldoParcela = valorTotal
         seeds.seedDocumentoCadastro.numeroDocumento = numeroPedido
+
+        seeds.seedAgendaFinanceiraCadastro.cardValorDocumento = valorTotal
+        seeds.seedAgendaFinanceiraCadastro.cardSaldoAPagar = valorTotal
 
         it.only('Deve cadastrar pedido', function () {
         
@@ -75,10 +81,10 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Documentos.validarDetalhes(seeds.seedDocumentoCadastro)
         })
 
-        it('Deve validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
-          // cy.allure().severity('normal').startStep('test content')
-          //.descriptionHtml(testDescription.pesquisarAgendaFinanceira)
-
+        it.only('Deve validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
+          
+          cy.allureDescriptionHtml(testDescription.pesquisarAgendaFinanceira).allureSeverity('normal')
+          
           AgendaFinanceira.validarDashboard(seeds.seedAgendaFinanceiraCadastro)
         })
 
@@ -240,17 +246,18 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.excluir(seeds.seedCadastroPedido)
         })
 
-        it('Deve validar exclusão dos documentos', function () {
-          // cy.allure().severity('normal').startStep('test content')
+        it.only('Deve validar exclusão do pedido', function () {
+          cy.allureDescriptionHtml(testDescription.validarExclusaoPedido).allureSeverity('critical')
 
-          Documentos.validarExclusao()
+          Pedidos.validarExclusao(seeds.seedCadastroPedido)
         })
 
-        it('Deve validar exclusão do pedido', function () {
-          // cy.allure().severity('normal').startStep('test content')
+        it.only('Deve validar exclusão dos documentos', function () {
+          cy.allureDescriptionHtml(testDescription.validarExclusaoPedido).allureSeverity('critical')
 
-          Pedidos.validarExclusao()
+          Documentos.validarExclusao(seeds.seedCadastroPedido)
         })
+
       })
     })
   })

@@ -1356,15 +1356,10 @@ class Documentos {
   /**
    * Valida a exclusao do documento
    */
-  validarExclusao() {
-    // Navegar para Documentos
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
-
-    // limpar fazenda
-    // cy.get(locDocumentos.dashboard.limparFiltroFazenda).click({ force: true })
-
-    // limpar empresa
-    // cy.get(locDocumentos.dashboard.limparFiltroEmpresa).click({ force: true })
+  validarExclusao(seedTestDocumento) {
+   
+    // Pesquisar documento
+   Documentos.buscar(seedTestDocumento)
 
     // validar inexistencia do card documento
     cy.get(locDocumentos.dashboard.cardDocumento).should('not.exist')

@@ -365,20 +365,17 @@ class AgendaFinanceira {
     const locatorTituloPagina = locAgendaFinanceira.dashboard.titulo
     const tituloPagina = 'Agenda financeira'
 
-    cy.log('Navegar para Agenda Financeira')
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
-
     cy.intercept('POST', '/api/financeiro/v1/Agenda/Listagem').as('listagemAgenda')
 
-    // // Selecionar Empresa
-    // cy.getVisible(locAgendaFinanceira.dashboard.filtroEmpresa)
-    //   .contains(seedTestAgendaFinanceira.empresaDocumento).click()
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Agenda Financeira')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
 
-    // // Selecionar Fazenda
-    // cy.getVisible(locAgendaFinanceira.dashboard.filtroFazenda)
-    //   .contains(seedTestAgendaFinanceira.fazendaDocumento).click()
-
-    cy.wait('@listagemAgenda')
+        cy.wait('@listagemAgenda')
+      }
+      cy.log(currentPath)
+    });
 
     if (seedTestAgendaFinanceira.status === 'Pagos') {
       cy.getVisible(locAgendaFinanceira.dashboard.buttonFiltros).click()
@@ -386,14 +383,14 @@ class AgendaFinanceira {
         .should('exist').and('be.visible')
         .contains(seedTestAgendaFinanceira.status).click()
 
-      cy.wait(3000)
+        cy.wait('@listagemAgenda')
     }
 
     cy.log('Pesquisar por numero do documento')
     cy.getVisible(locAgendaFinanceira.dashboard.pesquisarDocumento)
       .clear().type(`${seedTestAgendaFinanceira.numeroDocumento}{enter}`)
 
-    cy.wait(5000)
+      cy.wait('@listagemAgenda')
 
     cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento)
       .contains(seedTestAgendaFinanceira.cardNumeroDocumento)
@@ -404,18 +401,22 @@ class AgendaFinanceira {
             expect($el).to.have.text(seedTestAgendaFinanceira.cardStatusDocumento)
           })
         } else {
-          cy.get(locAgendaFinanceira.dashboard.statusPago).should(($el) => {
-            expect($el).to.have.text(seedTestAgendaFinanceira.cardStatusDocumento)
-          })
+          cy.get(locAgendaFinanceira.dashboard.status).should(($el) => {
+            const text = $el.text().trim(); // Remove espaços em branco no início e no final
+            expect(text).to.equal(seedTestAgendaFinanceira.cardStatusDocumento);
+          });
         }
+
         cy.get(locAgendaFinanceira.dashboard.cardNomePessoa).should(($el) => {
           expect($el).to.have.text(seedTestAgendaFinanceira.cardPessoaDocumento)
         })
         cy.get(locAgendaFinanceira.dashboard.cardValor).should(($el) => {
-          expect($el).to.have.text(seedTestAgendaFinanceira.cardValorDocumento)
+          const text = $el.text().replace('R$', '').replace(/\./g, '').replace(',', '.').trim(); // Remove 'R$', substitui pontos por nada e vírgulas por pontos
+          expect(text).to.include(seedTestAgendaFinanceira.cardValorDocumento);
         })
         cy.get(locAgendaFinanceira.dashboard.cardSaldoAPagar).should(($el) => {
-          expect($el).to.have.text(seedTestAgendaFinanceira.cardSaldoAPagar)
+          const text = $el.text().replace('R$', '').replace(/\./g, '').replace(',', '.').trim(); // Remove 'R$', substitui pontos por nada e vírgulas por pontos
+          expect(text).to.include(seedTestAgendaFinanceira.cardSaldoAPagar);
         })
         cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento).should(($el) => {
           expect($el).to.have.text(seedTestAgendaFinanceira.cardNumeroDocumento)
