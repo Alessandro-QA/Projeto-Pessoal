@@ -58,7 +58,13 @@ const locators = {
     ativarInativar: '.situacao.el-col.el-col-5',
     cancelar: '.el-button--secondary',
     adicionar: 'button.el-button.el-button--primary',
-    mensagemSucesso: '.el-message.el-message--success'
+    mensagemSucesso: '.el-message.el-message--success',
+    openBanking: '[data-cy="checkbox-utilizar-open-banking"]',
+    dadosOpenBanking: 'div.el-col.el-col-24 > strong',
+    convenio: '[data-cy="input-numero-contrato-convenio"]',
+    appKey: '[data-cy="input-app-key"]',
+    clientID: '[data-cy="input-client-id"]',
+    clientSecret: '[data-cy="input-client-secret"]'
   },
 
   lancamentosCartao: {

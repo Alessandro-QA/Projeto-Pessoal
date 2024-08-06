@@ -214,6 +214,33 @@ class ContaBancaria {
       cy.getVisible(locContaBancaria.contaBancaria.ativarInativar).click()
     }
 
+    if (seedTestContaBancaria.openBanking) {
+      cy.log('Verificar se a opção Open Banking foi exibida')
+      cy.get(locContaBancaria.contaBancaria.openBanking).should('be.visible')
+
+      cy.log('Clicar no icone de "Utilizar Open Banking"')
+      cy.getVisible(locContaBancaria.contaBancaria.openBanking).click()
+
+      cy.log('Verificar se os campos do Open Banking foram exibidos')
+      cy.get(locContaBancaria.contaBancaria.dadosOpenBanking).should('be.visible')
+
+      cy.log('Digitar Convênio/Contrato')
+      cy.getVisible(locContaBancaria.contaBancaria.convenio).clear()
+        .type(seedTestContaBancaria.convenio)
+
+      cy.log('Digitar App Key')
+      cy.getVisible(locContaBancaria.contaBancaria.appKey).clear()
+        .type(seedTestContaBancaria.appKey)
+
+      cy.log('Digitar Client ID')
+      cy.getVisible(locContaBancaria.contaBancaria.clientID).clear()
+        .type(seedTestContaBancaria.clientID)
+
+      cy.log('Digitar Client Secret')
+      cy.getVisible(locContaBancaria.contaBancaria.clientSecret).clear()
+        .type(seedTestContaBancaria.clientSecret)
+    }
+
     cy.log('Clicar no botão adicionar conta')
     cy.getVisible(locContaBancaria.contaBancaria.adicionar)
       .click()
@@ -275,7 +302,7 @@ class ContaBancaria {
         expect(responseDelete.status).to.be.equal(200)
       })
     })
-    
+
     // Oculta o #api-view para continuar na página Atual
     cy.hideApiView()
   }
@@ -864,6 +891,57 @@ class ContaBancaria {
     cy.get('.el-form-item__error')
       .filter(':visible') // Filtra apenas os elementos visíveis
       .should('have.length', 9) // Verifica se há exatamente 9 elementos visíveis
+
+    cy.log('Verifica se apresentou mensagem de erro suspensa')
+    cy.get('.el-message__content').should('be.visible')
+
+    cy.log('Clicar em Cancelar')
+    cy.get(locContaBancaria.contaBancaria.cancelar).click()
+      .then(() => {
+        // Aguarda até que a janela não esteja mais visível
+        cy.get(locContaBancaria.contaBancaria.titulo).should('not.exist')
+      })
+  }
+
+  obrigatoriedadeContaOpenBanking(seedTestContaBancaria) {
+    const url = '/financeiro/contas-bancarias'
+    const locatorTituloPagina = locContaBancaria.dashboard.titulo
+    const tituloPagina = 'Contas bancárias'
+
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Contas Bancárias')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.desabilitarPopUpNotificacao()
+      }
+      cy.log(currentPath)
+    })
+
+    cy.get(locContaBancaria.dashboard.pesquisarConta, { timeout: 5000 }).click().clear()
+
+    cy.log('Clicar no botao adicionar conta')
+    cy.getVisible(locContaBancaria.dashboard.novaConta).click()
+    cy.getVisible(locContaBancaria.contaBancaria.titulo).should(($el) => {
+      expect($el).to.contain.text('Nova Conta')
+    })
+
+    cy.log('Aguardar o loader desaparecer antes de selecionar o Banco do Brasil')
+    cy.get('div.siagri-loader').should('not.be.visible').then(() => {
+      cy.log('Selecionar Banco do Brasil')
+      cy.get(locContaBancaria.contaBancaria.banco).click()
+        .contains(seedTestContaBancaria.banco).click()
+    })
+
+    cy.log('Clicar no icone de "Utilizar Open Banking"')
+    cy.getVisible(locContaBancaria.contaBancaria.openBanking).click()
+
+    cy.log('Clicar no botão Adicionar')
+    cy.getVisible(locContaBancaria.contaBancaria.adicionar).click()
+
+    cy.log('Verifica se apresentou mensagem de erro para os campos')
+    cy.get('.el-form-item__error')
+      .filter(':visible') // Filtra apenas os elementos visíveis
+      .should('have.length', 11) // Verifica se há exatamente 11 elementos visíveis
 
     cy.log('Verifica se apresentou mensagem de erro suspensa')
     cy.get('.el-message__content').should('be.visible')
