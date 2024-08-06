@@ -1,0 +1,47 @@
+[
+    {
+      "ativo": false,
+      "id": "72ad793e-381b-41fe-ba1a-7017465044ad",
+      "nome": "Fazenda Bia",
+      "latitude": 0,
+      "longitude": 0,
+      "codigo": 82,
+      "pais": {
+        "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+        "descricao": "Brasil"
+      },
+      "estado": {
+        "id": "e76436a3-bd7d-4770-a622-df15d849ac78",
+        "descricao": "Alagoas",
+        "sigla": "AL"
+      },
+      "municipio": {
+        "id": "b88de999-1a0b-4a75-9c73-9c5e3ebe1093",
+        "descricao": "Batalha",
+        "codigo": 2700706
+      },
+      "inscricoesEstaduais": [],
+      "fazendaMatriculas": [
+        {
+          "id": "8a8b7434-f6e5-4258-8204-9d66c51e7146",
+          "empresa": {
+            "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+            "nome": "Empresa Teste API",
+            "inscricaoEstadual": {
+              "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+              "descricao": "IE",
+              "valor": "ISENTO",
+              "isento": true,
+              "ativo": false
+            }
+          },
+          "tipoExploracao": 1,
+          "cafir": "00000000",
+          "caepf": "00000000000",
+          "descricao": "Fazenda Santa Maria1",
+          "codigo": 82,
+          "fazendaMatriculaPessoaExploracoes": []
+        }
+      ]
+    }
+  ]

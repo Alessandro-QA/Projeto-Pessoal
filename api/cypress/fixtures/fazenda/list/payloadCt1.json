@@ -1,0 +1,186 @@
+[
+    {
+      "ativo": true,
+      "id": "55d74182-86f4-47be-b396-8b9696d2cd32",
+      "nome": "Fazenda Bia 2",
+      "latitude": 0,
+      "longitude": 0,
+      "codigo": 86,
+      "pais": {
+        "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+        "descricao": "Brasil"
+      },
+      "estado": {
+        "id": "e76436a3-bd7d-4770-a622-df15d849ac78",
+        "descricao": "Alagoas",
+        "sigla": "AL"
+      },
+      "municipio": {
+        "id": "b88de999-1a0b-4a75-9c73-9c5e3ebe1093",
+        "descricao": "Batalha",
+        "codigo": 2700706
+      },
+      "inscricoesEstaduais": [],
+      "fazendaMatriculas": [
+        {
+          "id": "21772b74-ec1c-43c2-86d1-72321c76d589",
+          "empresa": {
+            "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+            "nome": "Empresa Teste API",
+            "inscricaoEstadual": {
+              "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+              "descricao": "IE",
+              "valor": "ISENTO",
+              "isento": true,
+              "ativo": false
+            }
+          },
+          "tipoExploracao": 1,
+          "cafir": "00000000",
+          "caepf": "00000000000",
+          "descricao": "Fazenda Santa Maria1",
+          "codigo": 86,
+          "fazendaMatriculaPessoaExploracoes": []
+        }
+      ]
+    },
+    {
+      "ativo": true,
+      "id": "e3b021cc-9040-4da5-bd9a-f4689d554fe4",
+      "nome": "Fazenda Santa Maria1",
+      "latitude": 0,
+      "longitude": 0,
+      "bairro": "novo",
+      "numero": "125",
+      "codigo": 104,
+      "pais": {
+        "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+        "descricao": "Brasil"
+      },
+      "estado": {
+        "id": "e76436a3-bd7d-4770-a622-df15d849ac78",
+        "descricao": "Alagoas",
+        "sigla": "AL"
+      },
+      "municipio": {
+        "id": "30f42d76-19a5-49d0-9ef7-0a054026fd45",
+        "descricao": "Água Branca",
+        "codigo": 2700102
+      },
+      "inscricoesEstaduais": [],
+      "fazendaMatriculas": [
+        {
+          "id": "de9e12a1-9181-4277-859c-aaa07775c186",
+          "empresa": {
+            "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+            "nome": "Empresa Teste API",
+            "inscricaoEstadual": {
+              "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+              "descricao": "IE",
+              "valor": "ISENTO",
+              "isento": true,
+              "ativo": false
+            }
+          },
+          "tipoExploracao": 1,
+          "cafir": "00000000",
+          "caepf": "00000000000",
+          "descricao": "Fazenda Santa Maria1",
+          "codigo": 104,
+          "fazendaMatriculaPessoaExploracoes": []
+        }
+      ]
+    },
+    {
+      "ativo": true,
+      "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+      "nome": "Fazenda Teste API",
+      "latitude": -16.63933,
+      "longitude": -49.23928,
+      "bairro": "Santa Tereza",
+      "codigoPostal": "46114-162",
+      "codigo": 1,
+      "pais": {
+        "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+        "descricao": "Brasil"
+      },
+      "estado": {
+        "id": "5d97e9d7-5008-4072-be75-7f8c9fffe030",
+        "descricao": "Bahia",
+        "sigla": "BA"
+      },
+      "municipio": {
+        "id": "f83bd6f2-9bf7-4550-a047-8de5bc4d0e0a",
+        "descricao": "Brumado",
+        "codigo": 2904605
+      },
+      "inscricoesEstaduais": [],
+      "fazendaMatriculas": [
+        {
+          "id": "f0f756e7-2960-43e4-b7f2-550dc45efddc",
+          "empresa": {
+            "id": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+            "nome": "Empresa Teste API",
+            "inscricaoEstadual": {
+              "id": "ecdc26f4-1ec0-4c43-b1b6-bbcee6553972",
+              "descricao": "IE",
+              "valor": "ISENTO",
+              "isento": true,
+              "ativo": false
+            }
+          },
+          "tipoExploracao": 1,
+          "cafir": "85458415",
+          "caepf": "5484851",
+          "descricao": "Teste",
+          "codigo": 1,
+          "fazendaMatriculaPessoaExploracoes": []
+        }
+      ]
+    },
+    {
+      "ativo": true,
+      "id": "3f1d413c-476e-4808-b395-9acfd50a8f55",
+      "nome": "Teste Fazenda 2",
+      "latitude": 0,
+      "longitude": 0,
+      "codigo": 2,
+      "pais": {
+        "id": "701211b5-7e35-45e6-8e5c-24c79c0f0865",
+        "descricao": "Brasil"
+      },
+      "estado": {
+        "id": "5d97e9d7-5008-4072-be75-7f8c9fffe030",
+        "descricao": "Bahia",
+        "sigla": "BA"
+      },
+      "municipio": {
+        "id": "958128a2-8287-4b0c-ba1d-71c9d199d9d6",
+        "descricao": "Abaré",
+        "codigo": 2900207
+      },
+      "inscricoesEstaduais": [],
+      "fazendaMatriculas": [
+        {
+          "id": "2daaac89-f72f-4fd0-a23f-bf16cb2cb186",
+          "empresa": {
+            "id": "c79da4b4-fb34-417c-9ab8-8c943c91c032",
+            "nome": "Empresa Teste Edição",
+            "inscricaoEstadual": {
+              "id": "3714bc76-7203-43a2-a93e-3c046e43a77c",
+              "descricao": "ISENTO",
+              "valor": "ISENTO",
+              "isento": true,
+              "ativo": false
+            }
+          },
+          "tipoExploracao": 1,
+          "cafir": "1232",
+          "caepf": "13132",
+          "descricao": "Teste",
+          "codigo": 2,
+          "fazendaMatriculaPessoaExploracoes": []
+        }
+      ]
+    }
+  ]
