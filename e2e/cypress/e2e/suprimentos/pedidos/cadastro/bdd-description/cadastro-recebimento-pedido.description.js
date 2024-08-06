@@ -243,6 +243,32 @@ const testDescriptionHtml = {
   </div>
   </div>
   `,
+    validarExclusaoPedido: `
+<div>
+    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
+    <span style="color: #b22222;"> Validar exclusão de pedido </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente/responsável pelas compras da fazenda <br />
+    <strong>QUERO</strong> validar a exclusão dos pedidos de compra da minha fazenda com status de Aguardando Entrega <br />
+    <strong>PARA</strong> garantir a correta gestão de suprimentos da fazenda <br />
+</div>
+<br/>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenário: </span>
+    <span style="color: #b22222;"> Validar exclusão </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu queira validar a exclusão de um Pedido <br />
+    <strong>QUANDO</strong> eu entrar na Dashboard de Pedidos <br />
+    <strong>E</strong> clicar em um dos pedidos listados <br />
+    <strong>E</strong> clicar no ícone de excluir <br />
+    <strong>E</strong> confirmar a exclusão <br />
+    <strong>ENTÃO</strong> o pedido deverá ser removido da lista <br />
+    <strong>E</strong> eu devo ver uma mensagem de confirmação da exclusão <br />
+    <strong>E</strong> a lista de pedidos deve ser atualizada corretamente <br />
+</div>
+`,
     recebimento: `
   <div>
       <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>

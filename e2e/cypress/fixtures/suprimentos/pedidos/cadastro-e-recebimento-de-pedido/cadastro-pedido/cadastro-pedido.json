@@ -4,6 +4,7 @@
   "nomeFornecedor": "Fornecedor Teste API",
   "cnpjFornecedor": "57.046.724/0001-93",
   "numeroPedidoFornecedor": "78621642",
+  "numero":"78621642",
   "safra": "2023 / 2024",
   "fazenda": "Fazenda Teste API",
   "mesmoLocalEntrega": true,
