@@ -68,4 +68,3 @@ context('Fazenda', () => {
         })
     })
 })
-

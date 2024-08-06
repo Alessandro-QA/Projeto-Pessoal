@@ -8,12 +8,10 @@ context('Fazenda', () => {
         it('CT1 - Buscar explorações de matrícula de fazenda', () => {
             cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
-            const fazendaId = 'a5b4ec5c-dc8a-4d49-bdce-ae8639ebb8f7'
-            const matriculaId = '03cc2a37-da82-4aeb-abda-0b62ee46c9b1'
-            const ie = 'IE'
-
-            cy.fixture('fazenda/idMatriculasIeInscricaoEstadualId/payloadCt1.json').then((payload) => {
-                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('fazenda')}/Fazenda/${fazendaId}/matriculas/${ie}/${matriculaId}/exploracoes`, payload)
+            // Carrega os parâmetros da fixture
+            cy.fixture('fazenda/idMatriculasIeInscricaoEstadualId/paramsCt1.json').then((params) => {
+                // Faz a solicitação usando os parâmetros da fixture na URL
+                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('fazenda')}/Fazenda/${params.fazendaId}/matriculas/${params.ie}/${params.matriculaId}/exploracoes`)
                     .then((response) => {
                         // Verifica o status da resposta e o cabeçalho da solicitação
                         expect(response.status).to.equal(200)
@@ -31,7 +29,6 @@ context('Fazenda', () => {
                             expect(item.pessoa).to.have.property('nome').that.is.a('string')
                             expect(item.pessoa).to.have.property('documentoPrincipal').that.is.a('string')
                             expect(item).to.have.property('participacao').that.is.a('number')
-
                         })
                     })
             })

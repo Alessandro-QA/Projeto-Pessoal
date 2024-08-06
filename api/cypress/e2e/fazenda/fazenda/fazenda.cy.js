@@ -30,7 +30,6 @@ context('Fazenda', () => {
             })
         })
 
-        // Teste de edição de fazenda
         it('CT2 - Editar fazenda', () => {
             cy.allureDescriptionHtml(description.Ct2).allureSeverity('normal')
 
@@ -48,7 +47,7 @@ context('Fazenda', () => {
         })
 
         it('CT3 - Deletar fazenda', () => {
-            cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
+            cy.allureDescriptionHtml(description.Ct3).allureSeverity('normal')
 
             cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('fazenda')}/Fazenda`, fazendaId)
                 .then((response) => {
