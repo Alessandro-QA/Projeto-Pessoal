@@ -40,8 +40,8 @@ Cypress.Commands.add('getVisible', (locator) => {
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   // ignorar erros específicos ou manipular de acordo com sua necessidade
-  return false; // para evitar que o erro seja lançado no console do Cypress
-});
+  return false // para evitar que o erro seja lançado no console do Cypress
+})
 
 // Command Cypress para desabilitar a popup de notificação do MyFarm,
 // setando um item no localStorage. 
@@ -49,16 +49,32 @@ Cypress.Commands.add('desabilitarPopUpNotificacao', () => {
   window.localStorage.setItem('notification-permission-myfarm', 'denied')
 
   cy.window().then((win) => {
-    const notification = win.document.querySelector('.el-notification__group');
+    const notification = win.document.querySelector('.el-notification__group')
 
     if (notification && notification.offsetParent !== null) { // Verifica se o elemento existe e está visível
-      const closeButton = notification.querySelector('.el-notification__closeBtn');
+      const closeButton = notification.querySelector('.el-notification__closeBtn')
       if (closeButton) {
-        closeButton.click();
+        closeButton.click()
       }
     }
-  });
+  })
 
+})
+
+// Command Cypress para aceitar coookies
+Cypress.Commands.add('aceitarCookies', () => {
+  cy.get('section.cookies-agree', { timeout: 10000 }) // Espera até 10 segundos para a seção estar presente
+    .should('exist') // Verifica se a seção existe
+    .then(($section) => {
+      const $button = $section.find('#cookiesBgreeButton')
+
+      // Verifica se o botão está visível
+      if ($button.length && $button.is(':visible')) {
+        cy.wrap($button).click() // Clica no botão usando cy.wrap para permitir interações com o jQuery object
+      } else {
+        cy.log('Botão de aceitar cookies não está visível') // Registra uma mensagem se o botão não estiver visível
+      }
+    })
 })
 
 // Command Cypress para executar uma query, utilizando a task cypress preparedStatement
@@ -71,32 +87,32 @@ Cypress.Commands.add('executarQuery', (query) => {
 // Esconde a tela de API view para seguir na página principal sem visualizar cada requisição
 Cypress.Commands.add('hideApiView', () => {
   cy.document().then((doc) => {
-    const style = doc.createElement('style');
-    style.textContent = '#api-view { display: none !important; }';
-    doc.head.appendChild(style);
-  });
-});
+    const style = doc.createElement('style')
+    style.textContent = '#api-view { display: none !important }'
+    doc.head.appendChild(style)
+  })
+})
 
 Cypress.Commands.add('findAllByText', { prevSubject: 'element' }, (subject, text) => {
-  return cy.wrap(subject).contains(text);
-});
+  return cy.wrap(subject).contains(text)
+})
 
 Cypress.Commands.add('fecharMensagem', () => {
   cy.document().then(doc => {
-    const messageSelectors = ['.el-message', '.el-message__content'];
+    const messageSelectors = ['.el-message', '.el-message__content']
     messageSelectors.forEach(selector => {
       if (doc.querySelector(selector)) {
         cy.get(selector).then($el => {
           if ($el.is(':visible')) {
-            cy.wrap($el).find('.siagri-icon-close').click();
+            cy.wrap($el).find('.siagri-icon-close').click()
           }
-        });
+        })
       }
-    });
-  });
-});
+    })
+  })
+})
 
 //Retirar o espaço no início e final de strings
 Cypress.Commands.add('limparTexto', (text) => {
-  return text.replace(/\s+/g, ' ').trim();
-});
+  return text.replace(/\s+/g, ' ').trim()
+})

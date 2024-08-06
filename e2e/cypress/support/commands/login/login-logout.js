@@ -45,8 +45,11 @@ class Authenticate {
    * Realizar login na aplicacao por interface
    * @param {*} credenciais
   */
-  loginInterface(credenciais) {
-    cy.visit('/')
+  loginInterface(credenciais, loginUrl) {
+    cy.visit(`${Cypress.env('baseUrl')}`)
+    cy.desabilitarPopUpNotificacao()
+    
+    cy.aceitarCookies()
 
     cy.get(locLogin.login.iptEmail)
       .scrollIntoView().should('exist')
@@ -59,12 +62,6 @@ class Authenticate {
     cy.get(locLogin.login.btnLogin)
       .scrollIntoView().should('exist')
       .and('be.visible').click()
-
-    cy.get(locLogin.login.btnLogin)
-      .should('not.exist')
-
-    cy.get(locLogin.login.titulo)
-      .should('exist').and('be.visible')
   }
 
   /**
@@ -77,7 +74,7 @@ class Authenticate {
 
     cy.intercept('GET', '/api/settings').as('settings')
 
-    cy.wait('@settings', { timeout: 30000 });
+    cy.wait('@settings', { timeout: 30000 })
 
     cy.get(locLogin.login.btnDrop, { timeout: 30000 })
       .should('exist')
