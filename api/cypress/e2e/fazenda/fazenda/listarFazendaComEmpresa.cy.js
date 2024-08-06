@@ -8,10 +8,8 @@ context('Fazenda', () => {
         it('CT1 - Buscar fazendas com empresa', () => {
              cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
-            const empresaId = '44e2d617-2d9d-4b4f-8138-7d1f1739a599'
-
-            cy.fixture('fazenda/listarFazendasComEmpresa/payloadCt1.json').then((payload) => {
-                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('fazenda')}/Fazenda/ListarFazendasComEmpresa?EmpresaId=${empresaId}`, payload)
+            cy.fixture('fazenda/listarFazendasComEmpresa/paramsCt1.json').then((params) => {
+                cy.getRequestWithMoreParams(`${Cypress.env('baseUrl')}${Cypress.env('fazenda')}/Fazenda/ListarFazendasComEmpresa`, params)
                     .then((response) => {
                         // Verifica o status da resposta e o cabeçalho da solicitação
                         expect(response.status).to.equal(200)
