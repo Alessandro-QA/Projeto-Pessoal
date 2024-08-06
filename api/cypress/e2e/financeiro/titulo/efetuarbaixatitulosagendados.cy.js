@@ -6,9 +6,9 @@ const dayjs = require('dayjs'); // Importando a biblioteca dayjs
 
 context('Financeiro', () => {
     context('Titulo', () => {
-        describe(`POST - ${Cypress.env('financeiro')}Titulo/EfetuarBaixaTitulosAgendados - Baixa no pedido finalizado`, () => {
+        describe(`POST - ${Cypress.env('financeiro')}Titulo/EfetuarBaixaTitulosAgendados - Baixa no título Agendado`, () => {
 
-            it('CT1 - Alterar o Vencimento', () => {
+            it('CT1 - Deve dar baixo no título Agendado', () => {
 
                 cy.allureDescriptionHtml(description.Ct1).allureSeverity('critical');
 
