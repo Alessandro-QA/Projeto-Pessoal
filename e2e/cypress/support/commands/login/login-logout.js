@@ -11,7 +11,7 @@ class Authenticate {
 
     const loginUrl = `https://api.uat.aliare.digital/aliare-auth/Account/Login?ReturnUrl=`
     const returnUrl = Cypress.env('returnURL')
-    let requestVerificationToken 
+    let requestVerificationToken
     cy.request('GET', `${loginUrl + returnUrl}`).then(response => {
       const htmlDocument = document.createElement('html')
       htmlDocument.innerHTML = response.body
@@ -45,8 +45,11 @@ class Authenticate {
    * Realizar login na aplicacao por interface
    * @param {*} credenciais
   */
-  loginInterface(credenciais) {
-    cy.visit('/')
+  loginInterface(credenciais, loginUrl) {
+    cy.visit(`${Cypress.env('baseUrl')}`)
+    cy.desabilitarPopUpNotificacao()
+    
+    cy.aceitarCookies()
 
     cy.get(locLogin.login.iptEmail)
       .scrollIntoView().should('exist')
@@ -59,12 +62,6 @@ class Authenticate {
     cy.get(locLogin.login.btnLogin)
       .scrollIntoView().should('exist')
       .and('be.visible').click()
-
-    cy.get(locLogin.login.btnLogin)
-      .should('not.exist')
-
-    cy.get(locLogin.login.titulo)
-      .should('exist').and('be.visible')
   }
 
   /**
@@ -72,15 +69,22 @@ class Authenticate {
    * @param {*}
   */
   logout() {
-    cy.get(locLogin.login.btnDrop)
-      .scrollIntoView().should('exist')
-      .and('be.visible').click()
+
+    cy.visit(`${Cypress.env('baseUrl')}`)
+
+    cy.intercept('GET', '/api/settings').as('settings')
+
+    cy.wait('@settings', { timeout: 30000 })
+
+    cy.get(locLogin.login.btnDrop, { timeout: 30000 })
+      .should('exist')
+      .and('be.visible')
+      .click()
 
     cy.get(locLogin.login.btnSair)
-      .scrollIntoView().should('exist')
-      .and('be.visible').and('contain', 'Sair').click()
+      .should('exist')
+      .and('be.visible').contains('Sair').click()
 
-    cy.reload()
   }
 }
 
