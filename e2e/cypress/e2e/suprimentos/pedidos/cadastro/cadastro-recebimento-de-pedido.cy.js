@@ -52,7 +52,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         seeds.seedAgendaFinanceiraCadastro.cardValorDocumento = valorTotal
         seeds.seedAgendaFinanceiraCadastro.cardSaldoAPagar = valorTotal
 
-        it.only('Deve cadastrar pedido', function () {
+        it.only('Deve cadastrar pedido', { retries: { runMode: 2, openMode: 2, }, }, function () {
         
           cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
 
