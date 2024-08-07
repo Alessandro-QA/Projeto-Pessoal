@@ -1314,7 +1314,7 @@ class Documentos {
       // Confirmar exclusão
       cy.get(locDocumentos.detalhesDocumento.botaoSim)
         .should('exist').and('be.visible')
-        .contains('Sim').click({ force: true })
+        .contains('Excluir').click({ force: true })
 
       cy.get(locDocumentos.detalhesDocumento.mensagemSucesso).contains('Documento excluído com sucesso')
 

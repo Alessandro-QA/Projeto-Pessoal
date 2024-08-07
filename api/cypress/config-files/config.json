@@ -23,6 +23,7 @@
     "safra": "/api/safra/v1",
     "atividadeAgricola":"/v1/api/AtividadeAgricola",
     "fazenda": "/api/fazenda/v1",
+    "execucao": "/v1/api/Execucao",
     
     "teamsWebhookUrl" : "__ApiTest.MyFarm.webhookReportUrl__",
     "reportUrl" : "__EndToEndTest.AllureUrl__",

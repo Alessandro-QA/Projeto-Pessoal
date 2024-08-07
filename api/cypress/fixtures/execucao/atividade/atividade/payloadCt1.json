@@ -1,0 +1,266 @@
+{
+    "talhao": {
+        "id": "249cddc0-2c7c-4f99-ba76-7e29fe19e5ef",
+        "fazendaId": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+        "identificador": "TALHÃO 23/24",
+        "tipoMarcador": 0,
+        "teorArgila": 1,
+        "irrigado": true,
+        "marcacoes": [],
+        "urlImagem": "",
+        "identificadorImagem": "",
+        "longitude": 0,
+        "latitude": 0,
+        "zoom": 14,
+        "area": 1000,
+        "descricao": "TALHÃO 23/24"
+    },
+    "ciclo": {
+        "id": "9a3bc364-db96-4af8-b190-2893abfd956f",
+        "descricao": "Soja - 2023 / 2024",
+        "safra": {
+            "id": "9e18aa78-692d-4244-9db4-97cf8967000e",
+            "nomeNormalizado": "2023 / 2024",
+            "dataInicial": "2023-08-01T00:00:00-03:00",
+            "dataFinal": "2024-07-31T00:00:00-03:00"
+        },
+        "cultura": {
+            "id": "e57efd7f-3e08-4d89-81ff-35fc6476d778",
+            "nomeNormalizado": "Soja",
+            "unidadeMedida": {
+                "id": "05c95e12-3630-6a09-0a3b-6534539f10e0",
+                "nomeNormalizado": "Saca 60"
+            }
+        },
+        "dataInicial": "2023-08-01T00:00:00+00:00",
+        "dataFinal": "2024-07-31T00:00:00+00:00",
+        "expectativaValor": 100,
+        "ativo": true,
+        "descricaoCultura": "Soja",
+        "icone": "siagri-icon-soja"
+    },
+    "tipoAtividade": {
+        "id": "e8a10d3d-b574-48cc-987a-5fb84b5b3864",
+        "descricao": "Preparo do solo",
+        "icone": "siagri-icon-preparacao-de-solo",
+        "ativo": true
+    },
+    "atividade": {
+        "id": "920689cc-5e26-4142-9d5a-5ea4bce4872c",
+        "tipoAtividadeId": "e8a10d3d-b574-48cc-987a-5fb84b5b3864",
+        "descricao": "Adubação de Cobertura"
+    },
+    "insumos": [
+        {
+            "key": "Tue Aug 06 2024 14:07:37 GMT-0300 (Horário Padrão de Brasília)",
+            "total": 10000,
+            "material": {
+                "id": "c7ee63ba-09ec-476c-bb89-f05e23a20ca4",
+                "ativo": true,
+                "codigo": "001.0002.00012",
+                "descricao": "74177RSF IPRO - FOCO",
+                "mapa": null,
+                "codigoReceituario": null,
+                "codigoMaterialFabricante": null,
+                "classificacao": {
+                    "id": "b9b5ae5d-e687-44ee-8db5-1dd76ac9eb3d",
+                    "active": false,
+                    "codigo": "001.0002",
+                    "descricao": "Sementes",
+                    "mascaraNiveis": null,
+                    "icone": "siagri-icon-suprimentos",
+                    "tipoClassificacao": 0,
+                    "estrutura": {
+                        "id": "c067da52-5340-4b3d-b941-7f6b1f0994bf",
+                        "ativo": true,
+                        "descricao": "Estrutura do MyFarm",
+                        "codigo": "1",
+                        "codigoFormatado": "000000000000001"
+                    },
+                    "classificacaoPai": null,
+                    "tiposMateriais": [
+                        2
+                    ],
+                    "unidadesArmazenamento": []
+                },
+                "tipoReferencia": 0,
+                "ncm": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "codigo": null,
+                    "descricao": null
+                },
+                "gtin": null,
+                "fabricanteDetentora": {
+                    "id": "21199833-31c0-8640-46f7-499f3adc0a1f",
+                    "descricao": "Gdm Genética Do Brasil S.A.",
+                    "tipo": 0
+                },
+                "unidadeMedidaEstocagem": {
+                    "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+                    "descricao": "kg",
+                    "sigla": "kg"
+                },
+                "tipoMaterial": 2,
+                "tiposMateriais": [
+                    2
+                ],
+                "tipoGrupoItemMaterial": 1,
+                "vinculoFornecedores": [],
+                "principiosAtivos": []
+            },
+            "quantidade": 10,
+            "unidadeArmazenamento": {
+                "id": "bacb2beb-bb49-486f-bb42-be58ed820d3b",
+                "descricao": "U.A. Insumos",
+                "fazendaId": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+                "fazendaNome": "Fazenda Teste API",
+                "ativo": true,
+                "unidadePadrao": true,
+                "tipoMateriais": [
+                    2
+                ]
+            },
+            "unidadeMedida": {
+                "id": "31fd09f6-5827-499c-2108-a4a6381e7829",
+                "nomeNormalizado": "kg"
+            }
+        }
+    ],
+    "maquinas": [
+        {
+            "maquina": {
+                "fabricante": {
+                    "id": "d36849fd-033f-4d9d-9953-09ac1d827bf0",
+                    "descricao": "John Deere"
+                },
+                "modelo": null,
+                "estado": {
+                    "sigla": null,
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "descricao": null
+                },
+                "pais": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "descricao": null
+                },
+                "placa": null,
+                "tipoMedidor": 0,
+                "posicaoInicialMedidor": 0,
+                "anoFabricacao": 2020,
+                "volumeTanque": 600,
+                "valorAtualMedidor": 0,
+                "valorAcumuladoMedidor": 0,
+                "combustiveis": [
+                    {
+                        "id": "18216df9-f474-4eb6-bc24-b46ad661d538",
+                        "descricao": "Diesel"
+                    }
+                ],
+                "ativo": true,
+                "id": "0352367f-29ec-4974-96ee-4c45d26d4f28",
+                "classificacaoBem": {
+                    "ativo": true,
+                    "id": "1fe9acb8-7e8d-4f44-88c4-bbfb81b13c98",
+                    "mascaraNiveis": null,
+                    "codigo": "001.0001",
+                    "descricao": "Trator",
+                    "categoria": 0,
+                    "tipoClassificacaoBem": 1,
+                    "estruturaClassificacaoBem": {
+                        "id": "feb6b857-fc11-4114-b959-eeca713257fb",
+                        "codigo": null,
+                        "descricao": null,
+                        "classificacoes": [],
+                        "maquinas": []
+                    },
+                    "classificacaoBemPai": {
+                        "ativo": true,
+                        "id": "f9ec1624-bc1a-4f47-a7cd-d64852587795",
+                        "mascaraNiveis": "000.0000.0000",
+                        "codigo": "001",
+                        "descricao": "Máquinas Agrícolas",
+                        "categoria": 0,
+                        "tipoClassificacaoBem": 0,
+                        "estruturaClassificacaoBem": {
+                            "id": "feb6b857-fc11-4114-b959-eeca713257fb",
+                            "codigo": null,
+                            "descricao": null,
+                            "classificacoes": [],
+                            "maquinas": []
+                        },
+                        "classificacaoBemPai": null,
+                        "classificacoesFilhas": [
+                            {
+                                "ativo": true,
+                                "id": "1fe9acb8-7e8d-4f44-88c4-bbfb81b13c98",
+                                "mascaraNiveis": null,
+                                "codigo": "001.0001",
+                                "descricao": "Trator",
+                                "categoria": 0,
+                                "tipoClassificacaoBem": 0,
+                                "estruturaClassificacaoBem": null,
+                                "classificacaoBemPai": null,
+                                "classificacoesFilhas": [],
+                                "gruposEmpresariais": [],
+                                "empresas": [],
+                                "tipoMedidor": 0,
+                                "icone": "siagri-icon-trator"
+                            }
+                        ],
+                        "gruposEmpresariais": [],
+                        "empresas": [],
+                        "tipoMedidor": 0,
+                        "icone": "siagri-icon-trator"
+                    },
+                    "classificacoesFilhas": [],
+                    "gruposEmpresariais": [],
+                    "empresas": [],
+                    "tipoMedidor": 0,
+                    "icone": "siagri-icon-trator"
+                },
+                "descricao": "Máquina Teste API",
+                "numeroPatrimonio": "123242341",
+                "observacoes": "Criada para Testes de API - Favor não excluir",
+                "dataAquisicao": "2021-08-04T03:00:00+00:00",
+                "categoria": 0,
+                "urlImage": "",
+                "imageBase64": null
+            },
+            "classificacaoBemId": "1fe9acb8-7e8d-4f44-88c4-bbfb81b13c98",
+            "medidor": {},
+            "implemento": null
+        }
+    ],
+    "responsaveis": [
+        {
+            "key": "Tue Aug 06 2024 14:07:33 GMT-0300 (Horário Padrão de Brasília)",
+            "responsavel": {
+                "id": "de869555-55dd-4930-803d-e043c250b970",
+                "nome": "Cliente Teste API",
+                "ativo": true,
+                "documentoPrincipal": "51634860047",
+                "uf": "AC",
+                "isento": true,
+                "tipo": 0,
+                "tiposClassificacao": [
+                    7,
+                    3
+                ],
+                "urlImagem": null
+            }
+        }
+    ],
+    "atividadeExecutada": false,
+    "areaAplicada": 1000,
+    "dataPrevistaInicial": "2024-08-06T00:00:00-03:00",
+    "dataPrevistaFinal": "2024-08-09T00:00:00-03:00",
+    "safra": {
+        "id": "9e18aa78-692d-4244-9db4-97cf8967000e",
+        "descricao": "2023 / 2024"
+    },
+    "fazenda": {
+        "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
+        "descricao": "Fazenda Teste API"
+    },
+    "observacao": ""
+}
