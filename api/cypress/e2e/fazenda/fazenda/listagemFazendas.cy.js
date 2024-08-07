@@ -8,8 +8,7 @@ context('Fazenda', () => {
         it('CT1 - Listagem de fazendas', () => {
              cy.allureDescriptionHtml(description.Ct1).allureSeverity('normal')
 
-            cy.fixture('fazenda/listagemFazenda/payloadCt1.json').then((payload) => {
-                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('fazenda')}/Fazenda/ListagemFazendas`, payload)
+                cy.getRequest(`${Cypress.env('baseUrl')}${Cypress.env('fazenda')}/Fazenda/ListagemFazendas`)
                     .then((response) => {
                         // Verifica o status da resposta e o cabeçalho da solicitação
                         expect(response.status).to.equal(200)
@@ -31,4 +30,3 @@ context('Fazenda', () => {
             })
         })
     })
-})
