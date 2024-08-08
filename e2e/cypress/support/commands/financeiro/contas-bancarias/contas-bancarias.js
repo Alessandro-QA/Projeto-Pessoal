@@ -19,7 +19,7 @@ class ContaBancaria {
 
     cy.intercept('POST', `${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`).as('postConta')
 
-    //cy.intercept('PUT', `${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`).as('putConta')
+    cy.intercept('PUT', `${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`).as('putConta')
 
     cy.location('pathname').then((currentPath) => {
       if (currentPath !== url) {
@@ -45,17 +45,16 @@ class ContaBancaria {
         .type(seedTestContaBancaria.nomeConta)
 
       if (seedTestContaBancaria.numeroCartao) {
-        cy.log('Selecionar a conta bancaria listada')
-        cy.log('Clicar no card conta bancaria')
+        cy.log('Selecionar card cartao de credito')
+
         cy.getVisible(locContaBancaria.dashboard.nomeCartaoCredito)
           .contains(seedTestContaBancaria.nomeConta).click()
       } else {
-        cy.log('Selecionar card cartao de credito')
+        cy.log('Selecionar a conta bancaria listada')
+        cy.log('Clicar no card conta bancaria')
         cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria)
           .contains(seedTestContaBancaria.nomeConta).click()
       }
-
-      cy.wait('@putConta')
 
       cy.log('Validar nome da conta na tela de detalhes')
       cy.getVisible(locContaBancaria.detalhesConta.nomeConta).should(($el) => {
@@ -65,7 +64,6 @@ class ContaBancaria {
       cy.log('Clicar no botão de editar conta bancaria')
       cy.getVisible(locContaBancaria.detalhesConta.buttonEditar).click()
 
-      cy.wait('@putConta')
     }
 
     if (seedTestContaBancaria.adicionar) {
@@ -77,26 +75,36 @@ class ContaBancaria {
       cy.getVisible(locContaBancaria.contaBancaria.tipoConta).should(($el) => {
         expect($el).to.contain.text(seedTestContaBancaria.tipoConta)
       })
+
+      cy.log('Editar o nome da conta')
+      cy.getVisible(locContaBancaria.contaBancaria.nomeConta).clear()
+        .type(seedTestContaBancaria.nomeContaEditado)
+
+      cy.log('Validar nome conta')
+      cy.getVisible(locContaBancaria.contaBancaria.nomeConta).should(($el) => {
+        expect($el).to.have.value(seedTestContaBancaria.nomeContaEditado)
+      })
     }
 
-    cy.log('Digitar nome da conta bancaria')
-    cy.getVisible(locContaBancaria.contaBancaria.nomeConta).clear()
-      .type(seedTestContaBancaria.nomeConta)
-
     if (seedTestContaBancaria.adicionar) {
+      cy.log('Digitar nome da conta bancaria')
+      cy.getVisible(locContaBancaria.contaBancaria.nomeConta).clear()
+        .type(seedTestContaBancaria.nomeConta)
+
       cy.log('Selecionar empresa titular')
       cy.getVisible(locContaBancaria.contaBancaria.empresaTitular).click()
         .contains(seedTestContaBancaria.empresaTitular).click()
+
+      cy.log('Selecionar empresas habilitadas')
+      cy.getVisible(locContaBancaria.contaBancaria.empresasHabilitadas).click()
+        .contains(seedTestContaBancaria.empresasHabilitadas).click()
+
     } else {
       cy.log('Validar empresa titular da conta bancária')
       cy.getVisible(locContaBancaria.contaBancaria.empresaTitular).should(($el) => {
         expect($el).to.contain.text(seedTestContaBancaria.empresaTitular)
       })
     }
-
-    cy.log('Selecionar empresas habilitadas')
-    cy.getVisible(locContaBancaria.contaBancaria.empresasHabilitadas).click()
-      .contains(seedTestContaBancaria.empresasHabilitadas).click()
 
     if (seedTestContaBancaria.contaPrincipal) {
       cy.getVisible(locContaBancaria.contaBancaria.contaPrincipal).click()
@@ -245,24 +253,40 @@ class ContaBancaria {
     cy.getVisible(locContaBancaria.contaBancaria.adicionar)
       .click()
 
-    cy.log('Validar mensagem de sucesso')
-    cy.get(locContaBancaria.contaBancaria.mensagemSucesso).should(($el) => {
-      expect($el).exist.and.to.contain.text('Conta adicionada com sucesso')
-    })
+    if (seedTestContaBancaria.adicionar) {
+      cy.log('Validar mensagem de sucesso')
+      cy.get(locContaBancaria.contaBancaria.mensagemSucesso).should(($el) => {
+        expect($el).exist.and.to.contain.text('Conta adicionada com sucesso')
+      })
+
+      cy.wait('@postConta').then(interception => {
+        // Verifica se a requisição retornou com sucesso (status 200)
+        expect(interception.response.statusCode).to.eq(200)
+
+        // Captura o response da requisição POST
+        const responseBody = interception.response.body
+        cy.log(responseBody)
+        cy.log(responseBody.data.id)
+        this.idConta = responseBody.data.id
+      })
+    } else {
+      cy.log('Validar mensagem de sucesso ao editar')
+      cy.get(locContaBancaria.contaBancaria.mensagemSucesso).should(($el) => {
+        expect($el).exist.and.to.contain.text('Conta atualizada com sucesso')
+      })
+
+      cy.wait('@putConta').then(interception => {
+        // Verifica se a requisição retornou com sucesso (status 200)
+        expect(interception.response.statusCode).to.eq(200)
+
+        // Captura o response da requisição PUT
+        const responseBody = interception.response.body
+        cy.log(responseBody)
+      })
+    }
 
     cy.log('Garantir que a tela foi fechada')
     cy.get(locContaBancaria.contaBancaria.tipoConta).should('not.exist')
-
-    cy.wait('@postConta').then(interception => {
-      // Verifica se a requisição retornou com sucesso (status 200)
-      expect(interception.response.statusCode).to.eq(200)
-
-      // Captura o response da requisição POST
-      const responseBody = interception.response.body
-      cy.log(responseBody)
-      cy.log(responseBody.data.id)
-      this.idConta = responseBody.data.id
-    })
   }
 
   validarCadastro(seedTestContaBancaria) {
@@ -279,30 +303,48 @@ class ContaBancaria {
       cy.log(currentPath)
     })
 
-    cy.log('Pesquisar a Conta Criada')
-    cy.get(locContaBancaria.dashboard.pesquisarConta, { timeout: 5000 })
-      .should('exist').and('be.visible')
-      .click()
-      .clear()
-      .type(seedTestContaBancaria.nomeConta)
-      .type('{enter}')
+    if (seedTestContaBancaria.adicionar) {
+      cy.log('Pesquisar a Conta Criada')
+      cy.get(locContaBancaria.dashboard.pesquisarConta, { timeout: 5000 })
+        .should('exist').and('be.visible')
+        .click()
+        .clear()
+        .type(seedTestContaBancaria.nomeConta)
+        .type('{enter}')
 
-    if (seedTestContaBancaria.tipoConta == "Cartão de crédito") {
-      cy.log('Verifica se a conta do tipo Cartão de Crédito criada existe')
-      cy.get(locContaBancaria.dashboard.cardCartao).contains(seedTestContaBancaria.nomeConta).should('exist')
-    }
-    else {
-      cy.log('Verifica se a conta criada existe')
-      cy.get(locContaBancaria.dashboard.cardConta).contains(seedTestContaBancaria.nomeConta).should('exist')
-    }
+      if (seedTestContaBancaria.tipoConta == "Cartão de crédito") {
+        cy.log('Verifica se a conta do tipo Cartão de Crédito criada existe')
+        cy.get(locContaBancaria.dashboard.cardCartao).contains(seedTestContaBancaria.nomeConta).should('exist')
+      }
+      else {
+        cy.log('Verifica se a conta criada existe')
+        cy.get(locContaBancaria.dashboard.cardConta).contains(seedTestContaBancaria.nomeConta).should('exist')
+      }
 
-    cy.log('Deleta Conta Criada Para Evitar Acumulo de Registro')
-    cy.wrap(this.idConta).then((idConta) => {
-      cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`, idConta).then((responseDelete) => {
-        expect(responseDelete.status).to.be.equal(200)
+      cy.log('Deleta Conta Criada Para Evitar Acumulo de Registro')
+      cy.wrap(this.idConta).then((idConta) => {
+        cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`, idConta).then((responseDelete) => {
+          expect(responseDelete.status).to.be.equal(200)
+        })
       })
-    })
+    } else {
+      cy.log('Pesquisar a Conta Criada')
+      cy.get(locContaBancaria.dashboard.pesquisarConta, { timeout: 5000 })
+        .should('exist').and('be.visible')
+        .click()
+        .clear()
+        .type(seedTestContaBancaria.nomeContaEditado)
+        .type('{enter}')
 
+      if (seedTestContaBancaria.tipoConta == "Cartão de crédito") {
+        cy.log('Verifica se a conta do tipo Cartão de Crédito criada existe')
+        cy.get(locContaBancaria.dashboard.cardCartao).contains(seedTestContaBancaria.nomeContaEditado).should('exist')
+      }
+      else {
+        cy.log('Verifica se a conta criada existe')
+        cy.get(locContaBancaria.dashboard.cardConta).contains(seedTestContaBancaria.nomeContaEditado).should('exist')
+      }
+    }
     // Oculta o #api-view para continuar na página Atual
     cy.hideApiView()
   }
