@@ -1,0 +1,33 @@
+{
+  "empresaNome": "Empresa 2",
+  "empresaDocumentoPrincipal": "80010705000129",
+  "empresaId": "44e2d617-2d9d-4b4f-8138-7d1f1739a599",
+  "inscricoesEstaduais": [
+    {
+      "inscricaoEstadual": {
+        "id": "03cc2a37-da82-4aeb-abda-0b62ee46c9b1",
+        "descricao": "string",
+        "valor": "string",
+        "fiscal": {
+          "id": "812b65f5-d9a2-4837-b577-2bfabb5ee7ac",
+          "proximoNumeroNotaProducao": 0,
+          "serieNotaProducao": 0,
+          "proximoNumeroNotaHomologacao": 0,
+          "serieNotaHomologacao": 0,
+          "tipoAmbienteEnvioNota": "Producao",
+          "tipoAmbienteEnvioMDFe": "Producao",
+          "proximoNumeroMDFeProducao": 0,
+          "proximoNumeroMDFeHomologacao": 0
+        },
+        "ativo": true
+      },
+      "fazendas": [
+        {
+          "fazendaId": "55d74182-86f4-47be-b396-8b9696d2cd32",
+          "fazendaNome": "Fazenda Teste API",
+          "deleted": true
+        }
+      ]
+    }
+  ]
+}
