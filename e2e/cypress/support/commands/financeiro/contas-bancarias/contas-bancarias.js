@@ -354,16 +354,21 @@ class ContaBancaria {
    * @param {*} seedTestContaBancaria 
    */
   excluir(seedTestContaBancaria) {
-    const url = '/financeiro/contas-bancarias'
+    const url = '/financeiro/contas-bancarias/'
     const locatorTituloPagina = locContaBancaria.dashboard.titulo
     const tituloPagina = 'Contas bancárias'
 
     cy.intercept('GET', '/api/financeiro/v1/ContaBancaria/**').as('detalhesConta')
 
-    cy.log('Navegar para Contas Bancárias')
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
-
-    cy.wait('@detalhesConta')
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Contas Bancárias')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+        cy.desabilitarPopUpNotificacao()
+        cy.wait('@detalhesConta')
+      }
+      cy.log(currentPath)
+    })
 
     cy.log('Digitar no input pesquisar')
     cy.getVisible(locContaBancaria.dashboard.pesquisarConta).clear()
@@ -371,11 +376,13 @@ class ContaBancaria {
 
     cy.log('Selecionar a conta bancaria listada')
     if (seedTestContaBancaria.numeroCartao) {
-      cy.log('card conta bancaria')
+      cy.log('Se for Cartão de Crédito')
+      cy.log('Clica no Card do Cartão')
       cy.getVisible(locContaBancaria.dashboard.nomeCartaoCredito)
         .contains(seedTestContaBancaria.nomeConta).click()
     } else {
-      cy.log('Clicar no card cartao de credito')
+      cy.log('Se for Conta Corrente ou Conta Tesouraria')
+      cy.log('Clica no Card da Conta')
       cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria)
         .contains(seedTestContaBancaria.nomeConta).click()
     }
@@ -391,19 +398,41 @@ class ContaBancaria {
     cy.getVisible(locContaBancaria.detalhesConta.buttonExcluir).click()
 
     if (seedTestContaBancaria.confirmarExclusao) {
-      cy.log('Cancelar exclusão')
-      cy.getVisible(locContaBancaria.detalhesConta.confirmarExclusao).click()
-    } else {
       cy.log('Confirmar exclusão')
       cy.getVisible(locContaBancaria.detalhesConta.confirmarExclusao).click()
+    } else {
+      cy.log('Cancelar exclusão')
+      cy.getVisible(locContaBancaria.detalhesConta.cancelarExclusao).click()
     }
-
-    cy.wait('@detalhesConta')
 
     cy.log('Validar mensagem de sucesso')
     cy.get(locContaBancaria.detalhesConta.mensagemExclusao).should(($el) => {
       expect($el).exist.and.to.contain.text('Exclusão realizada com sucesso')
     })
+
+    cy.wait('@detalhesConta')
+
+  }
+
+  validarExclusao(seedTestContaBancaria) {
+
+    cy.log('Verificar se o card da Conta não existe')
+    cy.log('Pesquisar a Conta Criada')
+    cy.get(locContaBancaria.dashboard.pesquisarConta, { timeout: 5000 })
+      .should('exist').and('be.visible')
+      .click()
+      .clear()
+      .type(seedTestContaBancaria.nomeConta)
+      .type('{enter}')
+
+    if (seedTestContaBancaria.tipoConta == "Cartão de crédito") {
+      cy.log('Verifica se o card do Cartão de Crédito não existe mais')
+      cy.get(locContaBancaria.dashboard.nomeCartaoCredito).should('not.exist')
+    }
+    else {
+      cy.log('Verifica se o card da Conta não existe mais')
+      cy.get(locContaBancaria.dashboard.nomeContaBancaria).should('not.exist')
+    }
   }
 
   /**
