@@ -2,7 +2,7 @@ const html = {
   Ct1: `
 <div>
     <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
-    <span style="color: #b22222;"> Cadastrar Conta Corrente via API </span>
+    <span style="color: #b22222;"> Cadastrar Conta Corrente via API - Todos os Tipos </span>
 </div>
 `,
   Ct2: `
@@ -35,14 +35,24 @@ const html = {
       <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
       <span style="color: #b22222;"> Validar Exclusão da conta </span>
   </div>
+  <div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente/responsável financeiro da fazenda <br/>
+    <strong>QUERO</strong> excluir uma conta existente <br/>
+    <strong>PARA</strong> melhor gestão da fazenda <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Validar exclusão de conta corrente </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu exclui uma conta corrente <br/>
+    <strong>QUANDO</strong> eu entrar na Listagem de Contas bancárias <br/>
+    <strong>E</strong> buscar pelo nome da conta <br/>
+    <strong>ENTAO</strong> não deverá existir o card referente a conta<br/>
+</div>
   `,
   Ct4: `
-<div>
-    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
-    <span style="color: #b22222;"> Cadastrar Cartão de Crédito via API </span>
-</div>
-`,
-  Ct5: `
 <div>
     <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
     <span style="color: #b22222;"> Excluir Conta Bancaria </span>
@@ -67,19 +77,29 @@ const html = {
     <strong>ENTAO</strong> deverá ser excluído e validado na Listagem de Contas bancárias <br/>
 </div>
   `,
-  Ct6: `
+  Ct5: `
   <div>
       <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
       <span style="color: #b22222;"> Validar Exclusão da conta </span>
   </div>
-  `,
-  Ct7: `
-<div>
-    <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
-    <span style="color: #b22222;"> Cadastrar Conta Tesouraria via API </span>
+  <div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente/responsável financeiro da fazenda <br/>
+    <strong>QUERO</strong> excluir uma conta existente <br/>
+    <strong>PARA</strong> melhor gestão da fazenda <br/>
 </div>
-`,
-  Ct8: `
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Validar exclusão de cartão de crédito </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu exclui um cartão de crédito <br/>
+    <strong>QUANDO</strong> eu entrar na Listagem de Contas bancárias <br/>
+    <strong>E</strong> buscar pelo nome do cartão <br/>
+    <strong>ENTAO</strong> não deverá existir o card referente ao cartão <br/>
+</div>
+  `,
+  Ct6: `
 <div>
     <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
     <span style="color: #b22222;"> Excluir Conta Bancaria </span>
@@ -104,11 +124,27 @@ const html = {
     <strong>ENTAO</strong> deverá ser excluído e validado na Listagem de Contas bancárias <br/>
 </div>
   `,
-  Ct9: `
+  Ct7: `
   <div>
       <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
       <span style="color: #b22222;"> Validar Exclusão da conta </span>
   </div>
+  <div style="margin-left: 40px;">
+    <strong>COMO</strong> gerente/responsável financeiro da fazenda <br/>
+    <strong>QUERO</strong> excluir uma conta existente <br/>
+    <strong>PARA</strong> melhor gestão da fazenda <br/>
+</div>
+</br>
+<div>
+    <span style="color: #800080; font-weight: bold;"> Cenario: </span>
+    <span style="color: #b22222;"> Validar exclusão de conta tesouraria </span>
+</div>
+<div style="margin-left: 40px;">
+    <strong>DADO</strong> que eu exclui uma conta tesouraria <br/>
+    <strong>QUANDO</strong> eu entrar na Listagem de Contas bancárias <br/>
+    <strong>E</strong> buscar pelo nome da conta <br/>
+    <strong>ENTAO</strong> não deverá existir o card referente a conta<br/>
+</div>
   `,
 }
 

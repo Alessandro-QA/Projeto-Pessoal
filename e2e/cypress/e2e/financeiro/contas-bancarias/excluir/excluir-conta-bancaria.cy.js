@@ -7,15 +7,28 @@ import testDescription from './bdd-description/excluir-conta-bancaria.descriptio
 import Utils from '../../../../support/utils/utils.js'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
+
   var contaBancaria = Utils.getPayloadPorAmbiente(payLoad)
 
   describe('Contas Bancárias', { tags: '@contasBancarias' }, () => {
-    context('Exclusão de Conta - Conta Corrente', () => {
-      it('Deve cadastrar conta bancária via API - Conta Corrente', function () {
+    contaBancaria.contaCorrente.nome = Utils.getAlphaNumeric(10)
+    contaBancaria.cartaoCredito.nome = Utils.getAlphaNumeric(10)
+    contaBancaria.contaTesouraria.nome = Utils.getAlphaNumeric(10)
+
+    context('Criar as contas via API para fazer a exclusão', () => {
+      seedTestExcluirConta.contaCorrente.nomeConta = contaBancaria.contaCorrente.nome
+
+      it('Deve cadastrar conta bancária via API - Todos os Tipos', function () {
         cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct1)
 
         Utils.requestApi('POST', '/api/financeiro/v1/ContaBancaria', contaBancaria.contaCorrente, 'login_cadastro')
+        Utils.requestApi('POST', '/api/financeiro/v1/ContaBancaria', contaBancaria.cartaoCredito, 'login_cadastro')
+        Utils.requestApi('POST', '/api/financeiro/v1/ContaBancaria', contaBancaria.contaTesouraria, 'login_cadastro')
       })
+    })
+
+    context('Exclusão de Conta - Conta Corrente', () => {
+      seedTestExcluirConta.contaCorrente.nomeConta = contaBancaria.contaCorrente.nome
 
       it('Deve excluir conta bancária - Conta Corrente', function () {
         cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct2)
@@ -23,49 +36,42 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
         ContaBancaria.excluir(seedTestExcluirConta.contaCorrente)
       })
 
-      it.skip('Deve validar exclusão na listagem - Conta Corrente', function () {
-        //cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct3)
+      it('Deve validar exclusão na listagem - Conta Corrente', function () {
+        cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct3)
 
-        ContaBancaria.validarListagem(seedTestExcluirConta.contaCorrente)
+        ContaBancaria.validarExclusao(seedTestExcluirConta.contaCorrente)
       })
     })
 
     context('Exclusão de Conta - Cartão de Crédito', () => {
-      it('Deve cadastrar conta bancária via API - Cartão de Crédito', function () {
-        cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct4)
-
-        Utils.requestApi('POST', '/api/financeiro/v1/ContaBancaria', contaBancaria.cartaoCredito, 'login_cadastro')
-      })
+      seedTestExcluirConta.cartaoCredito.nomeConta = contaBancaria.cartaoCredito.nome
 
       it('Deve excluir conta bancária - Cartão de Crédito', function () {
-        cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct5)
+        cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct4)
 
         ContaBancaria.excluir(seedTestExcluirConta.cartaoCredito)
       })
 
-      it.skip('Deve validar exclusão na listagem - Cartão de Crédito', function () {
-        //cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct6)
+      it('Deve validar exclusão na listagem - Cartão de Crédito', function () {
+        cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct5)
 
-        ContaBancaria.validarListagem(seedTestExcluirConta.cartaoCredito)
+        ContaBancaria.validarExclusao(seedTestExcluirConta.cartaoCredito)
       })
     })
-    context('Exclusão de Conta - Conta Tesouraria', () => {
-      it('Deve cadastrar conta bancária via API - Conta Tesouraria', function () {
-        cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct7)
 
-        Utils.requestApi('POST', '/api/financeiro/v1/ContaBancaria', contaBancaria.contaTesouraria, 'login_cadastro')
-      })
+    context('Exclusão de Conta - Conta Tesouraria', () => {
+      seedTestExcluirConta.contaTesouraria.nomeConta = contaBancaria.contaTesouraria.nome
 
       it('Deve excluir conta bancária - Conta Tesouraria', function () {
-        cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct8)
+        cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct6)
 
         ContaBancaria.excluir(seedTestExcluirConta.contaTesouraria)
       })
 
-      it.skip('Deve validar exclusão na listagem - Conta Tesouraria', function () {
-        //cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct9)
+      it('Deve validar exclusão na listagem - Conta Tesouraria', function () {
+        cy.allureSeverity('normal').allureDescriptionHtml(testDescription.Ct7)
 
-        ContaBancaria.validarListagem(seedTestExcluirConta.contaTesouraria)
+        ContaBancaria.validarExclusao(seedTestExcluirConta.contaTesouraria)
       })
     })
   })

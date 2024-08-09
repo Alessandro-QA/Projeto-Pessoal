@@ -354,7 +354,7 @@ class ContaBancaria {
    * @param {*} seedTestContaBancaria 
    */
   excluir(seedTestContaBancaria) {
-    const url = '/financeiro/contas-bancarias'
+    const url = '/financeiro/contas-bancarias/'
     const locatorTituloPagina = locContaBancaria.dashboard.titulo
     const tituloPagina = 'Contas bancárias'
 
@@ -365,11 +365,10 @@ class ContaBancaria {
         cy.log('Navegar para Contas Bancárias')
         cy.navegarPara(url, locatorTituloPagina, tituloPagina)
         cy.desabilitarPopUpNotificacao()
+        cy.wait('@detalhesConta')
       }
       cy.log(currentPath)
     })
-
-    cy.wait('@detalhesConta')
 
     cy.log('Digitar no input pesquisar')
     cy.getVisible(locContaBancaria.dashboard.pesquisarConta).clear()
@@ -377,13 +376,13 @@ class ContaBancaria {
 
     cy.log('Selecionar a conta bancaria listada')
     if (seedTestContaBancaria.numeroCartao) {
-      cy.log('Se for Conta Corrente ou Conta Tesouraria')
-      cy.log('Clica no Card da Conta')
+      cy.log('Se for Cartão de Crédito')
+      cy.log('Clica no Card do Cartão')
       cy.getVisible(locContaBancaria.dashboard.nomeCartaoCredito)
         .contains(seedTestContaBancaria.nomeConta).click()
     } else {
-      cy.log('Se for Cartão de Crédito')
-      cy.log('Clica no Card do Cartão')
+      cy.log('Se for Conta Corrente ou Conta Tesouraria')
+      cy.log('Clica no Card da Conta')
       cy.getVisible(locContaBancaria.dashboard.nomeContaBancaria)
         .contains(seedTestContaBancaria.nomeConta).click()
     }
@@ -399,19 +398,23 @@ class ContaBancaria {
     cy.getVisible(locContaBancaria.detalhesConta.buttonExcluir).click()
 
     if (seedTestContaBancaria.confirmarExclusao) {
-      cy.log('Cancelar exclusão')
-      cy.getVisible(locContaBancaria.detalhesConta.confirmarExclusao).click()
-    } else {
       cy.log('Confirmar exclusão')
       cy.getVisible(locContaBancaria.detalhesConta.confirmarExclusao).click()
+    } else {
+      cy.log('Cancelar exclusão')
+      cy.getVisible(locContaBancaria.detalhesConta.cancelarExclusao).click()
     }
-
-    cy.wait('@detalhesConta')
 
     cy.log('Validar mensagem de sucesso')
     cy.get(locContaBancaria.detalhesConta.mensagemExclusao).should(($el) => {
       expect($el).exist.and.to.contain.text('Exclusão realizada com sucesso')
     })
+
+    cy.wait('@detalhesConta')
+
+  }
+
+  validarExclusao(seedTestContaBancaria) {
 
     cy.log('Verificar se o card da Conta não existe')
     cy.log('Pesquisar a Conta Criada')
