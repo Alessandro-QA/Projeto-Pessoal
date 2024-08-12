@@ -1,5 +1,8 @@
 /// <reference types='Cypress' />
 
+import { validateAcertoFreteResponse } from '../../../fixtures/producaoAgricola/acertoDeFrete/validate';
+
+
 context('Produção Agrícola', () => {
     context('Acerto de Frete', () => {
         context(`GET - ${Cypress.env('producaoAgricola')}/AcertoFretes/{ID} - Detalhes`, () => {
@@ -10,15 +13,10 @@ context('Produção Agrícola', () => {
                             .then((response) => {
                                 expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                                 expect(response.status).to.equal(200)
-                                expect(response.body.data).not.be.null
-                                expect(response.body.success).to.equal(true)
-                                expect(response.body.data.id).to.equal(body.data.id)
-                                expect(response.body.data.numero).to.equal(body.data.numero)
-                                expect(response.body.data.statusAcerto).to.equal(body.data.statusAcerto)
-                                expect(response.body.data.motorista).to.deep.equal(body.data.motorista)
-                                expect(response.body.data.veiculo).to.deep.equal(body.data.veiculo)
-                                expect(response.body.data.romaneios).to.deep.equal(body.data.romaneios)
-                                expect(response.body.data.despesas).not.be.empty
+
+                                validateAcertoFreteResponse(response.body)
+                                expect(response.body.data.statusAcerto).to.equal(1)  // Status Pendente
+
                             })
                     })
                 })
@@ -29,15 +27,10 @@ context('Produção Agrícola', () => {
                             .then((response) => {
                                 expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                                 expect(response.status).to.equal(200)
-                                expect(response.body.data).not.be.null
-                                expect(response.body.success).to.equal(true)
-                                expect(response.body.data.id).to.equal(body.data.id)
-                                expect(response.body.data.numero).to.equal(body.data.numero)
-                                expect(response.body.data.statusAcerto).to.equal(body.data.statusAcerto)
-                                expect(response.body.data.motorista).to.deep.equal(body.data.motorista)
-                                expect(response.body.data.veiculo).to.deep.equal(body.data.veiculo)
-                                expect(response.body.data.romaneios).to.deep.equal(body.data.romaneios)
-                                expect(response.body.data.despesas).be.empty
+                                
+                                validateAcertoFreteResponse(response.body)
+                                expect(response.body.data.statusAcerto).to.equal(1)  // Status Pendente
+                                expect(response.body.data.despesas).to.be.an('array').that.is.empty // Sem despesas vinculada
                             })
                     })
                 })
@@ -50,15 +43,11 @@ context('Produção Agrícola', () => {
                             .then((response) => {
                                 expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                                 expect(response.status).to.equal(200)
-                                expect(response.body.data).not.be.null
-                                expect(response.body.success).to.equal(true)
-                                expect(response.body.data.id).to.equal(body.data.id)
-                                expect(response.body.data.numero).to.equal(body.data.numero)
-                                expect(response.body.data.statusAcerto).to.equal(body.data.statusAcerto)
-                                expect(response.body.data.motorista).to.deep.equal(body.data.motorista)
-                                expect(response.body.data.veiculo).to.deep.equal(body.data.veiculo)
-                                expect(response.body.data.romaneios).to.deep.equal(body.data.romaneios)
-                                expect(response.body.data.despesas).not.be.empty
+                               
+                                
+                                validateAcertoFreteResponse(response.body)
+                                expect(response.body.data.statusAcerto).to.equal(2)  // Status Acertado
+
                             })
                     })
                 })
@@ -69,15 +58,11 @@ context('Produção Agrícola', () => {
                             .then((response) => {
                                 expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                                 expect(response.status).to.equal(200)
-                                expect(response.body.data).not.be.null
-                                expect(response.body.success).to.equal(true)
-                                expect(response.body.data.id).to.equal(body.data.id)
-                                expect(response.body.data.numero).to.equal(body.data.numero)
-                                expect(response.body.data.statusAcerto).to.equal(body.data.statusAcerto)
-                                expect(response.body.data.motorista).to.deep.equal(body.data.motorista)
-                                expect(response.body.data.veiculo).to.deep.equal(body.data.veiculo)
-                                expect(response.body.data.romaneios).to.deep.equal(body.data.romaneios)
-                                expect(response.body.data.despesas).be.empty
+                                
+                                validateAcertoFreteResponse(response.body)
+                                expect(response.body.data.statusAcerto).to.equal(2)  // Status Acertado
+                                expect(response.body.data.despesas).to.be.an('array').that.is.empty // Sem despesas vinculada
+            
                             })
                     })
                 })
@@ -90,15 +75,9 @@ context('Produção Agrícola', () => {
                             .then((response) => {
                                 expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                                 expect(response.status).to.equal(200)
-                                expect(response.body.data).not.be.null
-                                expect(response.body.success).to.equal(true)
-                                expect(response.body.data.id).to.equal(body.data.id)
-                                expect(response.body.data.numero).to.equal(body.data.numero)
-                                expect(response.body.data.statusAcerto).to.equal(body.data.statusAcerto)
-                                expect(response.body.data.motorista).to.deep.equal(body.data.motorista)
-                                expect(response.body.data.veiculo).to.deep.equal(body.data.veiculo)
-                                expect(response.body.data.romaneios).to.deep.equal(body.data.romaneios)
-                                expect(response.body.data.despesas).not.be.empty
+                                
+                                validateAcertoFreteResponse(response.body)
+                                expect(response.body.data.statusAcerto).to.equal(3) // Status Liquidado
                             })
                     })
                 })
@@ -109,15 +88,10 @@ context('Produção Agrícola', () => {
                             .then((response) => {
                                 expect(response.requestHeaders).to.have.property('x-tenant').to.be.equal(Cypress.env('tenant'))
                                 expect(response.status).to.equal(200)
-                                expect(response.body.data).not.be.null
-                                expect(response.body.success).to.equal(true)
-                                expect(response.body.data.id).to.equal(body.data.id)
-                                expect(response.body.data.numero).to.equal(body.data.numero)
-                                expect(response.body.data.statusAcerto).to.equal(body.data.statusAcerto)
-                                expect(response.body.data.motorista).to.deep.equal(body.data.motorista)
-                                expect(response.body.data.veiculo).to.deep.equal(body.data.veiculo)
-                                expect(response.body.data.romaneios).to.deep.equal(body.data.romaneios)
-                                expect(response.body.data.despesas).be.empty
+                                
+                                validateAcertoFreteResponse(response.body)
+                                expect(response.body.data.statusAcerto).to.equal(3) // Status Liquidado
+                                expect(response.body.data.despesas).to.be.an('array').that.is.empty // Sem despesas vinculada
                             })
                     })
                 })
