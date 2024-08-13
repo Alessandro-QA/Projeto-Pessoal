@@ -595,6 +595,11 @@ class Pedidos {
                 // Validar status
                 cy.wrap($linha).find('div.line--item-status').should('contain.text', seedTest.statusPedido)
 
+                // Salvar seu código para próximos testes
+                cy.wrap($linha).find('div.line--item-id').invoke('text').then(text => {
+                  Cypress.env(codigoPedido, text.trim())
+                })
+
                 // Validar fazenda
                 cy.wrap($linha)
                   .find('div.line--item-farm')

@@ -14,8 +14,15 @@ class Recebimento {
   cadastrar(seedTest) {
     var ciclos = seedTest.ciclos
 
-    cy.log('Navegar para Recebimento')
-    cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+    // Navegar para Pedidos
+    cy.location('pathname').then((currentPath) => {
+      if (currentPath !== url) {
+        cy.log('Navegar para Recebimentos')
+        cy.navegarPara(url, locatorTituloPagina, tituloPagina)
+      }
+      cy.log(currentPath)
+      cy.desabilitarPopUpNotificacao()
+    })
 
     cy.log('lancar nota fiscal manual')
     cy.log('Selecionar fornecedor')
@@ -74,88 +81,96 @@ class Recebimento {
       .contains(seedTest.safra).click()
 
     cy.log('validar nome material')
-    cy.getVisible(locatorRecebimento.materiais.nomeMaterial)
+    cy.get(locatorRecebimento.materiais.nomeMaterial)
       .should('contain', seedTest.nomeMaterial)
 
-    cy.getVisible(locatorRecebimento.materiais.collapseMaterial).click().then(() => {
-      cy.log('validar unidade armazenamento')
-      cy.getVisible(locatorRecebimento.materiais.unidadeArmazenamento)
-        .should('contain', seedTest.unidadeArmazenamento)
+    cy.getVisible(locatorRecebimento.materiais.tabelaMateriais).contains(seedTest.nomeMaterial).closest('.header')
+      .find(locatorRecebimento.materiais.iconeBotao).click()
 
-      cy.log('quantidade material')
-      cy.getVisible(locatorRecebimento.materiais.quantidadeMaterialRecebido)
-        .clear().type(`{movetoend}${seedTest.quantidadeMaterial}{enter}`)
+    cy.get(locatorRecebimento.materiais.linhaMaterial).filter(`:contains("${seedTest.codigoPedido}")`)
+      .should('be.visible')
+      .then(($linha) => {
+        cy.wrap($linha).within(() => {
+          cy.log('validar unidade armazenamento')
+          cy.getVisible(locatorRecebimento.materiais.unidadeArmazenamento)
+            .should('contain', seedTest.unidadeArmazenamento)
 
-      cy.log('preco material - NF')
-      cy.getVisible(locatorRecebimento.materiais.precoMaterialRecebido)
-        .clear().type(`{movetoend}${seedTest.precoMaterial}{enter}`)
+          cy.log('quantidade material')
+          cy.getVisible(locatorRecebimento.materiais.quantidadeMaterialRecebido)
+            .clear().type(`{movetoend}${seedTest.quantidadeMaterial}{enter}`)
 
-      cy.log('Total')
-      cy.get(locatorRecebimento.materiais.total).should(($el) => {
-        expect($el).to.contain.text(seedTest.totalMaterial)
+          cy.log('preco material - NF')
+          cy.getVisible(locatorRecebimento.materiais.precoMaterialRecebido)
+            .clear().type(`{movetoend}${seedTest.precoMaterial}{enter}`)
+
+          cy.log('Total')
+          cy.get('span').eq(4).should(($el) => {
+            expect($el).to.contain.text(`R$ ${Number(seedTest.totalMaterial).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`)
+          })
+
+          cy.log('Preco Pedido')
+          cy.get('span').eq(5).should(($el) => {
+            expect($el).to.contain.text(`R$ ${Number(seedTest.precoPedido).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`)
+          })
+
+          cy.log('confirmar material')
+          cy.get(locatorRecebimento.materiais.botaoConfirmarMaterial).click({force: true})
+        })
       })
-
-      cy.log('Preco Pedido')
-      cy.get(locatorRecebimento.materiais.precoPedido).should(($el) => {
-        expect($el).to.contain.text(seedTest.precoPedido)
-      })
-
-      cy.log('confirmar material')
-      cy.get(locatorRecebimento.materiais.botaoConfirmarMaterial).click()
-    })
-
-    cy.log('forma de pagamento')
-    cy.getVisible(locatorRecebimento.recebimentoManual.selectFormaPagamento).click()
-      .contains(seedTest.formaPagamento).click()
-
-    cy.log('valor parcela')
-    cy.getVisible(locatorRecebimento.recebimentoManual.valorParcela)
-      .should('contain', seedTest.valorParcela)
-
-    cy.log('categoria')
-    cy.getVisible(locatorRecebimento.recebimentoManual.selectCategoria)
-      .should('contain', seedTest.categoria)
-
-    cy.log('porcentagem categoria')
-    cy.getVisible(locatorRecebimento.recebimentoManual.inputPorcentagemCategoria)
-      .should('have.value', seedTest.porcentagemCategoria)
-
-    cy.log('valor categoria')
-    cy.getVisible(locatorRecebimento.recebimentoManual.inputValorCategoria)
-      .should('have.value', seedTest.valorCategoria)
-
-    cy.log('rateio entre ciclos')
-    cy.getVisible(locatorRecebimento.recebimentoManual.checkBoxRateioEntreCiclos)
-      .should('have.attr', 'aria-checked')
-
-    cy.log('validar nome, porcentagem e valor dos ciclos')
-    ciclos.forEach((ciclo, index) => {
-      cy.log('nome ciclo')
-      cy.get(locatorRecebimento.recebimentoManual.selectCiclo).eq(index)
-        .should('contain', ciclo.nomeCiclo)
-
-      cy.log('porcentagem ciclo')
-      cy.get(locatorRecebimento.recebimentoManual.inputPorcentagemCiclo).eq(index)
-        .should('have.value', ciclo.porcentagemCiclo)
-
-      cy.log('valor ciclo')
-      cy.get(locatorRecebimento.recebimentoManual.inputValorCiclo).eq(index)
-        .should('have.value', ciclo.valorCiclo)
-    })
-
-    cy.log('total valor recebimento')
-    cy.get(locatorRecebimento.recebimentoManual.totalRecebimento)
-      .should('contain', seedTest.totalRecebimento)
-
-    cy.log('salvar recebimento')
-    cy.getVisible(locatorRecebimento.recebimentoManual.botaoFinalizarRecebimento).click()
-
-    cy.get(locatorRecebimento.recebimentoManual.botaoFinalizarRecebimento)
-      .should('not.exist')
-
-    cy.log('mensagem sucesso')
-    cy.get(locatorRecebimento.dashboard.mensagemSucesso)
-      .should('contain', 'Recebimento realizado com sucesso')
+    
+        cy.log('forma de pagamento')
+        cy.getVisible(locatorRecebimento.recebimentoManual.selectFormaPagamento).click()
+          .contains(seedTest.formaPagamento).click()
+    
+        cy.log('valor parcela')
+        cy.getVisible(locatorRecebimento.recebimentoManual.valorParcela)
+        .should('contain.text', `R$ ${Number(seedTest.valorParcela).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`)
+    
+        cy.log('categoria')
+        cy.getVisible(locatorRecebimento.recebimentoManual.selectCategoria)
+          .should('contain', seedTest.categoria)
+    
+        cy.log('porcentagem categoria')
+        cy.getVisible(locatorRecebimento.recebimentoManual.inputPorcentagemCategoria)
+          .should('have.value', seedTest.porcentagemCategoria)
+    
+        cy.log('valor categoria')
+        cy.getVisible(locatorRecebimento.recebimentoManual.inputValorCategoria)
+          .should('contain.text', `R$ ${Number(seedTest.valorCategoria).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`)
+    
+        cy.log('rateio entre ciclos')
+        cy.getVisible(locatorRecebimento.recebimentoManual.checkBoxRateioEntreCiclos)
+          .should('have.attr', 'aria-checked')
+    
+        cy.log('validar nome, porcentagem e valor dos ciclos')
+        ciclos.forEach((ciclo, index) => {
+          cy.log('nome ciclo')
+          cy.get(locatorRecebimento.recebimentoManual.selectCiclo).eq(index)
+            .should('contain', ciclo.nomeCiclo)
+    
+          cy.log('porcentagem ciclo')
+          cy.get(locatorRecebimento.recebimentoManual.inputPorcentagemCiclo).eq(index)
+            .should('have.value', ciclo.porcentagemCiclo)
+    
+          cy.log('valor ciclo')
+          cy.get(locatorRecebimento.recebimentoManual.inputValorCiclo).eq(index)
+            .should('have.value', ciclo.valorCiclo)
+        })
+    
+        cy.log('total valor recebimento')
+        cy.get(locatorRecebimento.recebimentoManual.totalRecebimento)
+          .should('contain.text', `R$ ${Number(seedTest.totalRecebimento).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`)
+    
+        cy.log('salvar recebimento')
+        cy.getVisible(locatorRecebimento.recebimentoManual.botaoFinalizarRecebimento).click()
+    
+        cy.get(locatorRecebimento.recebimentoManual.botaoFinalizarRecebimento)
+          .should('not.exist')
+    
+        cy.log('mensagem sucesso')
+        cy.get(locatorRecebimento.dashboard.mensagemSucesso)
+          .should('contain', 'Recebimento realizado com sucesso')
+          
   }
 }
 

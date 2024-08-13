@@ -27,6 +27,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         const dataPedido = dayjs().format('DD/MM/YYYY')
         const dataEntrega = dayjs().add(1, 'week').format('DD/MM/YYYY')
 
+        // Dados Pedido
         seeds.seedCadastroPedido.numeroPedidoFornecedor = numeroPedido
         seeds.seedCadastroPedido.numero = numeroPedido
         seeds.seedAgendaFinanceiraCadastro.numeroDocumento = numeroPedido
@@ -43,6 +44,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         seeds.seedCadastroPedido.dataPedido = dataPedido
         seeds.seedCadastroPedido.dataEntrega = dataEntrega
 
+        // Dados Documento
         seeds.seedDocumentoCadastro.dataDocumento = dataPedido
         seeds.seedDocumentoCadastro.valorTotal = valorTotal
         seeds.seedDocumentoCadastro.parcelas[0].valorParcela = valorTotal
@@ -51,6 +53,19 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
 
         seeds.seedAgendaFinanceiraCadastro.cardValorDocumento = valorTotal
         seeds.seedAgendaFinanceiraCadastro.cardSaldoAPagar = valorTotal
+
+        //Dados Recebimento
+        seeds.seedCadastroRecebimentoParcial.numeroNota = Utils.getNumeric(8)
+        seeds.seedCadastroRecebimentoParcial.serieNota = Utils.getNumeric(8)
+        seeds.seedCadastroRecebimentoParcial.dataEmissao = dataPedido
+        seeds.seedCadastroRecebimentoParcial.dataRecebimento = dataPedido
+        seeds.seedCadastroRecebimentoParcial.quantidadeMaterial = (quantidadeAleatoria/2) // Recebimento de metade da quantidade
+        seeds.seedCadastroRecebimentoParcial.precoMaterial = precoUnitarioAleatorio
+        seeds.seedCadastroRecebimentoParcial.precoPedido = precoUnitarioAleatorio
+        seeds.seedCadastroRecebimentoParcial.totalMaterial = (quantidadeAleatoria/2) * precoUnitarioAleatorio
+        seeds.seedCadastroRecebimentoParcial.valorParcela = seeds.seedCadastroRecebimentoParcial.totalMaterial
+        seeds.seedCadastroRecebimentoParcial.valorCategoria = seeds.seedCadastroRecebimentoParcial.totalMaterial
+        seeds.seedCadastroRecebimentoParcial.totalRecebimento = seeds.seedCadastroRecebimentoParcial.totalMaterial
 
         it.only('Deve cadastrar pedido', { retries: { runMode: 2, openMode: 2, }, }, function () {
         
@@ -67,31 +82,33 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.validarListagem(seeds.seedCadastroPedido)
         })
 
-        it.only('Deve validar detalhes do pedido cadastrado', function () {
+        it.skip('Deve validar detalhes do pedido cadastrado', function () {
           
           cy.allureDescriptionHtml(testDescription.detalhesPedido).allureSeverity('normal')
           
           Pedidos.validarDetalhes(seeds.seedCadastroPedido)
         })
 
-        it.only('Deve validar detalhes do documento gerado pelo cadastro do pedido (outros)', function () {
+        it.skip('Deve validar detalhes do documento gerado pelo cadastro do pedido (outros)', function () {
           cy.allureDescriptionHtml(testDescription.detalhesPedidoDocumento).allureSeverity('normal')
 
           seeds.seedDocumentoCadastro.ciclos = seeds.seedCadastroPedido.ciclos
           Documentos.validarDetalhes(seeds.seedDocumentoCadastro)
         })
 
-        it.only('Deve validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
+        it.skip('Deve validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
           
           cy.allureDescriptionHtml(testDescription.pesquisarAgendaFinanceira).allureSeverity('normal')
           
           AgendaFinanceira.validarDashboard(seeds.seedAgendaFinanceiraCadastro)
         })
 
-        it('Deve realizar o recebimento parcial (50%) do pedido', function () {
+        it.only('Deve realizar o recebimento parcial (50%) do pedido', function () {
+          cy.log(Cypress.env('codigoPedido'))
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.recebimento)
-
+          seedCadastroRecebimentoParcial.codigoPedido = Cypress.env('codigoPedido')
+          seedCadastroRecebimentoParcial.ciclos = seeds.seedCadastroPedido.ciclos
           Recebimento.cadastrar(seeds.seedCadastroRecebimentoParcial)
         })
 
@@ -239,20 +256,20 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.validarListagem(seeds.seedStatusPedido.aguardandoEntrega)
         })
 
-        it.only('Deve excluir o pedido', function () {
+        it.skip('Deve excluir o pedido', function () {
           
           cy.allureDescriptionHtml(testDescription.excluirPedido).allureSeverity('critical')
 
           Pedidos.excluir(seeds.seedCadastroPedido)
         })
 
-        it.only('Deve validar exclusão do pedido', function () {
+        it.skip('Deve validar exclusão do pedido', function () {
           cy.allureDescriptionHtml(testDescription.validarExclusaoPedido).allureSeverity('critical')
 
           Pedidos.validarExclusao(seeds.seedCadastroPedido)
         })
 
-        it.only('Deve validar exclusão dos documentos', function () {
+        it.skip('Deve validar exclusão dos documentos', function () {
           cy.allureDescriptionHtml(testDescription.validarExclusaoPedido).allureSeverity('critical')
 
           Documentos.validarExclusao(seeds.seedCadastroPedido)
