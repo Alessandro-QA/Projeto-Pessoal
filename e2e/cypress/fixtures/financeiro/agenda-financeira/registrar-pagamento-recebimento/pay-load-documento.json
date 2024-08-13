@@ -36,7 +36,7 @@
         "despesas": "0",
         "descontos": 0
       },
-      "dataRecebimento": "2024-07-08T08:55:40-03:00",
+      "dataRecebimento": "dataSubstituicao",
       "operacao": {
         "id": "7a5cd835-23e0-a6e0-5984-d98ff148537e",
         "descricao": "Aluguéis"
@@ -45,7 +45,7 @@
         "id": "f2eb8ded-a463-47fd-a81d-1a78b5b11166",
         "descricao": "2022 / 2023"
       },
-      "data": "2024-07-08T08:55:40-03:00",
+      "data": "dataSubstituicao",
       "fazenda": {
         "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
         "descricao": "Fazenda Teste API"
@@ -93,7 +93,7 @@
         "valorFixo": false,
         "parcelas": [
           {
-            "vencimento": "2024-08-08T08:55:40-03:00",
+            "vencimento": "dataSubstituicao",
             "moeda": {
               "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
               "descricao": "Real",
@@ -162,7 +162,7 @@
         "despesas": "0",
         "descontos": 0
       },
-      "dataRecebimento": "2024-07-08T09:01:20-03:00",
+      "dataRecebimento": "dataSubstituicao",
       "operacao": {
         "id": "af2790f9-869b-4292-a981-eb98140badfa",
         "descricao": "Outras Vendas Agropecuárias"
@@ -171,7 +171,7 @@
         "id": "ebdf0aa6-8f1e-45f6-93fb-4cbcb49f43bb",
         "descricao": "2024 / 2025"
       },
-      "data": "2024-07-08T09:01:20-03:00",
+      "data": "dataSubstituicao",
       "fazenda": {
         "id": "5e3a2fa6-b544-4e3f-843f-84b14ab1e91b",
         "descricao": "Fazenda Teste API"
@@ -219,7 +219,7 @@
         "valorFixo": false,
         "parcelas": [
           {
-            "vencimento": "2024-08-08T09:01:20-03:00",
+            "vencimento": "dataSubstituicao",
             "moeda": {
               "id": "f7869132-3eb0-4bfc-b416-754b040c98ff",
               "descricao": "Real",

@@ -99,12 +99,14 @@ class AgendaFinanceira {
 
       cy.wait('@listagemAgenda')
 
+      cy.wait(1000)
+
       cy.get(locAgendaFinanceira.dashboard.cardNumeroDocumento)
         .contains(card.cardNumeroDocumento)
         .parents(locAgendaFinanceira.dashboard.cardBoard)
         .within(() => {
           cy.get(locAgendaFinanceira.dashboard.marcarCard)
-            .click({ force: true })
+            .click()
         })
 
       cy.getVisible(locAgendaFinanceira.dashboard.pesquisarDocumento)

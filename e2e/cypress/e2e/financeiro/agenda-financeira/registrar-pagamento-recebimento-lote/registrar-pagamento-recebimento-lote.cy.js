@@ -5,25 +5,24 @@ import seedTestAgendaFinanceira from '../../../../fixtures/financeiro/agenda-fin
 import testDescription from './bdd-description/registrar-pagamento-recebimento-lote.description.js'
 import AgendaFinanceira from '../../../../support/commands/financeiro/agenda-financeira/agenda-financeira.js'
 import Utils from '../../../../support/utils/utils.js'
+import dayjs from 'dayjs'
 
 describe('Financeiro', { tags: '@financeiro' }, () => {
-  var dataAtual = Utils.getDate()
   var documento = Utils.getPayloadPorAmbiente(payLoadDocumento)
 
-  var bodyDocumento100 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento100)
-  var bodyDocumento101 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento101)
-  var bodyDocumento102 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento102)
-  var bodyDocumento103 = Utils.replacer('dataSubstituicao', dataAtual, documento.documento103)
+  const dataAtual = dayjs().add(1, 'day').format("YYYY-MM-DDTHH:mm:ssZ")
 
+  var bodyDocumento = Utils.replacer('dataSubstituicao', dataAtual, documento)
+  
   var numDoc1 = Utils.getAlphaNumeric(10)
   var numDoc2 = Utils.getAlphaNumeric(10)
   var numDoc3 = Utils.getAlphaNumeric(10)
   var numDoc4 = Utils.getAlphaNumeric(10)
 
-  var bodyDocumento100 = Utils.replacer('numero', numDoc1, documento.documento100)
-  var bodyDocumento101 = Utils.replacer('numero', numDoc2, documento.documento101)
-  var bodyDocumento102 = Utils.replacer('numero', numDoc3, documento.documento102)
-  var bodyDocumento103 = Utils.replacer('numero', numDoc4, documento.documento103)
+  var bodyDocumento100 = Utils.replacer('numero', numDoc1, bodyDocumento.documento100)
+  var bodyDocumento101 = Utils.replacer('numero', numDoc2, bodyDocumento.documento101)
+  var bodyDocumento102 = Utils.replacer('numero', numDoc3, bodyDocumento.documento102)
+  var bodyDocumento103 = Utils.replacer('numero', numDoc4, bodyDocumento.documento103)
 
   seedTestAgendaFinanceira.pagamentoLote.cardsAgenda[0].cardNumeroDocumento = numDoc1
   seedTestAgendaFinanceira.pagamentoLote.cardsAgenda[1].cardNumeroDocumento = numDoc2
@@ -36,7 +35,7 @@ describe('Financeiro', { tags: '@financeiro' }, () => {
       it('Deve cadastrar documentos via API - Pagamento', function () {
 
         cy.allureDescriptionHtml(testDescription.pagamentoLote).allureSeverity('normal')
-
+       
         Utils.requestApi('POST', `${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento`, bodyDocumento100, 'login_cadastro')
         Utils.requestApi('POST', `${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/Documento`, bodyDocumento101, 'login_cadastro')
       })
