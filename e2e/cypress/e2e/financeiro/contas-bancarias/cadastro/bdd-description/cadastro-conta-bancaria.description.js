@@ -289,7 +289,7 @@ const html = {
       <strong>ENTAO</strong> deverá ser listada a conta com nome correspondente <br/>
     </div>
     `,
-  contaCorrenteMovimentacao: `
+  naoIncluirSaldoDisponivel: `
     <div>
       <span style="color: #800080; font-weight: bold;"> Funcionalidade: </span>
       <span style="color: #b22222;"> Cadastrar Conta Bancaria </span>
@@ -312,6 +312,14 @@ const html = {
       <strong>E</strong> não clicar no checkbox "Incluir no saldo disponível" <br/>
       <strong>E</strong> clicar em Adicionar <br/>
       <strong>ENTAO</strong> deverá ser salvo e validado na movimentação financeira a movimentação inicial da conta bancária <br/>
+    </div>
+    </br>
+    <div>
+      <span style="color: #800080; font-weight: bold;"> Complemento: </span>
+      <div style="margin-left: 40px;">
+      O teste cadastra uma conta bancária com alguns dados aleatórios a fim de evitar repetições, e em seguida
+      valida nas Movimentações Bancárias se foi feita movimentação de entrada na data e com valor informados na criação da conta.
+      Por fim, é feita a exclusão da conta criada para evitar acúmulo de registros. <br/>
     </div>
     `
 }

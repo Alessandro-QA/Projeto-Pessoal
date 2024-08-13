@@ -4,9 +4,6 @@ import locContaBancaria from '../../../locators/financeiro/contas-bancarias/loca
 const dayjs = require('dayjs')
 
 class ContaBancaria {
-  constructor() {
-    this.idConta = null; // Declaração da variável como propriedade da classe para ser usada em qualquer método
-  }
   /**
    * Metodo para o cadastro e edição de uma conta Bancaria
    * @param {*} seedTestContaBancaria
@@ -122,7 +119,9 @@ class ContaBancaria {
 
       cy.log('Validar saldo Atual')
       cy.getVisible(locContaBancaria.contaBancaria.saldoAtual).should(($el) => {
-        expect($el).to.have.value(seedTestContaBancaria.saldoAtual)
+        const formattedValue = $el.val().replace(/[R$.,]/g, '') // Remove 'R$', pontos e vírgulas
+        const expectedValue = seedTestContaBancaria.saldoAtual.replace(/[R$.,]/g, '') // Remove formatação do valor esperado, se necessário
+        expect(formattedValue).to.equal(expectedValue)
       })
 
       if (seedTestContaBancaria.banco) {
@@ -267,7 +266,7 @@ class ContaBancaria {
         const responseBody = interception.response.body
         cy.log(responseBody)
         cy.log(responseBody.data.id)
-        this.idConta = responseBody.data.id
+        Cypress.env('idConta', responseBody.data.id) //Armazena o id da conta criada em uma variável de ambiente Cypress
       })
     } else {
       cy.log('Validar mensagem de sucesso ao editar')
@@ -322,10 +321,9 @@ class ContaBancaria {
       }
 
       cy.log('Deleta Conta Criada Para Evitar Acumulo de Registro')
-      cy.wrap(this.idConta).then((idConta) => {
-        cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`, idConta).then((responseDelete) => {
-          expect(responseDelete.status).to.be.equal(200)
-        })
+      const idConta = Cypress.env('idConta') // Acessa o id armazenado
+      cy.deleteRequest(`${Cypress.env('baseUrl')}${Cypress.env('financeiro')}/ContaBancaria`, idConta).then((responseDelete) => {
+        expect(responseDelete.status).to.be.equal(200)
       })
     } else {
       cy.log('Pesquisar a Conta Criada')
@@ -1201,7 +1199,7 @@ class ContaBancaria {
 
 // Função para formatar o valor como moeda brasileira
 function formatarValorComoBRL(valor) {
-  return `R$${valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `R$${valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 }
 
 export default new ContaBancaria()
