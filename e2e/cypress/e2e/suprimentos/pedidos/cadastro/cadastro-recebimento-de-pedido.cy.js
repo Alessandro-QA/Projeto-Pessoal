@@ -107,8 +107,8 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           cy.log(Cypress.env('codigoPedido'))
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.recebimento)
-          seedCadastroRecebimentoParcial.codigoPedido = Cypress.env('codigoPedido')
-          seedCadastroRecebimentoParcial.ciclos = seeds.seedCadastroPedido.ciclos
+          seeds.seedCadastroRecebimentoParcial.codigoPedido = Cypress.env('codigoPedido')
+          seeds.seedCadastroRecebimentoParcial.ciclos = seeds.seedCadastroPedido.ciclos
           Recebimento.cadastrar(seeds.seedCadastroRecebimentoParcial)
         })
 
@@ -256,7 +256,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.validarListagem(seeds.seedStatusPedido.aguardandoEntrega)
         })
 
-        it.skip('Deve excluir o pedido', function () {
+        it.only('Deve excluir o pedido', function () {
           
           cy.allureDescriptionHtml(testDescription.excluirPedido).allureSeverity('critical')
 
