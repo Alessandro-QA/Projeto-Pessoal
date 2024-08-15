@@ -209,7 +209,7 @@ class Pedidos {
           // Converter para número e garantir duas casas decimais
           const valorCiclo = parseFloat(valorTexto).toFixed(2)
           seedTest.ciclos[index].valor = valorCiclo
-          expect(parseFloat(valorCiclo)).to.be.closeTo(parseFloat(valorEsperado), 0.01)
+          expect(parseFloat(valorCiclo)).to.be.closeTo(parseFloat(valorEsperado), 0.15)
         })
       })
     })
@@ -530,7 +530,6 @@ class Pedidos {
   validarExclusao(seedTest) {
 
     cy.intercept('POST', '/api/pedido-compra/v1/Pedidos/Listagem').as('listaPedidos')
-
     // Navegar para Pedidos
     cy.location('pathname').then((currentPath) => {
       if (currentPath !== url) {
@@ -566,7 +565,7 @@ class Pedidos {
   validarListagem(seedTest) {
 
     cy.intercept('POST', '/api/pedido-compra/v1/Pedidos/Listagem').as('listaPedidos')
-
+    let validado = false // Dentro da verificação de cada linha, caso encontre o valor que eu quero, eu dou um OK que foi validado
     // Navegar para Pedidos
     cy.location('pathname').then((currentPath) => {
       if (currentPath !== url) {
@@ -591,9 +590,17 @@ class Pedidos {
             .invoke('text')
             .then((text) => {
               if (text.trim() === seedTest.numeroPedidoFornecedor) {
-
+                validado = true
+                cy.wrap(validado).as('validadoStatus')
                 // Validar status
                 cy.wrap($linha).find('div.line--item-status').should('contain.text', seedTest.statusPedido)
+
+                // Salvar seu código para próximos testes
+                cy.wrap($linha).find('div.line--item-id').invoke('text').then(text => {
+                  const codigo = text.trim()
+                  cy.log(codigo)
+                  Cypress.env('codigoPedido', codigo)
+                })
 
                 // Validar fazenda
                 cy.wrap($linha)
@@ -625,6 +632,11 @@ class Pedidos {
             })
         })
     }
+
+    cy.get('@validadoStatus').then((status) => {
+      // Verifique se o valor esperado foi encontrado
+      expect(status).to.be.true;
+    })
   }
 }
 

@@ -49,15 +49,18 @@ const locators = {
     botaoFinalizarRecebimento: '[data-cy=button-finalizar-recebimento]'
   },
   materiais: {
+    tabelaMateriais: '.materials',
+    iconeBotao: '.icon_button',
+    linhaMaterial: '.suggested_request_line_large',
     nomeMaterial: '.suggested_material_line .span_text-title-green',
     unidadeMedida: '.suggested_material_line .span_text-normal-text',
     collapseMaterial: '.suggested_material_line .icon_button',
     unidadeArmazenamento: '.storage_unity .selected',
     quantidadeMaterialRecebido: '.request_quantity input',
     precoMaterialRecebido: 'input[data-cy=mf-input-valor]',
-    total: '.suggested_request_line_large > :nth-child(5)',
+    precoTotalPedido: '.request_price span',
     precoPedido: '.suggested_request_line_large > :nth-child(6)',
-    botaoConfirmarMaterial: '.suggested_request_line_large .el-switch__core'
+    botaoConfirmarMaterial: 'div.el-switch input[type="checkbox"]'
   }
 }
 

@@ -27,6 +27,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         const dataPedido = dayjs().format('DD/MM/YYYY')
         const dataEntrega = dayjs().add(1, 'week').format('DD/MM/YYYY')
 
+        // Dados Pedido
         seeds.seedCadastroPedido.numeroPedidoFornecedor = numeroPedido
         seeds.seedCadastroPedido.numero = numeroPedido
         seeds.seedAgendaFinanceiraCadastro.numeroDocumento = numeroPedido
@@ -43,6 +44,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         seeds.seedCadastroPedido.dataPedido = dataPedido
         seeds.seedCadastroPedido.dataEntrega = dataEntrega
 
+        // Dados Documento
         seeds.seedDocumentoCadastro.dataDocumento = dataPedido
         seeds.seedDocumentoCadastro.valorTotal = valorTotal
         seeds.seedDocumentoCadastro.parcelas[0].valorParcela = valorTotal
@@ -52,7 +54,20 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         seeds.seedAgendaFinanceiraCadastro.cardValorDocumento = valorTotal
         seeds.seedAgendaFinanceiraCadastro.cardSaldoAPagar = valorTotal
 
-        it.only('Deve cadastrar pedido', { retries: { runMode: 2, openMode: 2, }, }, function () {
+        //Dados Recebimento
+        seeds.seedCadastroRecebimentoParcial.numeroNota = Utils.getNumeric(8)
+        seeds.seedCadastroRecebimentoParcial.serieNota = Utils.getNumeric(8)
+        seeds.seedCadastroRecebimentoParcial.dataEmissao = dataPedido
+        seeds.seedCadastroRecebimentoParcial.dataRecebimento = dataPedido
+        seeds.seedCadastroRecebimentoParcial.quantidadeMaterial = (quantidadeAleatoria/2) // Recebimento de metade da quantidade
+        seeds.seedCadastroRecebimentoParcial.precoMaterial = precoUnitarioAleatorio
+        seeds.seedCadastroRecebimentoParcial.precoPedido = precoUnitarioAleatorio
+        seeds.seedCadastroRecebimentoParcial.totalMaterial = (quantidadeAleatoria/2) * precoUnitarioAleatorio
+        seeds.seedCadastroRecebimentoParcial.valorParcela = seeds.seedCadastroRecebimentoParcial.totalMaterial
+        seeds.seedCadastroRecebimentoParcial.valorCategoria = seeds.seedCadastroRecebimentoParcial.totalMaterial
+        seeds.seedCadastroRecebimentoParcial.totalRecebimento = seeds.seedCadastroRecebimentoParcial.totalMaterial
+
+        it.only('Deve cadastrar pedido', { retries: { runMode: 1, openMode: 1, }, }, function () {
         
           cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
 
@@ -88,10 +103,16 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           AgendaFinanceira.validarDashboard(seeds.seedAgendaFinanceiraCadastro)
         })
 
+        // Está pronto, porém só posso apagar um pedido após apagar o seu recebimento parcial!
         it('Deve realizar o recebimento parcial (50%) do pedido', function () {
+          cy.log(Cypress.env('codigoPedido'))
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.recebimento)
-
+          cy.log(seeds.seedCadastroPedido)
+          cy.log(seeds.seedDocumentoCadastro)
+          seeds.seedCadastroRecebimentoParcial.codigoPedido = Cypress.env('codigoPedido')
+          seeds.seedCadastroRecebimentoParcial.ciclos = seeds.seedCadastroPedido.ciclos
+          cy.log(seeds.seedCadastroRecebimentoParcial)
           Recebimento.cadastrar(seeds.seedCadastroRecebimentoParcial)
         })
 
