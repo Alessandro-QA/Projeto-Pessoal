@@ -1,8 +1,8 @@
-# Testes de API - MyFarm
+# Testes de API - 
 
 ## Informações Gerais
 
-- **Projeto**: Testes de APIS Gerais do MyFarm
+- **Projeto**: Testes de APIS Gerais
 
 # Comentários do Package JSON
 
