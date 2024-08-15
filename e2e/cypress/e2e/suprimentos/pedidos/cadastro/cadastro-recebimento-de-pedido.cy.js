@@ -67,7 +67,7 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
         seeds.seedCadastroRecebimentoParcial.valorCategoria = seeds.seedCadastroRecebimentoParcial.totalMaterial
         seeds.seedCadastroRecebimentoParcial.totalRecebimento = seeds.seedCadastroRecebimentoParcial.totalMaterial
 
-        it.only('Deve cadastrar pedido', { retries: { runMode: 2, openMode: 2, }, }, function () {
+        it.only('Deve cadastrar pedido', { retries: { runMode: 1, openMode: 1, }, }, function () {
         
           cy.allureDescriptionHtml(testDescription.pedido).allureSeverity('critical')
 
@@ -82,33 +82,37 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.validarListagem(seeds.seedCadastroPedido)
         })
 
-        it.skip('Deve validar detalhes do pedido cadastrado', function () {
+        it.only('Deve validar detalhes do pedido cadastrado', function () {
           
           cy.allureDescriptionHtml(testDescription.detalhesPedido).allureSeverity('normal')
           
           Pedidos.validarDetalhes(seeds.seedCadastroPedido)
         })
 
-        it.skip('Deve validar detalhes do documento gerado pelo cadastro do pedido (outros)', function () {
+        it.only('Deve validar detalhes do documento gerado pelo cadastro do pedido (outros)', function () {
           cy.allureDescriptionHtml(testDescription.detalhesPedidoDocumento).allureSeverity('normal')
 
           seeds.seedDocumentoCadastro.ciclos = seeds.seedCadastroPedido.ciclos
           Documentos.validarDetalhes(seeds.seedDocumentoCadastro)
         })
 
-        it.skip('Deve validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
+        it.only('Deve validar lançamento na agenda financeira, gerado pelo cadastro do pedido', function () {
           
           cy.allureDescriptionHtml(testDescription.pesquisarAgendaFinanceira).allureSeverity('normal')
           
           AgendaFinanceira.validarDashboard(seeds.seedAgendaFinanceiraCadastro)
         })
 
-        it.only('Deve realizar o recebimento parcial (50%) do pedido', function () {
+        // Está pronto, porém só posso apagar um pedido após apagar o seu recebimento parcial!
+        it('Deve realizar o recebimento parcial (50%) do pedido', function () {
           cy.log(Cypress.env('codigoPedido'))
           // cy.allure().severity('critical').startStep('test content')
           //.descriptionHtml(testDescription.recebimento)
+          cy.log(seeds.seedCadastroPedido)
+          cy.log(seeds.seedDocumentoCadastro)
           seeds.seedCadastroRecebimentoParcial.codigoPedido = Cypress.env('codigoPedido')
           seeds.seedCadastroRecebimentoParcial.ciclos = seeds.seedCadastroPedido.ciclos
+          cy.log(seeds.seedCadastroRecebimentoParcial)
           Recebimento.cadastrar(seeds.seedCadastroRecebimentoParcial)
         })
 
@@ -263,13 +267,13 @@ describe('Suprimentos', { tags: '@suprimentos' }, () => {
           Pedidos.excluir(seeds.seedCadastroPedido)
         })
 
-        it.skip('Deve validar exclusão do pedido', function () {
+        it.only('Deve validar exclusão do pedido', function () {
           cy.allureDescriptionHtml(testDescription.validarExclusaoPedido).allureSeverity('critical')
 
           Pedidos.validarExclusao(seeds.seedCadastroPedido)
         })
 
-        it.skip('Deve validar exclusão dos documentos', function () {
+        it.only('Deve validar exclusão dos documentos', function () {
           cy.allureDescriptionHtml(testDescription.validarExclusaoPedido).allureSeverity('critical')
 
           Documentos.validarExclusao(seeds.seedCadastroPedido)

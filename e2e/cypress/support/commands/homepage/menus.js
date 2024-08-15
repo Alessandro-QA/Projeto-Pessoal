@@ -483,7 +483,6 @@ class Menus {
     cy.get(locMenus.menu.menuAtivo).contains('Cadastros')
       .should('be.visible')
       .trigger('mouseleave')
-
   }
 }
 
