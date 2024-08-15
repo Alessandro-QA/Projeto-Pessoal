@@ -1,68 +1,71 @@
-const validateFazendaListResponse = (response) => {
-    // Verifica se a resposta é um array
-    expect(response.body).to.be.an('array');
-    
-    response.body.forEach((fazenda) => {
-        // Valida propriedades de nível superior da fazenda
-        expect(fazenda).to.be.an('object');
-        expect(fazenda.ativo).to.be.a('boolean');
-        expect(fazenda.id).to.be.a('string');
-        expect(fazenda.nome).to.be.a('string');
-        expect(fazenda.latitude).to.be.a('number');
-        expect(fazenda.longitude).to.be.a('number');
-        expect(fazenda.codigo).to.be.a('number');
-        
-        // Valida propriedades do objeto pais
-        expect(fazenda.pais).to.be.an('object');
-        expect(fazenda.pais.id).to.be.a('string');
-        expect(fazenda.pais.descricao).to.be.a('string');
-        
-        // Valida propriedades do objeto estado
-        expect(fazenda.estado).to.be.an('object');
-        expect(fazenda.estado.id).to.be.a('string');
-        expect(fazenda.estado.descricao).to.be.a('string');
-        expect(fazenda.estado.sigla).to.be.a('string');
-        
-        // Valida propriedades do objeto municipio
-        expect(fazenda.municipio).to.be.an('object');
-        expect(fazenda.municipio.id).to.be.a('string');
-        expect(fazenda.municipio.descricao).to.be.a('string');
-        expect(fazenda.municipio.codigo).to.be.a('number');
-        
-        // Valida propriedades do array inscricoesEstaduais
-        expect(fazenda.inscricoesEstaduais).to.be.an('array');
-        
-        // Valida propriedades do array fazendaMatriculas
-        expect(fazenda.fazendaMatriculas).to.be.an('array');
-        fazenda.fazendaMatriculas.forEach((matricula) => {
-            expect(matricula).to.be.an('object');
-            expect(matricula.id).to.be.a('string');
-            
-            // Valida propriedades do objeto empresa
-            expect(matricula.empresa).to.be.an('object');
-            expect(matricula.empresa.id).to.be.a('string');
-            expect(matricula.empresa.nome).to.be.a('string');
-            
-            // Valida propriedades do objeto inscricaoEstadual dentro de empresa
-            expect(matricula.empresa.inscricaoEstadual).to.be.an('object');
-            expect(matricula.empresa.inscricaoEstadual.id).to.be.a('string');
-            expect(matricula.empresa.inscricaoEstadual.descricao).to.be.a('string');
-            expect(matricula.empresa.inscricaoEstadual.valor).to.be.a('string');
-            expect(matricula.empresa.inscricaoEstadual.isento).to.be.a('boolean');
-            expect(matricula.empresa.inscricaoEstadual.ativo).to.be.a('boolean');
-            
-            // Valida outras propriedades de fazendaMatricula
-            expect(matricula.cafir).to.be.a('string');
-            expect(matricula.caepf).to.be.a('string');
-            expect(matricula.descricao).to.be.a('string');
-            expect(matricula.codigo).to.be.a('number');
-            
-            // Valida fazendaMatriculaPessoaExploracoes como array
-            expect(matricula.fazendaMatriculaPessoaExploracoes).to.be.an('array');
-        });
-    });
-};
+function validateFazenda(fazenda) {
+    expect(fazenda).to.have.property('ativo').that.is.a('boolean');
+    expect(fazenda).to.have.property('id').that.is.a('string');
+    expect(fazenda).to.have.property('nome').that.is.a('string');
+    expect(fazenda).to.have.property('latitude').that.is.a('number');
+    expect(fazenda).to.have.property('longitude').that.is.a('number');
+    expect(fazenda).to.have.property('codigo').that.is.a('number');
 
-module.exports = {
-    validateFazendaListResponse
-};
+    // Validar o objeto pais, se existir
+    if (fazenda.pais) {
+        expect(fazenda.pais).to.be.an('object');
+        expect(fazenda.pais).to.have.property('id').that.is.a('string');
+        expect(fazenda.pais).to.have.property('descricao').that.is.a('string');
+    } else {
+        expect(fazenda).to.not.have.property('pais');
+    }
+
+    // Validar o objeto estado, se existir
+    if (fazenda.estado) {
+        expect(fazenda.estado).to.be.an('object');
+        expect(fazenda.estado).to.have.property('id').that.is.a('string');
+        expect(fazenda.estado).to.have.property('descricao').that.is.a('string');
+        expect(fazenda.estado).to.have.property('sigla').that.is.a('string');
+    }
+
+    // Validar o objeto municipio, se existir
+    if (fazenda.municipio) {
+        expect(fazenda.municipio).to.be.an('object');
+        expect(fazenda.municipio).to.have.property('id').that.is.a('string');
+        expect(fazenda.municipio).to.have.property('descricao').that.is.a('string');
+        expect(fazenda.municipio).to.have.property('codigo').that.is.a('number');
+    }
+
+    // Validar o array inscricoesEstaduais
+    expect(fazenda.inscricoesEstaduais).to.be.an('array');
+    fazenda.inscricoesEstaduais.forEach((inscricao) => {
+        expect(inscricao).to.have.property('id').that.is.a('string');
+        expect(inscricao).to.have.property('empresaNome').that.is.a('string');
+        expect(inscricao).to.have.property('empresaId').that.is.a('string');
+        expect(inscricao).to.have.property('documentoPrincipal').that.is.a('string');
+        expect(inscricao.inscricaoEstadual).to.be.an('object');
+        expect(inscricao.inscricaoEstadual).to.have.property('id').that.is.a('string');
+        expect(inscricao.inscricaoEstadual).to.have.property('valor').that.is.a('string');
+        expect(inscricao.inscricaoEstadual).to.have.property('isento').that.is.a('boolean');
+        expect(inscricao.inscricaoEstadual).to.have.property('ativo').that.is.a('boolean');
+        expect(inscricao).to.have.property('deleted').that.is.a('boolean');
+    });
+
+    // Validar o array fazendaMatriculas
+    expect(fazenda.fazendaMatriculas).to.be.an('array');
+    fazenda.fazendaMatriculas.forEach((matricula) => {
+        expect(matricula).to.have.property('id').that.is.a('string');
+        expect(matricula).to.have.property('empresa').that.is.an('object');
+        expect(matricula.empresa).to.have.property('id').that.is.a('string');
+        expect(matricula.empresa).to.have.property('nome').that.is.a('string');
+        expect(matricula.empresa.inscricaoEstadual).to.be.an('object');
+        expect(matricula.empresa.inscricaoEstadual).to.have.property('id').that.is.a('string');
+        expect(matricula.empresa.inscricaoEstadual).to.have.property('descricao').that.is.a('string');
+        expect(matricula.empresa.inscricaoEstadual).to.have.property('valor').that.is.a('string');
+        expect(matricula.empresa.inscricaoEstadual).to.have.property('isento').that.is.a('boolean');
+        expect(matricula.empresa.inscricaoEstadual).to.have.property('ativo').that.is.a('boolean');
+        expect(matricula).to.have.property('tipoExploracao').that.is.a('number');
+        expect(matricula).to.have.property('cafir').that.is.a('string');
+        expect(matricula).to.have.property('caepf').that.is.a('string');
+        expect(matricula).to.have.property('descricao').that.is.a('string');
+        expect(matricula).to.have.property('codigo').that.is.a('number');
+        expect(matricula).to.have.property('fazendaMatriculaPessoaExploracoes').that.is.an('array');
+    });
+}
+
+module.exports = { validateFazenda };
